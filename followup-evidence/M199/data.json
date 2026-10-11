@@ -1,0 +1,117 @@
+{
+  "synthetic": true,
+  "required_visible_label": "SYNTHETIC DATA",
+  "categories": [
+    "Company A",
+    "Company B",
+    "Company C"
+  ],
+  "periods": [
+    "Year 1",
+    "Year 2"
+  ],
+  "series": [
+    {
+      "id": "shares",
+      "label": "Weighted-average diluted shares",
+      "unit": "million shares"
+    },
+    {
+      "id": "profit_index",
+      "label": "Profit attributable to common shareholders",
+      "unit": "index, Year 1 = 100"
+    },
+    {
+      "id": "eps_index",
+      "label": "Diluted earnings per share",
+      "unit": "index, Year 1 = 100"
+    }
+  ],
+  "units": {
+    "growth": "percent",
+    "display_share_divisor": "divide shares in millions by this number"
+  },
+  "values": [
+    {
+      "category": "Company A",
+      "panel": "top_main",
+      "shares": [
+        352.8,
+        252.0
+      ],
+      "profit_index": [
+        100.0,
+        118.0
+      ],
+      "eps_index": [
+        100.0,
+        165.2
+      ],
+      "profit_growth_pct": 18.0,
+      "eps_growth_pct": 65.2,
+      "display_share_divisor": 1,
+      "display_share_unit": "MILLION",
+      "display_shares": [
+        "352.8",
+        "252.0"
+      ],
+      "display_profit_growth": "+18.0%",
+      "display_eps_growth": "+65.2%"
+    },
+    {
+      "category": "Company B",
+      "panel": "bottom_left",
+      "shares": [
+        1260.0,
+        1200.0
+      ],
+      "profit_index": [
+        100.0,
+        104.0
+      ],
+      "eps_index": [
+        100.0,
+        109.2
+      ],
+      "profit_growth_pct": 4.0,
+      "eps_growth_pct": 9.2,
+      "display_share_divisor": 1000,
+      "display_share_unit": "BILLION",
+      "display_shares": [
+        "1.26",
+        "1.20"
+      ],
+      "display_profit_growth": "+4.0%",
+      "display_eps_growth": "+9.2%"
+    },
+    {
+      "category": "Company C",
+      "panel": "bottom_right",
+      "shares": [
+        151.2,
+        126.0
+      ],
+      "profit_index": [
+        100.0,
+        109.0
+      ],
+      "eps_index": [
+        100.0,
+        130.8
+      ],
+      "profit_growth_pct": 9.0,
+      "eps_growth_pct": 30.8,
+      "display_share_divisor": 1,
+      "display_share_unit": "MILLION",
+      "display_shares": [
+        "151.2",
+        "126.0"
+      ],
+      "display_profit_growth": "+9.0%",
+      "display_eps_growth": "+30.8%"
+    }
+  ],
+  "value_order": "Every two-element array follows periods: Year 1, Year 2.",
+  "formula": "eps_index[t] = 100 * (profit_index[t] / profit_index[0]) * (shares[0] / shares[t]); growth_pct = index[1] - 100.",
+  "index_visibility": "Indices support arithmetic consistency; display only share values and growth percentages, not additional index charts."
+}

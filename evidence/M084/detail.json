@@ -1,0 +1,178 @@
+{
+  "id": "M084",
+  "reference_id": 1055,
+  "title": "同盘食物的质量与热量：合成数据摄影式标注图",
+  "source_identity": "唯一视觉证据为 input.json 指向的本地 reference.png，图像尺寸 600×556。画面是西兰花与火鸡胸肉的俯视餐盘照片及两组数值标注；外部作者与统计出处未提供。检索名 pictogram_1055 和策略 pictogram 仅作检索提示。",
+  "group": "other",
+  "brief": "制作一张 2100×1946 像素的单面板食物数据海报。保留近垂直俯视的摄影构图：青蓝色轻微织物质感背景，中央完整白色圆瓷盘，盘左多朵西兰花自然交叠，盘右一份纵向熟火鸡胸肉；银色叉在盘左、银色刀在盘右。保留可辨花冠、分枝茎、肉纤维、瓷盘釉面、金属反光和柔和接触阴影。盘和食物是画面主体，四周留出标注空间。左下标注依次显示大号 120 g、Broccoli、小号 (36 kcal)，右上依次显示大号 240 g、Turkey breast、小号 (252 kcal)。两组采用相同层级和字号规则，以白色为主；各用一条白色斜向虚线指向对应食物。上部空白处清晰显示 SYNTHETIC DATA，底部加入 Illustrative portions; values in labels.。数值和文字以可控文字图层排版，整张图仅包含上述两组食物数据。餐盘食品场景需使用本次实际图像生成得到的摄影式素材，至少两类主要食物来自生成素材，并在最终画面占据主体位置；生成图负责外观，后续代码负责精确标注。",
+  "requirements": [
+    {
+      "id": "M1",
+      "requirement_zh": "保留单面板、近垂直俯视的餐盘场景；一只完整白色圆盘居中，留有右上和左下两处标注空间。",
+      "reference_evidence_zh": "参考图只有一个摄影场景，白盘位于中央，盘缘近圆，两个数值块分别位于右上和左下。"
+    },
+    {
+      "id": "M2",
+      "requirement_zh": "西兰花位于盘左，呈多朵自然交叠的食物组，同时保留颗粒状绿色花冠、浅绿色分枝茎和局部遮挡。花朵数不作为计数编码。",
+      "reference_evidence_zh": "盘左可见多个深绿花冠与浅绿茎交叠，轮廓不规则，部分食材彼此遮挡。"
+    },
+    {
+      "id": "M3",
+      "requirement_zh": "盘右保留一份纵向熟火鸡胸肉，呈浅米白色、厚实不规则轮廓和可见纤维纹理；与西兰花相邻，同处一盘。",
+      "reference_evidence_zh": "原图右半盘为标注 turkey breast 的浅色长形肉块，表面有肉纤维纹理，紧邻西兰花。"
+    },
+    {
+      "id": "M4",
+      "requirement_zh": "保留盘外左侧一把四齿金属叉和右侧一把金属餐刀，齿与刀刃朝上、柄朝下，具有真实反光和投影。",
+      "reference_evidence_zh": "原图白盘两侧分别为银色四齿叉与银色餐刀，纵向排列，金属表面有明暗反光。"
+    },
+    {
+      "id": "M5",
+      "requirement_zh": "主体使用实际图像生成的摄影式食物素材，呈现青蓝色轻纹理背景、瓷盘釉面、食物纹理和柔和阴影；两类食物均须在成图中可辨。",
+      "reference_evidence_zh": "参考图以食品摄影质感为主体，背景有细微纹理，盘缘高光、食物凹凸与投影可见；图像生成是本任务实现这些可见材质的制作要求。"
+    },
+    {
+      "id": "M6",
+      "requirement_zh": "恰有两组数据标注，每组包含质量、类别名、整份热量；右上为 240 g / Turkey breast / (252 kcal)，左下为 120 g / Broccoli / (36 kcal)。质量数字突出，单位较小，名称及热量为次级文字。",
+      "reference_evidence_zh": "原图右上和左下各有一个三层白色标注块，克数最大，食物名称与括号热量较小。"
+    },
+    {
+      "id": "M7",
+      "requirement_zh": "恰有两条白色斜向虚线引导线，分别连接右上标注与右侧火鸡胸肉、左下标注与左侧西兰花，终点对应清楚，且不穿过文字。",
+      "reference_evidence_zh": "原图两处标注与盘内对应食品之间各有一条斜向白色虚线。"
+    }
+  ],
+  "data": {
+    "data_status": "SYNTHETIC DATA",
+    "category_order": [
+      "broccoli",
+      "turkey_breast"
+    ],
+    "categories": [
+      {
+        "id": "broccoli",
+        "label": "Broccoli",
+        "object_position": "left_on_plate",
+        "callout_position": "lower_left"
+      },
+      {
+        "id": "turkey_breast",
+        "label": "Turkey breast",
+        "object_position": "right_on_plate",
+        "callout_position": "upper_right"
+      }
+    ],
+    "series": [
+      {
+        "id": "serving_mass",
+        "label": "Serving mass",
+        "unit": "g",
+        "values": [
+          120,
+          240
+        ]
+      },
+      {
+        "id": "serving_energy",
+        "label": "Serving energy",
+        "unit": "kcal",
+        "values": [
+          36,
+          252
+        ]
+      }
+    ],
+    "value_scope": "Values refer to each entire food portion, not each floret, slice, or 100 g.",
+    "visible_disclosure": "SYNTHETIC DATA",
+    "visible_encoding_note": "Illustrative portions; values in labels."
+  },
+  "data_tables": [
+    {
+      "title": "数据",
+      "headers": [
+        "类别",
+        "Serving mass",
+        "Serving energy"
+      ],
+      "rows": [
+        [
+          "Broccoli",
+          "120",
+          "36"
+        ],
+        [
+          "Turkey breast",
+          "240",
+          "252"
+        ]
+      ]
+    }
+  ],
+  "encoding": "数据结构为两个食物类别乘两个指标。series 中 values 按 category_order 对齐。对类别 i，质量文字严格显示十进制整数 m_i 加单位 g，热量文字严格显示十进制整数 e_i 加单位 kcal；两者均是该类别整份食物的总量。每条虚线实现类别到画面食物组的一对一绑定：左下块绑定盘左西兰花，右上块绑定盘右火鸡胸肉。质量与热量是两个独立的直接数值标注，没有共享或双重坐标轴；字体层级区分主次指标，不随数值缩放。食物的屏幕投影面积、厚度、高度、块数、阴影、盘面占比以及引导线长度均不编码数值，因此不能从食物面积推算克数或热量，也不要求质量 2:1 对应面积 2:1。盘面不是未投影圆盘上的角度图或份额图。西兰花各朵和肉纤维是外观细节，没有每朵、每片对应固定数值的单位规则。视角采用近垂直俯视，无需几何透视变换。",
+  "acceptance": [
+    "数据准确：两类、两个指标和两组标注的数量必须精确；Broccoli 对应 120 g 与 36 kcal，Turkey breast 对应 240 g 与 252 kcal。四个数值及单位必须完全正确，热量必须指整份食物。",
+    "来源透明：最终图清晰显示原样英文 SYNTHETIC DATA，并显示 Illustrative portions; values in labels.。不把合成值标为测量、数据库统计或参考图原始值。",
+    "结构完整：单个俯视餐盘、左西兰花与右火鸡胸肉、左叉右刀、右上与左下两个标注块和两条对应虚线全部保留。西兰花的重叠、茎与花冠以及火鸡肉纤维可辨；餐盘、两类食物和餐具均不被画布裁断。",
+    "材质与实际生成使用：最终主体内确实使用本次图像生成得到的两类食物素材；原始生成文件、提示词及素材使用记录可追溯到成图中的对应食物。仅有生成声明或只生成一个角落装饰不满足此项。",
+    "编码无歧义：数字按直接标注读取，食物位置和虚线只绑定类别。食物可见大小与质量、热量不承担比例关系，不以食物面积比例检验数据。未设置定量几何通道，因此本例没有适用的满量程长度或角度份额测试；若出现任何定量几何主张，仍须按明确的同一编码检验，长度或面积误差不超过满量程的 3%，角度份额误差不超过 3 个百分点，且不能改变本简报编码。",
+    "清晰度与尺寸：输出画布为 2100×1946 像素；两组完整标注、合成声明及编码说明在该画布上可读，无缺字、遮挡或截断。质量文字明显大于次级文字，次级文字建议至少 30 像素，虚线终点和对应食物之间无歧义。",
+    "验收以数值、数量、食物身份、相对布局、材质类别、数据绑定和实际素材使用为准；不要求指定字体、品牌、精确花朵数或逐像素复刻，轻微纹理和排版润饰差异不是主要失败。"
+  ],
+  "reference_observations": "单幅近方形画面，青蓝色表面上居中放一只白色圆瓷盘；左侧银色四齿叉，右侧银色餐刀，柄均朝下。盘左是多朵叠放的绿色西兰花，可见深色花冠和浅色茎；盘右是纵向浅色熟火鸡胸肉，表面有纤维纹理。盘沿、餐具反光及柔和投影形成摄影质感。右上白色标注为 250 g、turkey breast、260 kcal，左下为 125 g、broccoli、37 kcal；各有一条斜向白色虚线引向相应食物。无坐标轴、重复单位图标或饼图分区。",
+  "reference": {
+    "url": "/evidence/M084/reference.webp",
+    "width": 600,
+    "height": 556,
+    "source_sha256": "470f2a294e01d9ed015ddabb5b4aa087df683ab651052da57ac42b8934a66e5b",
+    "pixel_identical": true
+  },
+  "final": {
+    "url": "/evidence/M084/final.webp",
+    "width": 2100,
+    "height": 1946,
+    "source_sha256": "1cc35ea9f571acb02dd6e251dedb415bf69cf3d91e201b22387ddd9c29d7205e",
+    "pixel_identical": true
+  },
+  "assets": [
+    {
+      "url": "/evidence/M084/asset-1.webp",
+      "width": 1303,
+      "height": 1207,
+      "source_sha256": "57d58c30cef485f11be08adaaad7714425845203b062d99558f2d68732fcf738",
+      "pixel_identical": true
+    },
+    {
+      "url": "/evidence/M084/asset-2.webp",
+      "width": 1303,
+      "height": 1207,
+      "source_sha256": "c746ade6c5eef1cad80cacb101ee16795febad0b61aab79fa7b6af0806fcc1d2",
+      "pixel_identical": true
+    }
+  ],
+  "repeats": [],
+  "ai_verdict": "pass",
+  "ai_review": {
+    "verdict": "pass",
+    "confidence": 0.98,
+    "brief_is_feasible": true,
+    "reference_viewed": true,
+    "final_viewed": true,
+    "generated_assets_visibly_used": true,
+    "code_controls_data_geometry": true,
+    "visual_observations_before_code_zh": "参考图：青蓝背景、中央白盘、左侧多朵西兰花与右侧纵向浅色肉块，盘外左叉右刀，右上及左下各有数值块和白色虚线。成图：保留该单面板俯视结构；四齿叉、刀、盘和食物完整，西兰花颗粒花冠、分枝茎及交叠可辨，肉块可见纵向纤维。右上清晰显示 240 g / Turkey breast / (252 kcal)，左下显示 120 g / Broccoli / (36 kcal)，数字大于单位和次级文字。恰见两条白色斜向虚线，分别落在相应食物上且不穿过文字。顶部 SYNTHETIC DATA 与底部 Illustrative portions; values in labels. 可读；未见明显错绑、裁切、异常层序或破坏食物身份的接缝。此记录写于查看代码之前。",
+    "summary_zh": "通过。两组数据、单位、类别绑定与必需声明均正确且清晰。完整俯视白盘、左西兰花、右纵向浅色纤维肉块及左叉右刀符合要求；摄影素材在主体中实际使用，未发现破坏结构、身份或解读的可见缺陷。简报仅要求直接数值标注，技术上可行。",
+    "issues": [],
+    "measurement_notes_zh": "独立读取成图确认 PNG、2100×1946。目视核对 120 g / Broccoli / (36 kcal) 与 240 g / Turkey breast / (252 kcal)，两组一致的字号层级及两条正确指向食物的虚线。代码将 raw_02.png 的 [125,91,1175,1064] 区域等比放大 2 倍；独立像素比较与 scene.png 完全一致，成图有 96.8883% 像素与该底图完全相同，所检两类食物内部区域均完全保留。独立检查文字与引线掩模交集为 0。引线终点 (850,1298)、(1345,745) 来自代码记录，并非独立像素定位；分别与目视的西兰花、肉块位置相符，两点周围均检出白色线段。代码直接读取数据并控制文字、字号、位置及绑定引线；本例没有按数值缩放的长度、面积或角度通道，因此不进行食物面积比例检验。原始素材及提示词哈希与生成记录一致；所供 provenance 记录两次已完成生成事件，verification.json 报告复现逐像素一致，成图哈希经独立核对一致。",
+    "uncertainties_zh": "摄影外观无法单独鉴定肉类物种；此处依据冻结身份、生成提示、标签及符合要求的浅色纤维外观评估。生成工具产物与本地素材的来源对应依赖所供审计及生成记录，未访问其外部路径。原始摄影细节经 2 倍放大，未将插值像素视为新增纹理证据。"
+  },
+  "ai_confirmation": null,
+  "reproduction": {
+    "render_succeeded": true,
+    "pixel_identical": true
+  },
+  "actual_work": {
+    "summary_zh": "已完成 2100×1946 食品摄影式信息图；精确标签、复现脚本、原始生成素材与自检记录齐全。",
+    "image_generation_calls": 2,
+    "full_render_count": 1
+  }
+}

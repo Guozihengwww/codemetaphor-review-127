@@ -1,0 +1,237 @@
+{
+  "id": "M051",
+  "reference_id": 385,
+  "title": "鼻形轮廓编码的合成手术趋势",
+  "source_identity": "本地 reference.png，1472×1840 像素；可见标题为 American Nose Jobs，是拍摄于方格纸上的手绘鼻部手术主题信息图。未提供作者或可核验的统计来源。",
+  "group": "fusion",
+  "brief": "制作一张1600×2000像素的竖幅合成数据海报，主题为虚构的年度鼻部手术次数。保留上方大标题、下方单面板图、方格纸实物质感，以及橙色手绘面部与数量边界融合的结构。标题可用 Nose Procedure Study，标题附近必须清楚显示 SYNTHETIC DATA。年份自下向上排列，手术数自左向右增加；采用给定的五个数值和插值规则形成向右突出的侧面鼻子。鼻梁左侧上部保留一只带绿色虹膜和睫毛的插画眼睛。下游制作时，实际使用图像生成得到的橙色手绘面部材质与眼睛素材，可为同一张素材；通过精确路径裁剪材质，再叠加可读坐标和文字。方格可透过部分橙色笔触显现。字体可自由选择，刻度和合成声明建议至少32像素。",
+  "requirements": [
+    {
+      "id": "M1",
+      "requirement_zh": "保留竖幅、顶部大标题和其下单一主图的构图，只有一个数值系列和一个数据面板；标题明确鼻部手术主题。",
+      "reference_evidence_zh": "原图上半部有横跨纸面的 American Nose Jobs 大标题，下方只有一幅鼻形图。"
+    },
+    {
+      "id": "M2",
+      "requirement_zh": "黑色左轴表示年份，下轴表示百万次手术；五个年份刻度自下而上为1995、2000、2005、2010、2015，横轴从零基线延伸到4并标出1、2、3、4，保持等距线性尺度。",
+      "reference_evidence_zh": "原图左侧写有 YEAR，并有五个等距年份位置；下侧有1至4及百万手术的单位文字，时间并不沿水平轴排列。"
+    },
+    {
+      "id": "M3",
+      "requirement_zh": "橙色连续填充区域的右边界本身构成侧面鼻子：底部短竖边、向右上伸出的鼻下斜缘、2000处最右的尖端、向左上收回的长鼻背和顶端短竖直鼻梁均需保留，边界按给定数据及插值生成。",
+      "reference_evidence_zh": "原图底端在约1.5处有短竖线，2000附近突出至接近4，再以长斜线回到上方约2的位置，并接一段短竖边。"
+    },
+    {
+      "id": "M4",
+      "requirement_zh": "在面部上部、鼻梁左侧叠加一只插画眼睛，保留浅色眼白、靠右的绿色虹膜、黑色瞳孔、眼睑和睫毛；眼睛位于填色区域内，不承担数据编码。",
+      "reference_evidence_zh": "原图2010至2015一带的橙色区域内有一只绿眼睛，黑色睫毛和瞳孔清楚可见。"
+    },
+    {
+      "id": "M5",
+      "requirement_zh": "主体保持橙色彩铅或蜡笔式手绘插画外观，具有不均匀涂色或细笔触，配黑色墨线轮廓；线条可轻微手绘化，其中心线仍须服从量值几何。",
+      "reference_evidence_zh": "参考主体是橙色斑驳手涂区域，能见涂抹痕迹，鼻缘和坐标为较粗黑色手绘线。"
+    },
+    {
+      "id": "M6",
+      "requirement_zh": "保留近正视的实体方格纸观感：浅色纸面、蓝紫色细方格、可见纸边与轻微阴影；方格延伸到图外，并在部分橙色区域内仍可辨认，轴线与数据边界比方格更醒目。",
+      "reference_evidence_zh": "参考图的规则方格覆盖整张纸及橙色填色内部，纸张置于浅灰背景上，右缘和下缘可见轻微投影。"
+    }
+  ],
+  "data": {
+    "synthetic": true,
+    "required_disclosure": "SYNTHETIC DATA",
+    "subject": "Fictional annual nose procedure counts",
+    "category_field": "year",
+    "category_unit": "calendar year",
+    "categories": [
+      1995,
+      2000,
+      2005,
+      2010,
+      2015
+    ],
+    "series": [
+      {
+        "id": "nose_procedures",
+        "label": "Nose procedures",
+        "unit": "million procedures per indicated year",
+        "values": [
+          1.42,
+          3.83,
+          3.13,
+          2.43,
+          1.94
+        ]
+      }
+    ],
+    "unit_definition": {
+      "one_axis_unit_in_procedures": 1000000,
+      "one_hundredth_axis_unit_in_procedures": 10000
+    },
+    "axes": {
+      "horizontal": {
+        "binding": "nose_procedures",
+        "domain": [
+          0,
+          4
+        ],
+        "baseline": 0,
+        "ticks": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "label": "PROCEDURES (MILLIONS)"
+      },
+      "vertical": {
+        "binding": "year",
+        "domain": [
+          1995,
+          2015
+        ],
+        "ticks": [
+          1995,
+          2000,
+          2005,
+          2010,
+          2015
+        ],
+        "direction": "bottom_to_top",
+        "label": "YEAR"
+      }
+    },
+    "outline_interpolation": {
+      "method": "piecewise_linear_through_anchors",
+      "anchor_fields": [
+        "year",
+        "million_procedures"
+      ],
+      "anchors": [
+        [
+          1995,
+          1.42
+        ],
+        [
+          1996,
+          1.42
+        ],
+        [
+          2000,
+          3.83
+        ],
+        [
+          2005,
+          3.13
+        ],
+        [
+          2010,
+          2.43
+        ],
+        [
+          2013.5,
+          1.94
+        ],
+        [
+          2015,
+          1.94
+        ]
+      ],
+      "non_observation_anchor_years": [
+        1996,
+        2013.5
+      ],
+      "note": "The two additional anchors only define illustrative interpolation and the short vertical profile edges; they are not additional observations or labeled time points."
+    }
+  },
+  "data_tables": [
+    {
+      "title": "数据",
+      "headers": [
+        "类别",
+        "Nose procedures"
+      ],
+      "rows": [
+        [
+          "1995",
+          "1.42"
+        ],
+        [
+          "2000",
+          "3.83"
+        ],
+        [
+          "2005",
+          "3.13"
+        ],
+        [
+          "2010",
+          "2.43"
+        ],
+        [
+          "2015",
+          "1.94"
+        ]
+      ]
+    }
+  ],
+  "encoding": "采用正视二维坐标，横轴绑定年度手术数v，范围0至4百万；纵轴绑定年份t，范围1995至2015，越晚越高。设屏幕左下原点为(x0,y0)、绘图区宽W高H，则x=x0+W*v/4，y=y0-H*(t-1995)/20。推荐(x0,y0)=(590,1490)、W=560、H=840；允许整体平移及等比缩放。1横轴单位等于1,000,000次，0.01单位等于10,000次。将data_json中的七个轮廓节点按年份递增用直线连接，再连接到(0,2015)和(0,1995)闭合填色。1995至1996保持1.42，形成底部短竖边；1996至2000线性增至3.83；2000至2013.5按每年减少0.14线性收回1.94，经过2005的3.13和2010的2.43；2013.5至2015保持1.94，形成上部短鼻梁。只有五个标示年份是数据样本，两个控制节点不另加刻度或点符号。每一指定年份从零基线到右边界的水平距离编码该年数值；鼻子总高度只表示20年时间跨度，整块面积不是另一项数量或份额。眼睛为非计量覆盖图层，不从逻辑填充区域中扣除。量值图不作透视变形；纸张边缘和阴影可营造近正视照片感。",
+  "acceptance": [
+    "数据源必须原样使用五个年份及对应数值：1995=1.42、2000=3.83、2005=3.13、2010=2.43、2015=1.94。单位、年份、四个非零横轴刻度必须准确；面板、系列、眼睛各一个，纵轴五个年份刻度。两个插值控制节点不计作额外样本。无需另添数值表或圆点。",
+    "按实际绘图区W、H测量黑色轮廓中心线：各数据年份、控制节点及其间线段的水平误差不得超过0.03W，即0.12百万次；纵向定位误差不得超过0.03H，即0.6年。必须保留所规定的两个短竖直段。整体平移或等比缩放后按归一化坐标核验，不要求固定像素位置。",
+    "数据边界必须直接组成鼻梁、鼻尖和鼻下缘，眼睛与橙色填充整合为同一个侧面局部插画；鼻尖在2000处最宽，上方收窄。保留M1至M6描述的结构、材质与图层关系。",
+    "成图必须清楚显示 SYNTHETIC DATA，并能直接读出年份轴、百万次手术单位及全部刻度。标题、眼睛、轴标签不得被裁切；纹理和方格不得遮蔽计量边界。不得把合成数值标成真实国家统计。",
+    "必须有真实的图像生成素材用于主要橙色手绘面部材质及眼睛，可合成于同一素材中；最终画面须实际显示这些素材。提供生成调用、原始素材及合成使用位置的可追溯记录，只有生成记录而未用于成图不满足要求。坐标、文字和裁剪路径可以由程序完成。",
+    "输出画布为1600×2000像素，所有必要文字在该尺寸可读。字体差异、纸边形状或笔触随机性的轻微差别不是主要失败项；文字数字和必备元素计数须准确。本图没有角度或份额编码。"
+  ],
+  "reference_observations": "竖幅画面近乎正视一张蓝紫色方格纸，纸边及轻微投影可见。上方是手写大标题，下方仅有一个橙色填充区域和黑色左、下坐标轴。纵轴有五个年份位置，底端1995、顶端2015，中间一处字迹涂改；横轴标1、2、3、4及百万手术单位。右边界由底部短竖边斜伸至2000附近的鼻尖，再长斜收回上部短鼻梁。上部叠有白色眼白、绿色虹膜、黑色瞳孔及睫毛。没有独立数据点符号或其他面板。",
+  "reference": {
+    "url": "/evidence/M051/reference.webp",
+    "width": 1472,
+    "height": 1840,
+    "source_sha256": "e569b3e1fb4aae53aad19d31aa03394fd1a0acfa667bdeccc4f07a93397c6a81",
+    "pixel_identical": true
+  },
+  "final": {
+    "url": "/evidence/M051/final.webp",
+    "width": 1600,
+    "height": 2000,
+    "source_sha256": "595e4038e4634600242e171f7ca6b2ae77ba010e31982a2bb6120e2a3afa9cfd",
+    "pixel_identical": true
+  },
+  "assets": [
+    {
+      "url": "/evidence/M051/asset-1.webp",
+      "width": 1254,
+      "height": 1254,
+      "source_sha256": "c68ca537ac04a67c19462caf330c715b81f1b976a985128d7984bb23322b8a92",
+      "pixel_identical": true
+    }
+  ],
+  "repeats": [],
+  "ai_verdict": "pass",
+  "ai_review": {
+    "verdict": "pass",
+    "confidence": 0.98,
+    "brief_is_feasible": true,
+    "reference_viewed": true,
+    "final_viewed": true,
+    "generated_assets_visibly_used": true,
+    "code_controls_data_geometry": true,
+    "visual_observations_before_code_zh": "参考图为方格纸上的单幅橙色鼻形图，上部有一只绿眼睛，标题为 American Nose Jobs。成图为竖幅方格纸海报，顶部标题 Nose Procedure Study 及 SYNTHETIC DATA 完整清晰；下方只有一个橙色鼻形数据区域和一只眼睛。年份由下至上为1995、2000、2005、2010、2015，横轴显示0、1、2、3、4及 PROCEDURES (MILLIONS)，YEAR 可读。鼻尖位于2000高度且接近横轴4，上部向左收窄，顶部及底部短竖边均可见。眼睛位于橙色区域上部、鼻梁左侧，有浅色眼白、靠右绿色虹膜、黑色瞳孔和睫毛。橙色有细密笔触和斑驳，方格透过填充显现；纸边和阴影可见，数据轴保持正视。未见标签裁切或纹理遮住计量边界。",
+    "summary_zh": "通过。数据宽度、刻度绑定及七节点鼻形轮廓符合冻结要求；单面板、单眼睛、橙色笔触、方格纸和合成声明完整清晰。生成素材实质用于主体与眼睛，代码控制量值几何，未发现显著遮挡、接缝或失真。简报可行且编码明确。",
+    "issues": [],
+    "measurement_notes_zh": "独立从1600×2000最终PNG提取黑线，按可见刻度校准：x0≈542、W≈671.5、H≈1008像素；横轴刻度间距168像素，年份间距252像素。线段像素拟合所得1995、2000、2005、2010、2015宽度依次约1.4200、3.8317、3.1303、2.4296、1.9395百万次，对应目标1.42、3.83、3.13、2.43、1.94。999行轮廓扫描最大水平误差1.917像素（0.286%全量程），低于3%容差。底部、顶部短竖段拟合长度约50.2、76.1像素，目标50.4、75.6像素。详见pixel_measurements.json。代码核查另证实七节点控制填充遮罩和黑线，眼睛为非计量覆盖层。已查看原始及处理后素材；原始素材哈希匹配准备记录。provenance.json记录一次完成的图像生成事件；所供verification.json报告逐像素复现一致，其最终文件哈希与本次读取一致。",
+    "uncertainties_zh": "黑线阈值、抗锯齿和圆角使像素中心及交点拟合有约1–2像素定位不确定性，远低于容差。生成来源及复现执行依据所供审计记录；本次未重跑会写入生成目录的渲染脚本。"
+  },
+  "ai_confirmation": null,
+  "reproduction": {
+    "render_succeeded": true,
+    "pixel_identical": true
+  },
+  "actual_work": {
+    "summary_zh": "已生成1600×2000鼻形合成数据海报final.png，提供可复现render.py、原始生成素材、提示词、素材清单及几何自检。实际轮廓最大水平偏差为2.44像素。",
+    "image_generation_calls": 1,
+    "full_render_count": 1
+  }
+}

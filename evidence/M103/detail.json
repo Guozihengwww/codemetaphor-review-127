@@ -1,0 +1,618 @@
+{
+  "id": "M103",
+  "reference_id": 623,
+  "title": "沙丘行旅中的温升情景与合成不确定性区间",
+  "source_identity": "唯一视觉来源为本案例的 reference.png（1000×1000）。原图是一幅以沙丘和行旅人物拼贴温升情景、申请量变化趋势及两级区间带的信息图。",
+  "group": "other",
+  "brief": "制作一张2000×2000的信息图，保留参考图中上升区间带从沙丘间展开、人物在前景行走的组合关系。使用 data_json 中唯一一套合成数据，主题为假想温升下迁移申请量的相对变化。主标题使用 Synthetic Warming Scenarios，副标题使用 Illustrative change in relocation requests，并在标题区清楚标示 SYNTHETIC DATA。上方保留深炭灰颗粒质感，沙丘采用具有真实沙纹、柔和阴影和层叠坡面的摄影式拼贴外观；右下安排六名匿名行旅人物，长衣、肩背包裹、落地阴影和远近大小可辨。沙丘及人物须使用实际图像生成所得素材，可以分别生成后合成。图表本身由代码精确绘制：一条黑色折线、黄色99%外区间和橙红90%内区间。两带从左下共同零点展开，向右上显著增宽，保留其下方很薄的黄色外缘；色带可以有细颗粒纹理和轻微落影。场景要与图形在底部相接并叠合，正式数据边界必须可辨。横轴1至5依次标注，纵轴使用统一百分比刻度和水平网格，图例放左下并按99%、90%顺序排列。不增加其他面板、数据系列或人物数量的数值含义。无需复制原字体、面孔或精确人物姿态。",
+  "requirements": [
+    {
+      "id": "M1",
+      "requirement_zh": "采用一个方形主面板，顶部为清晰标题和说明，上部深灰黑颗粒背景，下部由沙丘占据；所有图表与场景共享同一画布。标题区显著标示 SYNTHETIC DATA。",
+      "reference_evidence_zh": "原图为1000×1000方形单幅，白色标题居上，黑色颗粒背景与下部沙漠场景相接；合成标识为本任务的数据来源要求。"
+    },
+    {
+      "id": "M2",
+      "requirement_zh": "保留横轴1、2、3、4、5的顺序和一个共同零点，用六节点、五段的细黑折线表现向右加速上升的中心情景。",
+      "reference_evidence_zh": "原图横轴能读到五个温升标签，黑线从左下沙丘附近出发，在后两个区间明显变陡。"
+    },
+    {
+      "id": "M3",
+      "requirement_zh": "必须同时存在黄色99%外区间与橙红90%内区间，均含独立上下界；保留上方宽黄色区及下方窄黄色外缘，不能把色带简化成两块从零起算的堆叠面积。",
+      "reference_evidence_zh": "原图橙红主体位于黄色外带内部，右上露出宽黄色区域，放大后可见橙红下缘还有狭窄黄色条。"
+    },
+    {
+      "id": "M4",
+      "requirement_zh": "使用同一线性百分比纵轴与线性°C横轴；显示0、100、200、300、400、500纵轴标签、1至5横轴标签、水平细网格和两轴单位。少量负下界仍纳入绘图区。",
+      "reference_evidence_zh": "原图左侧为百分比纵轴，100至500按百递增并配水平线，下方为°C横轴。新增清楚的零刻度及负值空间用于消除原图底部读数歧义。"
+    },
+    {
+      "id": "M5",
+      "requirement_zh": "沙丘须有写实或摄影拼贴式的沙粒、前景波纹、明暗坡面和多层遮挡，米白与暖赭色相间，从左侧中下部延伸至底边；使用真正生成的可见图像素材。",
+      "reference_evidence_zh": "原图左侧和底部可见多个前后沙脊、照明坡面及大面积细密沙纹，沙漠不是单一平涂底色。"
+    },
+    {
+      "id": "M6",
+      "requirement_zh": "右下保留恰好六名匿名行旅人物，呈前大后小的松散队列并有局部遮挡；长衣、若干肩背包裹及接地阴影须可辨，人物不编码人数统计。",
+      "reference_evidence_zh": "原图右下放大可辨六个人物，近处人物较大，后方三人较小；长衣与包裹是可辨认的轮廓部件。"
+    },
+    {
+      "id": "M7",
+      "requirement_zh": "数据带起点要贴近左下沙丘，宽阔上缘向右上展开，窄下缘沿近地位置延伸；以图形覆盖背景沙丘、近地阴影和前景人物建立同场景关系，同时保持数据边界完整可见。",
+      "reference_evidence_zh": "原图两色带从沙丘接缝附近展开，底部贴近沙脊并有阴影感，人物叠于更前方地面，形成图表与实景的空间联系。"
+    },
+    {
+      "id": "M8",
+      "requirement_zh": "左下保留两个色块的区间图例，黄色99%在前、橙红90%在后，标题使用 ILLUSTRATIVE INTERVALS；图例、轴和标题不得被人物或色带遮挡。",
+      "reference_evidence_zh": "原图左下存在黄色99%、橙红90%的双色区间图例，其位置与右下人物形成分区。"
+    }
+  ],
+  "data": {
+    "synthetic": true,
+    "visible_data_label": "SYNTHETIC DATA",
+    "title": "Synthetic Warming Scenarios",
+    "subtitle": "Illustrative change in relocation requests",
+    "x": {
+      "name": "AVERAGE TEMPERATURE RISE",
+      "unit": "°C",
+      "values": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "labeled_ticks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "domain": [
+        0,
+        5
+      ]
+    },
+    "y": {
+      "name": "CHANGE IN RELOCATION REQUESTS",
+      "unit": "%",
+      "definition": "Relative change from a fixed hypothetical baseline; values are synthetic percentages, not percentage shares.",
+      "domain": [
+        -10,
+        500
+      ],
+      "labeled_ticks": [
+        0,
+        100,
+        200,
+        300,
+        400,
+        500
+      ]
+    },
+    "series": [
+      {
+        "id": "central",
+        "name": "Central scenario",
+        "unit": "%",
+        "values": [
+          0,
+          9,
+          23,
+          48,
+          96,
+          182
+        ]
+      },
+      {
+        "id": "lower90",
+        "name": "90% interval lower bound",
+        "unit": "%",
+        "values": [
+          0,
+          -1,
+          -2,
+          7,
+          24,
+          43
+        ]
+      },
+      {
+        "id": "upper90",
+        "name": "90% interval upper bound",
+        "unit": "%",
+        "values": [
+          0,
+          16,
+          41,
+          93,
+          178,
+          362
+        ]
+      },
+      {
+        "id": "lower99",
+        "name": "99% interval lower bound",
+        "unit": "%",
+        "values": [
+          0,
+          -4,
+          -7,
+          2,
+          14,
+          26
+        ]
+      },
+      {
+        "id": "upper99",
+        "name": "99% interval upper bound",
+        "unit": "%",
+        "values": [
+          0,
+          32,
+          61,
+          126,
+          241,
+          492
+        ]
+      }
+    ],
+    "intervals": [
+      {
+        "name": "99%",
+        "nominal_coverage_percent": 99,
+        "lower_series": "lower99",
+        "upper_series": "upper99",
+        "color": "golden yellow"
+      },
+      {
+        "name": "90%",
+        "nominal_coverage_percent": 90,
+        "lower_series": "lower90",
+        "upper_series": "upper90",
+        "color": "red-orange"
+      }
+    ],
+    "legend_title": "ILLUSTRATIVE INTERVALS",
+    "interval_note": "Synthetic envelopes with nominal 90% and 99% labels; no fitted model or empirical coverage is claimed.",
+    "context_objects": {
+      "travelers": 6,
+      "people_encode_values": false
+    },
+    "geometry": {
+      "canvas_pixels": [
+        2000,
+        2000
+      ],
+      "screen_x": "500 + 284 * x",
+      "screen_y": "1450 - 2.30 * value",
+      "interpolation": "piecewise linear between consecutive x values",
+      "chart_projection": "front-facing 2D; no perspective transform"
+    }
+  },
+  "data_tables": [
+    {
+      "title": "数据 · 横坐标 · 数值",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2",
+          "1"
+        ],
+        [
+          "3",
+          "2"
+        ],
+        [
+          "4",
+          "3"
+        ],
+        [
+          "5",
+          "4"
+        ],
+        [
+          "6",
+          "5"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 横坐标 · labeled_ticks",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "2",
+          "2"
+        ],
+        [
+          "3",
+          "3"
+        ],
+        [
+          "4",
+          "4"
+        ],
+        [
+          "5",
+          "5"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 横坐标 · domain",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2",
+          "5"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 纵坐标 · domain",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "-10"
+        ],
+        [
+          "2",
+          "500"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 纵坐标 · labeled_ticks",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2",
+          "100"
+        ],
+        [
+          "3",
+          "200"
+        ],
+        [
+          "4",
+          "300"
+        ],
+        [
+          "5",
+          "400"
+        ],
+        [
+          "6",
+          "500"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 系列",
+      "headers": [
+        "标识",
+        "名称",
+        "单位"
+      ],
+      "rows": [
+        [
+          "central",
+          "Central scenario",
+          "%"
+        ],
+        [
+          "lower90",
+          "90% interval lower bound",
+          "%"
+        ],
+        [
+          "upper90",
+          "90% interval upper bound",
+          "%"
+        ],
+        [
+          "lower99",
+          "99% interval lower bound",
+          "%"
+        ],
+        [
+          "upper99",
+          "99% interval upper bound",
+          "%"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 系列 · central · 数值",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2",
+          "9"
+        ],
+        [
+          "3",
+          "23"
+        ],
+        [
+          "4",
+          "48"
+        ],
+        [
+          "5",
+          "96"
+        ],
+        [
+          "6",
+          "182"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 系列 · lower90 · 数值",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2",
+          "-1"
+        ],
+        [
+          "3",
+          "-2"
+        ],
+        [
+          "4",
+          "7"
+        ],
+        [
+          "5",
+          "24"
+        ],
+        [
+          "6",
+          "43"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 系列 · upper90 · 数值",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2",
+          "16"
+        ],
+        [
+          "3",
+          "41"
+        ],
+        [
+          "4",
+          "93"
+        ],
+        [
+          "5",
+          "178"
+        ],
+        [
+          "6",
+          "362"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 系列 · lower99 · 数值",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2",
+          "-4"
+        ],
+        [
+          "3",
+          "-7"
+        ],
+        [
+          "4",
+          "2"
+        ],
+        [
+          "5",
+          "14"
+        ],
+        [
+          "6",
+          "26"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · 系列 · upper99 · 数值",
+      "headers": [
+        "序号",
+        "值"
+      ],
+      "rows": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "2",
+          "32"
+        ],
+        [
+          "3",
+          "61"
+        ],
+        [
+          "4",
+          "126"
+        ],
+        [
+          "5",
+          "241"
+        ],
+        [
+          "6",
+          "492"
+        ]
+      ]
+    },
+    {
+      "title": "数据 · intervals",
+      "headers": [
+        "名称",
+        "nominal_coverage_percent",
+        "lower_series",
+        "upper_series",
+        "color"
+      ],
+      "rows": [
+        [
+          "99%",
+          "99",
+          "lower99",
+          "upper99",
+          "golden yellow"
+        ],
+        [
+          "90%",
+          "90",
+          "lower90",
+          "upper90",
+          "red-orange"
+        ]
+      ]
+    }
+  ],
+  "encoding": "横轴是温升x，单位°C；纵轴是相对固定假想基准的申请量变化v，单位%，不是总量份额。六个计算节点为x=0、1、2、3、4、5，其中0为共同起点，主要横轴标签仅显示1至5。采用同一正视二维坐标平面：屏幕X=500+284x，屏幕Y=1450−2.30v，像素原点在画布左上。x轴域为[0,5]，y轴域为[−10,500]；零线Y=1450，500刻度Y=300。水平网格可向左延长至纵轴标签区域，但所有刻度必须对齐上述映射。黑线按central六个节点依次直线连接，不使用会越界的平滑插值。99%多边形由upper99按x递增连接，再由lower99按x递减闭合；90%多边形同理由upper90和lower90闭合。先绘制黄色99%带，再叠加橙红90%带，最后绘制黑线。每个节点及线段内部均须满足lower99≤lower90≤central≤upper90≤upper99。两层带表达上下界，不是堆叠面积，也不统一从零线填充。其面积、斜边长度、纹理、阴影、沙丘高度及人物数量不另行编码数值。地形与人物保留场景纵深，图表坐标不作透视变换；色带的质感或落影不得改变数值顶点。沙丘可在图表后方重叠，并在下边缘相接；前景遮挡只能覆盖非数据投影或外部装饰，不能遮住正式上下界和折线。",
+  "acceptance": [
+    "数据准确：完整使用给定六个横坐标和五组各六个数值；计算数据、横纵轴刻度及图例中的90%和99%必须准确，不能改值、调序或删节点。几何与指定映射的偏差不超过各轴满量程3%，即横向0.15°C、纵向15.3个百分点；这是位置容差，不是修改数据的许可。",
+    "结构完整：恰有一个主面板、一条中心折线、两层具有上下界的嵌套区间及六名人物。黄色外带和橙红内带的上下顺序始终正确，窄黄色下缘必须存在，不能用位置容差为删除小组件辩解。",
+    "隐喻与空间关系：彩色带从左下沙丘间展开并向右上加宽；写实沙纹、层叠坡面、携包长衣人物、前后大小及局部遮挡均可辨。图表的线性轴和数值边界保持完整，沙丘面积、人物数量及色带阴影不承担额外数据编码。",
+    "清晰度：在2000×2000画布上，SYNTHETIC DATA、两轴名称与单位、全部规定刻度和两个图例项均清楚可读，无关键文字遮挡；刻度和图例建议不小于30像素。图例明确是合成示意区间，画面不把这些数值宣称为真实统计或验证后的预测。",
+    "真实使用生成素材：沙丘和人物须由一次或多次实际图像生成得到的素材组成，并在最终画面中清晰可见；交付保留原始生成素材及其与成图的使用记录。仅有未使用的生成图、仅声称调用或仅生成不相关小装饰均不满足。参考图不得直接充当最终沙漠人物素材。",
+    "验收以数据、必要视觉结构、生成素材的实际使用和可读性为准；不要求像素匹配、相同字体或人物面孔，细微色调差异和轻微边缘修饰问题不作为主要失败。"
+  ],
+  "reference_observations": "原图为方形单面板：上部深灰黑颗粒背景，顶部白色大标题及两行说明；横轴标注1至5°C，纵轴可见100至500%的刻度和水平细网格。一条细黑折线向右加速上升，外层黄色99%区间包围内层橙红90%区间，橙红带下方仍露出窄黄色条。沙丘从左侧中下部延伸至整个底部，具有明暗坡面、前后遮挡和前景沙纹。右下可辨认六名穿长衣、携带包裹的行旅人物，前大后小且局部重叠。双色区间图例位于左下。",
+  "reference": {
+    "url": "/evidence/M103/reference.webp",
+    "width": 1000,
+    "height": 1000,
+    "source_sha256": "aa57c2dae095c4f6af825364de0fc596222f5abd031f1277cf20c5438300a827",
+    "pixel_identical": true
+  },
+  "final": {
+    "url": "/evidence/M103/final.webp",
+    "width": 2000,
+    "height": 2000,
+    "source_sha256": "eeb4cbde3baa5535d5cbd8ee9bb591fdad5b3fc43599da1024a188187271a433",
+    "pixel_identical": true
+  },
+  "assets": [
+    {
+      "url": "/evidence/M103/asset-1.webp",
+      "width": 1254,
+      "height": 1254,
+      "source_sha256": "01e59e69a78aa5db741c1d3db9fb6649642c24586a12ba7b91838db5fe2ea580",
+      "pixel_identical": true
+    },
+    {
+      "url": "/evidence/M103/asset-2.webp",
+      "width": 1254,
+      "height": 1254,
+      "source_sha256": "39d8502163fc3cebbb1c8938564ae61d179809ab8ad9d5d838ec2b7ac6a01c36",
+      "pixel_identical": true
+    }
+  ],
+  "repeats": [],
+  "ai_verdict": "pass",
+  "ai_review": {
+    "verdict": "pass",
+    "confidence": 0.97,
+    "brief_is_feasible": true,
+    "reference_viewed": true,
+    "final_viewed": true,
+    "generated_assets_visibly_used": true,
+    "code_controls_data_geometry": true,
+    "visual_observations_before_code_zh": "参考图为方形沙丘行旅信息图，深色上部、黄／橙红嵌套色带与上升黑线相接，右下可辨六人。成图保留此结构；顶部主副标题及 SYNTHETIC DATA 清楚，纵轴0至500%和横轴1至5°C可读，左下图例黄色99%在橙红90%之前。色带从左下共同尖点展开，上方黄色区域向右增宽，橙红带下方可见连续窄黄色外缘；黑线向右逐段变陡。下方沙丘具沙纹、明暗坡面和层叠沙脊；右下可辨六名长衣携包人物，近大远小，局部轮廓重叠并有地面阴影。人物与图例未遮住数据边界，暂未见明显断缝或标签错配。",
+    "summary_zh": "冻结要求可行。成图保留准确的嵌套区间、上升折线、沙丘行旅场景和恰好六名人物，规定标签完整可读。生成素材在画面中实质可见，未发现超出容差的数据偏移、错误遮挡或必要隐喻缺失。",
+    "issues": [],
+    "measurement_notes_zh": "独立读取2000×2000最终PNG，在50列按颜色阈值抽样四条区间边界，并在预期黑线附近提取暗色中心；目标来自冻结数据的分段线性插值。边界最大偏差7.30像素，黑线中心最大偏差0.53像素，均低于纵向35.19像素容差。在X=784、1068、1352、1636、1919处，下黄色外缘分别测得6、12、12、23、39像素；X=1068处外带下缘Y=1465，确认零线Y=1450以下的负值部分保留。代码核查显示五组原始数值经指定线性映射构成两个闭合多边形及五段折线，黄色先于橙红绘制，人物位于数据区下方。已查看两张原始生成素材，其沙脊和六人服饰与成图对应；provenance记录两次完成的生成事件。最终文件哈希与复现记录一致，后者报告像素完全一致；这些记录作为视觉检查的补充。",
+    "uncertainties_zh": "像素检测为抽样，颜色阈值会受抗锯齿、颗粒及起点附近细线重叠影响，不等同于逐像素穷尽验证。生成调用的执行依据为所提供的审计记录；未访问记录所指的外部会话。"
+  },
+  "ai_confirmation": null,
+  "reproduction": {
+    "render_succeeded": true,
+    "pixel_identical": true
+  },
+  "actual_work": {
+    "summary_zh": "已生成2000×2000的final.png与本地复现脚本render.py；内置生成素材和原始输出保存在assets/，提示词保存在prompts/。197列像素检查通过，最大边界偏差1.66像素。",
+    "image_generation_calls": 2,
+    "full_render_count": 1
+  }
+}

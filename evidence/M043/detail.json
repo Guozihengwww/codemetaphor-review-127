@@ -1,0 +1,191 @@
+{
+  "id": "M043",
+  "reference_id": 1142,
+  "title": "面包与纸钞：合成年度食品预算损耗",
+  "source_identity": "唯一视觉证据为 input.json 指定的本地 reference.png，原图 400×566 像素。它是一张题为 Food for thought… 的食品浪费宣传海报，中央以切片面包和纸钞拼接表达食品与金钱的关系。",
+  "group": "fusion",
+  "brief": "制作一张 1440×2040 像素的竖版英文信息海报，主题为一个虚构家庭年度食品预算的损耗。保留单一的面包—纸钞融合主体：左侧写实切片面包表示 Used，占 70%；右侧写实样张纸钞表示 Wasted，占 30%，像同一面包末段被金钱材质替换。保留金棕烤皮、多片切片结构、纸钞印刷质感、浅透视、细竖缝、接触阴影及淡倒影。用浅米色背景和较大留白，顶部放简短中性英文标题；右上以 30% 为主要数字，说明食品预算损耗；左下以 £450 wasted per household per year 为第二数字层级。给左右部分放清楚的 Used 与 Wasted 标签，并在标题附近清晰显示 SYNTHETIC DATA。全部数据均为虚构；£1,500 总预算和 £1,050 已使用预算供计算核对，不必新增数字面板。主体面包和纸钞材质必须实际来自图像生成，随后用代码或矢量遮罩控制比例并排版文字。",
+  "requirements": [
+    {
+      "id": "M1",
+      "requirement_zh": "保留一个由左右两块材质拼接而成的融合主体，恰好两个数据类别，顺序为左 Used 面包、右 Wasted 纸钞；按定义实现 70:30 的水平宽度分割和一条细白竖缝。",
+      "reference_evidence_zh": "原图面包在左、纸钞在右，二者以细白竖缝分隔并组成同一横向物体，宽度约为二比一。"
+    },
+    {
+      "id": "M2",
+      "requirement_zh": "面包必须保留密集连续的多片结构、可见竖向切片接缝、圆弧肩部、较深的烤皮及粗糙多孔材质；切缝密度应接近参考中的切片面包，不设每片代表多少预算。",
+      "reference_evidence_zh": "左部是带多条切缝的真实切片面包，顶部烤皮较深，侧面有细孔、凹凸和自然不规则轮廓。"
+    },
+    {
+      "id": "M3",
+      "requirement_zh": "右部应清楚辨认为纸钞材质：浅粉褐纸底、细密雕刻线纹、少量彩色印刷区及右上斜折轮廓，保留 £ 符号并标 SPECIMEN。可用中性纹章或装饰图案，无需指定人物、真实纸钞设计或数字面额。",
+      "reference_evidence_zh": "原图右部显示粉褐色纸钞、细密印刷和彩色底纹，右上轮廓呈斜角；纸钞替代了面包的末段。"
+    },
+    {
+      "id": "M4",
+      "requirement_zh": "保持近正侧视、略见顶部的浅透视；面包和纸钞共享水平底线及一致光照，作为一个组合物体立在浅色反光台面上，下方有柔和接触阴影和衰减的淡倒影。",
+      "reference_evidence_zh": "原图可以看到烤皮上缘的体积变化，主体底部对齐，台面上同时出现阴影和向下变淡的倒影。"
+    },
+    {
+      "id": "M5",
+      "requirement_zh": "保留竖版海报和单一大主体的构图：顶部标题、右上占比说明、中部面包—纸钞主体、左下年度金额说明，浅米色背景与留白；不要求原徽章、网址或精确字体。",
+      "reference_evidence_zh": "400×566 原图依次呈现上方标题、右上 1/3 说明、中央横向主体及左下金额段落。"
+    },
+    {
+      "id": "M6",
+      "requirement_zh": "清晰显示 SYNTHETIC DATA、Used、Wasted、主要数字 30% 及次要数字 £450，并明确后者是每个虚构家庭每年的食品预算损耗；不得将其表述为真实家庭平均统计。",
+      "reference_evidence_zh": "原图使用突出的 1/3 和独立的 £400/年说明，形成占比与年度金额两个信息层级。"
+    },
+    {
+      "id": "M7",
+      "requirement_zh": "最终面包和纸钞两个主体区域都必须实际使用图像生成的材质或物体素材，可一次生成组合素材，也可分别生成后合成；精确比例及可读文字由后续代码排版控制。",
+      "reference_evidence_zh": "原图的主要视觉信息依赖烤皮、切片凹凸、纸张和印刷细节，而非纯色几何填充。"
+    }
+  ],
+  "data": {
+    "synthetic": true,
+    "display_notice": "SYNTHETIC DATA",
+    "context": "Hypothetical annual household food budget",
+    "period": "one year",
+    "population_unit": "one hypothetical household",
+    "categories": [
+      {
+        "id": "used",
+        "label_en": "Used",
+        "order": 1,
+        "visual_material": "sliced bread"
+      },
+      {
+        "id": "wasted",
+        "label_en": "Wasted",
+        "order": 2,
+        "visual_material": "specimen banknote"
+      }
+    ],
+    "series": [
+      {
+        "id": "annual_food_budget",
+        "label_en": "Synthetic annual food budget",
+        "unit": "GBP per household per year",
+        "category_order": [
+          "used",
+          "wasted"
+        ],
+        "values": [
+          1050,
+          450
+        ],
+        "shares_pct": [
+          70,
+          30
+        ],
+        "total": 1500
+      }
+    ],
+    "callouts": [
+      {
+        "id": "waste_share",
+        "category_id": "wasted",
+        "value": 30,
+        "unit": "percent",
+        "text_en": "30% of this food budget is wasted"
+      },
+      {
+        "id": "annual_waste",
+        "category_id": "wasted",
+        "value": 450,
+        "unit": "GBP per household per year",
+        "text_en": "£450 wasted per household per year"
+      }
+    ],
+    "non_data_details": {
+      "bread_slice_seams": "Material structure only; no unit value or count encoding.",
+      "banknote_markings": "Use SPECIMEN and a £ symbol; no numeric denomination."
+    }
+  },
+  "data_tables": [
+    {
+      "title": "数据",
+      "headers": [
+        "类别",
+        "annual_food_budget"
+      ],
+      "rows": [
+        [
+          "used",
+          "1050"
+        ],
+        [
+          "wasted",
+          "450"
+        ]
+      ]
+    }
+  ],
+  "encoding": "唯一比例通道为最终屏幕平面的水平线性宽度，不是可见面积、体积、面包高度或切片数。令 L 为面包主体与纸钞主体各自水平外接宽度之和，外接宽度不含阴影、倒影、标签或中间白缝。设面包左界为 x0，则面包占 [x0, x0+0.70L]；设白缝宽 g，0<g≤0.01L，则纸钞占 [x0+0.70L+g, x0+L+g]。白缝不是第三类别，计算比例时扣除。两块主体底线对齐，整体高度相近；弧形顶部、左端圆角和纸钞右上斜角可保留，不以轮廓面积验算。生成纹理可带浅透视和顶面线索，但最终遮罩的上述横向边界必须固定；不得在其外另加计量侧面。比例由 value/1500 得到：1050/1500=70%，450/1500=30%。£450 是同一 Wasted 类别的年度金额注释，不是第二坐标轴或另一个图形尺度。",
+  "acceptance": [
+    "数据可核对：data_json 可解析，恰好两个类别且顺序正确；1050+450=1500，份额为 70% 与 30%，两者合计 100%。图上的必要数字必须准确为 30% 和 £450，年度及每户单位清楚；若显示补数或总额，也须与数据一致。",
+    "按最终屏幕主体外接宽度测量，排除白缝、阴影和倒影后，面包与纸钞分别为总宽度的 70% 与 30%。线性几何允许误差不超过满量程 L 的 3%，等价份额误差不超过 3 个百分点；类别数、顺序、必要文字及必要数值不使用此容差。白缝清楚且不超过 L 的 1%。",
+    "物象结构完整：一排多片写实切片面包与样张纸钞末段构成一个主体；弧形烤皮、切片接缝、印刷细纹、纸钞右上斜角、浅透视、共同底线、接触阴影及淡倒影均可辨认。切片不被标为计数单位，曲面面积不被当作占比。",
+    "保持一个主视觉及占比、年度金额两个信息层级。SYNTHETIC DATA 显眼，左右类别与材质对应明确；文字不被主体遮挡、不裁切，必要说明在 1440×2040 画布上清楚可读。",
+    "实际图像生成使用可核查：保留生成的原始素材及其在最终面包、纸钞区域中的使用记录。只有背景使用生成图、主体完全用纯色形状或未使用的生成素材，均不满足要求。",
+    "输出画布为 1440×2040。无需复刻原人物、徽章、网址或字形；轻微色彩、纹理、字体或反射强弱差异不构成主要失败。"
+  ],
+  "reference_observations": "竖版浅米色背景，顶部大黑标题，右上突出 1/3；中央是近正侧视、略见顶部的金棕色切片面包，左侧约占组合宽度的三分之二，右侧约三分之一由带印刷纹样的纸钞片替代。两部分共用底线，中间有细白竖缝；面包有连续密集的切片接缝、拱起的烤皮和多孔质感，纸钞右上轮廓倾斜。主体下方有接触阴影和淡倒影。左下另有 £400/年的金额说明，右下为小徽章。没有坐标轴或多面板；切片没有单位计数标注。",
+  "reference": {
+    "url": "/evidence/M043/reference.webp",
+    "width": 400,
+    "height": 566,
+    "source_sha256": "9390ddb0f60c62bc0f2d84357e94b2741e6b0272f15e7a169a16de8876a57ab2",
+    "pixel_identical": true
+  },
+  "final": {
+    "url": "/evidence/M043/final.webp",
+    "width": 1440,
+    "height": 2040,
+    "source_sha256": "e41a5068dc38b29d6e05324434850c95fe69ea81f3a7508b842c13f36bf7b489",
+    "pixel_identical": true
+  },
+  "assets": [
+    {
+      "url": "/evidence/M043/asset-1.webp",
+      "width": 1889,
+      "height": 832,
+      "source_sha256": "c0a43ebec38b4b1924f80727369e57a5028d6f4390e4ae4fe878f0c425cd6fc2",
+      "pixel_identical": true
+    },
+    {
+      "url": "/evidence/M043/asset-2.webp",
+      "width": 1890,
+      "height": 832,
+      "source_sha256": "14745482116422cc37a1a271b3aebcdfe5f97cb18790aaf3a12cfcf78588002c",
+      "pixel_identical": true
+    }
+  ],
+  "repeats": [],
+  "ai_verdict": "pass",
+  "ai_review": {
+    "verdict": "pass",
+    "confidence": 0.98,
+    "brief_is_feasible": true,
+    "reference_viewed": true,
+    "final_viewed": true,
+    "generated_assets_visibly_used": true,
+    "code_controls_data_geometry": true,
+    "visual_observations_before_code_zh": "参考图：浅米色竖版海报，左侧密集切片面包与右侧粉褐色纸钞由细白竖缝分隔，底线齐平，下方有阴影和淡倒影；上方标题及占比、左下年度金额形成两层数字说明。\n成图：中央为左面包、右纸钞的单一组合，宽度目测约七比三。面包有连续竖向切缝、深金棕色弧顶和多孔表面；纸钞有粉褐底、细纹、植物纹章、右上斜角、£ 和 SPECIMEN。细白缝贯穿两块接合处，底线齐平，下方有柔和阴影及衰减倒影。Used 与 Wasted 各在对应材质上方。SYNTHETIC DATA、30%、£450、每户每年及虚构预算说明均清楚，无可见裁切或遮挡。精确宽度及素材来源尚待核对。",
+    "summary_zh": "符合冻结简报。左右材质与 Used、Wasted 对应，水平宽度为 70:30；30%、£450、每户每年及合成数据说明准确清晰。切片面包、样张纸钞、浅透视、白缝、共同底线、阴影与淡倒影均可辨认，生成材质实际承担数据主体。未发现需列为问题的可见缺陷。",
+    "issues": [],
+    "measurement_notes_zh": "直接读取 final.png，画布为 1440×2040。在 y=825–1399 的主体带内，以两侧背景插值估计底色，最大 RGB 差大于 30 的像素列形成 [96,964) 与 [972,1344) 两段，宽 868、372，合计 1240，份额为 70%、30%。y=1100 的白缝为 x=964–971，共 8 像素，占总数据宽度 0.645%。所提供遮罩的下界均为 y=1430，与目视齐平底线相符。代码读取 1050/1500、450/1500 控制缩放宽度；两份处理素材的不透明像素与成图对应区域 RGB 完全一致。raw_02 的切片孔隙和纸钞纹章可视对应，原始文件哈希与生成日志一致，provenance 记录两次完成的生成事件。verification.json 报告复现逐像素一致，已独立核对成图哈希匹配。",
+    "uncertainties_zh": "抗锯齿与背景估计会影响像素级边界判定，但未见接近 3 个百分点容差的偏差。纹理自然程度和浅透视一致性采用目视判断。未重新执行渲染；复现一致性依据所提供报告及本次文件哈希核对。"
+  },
+  "ai_confirmation": null,
+  "reproduction": {
+    "render_succeeded": true,
+    "pixel_identical": true
+  },
+  "actual_work": {
+    "summary_zh": "已生成 1440×2040 海报 final.png，保留素材、提示词、3 个候选及可复现 render.py；最终实测主体宽度为 868:372，准确对应 70%:30%，白缝 8 像素。",
+    "image_generation_calls": 2,
+    "full_render_count": 3
+  }
+}

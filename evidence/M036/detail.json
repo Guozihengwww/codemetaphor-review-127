@@ -1,0 +1,198 @@
+{
+  "id": "M036",
+  "reference_id": 129,
+  "title": "纸套中的意面：六类合成产量对比",
+  "source_identity": "唯一视觉来源为所供 reference.png，尺寸为 1000×742。原图以 PASTA 为大标题、PASTA PRODUCTION (TONS) 为指标说明，依次显示 Italy、USA、Germany、France、Spain、UK 六个类别。检索提示中的 replacement 与可见的意面替代柱形标记相符。",
+  "group": "replacement",
+  "brief": "制作一张单面板意面产量信息图，画布 2000×1484。按从左到右 Italy、USA、Germany、France、Spain、UK 的顺序放置六个独立的意面纸套，使用 data_json 中的一组全新合成数值。保留纸套的立体折面、略俯视可见的开口、细面条互相遮挡的束状结构、金黄干面质感及青绿色纸材。所有纸套共用基线和数据零点，露出的意面高度形成两束高、四束低的对比，UK 只露出极短尖端。背景为暖白，物体下方保留一致方向的柔和接地阴影。大红色 PASTA 标题及红色 PASTA PRODUCTION (TONNES) 指标说明放在上部偏右的留白区，左侧为最高的一束；在标题区域清晰标注 SYNTHETIC DATA。每组上方写完整数值，下方放可辨认的相应国旗小图标和英文国名。底部补充简短英文说明：Exposed pasta height represents tonnes; sleeve height is excluded. 不添加原图没有的第二系列或其他数据面板。数值文字和长度边界可用代码叠加，主物体的纸材与意面材质须实际采用图像生成素材。",
+  "requirements": [
+    {
+      "id": "M1",
+      "requirement_zh": "保留单面板、单系列、恰好六组横向排列的物体；类别顺序固定为 Italy、USA、Germany、France、Spain、UK。",
+      "reference_evidence_zh": "原图从左至右显示这六个国名，各自对应一个意面纸套，未见第二系列或分面。"
+    },
+    {
+      "id": "M2",
+      "requirement_zh": "六个载体必须可辨认为青绿色开口纸套，呈近长方体但有纸材折面和略不齐边缘；保留正面、窄侧面及略俯视可见的开口。",
+      "reference_evidence_zh": "各青绿包装均有前后袋口边缘、不同明暗的正侧面和折角轮廓。"
+    },
+    {
+      "id": "M3",
+      "requirement_zh": "数据标记由多根密集、互相遮挡的细长金黄干意面构成，保留橙黄明暗、纵向高光和自然错落的束尖；不能简化为一根粗柱或平面色条。",
+      "reference_evidence_zh": "第一、二束可见许多细圆柱面条及亮暗线条，后四束仍显示分离的短尖和束状重叠。"
+    },
+    {
+      "id": "M4",
+      "requirement_zh": "以纸套前缘以上的面条最高尖端高度实施统一线性编码，保留两束明显较高、后三束短且接近、UK 极短但可见的六项递减结构；包装高度不参与编码。",
+      "reference_evidence_zh": "原图前两束明显伸出纸套较远，Germany、France、Spain 仅露出短段，UK 的面条接近袋口；各包装自身均具有不可忽略的非零高度。"
+    },
+    {
+      "id": "M5",
+      "requirement_zh": "六个完整合成数值用醒目的黑色文字置于各组束尖或袋口最高轮廓上方；六面对应国旗与英文国名放在各物体下方，保持明确的一一对应。",
+      "reference_evidence_zh": "原图每束上方均有粗黑数值，下方均有一面国旗及一个国名。"
+    },
+    {
+      "id": "M6",
+      "requirement_zh": "保留暖白背景、上部偏右的大红色主题标题及红色指标说明，最高的一束位于左侧，标题与物体之间保有足够留白；无需复制字体或来源小字。",
+      "reference_evidence_zh": "原图 PASTA 大字占据右上区域，红色指标行位于其下，左上空间由最长意面束占据。"
+    },
+    {
+      "id": "M7",
+      "requirement_zh": "六个纸套落在同一视觉地面附近，各自保留柔和的左向接地阴影，使包装与其上方的面条属于同一个立体物体。",
+      "reference_evidence_zh": "六个包装底部接近同一水平位置，均有向左延伸并逐渐淡出的浅色投影。"
+    }
+  ],
+  "data": {
+    "data_status": "SYNTHETIC DATA",
+    "measure": "Illustrative pasta production",
+    "unit": "metric tonnes",
+    "categories": [
+      "Italy",
+      "USA",
+      "Germany",
+      "France",
+      "Spain",
+      "UK"
+    ],
+    "flag_country_codes": [
+      "IT",
+      "US",
+      "DE",
+      "FR",
+      "ES",
+      "GB"
+    ],
+    "series": [
+      {
+        "id": "synthetic_production",
+        "label": "Synthetic pasta production",
+        "unit": "metric tonnes",
+        "values": [
+          3280000,
+          2060000,
+          278000,
+          246000,
+          229000,
+          34000
+        ]
+      }
+    ],
+    "value_labels": [
+      "3,280,000",
+      "2,060,000",
+      "278,000",
+      "246,000",
+      "229,000",
+      "34,000"
+    ],
+    "encoding": {
+      "channel": "projected_screen_exposed_pasta_height",
+      "scale_domain_tonnes": [
+        0,
+        3500000
+      ],
+      "full_scale_height_px": 620,
+      "front_rim_zero_y_px": 950,
+      "sleeve_front_body_height_px": 295,
+      "sleeve_base_y_px": 1245,
+      "height_formula": "h_px = 620 * value / 3500000",
+      "top_formula": "top_y_px = 950 - h_px"
+    }
+  },
+  "data_tables": [
+    {
+      "title": "数据",
+      "headers": [
+        "类别",
+        "Synthetic pasta production"
+      ],
+      "rows": [
+        [
+          "Italy",
+          "3280000"
+        ],
+        [
+          "USA",
+          "2060000"
+        ],
+        [
+          "Germany",
+          "278000"
+        ],
+        [
+          "France",
+          "246000"
+        ],
+        [
+          "Spain",
+          "229000"
+        ],
+        [
+          "UK",
+          "34000"
+        ]
+      ]
+    }
+  ],
+  "encoding": "仅编码投影后的屏幕纵向露出高度，不编码面积、半径、面条根数、包装大小或物体总高度。画布坐标原点在左上，y 向下。每个纸套开口前缘中央、面条核心宽度内的近水平边界统一为 y0=950 px；其正面主体从 y0 延伸至 y=1245 px，295 px 的包装高度不计入数据。满量程为 3,500,000 metric tonnes，对应 620 px。第 i 束高度 h_i=620×v_i/3,500,000，最高可见面条尖端位于 y_i=950−h_i。六束目标高度依次为 581.029、364.914、49.246、43.577、40.566、6.023 px，渲染时按未舍入公式计算。允许束尖自然错落，至少一根达到目标最高点，其余尖端可位于该束高度的 80% 至 100% 之间；这些细节不另作计数。纸套的后缘、开口和窄侧面可呈略俯视的立体外观，但不得再对已定义的屏幕数据高度做透视缩短；前缘遮罩不得掩去 UK 的正值短尖。整个物体从地面到最高点的高度为包装高度加露出高度，不能直接当作产量。无须增加坐标轴或网格，依靠六个精确数值、统一零点和图内高度说明完成读数。",
+  "acceptance": [
+    "成图为 2000×1484；恰好六个主物体、六个数值、六个国旗图标和六个国家标签，类别顺序与数据绑定完全正确，不增删系列或面板。",
+    "六个数值必须逐项为 3,280,000、2,060,000、278,000、246,000、229,000、34,000，单位明确为 metric tonnes；SYNTHETIC DATA 必须在主画面清楚可读。数值与类别数量要求精确，不使用几何容差替代。",
+    "用屏幕中纸套前缘中央的零点到最高可见面条尖端测量数据高度，与 h=620×v/3,500,000 的误差不超过满量程的 3%，即 18.6 px；六束仍须按数据严格递减。UK 按约 6.023 px 的正值绘制并保持可见，不因容差或裁切消失，也不设会改变比例的最小高度下限。",
+    "六个纸套前缘共享 y=950 px 的零点，包装正面高度统一为 295 px；对这些指定几何位置和长度允许不超过相应满尺度 3% 的误差。不得把包装加面条的总高度、像素面积或面条根数宣称为数值比例。",
+    "主体必须同时具备可辨认的多根金黄细面条、青绿开口纸套、正侧面关系、束内遮挡和接地阴影；前两束高、后四束低、最后一束极短的结构清楚。普通矩形柱加装饰图标不满足这一结构。",
+    "全部数值、国家标签、单位、合成声明和高度说明均能在成图分辨率下直接辨读；标注不得与束尖、袋口、标题或相邻标注重叠到影响辨认。国旗可简化绘制但必须可辨识并与类别相符，不要求逐像素复制。",
+    "生成环节至少实际使用一次图像生成，最终主物体中可见的意面或纸套材质必须来自生成素材，并保留可核验的原始素材及使用记录。允许共用素材、透明遮罩、裁切和平铺后以代码控制长度；仅生成背景或未实际合入画面的素材不满足要求。",
+    "验收以数据、必要物体结构、可读性和生成素材实际使用为准；字体差异、轻微材质与阴影修饰差异不构成主要失败，不要求品牌标识或精确像素复刻。"
+  ],
+  "reference_observations": "暖白背景上横排六个青绿色开口纸套，每套装有密集重叠的金黄细干意面。纸套可见正面、窄侧面、袋口及向左延伸的柔和接地阴影；面条具有明暗与纵向高光。前两束显著较长，后四束仅露出短段，最后一束接近袋口。六个黑色数值在物体上方，六面国旗和国名位于下方；右上为很大的红色标题及较小的红色指标文字。",
+  "reference": {
+    "url": "/evidence/M036/reference.webp",
+    "width": 1000,
+    "height": 742,
+    "source_sha256": "000d5823bb26cb64acacd1a065882ad573a79de73dbd39e9e9cc826d4c7a1bc5",
+    "pixel_identical": true
+  },
+  "final": {
+    "url": "/evidence/M036/final.webp",
+    "width": 2000,
+    "height": 1484,
+    "source_sha256": "1d123ee1ee257b52c45c8d5c3c99d3421964e38661c40379243dd823ee05c8b6",
+    "pixel_identical": true
+  },
+  "assets": [
+    {
+      "url": "/evidence/M036/asset-1.webp",
+      "width": 1024,
+      "height": 1536,
+      "source_sha256": "3fa5f9e9d4c752cedc64ceea0b825004ea8b3ef33466c92c78c829a5872fb46d",
+      "pixel_identical": true
+    }
+  ],
+  "repeats": [],
+  "ai_verdict": "pass",
+  "ai_review": {
+    "verdict": "pass",
+    "confidence": 0.98,
+    "brief_is_feasible": true,
+    "reference_viewed": true,
+    "final_viewed": true,
+    "generated_assets_visibly_used": true,
+    "code_controls_data_geometry": true,
+    "visual_observations_before_code_zh": "参考图：暖白背景，六个青绿开口纸套横排，金黄细意面形成两束高、四束低；右上为红色 PASTA 标题，物体下有国旗、国名与左向阴影。\n成图：可见六个独立青绿纸套，均有正面、窄右侧面和深色袋口；意面有多根细长明暗纹理和错落尖端。六个黑色数值依次为 3,280,000、2,060,000、278,000、246,000、229,000、34,000，下方国旗和 Italy、USA、Germany、France、Spain、UK 对应清楚。前两束明显较高，Germany、France、Spain 短且接近；UK 在前缘上方可见一条极短的金黄尖端。纸套底部接近同一水平，均有向左淡出的阴影。右上红色标题、指标、SYNTHETIC DATA、metric tonnes 和底部高度说明均可读，未见影响辨读的重叠。此处尚未作像素测量。",
+    "summary_zh": "通过。六组数值、国旗与国家绑定正确，露出高度符合统一线性比例，UK 保留约 6 px 正值。青绿开口纸套、金黄细意面、遮挡层次及左向阴影均可辨认，必需文字完整清楚。生成材质实际用于主体，代码控制数据高度，未发现必要要求的可见缺陷。",
+    "issues": [],
+    "measurement_notes_zh": "直接检查最终 2000×1484 PNG，以三档 RGB 色差阈值独立分割金黄面条：Italy、USA、Germany、France、Spain、UK 的露出高度分别为 579–581、364–365、49、43–44、40–41、6 px；目标分别为 581.029、364.914、49.246、43.577、40.566、6.023 px，最大阈值相关偏差约 2.03 px，小于 18.6 px 容差，顺序严格递减。六组金黄最后一行均为 y=949，青绿正面从 y=950 开始；中央高覆盖纸面至 y=1242，约 293 px，接近 295 px 目标。UK 局部放大确认短尖实际可见。代码核查显示 h=620×v/3500000，后缘、面条、正面依次合成，无最小高度下限。raw_01.png 的束尖及纸纹与成图对应；审计记录确认一次已完成图像生成。所供复现记录报告逐像素一致，本次实测 final.png SHA256 与该记录一致。",
+    "uncertainties_zh": "抗锯齿与颜色分割阈值造成约 1–2 px 边界定位差，不影响容差或递减判断。UK 仅约 6 px，缩略显示会弱化尖端，已结合原图局部检查。复现一致性引用所供 verification.json 并核对成图哈希，本次未独立重跑渲染器。"
+  },
+  "ai_confirmation": null,
+  "reproduction": {
+    "render_succeeded": true,
+    "pixel_identical": true
+  },
+  "actual_work": {
+    "summary_zh": "已完成 2000×1484 的 final.png、可复现 render.py、原始生成素材、提示词和自检记录；六组高度最大误差约 1.03 像素，UK 的 6 像素短尖可见。",
+    "image_generation_calls": 1,
+    "full_render_count": 3
+  }
+}
