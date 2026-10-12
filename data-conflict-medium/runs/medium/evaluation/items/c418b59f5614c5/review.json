@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为格纸上跳水者与底部水面结合的插画。成图人物呈U形，脚、双腿、髋、躯干、肩臂、头颈、红泳帽及蓝白泳衣可辨。十个节点从脚部沿身体至手部；十个年份和金额标签清楚，水面标为零基准。未见明显遮挡或断裂。",
+  "summary_zh": "七项检查均通过。数据、标签绑定和线性高度编码正确，人物素材实质承载数据路径，完整跳水者身份保留。已保存review.json。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量2000×2000的image.png，未重新渲染。水面零线y≈1660，35,000刻度y≈370，满量程1290像素，3%容差为38.7像素。十点横向间距均约168像素，节点高度与输入值最大偏差约1像素。九段路径检查225个像素截面，均检出青线，截面中心相对节点连线最大偏差约1.5像素。素材像素辅助核验显示路径中心均位于变形人物的不透明区域。代码中数据坐标同时控制折线和人物变形，此为代码证据。",
+  "uncertainties_zh": "抗锯齿和描边带来约±2像素定位误差，不作亚像素精度判断，误差远低于容差。未独立鉴证素材生成履历，仅核验所供素材在成图中的实质使用。身体外缘和厚度按冻结定义不承担额外数值。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "一个系列、十个节点及2000至2018的十个年份完整，顺序与输入一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "十个金额依次为27,800、23,200、17,100、10,800、5,900、11,200、18,800、25,100、29,300、31,200，均正确；纵轴0–35,000，单位USD per person。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "金额短引线连接对应节点，年份与节点横向对齐；2008年对应最低点5,900，2018年对应最高点31,200，无可见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图像素测得节点高度偏差约1像素，路径截面偏差不超过约1.5像素，远低于满量程3%的38.7像素容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和diver_warped.png，其皮肤纹理、泳帽、泳衣和完整人物在成图中可见；render.py依据数据控制素材变形、路径及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "路径从脚经腿、髋、躯干及肩臂至手，人物随当前趋势形成连贯姿势。必要身体部位完整可辨，水面提供共同零基准，未见破坏结构的遮挡或拼接。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、系列名、单位、年份及全部金额清晰完整；图例与脚注明确路径高度编码。"
+    }
+  }
+}

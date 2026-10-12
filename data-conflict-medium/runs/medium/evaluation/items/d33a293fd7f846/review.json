@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为浅灰方格纸上的肤色前臂和向右伸展的手，以主体上缘表达走势。当前成图可见九个年份及对应的九个百分比，主体上缘连接观测节点；完整手掌、五处紫色指甲、拇指和掌纹可辨。纵轴0–50%，末段年份间距较宽，标题、单位及SYNTHETIC DATA清楚。",
+  "summary_zh": "数据、标签绑定、量尺和手臂上缘编码符合要求。三处标签底板局部遮盖轮廓，属于轻微排版问题。已保存review.json，未运行submit.py。",
+  "issues": [
+    {
+      "category": "occlusion_layering",
+      "severity": "minor",
+      "requirement_id": "M6",
+      "expected_zh": "承载走势的真实上轮廓应清楚可循。",
+      "observed_zh": "17.8%、29.4%、40.2%标签右侧的浅色底板遮盖短段上轮廓；节点清楚，主体仍连贯。",
+      "evidence_zh": "缺口约位于x=1030–1064、1211–1244、1395–1425。像素检测中x=1060处肤色从y≈835恢复，按数据及轴刻度推算上缘约为y=803；约32像素属于前景遮挡深度，并非观测节点数值误差。代码确认底板绘制在主体和描边之后。",
+      "bbox_xyxy_normalized": [
+        0.514,
+        0.327,
+        0.714,
+        0.581
+      ]
+    }
+  ],
+  "measurement_notes_zh": "仅测量原始image.png（2000×1440），未重新渲染。像素刻度y=1130、980、830、680、530、380，即15像素/百分点，满量程3%为22.5像素。年份刻度x=280、460、640、820、1000、1180、1360、1540、1792，间距符合20年与28年。避开标签底板、节点及甲片的实际肤色上缘抽样，与冻结数据推算目标相差约1–6像素。末端甲片属于物体，不能把其下方肤色边界误当上缘。代码中的线性映射、PCHIP及素材变形仅作为辅助证据。",
+  "uncertainties_zh": "标签遮盖处无法直接测出被挡轮廓，已单列轻微问题。抗锯齿、描边和空心节点限制亚像素定位，未声称亚像素精度。未审计生成历史或自检文件。当前数据与允许调整的非编码手部结构兼容，未发现简报不可行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Group A及九个年份、九个数值节点完整且顺序正确；五处紫色指甲、拇指、掌纹和连续前臂均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "0.8%、2.4%、3.7%、4.6%、17.8%、29.4%、40.2%、48.2%、49.1%逐项符合输入；量尺、单位及合成数据标识正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "百分比通过短引线绑定主体上缘节点，节点对应同列年份，未见错绑、重复或遗漏。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素刻度证实共同线性轴及真实年份间距；未被标签遮盖的实际上缘抽样偏差约1–6像素，小于22.5像素容差。九个观测节点正确，短段标签遮挡另列minor。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两份素材；raw_01.png与hand_clean.png的RGB逐像素相同，透明度不同。素材中的肤色纹理、掌纹和五处甲片可在成图对应，render.py控制其变形和数据文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "前臂至上方手指的真实上缘承担走势，描线贴合物体；完整手掌、五指及前置拇指可辨，无破坏主体身份的接缝或错层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、系列、年份、数值、单位、图例及合成数据标识均清楚，无必需文字缺失或相互遮挡。"
+    }
+  }
+}

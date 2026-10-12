@@ -232,6 +232,91 @@
     ]
   },
   {
+    "case": "D14",
+    "source_case": "M055",
+    "name": "跳水者主干",
+    "conflict_type": "trend_shape",
+    "observations": [
+      {
+        "condition": "conflict",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "occlusion_layering",
+            "severity": "minor",
+            "requirement_id": "LABELS",
+            "expected_zh": "纵轴零刻度完整可读，并明确对应水面基准。",
+            "observed_zh": "左下纵轴0字的下部被水面覆盖；右下水面 = 0和底部读法仍完整，未造成基准歧义。",
+            "evidence_zh": "成图约x=155–178、y=1647–1678处，0字在y≈1660水面处截断。代码核对显示先绘制纵轴文字，再粘贴从零线开始的水面；这是对可见遮挡原因的代码佐证。",
+            "bbox_xyxy_normalized": [
+              0.0775,
+              0.8235,
+              0.089,
+              0.839
+            ]
+          }
+        ],
+        "summary_zh": "前六项核心检查全部通过。数据几何、文字绑定、完整跳水者与素材融合符合要求；仅纵轴0刻度局部遮挡，属轻微问题。"
+      }
+    ]
+  },
+  {
+    "case": "D15",
+    "source_case": "M058",
+    "name": "伸展手臂",
+    "conflict_type": "trend_shape",
+    "observations": [
+      {
+        "condition": "baseline",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "occlusion_layering",
+            "severity": "minor",
+            "requirement_id": "M6",
+            "expected_zh": "承载走势的真实上轮廓应清楚可循。",
+            "observed_zh": "17.8%、29.4%、40.2%标签右侧的浅色底板遮盖短段上轮廓；节点清楚，主体仍连贯。",
+            "evidence_zh": "缺口约位于x=1030–1064、1211–1244、1395–1425。像素检测中x=1060处肤色从y≈835恢复，按数据及轴刻度推算上缘约为y=803；约32像素属于前景遮挡深度，并非观测节点数值误差。代码确认底板绘制在主体和描边之后。",
+            "bbox_xyxy_normalized": [
+              0.514,
+              0.327,
+              0.714,
+              0.581
+            ]
+          }
+        ],
+        "summary_zh": "数据、标签绑定、量尺和手臂上缘编码符合要求。三处标签底板局部遮盖轮廓，属于轻微排版问题。已保存review.json，未运行submit.py。"
+      },
+      {
+        "condition": "baseline",
+        "stage": "final",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "occlusion_layering",
+            "severity": "minor",
+            "requirement_id": "M6",
+            "expected_zh": "承载走势的真实上轮廓应清楚可循。",
+            "observed_zh": "17.8%、29.4%、40.2%标签右侧的浅色底板遮盖短段上轮廓；节点清楚，主体仍连贯。",
+            "evidence_zh": "缺口约位于x=1030–1064、1211–1244、1395–1425。像素检测中x=1060处肤色从y≈835恢复，按数据及轴刻度推算上缘约为y=803；约32像素属于前景遮挡深度，并非观测节点数值误差。代码确认底板绘制在主体和描边之后。",
+            "bbox_xyxy_normalized": [
+              0.514,
+              0.327,
+              0.714,
+              0.581
+            ]
+          }
+        ],
+        "summary_zh": "数据、标签绑定、量尺和手臂上缘编码符合要求。三处标签底板局部遮盖轮廓，属于轻微排版问题。已保存review.json，未运行submit.py。"
+      }
+    ]
+  },
+  {
     "case": "D18",
     "source_case": "M017",
     "name": "列车长度与换算",
@@ -335,6 +420,43 @@
           }
         ],
         "summary_zh": "数据、绑定、径向增量几何与主体融合符合要求。仅Connection引线穿过部分图例刻度文字，造成轻微干扰。已保存review.json，未运行submit.py。"
+      },
+      {
+        "condition": "conflict",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "M3",
+            "expected_zh": "弯排类别名称与线束保持清楚分离。",
+            "observed_zh": "Future excitement末尾字母被一条斜向线束穿过，名称仍可读。",
+            "evidence_zh": "原尺寸成图左下第六组标题右端、约x630–675、y1340–1385处，可见来自上方的细线穿过名称末尾；这是可见排版交叠。",
+            "bbox_xyxy_normalized": [
+              0.348,
+              0.619,
+              0.377,
+              0.644
+            ]
+          },
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "M3",
+            "expected_zh": "相邻组的弯排标题与黑色数值牌保持分离。",
+            "observed_zh": "Efficiency前的辅助序号07与上方Inspiration的2%黑牌右下角相接，序号局部融入黑色边缘；类别名与2%数值仍清楚。",
+            "evidence_zh": "原尺寸成图约x935–958、y1275–1290处，07的左上笔画与2%黑牌右下角发生局部交叠，未改变两个类别的数值绑定。",
+            "bbox_xyxy_normalized": [
+              0.515,
+              0.587,
+              0.542,
+              0.607
+            ]
+          }
+        ],
+        "summary_zh": "数据、绑定、径向增量几何及颜料球承载数据的方式均符合冻结要求，前六项检查全部通过。仅见两处轻微文字与线条或标牌交叠，不影响类别及数值辨认。"
       }
     ]
   }

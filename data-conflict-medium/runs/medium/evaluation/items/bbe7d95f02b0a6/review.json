@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为悬挂的写实拼接长袖上衣。当前成图可见十二组外置标签：22.4%、6.9%及十个7.07%，引线依次连接十二种衣物色层。首层明显较大；色层覆盖衣身与双袖，保留布纹和褶皱。白领、门襟、纽扣、袖口、下摆、木衣架和挂钩完整。合成数据提示、单位及面积说明清晰。",
+  "summary_zh": "通过。数据、标签绑定和可见布料面积分区符合要求，衣物身份与素材融合完整。已保存review.json，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "仅评价原始1460×2000的image.png，未重新渲染。目视核对布料遮罩与成图轮廓后，使用代码提供的空间配准定位布料，再依据成图RGB像素分类，未使用类别遮罩或自检数值。采用归一化色度分类和5×5、9×9中值滤波抑制细条纹。9×9估算十二层面积百分比分别为22.15、7.11、6.99、7.28、7.00、7.10、6.90、7.34、7.23、6.95、7.03、6.94；两种滤波估算的最大目标偏差约0.40和0.27个百分点。代码另行确认分界由累计可见面积控制，而非带高。",
+  "uncertainties_zh": "面积是基于配准素材遮罩和成图颜色的估算，并非独立人工逐像素描边；织纹、阴影、接缝和抗锯齿会影响分类，不主张亚像素精度。两种滤波结果及目视分界共同支持容差内判断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "可见Group 01至Group 12、十二层及Share单系列；要求的衣物部件完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "22.4%、6.9%及十个7.07%与输入一致，合计100%；合成数据提示、类别数量和百分比单位清晰。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "十二条外置引线依输入顺序连接对应色层，端点及标签色签对应，无可见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图像素面积估算最大偏差约0.40个百分点，低于3个百分点容差；代码按投影可见布料并集校准面积。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及中性衣物素材；成图保留其轮廓、褶皱、纽扣、袖口和衣架。代码控制分区几何及数据文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据色层直接覆盖衣身与双袖，分界随褶皱弯曲；白领、衣架不染色，袖身遮挡和下摆层次可辨。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "全部类别、数值、系列、单位及编码说明可读，未见标签重叠或截断。"
+    }
+  }
+}
