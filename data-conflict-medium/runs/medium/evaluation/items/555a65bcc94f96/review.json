@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为树皮包围的分色木材横截面。待评图可见17类及百分比、外围引线、连续年轮、裂缝和软投影；小扇区可追踪。Region A数值右端局部叠在树皮上。标题、SYNTHETIC DATA及单位可读。",
+  "summary_zh": "前六项检查全部通过，仅Region A标注与树皮局部重叠，属于轻微排版问题。已保存review.json，未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "外围类别与数值清晰可读，背景纹理不干扰辨读。",
+      "observed_zh": "Region A的20.5%右端叠在粗糙树皮上，局部对比下降，但仍可读。",
+      "evidence_zh": "目视左上标注区，百分号与树皮纹理重叠；未造成数值缺失或绑定错误。",
+      "bbox_xyxy_normalized": [
+        0.047,
+        0.318,
+        0.14,
+        0.36
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接分析既有image.png，未重新渲染。代码坐标仅用于采样定位；三条椭圆环的实际像素分类估算与目标最大相差约0.12个百分点。排除外缘3像素后的内部面积分类最大偏差约0.11个百分点：A约20.42%、Remaining约25.68%、O约0.96%、P约0.99%。四向扫描可辨边界约x=112至1259、y=489至1591，支持共同椭圆轮廓。代码另证实累计份额控制扇角和统一投影。",
+  "uncertainties_zh": "色度分类受裂缝、相近颜色及抗锯齿影响，份额为近似估计，不主张小扇区的亚像素精度。未检查生图过程，素材使用由原始素材与成图纹理对应关系验证。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A至P及Remaining共17类、17个分区和17组外围标注完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "17个百分比均与data.json一致，两项1.0%保留，合计100.0%正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "全部引线可追踪至对应扇区，顺时针次序正确；17个锚点内侧的实际像素颜色均匹配对应分区。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见分区共心、共用椭圆外缘、无爆炸间隙；像素份额估算最大偏差约0.12个百分点，小于3个百分点容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两份木材素材，其裂缝、年轮和树皮在成图中实质可见；render.py读取素材并控制分区及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "木材切面身份明确，彩色木面承载份额；年轮连续，树皮位于数据域外，投影位于主体后方。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成提示、单位及17组标签完整可读；Region A局部压边未妨碍辨认。"
+    }
+  }
+}
