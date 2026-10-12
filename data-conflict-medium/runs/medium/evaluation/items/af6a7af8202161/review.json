@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为浅纸纹背景，七颗混色颜料球配同心圈、弯排名称及黑色数值牌，细线汇向灰度手。待评图七类分别标注42%、37%、27%、22%、19%、19%、19%；前三颗依次缩小，末三颗目视近似等大。球与圈基本共心，七线汇向捏握处。合成数据标识、百分比单位和径向图例可读。",
+  "summary_zh": "七类数据、标签绑定和径向增量比例符合冻结要求，素材实质参与数据主体，握持关系清楚。未发现违反要求的可见缺陷。已保存review.json。",
+  "issues": [],
+  "measurement_notes_zh": "测量对象为原始1800×2160的image.png，未重渲染。依据实际彩色轮廓包围盒，七球半径约161–162、149.5–150、126、114、107–107.5、107、107像素。图例像素剖面支持零核约62像素、满量程约180像素。代码推导目标半径为161.12、149.32、125.72、113.92、106.84、106.84、106.84像素，公式为62+118×值/50。像素估计与目标差异约1像素以内，低于满量程3%对应的3.54像素容差。公式及目标属于代码证据，轮廓及图例剖面属于最终图像像素证据。",
+  "uncertainties_zh": "抗锯齿、灰白旋纹和软阴影使边界识别存在约1–2像素不确定性，不主张亚像素精度。高色差阈值会漏掉白色纹理，未将其连通区域面积当作真实球尺寸。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七个类别、七颗球、七块数值牌和七条线均可见；系列说明、合成数据标识及单位齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "42%、37%、27%、22%、19%、19%、19%逐项符合data.json；图例为0–50%，每圈增加5个百分点。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "七个弯排类别名与各自球体、下方数值牌对应明确，无错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际轮廓符合共同零核上的线性径向增量，末三颗等值球尺寸一致；测量偏差在3%满量程容差内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png的七种旋纹和raw_02.png的灰度手均在成图中清楚可辨。render.py读取处理素材并控制数据遮罩、刻度和文字；项目输入与冻结文件一致。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "颜料球自身边界承载数据，球遮挡内圈且基本共心；七线汇入手指捏握处，前景拇指遮挡线端，未见破坏解读的接缝或透视错位。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、全部类别和数值、SYNTHETIC DATA、百分比单位及图例均清晰，零核和面积不编码的说明完整。"
+    }
+  }
+}

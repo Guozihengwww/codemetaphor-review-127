@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为平行斜放的红蓝双叉，齿长承载数值。当前图两组各有Group 01–07，全部数值文字与输入一致；蓝组Group 06零位没有伸出齿。两叉均有弧形叉头、细颈、长柄和彩色亮面。两柄之间另有蓝、红两条悬空弯折长条。标签、合成数据标识和单位可读。",
+  "summary_zh": "数据、标签、共享齿长尺度和叉具隐喻均符合要求。两条悬空材质残留属于次要视觉瑕疵。已保存review.json，未运行submit.py。",
+  "issues": [
+    {
+      "category": "texture_boundary",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "红蓝亮面材质与两把叉子的叉头、细颈和长柄轮廓保持整合。",
+      "observed_zh": "蓝柄右侧和红柄左侧各残留一条分离的弯折长条；未遮挡数据，也未破坏完整叉具的识别。",
+      "evidence_zh": "像素区域包围框：蓝条约[851,970,1141,1487]，红条约[1229,1072,1670,1470]。原始素材和body素材均可见相应条状部分；代码整体贴入body素材，支持素材残留的来源判断。",
+      "bbox_xyxy_normalized": [
+        0.4255,
+        0.5315,
+        0.835,
+        0.8148
+      ]
+    }
+  ],
+  "measurement_notes_zh": "仅测量指定2000×1825的image.png，未运行渲染器。代码方向和坐标用于定位，实际RGB边界用于确定齿尖及齿间叉头根线。蓝组齿长约[352,121,121,110,110,0,66]像素，红组约[440,176.3,180.5,180.5,180.3,180.5,180.3]像素。以可见20%齿长440像素校准，全部符合输入比例，3%满量程容差为13.2像素。量尺含描边跨度约442像素，与此一致。代码中的数值乘22及材质裁切仅作为实现证据。",
+  "uncertainties_zh": "抗锯齿、颜色阈值和描边带来约1–2像素的边界不确定度；不声称亚像素准确，该误差远小于规定容差。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两系列各有7个类别位置，顺序正确；蓝组6个正值齿及1个零位，红组7个正值齿。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "蓝组16%、5.5%、5.5%、5.0%、5.0%、0%、3%；红组20%、8%及五个8.2%，均与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别和值紧邻对应齿尖或零值根部；系列颜色、图例和柄上名称一致，无可见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际边界测得20%约440像素、16%约352像素、5.5%约121像素、5%约110像素、3%约66像素；8%与8.2%分别约176和180像素。零位无伸出齿，误差在容差内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "供给素材的亮面高光实际出现在叉头、颈、柄和齿上；render.py读取素材，依据输入值裁切齿长并绘制标签。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "双叉平行斜放且结构完整，实际叉齿边界承载数值；齿根连接、零位及主体方向一致。悬空残留未破坏数据结构。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、系列名称、全部类别与数值、共享量尺和零值说明均可读，无明显遮挡或裁切。"
+    }
+  }
+}

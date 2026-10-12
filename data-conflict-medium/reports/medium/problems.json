@@ -85,6 +85,37 @@
     ]
   },
   {
+    "case": "D06",
+    "source_case": "M037",
+    "name": "双叉齿",
+    "conflict_type": "category_count",
+    "observations": [
+      {
+        "condition": "conflict",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "texture_boundary",
+            "severity": "minor",
+            "requirement_id": "M3",
+            "expected_zh": "红蓝亮面材质与两把叉子的叉头、细颈和长柄轮廓保持整合。",
+            "observed_zh": "蓝柄右侧和红柄左侧各残留一条分离的弯折长条；未遮挡数据，也未破坏完整叉具的识别。",
+            "evidence_zh": "像素区域包围框：蓝条约[851,970,1141,1487]，红条约[1229,1072,1670,1470]。原始素材和body素材均可见相应条状部分；代码整体贴入body素材，支持素材残留的来源判断。",
+            "bbox_xyxy_normalized": [
+              0.4255,
+              0.5315,
+              0.835,
+              0.8148
+            ]
+          }
+        ],
+        "summary_zh": "数据、标签、共享齿长尺度和叉具隐喻均符合要求。两条悬空材质残留属于次要视觉瑕疵。已保存review.json，未运行submit.py。"
+      }
+    ]
+  },
+  {
     "case": "D09",
     "source_case": "M004",
     "name": "旗帜时间面积轮廓",
@@ -174,6 +205,29 @@
           }
         ],
         "summary_zh": "已保存review.json。前六项检查均通过：数据、绑定、几何及海洋素材融合符合要求。仅纵轴标题与单位轻微叠压，判为minor。"
+      },
+      {
+        "condition": "conflict",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "LABELS",
+            "expected_zh": "合计注释应与背景保持足够对比，时期文字清楚可辨。",
+            "observed_zh": "P12 · 2,620注释的左端落在深蓝及紫色层边缘，深色P12文字局部不清；右侧数值及底部表格中的同一期数据仍可读。",
+            "evidence_zh": "直接查看image.png：约x=1535–1665、y=695–719的注释跨越深色海水与白底，左端字符与深色背景混合。此为可见对比问题，未测量对比度数值。",
+            "bbox_xyxy_normalized": [
+              0.697,
+              0.448,
+              0.757,
+              0.464
+            ]
+          }
+        ],
+        "summary_zh": "前六项检查均通过。数据、分层几何和海洋隐喻完整，生成海水材质实质承载数量；仅P12重复合计注释局部低对比，属于轻微可读性问题。简报允许轮廓随当前数据变化，要求可行。"
       }
     ]
   },
@@ -250,6 +304,37 @@
           }
         ],
         "summary_zh": "已保存 review.json。前六项检查全部通过，数据与水流几何一致，生成素材实质参与主体。仅量轴单位末尾局部遮挡，其他完整单位仍清晰可读。"
+      }
+    ]
+  },
+  {
+    "case": "D22",
+    "source_case": "M065",
+    "name": "颜料球径向增量",
+    "conflict_type": "numeric_range",
+    "observations": [
+      {
+        "condition": "baseline",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "LABELS",
+            "expected_zh": "径向图例的百分比刻度应清晰可辨。",
+            "observed_zh": "Connection细线斜穿10%至50%附近的刻度文字；数值仍可辨认，但部分字形与线混叠。",
+            "evidence_zh": "直接查看原尺寸image.png，右下图例约x=1420–1469、y=1501–1624处可见引线穿过刻度。",
+            "bbox_xyxy_normalized": [
+              0.789,
+              0.695,
+              0.816,
+              0.752
+            ]
+          }
+        ],
+        "summary_zh": "数据、绑定、径向增量几何与主体融合符合要求。仅Connection引线穿过部分图例刻度文字，造成轻微干扰。已保存review.json，未运行submit.py。"
       }
     ]
   }

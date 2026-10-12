@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图可见浅纸纹、七颗旋纹颜料球、同心圈、弯排名称、黑色数值牌及汇向灰度手的细线。待评图保留这些主体；七牌对应42%、37%、27%、22%、19%、19%、19%，三个19%球目测近似等大。球遮住内圈；合成数据声明、单位和径向图例可读。",
+  "summary_zh": "数据、绑定、径向增量几何与主体融合符合要求。仅Connection引线穿过部分图例刻度文字，造成轻微干扰。已保存review.json，未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "径向图例的百分比刻度应清晰可辨。",
+      "observed_zh": "Connection细线斜穿10%至50%附近的刻度文字；数值仍可辨认，但部分字形与线混叠。",
+      "evidence_zh": "直接查看原尺寸image.png，右下图例约x=1420–1469、y=1501–1624处可见引线穿过刻度。",
+      "bbox_xyxy_normalized": [
+        0.789,
+        0.695,
+        0.816,
+        0.752
+      ]
+    }
+  ],
+  "measurement_notes_zh": "像素证据：对image.png的彩色主体用RGB色差15/25阈值测外接框，七球半径约161、149.5、126、114、107、107、107px，边缘不确定度约±1.5px。图例像素扫描检出11条弧线，支持零核约62px、外圈约180px。代码推导：r=62+118×v/50，目标半径为161.12、149.32、125.72、113.92、106.84、106.84、106.84px。可见边界估计与目标差异低于径向满量程3%的3.54px。",
+  "uncertainties_zh": "浅色旋纹、抗锯齿和阴影限制亚像素边界判定。握持处细线密集，逐条末端难以完全分辨，但汇聚与遮挡成立。未重新渲染，未使用生成日志或自检报告作为正确性证据。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七类别各有一个球、名称和数值牌；系列标题、合成声明、单位及0–50%图例完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "七项依次为42%、37%、27%、22%、19%、19%、19%，与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "弯排名称位于对应圈组上方，黑牌位于对应球下方，七项名称、球与数值无错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终图像可见边界符合共同零核的线性径向增量，三个19%球等径；测量差异在容差内，球与圈组共心，图例尺度一致。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png七球素材与raw_02.png灰度手，旋纹、高光和手部形态在最终图中可对应。render.py以数据控制球体蒙版半径、刻度及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "颜料材质实质填充数据球，保留混色、高光和软阴影；球遮内圈，七条线汇向灰度手并呈现指间握持遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需名称、数值、声明和单位均可读；图例部分刻度被引线穿过，但仍能辨认。"
+    }
+  }
+}
