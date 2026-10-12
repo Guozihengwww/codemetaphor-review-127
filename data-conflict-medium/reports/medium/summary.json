@@ -1,16 +1,20 @@
 {
-  "updated_at": "2026-10-12T08:35:40.979551+00:00",
+  "updated_at": "2026-10-12T08:46:03.106319+00:00",
   "case_count": 24,
   "trial_count": 48,
   "progress": {
-    "updated_at": "2026-10-12T08:35:40.979039+00:00",
+    "updated_at": "2026-10-12T08:46:03.105792+00:00",
     "planned_trials": 48,
-    "completed_trials": 0,
+    "completed_trials": 3,
     "execution": {
-      "running": 3,
-      "pending": 45
+      "ok": 3,
+      "pending": 43,
+      "running": 2
     },
-    "review_states": {},
+    "review_states": {
+      "ok": 2,
+      "running": 1
+    },
     "render_attempts": {
       "D01_baseline": 1,
       "D01_conflict": 1,
@@ -28,8 +32,8 @@
       "D07_conflict": 0,
       "D08_baseline": 0,
       "D08_conflict": 0,
-      "D09_baseline": 1,
-      "D09_conflict": 0,
+      "D09_baseline": 2,
+      "D09_conflict": 1,
       "D10_baseline": 0,
       "D10_conflict": 0,
       "D11_baseline": 0,
@@ -67,33 +71,41 @@
     "category_count": {
       "baseline": {
         "first": {
-          "pass": 0,
+          "pass": 1,
           "planned_denominator": 8,
-          "evaluated": 0,
-          "quality_counts": {},
+          "evaluated": 1,
+          "quality_counts": {
+            "pass": 1
+          },
           "confirmed_failures": 0
         },
         "final": {
-          "pass": 0,
+          "pass": 1,
           "planned_denominator": 8,
-          "evaluated": 0,
-          "quality_counts": {},
+          "evaluated": 1,
+          "quality_counts": {
+            "pass": 1
+          },
           "confirmed_failures": 0
         }
       },
       "conflict": {
         "first": {
-          "pass": 0,
+          "pass": 1,
           "planned_denominator": 8,
-          "evaluated": 0,
-          "quality_counts": {},
+          "evaluated": 1,
+          "quality_counts": {
+            "pass": 1
+          },
           "confirmed_failures": 0
         },
         "final": {
-          "pass": 0,
+          "pass": 1,
           "planned_denominator": 8,
-          "evaluated": 0,
-          "quality_counts": {},
+          "evaluated": 1,
+          "quality_counts": {
+            "pass": 1
+          },
           "confirmed_failures": 0
         }
       }
@@ -104,14 +116,18 @@
           "pass": 0,
           "planned_denominator": 8,
           "evaluated": 0,
-          "quality_counts": {},
+          "quality_counts": {
+            "unreviewed": 1
+          },
           "confirmed_failures": 0
         },
         "final": {
           "pass": 0,
           "planned_denominator": 8,
           "evaluated": 0,
-          "quality_counts": {},
+          "quality_counts": {
+            "unreviewed": 1
+          },
           "confirmed_failures": 0
         }
       },
@@ -167,5 +183,324 @@
       }
     }
   },
-  "rows": []
+  "rows": [
+    {
+      "case": "D01",
+      "source_case": "M007",
+      "name": "气瓶分层",
+      "conflict_type": "category_count",
+      "trial": "D01_baseline",
+      "condition": "baseline",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "385c3d6deb2f80",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "pass",
+      "execution": "ok",
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.98,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "读取代码前已记录：待评图保留红色护框、阀门、圆肩、直壁、瓶底及右侧阴影。18类连续堆叠，大带内部标注，小带通过左右引线连接；全部数值、192.0总量、tcm及SYNTHETIC DATA可读，未见明显缺项、错绑或文字遮挡。",
+        "summary_zh": "通过。类别、数值、绑定及可见比例符合冻结数据，气瓶身份和素材融合得到保留。已保存review.json；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "像素证据：直接分析1440×1991的image.png，数据区约从y=600至1770，高1170像素。三组无文字窄条检出的17个内部色带分界一致，各带份额最大估计误差约0.12个百分点，累计分界误差不足1像素。12个外置引线端点均位于对应色带内。代码证据：render.py以累计值/192控制带高、蒙版、文字和引线，并将素材明暗映射至瓶身；未重新渲染。",
+        "uncertainties_zh": "纹理和抗锯齿使分界定位约有±1像素不确定性，不主张亚像素精度。最窄色带约12像素，仍可辨认，测量不确定性远小于3个百分点容差。素材可见使用已核对，未检查生成过程日志。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "Region A至Q及Other Regions共18类、18条色带和18个徽章完整，顺序符合输入。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "18项显示值逐一匹配输入，包括2.0和19.0；总量192.0 tcm正确，百分比符合一位小数舍入。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "A至E及Other Regions位于对应带内；F至Q的标签、徽章和引线逐条对应，12个端点均落在相应可见色带内部。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素检出18个连续区间，带高份额最大估计差约0.12个百分点，小于3个百分点；明暗面分界一致，无小带人为放大或堆叠间断。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始及派生素材；红色护框、瓣状阀轮、六角阀体和瓶身纹理在成图中可辨，代码明确将素材合成到主体。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "彩色定量区域直接构成完整气瓶，圆肩与直壁清楚，右侧阴影连续；瓶身与护框的遮挡合理，无破坏身份或读数的接缝。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、全部类别及数值、单位、总量和SYNTHETIC DATA清晰完整；外置标签疏排，未见文字覆盖。"
+          }
+        }
+      },
+      "primary_system_success": true,
+      "confirmation": null,
+      "confirmed_failure": false
+    },
+    {
+      "case": "D01",
+      "source_case": "M007",
+      "name": "气瓶分层",
+      "conflict_type": "category_count",
+      "trial": "D01_baseline",
+      "condition": "baseline",
+      "stage": "final",
+      "round": 1,
+      "image_available": true,
+      "review_id": "385c3d6deb2f80",
+      "reused_identical_image": true,
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "pass",
+      "execution": "ok",
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.98,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "读取代码前已记录：待评图保留红色护框、阀门、圆肩、直壁、瓶底及右侧阴影。18类连续堆叠，大带内部标注，小带通过左右引线连接；全部数值、192.0总量、tcm及SYNTHETIC DATA可读，未见明显缺项、错绑或文字遮挡。",
+        "summary_zh": "通过。类别、数值、绑定及可见比例符合冻结数据，气瓶身份和素材融合得到保留。已保存review.json；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "像素证据：直接分析1440×1991的image.png，数据区约从y=600至1770，高1170像素。三组无文字窄条检出的17个内部色带分界一致，各带份额最大估计误差约0.12个百分点，累计分界误差不足1像素。12个外置引线端点均位于对应色带内。代码证据：render.py以累计值/192控制带高、蒙版、文字和引线，并将素材明暗映射至瓶身；未重新渲染。",
+        "uncertainties_zh": "纹理和抗锯齿使分界定位约有±1像素不确定性，不主张亚像素精度。最窄色带约12像素，仍可辨认，测量不确定性远小于3个百分点容差。素材可见使用已核对，未检查生成过程日志。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "Region A至Q及Other Regions共18类、18条色带和18个徽章完整，顺序符合输入。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "18项显示值逐一匹配输入，包括2.0和19.0；总量192.0 tcm正确，百分比符合一位小数舍入。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "A至E及Other Regions位于对应带内；F至Q的标签、徽章和引线逐条对应，12个端点均落在相应可见色带内部。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素检出18个连续区间，带高份额最大估计差约0.12个百分点，小于3个百分点；明暗面分界一致，无小带人为放大或堆叠间断。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始及派生素材；红色护框、瓣状阀轮、六角阀体和瓶身纹理在成图中可辨，代码明确将素材合成到主体。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "彩色定量区域直接构成完整气瓶，圆肩与直壁清楚，右侧阴影连续；瓶身与护框的遮挡合理，无破坏身份或读数的接缝。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、全部类别及数值、单位、总量和SYNTHETIC DATA清晰完整；外置标签疏排，未见文字覆盖。"
+          }
+        }
+      },
+      "primary_system_success": true,
+      "confirmation": null,
+      "confirmed_failure": false
+    },
+    {
+      "case": "D01",
+      "source_case": "M007",
+      "name": "气瓶分层",
+      "conflict_type": "category_count",
+      "trial": "D01_conflict",
+      "condition": "conflict",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "8acd5b90f76728",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "pass",
+      "execution": "ok",
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.98,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图以红色护框、阀门、圆肩和直身气瓶承载横向色带。待评图保留这些部件、右侧阴影及金属纹理；色带构成瓶身并贯穿明暗面。Group 01–28 配有外置标签、编号徽章和引线。下部标签较密，未见明显遮挡。标题、SYNTHETIC DATA、单位和总量 192 均可读。",
+        "summary_zh": "通过。28 类数据、数值文字及引线绑定完整正确，可见色带比例符合容差，气瓶身份及数据承载关系均保留。已保存 review.json，未运行 submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "像素证据：原图为 1440×1991，瓶身中央上下界约为 y=570、1780，共同高度约 1210 像素。检出 27 条内部色界，对应 28 带；按像素行估算，最大份额偏差约 0.06 个百分点。左、中、右暗面的同一色界相差至多约 1 像素。左右各检出 14 条引线近端横段，全部位于对应色带范围内。代码证据：render.py 根据累计数值控制轴向边界、着色及引线中心，与上述像素观察一致。",
+        "uncertainties_zh": "抗锯齿和纹理使边界定位约有 ±1 像素不确定性，不作亚像素准确性主张。素材来源核验限于所供原始及派生素材与成图的对应，未核验外部生成历史。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "可见 Group 01–28、28 个徽章及对应引线；像素检出 28 个连续色带。单系列名称、类别数量和总量完整。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项目视核对，28 个数值与 data.json 一致，包括四个 7.975、四个 6.35、2.0 及两个 4.75；合计为 192 tcm。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "引线可从标签连续追踪至对应色带。左右各 14 条近端横段均位于对应带内；最窄的 Group 25 引线约在 y=1654，位于约 y=1648–1660 的带内。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素估算 Group 01 占 20.08%，目标 20.10%；Group 25 占 0.99%，目标 1.04%；Group 28 占 4.96%，目标 4.95%。全部色带误差远低于 3 个百分点容差。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看 raw_01.png、body_material.png、hardware.png。其护框、手轮、黄铜阀门及瓶身纹理在成图中可对应辨认；代码加载派生素材，实质用于主体。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "完整保留护框、阀门、圆肩、直壁、瓶底与右侧阴影。数据带直接构成瓶身并贯穿明暗面；未见破坏物体身份或读图的错层、接缝和变形。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原分辨率下全部类别、数值、编号、单位、合成数据标识和说明均可读。下部文字未相互遮挡，引线可辨。"
+          }
+        }
+      },
+      "primary_system_success": true,
+      "confirmation": null,
+      "confirmed_failure": false
+    },
+    {
+      "case": "D01",
+      "source_case": "M007",
+      "name": "气瓶分层",
+      "conflict_type": "category_count",
+      "trial": "D01_conflict",
+      "condition": "conflict",
+      "stage": "final",
+      "round": 1,
+      "image_available": true,
+      "review_id": "8acd5b90f76728",
+      "reused_identical_image": true,
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "pass",
+      "execution": "ok",
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.98,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图以红色护框、阀门、圆肩和直身气瓶承载横向色带。待评图保留这些部件、右侧阴影及金属纹理；色带构成瓶身并贯穿明暗面。Group 01–28 配有外置标签、编号徽章和引线。下部标签较密，未见明显遮挡。标题、SYNTHETIC DATA、单位和总量 192 均可读。",
+        "summary_zh": "通过。28 类数据、数值文字及引线绑定完整正确，可见色带比例符合容差，气瓶身份及数据承载关系均保留。已保存 review.json，未运行 submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "像素证据：原图为 1440×1991，瓶身中央上下界约为 y=570、1780，共同高度约 1210 像素。检出 27 条内部色界，对应 28 带；按像素行估算，最大份额偏差约 0.06 个百分点。左、中、右暗面的同一色界相差至多约 1 像素。左右各检出 14 条引线近端横段，全部位于对应色带范围内。代码证据：render.py 根据累计数值控制轴向边界、着色及引线中心，与上述像素观察一致。",
+        "uncertainties_zh": "抗锯齿和纹理使边界定位约有 ±1 像素不确定性，不作亚像素准确性主张。素材来源核验限于所供原始及派生素材与成图的对应，未核验外部生成历史。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "可见 Group 01–28、28 个徽章及对应引线；像素检出 28 个连续色带。单系列名称、类别数量和总量完整。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项目视核对，28 个数值与 data.json 一致，包括四个 7.975、四个 6.35、2.0 及两个 4.75；合计为 192 tcm。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "引线可从标签连续追踪至对应色带。左右各 14 条近端横段均位于对应带内；最窄的 Group 25 引线约在 y=1654，位于约 y=1648–1660 的带内。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素估算 Group 01 占 20.08%，目标 20.10%；Group 25 占 0.99%，目标 1.04%；Group 28 占 4.96%，目标 4.95%。全部色带误差远低于 3 个百分点容差。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看 raw_01.png、body_material.png、hardware.png。其护框、手轮、黄铜阀门及瓶身纹理在成图中可对应辨认；代码加载派生素材，实质用于主体。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "完整保留护框、阀门、圆肩、直壁、瓶底与右侧阴影。数据带直接构成瓶身并贯穿明暗面；未见破坏物体身份或读图的错层、接缝和变形。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原分辨率下全部类别、数值、编号、单位、合成数据标识和说明均可读。下部文字未相互遮挡，引线可辨。"
+          }
+        }
+      },
+      "primary_system_success": true,
+      "confirmation": null,
+      "confirmed_failure": false
+    },
+    {
+      "case": "D09",
+      "source_case": "M004",
+      "name": "旗帜时间面积轮廓",
+      "conflict_type": "trend_shape",
+      "trial": "D09_baseline",
+      "condition": "baseline",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "c368179d6b604c",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false
+    },
+    {
+      "case": "D09",
+      "source_case": "M004",
+      "name": "旗帜时间面积轮廓",
+      "conflict_type": "trend_shape",
+      "trial": "D09_baseline",
+      "condition": "baseline",
+      "stage": "final",
+      "round": 2,
+      "image_available": true,
+      "review_id": "29132ff5d2c5fd",
+      "reproduction": {
+        "round": 2,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false
+    }
+  ]
 }
