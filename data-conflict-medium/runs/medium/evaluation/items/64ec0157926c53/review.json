@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以完整正面人脸融合扇区，左右发型不同，外围有类别和百分比引线。成图同样保留左耳、双眼、鼻与嘴唇；八组标签及数值清楚可读，分区在鼻部汇合。C、E 两个窄扇区可辨，引线落在各自区域；嘴唇上的分界线仍可追踪。",
+  "summary_zh": "通过。八组数值、顺序、引线绑定及可见扇角与当前数据一致；生成素材实质构成人脸，代码控制数据分区与文字。未发现违反必要要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "评估对象为原始 image.png（1800×2040），未重新渲染。像素证据：以可见鼻部交点约 (900,1120) 为中心，在半径 450 像素、避开五官及引线的圆周检测到八条暗色分界；按角间距估计 A—H 占比约为 26.0%、7.0%、1.5%、8.5%、2.5%、10.0%、9.0%、35.5%，均在 3 个百分点容差内。代码证据：render.py 按输入顺序累计 360×份额/100，绘制圆盘分区、覆盖于五官之上的射线及对应标签；该公式仅作为像素观察的佐证。",
+  "uncertainties_zh": "像素角度估计受抗锯齿、线宽及约 1 像素的中心定位误差影响，不主张亚像素精度。头发覆盖的外缘未用于面积测量；依照明确编码定义，头发和耳朵不计入分母。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "可见 Group A—H 共八组，单系列 Share of imagined sample 完整；标题、SYNTHETIC DATA、Unit: % 及总计 100% 均在图中。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项读到 A 26%、B 7%、C 1.5%、D 8.5%、E 2.5%、F 10%、G 9%、H 35.5%，与 data.json 完全一致，合计 100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从顶部顺时针的分区顺序为 A—H；八条外围引线各自终止于对应扇区。右下 C 与下方 E 的窄区均有独立引线和完整数值，未见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "原图圆周像素采样得到的八个可见角间距与目标占比相符，均远小于 3 个百分点容差。射线共交于鼻部，12 点起顺时针；C、E 保留窄角，没有人为等宽或扩大。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看所供 raw_01.png 和 hair_fitted.png，其灰色左发、红色右卷发及五官造型在成图中可直接对应。render.py 实际合成相关位图，并用输入值绘制分区和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据分区直接构成完整人脸的皮肤区域，未退为旁置饼图。左耳、双眼、鼻、嘴唇与不同发型完整；射线跨越嘴唇仍可追踪，未见破坏小扇区读取的遮挡、错层或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "类别、百分比、系列、单位、合成数据声明及底部编码说明均清晰完整；标签之间无明显重叠，A、H 引线经过头发时仍可辨认。"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为正视人脸与扇区融合，左右发型不同。待评图可见14类及百分比，射线汇聚于鼻部；左耳、双眼、鼻、嘴唇及不同发型完整。1.5%窄扇区可辨认，眼睛与嘴唇处的分界仍可追踪。以上观察先于代码检查。",
+  "summary_zh": "通过。类别、数值、顺序及引线绑定正确，可见扇角符合数据；生成素材实质构成人脸，主体分区直接承载数据。已保存review.json，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "仅评估原始1800×2040的image.png，未重新渲染。以代码坐标(845,1065)辅助定位鼻部交点，在半径430、440、450像素处测量实际色块边界。半径430处估计占比依序为[6.51,6.48,6.50,6.52,6.98,1.50,4.25,4.26,2.50,5.02,5.00,4.50,4.49,35.49]%。三条采样圆的最大估计偏差约0.03个百分点，保守计小于0.1个百分点，低于3个百分点容差。代码累计角度公式仅作为辅助证据；项目数据与冻结数据内容一致。",
+  "uncertainties_zh": "线宽、像素取整及反锯齿限制角度读数精度，不主张亚像素精度。未读取生成日志；来源检查确认所供素材实际参与成图，不对其生成过程作独立认证。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Group 01至Group 14、唯一系列及百分比单位完整；14 GROUPS和TOTAL 100%与输入一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可见数值为6.5、6.5、6.5、6.5、7、1.5、4.25、4.25、2.5、5.0、5.0、4.5、4.5、35.5%，均符合数据。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从12点顺时针可追踪14区及对应引线；Group 06绑定右下1.5%窄区，Group 14绑定左侧35.5%大区，底部标签未错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "原图可见边界抽样所得占比误差均小于0.1个百分点。最小区约1.50%、最大区约35.49%；鼻部共心圆盘及外围发型、耳朵的处理符合编码定义。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与portrait_circle.png，其发型纹理、左耳、双眼、鼻线和嘴唇在成图中可辨认。render.py实际粘贴素材并控制数据几何及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色扇区拼成完整正视人脸，五官直接融合于数据区域；射线跨越眼睛和嘴唇仍可追踪，未退化为旁置图表。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、全部类别与数值、SYNTHETIC DATA、系列和单位清楚，无裁切或文字遮挡；底部编码说明可读。"
+    }
+  }
+}
