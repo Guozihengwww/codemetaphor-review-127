@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为方格纸上的弯曲长指与掌部插画。待评图可见7个年份及对应百分比，比例轴为0–14%，年份由下向上排列。长指连续连接手掌，圆钝指尖、紫色指甲、关节纹和皮肤纹理可辨；紫色截面线、中心点与标签相连。SYNTHETIC DATA、单位及中点编码说明清楚可读。",
+  "summary_zh": "通过。数据、标签绑定及指身轮廓编码符合要求，生成素材实质参与主体，未见重大可见缺陷。已保存review.json，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量image.png，未重新渲染。横轴0与14位于x=234、1354，每个百分点80 px；相邻年份间距160 px。1880至2000的指身左右轮廓边界约为[1188,1295]、[1171,1280]、[1121,1235]、[1001,1148]、[655,853]、[494,597]、[590,693]；中点换算约为12.59%、12.39%、11.80%、10.51%、6.50%、3.89%、5.09%。最大偏差约0.01个百分点，低于0.42个百分点容差。测量排除了独立标签连接线。代码核查确认逐行素材变形和文字由数据控制，未以公式代替像素证据。",
+  "uncertainties_zh": "描边及抗锯齿使边界定位约有±2 px（±0.025个百分点）不确定性；区间扫描基于可见肤色范围，不代表亚像素轮廓真值。这些不确定性远低于本题容差。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "1880至2000共7个年份及单一比例系列完整呈现，与输入一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "12.6%、12.4%、11.8%、10.5%、6.5%、3.9%、5.1%全部正确；标题、单位及SYNTHETIC DATA完整。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份引导线、指身截面、中心点与右侧数值一一对应，年份顺序正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图七处可见轮廓中点的最大偏差约0.01个百分点，小于0.42个百分点容差；时间间距及区间轮廓趋势符合数据。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理素材；原始素材的甲面高光、关节纹和掌部细节在成图中可辨。render.py读取冻结数据并控制轮廓变形、刻度和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "指身可见轮廓本身承载比例，长指连续连接掌部，紫色指甲及关节纹保留；指尖和掌部位于观测区之外，未遮住数据截面。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "全部年份、百分比、单位及编码说明可辨读，无明显重叠或裁切。"
+    }
+  }
+}

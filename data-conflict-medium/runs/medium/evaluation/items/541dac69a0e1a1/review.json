@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以五只黑色水龙头、青色下落水流及末端飞溅承载数据。待评图有五个等大、出水口齐平的黑色侧视水龙头，均连接青色水流及飞溅。Region A–E从左到右排列，分别标注8,100、4,620、3,240、2,940、2,880，总计21,780。端点与向下递增的0–9,000刻度目视相符；标题、SYNTHETIC DATA及单位清楚，未见明显遮挡或绑定错误。",
+  "summary_zh": "通过。五项数据、标签绑定、线性落差、共同起点及水龙头与水流的数据承载关系均符合冻结要求；生成素材实质可见，未发现需要列为问题的缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量原始image.png（1800×2190），未重新渲染。像素检测得到0与9,000网格线分别位于y=734和1854，满量程1120px，3%容差33.6px。五个黑色出水口末行均为y=733；采用三组青色通道差阈值识别连通主体，A–E水流及相连飞溅末行分别为1741、1308、1136、1099、1091–1092。按像素格边缘估算落差约1008、575、403、366、358–359px；数据与可见刻度推导的目标为1008、574.93、403.20、365.87、358.40px，偏差均小于2px（满量程0.18%）。另据代码，落差由value×1120/9000控制，飞溅被限制在端点上方；此为代码证据，独立于上述成图像素测量。",
+  "uncertainties_zh": "浅色飞溅和抗锯齿使可见最外缘存在约1–2px阈值不确定性，尤其Region E底部末行；该范围远低于33.6px容差。素材使用依据所供原始素材、代码引用及成图可见特征核对，未检查生成日志。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A–E五类及唯一年度可再生水资源系列完整，顺序与data.json一致；每类均有水龙头、水流、飞溅及数值。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见数值8,100、4,620、3,240、2,940、2,880与输入逐一一致；总计21,780为正确合计。Gm³/year及十亿立方米/年的解释正确，轴范围0–9,000。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个Region标签位于对应龙头上方，各数值紧随该列飞溅底部；五列分离且顺序清楚，未见跨列错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "基于image.png实际像素边界，共用出水下缘约y=734，满量程1120px；五列实测落差与目标均相差小于2px，远低于33.6px容差。飞溅未明显越过各自编码端点；渲染代码另确认当前输入控制线性长度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看assets/raw_01.png及faucet.png、water_texture.png、splash.png。原始素材的龙头轮廓、纵向青色水纹和飞溅形态均在成图主体中可辨；render.py实际读取并合成这些部件。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "五个同尺度黑色侧视龙头保持共同出水高度，青色水流直接连接出口且末端飞溅可辨。水流自身的竖直落差承载数据；未见破坏物体身份或数据结构的接缝、透视冲突或遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、五类名称、全部数值、轴刻度、单位与读图说明均完整可读；标签之间无明显重叠，总计区域未遮挡水流或数值。"
+    }
+  }
+}

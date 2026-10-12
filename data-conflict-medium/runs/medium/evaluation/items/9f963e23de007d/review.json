@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图可见五只黑色侧视水龙头、青色竖直水流及末端飞溅；参考数值不作为当前数据依据。成图可见 Region A–E 五列，数值依次为 8,100、4,620、3,240、2,940、2,880，总计 21,780。龙头大小一致、出水口视觉等高，每列水流连接出水口并形成末端飞溅。A 最长、B 次之，C/D/E 较短且 D/E 接近。标题、合成数据提示、刻度及各列单位可读；左上量轴单位末尾似被第一只龙头遮挡。",
+  "summary_zh": "已保存 review.json。前六项检查全部通过，数据与水流几何一致，生成素材实质参与主体。仅量轴单位末尾局部遮挡，其他完整单位仍清晰可读。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M4",
+      "expected_zh": "单位清晰可读，量轴旁的单位文字应避免与龙头重叠。",
+      "observed_zh": "左上量轴单位 Gm³/year 的末尾被第一只龙头左端遮挡；五列下方及页脚另有完整单位，未造成必需信息缺失。",
+      "evidence_zh": "可见遮挡位于原图约 x=107–225、y=675–704。代码佐证为单位先绘制、龙头随后覆盖该区域右侧。",
+      "bbox_xyxy_normalized": [
+        0.059,
+        0.308,
+        0.125,
+        0.322
+      ]
+    }
+  ],
+  "measurement_notes_zh": "测量原始 image.png（1800×2190），未重渲染。可见 0 与 9000 刻度位于 y=734、1854，跨度 1120 像素；五个出水口下缘约 y=734。排除文字后，青色水体连续区域末行依次为 1741、1308、1136、1099、1092，得到流长约 1008、575、403、366、359 像素，对应约 8100、4621、3238、2941、2885 Gm³/year。最大差异约为满量程 0.06%，边缘定位保留约 ±1 像素的不确定性，均远小于 3% 容差。代码使用 value×1120/9000 控制长度并限制飞溅端点，仅作为像素证据的佐证。",
+  "uncertainties_zh": "边界为像素级近似，不主张亚像素精度。素材使用通过原始素材、裁切部件与成图对应关系核实；未检查生成日志或推断工具调用历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A–E 按输入顺序完整呈现为五组龙头、水流及数值，系列名称、合成数据提示及单位说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "五个数值与输入完全一致，总计 21,780 正确；刻度范围 0–9,000，单位明确解释为十亿立方米/年。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "地区标签位于对应龙头上方，数值位于对应飞溅下方；五组绑定正确，无交叉或错位。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际边界显示共同起点及正确线性比例，五列流长误差均远低于满量程 3%；飞溅底边未向下扩张改变读数。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看 raw_01.png 及龙头、水纹、飞溅部件，其轮廓与纹理在成图中清楚可见；render.py 实际载入并合成这些素材。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "五只同尺度黑色侧视龙头、连接水流及末端飞溅均保留，水体边界直接承载数据；未见破坏物体身份或读数的层次、接缝问题。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需标题、地区、数值、合成数据提示及单位均可完整读取。量轴单位局部遮挡由每列与页脚的完整单位补足。"
+    }
+  }
+}

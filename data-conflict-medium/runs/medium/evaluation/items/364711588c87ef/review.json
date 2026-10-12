@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以写实枕头的彩色布面承载数据。成图可见完整横向织物枕头，保留布纹、皱褶、包边、伸出角和落地阴影；左侧白布标为30%非数据，右侧八条连续色带对应01至08。全部类别和精确百分比可读。",
+  "summary_zh": "数据、标签绑定、布面宽度编码和枕头身份均符合要求。未发现可见缺陷，已保存UTF-8编码的review.json。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查2000×1400的image.png像素，未重新渲染。约y=684处，可见外缘为x≈239至1764，白布终点≈697，其后色带分界≈1253、1308、1384、1460、1536、1612、1688。白布约占30.0%；数据区八带约占52.11%、5.15%及六个7.12%，各项误差不足0.1个百分点。代码推导的中线及端点仅作交叉核对。",
+  "uncertainties_zh": "抗锯齿和包边阴影带来约1至2像素的边缘定位不确定性。7.1167%与7.1165%的几何差异低于像素分辨率，但精确文字正确，不影响3个百分点容差判断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八个类别、八条数据色带、Synthetic share系列及非数据白布说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "52.1%、5.2%、五个7.1167%及末组7.1165%逐项正确；8 groups和Total 100%正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "色带编号、内部数值及底部同色图例按Group 01至08一致排列，未见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际中线像素宽度符合30%白布排除及各组份额要求，误差远小于3个百分点；分界竖直、连续并由枕头轮廓裁切。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和pillow_cloth.png，其轮廓、褶皱及包边在成图中对应可见；render.py直接使用该素材的轮廓和亮度纹理。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色布面本身承载数据，保留织物明暗及完整柔软枕头身份；代码控制分区，阴影位于主体下方，无结构性贴合或遮挡错误。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、单位、全部类别及精确数值清晰；窄带数值在底部横排重复，无裁切或重叠。"
+    }
+  }
+}

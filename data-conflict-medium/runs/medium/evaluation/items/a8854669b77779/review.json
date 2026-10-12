@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以写实布枕及连续色带表现睡眠分布。成图保留完整横向布枕，白布及棕、绿、蓝、黄四色带连续相接，布纹、皱褶、包边、伸出角和底部阴影可见。两项小值通过引线连接窄色带，两项大值位于对应色带内；全部类别、数值、单位和合成数据标识均可读。",
+  "summary_zh": "通过，已保存review.json。数据、顺序和标签绑定正确，实际色带比例符合容差。生成素材实质构成枕头，代码控制分区，织物身份与数据承载关系完整。",
+  "issues": [],
+  "measurement_notes_zh": "像素证据：直接读取提交的2000×1400 image.png，在枕头中段y=840统计四色连续像素宽度，约为55、385、560、74像素；以总宽1074像素计算，占比约5.12%、35.85%、52.14%、6.89%，相对目标最大偏差约0.08个百分点。白布约占布面中段宽度30%。代码证据：render.py按中段轮廓排除30%白布，再按数据累计份额控制色带，并保留素材亮度。代码核对不替代像素测量，未重新渲染。",
+  "uncertainties_zh": "抗锯齿及外缘明暗使边界定位约有1–2像素不确定性；测得比例为近似值，该误差远小于3个百分点容差。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "四类2–<4 h、4–<6 h、6–8 h、>8 h及Synthetic share系列完整，四色带顺序正确。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "5.2%、35.8%、52.1%、6.9%与冻结数据逐项一致，百分比单位及SYNTHETIC DATA可见。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "5.2%和6.9%的引线分别落入棕、黄色带；35.8%和52.1%及对应类别分别位于绿、蓝色带内。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图中段像素占比约5.12%、35.85%、52.14%、6.89%，各项距目标不足0.1个百分点；白布约30%且排除于数据分母。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及pillow_clean.png，其皱褶、包边和四角轮廓在成图中可辨认；源码读取素材构成整个枕头并按数据着色。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "织物区域本身承载份额，色带保留布面明暗和皱褶；单个柔软枕头完整，阴影位于主体之后，无破坏结构的错层或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、类别、全部数值、系列单位、合成数据标识及白布排除说明均可读，窄带标签外置，无遮挡或裁切。"
+    }
+  }
+}

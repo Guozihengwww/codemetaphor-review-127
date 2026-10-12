@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为五个黑色侧视水龙头和青色水流。成图保留五个同尺度龙头，Region A–E 顺序正确，出口对齐零线；五项数值清楚，水流依次缩短。E 仅呈极细青线，概览下无法分辨飞溅细节。标题、合成数据标识、单位与405×说明可读。",
+  "summary_zh": "数据、标签绑定、线性量尺及物体与数据的结合符合冻结要求。未发现主要可见缺陷，已保存 review.json。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查指定 image.png（1800×2190），未重新渲染。像素量尺零位约y=640、9000刻度约y=1970，3%满量程容差约39.9像素。局部青色像素提取得到A–E下边界约1837、1010、744、667、643；由输入值和可见量尺计算的目标为1837、1009.44、743.44、666.60、642.96，差异均不足1像素。代码另确认数据控制水流长度、飞溅适配及标签，仅作为补充证据。",
+  "uncertainties_zh": "抗锯齿及颜色阈值带来约1像素边界不确定性。E水流约3像素高，可确认非零主体及底部略展宽，无法精确辨认飞溅内部形态或验证亚像素端点。素材来源核查限于供应原始素材、可见形态和代码引用，未读取生成日志。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "全部五类、五个龙头、五项数值及唯一系列名称完整，类别顺序与data.json一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "8100、2500、700、180、20准确；0–9000量尺、Gm³/year及十亿立方米/年释义正确，8100÷20=405正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别位于对应龙头上方，数值紧邻各自水流末端下方，五列无错配或遮挡。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际青色像素共同始于约y=640，五个末端与目标均相差不足1像素，低于39.9像素容差；短流未被人为扩大至统一最小长度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材及龙头、水纹、飞溅部件；这些形态在成图主体中实际可见，render.py加载对应素材并控制当前数据几何与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "同尺度黑色侧视龙头与青色水流连接，水流末端承载数值；A–D飞溅可辨，E保留微小展宽底部。未见破坏结构的错位、遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、类别、全部数值、SYNTHETIC DATA、系列、单位和读图说明完整可读，短流采用清楚的外置数值。"
+    }
+  }
+}

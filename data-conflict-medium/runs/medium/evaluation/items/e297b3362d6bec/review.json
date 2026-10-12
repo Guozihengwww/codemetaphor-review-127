@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为五只黑色侧视水龙头、青色下落水流及末端飞溅。待评图中五只龙头同尺度、出水口同高，Region A–E 从左至右排列，8100、2500、700、180、20 分别位于对应水流下方。水流依次缩短，E 呈极薄青色线。合成数据标识、单位定义、量尺和 405× 说明可读，未见文字遮住端点。上述观察已在读取代码前记录。",
+  "summary_zh": "通过。数据、绑定及可见水流比例符合要求，生成素材实质参与主体，代码控制当前数据几何。已保存 review.json，未运行 submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "像素证据：直接分析 image.png（1800×2190），共同起点约 y=640，9000 刻度约 y=1970，满量程约 1330 像素，3% 容差为 39.9 像素。用不同青色阈值检查实际边界，A–E 水流长度约为 1197、369–370、103–104、27、3 像素；目标长度为 1197、369.44、103.44、26.60、2.96 像素，偏差均不足 1 像素。代码证据：render.py 按 value/9000×1330 控制水流层高度，飞溅位于同一局部层内部，龙头覆盖上端。未重新渲染或使用自检结论替代像素检查。",
+  "uncertainties_zh": "E 仅约 3 像素，无法可靠区分完整飞溅瓣形或判定亚像素端点。B、C 抗锯齿底缘随阈值变化约 1 像素；这些限制不影响满量程 3% 容差内的判断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "恰有五个龙头和五列水流，Region A–E 顺序正确，单一系列完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "8100、2500、700、180、20 全部准确；405× 与 8100÷20=405 正确。0–9000、Gm³/year 及十亿立方米/年的定义一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别位于各自龙头上方，数值位于对应水流端点下方，五列分离，无错配或端点遮挡。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际水流长度约 1197、369–370、103–104、27、3 像素，与目标偏差不足 1 像素，远小于 39.9 像素容差；共同起点约 y=640，最短流仍非零。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看 raw_01.png 及龙头、水纹、飞溅素材；相同轮廓和纹理在成图主体中可见。render.py 读取这些素材并控制长度、裁切与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "同尺度黑色侧视龙头身份清楚，水流直接连接出水口并以自身边界承载数据。A–D 飞溅可辨，E 保留微小青色落水底部；未见断接、显著越界或破坏结构的遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、类别、精确数值、SYNTHETIC DATA、单位与说明完整可读，无裁切或重叠；20 使用清晰的外置标签。"
+    }
+  }
+}
