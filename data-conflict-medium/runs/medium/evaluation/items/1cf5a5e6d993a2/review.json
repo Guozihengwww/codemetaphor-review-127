@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以树干横截面直接承载彩色扇区。成图保留年轮、裂缝、粗糙树皮及软阴影；外围可见Group 01–27及数值，Group 27约占四分之一。SYNTHETIC DATA、27 GROUPS、TOTAL 100%及百分比单位可读。左侧小扇区引线密集，需要进一步核对端点。",
+  "summary_zh": "六项主要检查均通过。数据、标签及木材隐喻符合要求；左侧引线交叉造成轻微阅读负担。已保存review.json，未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M6",
+      "expected_zh": "所有细小扇区及外围引线清楚可追踪。",
+      "observed_zh": "Group 21–26的同色引线在左缘反折并多次交叉，局部非常靠近；放大后仍能追踪端点，但阅读费力。",
+      "evidence_zh": "原图及局部查看可见约x218–320、y860–1270像素范围内的密集交叉，文字未重叠。render.py第125–132行的路径推导亦支持该位置；代码交点不作为像素计数。",
+      "bbox_xyxy_normalized": [
+        0.125,
+        0.42,
+        0.195,
+        0.645
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接采样现有1685×2000的image.png，未重新渲染。以代码中心(842.5,1050)和纵向缩放0.96定位，在半径350、450、525像素的三圈椭圆附近读取RGB色度转折，均检出27条边界。实际边界反投影推导份额的最大差约0.04个百分点；Group 27约25.58%–25.59%，两个1%扇区约0.99%–1.00%，均低于3个百分点容差。采样按约0.1个百分点精度解释，不主张亚像素精确。代码另外确认累计份额控制角度、共同半径控制数据域、文字取自输入。",
+  "uncertainties_zh": "抗锯齿、分隔线和木纹影响边界定位，未进行逐像素完整面积分割。缩小展示时左侧引线更难追踪。素材判断依据原始素材、归一化素材与成图纹理对应，未查阅生成日志或自检结果。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Group 01–27全部可见，图像色彩边界采样检出27个连续分区，单系列及27 GROUPS标识符合数据。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "27个数值逐项符合输入，包括2.5625%、5.125%、两个1.0%及25.6%；数据和为100%，合成声明及单位完整可读。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "分区按输入顺序顺时针排列，外围引线连接对应扇区。放大后左侧小扇区仍可追踪；代码推导端点处于对应中角，未发现错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见分区共心、共享椭圆外边界且无爆炸间隙。三圈图像边界推导份额的最大差约0.04个百分点，低于3个百分点容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及wood_normalized.png，年轮、左向裂缝和右下斜裂缝可在成图对应；代码使用该素材保留明暗纹理，实质覆盖主体。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色扇区直接融合木面，年轮跨色区连续，树皮处于数据域外，软阴影位于主体下方；未见破坏身份或图表解释的错位及接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、27组名称与精确数值、合成声明及单位完整可读，无文字遮挡；左侧引线交叉为轻微问题。"
+    }
+  }
+}

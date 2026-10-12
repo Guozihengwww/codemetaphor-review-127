@@ -1,0 +1,59 @@
+{
+  "verdict": "fail",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以沙体上缘承载走势，斜铲覆盖沙面。成图可见2008–2019全部年份及12个正确数值；颗粒沙体、斜插铲子、散粒、落影、单位和合成声明均可辨认。",
+  "summary_zh": "已保存review.json，未运行submit.py。年度节点与数值正确，但184标签底板遮改连续沙体上缘，局部偏差约为满量程3.6%，超过规定容差。",
+  "issues": [
+    {
+      "category": "occlusion_layering",
+      "severity": "major",
+      "requirement_id": "M2",
+      "expected_zh": "年度节点之间以直线构成可见沙体上缘，连续几何误差不超过满量程3%。",
+      "observed_zh": "184标签底板切入2016–2017上升坡面，遮去轮廓并形成水平缺口及近竖直边缘。",
+      "evidence_zh": "原图像素检查：400线位于y=560、零线位于y=1560，容差为30像素。x=1448处连续沙体约从y=1061开始，数据直线插值目标为y≈1025.3，差约35.7像素，即14.3 million tonnes、满量程3.57%。代码另证实标签底板在轮廓之后绘制，此为遮挡原因的代码证据。",
+      "bbox_xyxy_normalized": [
+        0.675,
+        0.507,
+        0.73,
+        0.552
+      ]
+    }
+  ],
+  "measurement_notes_zh": "仅检查原始image.png，未重渲染。像素定位得到12个年度节点对应值约124.2、109.0、127.0、143.0、146.2、159.0、201.0、193.0、184.2、274.2、342.2、334.2，节点误差远小于容差。缺口测量针对实际连续沙体边缘，排除游离颗粒和铲子；代码仅用于核对几何控制及绘制顺序。",
+  "uncertainties_zh": "抗锯齿带来约1–2像素定位误差，缺口仍超过30像素阈值。未逐像素验证全部边缘。素材使用依据所供素材与成图的可见匹配，未查阅生成日志。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "12个年份、节点和数值标签完整，年份顺序正确。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部数值符合data.json，0–400刻度、million tonnes单位及中性标题正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值通过短引线对应节点，年份横向对齐，无错配。"
+    },
+    "geometry": {
+      "status": "fail",
+      "evidence_zh": "节点高度正确，但184标签遮改连接坡面；局部可见边缘偏差约35.7像素，超过满量程3%的30像素。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "所供沙粒纹理铺满主体，铲子素材清晰可见；代码控制沙体蒙版、坐标和文字。合成声明与本地数据来源标注清楚。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "沙体上缘实质承载走势；斜铲覆盖沙面且下端被颗粒遮住，接触关系、落影和散粒可辨认。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "年份、数值、标题、单位、合成声明及读图说明完整可读。"
+    }
+  }
+}

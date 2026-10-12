@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以颗粒沙堆上缘承载年度走势，斜铲覆盖沙面。最终图显示2008–2019共12个年份，数值与输入一致；沙体上缘整体下降并局部回升，闭合到共同零线。颗粒材质覆盖主体，左侧斜铲底端有沙粒遮盖，边缘散粒可见。标题、合成声明、单位及标签均可辨认。",
+  "summary_zh": "通过。数据、标签绑定和可见沙体几何正确，素材实质参与主体，沙堆身份及铲子遮挡关系保留。已保存review.json，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量原始2000×2000的image.png，未重新渲染。像素检测得到400至0刻度线位于y=580、835、1090、1345、1600，满量程1020像素；3%容差为30.6像素或12单位。提取连通沙体上缘，避开节点圆环，依据邻近边界拟合12个节点，最大数值偏差约0.60单位；11个区间中点最大偏差约0.57单位。另据render.py，数据多边形蒙版控制沙体，节点公式为y=1600−2.55×value；此为代码证据，未替代像素核验。",
+  "uncertainties_zh": "抗锯齿、描边和边界阈值带来约1–2像素的定位不确定性，拟合小数不代表亚像素实测精度。素材使用由原始素材、最终可见内容及合成代码交叉核对，未核验素材生成过程。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列完整显示2008–2019共12个年份、12个节点和12个数值标签，无缺项或重复。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "数值依次为334、342、274、184、193、201、159、146、143、127、109、124，与data.json一致；单位、0–400刻度及SYNTHETIC DATA清晰。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值标签位于对应节点上方，以短竖线或邻近位置关联；节点与年度刻度垂直对齐，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "沙体共用零线，节点间直线连接；像素边界估计最大偏差约0.6单位，低于12单位容差。铲子未遮挡上缘，散粒与主体轮廓分离。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看sand_texture.png和shovel.png，纹理与铲子均在最终主体中实质可见，代码读取并合成两者。图中注明合成数据及data.json，未沿用参考机构背书。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "沙体自身的边界承载数据；斜铲覆盖沙面，铲头底端被沙粒遮盖且有阴影。浅色背景、颗粒、散粒和落影保留，无破坏结构的接缝或层次错误。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "中性标题、全部年份、数值、量尺、单位、合成声明及读图说明可辨认，无重要文字被遮挡。"
+    }
+  }
+}

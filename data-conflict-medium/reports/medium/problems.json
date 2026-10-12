@@ -27,6 +27,29 @@
           }
         ],
         "summary_zh": "前六项检查全部通过，仅Region A标注与树皮局部重叠，属于轻微排版问题。已保存review.json，未运行submit.py。"
+      },
+      {
+        "condition": "conflict",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "M6",
+            "expected_zh": "所有细小扇区及外围引线清楚可追踪。",
+            "observed_zh": "Group 21–26的同色引线在左缘反折并多次交叉，局部非常靠近；放大后仍能追踪端点，但阅读费力。",
+            "evidence_zh": "原图及局部查看可见约x218–320、y860–1270像素范围内的密集交叉，文字未重叠。render.py第125–132行的路径推导亦支持该位置；代码交点不作为像素计数。",
+            "bbox_xyxy_normalized": [
+              0.125,
+              0.42,
+              0.195,
+              0.645
+            ]
+          }
+        ],
+        "summary_zh": "六项主要检查均通过。数据、标签及木材隐喻符合要求；左侧引线交叉造成轻微阅读负担。已保存review.json，未运行submit.py。"
       }
     ]
   },
@@ -58,6 +81,82 @@
           }
         ],
         "summary_zh": "前六项检查均通过。年度数据、线性尺度、标签绑定及旗帜材质与面积的融合符合要求；仅1974年数值标签与轮廓和织物重叠，属于仍可辨读的局部排版问题。"
+      }
+    ]
+  },
+  {
+    "case": "D10",
+    "source_case": "M041",
+    "name": "沙堆轮廓",
+    "conflict_type": "trend_shape",
+    "observations": [
+      {
+        "condition": "baseline",
+        "stage": "first",
+        "quality": "fail",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "occlusion_layering",
+            "severity": "major",
+            "requirement_id": "M2",
+            "expected_zh": "年度节点之间以直线构成可见沙体上缘，连续几何误差不超过满量程3%。",
+            "observed_zh": "184标签底板切入2016–2017上升坡面，遮去轮廓并形成水平缺口及近竖直边缘。",
+            "evidence_zh": "原图像素检查：400线位于y=560、零线位于y=1560，容差为30像素。x=1448处连续沙体约从y=1061开始，数据直线插值目标为y≈1025.3，差约35.7像素，即14.3 million tonnes、满量程3.57%。代码另证实标签底板在轮廓之后绘制，此为遮挡原因的代码证据。",
+            "bbox_xyxy_normalized": [
+              0.675,
+              0.507,
+              0.73,
+              0.552
+            ]
+          }
+        ],
+        "summary_zh": "已保存review.json，未运行submit.py。年度节点与数值正确，但184标签底板遮改连续沙体上缘，局部偏差约为满量程3.6%，超过规定容差。"
+      }
+    ]
+  },
+  {
+    "case": "D18",
+    "source_case": "M017",
+    "name": "列车长度与换算",
+    "conflict_type": "numeric_range",
+    "observations": [
+      {
+        "condition": "conflict",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "LABELS",
+            "expected_zh": "一小时距离标题与公里单位应分离，避免笔画重叠。",
+            "observed_zh": "左下km上缘与“行驶1小时”标题底部局部重叠，仍能辨认。",
+            "evidence_zh": "原图约x80–230、y1620–1663可见两行文字相碰；距离数字及mi未被遮挡。",
+            "bbox_xyxy_normalized": [
+              0.039,
+              0.809,
+              0.116,
+              0.833
+            ]
+          },
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "M4",
+            "expected_zh": "Train A的mph换算文字应与车体轮廓留出清楚间隔。",
+            "observed_zh": "371.6 mph文字下沿与车顶及鼻部上缘局部相交，数值仍可读。",
+            "evidence_zh": "原图第一辆车右上换算标签处可见车顶线穿过文字下部；598 km/h主标签完整。",
+            "bbox_xyxy_normalized": [
+              0.87,
+              0.258,
+              0.94,
+              0.275
+            ]
+          }
+        ],
+        "summary_zh": "数据、绑定、可见几何、素材使用和列车隐喻符合要求，前六项检查全部通过。仅有两处轻微文字碰撞。已保存review.json。"
       }
     ]
   }

@@ -1,0 +1,73 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以八行侧视列车长度比较速度，并附单位换算和距离参照。当前图可见Train A–H八行，均朝右、共用零点；速度依次为598、420、280、180、100、75、50、35 km/h，旁有mph换算。列车长度与刻度目测相符，车窗、轮组、受电弓可见。SYNTHETIC DATA清楚；底部有一小时距离带，左下标题与km间距紧。",
+  "summary_zh": "数据、绑定、可见几何、素材使用和列车隐喻符合要求，前六项检查全部通过。仅有两处轻微文字碰撞。已保存review.json。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "一小时距离标题与公里单位应分离，避免笔画重叠。",
+      "observed_zh": "左下km上缘与“行驶1小时”标题底部局部重叠，仍能辨认。",
+      "evidence_zh": "原图约x80–230、y1620–1663可见两行文字相碰；距离数字及mi未被遮挡。",
+      "bbox_xyxy_normalized": [
+        0.039,
+        0.809,
+        0.116,
+        0.833
+      ]
+    },
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M4",
+      "expected_zh": "Train A的mph换算文字应与车体轮廓留出清楚间隔。",
+      "observed_zh": "371.6 mph文字下沿与车顶及鼻部上缘局部相交，数值仍可读。",
+      "evidence_zh": "原图第一辆车右上换算标签处可见车顶线穿过文字下部；598 km/h主标签完整。",
+      "bbox_xyxy_normalized": [
+        0.87,
+        0.258,
+        0.94,
+        0.275
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接检查2000×2000的image.png，未重新渲染。上下量尺端点约x240、1880，满量程1640px，3%容差49.2px。以背景色差40、60、90三档阈值检查鼻尖局部，可见右边界A–H约为1874–1875、1388、1005–1006、732、514、445、377、336px；目标分别为1874.53、1388、1005.33、732、513.33、445、376.67、335.67px，差异均不足2px。代码辅助证据：render.py以240+(v/600)×1640控制实体长度并拼接、缩放素材；几何结论同时有交付图像素边界支持。",
+  "uncertainties_zh": "抗锯齿使鼻尖与零点边界约有1–2px不确定性，不作亚像素结论。素材来源检查限于所供原始素材、部件及成图对应，未核验生成过程。短车压缩明显，但车头、窗、轮组和受电弓仍可辨。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八类、八辆车及顺序符合data.json；八个速度值、双单位轴、一小时距离带和SYNTHETIC DATA齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "km/h为598、420、280、180、100、75、50、35；mph为371.6、261.0、174.0、111.8、62.1、46.6、31.1、21.7，均符合指定换算及一位小数格式。上下量尺换算一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别位于各车左侧，数值位于同车右侧或上方；八组标签与车体一一对应，无错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "八辆车共用约x240零点，鼻尖线性编码速度；像素端点与目标差均不足2px，远小于49.2px容差。上下量尺共用水平范围，短车未被设为同一最小长度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及train_H.png；车身颜色、窗面反光与成图对应。render.py读取八个列车部件，生成素材实质构成列车主体。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "车体本身承载长度。八辆均为朝右侧视列车，保留鼻形、窗、车厢、轮组和受电弓；拼接未破坏身份，格线在主体后方，端点为实体鼻尖。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、类别、数值、合成数据标识、单位与距离说明均可辨。两处轻微碰撞未造成重要标签不可读。"
+    }
+  }
+}

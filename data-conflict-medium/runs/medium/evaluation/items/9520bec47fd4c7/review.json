@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "成图可见八行Train A–H，数值依次为598、420、280、180、100、75、50、35 km/h。列车左端对齐、朝右，鼻尖逐行缩短；车窗、轮组和受电弓可辨。上下双单位标尺、合成数据声明及一小时说明完整可读。",
+  "summary_zh": "通过。数据、换算、标签绑定和实体鼻尖长度均符合简报，生成素材实质构成数据主体。已保存review.json。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量2000×2000 image.png，未重渲染。零点约x=240，满量程端约x=1880，3%容差为49.2像素。八行车体最右占据列约为1874、1387、1005、731、513、444、376、335；考虑像素外边缘和抗锯齿，均与目标位置相差约不超过2像素。上下主刻度像素位置一致。另据render.py，代码控制素材裁拼、长度、标签及标尺；未以公式替代像素验证。",
+  "uncertainties_zh": "抗锯齿及浅色轮廓带来约1–2像素边界不确定度，短列车不作亚像素精度断言。素材使用判断依据原始素材、成图对应及渲染代码，未审阅生成日志。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八行Train A–H顺序正确，数值、双单位轴、一小时距离带及合成数据声明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "八个km/h数值准确；mph依次为371.6、261.0、174.0、111.8、62.1、46.6、31.1、21.7，换算及一位小数格式正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A的数值位于其鼻尖上方，其余数值位于对应鼻尖右侧；类别、车体和数值无跨行错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图像素显示八个实体鼻尖均在目标位置约2像素内，低于49.2像素容差；上下标尺共用水平尺度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和train_H.png；素材涂装、窗面、车头及轮组在成图中可辨，代码将素材直接合成为主体。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "实体列车长度直接编码速度，八车均保留右向侧视身份；未见破坏身份或读数的接缝、遮挡或透视错位。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "类别、全部数值、单位、SYNTHETIC DATA及一小时说明清晰完整，无裁切或重叠。"
+    }
+  }
+}
