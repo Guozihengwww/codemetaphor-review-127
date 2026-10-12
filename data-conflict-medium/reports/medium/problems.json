@@ -116,6 +116,37 @@
     ]
   },
   {
+    "case": "D08",
+    "source_case": "M060",
+    "name": "捕梦网曲边区域",
+    "conflict_type": "category_count",
+    "observations": [
+      {
+        "condition": "baseline",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "metaphor_identity",
+            "severity": "minor",
+            "requirement_id": "M3",
+            "expected_zh": "顶部绳结及向上的悬挂绳应保持可辨。",
+            "observed_zh": "顶部绳结直接终止于纸面，没有清楚可辨的向上悬挂绳段；下方羽毛吊绳仍在。",
+            "evidence_zh": "目视顶部中央仅见绳结。像素辅助检查：x=680–759、y=298–310未检出深色绳像素，y约312即出现宽绳结。素材含上延绳段；render.py裁去top_knot.png上方35像素，此项为代码佐证。",
+            "bbox_xyxy_normalized": [
+              0.472,
+              0.14,
+              0.528,
+              0.176
+            ]
+          }
+        ],
+        "summary_zh": "已保存review.json。数据、面积比例、标签绑定及素材融合通过；顶部悬挂绳未清楚保留，属于轻微局部缺失。"
+      }
+    ]
+  },
+  {
     "case": "D09",
     "source_case": "M004",
     "name": "旗帜时间面积轮廓",
@@ -457,6 +488,37 @@
           }
         ],
         "summary_zh": "数据、绑定、径向增量几何及颜料球承载数据的方式均符合冻结要求，前六项检查全部通过。仅见两处轻微文字与线条或标牌交叠，不影响类别及数值辨认。"
+      }
+    ]
+  },
+  {
+    "case": "D24",
+    "source_case": "M120",
+    "name": "双瓜面薄切片",
+    "conflict_type": "numeric_range",
+    "observations": [
+      {
+        "condition": "baseline",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "LABELS",
+            "expected_zh": "必需数值标签清晰，引线应避开其他类别的数字。",
+            "observed_zh": "Category C 的竖向引线穿过 Category D 的“1.5%”中数字 1 的局部区域；数值仍可识别，绑定未改变。",
+            "evidence_zh": "原图右上标签区域可见交叠。代码坐标佐证：C 引线竖段位于 x≈1260px，D 数值位于 y≈678–759px；坐标为代码推导，交叠由原图目视确认。",
+            "bbox_xyxy_normalized": [
+              0.832,
+              0.316,
+              0.866,
+              0.368
+            ]
+          }
+        ],
+        "summary_zh": "已保存 review.json。六项数据、绑定、几何和材质融合符合要求；前六项核心检查通过。仅发现引线与数字局部交叠的轻微排版问题。"
       }
     ]
   }

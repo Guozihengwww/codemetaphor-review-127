@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "已先查看 reference.png 与 image.png，尚未读取渲染代码。参考图以沙色面积轮廓和斜插铲子结合年度图表。提交图为浅色背景，颗粒沙体上缘呈分段直线，2008—2019 共12个年份齐全；可见数值依次为124、109、127、143、146、159、201、193、184、274、342、334，与冻结数据一致。纵轴标示0、100、200、300、400；2009低谷、2014局部峰值、2016回落和2018最高点均可辨。斜置橙色铲子覆盖2011—2012附近沙面，下端有沙粒遮挡；该段细轮廓线及节点仍可见。沙体有细颗粒、散落边粒和底部浅阴影。标题、SYNTHETIC DATA、million tonnes及底部读图说明清楚可读，未见旧来源标识。",
+  "summary_zh": "当前12个年度值、标签绑定及0–400线性轮廓正确；生成的颗粒沙体直接承载数据，斜插铲子有接触、遮挡与落影。任务可行，未见违反必要要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×2000的image.png像素，未重渲染。图中网格线检出于y=560、810、1060、1310，零线约y=1560，对应每单位2.5 px。在审计坐标引导的局部窗口内检测可见棕色节点圆环；12个圆环中心高度换算值依次约124.2、108.8、127、143、146.2、159、201、193、184、274.2、342、334.2，最大偏差约0.2，即满量程0.05%，低于3%容差。代码核查另证实等距年度坐标、直线连接和闭合至共同零线的纹理蒙版；这是代码证据，不是像素测量。project中的brief和data与冻结输入内容一致，记录的brief、data、reference哈希亦相符。",
+  "uncertainties_zh": "节点像素定位受抗锯齿影响，约有1–2 px误差。铲子覆盖处通过可见轮廓线和节点核对，无法直接观察被挡的底层沙面。未重渲染；结论限于所供image.png及本案素材和代码。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "2008—2019按原序显示，共12个年度节点及一个沙石系列，均未遗漏。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见数值124、109、127、143、146、159、201、193、184、274、342、334逐项符合data.json；轴刻度为0–400。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个数值置于对应轮廓节点上方，年份在同一横坐标下方；铲子附近143、146的对应关系仍清楚。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终像素中的节点高度符合线性量尺；沙体上缘呈规定的分段直线，含2009低谷、2014局部峰值、2016回落及2018最高点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA和本地合成数据说明可读；未沿用参考图USGS或Statista来源背书。已查看raw_01、raw_02，沙粒纹理和橙色木柄铲子在主体中可辨，render.py确实加载相应素材。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "沙纹填满由数据定义并闭合到零线的主体，直接承担编码；铲刃下端被沙粒遮住，周围有接触阴影，边缘有游离颗粒。未见破坏身份或读数的透视、层次或纹理接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、全部年份与数值、million tonnes、SYNTHETIC DATA和读图说明清楚完整；未见重要文字裁切或遮蔽。"
+    }
+  }
+}

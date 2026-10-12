@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为奶黄色纸面上的正面捕梦网，顶部吊绳连至绳结，下方有三组交叠羽毛。待评图可见七个曲边区域，外围顺时针为A、G、E、D、C、B，F位于内部。全部数值及分母301清晰，G以引线连接小区。顶部绳结上方未见可辨认的悬挂绳段。观察已在读取代码前保存。",
+  "summary_zh": "已保存review.json。数据、面积比例、标签绑定及素材融合通过；顶部悬挂绳未清楚保留，属于轻微局部缺失。",
+  "issues": [
+    {
+      "category": "metaphor_identity",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "顶部绳结及向上的悬挂绳应保持可辨。",
+      "observed_zh": "顶部绳结直接终止于纸面，没有清楚可辨的向上悬挂绳段；下方羽毛吊绳仍在。",
+      "evidence_zh": "目视顶部中央仅见绳结。像素辅助检查：x=680–759、y=298–310未检出深色绳像素，y约312即出现宽绳结。素材含上延绳段；render.py裁去top_knot.png上方35像素，此项为代码佐证。",
+      "bbox_xyxy_normalized": [
+        0.472,
+        0.14,
+        0.528,
+        0.176
+      ]
+    }
+  ],
+  "measurement_notes_zh": "测量原始1440×2100的image.png，未重新渲染。按最终填色色簇、连通区及文字孔洞补全测量，多个RGB阈值下最大份额偏差约0.33个百分点。估计细边线归属后，A/G/E/D/C/B/F面积约30.6/2.0/17.6/9.6/11.9/22.6/5.7%，均在3个百分点容差内。代码仅用于确认几何控制及素材使用。",
+  "uncertainties_zh": "描线、抗锯齿、纹理和绳圈遮挡使面积为像素分割估计，尤其G的小区不具备子像素确定性。顶部短绳与绳结的视觉分界有少量解释空间，因此仅记轻微缺失。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七类、单一计数系列、总数301及三组交叠羽毛均可辨；顶部吊绳问题单列为minor。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A92、G6、E53、D29、C36、B68、F17均准确显示，均带分母301；页首总数及区域数正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "六组标签位于对应区域内，G引线落于右上小区；外围顺序及内部F均符合输入。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终图像像素估计偏差均小于约0.4个百分点；七区连续，F不触圆环，无影响读数的大面积重叠或空洞。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理素材，其绕绳纹理、绳结和羽毛实质出现在最终图；render.py控制分类掩膜、区域路径和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "色区直接填充捕梦网内部，绳圈覆盖边沿、羽毛连接下方，正面视角和层次协调，物体承载面积编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "类别、计数、分母、SYNTHETIC DATA、单位、标题及面积说明均清楚可读，无强制文字遮挡或裁切。"
+    }
+  }
+}

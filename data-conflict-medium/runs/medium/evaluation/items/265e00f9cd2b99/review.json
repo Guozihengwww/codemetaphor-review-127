@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图和待评图均呈现两个黄色网纹甜瓜瓜面，右侧包含主体和四片分离切片。待评图可见摄影网纹、蒂痕、浅黄色切口果肉、薄侧壁和软投影。六项标签为 A 50%、B 34%、C 3.5%、D 1.5%、E 4.5%、F 6.5%，引线对应各自区域。最细切片对应 D。标题、系列、SYNTHETIC DATA和单位清晰。Category C 的竖向引线局部穿过“1.5%”数字左端，数字仍可辨认。",
+  "summary_zh": "已保存 review.json。六项数据、绑定、几何和材质融合符合要求；前六项核心检查通过。仅发现引线与数字局部交叠的轻微排版问题。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "必需数值标签清晰，引线应避开其他类别的数字。",
+      "observed_zh": "Category C 的竖向引线穿过 Category D 的“1.5%”中数字 1 的局部区域；数值仍可识别，绑定未改变。",
+      "evidence_zh": "原图右上标签区域可见交叠。代码坐标佐证：C 引线竖段位于 x≈1260px，D 数值位于 y≈678–759px；坐标为代码推导，交叠由原图目视确认。",
+      "bbox_xyxy_normalized": [
+        0.832,
+        0.316,
+        0.866,
+        0.368
+      ]
+    }
+  ],
+  "measurement_notes_zh": "仅分析原始 image.png（1486×2100），未重渲染。像素上弧拟合得到 A 半轴约285×274px、B约285×275px，支持等基准面积。以代码坐标限定搜索带，从原图RGB梯度拟合径向边界并校正规定的0.96纵缩，B–F扇角约244.9°、25.3°、11.0°、32.3°、46.9°；共同基准半径下对应组合占比约34.0%、3.5%、1.5%、4.5%、6.5%，符合3个百分点容差。代码目标扇角分别为244.8°、25.2°、10.8°、32.4°、46.8°。侧壁、阴影及空隙不计入顶面。",
+  "uncertainties_zh": "抗锯齿、绿色皮缘和薄侧壁影响边界定位；拟合结果为近似值，不代表亚像素精度。搜索位置由代码辅助，实际边界来自待评图像像素。现有误差不接近3个百分点容差。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个类别、六个数据区域及四片分离切片齐全；标题、系列、合成数据声明和单位均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A–F分别显示50%、34%、3.5%、1.5%、4.5%、6.5%，与data.json完全一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "引线将A绑定完整左面、B绑定右主体，C–F依次绑定四片切片；D指向最细片，分区顺序正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "原图上弧和径向边界拟合支持等基准面积及目标比例。代码控制扇角、统一纵缩与切片平移；未见细片加宽或顶面遮挡造成比例变化。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张原始生成素材及表面素材，网纹、蒂痕和果肉纹理在成图主体中可辨认；代码将素材映射到数据蒙版与切口。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "瓜面和切片自身承载面积编码；网纹、蒂痕、果肉、薄侧壁和软投影完整，四片与右主体的来源关系及表面层次清楚。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "全部必需文字可读且未裁切。C引线局部交叠D数字，但1.5%、Category D及其独立引线仍明确可辨。"
+    }
+  }
+}
