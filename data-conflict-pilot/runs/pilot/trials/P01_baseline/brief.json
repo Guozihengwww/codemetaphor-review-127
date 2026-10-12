@@ -1,0 +1,49 @@
+{
+  "eligible": true,
+  "exclusion_reason_zh": "",
+  "title_zh": "Synthetic Solid-Fuel Import Shares",
+  "source_identity_zh": "唯一图像证据为本例 input.json 指定的本地 reference.png，尺寸 1130×648。图内标题为“EU imports of solid fuel”，副标题为“by partner, 2014 (%)”，页脚印有 EUROSTAT 署名；此处仅记录图面身份。",
+  "strategy": "replacement",
+  "chart_type": "单面板单系列煤堆高度比较",
+  "reference_observations_zh": "原图仅提供视觉设计和主体身份；其中数据、类别数量、走势及数值范围不是本任务的数据依据。",
+  "brief_zh": "在青蓝色连续背景上，按输入类别顺序排列写实煤堆。煤堆本身的主体高度编码份额；保持煤块颗粒、粗糙黑色材质、自然接触阴影和统一地面。可根据输入类别数调整间距和素材安排。上方保留深蓝标题与数值引线，类别标签置于各自煤堆下方，醒目标注 SYNTHETIC DATA。忽略原截图左右的网页翻页箭头。 制作要求的数据来源为同目录data.json，所有几何和文字必须准确。",
+  "data_provenance_zh": "本地已有任务数据及其冻结变换，全部是合成数据，不是真实统计或参考图数值转录。",
+  "encoding_definition_zh": "一个系列，类别按data.categories从左到右排列，数量必须来自输入。所有煤堆具有同一零基线和同一线性高度映射；只测煤块主体的实际可见最高端点，阴影不计。量程从data.value_axis读取，高度与份额成正比，数值及百分号准确对应。不得通过重复数字标签掩盖同高度的煤堆，也不得把普通柱子放在煤堆旁边。",
+  "mandatory_features": [
+    {
+      "id": "M1",
+      "requirement_zh": "各输入类别恰好对应一个可辨认的写实煤堆；数量与标签均由输入决定。",
+      "reference_evidence_zh": "原图以多个煤堆分别承载各伙伴份额。"
+    },
+    {
+      "id": "M2",
+      "requirement_zh": "煤堆实际可见高度使用共同零点、统一线性比例；背景、接触阴影和纹理不作为数值。",
+      "reference_evidence_zh": "各组煤块主体的高低构成比较。"
+    },
+    {
+      "id": "M3",
+      "requirement_zh": "保留青蓝背景、黑色粗糙煤块、自然的地面接触和柔和阴影。",
+      "reference_evidence_zh": "原图是青蓝底的煤块实物摄影。"
+    },
+    {
+      "id": "M4",
+      "requirement_zh": "每类有准确百分比标签、细引线和类别名，布局随数量调整且全部可读。",
+      "reference_evidence_zh": "原图各煤堆上方有蓝色数值及引线，下方有类别文字。"
+    },
+    {
+      "id": "M5",
+      "requirement_zh": "生图素材实质提供煤块主体，代码控制可见边界、标签与合成。",
+      "reference_evidence_zh": "煤块的材质和身份是图的主要视觉内容。"
+    }
+  ],
+  "acceptance_criteria_zh": [
+    "输入数据完整、标签数值及绑定准确；可见几何连续量误差不超过满量程3%，份额3个百分点，数量准确一致。",
+    "保留主体身份和replacement/fusion结合方式，允许数据承载轮廓随输入适配，不能退回普通图表加旁置装饰。",
+    "生图素材实际承担主体视觉；代码控制数据边界和文字。所有必需文字在原始输出尺寸可读。"
+  ],
+  "ambiguities_resolved_zh": "只保留设计关系和编码定义，数量、趋势、数值范围和标注均由输入决定。",
+  "feasibility_zh": "可用生图获得主体素材，通过代码缩放、分层、蒙版和几何构建适配数据；设计不要求复制原图数据形状。",
+  "width": 2000,
+  "height": 1148,
+  "data_json": "{\"synthetic\": true, \"subject\": \"Solid-fuel import shares by fictional partner\", \"categories\": [\"Partner A\", \"Partner B\", \"Partner C\", \"Partner D\", \"Partner E\", \"Partner F\"], \"category_order\": \"left_to_right\", \"series\": [{\"name\": \"Share of total imported solid-fuel mass\", \"unit\": \"%\", \"values\": [28.6, 22.4, 19.7, 10.1, 5.9, 13.3]}], \"total_percent\": 100, \"display_decimal_places\": 1, \"value_axis\": {\"minimum\": 0, \"maximum\": 30, \"ticks\": [0, 5, 10, 15, 20, 25, 30]}}"
+}

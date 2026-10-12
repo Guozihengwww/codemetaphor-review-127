@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图采用青蓝背景、粗糙黑色煤堆、上方数值引线和下方类别名。待评图有10个煤堆，按Partner A–J排列，百分比均与输入一致。煤堆位于同一地面，A最高，J高于I；必需标签清晰，未见明显遮挡或拼接断裂。以上观察在读取代码前记录。",
+  "summary_zh": "通过。数据、标签绑定、可见煤堆高度及隐喻整合符合冻结简报。已保存review.json；按追加规则未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量image.png，未重渲染。可见0–30%刻度跨度420像素，零线y=860。A–J煤块峰顶y依次为460、692、706、748、762、764、766、769、778、757，最低实质像素均为y=859。换算份额约为28.57%、12.00%、11.00%、8.00%、7.00%、6.86%、6.71%、6.50%、5.86%、7.36%，最大名义误差约0.04个百分点。代码另证实共同基线及线性缩放，与像素证据一致。",
+  "uncertainties_zh": "抗锯齿边缘约有1–2像素判读范围，远低于满量程3%对应的12.6像素容差。未核验素材生成过程；所供素材在终图中的实际使用可由轮廓和纹理确认。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "10个煤堆、类别名、百分比及细引线完整；标题、合成数据标识和刻度可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "十项百分比逐项符合data.json；10 partners与100.0% total正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "Partner A–J从左至右排列，类别名和数值引线分别对应各自煤堆，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际煤块边界具有共同底端，十堆实测高度均在满量程3%容差内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_02及相关透明煤块素材；其轮廓和纹理在终图清楚可辨，render.py实际加载并缩放合成这些素材。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "煤堆自身高度承担编码；青蓝地面、粗糙煤块和接触阴影保留，无破坏结构的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始尺寸下全部必需标签清晰完整，无明显重叠或裁切。"
+    }
+  }
+}

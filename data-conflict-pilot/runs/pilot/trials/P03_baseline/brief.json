@@ -1,0 +1,54 @@
+{
+  "eligible": true,
+  "exclusion_reason_zh": "",
+  "title_zh": "Synthetic Book Sales",
+  "source_identity_zh": "本地 reference.png，尺寸946×884。画面英文标题为“TOP 10 MOST READ BOOKS IN THE WORLD”，底部可见JAREDFANNING.COM字样。依据仅为该图可见内容，未核验其统计或外部出处。",
+  "strategy": "replacement",
+  "chart_type": "单面板单系列书脊延伸高度比较",
+  "reference_observations_zh": "原图仅提供视觉设计和主体身份；其中数据、类别数量、走势及数值范围不是本任务的数据依据。",
+  "brief_zh": "在芥末黄色背景与底部棕色书架上排列输入定义的彩色书脊，采用近正面的印刷插画材质、纸布感、细线和框格。零线下方保留共同高度的完整非数据装饰区，题名、作者、书脊色彩和文字方向按输入字段安排；零线上方的延伸高度承载销量。保留右上标题和单位说明、左侧量轴、各书顶上的精确数值和明显的 SYNTHETIC DATA。不要预设哪本最高或哪些书接近零线。 制作要求的数据来源为同目录data.json，所有几何和文字必须准确。",
+  "data_provenance_zh": "本地已有任务数据及其冻结变换，全部是合成数据，不是真实统计或参考图数值转录。",
+  "encoding_definition_zh": "每个输入书籍对应一条书脊，顺序按data.category_order。读取data.value_axis定义统一线性销量尺度，单位保持million copies。共同零线上方的延伸高度与当前值成正比，零线下方装饰高度不计入；不得设置人为最小数据柱高、换成对数尺度或沿用参考图刻度。所有数值、刻度、缩写和小数精度必须准确反映输入；标签可使用清楚的引线避免小延伸上的拥挤。标题和作者置于非数据装饰区，保持上下书脊连续。",
+  "mandatory_features": [
+    {
+      "id": "M1",
+      "requirement_zh": "按输入顺序保留全部书籍和其虚构题名、作者、颜色与文字方向。",
+      "reference_evidence_zh": "参考设计用不同书脊表示不同书籍。"
+    },
+    {
+      "id": "M2",
+      "requirement_zh": "所有书脊共享零线和线性量尺，只有零线上方延伸编码销量。",
+      "reference_evidence_zh": "原图白色零线以上承载数据，以下是完整书脊装饰。"
+    },
+    {
+      "id": "M3",
+      "requirement_zh": "保留黄色背景、棕色书架、近正面书脊插画及材料细部。",
+      "reference_evidence_zh": "原图有明显黄色出版物海报风格与彩色书脊。"
+    },
+    {
+      "id": "M4",
+      "requirement_zh": "左侧尺度、单位、各书顶部数值和合成标识准确可读，全部按当前输入生成。",
+      "reference_evidence_zh": "参考图有销量量轴与各书顶的数字。"
+    },
+    {
+      "id": "M5",
+      "requirement_zh": "保持题名作者主要位于非数据区，细线或框格不会混淆零线。",
+      "reference_evidence_zh": "原图书名与作者在零线下方完整显示。"
+    },
+    {
+      "id": "M6",
+      "requirement_zh": "生图素材实质提供书脊材质或插画，代码控制边界、文字和合成。",
+      "reference_evidence_zh": "书脊材料是设计的重要视觉信息。"
+    }
+  ],
+  "acceptance_criteria_zh": [
+    "输入数据完整、标签数值及绑定准确；可见几何连续量误差不超过满量程3%，份额3个百分点，数量准确一致。",
+    "保留主体身份和replacement/fusion结合方式，允许数据承载轮廓随输入适配，不能退回普通图表加旁置装饰。",
+    "生图素材实际承担主体视觉；代码控制数据边界和文字。所有必需文字在原始输出尺寸可读。"
+  ],
+  "ambiguities_resolved_zh": "只保留设计关系和编码定义，数量、趋势、数值范围和标注均由输入决定。",
+  "feasibility_zh": "可用生图获得主体素材，通过代码缩放、分层、蒙版和几何构建适配数据；设计不要求复制原图数据形状。",
+  "width": 2000,
+  "height": 1869,
+  "data_json": "{\"data_status\": \"SYNTHETIC DATA\", \"subject\": \"Ten fictional book titles\", \"metric\": \"Illustrative cumulative copies sold during a fictional 50-year period\", \"time_window_years\": 50, \"units\": \"million copies\", \"category_order\": [\"book_a\", \"book_b\", \"book_c\", \"book_d\", \"book_e\", \"book_f\", \"book_g\", \"book_h\", \"book_i\", \"book_j\"], \"categories\": [{\"id\": \"book_a\", \"label\": \"Book A\", \"spine_title\": \"NORTH ATLAS\", \"spine_byline\": \"AUTHOR A\", \"title_layout\": \"stacked\", \"spine_color\": \"black\"}, {\"id\": \"book_b\", \"label\": \"Book B\", \"spine_title\": \"NOTES FROM THE QUIET COAST\", \"spine_byline\": \"AUTHOR B\", \"title_layout\": \"rotated_90_degrees\", \"spine_color\": \"orange_red\"}, {\"id\": \"book_c\", \"label\": \"Book C\", \"spine_title\": \"GARDEN TALES\", \"spine_byline\": \"AUTHOR C\", \"title_layout\": \"rotated_90_degrees\", \"spine_color\": \"dark_green\"}, {\"id\": \"book_d\", \"label\": \"Book D\", \"spine_title\": \"THE SILVER PATH\", \"spine_byline\": \"AUTHOR D\", \"title_layout\": \"stacked_in_frames\", \"spine_color\": \"teal_blue\"}, {\"id\": \"book_e\", \"label\": \"Book E\", \"spine_title\": \"THE OPEN HORIZON\", \"spine_byline\": \"AUTHOR E\", \"title_layout\": \"rotated_90_degrees\", \"spine_color\": \"orange\"}, {\"id\": \"book_f\", \"label\": \"Book F\", \"spine_title\": \"THE CRIMSON ARCH\", \"spine_byline\": \"AUTHOR F\", \"title_layout\": \"rotated_90_degrees\", \"spine_color\": \"burgundy\"}, {\"id\": \"book_g\", \"label\": \"Book G\", \"spine_title\": \"THE EVENING CHRONICLE\", \"spine_byline\": \"AUTHOR G\", \"title_layout\": \"rotated_90_degrees\", \"spine_color\": \"black\"}, {\"id\": \"book_h\", \"label\": \"Book H\", \"spine_title\": \"BEYOND THE HILLS\", \"spine_byline\": \"AUTHOR H\", \"title_layout\": \"stacked\", \"spine_color\": \"green\"}, {\"id\": \"book_i\", \"label\": \"Book I\", \"spine_title\": \"BUILD AND CREATE\", \"spine_byline\": \"AUTHOR I\", \"title_layout\": \"stacked\", \"spine_color\": \"teal_blue\"}, {\"id\": \"book_j\", \"label\": \"Book J\", \"spine_title\": \"DIARY OF A QUIET TOWN\", \"spine_byline\": \"AUTHOR J\", \"title_layout\": \"rotated_90_degrees\", \"spine_color\": \"orange_red\"}], \"series\": [{\"id\": \"synthetic_sales\", \"label\": \"Synthetic copies sold\", \"unit\": \"million copies\", \"values\": [3840, 850, 420, 108, 69, 59, 45, 35, 31, 26]}], \"value_axis\": {\"minimum\": 0, \"maximum\": 4000, \"ticks\": [0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000]}}"
+}
