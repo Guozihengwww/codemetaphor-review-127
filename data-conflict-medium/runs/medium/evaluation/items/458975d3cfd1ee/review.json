@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图将四色来源层与海水纹理融合，水面右侧有游艇。待评图保留这些主体关系；P01–P16顺序完整，纵轴从共同水面0向下至7200。图例、区域标签及三组数值表颜色对应。总轮廓P15最深、P16回升，关键总值标注可读；左端小层较薄，需进一步核对像素。",
+  "summary_zh": "已保存review.json。前六项检查均通过：数据、绑定、几何及海洋素材融合符合要求。仅纵轴标题与单位轻微叠压，判为minor。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "纵轴标题和单位清楚排布，文字不相互叠压。",
+      "observed_zh": "左上“累计输出 ↓”与“100 tonnes”轻微上下叠压，仍可辨认；底部另有清晰完整单位。",
+      "evidence_zh": "成图左上可见两行文字部分笔画叠压。代码及字体参数推导的文字包围盒分别为[122,287,237,308]、[122,303.5,218,316]，纵向交集4.5像素；此数值为布局推导，非像素测量。",
+      "bbox_xyxy_normalized": [
+        0.055,
+        0.184,
+        0.109,
+        0.205
+      ]
+    }
+  ],
+  "measurement_notes_zh": "评价原始image.png（2200×1552），未重新渲染。水面约y=340，7200刻度约y=1132，满量程792像素，3%容差为23.76像素。在16期刻度旁约7像素处读取原图色界，抽样边界与对应时期理论累计位置相差约0–4像素。例如P06内部色界约y=498/528/795，外侧背景起于836；目标为497.85/526.89/794.96/835。差异包含邻列插值、描边及抗锯齿影响。代码中的累计蒙版和平滑插值仅作为辅助证据。",
+  "uncertainties_zh": "P01、P02的B层理论厚度约1.76、1.65像素，无法可靠分辨其亚像素厚度差；未发现超过满量程3%容差的偏差。像素抽查并非逐像素全轮廓测量。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "P01–P16完整有序；四来源均有主体色层、图例和表格行，覆盖64个分项值及16个总值，无第五层。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "目视核对64个分项值与data.json一致，16个总值与独立求和一致；主体190、4500、7020、6480标注正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A/B/C/D分别对应绿、亮蓝、深蓝、紫色层；区域标签、图例、表格色标一致，总值引线连接底部轮廓。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素色界抽样偏差约0–4像素，小于23.76像素容差；共同水面为零、线性尺度向下，P15最深及P16变浅符合数据。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张raw素材及海水、游艇资源；对应纹理和游艇在成图中可辨认。render.py将海水素材映射到四层数据蒙版。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "四个海水区域本身承载厚度与累计边界；游艇接合共同水面，未见破坏结构或读数的遮挡、错层及接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成数据声明、时期、来源及完整表格可读；纵轴标题与单位局部轻微叠压，但底部完整单位清晰，理解不受实质影响。"
+    }
+  }
+}

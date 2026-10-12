@@ -54,6 +54,37 @@
     ]
   },
   {
+    "case": "D05",
+    "source_case": "M031",
+    "name": "鸡蛋面积分区",
+    "conflict_type": "category_count",
+    "observations": [
+      {
+        "condition": "baseline",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "LABELS",
+            "expected_zh": "底部辅助顺序说明中的箭头应正常显示。",
+            "observed_zh": "Component A 与 Component F 之间显示缺字方框，不影响类别、数值或引线绑定。",
+            "evidence_zh": "成图底部约 x=390–405、y=1750–1774 可见缺字框。代码写入“→”，所用 regular.ttf 的字符映射不含 U+2192。",
+            "bbox_xyxy_normalized": [
+              0.194,
+              0.971,
+              0.204,
+              0.986
+            ]
+          }
+        ],
+        "summary_zh": "数据、面积编码和鸡蛋融合结构均符合要求；仅辅助说明箭头缺字。已保存 review.json，未运行 submit.py。"
+      }
+    ]
+  },
+  {
     "case": "D09",
     "source_case": "M004",
     "name": "旗帜时间面积轮廓",
@@ -112,6 +143,37 @@
           }
         ],
         "summary_zh": "已保存review.json，未运行submit.py。年度节点与数值正确，但184标签底板遮改连续沙体上缘，局部偏差约为满量程3.6%，超过规定容差。"
+      }
+    ]
+  },
+  {
+    "case": "D13",
+    "source_case": "M053",
+    "name": "海洋四层剖面",
+    "conflict_type": "trend_shape",
+    "observations": [
+      {
+        "condition": "baseline",
+        "stage": "first",
+        "quality": "pass",
+        "confirmed_failure": false,
+        "issues": [
+          {
+            "category": "layout_readability",
+            "severity": "minor",
+            "requirement_id": "LABELS",
+            "expected_zh": "纵轴标题和单位清楚排布，文字不相互叠压。",
+            "observed_zh": "左上“累计输出 ↓”与“100 tonnes”轻微上下叠压，仍可辨认；底部另有清晰完整单位。",
+            "evidence_zh": "成图左上可见两行文字部分笔画叠压。代码及字体参数推导的文字包围盒分别为[122,287,237,308]、[122,303.5,218,316]，纵向交集4.5像素；此数值为布局推导，非像素测量。",
+            "bbox_xyxy_normalized": [
+              0.055,
+              0.184,
+              0.109,
+              0.205
+            ]
+          }
+        ],
+        "summary_zh": "已保存review.json。前六项检查均通过：数据、绑定、几何及海洋素材融合符合要求。仅纵轴标题与单位轻微叠压，判为minor。"
       }
     ]
   },

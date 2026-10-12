@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为深色地图上的七行航空公司排行。当前成图显示Airline A–G，金额依次为31.2、10、3、2.5、1、0.2、0.2；朝右客机、后方尾迹和右侧金额均可见。机鼻位置及机体大小随数值递减，F与G相同。标题、SYNTHETIC DATA、USD billion和0–35刻度可读，标签未遮住鼻端。",
+  "summary_zh": "通过。类别、数值、顺序和绑定完整，机鼻位置及机体面积符合当前数据，生成素材实质参与主体。已保存review.json，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查2000×2000的image.png，未重新渲染。像素测得0与35刻度约位于x=490和1810，3%满量程容差为39.6像素。不同亮度阈值下，七个鼻端约为1666–1667、867、603、584、527–528、496–497、496–497像素；数据目标分别为1666.69、867.14、603.14、584.29、527.71、497.54、497.54，偏差均不足2像素。亮度阈值130并填充内部暗孔所得区域相对A的近似面积为1、0.3152、0.0932、0.0791、0.0314、0.00625、0.00632，目标为1、0.3205、0.0962、0.0801、0.0321、0.00641、0.00641。面积估计存在边缘、阴影和邻接尾迹误差，仅作像素交叉证据；代码另证统一模板缩放及机鼻锚定。",
+  "uncertainties_zh": "F、G机体约30像素长，抗锯齿使端点存在约1–2像素的不确定性。亮度分割不能精确分离阴影、半透明边缘与邻接尾迹，面积数字并非精确实体面积，不主张亚像素精度。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Airline A–G七行完整，顺序与数据一致，每行均有客机和金额。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "七个金额准确显示31.2、10、3、2.5、1、0.2、0.2；Bn、USD billion和SYNTHETIC DATA均可读。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别块、客机和金额逐行对应；F、G分别绑定0.2，未见串行或标签遮鼻。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图像素鼻端误差均不足2像素，低于39.6像素容差；近似机体面积比例与数据相符。代码确认线性鼻端映射及sqrt(值/31.2)统一缩放，无最小尺寸钳制。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始客机、地图及机体模板，对应纹理在成图中可辨；像素核对确认模板不透明区域与原始客机对应裁剪一致。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "七架朝右俯视客机保留机身、双翼与尾翼，以鼻端和实体大小共同编码数值；尾迹位于机体后方，小值跨零线有明确说明。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、类别、金额、单位、合成数据声明和读图说明均可读，未见重要文字遮挡或裁切。"
+    }
+  }
+}

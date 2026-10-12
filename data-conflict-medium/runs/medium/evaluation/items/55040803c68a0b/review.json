@@ -1,0 +1,44 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "待评图显示七行Airline A–G，金额依次为31.2、27.2、18.1、17.8、15.0、14.7、14.7。深色地图、白色尾迹、朝右俯视客机、类别识别块均可辨认。SYNTHETIC DATA、USD billion及0–35刻度可读。金额未遮住鼻尖，F/G看起来等大且对齐。",
+  "summary_zh": "通过。数据、绑定、可见几何和客机隐喻均符合要求，未发现需报告的可见缺陷。已保存review.json。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量2000×2000的image.png：零点与35刻度约位于x=470、1765，满量程1295px。七个鼻尖约位于1624.5、1476.5、1139.5、1128.5、1024.5、1013.5、1013.5px，与目标偏差均约1px以内。最终RGB图经颜色分割、短断缝闭合及孔洞填补，估计相对A的面积为1、0.878、0.594、0.584、0.488、0.478、0.478；目标为1、0.872、0.580、0.571、0.481、0.471、0.471。多阈值估计的最大偏差约为满量程2.0%，低于3%容差。代码另证实共同线性端点映射及平方根等比缩放；未运行渲染器或读取自检结果。",
+  "uncertainties_zh": "面积分割受抗锯齿、深色驾驶舱、尾迹及闭合操作影响，属于近似可见面积，不能视作精确透明度面积。鼻尖边界保留约1px不确定性。素材制作历史未独立验证。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七类别、七架客机、七个金额及必需标题、单位、合成数据声明齐全，顺序符合输入。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "七个金额逐项准确，15.0及两个14.7均正确保留；单位与0–35刻度正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、尾迹、飞机和金额逐行对应，无错绑；F/G同值对应等大、对齐的客机。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终图鼻尖位置偏差约1px以内；实体面积的多阈值近似测量未发现超过3%满量程的偏差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始飞机、地图及客机素材，其舷窗、驾驶舱、机翼和地图纹理实质出现在成图中。render.py控制几何与文字，项目输入与冻结数据一致。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "客机机身、双翼、尾翼保留，鼻尖与实体面积直接承载数值；尾迹位于机体后方，无破坏结构的遮挡或错位。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "类别、金额、刻度、声明、单位及底部编码说明均可读，无必需文字截断或遮挡。"
+    }
+  }
+}

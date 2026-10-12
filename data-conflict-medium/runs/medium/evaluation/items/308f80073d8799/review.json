@@ -1,0 +1,59 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为直立、上窄下圆的鸡蛋，以共点分区承载成分。image.png 中完整蛋体、六个共点分区及六项外置标签清楚可见；数值依次为 1.0%、1.5%、3.1%、4.7%、13.0%、76.7%。合成声明、系列名和单位可读，蛋壳纹理及明暗覆盖各分区。底部 A 与 F 之间的符号疑似缺字框。",
+  "summary_zh": "数据、面积编码和鸡蛋融合结构均符合要求；仅辅助说明箭头缺字。已保存 review.json，未运行 submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "底部辅助顺序说明中的箭头应正常显示。",
+      "observed_zh": "Component A 与 Component F 之间显示缺字方框，不影响类别、数值或引线绑定。",
+      "evidence_zh": "成图底部约 x=390–405、y=1750–1774 可见缺字框。代码写入“→”，所用 regular.ttf 的字符映射不含 U+2192。",
+      "bbox_xyxy_normalized": [
+        0.194,
+        0.971,
+        0.204,
+        0.986
+      ]
+    }
+  ],
+  "measurement_notes_zh": "测量提供的 2000×1800 image.png，未运行渲染器。通过成图色差提取蛋体外轮廓，从多条像素扫描线的颜色突变拟合分区边界。轮廓约为 [552,352,1433,1607]，汇聚点约为 (1001,1030)。六区面积估计为 1.1%、1.5%、3.0%、4.8%、13.0%、76.6%；改变轮廓阈值后各项变化不足 0.02 个百分点。这是像素边界拟合估计，非代码目标值。代码另证实面积校准、文字和引线均受程序控制。",
+  "uncertainties_zh": "细描边、抗锯齿和孔纹影响边缘定位，小分区面积为近似测量，不主张亚像素精度；估计偏差远小于 3 个百分点容差。素材使用由可见纹理对应及渲染代码共同核对，未检查生成日志。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个分区及 Component A—F 标签完整，单一系列、合成声明和单位均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "六项百分比逐项符合 data.json；TOTAL 100% 与输入总和一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "六条引线分别连接对应分区，无混淆交叉；分区沿轮廓按 A—F 顺时针排列。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素边界拟合所得面积约为 1.1%、1.5%、3.0%、4.8%、13.0%、76.6%，与目标的估计偏差均小于 0.2 个百分点。六区共点覆盖完整蛋体，未见空缺或重叠。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看 raw_01.png 和 eggshell.png；其孔纹、高光和暗面在成图主体中可辨。render.py 读取素材并保留空间纹理及光照，按数据重着色。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "完整鸡蛋直接承载六个闭合分区，保持上窄下圆轮廓。纹理及明暗跨区连续，边界止于蛋壳轮廓，落影位于蛋体下方，标签在主体外。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "所有强制标签和数值清晰，无截断或遮挡；缺字仅限辅助顺序说明中的箭头。"
+    }
+  }
+}
