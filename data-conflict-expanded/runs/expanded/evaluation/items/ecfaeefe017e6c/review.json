@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以立式油桶的彩色分层表示石油消费构成，周边用途图注连接桶身，底部五类为窄层。最终图可见金属桶盖、连续有纹理的侧壁、底圈及接触阴影；层界为下弯弧线。42.0%、20.8%、12.6%、7.5%、6.0%、4.1%及对应类别标在桶身，底部1.9%、1.5%、1.4%、1.3%、0.9%五类以引线连接窄色层和用途图形。主题、SYNTHETIC DATA、Share of synthetic daily total (%)及100.0%总量均清楚可读；初看未见缺类、遮挡或明显错接。",
+  "summary_zh": "11类数值、标签与用途连接完整，像素测量支持按份额控制桶身层高。写实油桶、金属材质、接触阴影及数据与物体的融合关系保留，未发现实质性可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析1700×2200的image.png，未重渲染。以归一化RGB及相邻层颜色距离的交点估计边界，处理抗锯齿过渡；x=560与1140两列的侧壁总高约1179.8与1179.7 px。x=560各层高依类别顺序约495.7、245.2、148.9、88.4、70.8、48.3、22.4、17.7、16.7、15.2、10.6 px；两列各层份额与目标差均小于0.1个百分点。边界定位精度约±1 px。另据源码，H=1180，边界为同一弧线加H×累计份额；此为代码核验，非像素测量。",
+  "uncertainties_zh": "抗锯齿及金属纹理使边界定位存在约1 px不确定性，对最小层的相对影响较大，不能据此断言亚像素精确。按限制未检查执行日志或历史记录，无法独立确认所有渲染均经capture_render.py保存；素材使用和几何控制已由当前图像与源码交叉确认。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11类均出现，并各有对应用途图形；当前系列、百分比单位、每日总量口径与SYNTHETIC DATA提示齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见数值依次为42.0、20.8、12.6、7.5、6.0、4.1、1.9、1.5、1.4、1.3、0.9%，与data.json一致，合计100.0%；图中类别总数为11。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "上方六类文字位于各自色层；底部五类由独立引线连接相应窄层。加油机、柴油机械、材料制品、飞机、日用品、丙烷设备以及道路、货船、塑料制品、钢卷、润滑油包装均与对应类别绑定。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "两列最终像素边界测量均符合3个百分点容差，层序保持输入顺序。桶盖和底部金属圈位于数据侧壁之外；弧形分界平移，未见小层被人为加高。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和raw_02.png；最终桶盖、滚筋、划痕及11组用途图形与原始素材对应。render.py实际采样素材，并用当前数据控制层界和文字。capture_render.py存在，未执行或核查历史运行。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "有金属反光与滚筋的桶身侧壁本身承载彩色份额层；用途插画通过引线与这些层连接。桶盖、侧壁、底圈及阴影衔接可读，未见破坏物体身份或读数的接缝和遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题标题、合成提示、每日总量份额及百分比单位清楚。长类别名称与底部五类外置标签完整可读，引线未遮挡必需文字。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "立式圆柱桶的金属盖接于侧壁上方，底圈承接最下方绿色层并与落地阴影相接。11条彩色区域连续覆盖侧壁，周围用途图注的连接点位于相应区域，保留物体与数据的融合结构。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Petroleum product use、Share of synthetic daily total (%)、ONE DAILY TOTAL及11个产品类别共同明确石油产品用途和单日总量构成。页脚说明插画仅表达用途、不增加数量系列；输入总份额确为100%。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考图的石油消费构成及产品用途关系得到保留；原图美国2022年消费与每日2000多万桶的真实统计口径，按冻结输入改为合成每日总量。此部分变化归于允许的输入改编，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下底部五条窄色层连续可辨，x=560处约高22.4、17.7、16.7、15.2、10.6 px。最小绿色层仍位于桶身与底圈之间，五类引线可追踪，数值未取零；栅格边缘限制仍适用。"
+    }
+  },
+  "semantic_attribution_zh": "未见当前主题、指标、类别角色或用途关系的输出丢失。参考真实地区、年份与日消费量被合成口径替代，属于冻结输入允许的统计语境改编，故reference_meaning记partial而不判生成失败。最窄层的亚像素准确性受分辨率限制，物体连接与数据区域仍可辨认。"
+}

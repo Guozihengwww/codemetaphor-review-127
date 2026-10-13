@@ -6255,201 +6255,95 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图有七颗混色颜料球、同心细圈、弯排名称、黑底百分比及汇向灰度手的细线。最终图七类分别绑定42%、37%、27%、22%、19%、19%、19%；球有旋纹、光泽和阴影，并遮住内圈。标题、合成提示、独立多选说明及径向图例清楚。Efficiency名称末段附近有细线经过，仍可辨认。",
+      "summary_zh": "数据、尺度和核心物体关系均保留，仅有局部线字相交的轻微排版问题。已保存review.json并通过schema校验；未运行submit.py。",
+      "issues": [
+        {
+          "category": "layout_readability",
+          "severity": "minor",
+          "requirement_id": "M1",
+          "expected_zh": "类别名称清晰可读，连接线与字形保持适当分离。",
+          "observed_zh": "来自Gratitude标牌的细线穿过Efficiency名称末段，造成局部视觉干扰，但名称仍可辨认。",
+          "evidence_zh": "原图下部偏右、Efficiency球上方可见黑色斜线与名称末段相交；源码第二条连接线路径经过同一区域。",
+          "bbox_xyxy_normalized": [
+            0.662,
+            0.594,
+            0.707,
+            0.616
+          ]
+        }
+      ],
+      "measurement_notes_zh": "对1800×2160原图按颜色阈值提取各球外接框，半径约157、142、112、97、88、88.25、88像素。源码公式r=32+148×值/50对应目标156.32、141.52、111.92、97.12、88.24、88.24、88.24像素，最大差约0.7像素，折合约0.24个百分点。半径来自像素测量，数值换算使用源码尺度。各外圈约180像素半径，图例交点也对应32至180像素。未运行渲染或自检。",
+      "uncertainties_zh": "颜色阈值和抗锯齿使边界测量约有1像素不确定性，阴影不计入数据半径。未读取执行历史，不能独立确认每次完整渲染均由capture_render.py保存。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "七类、七球、七个数值标牌及对应细线完整，类别按输入顺序逐行布置。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "七个百分比与输入一致，总和185%准确；图例0–50%及每圈5个百分点说明完整。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "名称与对应球共轴，数值标牌位于该球下方，绑定准确。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "实测轮廓符合固定零核加线性径向增量，三个19%球等大；球与圈共心，图例共享尺度。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "原始素材的七种旋纹及灰度手清楚用于成图；源码控制数据圆形边界、同心圈和文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "颜料球外轮廓承载数值并覆盖内圈；标牌细线汇入拇指与食指接触处，手位于汇线前景。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "全部必要文字可读，Efficiency处局部线字相交未妨碍识别。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "纸纹、七颗旋纹光泽球、软阴影、同心圈、弯排名称、黑底数字及七线汇入捏握手均保留。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "正向情绪增加的主题、报告增加的比例、百分比单位及独立多选口径均明确。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "正向情绪增加与七类统计角色、手捏握球束的关系均保留；当前输入未要求复制疫情情境或旧统计。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "最小球直径约176像素，纹理、明暗、边界及同心圈清晰，未仅靠数字维持可辨性。"
+        }
+      },
+      "semantic_attribution_zh": "合成数值替代真实调查属于输入许可，未将原疫情情境或旧数值的省略计为缺陷。未发现输出造成的核心语义丢失；局部线字相交属于排版问题，像素级测量限制已单独说明。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/dc0739c056b2d9",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E53",
-    "source_case": "M065",
-    "name": "正向情绪变化的多选比例",
-    "conflict_type": "numeric_range",
-    "trial": "E53_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 3,
-    "image_available": true,
-    "review_id": "d145bf1ee60687",
-    "reproduction": {
-      "round": 3,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/d145bf1ee60687",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E14",
-    "source_case": "M049",
-    "name": "石油产品消费份额与用途",
-    "conflict_type": "category_count",
-    "trial": "E14_conflict",
-    "condition": "conflict",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "9a2d35ae2e0fd8",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/9a2d35ae2e0fd8",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E14",
-    "source_case": "M049",
-    "name": "石油产品消费份额与用途",
-    "conflict_type": "category_count",
-    "trial": "E14_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "9a7d3f975622df",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/9a7d3f975622df",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E34",
-    "source_case": "M058",
-    "name": "女性议员席位占比与50%平等目标",
-    "conflict_type": "trend_shape",
-    "trial": "E34_baseline",
-    "condition": "baseline",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "5e1a171a21d2f1",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/5e1a171a21d2f1",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E34",
-    "source_case": "M058",
-    "name": "女性议员席位占比与50%平等目标",
-    "conflict_type": "trend_shape",
-    "trial": "E34_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 1,
-    "image_available": true,
-    "review_id": "5e1a171a21d2f1",
-    "reused_identical_image": true,
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/5e1a171a21d2f1",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "pass",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -6472,128 +6366,95 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.98,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以油桶彩色侧壁分层承载产品份额，外围用途插画连接对应区域。成图保留金属桶盖、筋纹、底圈和接触阴影；11层、类别、百分比及用途插画齐全。合成数据标识、主题、每日总量口径和单位清楚。底部五条薄层可分色辨认，未见必要标签缺失或大面积遮挡。",
+      "summary_zh": "数据、标签和油桶分层关系均正确。仅桶底两侧存在轻微矩形裁切接缝。review.json已保存并通过schema校验，未运行submit.py。",
+      "issues": [
+        {
+          "category": "texture_boundary",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "桶身、底圈及接触阴影保持连贯的物体外观。",
+          "observed_zh": "桶底两侧灰色素材在白底上出现矩形上沿，局部贴片边界可见；不影响层高、物体身份或数据解释。",
+          "evidence_zh": "接缝约位于y=1650。实际像素在x=1210处从y=1648的RGB(255,255,255)变为y=1651的(183,183,184)。源码将底缘素材从(455,1650)起矩形贴入，与可见位置一致；贴入坐标来自源码。",
+          "bbox_xyxy_normalized": [
+            0.267,
+            0.748,
+            0.733,
+            0.811
+          ]
+        }
+      ],
+      "measurement_notes_zh": "读取1700×2200成图像素，以色度识别纵向色带，并交叉核对多个列。x=1150处侧壁高度约1210像素，各层厚度约508、252、152、91、73、49、23、18、17、16、11像素，对应41.983%、20.826%、12.562%、7.521%、6.033%、4.050%、1.901%、1.488%、1.405%、1.322%、0.909%。最大近似偏差0.05个百分点。源码另证实统一弧线平移、按累计份额划层，无最小高度设置；未以公式代替像素核验。",
+      "uncertainties_zh": "抗锯齿界面有约1像素定位不确定度。未查看被禁止的运行记录，无法独立确认capture_render.py实际执行历史；当前图像的素材使用和几何已有直接证据。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "11个类别、11层及11组用途插画完整，指定用途主体均可见。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "全部百分比与输入一致，总计100.0%，类别数11正确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "层内标签及底部五组引线正确绑定类别；用途插画连接对应层。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "像素取样最大近似偏差0.05个百分点，符合3个百分点容差；桶盖不计入数据高度。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看两张原始素材，桶盖、金属纹理及用途主体在成图中实质使用；源码控制层界、引线和文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "份额直接占据金属桶身侧壁，用途图注接入对应层；局部接缝未破坏融合。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "标题、合成标识、指标、单位及11项类别和值均清楚可读。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "金属盖连接连续分层侧壁，底圈与接触阴影相接，外围用途插画连接对应数据区域。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "主题及副标题明确表达石油产品用途与合成每日总量份额；插画不构成额外数量系列。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留参考的石油产品份额与用途关系；真实统计背景按冻结输入替换为合成每日总量。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "底部五个薄层约23、18、17、16、11像素，连续桶身区域、边界和引线落点仍可辨，未人为加厚。"
+        }
+      },
+      "semantic_attribution_zh": "主题及产品份额、用途角色保留。真实统计背景改为合成口径由冻结输入授权，不属于输出语义损失。输出仅有桶底局部裁切瑕疵；小层精细厚度判断受约1像素边缘分辨率限制。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/45eacd1eed3ddd",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E14",
-    "source_case": "M049",
-    "name": "石油产品消费份额与用途",
-    "conflict_type": "category_count",
-    "trial": "E14_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 4,
-    "image_available": true,
-    "review_id": "ecfaeefe017e6c",
-    "reproduction": {
-      "round": 4,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/ecfaeefe017e6c",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E34",
-    "source_case": "M058",
-    "name": "女性议员席位占比与50%平等目标",
-    "conflict_type": "trend_shape",
-    "trial": "E34_conflict",
-    "condition": "conflict",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "b08ce1689a5fa1",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/b08ce1689a5fa1",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E34",
-    "source_case": "M058",
-    "name": "女性议员席位占比与50%平等目标",
-    "conflict_type": "trend_shape",
-    "trial": "E34_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "f23c5f4663a690",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/f23c5f4663a690",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "pass",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -6616,20 +6477,95 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.97,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图可见五只彩色热气球，以细绳连接吊篮，置于共同绿地上方。成图按A–E排列五家公司，圆鼓收尖气囊具有布料纹理，吊篮尺寸相近。C吊篮略高于A，E最低；A气囊最大，E最小。十个薪酬数值正确，主题、合成声明、指标和单位清楚。左轴$0靠近绿地上沿，疑有局部遮挡。",
+      "summary_zh": "已保存review.json。数据、语义和热气球融合关系均符合要求；唯一发现是左轴零刻度下半部被绿地轻微遮挡，零点含义仍由地面文字明确说明。",
+      "issues": [
+        {
+          "category": "layout_readability",
+          "severity": "minor",
+          "requirement_id": "LABELS",
+          "expected_zh": "左侧工资轴的$0刻度应完整可读。",
+          "observed_zh": "$0刻度下半部被绿地覆盖；地面的$0 WORKER PAY说明完整。",
+          "evidence_zh": "原图约x=122–150、y=1727–1750，字形在y≈1740的绿地上沿截断。源码绘制顺序亦支持该遮挡；其他刻度和数据标签不受影响。",
+          "bbox_xyxy_normalized": [
+            0.061,
+            0.8625,
+            0.076,
+            0.876
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接检查1980×2000的image.png像素。零线y≈1740、80000线y≈1020；篮体可见区域中心y≈1038、1191、1029、1317、1479，回算工资分别约78000、61000、79000、47000、29000。±1px约等于0.14%工资满量程。气囊色差分割并填补内部文字孔洞后，面积约89119、74595、72314、64925、53176px²。2200万美元参考面积约93965.85px²由素材alpha与源码参考宽度推导，并非图面独立标尺；主测误差最大约0.30%满量程，分割阈值敏感性检查最大约1.24%，均小于3%。源码的等比面积缩放和篮中心线性定位与成图测量相符。",
+      "uncertainties_zh": "面积分割受抗锯齿、暗色边缘和文字覆盖影响；绝对参考面积标定依赖源码与素材。篮沿和细绳可辨，但不主张亚像素精度。仅检查capture_render.py源码，未检查受限历史记录，不能独立确认每次历史渲染均经过该入口。按补充要求未运行submit.py。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "五家公司、五只完整气球、两个系列的十个数值，以及主题、合成声明和单位齐全。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "CEO数值20800000、17400000、16900000、15200000、12400000及员工数值78000、61000、79000、47000、29000全部正确，美元年薪单位明确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "公司名位于对应气囊上方，CEO数值位于气囊内，员工工资紧邻吊篮下方；顺序、颜色和引导线对应正确。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "实际气囊像素面积比例在3%满量程容差内；篮体中心回算得到五个目标工资，篮尺寸一致，两个编码通道没有混用。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看原始及处理后素材；纵向布缝、褶皱和编织纹理实质构成成图主体。源码读取这些素材并控制缩放、位置和文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "气囊实体轮廓面积承载CEO薪酬，篮中心距共同地面的高度承载员工工资；物体直接承担数据编码。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "必要标题、类别、指标、单位及十个数值清楚可读。零刻度局部遮挡为轻微问题，完整地面文字补足零点说明。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "五个圆鼓收尖气囊保留红黄蓝绿橙顺序；细绳从气囊下段延至篮沿，吊篮悬于下方，共处天空及共同绿地。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "主题明确比较高管与员工薪酬，合成公司类别、CEO compensation、Median worker salary及USD/year保留统计角色和含义。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "参考的薪酬比较及气囊面积/吊篮高度关系保留；真实企业名、旧年份和旧数值按冻结输入替换，不构成输出损失。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "最小E气囊约252×303px，完整轮廓可辨；篮体可见区域约38px高，篮沿、篮身与细绳连接清楚，无逼近零面积的气囊。"
+        }
+      },
+      "semantic_attribution_zh": "合成企业名、当前薪酬及去除旧年份来自允许的输入适配；当前输出保留CEO薪酬与员工中位工资的角色和数据关系。参考标题的比率措辞不扩展为core未要求的新系列。可确认的输出损失仅为零刻度局部遮挡，边界精度受像素分辨率限制。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/67759c9d108d48",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "pass",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -7385,6 +7321,586 @@
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/f2cff61076bbe2",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E36",
+    "source_case": "M082",
+    "name": "税法文档的年度页数",
+    "conflict_type": "trend_shape",
+    "trial": "E36_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "4dc314ff282f7b",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/4dc314ff282f7b",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E36",
+    "source_case": "M082",
+    "name": "税法文档的年度页数",
+    "conflict_type": "trend_shape",
+    "trial": "E36_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "4dc314ff282f7b",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/4dc314ff282f7b",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E56",
+    "source_case": "M090",
+    "name": "不同作物年度收获量",
+    "conflict_type": "numeric_range",
+    "trial": "E56_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "5106b0bb6850ca",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/5106b0bb6850ca",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E56",
+    "source_case": "M090",
+    "name": "不同作物年度收获量",
+    "conflict_type": "numeric_range",
+    "trial": "E56_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "5106b0bb6850ca",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/5106b0bb6850ca",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E56",
+    "source_case": "M090",
+    "name": "不同作物年度收获量",
+    "conflict_type": "numeric_range",
+    "trial": "E56_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "5a820a1efe9569",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/5a820a1efe9569",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E56",
+    "source_case": "M090",
+    "name": "不同作物年度收获量",
+    "conflict_type": "numeric_range",
+    "trial": "E56_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "2c10598bef60e6",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/2c10598bef60e6",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E17",
+    "source_case": "M059",
+    "name": "家庭各项用水构成",
+    "conflict_type": "category_count",
+    "trial": "E17_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "e937c2dc5ee279",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/e937c2dc5ee279",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E17",
+    "source_case": "M059",
+    "name": "家庭各项用水构成",
+    "conflict_type": "category_count",
+    "trial": "E17_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "fb804969687f88",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/fb804969687f88",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E17",
+    "source_case": "M059",
+    "name": "家庭各项用水构成",
+    "conflict_type": "category_count",
+    "trial": "E17_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "ad3879d3fe7414",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/ad3879d3fe7414",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E17",
+    "source_case": "M059",
+    "name": "家庭各项用水构成",
+    "conflict_type": "category_count",
+    "trial": "E17_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "ad3879d3fe7414",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/ad3879d3fe7414",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E57",
+    "source_case": "M104",
+    "name": "各虚构中央银行资产",
+    "conflict_type": "numeric_range",
+    "trial": "E57_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "00989ea33506a2",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/00989ea33506a2",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E57",
+    "source_case": "M104",
+    "name": "各虚构中央银行资产",
+    "conflict_type": "numeric_range",
+    "trial": "E57_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 3,
+    "image_available": true,
+    "review_id": "5cc2c0c839b97d",
+    "reproduction": {
+      "round": 3,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/5cc2c0c839b97d",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E57",
+    "source_case": "M104",
+    "name": "各虚构中央银行资产",
+    "conflict_type": "numeric_range",
+    "trial": "E57_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "11665ee7256939",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/11665ee7256939",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E57",
+    "source_case": "M104",
+    "name": "各虚构中央银行资产",
+    "conflict_type": "numeric_range",
+    "trial": "E57_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "1f5afb4b3de129",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/1f5afb4b3de129",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E37",
+    "source_case": "M087",
+    "name": "政党选票份额与未投票人口比例",
+    "conflict_type": "trend_shape",
+    "trial": "E37_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "f67bd8f225437a",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/f67bd8f225437a",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E37",
+    "source_case": "M087",
+    "name": "政党选票份额与未投票人口比例",
+    "conflict_type": "trend_shape",
+    "trial": "E37_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "f67bd8f225437a",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/f67bd8f225437a",
     "numeric_supported": null,
     "joint_supported": null,
     "critical_structure": "unreviewed",

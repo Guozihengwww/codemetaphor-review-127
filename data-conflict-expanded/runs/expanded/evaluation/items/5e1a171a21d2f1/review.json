@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中，肤色手臂在方格纸上向右上方伸展成手，主上缘对应年份走势，保留紫色甲片与掌纹。待评图可见九个年份及对应百分比、0–50%纵轴、50%平等目标和SYNTHETIC DATA。手臂、手掌与手指连续连接，五处紫色指甲、跨掌拇指及指间留白可辨；数据点沿主上轮廓排列，左端小值仍有可见肤色区域。",
+  "summary_zh": "通过。数据、年份间距、标签绑定和手部融合关系符合冻结要求，主题及50%目标清楚。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量指定image.png（2000×1440）。0线y≈1155，50线y≈385，对应15.4像素/百分点。16处避开圆点的邻近主体边缘采样与计算目标相差约不超过0.04个百分点。1330列颜色采样包含标签遮挡影响，最大表观差约1.11个百分点，低于满量程3%即1.5个百分点。目标坐标及PCHIP插值由冻结数据计算，不冒充像素测量。项目数据与冻结数据一致。",
+  "uncertainties_zh": "抗锯齿及颜色阈值带来约1–2像素定位不确定性。部分标签描边遮住极短上缘，被遮挡边界不能直接测量；末端圆点邻接紫甲，其混合色块质心不作为精确节点位置。未读取历史捕获记录或生成器自检，因此未独立确认全部历史渲染的执行路径。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个年份、九个节点及百分比标签齐全，坐标单位、合成标识和50%目标可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依序显示0.8%、2.4%、3.7%、4.6%、17.8%、29.4%、40.2%、48.2%、49.1%，均与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份刻度与对应节点横向对齐，百分比贴近对应节点；末两项有引线，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "20年间隔等距，末段28年间距约为其1.4倍；共同线性纵轴正确，实际边缘采样在容差内。代码使用全部九点控制真实上轮廓，圆钝指尖不增加观测点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材的肤色纹理、五处紫甲和掌纹在最终主体中实质可见；源码逐列变形素材并控制定量边界与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界就是手臂至上方手指的真实主上缘，连续连接手掌与手指，保持物体与数据融合。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、指标解释、单位、年份、全部数值及50%目标清晰可读，必要标签无相互遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "手臂连接手掌与向右伸展的四指；拇指覆盖掌前，指间留白及叠置关系可辨，五处紫甲和掌纹齐全。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达女性占全部议会席位的百分比，年份为时间坐标；50%平等基准及合成数据属性均有说明。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留女性议会代表占比与50%目标的主题关系，以及伸展手部上缘承载时间走势的融合方式。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "早期小值仍形成基线以上可辨的肤色薄区；1918节点邻近x=320处，上缘约y=1141，距基线约14像素，未见人为抬高小值的迹象。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题与参考的女性议会代表及50%目标一致。原参考的英国范围、真实统计及未来问句不属于当前冻结合成数据必须复刻的内容，不据此认定输出丢失。未发现当前统计含义或部件连接关系的损失；局部遮挡和抗锯齿属于测量限制。"
+}

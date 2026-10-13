@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以油桶侧壁分层表示石油产品份额，外围用途插画经引线连接。最终图可见17类及完整百分比、合成数据标识、主题和每日总量份额单位。金属桶盖、分层侧壁、基圈和接触阴影相接；底部五条小色带可区分，外置标签清晰，未见明显遮挡或串层。",
+  "summary_zh": "数据、标签和油桶分层关系正确，未发现实质缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接采样1700×2200的image.png，在x=610、640、1060、1090识别色带边界，排除桶盖和基圈。所得侧壁高度1359–1360px，各层份额最大绝对偏差0.161个百分点。底部五层约厚26.5–27、19.5–20.5、19–19.5、17.5–18.5、11.5–12px。源码另确认1360px侧壁按累计份额平移弧线；代码证据未代替像素测量。",
+  "uncertainties_zh": "抗锯齿、分隔线及近中性色带使边界定位约有1–2px不确定性，最薄层的相对误差不能视为零。未查看执行历史，不能独立确认全部历史渲染调用。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "全部17类均有对应色带、数值和标签，子类保留父类名称。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "42.0、5.2×4、3.15×2、6.3、3.75×2、6.0、4.1、1.9、1.5、1.4、1.3、0.9均正确显示为百分比，总量100.0%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别引线连接对应层侧缘；子类顺序明确，底部小份额引线分道连接，未见串层。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "四列像素采样均检出17层，最大份额偏差约0.17个百分点，低于3个百分点容差；弧形界面同形平移。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两个原始素材；桶盖双塞、金属纹理和11组用途物件在最终图中实质可见。源码读取素材并控制分层及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据色带直接构成油桶侧壁，金属反光连续，用途插画通过引线与层关联。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成标识、指标、单位及全部类别可读；小份额使用外置文字，无明显遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "椭圆金属盖贴合桶身上缘，彩色弧形层连续构成侧壁，基圈承接桶身并有接触阴影。实际数据边界为侧壁层界。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题和每日合成总量份额明确；页脚说明子类分割父类、非真实调查，用途插画不代表新增数量。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "消费构成及用途关系保留；原图美国2022年实测语境按冻结输入改为合成每日总量，属于输入改编，并非生成遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "底部五个小份额均保留独立弧形侧壁色带及引线；最薄层约11.5–12px，未明显放大或被基圈遮没。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或数据关系丢失。真实统计改为合成份额、父类拆分为互斥子类均来自冻结输入；最薄层精确相对误差受像素分辨率限制。"
+}

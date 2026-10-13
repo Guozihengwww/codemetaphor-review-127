@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图可见五只彩色热气球，以细绳连接吊篮，置于共同绿地上方。成图按A–E排列五家公司，圆鼓收尖气囊具有布料纹理，吊篮尺寸相近。C吊篮略高于A，E最低；A气囊最大，E最小。十个薪酬数值正确，主题、合成声明、指标和单位清楚。左轴$0靠近绿地上沿，疑有局部遮挡。",
+  "summary_zh": "已保存review.json。数据、语义和热气球融合关系均符合要求；唯一发现是左轴零刻度下半部被绿地轻微遮挡，零点含义仍由地面文字明确说明。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "左侧工资轴的$0刻度应完整可读。",
+      "observed_zh": "$0刻度下半部被绿地覆盖；地面的$0 WORKER PAY说明完整。",
+      "evidence_zh": "原图约x=122–150、y=1727–1750，字形在y≈1740的绿地上沿截断。源码绘制顺序亦支持该遮挡；其他刻度和数据标签不受影响。",
+      "bbox_xyxy_normalized": [
+        0.061,
+        0.8625,
+        0.076,
+        0.876
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接检查1980×2000的image.png像素。零线y≈1740、80000线y≈1020；篮体可见区域中心y≈1038、1191、1029、1317、1479，回算工资分别约78000、61000、79000、47000、29000。±1px约等于0.14%工资满量程。气囊色差分割并填补内部文字孔洞后，面积约89119、74595、72314、64925、53176px²。2200万美元参考面积约93965.85px²由素材alpha与源码参考宽度推导，并非图面独立标尺；主测误差最大约0.30%满量程，分割阈值敏感性检查最大约1.24%，均小于3%。源码的等比面积缩放和篮中心线性定位与成图测量相符。",
+  "uncertainties_zh": "面积分割受抗锯齿、暗色边缘和文字覆盖影响；绝对参考面积标定依赖源码与素材。篮沿和细绳可辨，但不主张亚像素精度。仅检查capture_render.py源码，未检查受限历史记录，不能独立确认每次历史渲染均经过该入口。按补充要求未运行submit.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五家公司、五只完整气球、两个系列的十个数值，以及主题、合成声明和单位齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "CEO数值20800000、17400000、16900000、15200000、12400000及员工数值78000、61000、79000、47000、29000全部正确，美元年薪单位明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "公司名位于对应气囊上方，CEO数值位于气囊内，员工工资紧邻吊篮下方；顺序、颜色和引导线对应正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际气囊像素面积比例在3%满量程容差内；篮体中心回算得到五个目标工资，篮尺寸一致，两个编码通道没有混用。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理后素材；纵向布缝、褶皱和编织纹理实质构成成图主体。源码读取这些素材并控制缩放、位置和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "气囊实体轮廓面积承载CEO薪酬，篮中心距共同地面的高度承载员工工资；物体直接承担数据编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必要标题、类别、指标、单位及十个数值清楚可读。零刻度局部遮挡为轻微问题，完整地面文字补足零点说明。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "五个圆鼓收尖气囊保留红黄蓝绿橙顺序；细绳从气囊下段延至篮沿，吊篮悬于下方，共处天空及共同绿地。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题明确比较高管与员工薪酬，合成公司类别、CEO compensation、Median worker salary及USD/year保留统计角色和含义。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考的薪酬比较及气囊面积/吊篮高度关系保留；真实企业名、旧年份和旧数值按冻结输入替换，不构成输出损失。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小E气囊约252×303px，完整轮廓可辨；篮体可见区域约38px高，篮沿、篮身与细绳连接清楚，无逼近零面积的气囊。"
+    }
+  },
+  "semantic_attribution_zh": "合成企业名、当前薪酬及去除旧年份来自允许的输入适配；当前输出保留CEO薪酬与员工中位工资的角色和数据关系。参考标题的比率措辞不扩展为core未要求的新系列。可确认的输出损失仅为零刻度局部遮挡，边界精度受像素分辨率限制。"
+}
