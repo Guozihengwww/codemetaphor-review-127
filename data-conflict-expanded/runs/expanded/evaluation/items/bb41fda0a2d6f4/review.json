@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以八行朝右列车的长度比较速度，并提供一小时距离参照。待评图完整显示Train A–H，实体车身从共同零点连续到右侧鼻尖；车窗、轮组、受电弓及车厢连接可辨。顶部双单位速度轴与底部公里轴对齐，标题、合成声明和恒速一小时说明清晰，未见明显错绑或遮挡。",
+  "summary_zh": "通过。数据、标签、列车结构及速度—距离关系符合要求。review.json已保存并通过schema校验；按补充要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查2000×2000待评图像素，未重渲染。上下轴主刻度位置一致，零点x=180，600端点x=1870。按车体高度带的前景像素检测，A–H鼻尖换算速度约597.51、595.74、569.47、481.42、427.81、415.38、411.83、391.95 km/h，最大偏差约0.63 km/h，远低于18 km/h容差。源码另证长度映射为180+v/600×1690；此为代码证据，不替代像素测量。",
+  "uncertainties_zh": "抗锯齿和前景阈值使鼻尖定位存在约1–2像素不确定性。未读取禁止访问的执行历史，不能独立确认所有历史渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八类别按输入顺序完整显示，单一速度系列、双单位速度轴及一小时距离轴齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "km/h为598、596、570、482、428、416、412、392；mph为371.6、370.3、354.2、299.5、265.9、258.5、256.0、243.6，均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、列车和速度逐行对应，鼻尖引线无跨行错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实体鼻尖长度符合共同零点的线性编码；最大像素换算误差约0.63 km/h，上下尺度一致。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张原始素材，其列车纹理和部件实质构成成图主体；源码读取素材并控制长度。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "实际数据边界就是实体列车鼻尖，列车本身承担长度编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、类别、数值、单位和一小时解释清晰，无明显遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "八行列车均朝右，鼻形有区别；车窗在车厢内、轮组在车体下方、受电弓连接车顶，节间连接连续。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达合成最高速度及保持该速度一小时的行程，列车类别和km/h、mph、km角色清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留速度比较与一小时距离关系。真实车型、地区和城市叙事由冻结输入改为合成类别及通用距离参照，属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最短列车仍约1104像素，无微小数据标记。598与596的鼻尖相差约5像素，接近目标5.63像素，未人为扩大差距。"
+    }
+  },
+  "semantic_attribution_zh": "未发现当前主题、统计角色或列车长度承载关系的输出丢失。原真实类别与城市叙事的部分替换归因于冻结输入合成化，不计输出缺陷；分辨率仅限制鼻尖亚像素定位。"
+}

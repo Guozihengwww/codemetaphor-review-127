@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为俯拍草地包围的泥土地面，六组彩绳网由桩固定，人物、工具与网区共同处于施工场景。成图保留泥土、草地、工具、两名人物及六组彩网，共同基线标为0 kg，纵轴0–90 kg；Plot A、B为极薄色带，C可见浅网纹，D至F依次更长。右侧人物手部与F网边重叠，桩位于各网角附近。Garden plot yield、Harvest yield (kg)、SYNTHETIC DATA及六项数值均可读，标签按A至F排列。仅凭全图不能确认A、B微小网面的相对长度及桩绳连接细节。",
+  "summary_zh": "未发现违反必要要求的可见缺陷。六项数值、标签绑定和共同线性尺度正确；彩绳网在泥土上由木桩固定，人物接触遮挡及工具、草地保留。最小网区的内部结构受像素分辨率限制，单独记为部分可辨。",
+  "issues": [],
+  "measurement_notes_zh": "仅评估2100×1295的image.png。直接读取像素：纵轴0和90刻度分别位于y≈1070、280，满量程790 px，3%容差23.7 px。在每网中央151列检测对应颜色的水平边界，B至F顶边落在y=1064、1051–1052、1006–1007、851–852、314–315，底边均在1069–1070；边界行中点间距约5.5、18、63、218、755 px，中心线估计不确定度约±1 px。源码推导而非像素测量：scale=790/90，A至F目标长度为1.510、5.232、18.134、62.849、217.816、754.889 px。B至F与目标一致且远在容差内。A的彩色边界合并于1068–1070三行，无法独立提取两条中心线，但未见满量程尺度的偏差。86/0.172=500，图中500×正确。",
+  "uncertainties_zh": "Plot A目标长度仅约1.51 px，原尺寸可见细色带，但不能可靠辨认内部交叉网纹或确认小值相对精度；不能用准确标签或源码公式补足这项视觉证据。绳纹抗锯齿使边界中心估计存在约1 px不确定度。按限制未查看执行日志或历史记录，未独立确认所有完整渲染都经capture_render.py。参考图没有可读统计指标，原主题不作推断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Plot A至Plot F共六类、一个Harvest yield系列均出现，顺序与输入一致；单位kg、0–90尺度和SYNTHETIC DATA提示完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "六个标签依次为0.172、0.596105、2.065934、7.159958、24.814438、86.0 kg，均与数据一致；500×最高/最低比值正确，没有将正值显示为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "六个类别和数值分别位于对应网区下方并水平居中，色条与各网颜色一致；共同基线及Harvest yield (kg)明确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素边界支持统一790 px满量程；B至F网长约5.5、18、63、218、755 px，符合目标比例及23.7 px容差。A只形成三行左右的彩色带，未被放大为可观高度；其相对精度仍受分辨率限制。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和raw_02.png。前者的泥土、草地、工具及两名人物在成图中大面积可见；后者提供绳和木桩素材。render.py明确载入这些素材及其裁切件，并按输入值设置网顶、边绳、网纹及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界就是地面彩绳网的顶边与共同底边，网角通过短绳连向木桩。右侧手部遮住F网线，网下仍可见泥土；场景对象直接参与数据载体，非旁置装饰。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "Garden plot yield、Harvest yield (kg)、Six experimental garden plots、SYNTHETIC DATA、全部类别与精确数值清晰；说明文字明确长度编码，宽度、网距、桩和人物不编码。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "俯拍泥土地面被草地包围，六组绳边从共同基线向上延伸，较大网区内部交叉绳纹清楚。木桩位于网角外侧并有系绳连接；左下人物处理木料，右侧人物手覆盖网边，工具保留。A的局部网面可辨性另列。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题及副标题明确园艺试验地块收获产量，Plot A–F是六块试验地，指标为Harvest yield、单位kg。0–90线性尺度及长度说明可读，没有将独立地块产量误作时间累计或百分比组成。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考的地面施工绳网、固定桩、人物及工具关系保留。core.json明确标为adapted_topic，当前园艺产量主题属于输入许可的改编；参考没有可读指标，无法确认旧统计意义，不归因为输出丢失。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "原尺寸局部中，A的上下边绳几乎合并，内部网纹无法可靠辨认；B可见窄条内细小交叉绳纹，C及以上网面结构清楚。A、B仍有对应颜色、角部系绳及标签，但精确文字不能证明A的微小几何相对准确。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题与统计角色保留，未发现输出造成的主要意义丢失。参考主题改为园艺试验产量由输入明确许可，reference_meaning的partial归于该改编及原图指标不可读，不是生成失败。最小网区内部结构弱化归于真实比例下的分辨率限制，未据此要求放大量值，也未以源码正确代替像素证据。"
+}

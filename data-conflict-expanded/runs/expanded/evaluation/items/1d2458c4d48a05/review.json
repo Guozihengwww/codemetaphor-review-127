@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为俯拍泥土中的六个彩色绳网区，周围有草地、人物、木桩和工具。最终图保留这些物体；六个网区共享底边，A、B接近细线，C为浅条，D–F逐渐增高。右侧人物手部与F网区接触。六类标签、精确数值、kg单位、主题及SYNTHETIC DATA均可读。",
+  "summary_zh": "通过。数据、标签和长度编码一致，地面绳网结构及人物接触关系保留。微小网区可辨性有限，单独记录为部分保留。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查2100×1295的image.png像素，未重新渲染。B–F顶绳分别位于y=1064–1065、1051–1052、1006–1007、851–852、314–315，底绳位于1069–1070；可见长度约5、18、63、218、755像素。源码推导的A–F目标长度为1.5098、5.2325、18.1343、62.8485、217.8156、754.8889像素。满量程790像素，3%容差23.7像素；B–F偏差不超过约2像素。A的颜色响应集中于1068–1070，无法独立精测顶底绳间距。",
+  "uncertainties_zh": "A的顶底绳无法独立分辨，B网面仅数像素深；满量程容差通过不代表小值的相对几何精度均可确认。已检查capture_render.py源码，但未读取运行记录，无法独立确认实际调用。参考图无可读统计指标，不能推断原始主题。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Plot A–F顺序完整，单一Harvest yield系列、kg单位及六个标记均存在。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "六项数值全部与输入一致；500×等于86.0/0.172。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别和数值位于对应网区正下方，色线与网色匹配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素中的底边及B–F顶边符合共同0–90 kg线性编码和3%容差；A位于基线附近，其微小间距无法精测。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始场景、绳、木桩和人物素材，均与最终画面对应；render.py读取数据控制边界和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩绳网顶边承担数据长度，绳角连接外围木桩，网孔中露出土壤；F处手部覆盖网绳。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、指标、单位、六类精确数值、刻度、合成数据提示及编码说明清楚。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "俯拍泥土、草地、木桩固定彩绳网、施工人物和工具均保留；D–F网面贴合与人物遮挡明确。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题和副标题明确园艺试验地块及Harvest yield (kg)，各Plot为独立类别，不暗示组成或时间累计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考中的地面绳网施工关系保留；园艺产量主题由输入明确改编，原图指标不可读，不归为输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "A呈绿色细线，网孔和顶底绳难以分辨；B呈极薄黄色条带，C可辨浅网区，D–F网面清楚。数值标签不能替代小网面的视觉证据。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题、指标或类别角色丢失。园艺产量属于输入允许的改编；参考原始统计含义无法确认。A、B网面关系的部分可辨性受真实比例和像素分辨率限制，不作为重大失真，也不要求放大小值。"
+}

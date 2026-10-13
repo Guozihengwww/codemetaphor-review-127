@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以树干横截面的彩色扇区表示各国森林份额，木纹、裂缝与树皮可见。待评图标题为Forest area shares，另有醒目的SYNTHETIC DATA、percent (%)及100%总量；26项地区/子类别标签分列左右并以引线连接扇区。树皮环绕略呈椭圆的木材面，年轮和裂缝贯穿彩色区域，外缘有柔和阴影。Remaining占左上大扇区，左下1%等窄扇区仍有可见面积与引线端点；未见明显遮字或标签重叠。此记录形成于源码检查前。",
+  "summary_zh": "26项数据、标签及外围引线完整，扇区比例与输入吻合。树皮包围木材数据面，年轮和裂缝连续可见，保留了森林份额与树干横截面的融合关系；未发现明确缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "检查对象仅为1685×2000的image.png。像素测量以源码给定中心(842.5,1050)、半轴490与470.4作为采样坐标，在0.56至0.92半径范围取色度中位剖面，选取26个最强边界峰；按椭圆逆变换后的角宽估算份额，最大绝对差约0.07个百分点，Remaining约25.63%（目标25.6%），两项1%约为1.03%和0.93%。这是受纹理、细分隔线及抗锯齿影响的图像边界估计，并非逐像素面积审计。源码另以累计份额×3.6划分角度并统一纵向缩放0.96；该项属于代码证据。",
+  "uncertainties_zh": "边界抽样不能证明亚像素精度或最窄扇区的精确相对误差；中心汇聚处几像素内也难分辨各区。原始素材的生图身份由素材清单支持，未查看生成日志。已检查capture_render.py保存逻辑，但按限制未核验执行记录，不能独立确认全部渲染的保存历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "画面包含26个扇区及26项外围标签：A四项、B四项、C/D/E各两项、F至P及Remaining；与输入单系列一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可见数值与输入一致，包括四个5.125%、四个3.1%、两个1%和Remaining 25.6%；总量100%、百分比单位及SYNTHETIC DATA清楚。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "引线端点落在对应扇区内，START及READ CLOCKWISE指示输入顺序；子类别与父地区共同显示。左右标签排序虽适配排版，未见错接或漏接。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终图像边界抽样所得份额与目标最大差约0.07个百分点，低于3个百分点容差；26区共享同一略扁椭圆木面，树皮位于数据域外。源码确认角度及统一0.96投影由数据控制。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及渲染实际引用的tree_normalized_v2.png；顶部纵裂纹、右下斜裂纹、年轮和粗糙树皮均可在成图对应，素材构成主体。render.py控制几何及文字，capture_render.py包含完整渲染保存逻辑。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色扇区直接染色于同一木材表面，年轮跨越分区仍连续；粗树皮环绕木面，软阴影位于主体后方，未见破坏物体或读数的错层与接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、指标、全部地区/子类别和数值可读；外围引线及端点可追踪，未见遮字、裁切或标签重叠。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "略呈椭圆的树干横截面由连续木面、同心年轮、径向裂缝及外围粗树皮构成。26区从共同中心延伸到木面边界，木面自身承载份额，未被旁置普通图表替代。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Forest area shares、Synthetic forest-area share及percent (%)明确主题和指标；地区父类、互斥子类别、整盘100%与树皮排除说明共同解释统计口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留按地理类别比较森林份额及木面分区的原意；参考图的真实国家、真实统计和时间出处被冻结输入明确改为合成地区及子类别，具体原统计语境仅部分保留，属于输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "左下Region O与P的1%窄扇区在原分辨率下仍有可辨面积、木纹和独立引线端点；不是仅靠数字表明存在。未见人为设置最小宽度，中心处的像素汇聚不妨碍外侧识别。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题、统计角色或核心融合关系丢失。真实国家统计改为合成地区及互斥子类别由冻结输入授权，reference_meaning的partial归因于该适配。最窄扇区的亚像素精度与中心纹理可辨性属于分辨率及测量限制，不能据此推定映射错误。"
+}
