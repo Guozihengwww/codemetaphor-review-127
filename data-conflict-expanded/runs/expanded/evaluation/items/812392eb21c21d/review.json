@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以多色完整铅笔横向成行表示各国年度工作时长，左侧数值、笔杆国家名与右侧木屑共同出现。最终图可见26行铅笔，依次为Country A至Q及Country added 1至9；深色笔尾、浅色环、彩色笔杆、木质削尖和黑色石墨尖连贯，右侧保留木屑。笔尾共用0起点，顶部线性刻度到2300，长度随同行数值变化。SYNTHETIC DATA、Annual working hours、每人每年工作时长副标题、虚构国家角色和h/year均清楚可读。未见缺行、标签遮挡或明显错位。",
+  "summary_zh": "26个类别、数值及绑定完整正确；完整铅笔全长准确承载年度工时，部件连接和木屑装饰保留，主题、统计口径及单位明确。未发现需报告的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析2000×1386的image.png像素，未运行渲染器或读取自检结果。图上0与2300刻度位于x=246、1756，满量程1510px。以像素对背景的最大RGB通道差分离实体，自动检出26条约30px高的铅笔行；阈值35、60、90下最大长度误差约1.13 h/year，即满量程0.049%，低于69 h/year的3%容差。按包含首尾像素的跨度，Country A为942px≈1434.83 h/year（目标1435），Country O为1500px≈2284.77（目标2285），末行为1445px≈2200.99（目标2200）。另据源码，长度由value×1510/2300控制，尾部与尖端计入总长，仅笔杆主要伸缩；该公式核对与像素测量分开进行。",
+  "uncertainties_zh": "抗锯齿与实体边界阈值带来约1px量级的不确定性，不影响容差结论。按访问限制未核验生图调用或完整capture运行历史，素材来源与使用判断限于所供原始资产、源码及最终图的可见对应。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "最终图包含Country A至Q和Country added 1至9共26行，顺序与输入一致，单一年度工时系列完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行可读数值与输入26项一致，包括1435、2285和新增类别1520至2200；h/year及SYNTHETIC DATA明确显示。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每行左侧数值与同高铅笔上的国家名对应，所有类别均保留Country语义父类；无跨行错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际像素显示笔尾共同起于x=246；26条实体全长按图上0—2300线性刻度换算，最大误差约满量程0.049%，木质及石墨尖均计入长度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和raw_02.png；六色铅笔的尾环、漆面、木纹、石墨尖及彩边木屑在最终图中实质可见。prepare_assets.py提取部件，render.py加载这些素材并控制定量长度及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界就是从深色笔尾到最右石墨尖的完整铅笔边界；并非另加普通条形。木屑位于右侧空白边栏，不遮挡数据尖端。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下，标题、26个国家标签及数值、单位、轴刻度和底部全长编码说明均清晰，无必要文字缺失或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "各行深色笔尾经浅色环接彩色笔杆，笔杆接木质削尖，木质包围并连接向右的石墨尖；部件连续、方向一致，多色卷曲木屑保留，未见破坏身份的接缝或层次错误。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual working hours标题、Annual hours worked per person in fictional countries副标题和h/year单位共同明确各虚构国家人均年度工作时长；颜色装饰性及合成数据性质亦有说明。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考的年度工时国家比较及铅笔长度融合关系保留；真实国家和原统计被冻结输入明确改为虚构国家及合成值，原事实指代仅部分保留，属于输入改编而非输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "当前最小值1435占满量程约62.4%，对应约942px全长，不存在微小量值标记；原始分辨率下各行约30px厚，最短铅笔的笔尾、笔杆、木质削尖和石墨尖仍分别可辨。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或数据角色丢失。真实国家及旧统计向虚构国家和合成数值的变化由冻结输入指定，reference_meaning的partial仅记录这一事实指代改编；不要求保留旧最高项或原数值。像素分辨率限制仅影响边缘的约1px定位，不妨碍当前物体部件识别。"
+}

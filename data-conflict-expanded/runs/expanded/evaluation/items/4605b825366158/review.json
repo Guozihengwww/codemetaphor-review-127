@@ -1,0 +1,90 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以完整书脊承载柱高，书名、作者与装饰处于共同零线下。最终图可见15本等宽纹理书脊、书名及作者、共同零线和非数据装饰区；SYNTHETIC DATA、Book sales、Synthetic copies sold及million copies清楚可读。书脊高度呈左侧最高、中间低、右侧递增；26–108的小值均仅略超出零线。Book added 2及Book added 4顶部的长数值标签末尾似被右邻较高书脊遮挡。",
+  "summary_zh": "15项数据、线性高度、书脊融合结构和当前合成销量主题均保留。两处长数值标签的末位小数被相邻书脊局部遮挡，属于轻微可读性缺陷，未改变数据边界或类别绑定。",
+  "issues": [
+    {
+      "category": "occlusion_layering",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "Book added 2的数值1,297.3333应完整可读。",
+      "observed_zh": "标签最右侧的末位3被Book added 3的蓝色书脊局部覆盖。",
+      "evidence_zh": "原图约(1596,868)处，数字笔画在右邻书脊左边界被截断。代码逐书绘制，后一本书覆盖前一本数值；字体几何推算该标签右端约x=1606，邻书从x=1596开始，约10像素重叠。此重叠长度为代码推算。",
+      "bbox_xyxy_normalized": [
+        0.727,
+        0.463,
+        0.805,
+        0.48
+      ]
+    },
+    {
+      "category": "occlusion_layering",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "Book added 4的数值2,568.6667应完整可读。",
+      "observed_zh": "标签最右侧的末位7被Book added 5的红色书脊局部覆盖。",
+      "evidence_zh": "原图约(1832,566)处，标签末端被右邻书脊截断。代码绘制顺序与此一致；字体几何推算该标签右端约x=1842，邻书从x=1832开始，约10像素重叠。此重叠长度为代码推算。",
+      "bbox_xyxy_normalized": [
+        0.845,
+        0.301,
+        0.922,
+        0.318
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接检查2000×1869原图像素，以各书脊内部横段相对背景的颜色突变定位上边界。零线y=1220、4000刻度y=270，满量程950像素；15项观测延伸高度依次约为912、202、100、26、17、14、11、9、8、7、157、308、459、610、761像素，与数据×950/4000的目标均相差不足1像素（不足满量程0.11%，容差为28.5像素）。整数像素边界包含抗锯齿，不能视为亚像素精确测量。输入总和核算为15148，与图中15,148一致。源码明确以top=1220−value×950/4000控制裁切边界，零线下390像素固定。",
+  "uncertainties_zh": "最小值26对应6.175像素，31对应7.3625像素；两者边缘约差1像素。抗锯齿与边界阈值带来约1像素的定位限制，不能据此证明小值的精细相对误差。未读取运行记录或自检，因此无法独立确认历次渲染均经capture_render.py；已核对当前渲染源码与可见素材。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "全部15个类别按输入顺序出现；每本均有数值位置、书名和虚构作者，单系列、单位、零线与合成数据声明齐全。"
+    },
+    "numeric_text": {
+      "status": "fail",
+      "evidence_zh": "其余13项数值及总计15,148与输入一致；1,297.3333和2,568.6667的末位字符局部被遮挡，输入精度未完整可见。属于局部文字缺陷。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "Book A至Book J及Book added 1至5与各自书脊、顶部数值一一对应；两处末位遮挡未造成类别错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "15项像素边界与0–4000线性映射均相差不足1像素；无最小高度抬升，零线下装饰区不计入数值。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看assets/raw_01.png；六款皮革、布面纹理和金色装订底饰在最终15本书脊上实质可见。prepare_assets.py裁切素材，render.py使用body与foot素材控制填充。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "销量边界就是完整书脊上边界；纹理从数据区连续进入下方带书名、作者和包边的装饰区，各书底部接触同一书架，没有旁置物体替代融合。"
+    },
+    "readability": {
+      "status": "fail",
+      "evidence_zh": "标题、单位、类别、作者、刻度和编码说明清楚；仅两处长数值的末位小数被邻书遮挡，未达到全部必要文字完整可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "一排15本等宽完整书脊共同落在书架上，书名和作者包含于下方装饰区，包边沿外侧连续，共同零线横贯全部书脊。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC与Book sales构成明确主题；Synthetic copies sold、million copies、15 titles及图下注释说明当前指标、单位和零线以上高度的含义。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留书籍销量与书脊柱高融合。参考图的全球阅读榜、真实书名及过去50年口径被冻结输入明确改编为15项虚构合成销量；此差异归于输入适配，不归为输出失败。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "26–108对应的约6–26像素延伸在原分辨率下可见，上端帽边、零线与下方完整书脊保持连接。最小几项高度差接近像素尺度，精细比较受分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "输出保留当前书籍销量主题、单系列含义、百万册单位和书脊承载关系。参考真实榜单及时间口径的变化来自冻结输入允许的合成改编。两处末位小数遮挡属于输出局部损失；小值相对精度的不确定性来自像素分辨率，未据此推定几何失败。"
+}

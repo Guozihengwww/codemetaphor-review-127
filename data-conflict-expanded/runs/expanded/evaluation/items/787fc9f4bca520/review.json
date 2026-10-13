@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以五个同高黑色侧视龙头、青色下落水流和末端飞溅比较各国可再生水资源。最终图保留五个等大龙头及连续水流；Region A–E依次对应8,100、4,620、3,240、2,940、2,880，A最长、D/E接近。年度水资源标题、SYNTHETIC DATA、单位解释和总量21,780可读。水流下段有水平纹理接缝，左侧轴单位贴近首个龙头。",
+  "summary_zh": "数值、比例、语义和龙头—水流—飞溅关系符合要求。仅左侧重复轴单位被龙头局部遮挡，属轻微排版问题。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "单位标签应可完整阅读，避免被图形覆盖。",
+      "observed_zh": "左侧纵轴上方Gm³/year标签的末尾被Region A龙头左端遮住；标题下方、各数值下方及底部仍有完整单位。",
+      "evidence_zh": "在image.png原分辨率局部查看，约x=81–187、y=705–740区域内，单位文字右端与黑色螺纹入口重叠。遮挡不影响单位整体理解或数据绑定。",
+      "bbox_xyxy_normalized": [
+        0.045,
+        0.322,
+        0.104,
+        0.338
+      ]
+    }
+  ],
+  "measurement_notes_zh": "测量对象为1800×2190的image.png。青色主体连通区域共同上缘为y=763，五个飞溅底缘约为1825、1368、1188、1148、1140像素；对应长度1062、605、425、385、377像素。可见0至9000刻度间距为1180像素，换算约8100、4614、3242、2936、2875 Gm³/year，最大偏差低于满量程0.07%。另由源码确认endpoint=763+value×1180/9000；此公式属于代码证据，未代替像素测量。",
+  "uncertainties_zh": "抗锯齿边界定位约有1–2像素不确定性。按限制未读取生成日志、自检或捕获历史，因此未独立确认素材生成调用和capture_render.py实际执行记录；可见素材复用及最终图几何已有直接证据。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五个地区、五个龙头水流标记、全部数值、系列主题、单位和合成数据声明均齐全，类别顺序为A至E。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "8,100、4,620、3,240、2,940、2,880及合计21,780均与输入一致；Gm³/year明确解释为十亿立方米/年。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "地区标签位于各自龙头上方，数值位于对应水流飞溅下方；五组绑定无交叉或错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "五组均由出水口下缘至飞溅底缘编码；像素测量最大偏差低于满量程0.07%，小于3%容差。飞溅未伸至数据端点下方，水宽与龙头尺寸一致。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及水纹、飞溅资产，其龙头形状、高光和飞溅轮廓在成图中实质使用。prepare_assets.py负责裁切，render.py加载资产并控制长度、位置及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据水柱从龙头出口连续向下连接飞溅，底缘直接承载量值。局部水平纹理接缝可见，但没有断流、错位或边界误读。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、地区、数值、单位定义及线性标尺可读。仅重复的左轴单位末尾轻微受遮挡，其他完整单位足以明确统计口径。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "五个同尺度黑色侧视龙头具有相连的把手、管身和下弯出口，出口同高；青色水柱接触出口并连接末端展开的飞溅，飞溅位于各自底部端点上方。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确年度可再生水资源，Region A–E表达地区类别，Gm³/year表达年度体积；总量说明是五地区年度水量之和，没有误称跨年累计或百分比组成。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考以龙头水流长度比较地理类别可再生水资源的融合关系。真实国家名称、旧排名和缺水预测不属于当前冻结合成数据的复现要求。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值2880仍对应约377像素落水长度，出口、水柱与飞溅关系均清楚。D/E端点相差约8像素，可辨且未合并；本例没有接近像素极限的微小数据标记。"
+    }
+  },
+  "semantic_attribution_zh": "输出保留年度水资源主题、地区比较角色及流长承载关系。真实国家改为合成Region A–E、使用新数值并不沿用旧排名及预测，属于冻结输入允许的适配。未发现主题或关键动作关系的输出丢失；轻微标签遮挡和纹理接缝不改变这些语义。"
+}

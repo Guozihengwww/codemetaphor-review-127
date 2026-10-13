@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：十本等宽书脊共用底部与零线，零线上方延伸高低不一，下方保留书名、作者与包边；主题为阅读量，说明使用印售册数作代理。待评图：十本彩色布纹书脊依次标为Book A至Book J，数值为3840、850、420、108、69、59、45、35、31、26；标题为SYNTHETIC Book sales，显示SYNTHETIC DATA、Synthetic copies sold、million copies及总量5483。白色零线贯穿全部书脊，以下明确标为不编码的装饰区，书名与AUTHOR unspecified可读，底部接触同一书架。小值顶部仅高于零线数个像素，仍能看见封顶与连续书脊，细小差异需核对像素。",
+  "summary_zh": "通过。十项数值、顺序、标签与单位准确，书脊延伸高度符合线性比例，完整书籍结构和数据融合关系保留。最小标记仍可见；参考统计语义的变化来自冻结输入的合成销量改编。",
+  "issues": [],
+  "measurement_notes_zh": "对2000×1869原图进行像素抽样：以书脊内部与同一行邻近背景的色差定位顶边，得到A–J顶边y约为168、930、1040、1119、1129、1132、1136、1138、1139、1140；y=1500处十项宽度均为145像素。4000刻度位于y约127，白线覆盖y约1147–1149。以白线上缘1147为零，实测延伸约979、217、107、28、18、15、11、9、8、7像素。源码映射为1147−值×1020/4000，目标高度分别为979.2、216.75、107.1、27.54、17.595、15.045、11.475、8.925、7.905、6.63像素；像素抽样与目标相差不足1像素，远低于满量程3%即30.6像素。公式为源码证据，边界位置另由成图像素核对。固定下部不编码，使完整书籍身份与微小销量延伸可以同时成立。",
+  "uncertainties_zh": "顶边抗锯齿及白线宽度带来约1像素的读数不确定性，不能据此声称26–35等小值具有同等精确的相对几何读数。已查看capture_render.py源码，但依要求未检查运行日志或历史记录，不能独立确认所有渲染的执行过程。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Book A–J十类、一组销量系列、十个数值与10 BOOKS / 1 SERIES说明均可见，顺序与输入一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图中3840、850、420、108、69、59、45、35、31、26及总量5483准确；单位为million copies，刻度范围0–4000。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个数值位于相应书脊顶部上方；书脊内的Book A–J名称与横向顺序一一对应，无错位或串项。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "原图顶边像素与当前数据的线性目标高度相差不足1像素；零线上缘到各顶边的距离编码销量，下方共同区域明确不编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png的十色布纹和金色包边在成图主体中可辨。prepare_assets.py切分书脊素材，render.py按数据控制矩形边界、贴图和文字；已查看capture_render.py保存流程源码，未执行。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界就是完整书脊的上边界；上部延伸与下部书名、作者区连为同一物体。零线横跨表面，没有旁置独立柱形替代书脊。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成数据提示、销量指标、单位、数值、书名及零线说明清楚；作者统一注明unspecified，并以页脚解释未提供作者名。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "十本等宽完整书脊并排，顶部包边连接布纹主体，底部包边同高且紧邻共同书架；书名和作者区位于零线以下。白线叠于书脊表面，顶部数据区与下部装饰区连续。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC Book sales、Synthetic copies sold和million copies明确表达合成书籍销量；Book A–J具有书籍类别角色，总量指十本书销量之和。未借用原图真实书名或旧统计结论。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考图以过去50年印售册数代理“最常阅读的十本书”；冻结输入明确改为合成书籍销量。成图保留书脊承载册数的关系，但不再表达阅读排名或50年窗口；此差异归于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下H、I、J的正值延伸约9、8、7像素，顶边均高于白线且连接完整下部书脊；未归零或统一抬高。相邻小值仅约1像素的差异，精细相对读数受分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的核心语义丢失。原图阅读排名、真实书名和50年统计窗口被当前输入明确改编为合成书籍销量，reference_meaning的部分保留不归责于生成结果。作者姓名未由输入提供，图面诚实显示unspecified。最小延伸的精细比例存在像素分辨率限制，但书脊及其承载关系可辨。"
+}

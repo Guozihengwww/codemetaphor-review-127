@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：十本等宽书脊从共同底部并排立起，书名与作者位于下部；零线以上的书脊高度表现数值。标题为全球最常读的十本书，说明文字联系过去50年印刷、销售与阅读。\n成图：Book A至Book J共十本书脊并排站在书架上，包边、书名及AUTHOR unspecified均可见。顶部数值依次为3840、850、420、108、69、59、45、35、31、26；白色共同零线以上高度依次下降，右侧小值为很薄的书脊延伸。下部共同装饰区明确注明不编码。SYNTHETIC DATA、Book sales、Synthetic copies sold、million copies及总数5483均可读。未见明显标签错位或遮挡；小值几何待原图像素核对。",
+  "summary_zh": "十本完整等宽书脊以零线以上延伸编码合成销量，类别、数值、单位和总量正确，生成材质实质构成主体。原图像素支持几何符合容差，小值仍与书体连通。未发现明确违规缺陷；参考阅读叙事的变化来自冻结输入的销量适配。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1869的image.png，未运行渲染或生成方自检。4000刻度深色行位于y=126–127，白色零线主要位于y=1146–1147，满量程约1020px。借助源码定位局部窗口后，在每本书内侧横向扫描连续深色顶边，A–J首个完整深色行依次为168、930、1040、1119、1129、1132、1136、1138、1139、1140；以零线约1147计，延伸约979、217、107、28、18、15、11、9、8、7px。输入值按可见量程换算的目标高度为979.2、216.75、107.1、27.54、17.595、15.045、11.475、8.925、7.905、6.63px。整数行估计与目标偏差均不足1px，远小于3%满量程的30.6px。源码另以y=1147−value×1020/4000控制顶边，145px书宽和共同下部固定；这些公式是源码证据，并非像素测量。",
+  "uncertainties_zh": "抗锯齿、顶边阈值和零线厚度带来约1px定位不确定性；对最小值6.63px及相邻约1px的差别，不能据此宣称精确相对比例。已按原始分辨率查看，非零延伸和书体连接可辨。按禁读日志及历史要求，未核验capture_render.py全部实际执行历史；素材使用和几何判断来自当前图、原始素材及必要源码。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Book A–J按给定顺序完整出现，共10本、1个销量系列；图面同时标注10 BOOKS / 1 SERIES。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见数值依次为3840、850、420、108、69、59、45、35、31、26；总量5483正确，单位million copies明确，正值未被写成零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各数值居于对应书脊顶部上方，书名位于同一连续书体内；顺序、位置和颜色共同支持一一绑定，无跨书错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际顶边与共同零线的像素距离符合0–4000线性映射，估计偏差不足1px；下部明确标为不编码，未把完整书高当销量。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及处理后的spine_10.png；十种织物颜色、包边和表面细节与成图主体对应。render.py读取spine_01至spine_10并控制形状与文字，生成素材实际可见且占据整个书脊。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "销量边界就是完整书脊的顶部，材质沿书体延伸穿过零线；包边属于书体，底部统一落在书架处。未见破坏结构的透视错位、遮挡或接缝，非普通柱图旁置书籍。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA、销量标题、系列、单位、十个数值、书名及零线说明均清晰。作者区显示AUTHOR unspecified，底注说明作者未指定，与输入未提供作者一致。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "十本等宽完整书脊并排，均保留顶底包边、书名和作者区域；共用零线及下部装饰区。上部数据区与下部身份区连续连接，完整书高未被误作数值。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Book sales与Synthetic copies sold明确主题和指标，million copies明确单位；Book A–J明确书籍类别，5483解释为十本合成书的总销量。没有引入时间累计或百分比组成等额外含义。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考以书脊高低表现书籍销量的融合关系。参考“最常读书籍”、过去50年及真实书名未保留；冻结输入明确改为合成书籍销量，故这部分属于输入适配，不是生成输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "H、I、J零线上延伸约9、8、7px，深色顶边及部分包边可辨，且与下方完整书体贯通；未消失或被单独数值替代。精确相对差异受约1px定位不确定性限制。"
+    }
+  },
+  "semantic_attribution_zh": "未发现当前要求的书籍销量语义或书脊承载关系丢失。参考阅读排名、50年口径及真实书名的变化归于冻结输入允许的合成销量适配；作者未提供而明确标为未指定。最小值的相对精度限制归于像素分辨率，不据此推断隐藏错误，也不以文字或公式代替可见几何证据。"
+}

@@ -2416,92 +2416,80 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：大型写实蓝鸟的腹部叠在白色数据板右上边缘，尾部伸出板外；五行账号有头像、名称、关注者数和重复的小鸟符号。\n成图：SYNTHETIC DATA、Social account followers、五个Account A–E及其数值均清楚可见，单位说明为million followers。大蓝鸟腹部覆盖数据板上缘，尾部斜向右下，未遮挡五行数据。五个圆形头像与各行标签对应。A行可见十只完整鸟与一个末尾裁片，B行可见两只完整鸟与一个裁片，C行仅一个较宽裁片，D行是几段细小蓝色碎片，E行仅近似微点并有2.148%说明引线。页脚显示总量136.145935及按数量和裁切宽度读取的说明。小值的实际边界仍需原始分辨率核对。",
+      "summary_zh": "数值、计数、裁切宽度及标签绑定符合冻结要求；关注者主题、大蓝鸟叠合数据板及头像关系保留。未见实质性缺陷。D、E的微小裁片仅部分可辨，单独记录为分辨率限制。",
+      "issues": [],
+      "measurement_notes_zh": "检查2160×1800原始图。直接像素检测：以白底红通道降幅>32且蓝、绿通道分别高于红通道>16定位符号，完整鸟占80列；A有10只完整鸟，末片x1790–1849占60列；B有2只完整鸟，末片x1038–1059占22列；C、D、E末片分别占39、9、2列。源码与冻结数值推导的目标裁宽依次为59.2、21.69868、38.424592、8.125808、1.7184像素，均与像素支持宽度相差不足1像素，远小于满量程3%（3.6百万）的容差。像素支持宽度包含抗锯齿，不能当作精确裁切边界。E局部降低检测阈值后，在x850–851、y1530–1532仅检出4个带色像素；不以文字或公式代替其可见性。五项相加为136.145935百万，与页脚一致。",
+      "uncertainties_zh": "E的目标裁宽不足2像素，无法从最终栅格独立恢复其精确分数或确认细小值的相对精度；D的断续裁片也不能独立辨认为完整鸟形。它们未被放大，图例和引线说明仍提供读取语境。仅核查capture_render.py实现，未核验历史调用记录；未执行重渲染。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "Account A–E按输入顺序完整出现，五个头像、单一Followers系列、单位、合成数据标识和总量均可见。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "五行分别显示107.4、22.712335、4.803074、1.015726、0.2148 M；总量136.145935 million followers，均与输入一致，正值未归零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "头像、Account标签、数值与同一水平行的鸟符号对应；行分隔清楚，没有跨行错配。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "直接数得A为10只完整鸟加裁片、B为2只加裁片，其余各一个裁片。末片像素支持宽度与按紧致宽度推导的目标相差不足1像素，未见超出满量程容差的偏差；E的精确相对精度受分辨率限制。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png蓝鸟与raw_02.png头像素材，羽毛、姿态及五个面孔与成图对应，素材构成可见主体。render.py读取冻结数据，以同一鸟形掩模控制完整数量与末片宽度；项目brief/data/core与供应文件内容一致。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "蓝鸟腹部覆盖白色数据板上缘，接触处有阴影；头、躯干、翅与向右下伸出的尾部连接连续。小鸟在板内承担数量，主体大鸟不编码，未遮住必需数据或文字。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、SYNTHETIC DATA、全部账号和值、每鸟10百万图例、M单位解释及裁宽规则在原始分辨率清楚可读。E的说明引线与数据微点区分可见。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "保留大型写实蓝鸟与数据板的叠合关系、板内逐行鸟符号计数及账号头像。数据承载边界为同尺寸小鸟的紧致横向裁切边界，并非大鸟体积或蓝色像素面积。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "Social account followers及Followers by account明确表达社交账号关注者数量；Account A–E的类别角色、million followers单位及合成统计属性均明确，不依赖仅有物体名称的标题。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "参考描述Twitter真实头部账号，冻结输入改为五个合成社交账号。成图保留账号关注者比较与蓝鸟叠合关系，不再声称真实平台排名；这是输入允许的适配，不是输出语义丢失。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "D在约x850–858、y1317–1375仅呈断续窄片；E在x850–851、y1530–1532仅余少量浅蓝像素，无法独立辨认鸟体。末片裁切语境及E的2.148%说明仍保留，未发现人为加粗或设最小宽度。"
+        }
+      },
+      "semantic_attribution_zh": "未发现当前主题、单位或关键叠合关系的输出损失。真实Twitter头部账号改为合成社交账号来自冻结输入。D、E鸟形辨识减弱归于真实窄裁片与栅格分辨率，不据此认定数据映射错误。参考本身是叠合构图，不要求大鸟承担定量或与符号融合为同一身体。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/bd7e6c7d78033f",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E05",
-    "source_case": "M020",
-    "name": "书籍销量",
-    "conflict_type": "category_count",
-    "trial": "E05_baseline",
-    "condition": "baseline",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "ceeca7b5fa9852",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/ceeca7b5fa9852",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E05",
-    "source_case": "M020",
-    "name": "书籍销量",
-    "conflict_type": "category_count",
-    "trial": "E05_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 3,
-    "image_available": true,
-    "review_id": "a86453352a4ebd",
-    "reproduction": {
-      "round": 3,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/a86453352a4ebd",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -2524,201 +2512,108 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "fail",
     "execution": "ok",
-    "review": null,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.97,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以完整书脊承载柱高，书名、作者与装饰处于共同零线下。最终图可见15本等宽纹理书脊、书名及作者、共同零线和非数据装饰区；SYNTHETIC DATA、Book sales、Synthetic copies sold及million copies清楚可读。书脊高度呈左侧最高、中间低、右侧递增；26–108的小值均仅略超出零线。Book added 2及Book added 4顶部的长数值标签末尾似被右邻较高书脊遮挡。",
+      "summary_zh": "15项数据、线性高度、书脊融合结构和当前合成销量主题均保留。两处长数值标签的末位小数被相邻书脊局部遮挡，属于轻微可读性缺陷，未改变数据边界或类别绑定。",
+      "issues": [
+        {
+          "category": "occlusion_layering",
+          "severity": "minor",
+          "requirement_id": "M1",
+          "expected_zh": "Book added 2的数值1,297.3333应完整可读。",
+          "observed_zh": "标签最右侧的末位3被Book added 3的蓝色书脊局部覆盖。",
+          "evidence_zh": "原图约(1596,868)处，数字笔画在右邻书脊左边界被截断。代码逐书绘制，后一本书覆盖前一本数值；字体几何推算该标签右端约x=1606，邻书从x=1596开始，约10像素重叠。此重叠长度为代码推算。",
+          "bbox_xyxy_normalized": [
+            0.727,
+            0.463,
+            0.805,
+            0.48
+          ]
+        },
+        {
+          "category": "occlusion_layering",
+          "severity": "minor",
+          "requirement_id": "M1",
+          "expected_zh": "Book added 4的数值2,568.6667应完整可读。",
+          "observed_zh": "标签最右侧的末位7被Book added 5的红色书脊局部覆盖。",
+          "evidence_zh": "原图约(1832,566)处，标签末端被右邻书脊截断。代码绘制顺序与此一致；字体几何推算该标签右端约x=1842，邻书从x=1832开始，约10像素重叠。此重叠长度为代码推算。",
+          "bbox_xyxy_normalized": [
+            0.845,
+            0.301,
+            0.922,
+            0.318
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接检查2000×1869原图像素，以各书脊内部横段相对背景的颜色突变定位上边界。零线y=1220、4000刻度y=270，满量程950像素；15项观测延伸高度依次约为912、202、100、26、17、14、11、9、8、7、157、308、459、610、761像素，与数据×950/4000的目标均相差不足1像素（不足满量程0.11%，容差为28.5像素）。整数像素边界包含抗锯齿，不能视为亚像素精确测量。输入总和核算为15148，与图中15,148一致。源码明确以top=1220−value×950/4000控制裁切边界，零线下390像素固定。",
+      "uncertainties_zh": "最小值26对应6.175像素，31对应7.3625像素；两者边缘约差1像素。抗锯齿与边界阈值带来约1像素的定位限制，不能据此证明小值的精细相对误差。未读取运行记录或自检，因此无法独立确认历次渲染均经capture_render.py；已核对当前渲染源码与可见素材。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "全部15个类别按输入顺序出现；每本均有数值位置、书名和虚构作者，单系列、单位、零线与合成数据声明齐全。"
+        },
+        "numeric_text": {
+          "status": "fail",
+          "evidence_zh": "其余13项数值及总计15,148与输入一致；1,297.3333和2,568.6667的末位字符局部被遮挡，输入精度未完整可见。属于局部文字缺陷。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "Book A至Book J及Book added 1至5与各自书脊、顶部数值一一对应；两处末位遮挡未造成类别错绑。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "15项像素边界与0–4000线性映射均相差不足1像素；无最小高度抬升，零线下装饰区不计入数值。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看assets/raw_01.png；六款皮革、布面纹理和金色装订底饰在最终15本书脊上实质可见。prepare_assets.py裁切素材，render.py使用body与foot素材控制填充。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "销量边界就是完整书脊上边界；纹理从数据区连续进入下方带书名、作者和包边的装饰区，各书底部接触同一书架，没有旁置物体替代融合。"
+        },
+        "readability": {
+          "status": "fail",
+          "evidence_zh": "标题、单位、类别、作者、刻度和编码说明清楚；仅两处长数值的末位小数被邻书遮挡，未达到全部必要文字完整可读。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "一排15本等宽完整书脊共同落在书架上，书名和作者包含于下方装饰区，包边沿外侧连续，共同零线横贯全部书脊。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "SYNTHETIC与Book sales构成明确主题；Synthetic copies sold、million copies、15 titles及图下注释说明当前指标、单位和零线以上高度的含义。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "保留书籍销量与书脊柱高融合。参考图的全球阅读榜、真实书名及过去50年口径被冻结输入明确改编为15项虚构合成销量；此差异归于输入适配，不归为输出失败。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "26–108对应的约6–26像素延伸在原分辨率下可见，上端帽边、零线与下方完整书脊保持连接。最小几项高度差接近像素尺度，精细比较受分辨率限制。"
+        }
+      },
+      "semantic_attribution_zh": "输出保留当前书籍销量主题、单系列含义、百万册单位和书脊承载关系。参考真实榜单及时间口径的变化来自冻结输入允许的合成改编。两处末位小数遮挡属于输出局部损失；小值相对精度的不确定性来自像素分辨率，未据此推定几何失败。"
+    },
     "primary_system_success": false,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/4605b825366158",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E05",
-    "source_case": "M020",
-    "name": "书籍销量",
-    "conflict_type": "category_count",
-    "trial": "E05_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "cf227eb049b965",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/cf227eb049b965",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E06",
-    "source_case": "M023",
-    "name": "各虚构国家人均年度工作时长",
-    "conflict_type": "category_count",
-    "trial": "E06_baseline",
-    "condition": "baseline",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "9a2e34dd5329c8",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/9a2e34dd5329c8",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E06",
-    "source_case": "M023",
-    "name": "各虚构国家人均年度工作时长",
-    "conflict_type": "category_count",
-    "trial": "E06_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 1,
-    "image_available": true,
-    "review_id": "9a2e34dd5329c8",
-    "reused_identical_image": true,
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/9a2e34dd5329c8",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E06",
-    "source_case": "M023",
-    "name": "各虚构国家人均年度工作时长",
-    "conflict_type": "category_count",
-    "trial": "E06_conflict",
-    "condition": "conflict",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "812392eb21c21d",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/812392eb21c21d",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E06",
-    "source_case": "M023",
-    "name": "各虚构国家人均年度工作时长",
-    "conflict_type": "category_count",
-    "trial": "E06_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 1,
-    "image_available": true,
-    "review_id": "812392eb21c21d",
-    "reused_identical_image": true,
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/812392eb21c21d",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "numeric_supported": false,
+    "joint_supported": false,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "pass",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -2742,13 +2637,360 @@
       ],
       "returncode": 0
     },
+    "quality": "pass",
+    "execution": "ok",
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.97,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以五个同高黑色侧视龙头、青色下落水流和末端飞溅比较各国可再生水资源。最终图保留五个等大龙头及连续水流；Region A–E依次对应8,100、4,620、3,240、2,940、2,880，A最长、D/E接近。年度水资源标题、SYNTHETIC DATA、单位解释和总量21,780可读。水流下段有水平纹理接缝，左侧轴单位贴近首个龙头。",
+      "summary_zh": "数值、比例、语义和龙头—水流—飞溅关系符合要求。仅左侧重复轴单位被龙头局部遮挡，属轻微排版问题。",
+      "issues": [
+        {
+          "category": "layout_readability",
+          "severity": "minor",
+          "requirement_id": "M1",
+          "expected_zh": "单位标签应可完整阅读，避免被图形覆盖。",
+          "observed_zh": "左侧纵轴上方Gm³/year标签的末尾被Region A龙头左端遮住；标题下方、各数值下方及底部仍有完整单位。",
+          "evidence_zh": "在image.png原分辨率局部查看，约x=81–187、y=705–740区域内，单位文字右端与黑色螺纹入口重叠。遮挡不影响单位整体理解或数据绑定。",
+          "bbox_xyxy_normalized": [
+            0.045,
+            0.322,
+            0.104,
+            0.338
+          ]
+        }
+      ],
+      "measurement_notes_zh": "测量对象为1800×2190的image.png。青色主体连通区域共同上缘为y=763，五个飞溅底缘约为1825、1368、1188、1148、1140像素；对应长度1062、605、425、385、377像素。可见0至9000刻度间距为1180像素，换算约8100、4614、3242、2936、2875 Gm³/year，最大偏差低于满量程0.07%。另由源码确认endpoint=763+value×1180/9000；此公式属于代码证据，未代替像素测量。",
+      "uncertainties_zh": "抗锯齿边界定位约有1–2像素不确定性。按限制未读取生成日志、自检或捕获历史，因此未独立确认素材生成调用和capture_render.py实际执行记录；可见素材复用及最终图几何已有直接证据。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "五个地区、五个龙头水流标记、全部数值、系列主题、单位和合成数据声明均齐全，类别顺序为A至E。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "8,100、4,620、3,240、2,940、2,880及合计21,780均与输入一致；Gm³/year明确解释为十亿立方米/年。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "地区标签位于各自龙头上方，数值位于对应水流飞溅下方；五组绑定无交叉或错配。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "五组均由出水口下缘至飞溅底缘编码；像素测量最大偏差低于满量程0.07%，小于3%容差。飞溅未伸至数据端点下方，水宽与龙头尺寸一致。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png及水纹、飞溅资产，其龙头形状、高光和飞溅轮廓在成图中实质使用。prepare_assets.py负责裁切，render.py加载资产并控制长度、位置及文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据水柱从龙头出口连续向下连接飞溅，底缘直接承载量值。局部水平纹理接缝可见，但没有断流、错位或边界误读。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、合成声明、地区、数值、单位定义及线性标尺可读。仅重复的左轴单位末尾轻微受遮挡，其他完整单位足以明确统计口径。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "五个同尺度黑色侧视龙头具有相连的把手、管身和下弯出口，出口同高；青色水柱接触出口并连接末端展开的飞溅，飞溅位于各自底部端点上方。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题明确年度可再生水资源，Region A–E表达地区类别，Gm³/year表达年度体积；总量说明是五地区年度水量之和，没有误称跨年累计或百分比组成。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留参考以龙头水流长度比较地理类别可再生水资源的融合关系。真实国家名称、旧排名和缺水预测不属于当前冻结合成数据的复现要求。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "最小值2880仍对应约377像素落水长度，出口、水柱与飞溅关系均清楚。D/E端点相差约8像素，可辨且未合并；本例没有接近像素极限的微小数据标记。"
+        }
+      },
+      "semantic_attribution_zh": "输出保留年度水资源主题、地区比较角色及流长承载关系。真实国家改为合成Region A–E、使用新数值并不沿用旧排名及预测，属于冻结输入允许的适配。未发现主题或关键动作关系的输出丢失；轻微标签遮挡和纹理接缝不改变这些语义。"
+    },
+    "primary_system_success": true,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/787fc9f4bca520",
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "pass",
+    "joint_system_success": true,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E46",
+    "source_case": "M034",
+    "name": "年度可再生水资源",
+    "conflict_type": "numeric_range",
+    "trial": "E46_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "b9221082636ce8",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "pass",
+    "execution": "ok",
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以五个同高黑色侧视水龙头、青色落水和底部飞溅表达各国年度可再生水资源，另有水压力说明。成图五个同尺度水龙头出水口对齐零线，Region A—E及8100.0、1712.941447、362.243012、76.60507、16.2依次对应；年度水资源标题、SYNTHETIC DATA与Gm³/year释义可读。原尺寸下A—C水流及飞溅可辨，D呈短青色水块，E接近出水口下的一条青色细线。左侧坐标轴单位局部被A龙头的进水端遮挡，右上和页脚单位仍清楚。",
+      "summary_zh": "五类数据、标签、线性尺度和年度水资源语义正确，生成素材实质参与数据图形。存在重复轴单位局部遮挡；D、E极短水流的飞溅关系仅部分可辨。未发现达到重大缺陷标准的问题。",
+      "issues": [
+        {
+          "category": "layout_readability",
+          "severity": "minor",
+          "requirement_id": "M1",
+          "expected_zh": "单位标注应清晰可读，不被物体遮挡。",
+          "observed_zh": "左侧坐标轴上方的Gm³/year后半部分被Region A龙头进水端遮挡；右上角及页脚的完整单位仍可读。",
+          "evidence_zh": "原图像素位置约x=96–195、y=719–742处，灰色单位文字与黑色螺纹进水端重叠。源码也显示先绘制该文字，再叠加龙头；此处为可见的局部遮挡，不影响全图单位解释。",
+          "bbox_xyxy_normalized": [
+            0.053,
+            0.328,
+            0.109,
+            0.339
+          ]
+        },
+        {
+          "category": "metaphor_integration",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "不放大数据长度，保留出水口连接下落水流、末端形成飞溅的关系；微小标记的可辨性单独评价。",
+          "observed_zh": "D呈短青色水块，飞溅轮廓很弱；E仅呈紧贴出水口的细线，无法可靠分辨水流与末端飞溅。",
+          "evidence_zh": "1800×2190原尺寸查看，D的连续青色区域约11像素高，E约2–3像素高。由数据和图面标尺计算的目标分别为10.554476及2.232像素；长度正确不等于飞溅关系清晰，此项主要受分辨率限制。",
+          "bbox_xyxy_normalized": [
+            0.71,
+            0.348,
+            0.92,
+            0.359
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接读取image.png像素，零线与9000刻度约在y=770、2010，满量程1240像素。以G−R、B−R均大于15/25/40且G>110识别青色，在各出水口±90像素范围内从零线连续搜索至首个空行，排除下方说明文字。A—E可见长度约1116、236、50、11、2–3像素；由冻结数据计算目标1116、236.005266、49.909037、10.554476、2.232像素。最大边缘差不足满量程0.07%，远低于3%容差。像素行数为抗锯齿边界近似；源码中的length=value×1240/9000是另行核对的代码依据。",
+      "uncertainties_zh": "E的末行是否计入取决于青色阈值，2–3像素不足以验证其高精度相对长度或飞溅细节；不能据此认定小值相对精确。依限制未查看渲染历史、日志或自检，capture_render.py源码仅能证明存在保存流程，不能证明历次调用情况。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "Region A—E按输入顺序出现，五个龙头及五处非零水流完整，单系列、标题、合成声明与单位齐全。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "8,100.0、1,712.941447、362.243012、76.60507、16.2与输入一致；8100/16.2=500，图中500×正确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "各地区及数值位于对应龙头上方；每条水流接在该龙头出水口，A底部补充标注也指向A端点，无错绑。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "统一零点及0–9000线性标尺明确；五条水流的像素端点均在3%满量程容差内，未见飞溅造成实质端点外扩。微小值的相对精度另保留不确定性。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png、splash.png及water_texture.png；其黑色龙头轮廓、高光、飞溅与水纹在成图中实质可见。render.py读取这些素材并控制水流尺寸及文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据由龙头下方真实可见的青色水流长度承载，非旁置普通柱形图。A—C水流接触出水口并在末端展开飞溅，D、E连接保留但细节有限。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、五类标签、全部数值、比例说明、读图规则与完整单位可读。左侧重复单位存在局部遮挡，未造成必要信息丢失。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "五个同尺度黑色侧视龙头的手柄、阀体、进水端和向下出水口连接完整，出水口同高；A—C下落水流与末端飞溅清楚。D、E过短，末端飞溅关系只部分可辨。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题明确年度可再生水资源，Region A—E被说明为五个合成地区；Gm³/year解释为十亿立方米/年。图面表达地区年度量的比较，没有误作百分比组成或累计时间序列。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留参考的地区年度可再生水资源比较，以及水龙头—落水长度的融合关系。真实国家替换为合成地区来自输入；原水压力宣传数值及旧排序不属于当前冻结要求。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "C约50像素，仍能辨认水流和飞溅；D约11像素，只见压短的水块及弱飞溅轮廓；E约2–3像素，仅可确认非零青色细线，不能从数值标签推定飞溅细节完整。"
+        }
+      },
+      "semantic_attribution_zh": "当前年度水资源主题及地区比较意义保留。真实国家改为合成地区、数值更新和500倍比较均属许可的输入适配，不要求复述旧水压力结论。输出局部损失是重复单位遮挡和D、E飞溅细节弱化；后者主要受真实比例下的像素分辨率限制，不能当作重大数值或物体身份错误。"
+    },
+    "primary_system_success": true,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/b9221082636ce8",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E46",
+    "source_case": "M034",
+    "name": "年度可再生水资源",
+    "conflict_type": "numeric_range",
+    "trial": "E46_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "46f2ea2639abcc",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "pass",
+    "execution": "ok",
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.97,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：五个黑色侧视水龙头并列、出口同高，青色水流自出口向下连接末端飞溅；国家标签与水资源数值对应，另有缺水说明和足迹装饰。\n最终图：五个同尺度黑色侧视水龙头出口对齐零基线；Region A–E 依次标注 8,100.0、1,712.941447、362.243012、76.60507、16.2。A–C 的青色水流和末端飞溅可辨，D 为很短青色薄片，E 为出口下细线。年度可再生水资源标题、SYNTHETIC DATA、Gm³/year及十亿立方米/年解释清晰；左侧0–9,000刻度和读图说明可读，500×说明与A/E绑定。",
+      "summary_zh": "数值、类别绑定、单位和线性长度正确，生成素材实际构成主体，龙头与数据水流保持连接。仅D/E的小值水流难以分别辨识流柱与末端飞溅，属于局部可辨性限制；未发现重大缺陷。",
+      "issues": [
+        {
+          "category": "metaphor_integration",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "在真实比例长度内保留出口、下落水流和末端飞溅的连接关系；不得为辨识度放大小值。",
+          "observed_zh": "D呈很浅的青色薄片，E呈出口下细线；尤其E已不能单独辨识飞溅轮廓。龙头、水色和接触关系仍保留。",
+          "evidence_zh": "原图1800×2190中，D的青色像素位于约y770–780，E位于约y770–772，最后一行含淡色抗锯齿。对应比例目标长度约10.55px和2.23px。此处记录形态部分可读，不认定为数据归零或超容差。",
+          "bbox_xyxy_normalized": [
+            0.7083,
+            0.3498,
+            0.9194,
+            0.358
+          ]
+        }
+      ],
+      "measurement_notes_zh": "对image.png只读测量。可见零刻度约y770，9000刻度约y2010，量程1240px；3%容差为37.2px。由输入值及该量程计算A–E目标长度为1116、236.0053、49.9090、10.5545、2.232px。在各出口局部以G−R>20且B−R>20提取青色，末端排他边界依次为y1886、1006、820、781、773，与目标端点差均不足1px（满量程0.081%以内）。阈值边界不是亚像素端点，尤其不能把E的三行覆盖当作3px不透明长度。源码另行佐证：render.py以value×1240/9000控制水层高度和裁剪边界，飞溅适配该高度；这是代码证据，不替代像素测量。",
+      "uncertainties_zh": "D/E的独立飞溅形态在原始分辨率下不足以确认完整保留；E的相对几何精度也不能由满量程容差或正确公式保证。已查看原图及原始素材，未重渲染。capture_render.py提供保存机制，但按限制未检查运行记录，不能独立证明每次完整渲染的执行路径。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "五个地区、五个龙头、五个非零水标记及唯一年度水资源系列均存在，顺序为A至E。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "8,100.0、1,712.941447、362.243012、76.60507、16.2全部与输入一致；8100/16.2=500，图中500×比较正确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "各地区名称及数值位于对应龙头上方，出水口连接本地区水流；A的底部标注和A/E比较指向明确。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "实际可见端点与0–9000共用线性尺度一致，五项差异均不足1px；没有给D/E设置可见最小长度或把正值归零。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看assets/raw_01.png、splash.png、water_texture.png；黑色金属龙头、青色水纹和飞溅纹理实际出现在主体中。prepare_assets.py提取部件，render.py合成并控制定量几何。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "水流从黑色出口下缘连续向下延伸，数据边界是末端底部而非水宽或龙头面积；龙头覆盖水流上缘，未见断接或错误遮挡。A–C飞溅接于流柱末端，小值局部辨识限制另列。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、SYNTHETIC DATA、五组标签、精确数值及单位清晰；Gm³/year明确解释为十亿立方米/年，零点和线性读图说明完整。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "五个同尺度侧视龙头的手柄、阀体、弯管与向下出口连接完整，出口同高且接触水流。A–C保留流柱与末端飞溅；D/E被压缩为薄片或细线，飞溅结构仅部分可读。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "年度可再生水资源主题、合成地区类别角色、年体积指标和单位明确；图中比较是A/E年度量之比，没有改成时间累计、占比组成或真实统计声明。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "保留参考的可再生水资源主题及龙头连接落水长度的融合关系。参考真实国家排行和缺水说明被当前合成地区及A/E比较替代，这是冻结输入允许的改编，不计为输出缺陷。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "C仍可见短流柱和水花；D约11行青色，E仅约2–3行，均有非零标记，但特别是E无法可靠分辨水流与飞溅。数值文字正确并不证明其微小形态完整。"
+        }
+      },
+      "semantic_attribution_zh": "当前主题、年度指标、地区角色和单位未丢失。真实国家及原缺水叙述改为合成地区属于输入允许改编；D/E的局部形态损失与真实小值及像素分辨率有关，未归为重大统计或结构失败。参考与最终均以连接龙头的水流自身承载数据。"
+    },
+    "primary_system_success": true,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/46f2ea2639abcc",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E26",
+    "source_case": "M022",
+    "name": "德国旗主题的实际GDP水平，非增长率",
+    "conflict_type": "trend_shape",
+    "trial": "E26_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "e65d727431cdea",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
     "quality": "unreviewed",
     "execution": "ok",
     "review": null,
     "primary_system_success": false,
     "confirmation": null,
     "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/787fc9f4bca520",
+    "review_path": "runs/expanded/evaluation/items/e65d727431cdea",
     "numeric_supported": null,
     "joint_supported": null,
     "critical_structure": "unreviewed",
@@ -2759,16 +3001,16 @@
     "confirmed_semantic_or_data_failure": false
   },
   {
-    "case": "E46",
-    "source_case": "M034",
-    "name": "年度可再生水资源",
-    "conflict_type": "numeric_range",
-    "trial": "E46_baseline",
+    "case": "E26",
+    "source_case": "M022",
+    "name": "德国旗主题的实际GDP水平，非增长率",
+    "conflict_type": "trend_shape",
+    "trial": "E26_baseline",
     "condition": "baseline",
     "stage": "final",
     "round": 2,
     "image_available": true,
-    "review_id": "ebfa1d82e5516f",
+    "review_id": "6a76a49cfca467",
     "reproduction": {
       "round": 2,
       "render_succeeded": true,
@@ -2784,7 +3026,441 @@
     "primary_system_success": false,
     "confirmation": null,
     "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/ebfa1d82e5516f",
+    "review_path": "runs/expanded/evaluation/items/6a76a49cfca467",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E26",
+    "source_case": "M022",
+    "name": "德国旗主题的实际GDP水平，非增长率",
+    "conflict_type": "trend_shape",
+    "trial": "E26_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "6d0015a5db1654",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/6d0015a5db1654",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E26",
+    "source_case": "M022",
+    "name": "德国旗主题的实际GDP水平，非增长率",
+    "conflict_type": "trend_shape",
+    "trial": "E26_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "032fd1e5980f63",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/032fd1e5980f63",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E07",
+    "source_case": "M025",
+    "name": "睡眠时长分布",
+    "conflict_type": "category_count",
+    "trial": "E07_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "fb027d297fcfde",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/fb027d297fcfde",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E07",
+    "source_case": "M025",
+    "name": "睡眠时长分布",
+    "conflict_type": "category_count",
+    "trial": "E07_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "fb027d297fcfde",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/fb027d297fcfde",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E07",
+    "source_case": "M025",
+    "name": "睡眠时长分布",
+    "conflict_type": "category_count",
+    "trial": "E07_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "6fbc8fea560dbe",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/6fbc8fea560dbe",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E07",
+    "source_case": "M025",
+    "name": "睡眠时长分布",
+    "conflict_type": "category_count",
+    "trial": "E07_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 3,
+    "image_available": true,
+    "review_id": "1620d76770027e",
+    "reproduction": {
+      "round": 3,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/1620d76770027e",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E47",
+    "source_case": "M040",
+    "name": "城市年度间接吸烟等效暴露",
+    "conflict_type": "numeric_range",
+    "trial": "E47_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "2c5b05114aa504",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/2c5b05114aa504",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E47",
+    "source_case": "M040",
+    "name": "城市年度间接吸烟等效暴露",
+    "conflict_type": "numeric_range",
+    "trial": "E47_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "360abbeeb59f98",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/360abbeeb59f98",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E47",
+    "source_case": "M040",
+    "name": "城市年度间接吸烟等效暴露",
+    "conflict_type": "numeric_range",
+    "trial": "E47_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "b0d8f84c99009c",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/b0d8f84c99009c",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E47",
+    "source_case": "M040",
+    "name": "城市年度间接吸烟等效暴露",
+    "conflict_type": "numeric_range",
+    "trial": "E47_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "b0d8f84c99009c",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/b0d8f84c99009c",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E27",
+    "source_case": "M027",
+    "name": "单位经济产出的能源消耗强度",
+    "conflict_type": "trend_shape",
+    "trial": "E27_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "943c4191102388",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/943c4191102388",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E27",
+    "source_case": "M027",
+    "name": "单位经济产出的能源消耗强度",
+    "conflict_type": "trend_shape",
+    "trial": "E27_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "a74cb336614bab",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/a74cb336614bab",
     "numeric_supported": null,
     "joint_supported": null,
     "critical_structure": "unreviewed",
