@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：完整斜视住宅的红色屋顶上缘连接逐年价格点，房体向右上抬升，家庭站在右下方地面；文字主题为新建独栋住宅售价中位数。\n成图：标题为SYNTHETIC House prices，显示SYNTHETIC DATA、Illustrative new-home price · USD和11 ANNUAL OBSERVATIONS。11个年份及价格均清晰排列在向右下降的屋顶外缘上方，圆点与外缘接触；坐标标示0至80,000。橙红瓦顶连接浅色墙体、窗户、深色门及右侧墙，整个房体离开地面，三口之家在右下方仰望。左下摘要卡覆盖部分墙体及门的左边，仍可辨识门窗和房体。卡片显示−61.2%和41,700 USD lower。未见多余装饰峰或明显标签错配。",
+  "summary_zh": "11年价格、标签和线性屋顶轮廓一致；住宅部件连接、悬空房体与下方家庭关系保留。未发现违反冻结要求的可见缺陷。参考统计口径的改编来自输入，单独记为部分保留。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1760×2000的image.png像素：可见纵轴刻度位于y=470、720、970、1220、1470，对应80,000至0 USD，满量程1000像素。识别11个黄色标记连通区域，质心水平间距均为123像素；按上述可见刻度反算，最大绝对偏差约42 USD，即满量程0.0525%，远小于3%容差。10段中点处均检出红色屋顶边线，与相邻标记插值位置相差约1像素以内。最小相邻价格差1800 USD对应22.5像素。源码另行确认按time_points等距映射，屋顶前缘及墙体使用非数据偏移；此项为代码证据，不冒充像素测量。端点差为−41,700 USD、−61.23348%，图中−61.2%正确。",
+  "uncertainties_zh": "抗锯齿和颜色分割使标记质心约有1像素量级定位不确定性，不影响容差结论。摘要卡遮挡局部墙体及门左边，不能检查被覆盖细节，但可见门窗、房体和屋顶连接仍足以确认结构。按限制未检查执行日志、历史渲染或自检；capture_render.py源码存在不能单独证明全部历史渲染均经该入口。参考图的情绪性寓意不作量化判断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Year 01至Year 11依次出现，11个价格标记及全部连接段可见，单系列、主题、单位和合成标识完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图中68,100、65,200、63,400、56,400、49,900、45,300、40,600、36,800、33,100、28,900、26,400与输入逐项一致；端点差和百分比也正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每组年份和价格位于对应屋顶圆点正上方，并有短竖线指向该点；从左至右顺序与冻结类别一致，无交叉或错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "11个可见点间距均为123像素，纵向按0—80,000 USD线性刻度反算最大偏差仅满量程0.053%；10段屋顶外缘抽样与点间连线一致，没有另加装饰峰。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01、raw_02及屋顶、立面、家庭素材；瓦片纹理、四扇窗、深色门和三口之家的特征实质出现在成图。render.py读取这些素材，代码控制屋顶坐标、裁切变形和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "承载价格的是住宅真实上部屋顶边界，其下连续铺设瓦面并连接墙体；右侧墙与屋顶、正面墙相接。家庭在地面上仰望悬空房体，物体与数据形成融合。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、系列名称、USD、11组年份及价格均清楚可读；摘要卡不遮挡数据边界、数据点或必需标签。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "橙红屋顶覆盖浅色正面墙，门窗嵌在墙内，右端侧墙提供斜视厚度；房体底部与地面间有可见空隙，三口之家站在房体右下方。下降轮廓本身承担年度价格。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC House prices、Illustrative new-home price · USD及ANNUAL PRICE共同明确年度示意新房价格；Year标签承担有序年度类别，线性刻度和端点降幅含义清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "住房价格通过屋顶形状连接到下方家庭的关系保留。参考中的真实新建独栋住宅售价中位数已由冻结输入改为示意新房价格；原上涨与负担恶化结论不属当前要求，此处部分保留归因于输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下11个圆点均可辨且贴住瓦顶边界；最低价格26,400仍有明确高度，最小相邻变化约22.5像素，未因小尺度丢失屋顶关系或合并为同一点。"
+    }
+  },
+  "semantic_attribution_zh": "输出未见必需主题或核心物体关系丢失。真实历史中位数改为合成示意价格，以及本次持续下降，均由冻结输入允许或决定，不归为生成失败。参考的住房与家庭关联可见，但具体情绪强度有解释不确定性。像素分辨率仅限制亚像素定位，未妨碍本例小变化及屋顶关系辨认。"
+}

@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：屋顶上缘承担价格走势，带门窗的住宅向右上方抬升，下方家庭仰望。最终图：11个年份和价格沿红瓦屋顶上缘排列；墙体、门窗、侧墙连接完整，房体离地，家庭位于右下方。SYNTHETIC DATA、住宅价格标题、指标和USD单位清晰，未见必要标签遮挡或额外装饰峰。",
+  "summary_zh": "11个年度价格及增量准确，屋顶实际边界符合线性尺度和容差要求，住宅与数据的融合关系完整。review.json已保存并通过schema验证；按附加要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量image.png：网格线y=500、747.5、995、1242.5、1490，对应80000至0 USD。11个圆点浅色连通域中心横向间隔均为111px，换算后的最大偏差约0.07%满量程。避开圆点测量858列屋顶上描边，距目标折线0.27–2.85px，不超过0.29%满量程。源码另证实价格及time_points控制屋顶轮廓，贴图裁切和标记共用该轮廓；源码事实未代替像素测量。",
+  "uncertainties_zh": "抗锯齿、色阈值和描边厚度带来约1–3px定位不确定性，远小于29.7px容差。未读取受限日志、自检或历史渲染，未独立核验capture_render.py执行历史。最小价格占满量程33%，本例未检验接近零值时的可辨性。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11个年份、11个屋顶点和单一价格系列完整，顺序符合输入。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "所有价格逐项符合data.json；68,100−26,400=41,700，单位和轴范围正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份、价格与下方屋顶圆点通过对齐和短引线一一绑定。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "点位误差约不超过0.07%满量程，屋顶上描边偏差不超过0.29%；年份间距符合time_points。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png；其中瓦片、门窗墙面及家庭人物在最终图中构成主体。render.py将素材映射至代码定义的表面。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据折线即屋顶真实上缘；屋面与墙体连接，门窗位于墙内，悬空房体与地面上的家庭关系明确。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、指标、单位、全部年份价格及读图说明清晰，无必要标签遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "斜视住宅具有屋面、正面墙、侧墙、门窗和底部厚度；房体离地，家庭在下方仰望，屋顶边界承担走势。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Illustrative new-home price (USD)、年度说明及Year标签明确当前主题、指标、时间角色、单位和合成性质。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "住宅价格、房体抬升与家庭仰望的关系保留。原参考的成交价中位数及住房负担叙事部分延续为合成示意价格；口径调整来自冻结输入，不是输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下11个点及屋顶连接均可辨；最小相邻增量1,800 USD仍有约22px高度差，未见人为夸大。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题、单位或融合关系丢失。参考真实年份、中位数口径及“噩梦”话语未原样沿用，归因于冻结输入的合成示意指标与允许的叙事调整。当前价格递增，抬升屋顶符合数据；不据此推断真实住房可负担性。"
+}

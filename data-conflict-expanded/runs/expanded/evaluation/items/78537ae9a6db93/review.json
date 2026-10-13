@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以平行斜放的蓝、红叉齿表达不同餐饮类别的变化百分比，叉头连接细颈和长柄。待评图保留白底、两把亮面彩色叉及上述连接；蓝组可见16%、11%、10%、0%、3%，红组可见20%、8%、12%、14%、15%，标签紧邻相应齿尖或零值根部。蓝组第四位置无伸出齿，第五位置有短齿；各组齿根沿同一直线排列。主题、服务类型、百分比单位、共用0–20%说明及SYNTHETIC DATA均清楚。齿根有细白边，尚未见遮挡或分离导致关系中断。",
+  "summary_zh": "当前数据、标签绑定和共用齿长尺度正确；生成叉身与定量叉齿连成完整主体，餐饮支出变化语义清楚。未发现实质性可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "检查2000×1825原图。源码给出的−38°旋转、两组零点及18像素/百分点用于定位取样轴，属于代码信息；随后直接对image.png在各齿轴及横向±5像素处取RGB样本，以连续颜色区间识别齿尖并排除文字。相对定位零点，蓝组端点约为289.1、199.3、181.2、0、55.3像素，红组约为361.3、145.1、217.2、253.1、271.2像素；目标分别为288、198、180、0、54和360、144、216、252、270像素。边缘阈值及抗锯齿带来约1–2像素不确定性，远低于满量程3%即10.8像素。3%短齿仍明确可见，零值处无从根部连续伸出的齿。",
+  "uncertainties_zh": "像素取样的轴和零点由源码定位，端点由原图颜色检测，并非完全独立的轮廓标定。参考图标题谈支出，小字另有月度到访口径；本次依冻结输入评估支出变化。未运行渲染或查看日志、自检及历史记录，capture_render.py的历史执行情况未独立确认。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两组各5个类别，10组类别/数值标签完整；9根正值齿及Table D的零值位置符合输入。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "蓝组依次为16%、11%、10%、0%、3%；红组为20%、8%、12%、14%、15%，均与data.json一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "Table A–E与蓝叉对应，Quick A–E与红叉对应；标签紧邻对应齿尖，Table D 0%紧邻空缺齿位的根部。两组均有服务类型父标题。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "原图轴向取样支持两组共用18像素/百分点，九个正值端点与目标均仅差约1–2像素；零值未被画成正长度。比较沿斜向齿轴进行。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看assets/raw_01.png，蓝红叉身的宽头、窄颈、长柄和高光可在成图中对应辨认。prepare_assets.py提取叉身与材质，render.py实际合成这些素材并按数据建立齿长轮廓和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色数据齿在共同根线上接入同色叉头，再经细颈连接长柄；数据承载的是叉齿自身伸出长度。根部细白线标示零线，未造成可见悬空或错误遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题标题、SYNTHETIC DATA、两类服务名、Spending change (%)、0–20%共用尺度及全部类别数值清晰，无关键文字遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "白底上两把蓝红亮面叉平行斜放，齿朝左上、柄朝右下；各组齿连接宽弧叉头，叉头收束为细颈再延伸为长柄。零值留下类别位置，短齿仍与叉头接触。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Restaurant spending change及Table service、Quick service明确表达两类餐饮服务的支出变化百分比；子类别有语义父类，合成声明明确，未将独立类别百分比误画成100%组成或时间累积。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留餐饮主题、两类服务比较以及以叉齿承担数值的关系。参考中的真实品牌、2009年Q2及月度到访说明未沿用；冻结输入已指定合成类别和支出变化口径，属于输入允许的语义适配，不是输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下Table E 3%的短齿约54像素，轮廓、根部接触和长度均可辨；Table D 0%保留标签与根部位置而无伸出齿。判断同时依据像素区域和可见结构，不仅依据数值文字。"
+    }
+  },
+  "semantic_attribution_zh": "当前冻结主题、服务类型、指标、单位和叉齿定量关系均由输出保留。参考真实品牌、历史时期及到访口径的部分变化归因于冻结输入的合成化与当前指标指定；参考标题和小字口径存在差异，不推断作者意图。像素边缘的有限精度不影响本例零值与最短正值的结构判断。"
+}

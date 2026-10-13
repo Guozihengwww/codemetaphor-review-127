@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为七颗彩色颜料旋纹球、同心细圈、弯排情绪名称、黑色百分比标牌及汇向灰度手捏握处的细线，主题提及疫情期间的感受。待评图保留七组圆球与同心圈，依次可读 Creative confidence 42%、Gratitude 18%、Hope 5%、Inspiration 2%、Connection 0.5%、Future excitement 0.5%、Efficiency 0.5%。七条线汇向底部手指，球面可见旋纹、高光和阴影；小球仍可辨认。顶部明确标注 SYNTHETIC DATA、正向情绪增加、报告增加的比例及可多选，右下图例说明固定零核、径向尺度和面积不编码。此时尚未核查半径数值。",
+  "summary_zh": "七类数值、绑定、径向尺度及球—同心圈—细线—捏握手的关系均符合冻结要求。主题、百分比指标和独立多选口径清楚；未发现需判失败的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "待评图为1800×2160。源码给出零核r0=24、外半径R=166；按冻结公式推导七球目标半径为143.28、75.12、38.20、29.68、25.42、25.42、25.42像素。独立读取image.png，以源码坐标为采样中心、RGB通道极差>18识别彩色像素，测得径向距离99分位为142.98、74.97、38.45、29.74、25.47、25.71、25.74像素；这是颜色轮廓近似，不是精确透明度边界。七组外圈的径向平均灰度峰均为165.50像素，图例外圈为165.65、零核为23.55像素，与线条内缘位置一致。测量支持共同尺度，未见超出径向满量程3%（4.26像素）的偏差。",
+  "uncertainties_zh": "三个0.5%值相对零核的目标径向增量仅1.42像素，成图不能可靠支持很小的相对误差判定；浅色球缘与抗锯齿也影响颜色阈值测量。按要求未查看日志、自检或历史渲染，capture_render.py的存在与实现不能独立证明全部历史渲染均经该脚本。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七类名称、七颗球、七个黑色数值标牌和七条汇聚线均可见，另有合成声明、主题、指标及径向图例。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可读42%、18%、5%、2%、0.5%、0.5%、0.5%，与data.json一致；没有将正值舍为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各弯排名称位于所属圈组上方，数值标牌位于该组下方；七项均对应正确，无串组。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际彩色轮廓与固定零核加线性径向增量相符，等值小球大小一致；七组外圈和四分之一圆图例共享尺度。像素测量与公式推导分别记录于测量说明。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png中的七球和raw_02.png中的手；旋纹、光泽及手部形态在成图中实质可见。prepare_assets.py提取素材，render.py按数值施加圆形遮罩并控制文字与圈线；另有capture_render.py封装。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据承载边界就是彩色球的圆形轮廓；球覆盖共心内圈，外圈显露。黑标牌下的细线汇入手指捏握处，末端被前景手遮住；物体与量化图形保持结合。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下类别、数值、合成提示、百分比指标、多选说明及图例文字均可读，没有必要标签被遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "浅纸纹背景上保留七颗混色旋纹球及高光、软阴影；同心圈围绕球，名称沿弧排布，数字位于黑牌。七线从标牌向下汇聚并进入灰度写实手的捏握位置，连接和遮挡关系清楚。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题表达正向情绪增加，副标题明确报告增加的合成比例（%），并写明可多选且不必合计100%；七种情绪类别的语义角色完整。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考的正向情绪增加、七种情绪角色及手握彩球线束关系；原疫情语境和真实统计来源由冻结输入要求的合成数据语境替代，属于许可改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "三个0.5%球在原图中直径约51像素，仍可辨认圆球、旋纹和明暗体积，且位于圈组中心。该可见尺寸包含允许的固定零核；1.42像素的数据增量只能有限验证，不能据此宣称高相对精度。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或数据承载关系丢失。疫情背景及真实来源的替换归于输入授权的合成统计改编；小值增量的精细辨别限制归于成图分辨率，不视为隐喻消失或量值放大。"
+}

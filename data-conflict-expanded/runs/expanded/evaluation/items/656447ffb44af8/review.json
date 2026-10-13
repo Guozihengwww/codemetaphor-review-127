@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以蓝红两把斜放叉子的齿长承载餐饮数据，叉头连接细颈与长柄。最终图保留该结构：蓝组8个类别位置、7根正值齿，Table D 0%位于空缺根部；红组8根齿。16个数值目视一致，3%短齿可辨。主题、合成数据声明、服务类别和百分比单位清楚，标签无明显重叠。",
+  "summary_zh": "当前数据、类别绑定、共享尺度和叉齿融合关系符合要求。review.json已保存并通过schema校验；按追加要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1825原图上，以源码提供的旋转、零线和槽位辅助定位，再沿每齿中央5条平行线采样实际RGB识别端点。蓝组长度约257、177、161、0、49、101、153、205像素；红组约321、129、193、225、241、178、225、273像素。与16像素/百分点的目标长度相比，最大差约1.5像素，低于320像素满量程的3%容差9.6像素。阈值与抗锯齿产生约±2像素边界不确定性。",
+  "uncertainties_zh": "采样方向与零线位置由源码辅助定位，端点来自实际图像。未读取日志、自检或历史渲染，因此未独立核实生图调用及capture_render.py的全部执行历史。参考标题讲支出、脚注讲访问量；当前指标按冻结core评估。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两类服务各8个类别位置完整；零值保留位置，没有额外数据项。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "蓝组16、11、10、0、3、6.25、9.5、12.75%，红组20、8、12、14、15、11、14、17%，逐项准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别按输入顺序排列，标签紧邻对应齿尖或零值根部；颜色、图例及柄上名称一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际像素采样支持共享线性齿长尺度，最大端点差约1.5像素；0%无伸出齿。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png的蓝红亮面材质实质用于最终主体；素材处理及渲染源码控制主体映射、数据齿长与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "齿连接叉头，叉头经细颈连接长柄；表面方向协调。齿根白虚线是零线标记，未破坏连接或层序。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、服务类型、单位、尺度及全部类别和值清晰，无实质遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "白底蓝红双叉、宽弧叉头、细颈及长柄完整。数值直接由共同齿根至齿尖的长度承载。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "餐饮支出变化主题、两类服务、餐饮类别角色及百分比单位明确，没有误表为组成份额或累计值。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留餐饮主题、堂食/快餐区分与叉齿编码。参考访问量脚注、真实品牌和历史时段被冻结输入的合成支出指标替代，属于输入改编，不是输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Table E 3%的短齿清楚连接叉头，实测约49像素、目标48像素；0%无伸出齿，未见人为最小长度膨胀。"
+    }
+  },
+  "semantic_attribution_zh": "未观察到当前主题、系列角色或数据融合关系的输出损失。历史统计口径差别归于冻结输入改编；参考标题与脚注的指标差异保留解释不确定性。最短正值的物体连接关系可辨，端点精度受抗锯齿限制。"
+}

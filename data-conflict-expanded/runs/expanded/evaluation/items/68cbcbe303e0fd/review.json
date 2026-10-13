@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：黑色金属桶剖口内含七个彩色产品层，右侧油滴图例与产品名对应，主题为每桶原油所得产品加仑数。成图：11个色层从上到下排列，四个Diesel层均标2.4，Other Distillates为1.35，Jet Fuel为4.05，两个Other Products层均为3.6，Heavy Fuel Oil为1.8，LPG为1.65，Gasoline为18.35。右侧11行图例保留父类及子类名；顶部标SYNTHETIC DATA、产品主题、合计44和US gal。金属桶外壳、桶沿、加强筋、切边及底部阴影可见，色层位于剖口内，Gasoline层最大；窄色层仍可辨。底部写明层厚按体积占44 US gal的比例，以及子类互斥。尚未检查源码或测量像素。",
+  "summary_zh": "11类产品、数值、单位及合成声明完整。成图实测层厚符合体积比例，桶内色层与金属剖口融合关系保留，未发现实质缺陷；冻结要求可行。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取指定image.png的1800×2048原始像素，未运行渲染器。以连续色块及相邻RGB跳变定位界面：x=550处边界y为501.5、567.5、633.5、699.5、765.5、802.5、913.5、1012.5、1111.5、1161.5、1206.5、1711.5，总高1210像素；11层厚度为66、66、66、66、37、111、99、99、50、45、505像素。x=850测得相同厚度；x=760的最后两层为46、504像素，其余相同。三列最大份额偏差约0.052个百分点，小于3个百分点容差。源码另行确认H=1210、界面为同一曲线加累计体积×H/44；这是代码证据，未替代像素测量。",
+  "uncertainties_zh": "抗锯齿使界面定位存在约1像素不确定性；实测为三个完整无遮字竖通道。素材生成来源依据随附清单及可见对应，未核验生成调用和全部capture执行历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "桶内11层、右侧11行图例均齐全，顺序与data.json一致；四个Diesel及两个Other Products子类均保留。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见数值依次为2.4、2.4、2.4、2.4、1.35、4.05、3.6、3.6、1.8、1.65、18.35；总量44，单位US gal，与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "油滴颜色、图例顺序和层内数字共同绑定类别；图面明确说明从上到下按列出顺序，父类名称及子类编号可读。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "三个竖通道均贯穿全部11层，总高1210像素；最大份额偏差约0.052个百分点。跨列界面位移一致至约1像素，符合平移曲线编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和barrel_cutaway.png；金属纹理、桶沿、两道加强筋及底影在成图主体有对应。render.py读取原始素材并裁切剖口，代码绘制比例色层及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色数据面嵌于桶壳剖口，两侧金属切边与色层接触；加强筋在开口处中断，未遮断竖通道。弧形层界和桶体立体光影保持协调。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、系列、US gal、全部类别和数值均可辨；底部比例公式及子类互斥说明完整，无必要文字裁切或重叠。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "黑色金属桶保留椭圆桶沿、上下相连的外壳、两道加强筋、底部金属环及投影；剖口包围11层产品数据面，切边连接壳体，右侧保留油滴图例。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题表达一桶原油所得产品，系列明确为Synthetic output volume (US gal)，总产出44；子类显示语义父类并声明互斥，统计口径可理解。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考的一桶原油对应不同产品体积主题及桶内分层关系均保留；合成数值和类别拆分由当前输入指定，旧年份与旧数值不属于本次验收目标。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下最薄的Other Distillates层约37像素，LPG层约45至46像素，均连续可辨并接触桶内切边；正数标签清晰，未见为辨识而抬高最小层厚。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或指标语义损失。参考七类调整为当前十一类合成产品、替换数值及标明44 US gal总产出，属于冻结输入许可的改编；父类归属和桶内分层承载体积的关系保留。约1像素的边界定位限制不影响最小层的可辨性。"
+}
