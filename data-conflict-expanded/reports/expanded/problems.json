@@ -5331,19 +5331,108 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：游艇位于右上水面，带海水纹理的绿、蓝、深蓝、紫色区域向下堆叠，底部轮廓承载总深度；主题涉及塑料废物排放。成图：标题、合成声明、单位、四个来源、P01–P16及分项/总值表完整可见。四层共用水平顶边，P02最深，P15–P16仍留薄色带。游艇位于右上水面附近；船底接触关系待像素核查。文字明确同一期来源相加而非跨期累计。",
+      "summary_zh": "数据、标签绑定和主题表达正确。船底与水面有窄缝，末期注释左端轻微贴入紫色层，均属轻微问题。review.json已保存并通过schema校验；未运行submit.py。",
+      "issues": [
+        {
+          "category": "metaphor_integration",
+          "severity": "minor",
+          "requirement_id": "M6",
+          "expected_zh": "游艇船底与共同水面保持可见接触。",
+          "observed_zh": "船底与水面之间留有窄背景缝，呈轻微悬空；水下数据层仍连续。",
+          "evidence_zh": "原尺寸局部及像素检查：x=1700、1800、1900、2000、2070处，深色船底到约y=368，水面线在y=375，中间约5–6行接近背景色。",
+          "bbox_xyxy_normalized": [
+            0.74,
+            0.233,
+            0.952,
+            0.245
+          ]
+        },
+        {
+          "category": "layout_readability",
+          "severity": "minor",
+          "requirement_id": "LABELS",
+          "expected_zh": "外置总值注释与来源色带保持清楚间隔。",
+          "observed_zh": "“P16 total discharge”左端少量字形贴入P13附近紫色层，仍可读。",
+          "evidence_zh": "原尺寸局部可见文字与紫色底边相交。源码文字起点为(1720,545)；成图x=1724附近紫层延伸至约y=549，文字打断少量填充。",
+          "bbox_xyxy_normalized": [
+            0.78,
+            0.347,
+            0.802,
+            0.368
+          ]
+        }
+      ],
+      "measurement_notes_zh": "仅评估2200×1552的image.png。先保存可见观察，再检查源码及素材。按原图颜色识别16个时期附近的64个累计边界；P13、P16避开注释和引线，目标值按实际抽样位置插值计算。最大边界偏差约1.12像素，相当满量程0.16%，低于3%容差21.6像素。目标坐标来自数据及源码映射，观察坐标来自成图像素。分项及16期总值与冻结数据核对一致。未执行渲染。",
+      "uncertainties_zh": "最薄B层目标仅1.5–1.6像素，抗锯齿使主体色像素数在1–2行间变化，不能精确断言其小值相对误差或独立水纹可辨性。边界抽样不是逐像素全图证明。仅检查捕获脚本，未读取被排除的历史执行记录。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "P01–P16、四个来源、64个分项及16个当期总值完整显示。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "分项与data.json相符；16期总值加总正确，最高值为P02的7020，末期为190，小正值未记为零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "四来源颜色在图例、色带和表格中一致；时期顺序正确，P16引线连接最右总轮廓。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "共同水面约y=376，满量程底线y=1096。抽样边界最大偏差约1.12像素；四层非负，无第五层。源码使用全部点及分段线性插值，图面与当前数据吻合。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "原始素材中的船体细节与海水纹理实质出现在成图中；代码以海水素材填充定量掩膜。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "海水层厚度及总下边界直接承担数量编码。局部船水细缝和注释相交未破坏主要融合关系。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "标题、合成声明、单位、时期刻度、图例及完整数值表清晰；局部注释仍可读。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "海洋剖面、共同水面、游艇、四层相邻海水及向下累计关系保留；船底与水面的细缝使接触关系局部不完整。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "明确表达海洋塑料排放，显示合成声明、来源语义父类及100 tonnes/period；说明同一期来源相加，而非跨期累计。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "保留塑料排放主题及水深编码。参考的韩国ERP、具名来源及年份被冻结输入替换为合成来源和时期，属于获准输入改编，不是生成遗漏。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "P15–P16四层仍非零；B层约有1–2行主体蓝色像素，但无法辨认独立海水纹理。不据此判定数值被删除，也不要求加粗。"
+        }
+      },
+      "semantic_attribution_zh": "输出问题为船水接触细缝和注释局部贴边；当前主题、来源角色、时期及单位没有丢失。真实地区、年份及具名来源的替换属于冻结输入允许的适配，不强求参考旧涨跌结论。末端薄层的水纹可辨性受像素分辨率限制。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/369977719c0147",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -5367,165 +5456,80 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：游艇位于右上水面，绿色、蓝色、深蓝色、紫色水下层的深度随横向时间变化；海水纹理覆盖数据色层，主题为塑料排放。\n待评图：标题为Plastic discharge into the ocean，醒目标注SYNTHETIC DATA，注明每期排放与100 tonnes/period。四种水下色带共用水平零水面，游艇船底在右端与水面接触。P01–P16按序排列，P02最深，P15–P16很薄；下方两块表列出四来源与合计。图中说明层厚代表来源值、总深度代表同一期四来源之和，并明确不跨期累计。初看未见错绑、缺字或第五层；右端细层须原尺寸核查。",
+      "summary_zh": "通过。四来源的纹理水层承担定量编码，游艇与共同零水面接触；全部时期、分项、合计和单位正确且可读。未见超容差映射或关键结构缺失。末端细层的材质辨识有限，原参考具体统计角色的改编来自冻结输入，分别记录为部分保留。",
+      "issues": [],
+      "measurement_notes_zh": "检查的是2200×1552的image.png原图，未重渲染。可见零水面约y=376，7200刻度约y=1096，满量程720像素，3%容差21.6像素。按绿、蓝、深蓝、紫的色相在16期附近各取一像素列，追踪与水面连通的四层，排除下方独立文字。实测边界与按数据线性插值推导的位置最大差约1.16像素，层厚最大差约1.20像素；边界差约占满量程0.16%。P02底界约y=1077.5，目标y=1078；P16附近底界约y=394.5，端点目标y=395。这些是近邻列的色相分界估计，约有1像素抗锯齿与分类不确定性。源码另证实累计边界、线性插值及无最小层厚，但结论同时依据可见像素。",
+      "uncertainties_zh": "P15、P16的B层目标厚度由输入与轴尺推导为1.5、1.6像素；采样列分别只有1、2行主要蓝色像素，不能据此断言微小值的精确相对误差或独立水纹清晰度。未检查被禁止的日志、自检或历史记录，故不独立确认capture_render.py的实际调用历史；已核对其源码、渲染源码、原始素材与最终可见对应。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "P01–P16按输入顺序全部出现；四来源图例、64个分项值、16个当期合计及0–7200轴完整，图形有全部16期节点。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "原尺寸逐项核对表内64个分项值，与data.json一致；16个合计也吻合。P02最高合计7020、P16合计190正确，正值15、16等未被舍为零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "图例及表行的绿、蓝、深蓝、紫分别绑定Plastic source A–D；图中自水面向下顺序一致。列头绑定对应时期，P16的190引线连接最右总深度边界。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "共同水面为零，数轴线性向下，四层厚度表示当期分项，总底界表示同一期之和。16期像素抽样边界偏差约不超过1.2像素，低于21.6像素容差；未见负厚度、额外第五层或插值过冲。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png，游艇轮廓及海水波纹、折射纹理与成图对应。assets_manifest.json与render.py显示水纹裁入四层、游艇独立合成；生成素材在主体大面积可见，代码控制遮罩边界与文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "船底接触共同水面，海水纹理贯穿四个相邻定量层，外底界与内部色界实际承担总量及分项编码。海洋物体与数据区域融合，未见影响读数的错位、遮挡或纹理接缝。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、SYNTHETIC DATA、来源语义、时期、单位、刻度和完整数值表在原尺寸均可读；说明明确每期四来源相加且不跨期累计，主要文字无相互遮盖。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "游艇船体、甲板和上层建筑保持连接，船底贴右端水平水面；水面下依次包含绿、蓝、深蓝、紫四层，各层共享连续边界。水平位置是有序时期，竖直水柱各层厚度和总深度分别承载分项及当期合计，末端仍保持连接。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题明确海洋塑料排放，副标题说明各期排放量与100 tonnes/period，图例有Plastic source语义父类。P01–P16明确为有序合成时期；说明排除了跨期累计解释，未冒充实际年份或真实统计。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "保留参考图以海水深度表现塑料排放、游艇位于水面的关系。原参考韩国ERP及具体来源角色改为合成A–D来源与P01–P16时期，这是brief/data明确允许的输入改编；不要求沿用原图加深趋势或历史峰值。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "P15–P16仍能识别四层顺序及整体水层的连续收薄。B层在抽样列仅约1–2像素，保留蓝色分隔却难独立辨认水纹；其余末端色层也较薄。数值表清楚，但不能代替微小几何证据，且不应人为加厚。"
+        }
+      },
+      "semantic_attribution_zh": "未发现由输出造成的主题或数据关系丢失。原参考具体国家、统计制度、来源名称及实年标签转为合成来源与时期，归因于冻结输入允许的改编。末端B层水纹辨识受原尺寸像素分辨率限制，属于部分可辨，不据此判为映射失败；没有把原图涨跌方向作为当前要求。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/6674c367586d1e",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E11",
-    "source_case": "M036",
-    "name": "各地区意面产量",
-    "conflict_type": "category_count",
-    "trial": "E11_conflict",
-    "condition": "conflict",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "6e398fc9f7e8ba",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/6e398fc9f7e8ba",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E11",
-    "source_case": "M036",
-    "name": "各地区意面产量",
-    "conflict_type": "category_count",
-    "trial": "E11_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 1,
-    "image_available": true,
-    "review_id": "6e398fc9f7e8ba",
-    "reused_identical_image": true,
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/6e398fc9f7e8ba",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E11",
-    "source_case": "M036",
-    "name": "各地区意面产量",
-    "conflict_type": "category_count",
-    "trial": "E11_baseline",
-    "condition": "baseline",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "4588688bd0b23a",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/4588688bd0b23a",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E11",
-    "source_case": "M036",
-    "name": "各地区意面产量",
-    "conflict_type": "category_count",
-    "trial": "E11_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 3,
-    "image_available": true,
-    "review_id": "ff03d5c84c64d8",
-    "reproduction": {
-      "round": 3,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/ff03d5c84c64d8",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -5548,128 +5552,95 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.97,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：方格纸上有侧视俯身跳水者，左侧脚腿抬升到泳裤处的髋峰，再沿躯干和前伸手臂向右下降；红泳帽、头颈、蓝泳裤和底部水面可见，标题为 Greek GDP Per Capita。指定成图：保留同类人体与水面关系，折线与十个圆点从左脚经腿、髋、躯干至右手，峰点为2008年31,200。十期年份2000—2018、十个给定数值、0—35,000刻度、GDP per capita与USD per person均可读；显著标注SYNTHETIC DATA。头颈与肩部相连，双腿和双臂以重叠轮廓表现；未见明显断肢、折线离体或数值遮蔽。底部水面与零线重合，最小值5,900的圆点位于右手内且明显高于零线。",
+      "summary_zh": "十期数据、单位、年份绑定及跳水者与数据路径的融合均保留，几何误差远低于容差。17,100标签局部遮住折线，属轻微遮挡。",
+      "issues": [
+        {
+          "category": "occlusion_layering",
+          "severity": "minor",
+          "requirement_id": "M2",
+          "expected_zh": "逐点直线连接的唯一数值路径在人体内保持可追踪。",
+          "observed_zh": "2014年的17,100标签底片遮住2014—2016线段的一小段及其下方手臂纹理；点位与走势仍可辨。",
+          "evidence_zh": "原尺寸局部查看可见折线在标签上缘进入、下缘重新出现，中间约44像素高的区域被浅色底片遮住，位置约为x1490—1525、y1150—1194。源码也显示标签在折线之后绘制。",
+          "bbox_xyxy_normalized": [
+            0.698,
+            0.574,
+            0.768,
+            0.599
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接测量2000×2000成图：左轴刻度y为480、650、820、990、1160、1330、1500、1670，分别对应35,000至0。十个红色圆心像素簇的x从249.5至1779.5、等距170；按年份顺序y为1288.675、1030.5、816、673.5、608.675、724.5、880.675、1088、1302.5、1469。由这些像素位置及可见刻度反算，最大绝对偏差约17.7 USD，即满量程0.051%，低于3%容差。最小值5,900距零线约201像素，目标200.6像素。另据源码，年份线性映射至250—1780，金额线性映射至1670—480，人体通过同组锚点变形；此项为代码证据，不替代像素测量。",
+      "uncertainties_zh": "圆心质心及抗锯齿带来约1像素以内的测量不确定性。参考图未明确说明人体哪一条外缘承担精确统计值，当前按冻结的唯一折线通道评估。依限制未查看运行日志或自检，不能独立确认全部历史渲染均经capture_render.py执行。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "2000至2018每两年一期，共10个年份、10个数据点及一个GDP per capita系列完整出现。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "依次可读11,200、18,800、25,100、29,300、31,200、27,800、23,200、17,100、10,800、5,900，与输入逐项一致。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "各圆点与对应年份垂直对齐，数值邻接或由短引线连接；2008峰点绑定31,200，无串位。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "像素标定确认共同线性零线与等距年份，最大点位误差约满量程0.051%；可见折线依序连接全部点。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "raw_01.png的皮肤纹理、红泳帽及带浅色斜带的深蓝泳裤在成图主体中可辨；diver_warped.png与主体对应。render.py控制点位、人体变形和文字，capture_render.py包含完整渲染保存逻辑。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据路径沿脚、腿、髋、躯干、肩臂至手穿行，圆点位于人体内；人体实际承载路径。水面上沿对应共同零线，标签仅有一处轻微遮挡。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题标题、SYNTHETIC DATA、GDP per capita、USD per person、Year、全部数值及刻度清晰，图例明确说明高度编码与非定量人体厚度。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "左脚与重叠双腿连至泳裤包覆的髋部，髋连躯干及右侧肩臂，手臂延伸到右下双手；头颈接肩，红帽覆盖头部。人体悬于底部水面上方，位于方格纸坐标中。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题及说明明确表达经济产出按人计量、单位USD per person和年份序列；水面以上折线高度表示人均GDP，并明确为非真实国家统计的合成数据。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "人均GDP时间变化与跳水姿态融合的含义保留；参考的希腊特定国家语境改为非国别合成示例，属于冻结输入允许的语义改编。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "最小值5,900的圆点及相连线段在右手内可辨，距零线约201像素；其手部轮廓仍可识别，无需靠数值文字推定几何，也未见最小值被人为放大。"
+        }
+      },
+      "semantic_attribution_zh": "当前主题、指标、单位及人体承载关系未见输出层语义丢失。希腊语境改为合成非国别数据归于输入改编，reference_meaning的partial不计为生成缺陷。参考外缘的旧精确编码存在解释不确定性，当前以冻结折线定义为准；本图最小数据的高度和手部关系未受分辨率限制。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/26ee17ca8cc890",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E32",
-    "source_case": "M055",
-    "name": "人均经济产出与跳水者姿态",
-    "conflict_type": "trend_shape",
-    "trial": "E32_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "03175a390c3f8d",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/03175a390c3f8d",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E32",
-    "source_case": "M055",
-    "name": "人均经济产出与跳水者姿态",
-    "conflict_type": "trend_shape",
-    "trial": "E32_conflict",
-    "condition": "conflict",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "19c270686f6c10",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/19c270686f6c10",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E32",
-    "source_case": "M055",
-    "name": "人均经济产出与跳水者姿态",
-    "conflict_type": "trend_shape",
-    "trial": "E32_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "b975041b549a9c",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/b975041b549a9c",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "pass",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -5692,20 +5663,80 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图为七本紧挨、近等高的旧式书，书脊宽度与外部宗教份额标签相连。成图保留红、黄、绿、褐、黑及末端棕红书脊、皮革纹理、金线、磨损和底部阴影；七组外部名称与12%、2%、24%、16%、42%、0.12%、3.88%均可读。Christian最宽；Jewish在Christian与Buddhist之间仅呈极细竖带，斜引线指向该处。顶部明确显示SYNTHETIC DATA、宗教归属主题、人口百分比及总计100%，底部说明书宽编码、等高及合成统计口径。",
+      "summary_zh": "七类份额、顺序、标签及人口百分比语义正确；旧式书脊本身承担连续宽度编码，生图材质实质可见。未发现重大或需单列的轻微缺陷。Jewish极细带可见，但独立书脊细节只能部分辨认。",
+      "issues": [],
+      "measurement_notes_zh": "在2000×1392原图中，可见数据带约从x=120延伸至1880，总宽约1760px；色带交界约为331、366、789、1070、1810、1812px，抗锯齿交界约有1–2px判读不确定性。按这些像素近似读数，七带份额约11.99%、1.99%、24.03%、15.97%、42.05%、0.11%、3.86%，均在3个百分点容差内。独立像素采样显示x=1810在y=470–969的RGB中位数为(25,40,56.5)，右侧x=1813为(92,38.5,16)，支持蓝灰细带未被棕红邻带完全覆盖。源码推导宽度为211.2、35.2、422.4、281.6、739.2、2.112、68.288px；这些是代码值，不是亚像素实测。",
+      "uncertainties_zh": "Jewish仅约2px宽：可验证非零色带及对应引线，不能凭像素可靠核实0.12%的精细相对误差，也不能辨认其完整金线和皮革部件。简报允许细书仅作外部标注，故此分辨率限制不构成失败。未重渲染或读取运行日志；capture_render.py源码存在，但其实际历史调用未作独立验证。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "Hindu、Folk religions、Muslim、Unaffiliated、Christian、Jewish、Buddhist七类按输入顺序出现；外部名称、数值、主题、单位及合成数据提示完整。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "逐项可读为12%、2%、24%、16%、42%、0.12%、3.88%，与data.json一致；Total 100%与输入总和一致，正微小值未舍入为零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "交错引线分别落在各书脊下方中心。Jewish斜引线终点对应Christian右侧极细蓝灰带，Buddhist独立引线对应最右棕红带；未见交叉造成的错绑。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "原图连续色带的近似宽度与12/2/24/16/42/0.12/3.88%一致，偏差远低于3个百分点。源码按累计份额分配宽度且未设置最小宽度；微小带的相对精度另保留不确定性。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png及spine_jewish.png。原素材的绿色金框、褐色花饰和黑色横脊纹在成图主体中可直接对应；render.py读取七个spine素材并按数值控制几何与文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据区域就是书脊表面：皮纹、包边和金线随各自份额带延伸，相邻书脊连续接触，底部阴影不承担数值。没有普通图表与书本旁置替代融合的情况。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "全部外部类别及百分比清晰，无裁切或相互遮挡；SYNTHETIC DATA、宗教归属标题、Share of population (%)、总计及底部统计口径可读。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "等高书脊成排紧挨，上下边界齐平；红黄绿褐等书皮、包边、金线、磨损及底部接触阴影可见。实际数据边界为各书脊左右边界；极细书的部件辨识限制单列于small_mark_visibility。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题明确宗教归属份额，单位为人口百分比，七标签表达宗教与无归属类别；100%总和符合当前构成数据。合成数据与非人口估计声明清楚，未冒充真实统计。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "参考图以宗教及无归属人口份额对应一排书脊，成图保留同一主题角色和宽度承载关系。新数值、类别内题和合成声明未改变冻结核心要求的统计含义。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "Folk religions的2%及Buddhist的3.88%仍可辨为窄书；Jewish的0.12%在原分辨率仅为约两像素蓝灰竖带，外部标签和引线可读，但其独立书脊的金线、包边和皮革细节不能可靠辨认。"
+        }
+      },
+      "semantic_attribution_zh": "宗教及无归属人口构成的主题、类别角色和书宽份额关系得到保留。用合成份额替换参考真实统计是冻结输入的明确要求，不属于输出语义损失；核心也未要求复刻原典籍书名。Jewish物体细节的部分可辨性归于真实比例下的像素限制，未见将其删除、放大或被邻书遮没的证据。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/16617a89d05f84",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -5729,20 +5760,80 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图为七本紧挨、近等高的旧式书，书脊宽度与外部宗教份额标签相连。成图保留红、黄、绿、褐、黑及末端棕红书脊、皮革纹理、金线、磨损和底部阴影；七组外部名称与12%、2%、24%、16%、42%、0.12%、3.88%均可读。Christian最宽；Jewish在Christian与Buddhist之间仅呈极细竖带，斜引线指向该处。顶部明确显示SYNTHETIC DATA、宗教归属主题、人口百分比及总计100%，底部说明书宽编码、等高及合成统计口径。",
+      "summary_zh": "七类份额、顺序、标签及人口百分比语义正确；旧式书脊本身承担连续宽度编码，生图材质实质可见。未发现重大或需单列的轻微缺陷。Jewish极细带可见，但独立书脊细节只能部分辨认。",
+      "issues": [],
+      "measurement_notes_zh": "在2000×1392原图中，可见数据带约从x=120延伸至1880，总宽约1760px；色带交界约为331、366、789、1070、1810、1812px，抗锯齿交界约有1–2px判读不确定性。按这些像素近似读数，七带份额约11.99%、1.99%、24.03%、15.97%、42.05%、0.11%、3.86%，均在3个百分点容差内。独立像素采样显示x=1810在y=470–969的RGB中位数为(25,40,56.5)，右侧x=1813为(92,38.5,16)，支持蓝灰细带未被棕红邻带完全覆盖。源码推导宽度为211.2、35.2、422.4、281.6、739.2、2.112、68.288px；这些是代码值，不是亚像素实测。",
+      "uncertainties_zh": "Jewish仅约2px宽：可验证非零色带及对应引线，不能凭像素可靠核实0.12%的精细相对误差，也不能辨认其完整金线和皮革部件。简报允许细书仅作外部标注，故此分辨率限制不构成失败。未重渲染或读取运行日志；capture_render.py源码存在，但其实际历史调用未作独立验证。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "Hindu、Folk religions、Muslim、Unaffiliated、Christian、Jewish、Buddhist七类按输入顺序出现；外部名称、数值、主题、单位及合成数据提示完整。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "逐项可读为12%、2%、24%、16%、42%、0.12%、3.88%，与data.json一致；Total 100%与输入总和一致，正微小值未舍入为零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "交错引线分别落在各书脊下方中心。Jewish斜引线终点对应Christian右侧极细蓝灰带，Buddhist独立引线对应最右棕红带；未见交叉造成的错绑。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "原图连续色带的近似宽度与12/2/24/16/42/0.12/3.88%一致，偏差远低于3个百分点。源码按累计份额分配宽度且未设置最小宽度；微小带的相对精度另保留不确定性。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png及spine_jewish.png。原素材的绿色金框、褐色花饰和黑色横脊纹在成图主体中可直接对应；render.py读取七个spine素材并按数值控制几何与文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据区域就是书脊表面：皮纹、包边和金线随各自份额带延伸，相邻书脊连续接触，底部阴影不承担数值。没有普通图表与书本旁置替代融合的情况。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "全部外部类别及百分比清晰，无裁切或相互遮挡；SYNTHETIC DATA、宗教归属标题、Share of population (%)、总计及底部统计口径可读。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "等高书脊成排紧挨，上下边界齐平；红黄绿褐等书皮、包边、金线、磨损及底部接触阴影可见。实际数据边界为各书脊左右边界；极细书的部件辨识限制单列于small_mark_visibility。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题明确宗教归属份额，单位为人口百分比，七标签表达宗教与无归属类别；100%总和符合当前构成数据。合成数据与非人口估计声明清楚，未冒充真实统计。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "参考图以宗教及无归属人口份额对应一排书脊，成图保留同一主题角色和宽度承载关系。新数值、类别内题和合成声明未改变冻结核心要求的统计含义。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "Folk religions的2%及Buddhist的3.88%仍可辨为窄书；Jewish的0.12%在原分辨率仅为约两像素蓝灰竖带，外部标签和引线可读，但其独立书脊的金线、包边和皮革细节不能可靠辨认。"
+        }
+      },
+      "semantic_attribution_zh": "宗教及无归属人口构成的主题、类别角色和书宽份额关系得到保留。用合成份额替换参考真实统计是冻结输入的明确要求，不属于输出语义损失；核心也未要求复刻原典籍书名。Jewish物体细节的部分可辨性归于真实比例下的像素限制，未见将其删除、放大或被邻书遮没的证据。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/16617a89d05f84",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -5765,20 +5856,80 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.95,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：七本等高旧式书籍紧靠排列，红、黄、绿、褐、黑、蓝及棕色书脊带包边、金线、磨损与底部阴影；书内有书名，下方以交错引线标宗教类别与百分比。\n最终图：标题 Religious affiliation shares、SYNTHETIC DATA、Percent of population 与 100% TOTAL 清楚。七类按 Hindu、Folk religions、Muslim、Unaffiliated、Christian、Jewish、Buddhist 顺序，对应可读数值 15.6%、5.4%、24.1%、16.8%、30.5%、0.3%、7.3%。红黄绿褐黑及棕色主体等高贴合，皮革纹理、凸起横带、金色框线和底部阴影可见；书脊宽度直接构成数据带。Jewish 位于黑色 Christian 与棕色 Buddhist 之间，呈极窄蓝色带，下方引线和标签可辨，但独立书体细节难以确认。未见标签遮挡或明显表面错位。",
+      "summary_zh": "七类数值、顺序、标签绑定和宽度比例符合冻结要求，书脊自身承载人口份额。生成材质可见，未发现重大缺陷；0.3%细书的装帧细节受像素分辨率限制。",
+      "issues": [],
+      "measurement_notes_zh": "在2000×1392原图的155条避开主体文字和主要横带的扫描行上，以相邻列RGB变化估计边界，得到x≈125、398、492、914、1208、1742、1747、1875，总宽1750像素。对应份额约15.600%、5.371%、24.114%、16.800%、30.514%、0.286%、7.314%，最大差约0.029个百分点，远小于3个百分点容差。此为栅格边界估计，非亚像素精确测量。源码推导的目标宽度依次为273、94.5、421.75、294、533.75、5.25、127.75像素。Jewish在x=1742至1746有连续蓝色主导像素；y=1040处七条引线的横坐标约261、445、703、1061、1475、1744、1811，落在对应数据带内部。",
+      "uncertainties_zh": "抗锯齿及纹理使边界估计存在约1像素量级不确定性；对5.25像素细带，该误差的相对影响不能忽略，不能据满量程通过断言其相对精度。Jewish的独立包边、金框及磨损细节无法在原尺寸充分分辨。未读取执行日志或自检，capture_render.py的实际历史执行情况未核验。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "七类及单一人口份额系列完整，按输入顺序连续排列；类别名、百分比单位、合计100%及合成数据声明均在图面可读。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "逐项可读15.6%、5.4%、24.1%、16.8%、30.5%、0.3%、7.3%，与data.json一致，正小值未归零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "七组外部交错引线分别对准对应书脊；Jewish引线对准Christian和Buddhist之间的蓝色窄带，没有错绑。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "原图色彩与纹理边界支持连续宽度编码，栅格估计最大差约0.029个百分点；源码以累计份额定位并裁切各书脊，无最小宽度。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png及indigo提取素材；最终主体可见对应皮革颗粒、磨损、金框与凸起横带。prepare_assets.py提取这些书脊，render.py将其适配到数据带，生成素材使用实质可见。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据区域就是七本书的正面书脊宽度，非旁置装饰；书脊等高相接，金框和接触阴影位于各自书体内部，未见跨带遮挡或表面错位。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、单位、合成声明及全部类别与数值清晰。Jewish采用外部标签，未因细书无法容纳内部文字而丢失信息。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "整排旧式精装书的红黄绿褐等皮革表面、纵向包边、金色框线、凸起横带及接触暗缝可见；各书上下沿对齐并相邻接触，书脊左右边界直接承担份额。细蓝书仍连接共同上下沿。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "Religious affiliation shares及副标题说明宗教信仰与无归属人口构成；Percent of population、100% TOTAL和七个具名类别明确指标、单位和组成关系，SYNTHETIC DATA明确非真实统计。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "参考图同样以并排书脊表现宗教及无归属人口份额。最终图保留主题、类别角色和书脊宽度融合关系，书内文字改为类别名，不要求沿用参考旧数值或具体书名。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "0.3%的Jewish在原图可见约5像素蓝色带及独立引线，未被吞没或抬高到最小书宽；但其完整包边与装帧细节无法像宽书一样辨认。数值存在和物体细节可辨性分别成立到不同程度。"
+        }
+      },
+      "semantic_attribution_zh": "未见当前主题、单位或类别语义的输出丢失。输入以合成数值替代参考真实统计，最终明确标示合成性质；书内书名改为类别名不损害冻结核心关系。不推定参考图另有必须保留的讽喻意图。细蓝书的局部身份细节仅部分可辨，归于真实比例下的分辨率限制，不据此制造重大失败。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/c927d70d5d60cc",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -5801,20 +5952,80 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以紧挨的等高旧书书脊表示宗教人口份额。成图保留彩色皮革、金线、磨损及接触阴影，七组外部标签完整，主题、单位和合成声明清晰。Jewish对应黑棕书之间的极细蓝带，其独立书体细节不易辨认。",
+      "summary_zh": "数值、顺序、绑定与几何均符合要求，未发现重大可见缺陷。微小蓝色书脊的装订细节仅部分可辨。已保存并校验review.json，未运行submit.py。",
+      "issues": [],
+      "measurement_notes_zh": "原图2000×1392。主体总宽约1750像素，七带像素宽度约273、95、421、294、534、5、128，对应15.60%、5.43%、24.06%、16.80%、30.51%、0.29%、7.31%，最大估计偏差约0.043个百分点。色带边界存在约±1像素判读误差。七条引线均位于对应带内。源码推导Jewish宽5.25像素；实际图中可确认约5像素蓝带，亚像素精度不由公式单独证明。",
+      "uncertainties_zh": "Jewish细带的包边、磨损等细节受分辨率限制，不能可靠判断其小值相对误差。已查看保存程序，但未查阅运行记录，不能独立验证其实际调用。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "七类别、人口份额系列、主题、单位及合成声明完整。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "七个百分比与输入完全一致，0.3%未归零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "交错外部标签逐一对应书脊，Jewish引线准确指向蓝带。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "像素测量符合3个百分点容差；七带连续相接，未见最小宽度扩张。源码按累积份额控制边界。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "使用中的原始素材纹理、磨损和金线可在成图主体对应辨认，源码引用相应书脊素材。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "书脊表面自身承担份额，纹理、包边与阴影依附对应数据带。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、单位、全部类别及数值清晰，无明显标签遮挡。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "等高旧书紧挨成排，金线、包边和横向装订凸带保留；未见跨带遮没邻书。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "宗教及无归属人口构成、人口百分比及合成属性明确，100%总量符合输入。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "参考的主题、类别角色及书脊宽度编码关系保留，旧数值按冻结输入替换。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "Jewish蓝带及局部金色横纹可见，外部绑定清晰；约5像素宽不足以独立辨认完整装订细节。"
+        }
+      },
+      "semantic_attribution_zh": "合成数值替换属于输入指定变化，不是输出语义损失。细书脊的部分可辨性主要受原图分辨率限制；未发现主题、指标或核心物体关系丢失。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/7db32ba02fe74a",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -6314,6 +6525,584 @@
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/374657ac3aa20a",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E53",
+    "source_case": "M065",
+    "name": "正向情绪变化的多选比例",
+    "conflict_type": "numeric_range",
+    "trial": "E53_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "dc0739c056b2d9",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/dc0739c056b2d9",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E53",
+    "source_case": "M065",
+    "name": "正向情绪变化的多选比例",
+    "conflict_type": "numeric_range",
+    "trial": "E53_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 3,
+    "image_available": true,
+    "review_id": "d145bf1ee60687",
+    "reproduction": {
+      "round": 3,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/d145bf1ee60687",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E14",
+    "source_case": "M049",
+    "name": "石油产品消费份额与用途",
+    "conflict_type": "category_count",
+    "trial": "E14_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "9a2d35ae2e0fd8",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/9a2d35ae2e0fd8",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E14",
+    "source_case": "M049",
+    "name": "石油产品消费份额与用途",
+    "conflict_type": "category_count",
+    "trial": "E14_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "9a7d3f975622df",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/9a7d3f975622df",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E34",
+    "source_case": "M058",
+    "name": "女性议员席位占比与50%平等目标",
+    "conflict_type": "trend_shape",
+    "trial": "E34_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "5e1a171a21d2f1",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/5e1a171a21d2f1",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E34",
+    "source_case": "M058",
+    "name": "女性议员席位占比与50%平等目标",
+    "conflict_type": "trend_shape",
+    "trial": "E34_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "5e1a171a21d2f1",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/5e1a171a21d2f1",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E14",
+    "source_case": "M049",
+    "name": "石油产品消费份额与用途",
+    "conflict_type": "category_count",
+    "trial": "E14_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "45eacd1eed3ddd",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/45eacd1eed3ddd",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E14",
+    "source_case": "M049",
+    "name": "石油产品消费份额与用途",
+    "conflict_type": "category_count",
+    "trial": "E14_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 4,
+    "image_available": true,
+    "review_id": "ecfaeefe017e6c",
+    "reproduction": {
+      "round": 4,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/ecfaeefe017e6c",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E34",
+    "source_case": "M058",
+    "name": "女性议员席位占比与50%平等目标",
+    "conflict_type": "trend_shape",
+    "trial": "E34_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "b08ce1689a5fa1",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/b08ce1689a5fa1",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E34",
+    "source_case": "M058",
+    "name": "女性议员席位占比与50%平等目标",
+    "conflict_type": "trend_shape",
+    "trial": "E34_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "f23c5f4663a690",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/f23c5f4663a690",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E54",
+    "source_case": "M066",
+    "name": "CEO年薪与员工工资比较",
+    "conflict_type": "numeric_range",
+    "trial": "E54_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "67759c9d108d48",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/67759c9d108d48",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E54",
+    "source_case": "M066",
+    "name": "CEO年薪与员工工资比较",
+    "conflict_type": "numeric_range",
+    "trial": "E54_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "8201965a1441f9",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/8201965a1441f9",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E54",
+    "source_case": "M066",
+    "name": "CEO年薪与员工工资比较",
+    "conflict_type": "numeric_range",
+    "trial": "E54_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "2cae75cd8e1f4d",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/2cae75cd8e1f4d",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E54",
+    "source_case": "M066",
+    "name": "CEO年薪与员工工资比较",
+    "conflict_type": "numeric_range",
+    "trial": "E54_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "e0beeeefbb7074",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/e0beeeefbb7074",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E35",
+    "source_case": "M078",
+    "name": "年度出生率",
+    "conflict_type": "trend_shape",
+    "trial": "E35_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "369ab441c8fa12",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/369ab441c8fa12",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E35",
+    "source_case": "M078",
+    "name": "年度出生率",
+    "conflict_type": "trend_shape",
+    "trial": "E35_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "369ab441c8fa12",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/369ab441c8fa12",
     "numeric_supported": null,
     "joint_supported": null,
     "critical_structure": "unreviewed",

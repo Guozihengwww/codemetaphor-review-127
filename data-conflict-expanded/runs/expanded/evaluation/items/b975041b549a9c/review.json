@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为方格纸上的侧视跳水者，下方有水面与年份，髋部较高。待评图十个年份及数值均可见；酒红色路径从左脚沿腿到低处髋部，再沿躯干、手臂至右手。2008年5,900最低，2018年31,200最高，水面对应零线。双腿、泳裤、躯干、头颈、泳帽与双臂连贯。标题、合成声明、单位和图例清楚。",
+  "summary_zh": "数据、标签、线性点位及人体融合关系符合要求，未发现实质缺陷。review.json已保存并通过schema.json校验；按补充要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "对2000×2000原图圆环内区进行像素分割，以可见零线y=1670及35000刻度线y=480反算十点数值，最大偏差约12.4美元/人，即满量程0.036%，低于3%容差。相邻点横距约167.44–168.00像素，符合两年等间隔。九段连线各自的四分之一、中点和四分之三位置附近均检出路径色。源码线性公式仅作为独立实现证据。",
+  "uncertainties_zh": "抗锯齿及分割阈值带来约1像素圆心估计不确定性，不影响结论。静态画面不能唯一确定运动阶段，姿态变化属于允许的适配。仅核对capture_render.py保存逻辑，未读取执行历史，不能证明所有历史完整渲染均经该入口。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "2000—2018每两年一个类别，共十点、九段连线及十个数值，单系列完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "27,800、23,200、17,100、10,800、5,900、11,200、18,800、25,100、29,300、31,200均与输入一致；单位USD per person正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份与圆点横坐标对应，数值引线连接正确圆点；图例明确折线表示GDP per capita。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际像素点位符合0–35000线性坐标，最大测得偏差约满量程0.036%；水面上沿为共同零线。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png的人物面部、泳帽、泳裤及肢体纹理在最终主体中可辨；源码按数据形变素材并绘制点位与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "路径在人物内部从脚经腿、髋、躯干及手臂至手连续穿行。人物覆盖网格，数据线覆盖人物，未见破坏解释的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、系列、单位、年份及数值均可读；底部解释点高编码与非数值身体厚度。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "双脚、双腿、髋部泳裤、躯干、头颈泳帽及双臂双手连贯可辨。人物位于方格纸上和水面上方，体内路径至水面零线的垂直距离承担数值。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、副标题、USD per person、Year及系列图例共同明确人均经济产出时间序列与跳水者姿态的关系。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留人均GDP与人体融合关系；希腊背景及旧姿态变为明确标示的非国家合成序列及当前趋势姿态，属于冻结输入许可的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值5,900距零线约200.8像素，目标200.6像素；圆点、髋部泳裤及水面关系清晰，十个圆点均可辨。"
+    }
+  },
+  "semantic_attribution_zh": "未发现当前主题、统计角色或人体与数据融合关系的输出损失。国家背景取消及旧趋势、姿态变化归于许可的输入适配，不要求复制旧涨跌结论。具体运动阶段存在解释不确定性；像素分辨率不妨碍本例最小标记辨认。"
+}

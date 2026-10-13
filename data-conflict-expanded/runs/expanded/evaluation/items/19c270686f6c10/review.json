@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为方格纸上的侧视跳水者，髋部较高，底部水面兼作年份轴。最终图显示合成数据声明、人均GDP标题、美元每人单位和十个年份。十个金额标签可辨；折线沿脚、腿、低位髋部、躯干和手臂连续穿行。双腿、泳裤、头颈、泳帽与水面可见，未见明显遮挡或人体与路径分离。",
+  "summary_zh": "数据、标签绑定和线性几何正确，人体与路径融合关系完整，未发现明确缺陷。review.json已保存并通过schema校验；按补充要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "检查2000×2000原尺寸成图，以红色圆环内孔像素测定点心。可见纵轴刻度位于y=480、650、820、990、1160、1330、1500，零线占y=1669–1670。按0–35000轴换算，十点最大高度误差约0.42像素，即0.035%满量程。最低点5,900高于零线约201像素。源码另证实数据控制路径和人体变形；此为代码证据。沿实测点心连线采样变形素材，各段透明度均大于0.988，支持目视所见的路径位于人体内。",
+  "uncertainties_zh": "抗锯齿带来约±1像素定位不确定性。未重渲染或查看运行历史，不能独立确认全部渲染的保存记录。参考图具体历史事件或情绪寓意不能仅凭图像确定；冻结要求允许按当前趋势改变姿态。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "十个年份、十个节点、九段连线、单一系列、单位及合成声明完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "十个金额依次为27,800、23,200、17,100、10,800、5,900、11,200、18,800、25,100、29,300、31,200，全部匹配。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "节点与对应年份纵向对齐，金额引线指向正确节点，图例明确绑定GDP per capita。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "年份等距，金额使用共同线性零线，逐点直线连接；成图像素核对误差均小于0.1%满量程。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及变形素材，皮肤笔触、红帽和蓝色泳裤实质构成最终主体；源码控制数据点、文字与人体变形。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "路径从脚沿腿进入髋部，再穿过躯干、肩臂至手，全程可追踪；水面上边界兼作零线，网格位于人体后方，无破坏解释的接缝或遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、指标、单位、年份与全部金额清晰，无实质遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "双脚双腿连接穿泳裤的髋部，躯干连接肩臂、双手与头颈，红色泳帽可辨。人体悬于水面上方，数据路径连续位于相连部件内。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "人均经济产出、年份、美元每人单位及合成统计口径明确；图注明确点高表示GDP per capita，身体厚度不承担数值。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留人均GDP与跳水者身体曲线融合、方格纸及水面基线。希腊国家语境按输入改为合成且非国家估计；姿态随新趋势适配，不属于输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值为满量程16.86%，对应约201像素高度；节点位于泳裤内且相邻线段清楚连接。全部节点可辨，无小值人为抬高现象。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的核心意义丢失。国家实统计语境改为合成序列属于冻结输入允许的适配，旧峰谷和下降方向不适用于当前数据。参考图具体情绪寓意仍有解释不确定性；分辨率限制不影响本例最小值及人体承载关系的判断。"
+}

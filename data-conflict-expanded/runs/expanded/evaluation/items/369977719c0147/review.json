@@ -1,0 +1,90 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：游艇位于右上水面，带海水纹理的绿、蓝、深蓝、紫色区域向下堆叠，底部轮廓承载总深度；主题涉及塑料废物排放。成图：标题、合成声明、单位、四个来源、P01–P16及分项/总值表完整可见。四层共用水平顶边，P02最深，P15–P16仍留薄色带。游艇位于右上水面附近；船底接触关系待像素核查。文字明确同一期来源相加而非跨期累计。",
+  "summary_zh": "数据、标签绑定和主题表达正确。船底与水面有窄缝，末期注释左端轻微贴入紫色层，均属轻微问题。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [
+    {
+      "category": "metaphor_integration",
+      "severity": "minor",
+      "requirement_id": "M6",
+      "expected_zh": "游艇船底与共同水面保持可见接触。",
+      "observed_zh": "船底与水面之间留有窄背景缝，呈轻微悬空；水下数据层仍连续。",
+      "evidence_zh": "原尺寸局部及像素检查：x=1700、1800、1900、2000、2070处，深色船底到约y=368，水面线在y=375，中间约5–6行接近背景色。",
+      "bbox_xyxy_normalized": [
+        0.74,
+        0.233,
+        0.952,
+        0.245
+      ]
+    },
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "外置总值注释与来源色带保持清楚间隔。",
+      "observed_zh": "“P16 total discharge”左端少量字形贴入P13附近紫色层，仍可读。",
+      "evidence_zh": "原尺寸局部可见文字与紫色底边相交。源码文字起点为(1720,545)；成图x=1724附近紫层延伸至约y=549，文字打断少量填充。",
+      "bbox_xyxy_normalized": [
+        0.78,
+        0.347,
+        0.802,
+        0.368
+      ]
+    }
+  ],
+  "measurement_notes_zh": "仅评估2200×1552的image.png。先保存可见观察，再检查源码及素材。按原图颜色识别16个时期附近的64个累计边界；P13、P16避开注释和引线，目标值按实际抽样位置插值计算。最大边界偏差约1.12像素，相当满量程0.16%，低于3%容差21.6像素。目标坐标来自数据及源码映射，观察坐标来自成图像素。分项及16期总值与冻结数据核对一致。未执行渲染。",
+  "uncertainties_zh": "最薄B层目标仅1.5–1.6像素，抗锯齿使主体色像素数在1–2行间变化，不能精确断言其小值相对误差或独立水纹可辨性。边界抽样不是逐像素全图证明。仅检查捕获脚本，未读取被排除的历史执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "P01–P16、四个来源、64个分项及16个当期总值完整显示。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "分项与data.json相符；16期总值加总正确，最高值为P02的7020，末期为190，小正值未记为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "四来源颜色在图例、色带和表格中一致；时期顺序正确，P16引线连接最右总轮廓。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同水面约y=376，满量程底线y=1096。抽样边界最大偏差约1.12像素；四层非负，无第五层。源码使用全部点及分段线性插值，图面与当前数据吻合。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材中的船体细节与海水纹理实质出现在成图中；代码以海水素材填充定量掩膜。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "海水层厚度及总下边界直接承担数量编码。局部船水细缝和注释相交未破坏主要融合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、单位、时期刻度、图例及完整数值表清晰；局部注释仍可读。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "海洋剖面、共同水面、游艇、四层相邻海水及向下累计关系保留；船底与水面的细缝使接触关系局部不完整。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达海洋塑料排放，显示合成声明、来源语义父类及100 tonnes/period；说明同一期来源相加，而非跨期累计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留塑料排放主题及水深编码。参考的韩国ERP、具名来源及年份被冻结输入替换为合成来源和时期，属于获准输入改编，不是生成遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "P15–P16四层仍非零；B层约有1–2行主体蓝色像素，但无法辨认独立海水纹理。不据此判定数值被删除，也不要求加粗。"
+    }
+  },
+  "semantic_attribution_zh": "输出问题为船水接触细缝和注释局部贴边；当前主题、来源角色、时期及单位没有丢失。真实地区、年份及具名来源的替换属于冻结输入允许的适配，不强求参考旧涨跌结论。末端薄层的水纹可辨性受像素分辨率限制。"
+}
