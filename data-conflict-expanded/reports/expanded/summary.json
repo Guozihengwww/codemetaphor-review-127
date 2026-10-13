@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-13T22:10:39.609992+00:00",
+  "updated_at": "2026-10-13T22:10:55.631889+00:00",
   "cohort": "semantic-controlled v2, 60 pairs",
   "case_count": 60,
   "trial_count": 120,
   "progress": {
-    "updated_at": "2026-10-13T22:10:39.601746+00:00",
+    "updated_at": "2026-10-13T22:10:55.623298+00:00",
     "phase": "complete",
     "planned_trials": 120,
     "completed_trials": 120,
@@ -496,102 +496,21 @@
       "review_id": "5eba520aaea4a2",
       "reproduction": {
         "round": 1,
-        "render_succeeded": false,
-        "pixel_identical": false,
+        "render_succeeded": true,
+        "pixel_identical": true,
         "frozen_dependencies_restored": [
-          "reference.png"
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
         ],
-        "returncode": 1
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E01_conflict/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
       },
-      "quality": "pass",
-      "execution": "ok",
-      "review": {
-        "verdict": "pass",
-        "confidence": 0.97,
-        "brief_is_feasible": true,
-        "reference_viewed": true,
-        "final_viewed": true,
-        "generated_assets_visibly_used": true,
-        "code_controls_data_geometry": true,
-        "visual_observations_before_code_zh": "参考图有六组黑色煤块堆置于蓝色地面，带来源标签、数值和地面投影。成图有九堆煤，按输入顺序排列并落在同一基线上；九个百分比与父类、子类标签齐全。煤体高度与0–30%刻度目视相符，最小煤堆仍可辨认块体与地面接触。主题、进口质量份额指标及SYNTHETIC DATA清晰；未见明显遮挡或破坏堆形的接缝。",
-        "summary_zh": "通过。九项数值、类别绑定、线性高度编码及煤堆承载关系均保留；素材实质可见，当前统计主题和单位明确。",
-        "issues": [],
-        "measurement_notes_zh": "独立读取2000×1148的image.png像素，未运行渲染器或读取自检结果。图中0与30刻度位于约y=798和438，对应12像素/百分点。在煤堆区域以RGB最大通道≤160、通道差≤32分离近中性暗色连通体，九堆高度依次为343、134、134、118、118、121、70、80、79像素；对应28.583、11.167、11.167、9.833、9.833、10.083、5.833、6.667、6.583%，最大偏差约0.067个百分点。将通道差阈值改为18或24，最大偏差仍仅0.15个百分点。源码另显示height=value×12、共同底部y=798及先阴影后煤体的合成顺序；这是代码佐证，不代替像素测量。",
-        "uncertainties_zh": "抗锯齿使煤体边缘阈值测量相差约1–2像素，不影响容差结论。按限制未查看执行日志、轮次或自检，无法独立确认所有完整渲染均实际经过capture_render.py；仅确认其保存机制及当前素材、源码与成图的一致性。",
-        "checks": {
-          "completeness": {
-            "status": "pass",
-            "evidence_zh": "单系列九个类别全部出现，顺序为A、B两子类、C两子类、D、E、F两子类。"
-          },
-          "numeric_text": {
-            "status": "pass",
-            "evidence_zh": "九项显示28.6%、11.2%、11.2%、9.85%、9.85%、10.1%、5.9%、6.65%、6.65%，与输入一致；总额100%正确。"
-          },
-          "binding": {
-            "status": "pass",
-            "evidence_zh": "每堆上方数值以短竖线对应本堆，下方为其类别；B、C、F均保留父类名称和subcategory 1/2。"
-          },
-          "geometry": {
-            "status": "pass",
-            "evidence_zh": "九堆共享线性0–30%刻度和底线；独立像素测量的误差远低于满量程3%及3个百分点容差，等值煤堆仅有像素级边缘差异。"
-          },
-          "source": {
-            "status": "pass",
-            "evidence_zh": "已查看raw_01.png九堆原素材及coal_07.png；可辨认的煤块排列、断面与纹理进入成图主体。render.py实际载入煤体素材并控制尺寸和文字。"
-          },
-          "integration": {
-            "status": "pass",
-            "evidence_zh": "煤体自身从地面到堆顶的完整高度承担份额编码，无另设柱体替代；地面投影与煤体分离，图面注明数量、占地和阴影不编码。"
-          },
-          "readability": {
-            "status": "pass",
-            "evidence_zh": "主题、合成标识、质量份额指标、百分比单位、全部类别及子类、刻度和口径说明均可读，无必要标签相互遮挡。"
-          },
-          "critical_structure": {
-            "status": "pass",
-            "evidence_zh": "每组由相互接触、前后叠压的写实煤块组成；底部落在共同地面，淡投影位于底部后方及周围，未延伸为煤体高度。"
-          },
-          "semantic_meaning": {
-            "status": "pass",
-            "evidence_zh": "标题说明固体燃料进口份额；副标题明确总进口固体燃料质量占比，类别说明为合成贸易伙伴及子类，脚注明确子类是父类内互斥部分。"
-          },
-          "reference_meaning": {
-            "status": "partial",
-            "evidence_zh": "参考的按伙伴进口质量份额和煤堆表达仍在；原EU、2014及真实国家的统计语境依冻结输入改为合成伙伴与子类，属于许可的输入改编。"
-          },
-          "small_mark_visibility": {
-            "status": "pass",
-            "evidence_zh": "原分辨率下最小5.9%煤体约70像素高，仍能看清多个煤块、完整堆形及着地关系；两项6.65%煤体约79–80像素高，未仅以数值标签代替几何。"
-          }
-        },
-        "semantic_attribution_zh": "未发现输出造成的主题或指标含义丢失。参考中EU/2014真实贸易语境转为合成伙伴及子类别由冻结输入规定，reference_meaning的部分保留不归为生成缺陷。像素边缘存在有限测量不确定性，未妨碍最小煤堆身份和高度判读。"
-      },
-      "primary_system_success": false,
-      "confirmation": null,
-      "confirmed_failure": false,
-      "review_path": "runs/expanded/evaluation/items/5eba520aaea4a2",
-      "numeric_supported": true,
-      "joint_supported": true,
-      "critical_structure": "pass",
-      "semantic_meaning": "pass",
-      "reference_meaning": "partial",
-      "small_mark_visibility": "pass",
-      "joint_system_success": false,
-      "confirmed_semantic_or_data_failure": false
-    },
-    {
-      "case": "E01",
-      "source_case": "M005",
-      "name": "固体燃料进口来源份额",
-      "conflict_type": "category_count",
-      "trial": "E01_conflict",
-      "condition": "conflict",
-      "stage": "final",
-      "round": 1,
-      "image_available": true,
-      "review_id": "5eba520aaea4a2",
-      "reused_identical_image": true,
-      "reproduction": {
+      "original_reproduction": {
         "round": 1,
         "render_succeeded": false,
         "pixel_identical": false,
@@ -663,7 +582,7 @@
         },
         "semantic_attribution_zh": "未发现输出造成的主题或指标含义丢失。参考中EU/2014真实贸易语境转为合成伙伴及子类别由冻结输入规定，reference_meaning的部分保留不归为生成缺陷。像素边缘存在有限测量不确定性，未妨碍最小煤堆身份和高度判读。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/5eba520aaea4a2",
@@ -673,7 +592,120 @@
       "semantic_meaning": "pass",
       "reference_meaning": "partial",
       "small_mark_visibility": "pass",
-      "joint_system_success": false,
+      "joint_system_success": true,
+      "confirmed_semantic_or_data_failure": false
+    },
+    {
+      "case": "E01",
+      "source_case": "M005",
+      "name": "固体燃料进口来源份额",
+      "conflict_type": "category_count",
+      "trial": "E01_conflict",
+      "condition": "conflict",
+      "stage": "final",
+      "round": 1,
+      "image_available": true,
+      "review_id": "5eba520aaea4a2",
+      "reused_identical_image": true,
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E01_conflict/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
+        "round": 1,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "frozen_dependencies_restored": [
+          "reference.png"
+        ],
+        "returncode": 1
+      },
+      "quality": "pass",
+      "execution": "ok",
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图有六组黑色煤块堆置于蓝色地面，带来源标签、数值和地面投影。成图有九堆煤，按输入顺序排列并落在同一基线上；九个百分比与父类、子类标签齐全。煤体高度与0–30%刻度目视相符，最小煤堆仍可辨认块体与地面接触。主题、进口质量份额指标及SYNTHETIC DATA清晰；未见明显遮挡或破坏堆形的接缝。",
+        "summary_zh": "通过。九项数值、类别绑定、线性高度编码及煤堆承载关系均保留；素材实质可见，当前统计主题和单位明确。",
+        "issues": [],
+        "measurement_notes_zh": "独立读取2000×1148的image.png像素，未运行渲染器或读取自检结果。图中0与30刻度位于约y=798和438，对应12像素/百分点。在煤堆区域以RGB最大通道≤160、通道差≤32分离近中性暗色连通体，九堆高度依次为343、134、134、118、118、121、70、80、79像素；对应28.583、11.167、11.167、9.833、9.833、10.083、5.833、6.667、6.583%，最大偏差约0.067个百分点。将通道差阈值改为18或24，最大偏差仍仅0.15个百分点。源码另显示height=value×12、共同底部y=798及先阴影后煤体的合成顺序；这是代码佐证，不代替像素测量。",
+        "uncertainties_zh": "抗锯齿使煤体边缘阈值测量相差约1–2像素，不影响容差结论。按限制未查看执行日志、轮次或自检，无法独立确认所有完整渲染均实际经过capture_render.py；仅确认其保存机制及当前素材、源码与成图的一致性。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "单系列九个类别全部出现，顺序为A、B两子类、C两子类、D、E、F两子类。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "九项显示28.6%、11.2%、11.2%、9.85%、9.85%、10.1%、5.9%、6.65%、6.65%，与输入一致；总额100%正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "每堆上方数值以短竖线对应本堆，下方为其类别；B、C、F均保留父类名称和subcategory 1/2。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "九堆共享线性0–30%刻度和底线；独立像素测量的误差远低于满量程3%及3个百分点容差，等值煤堆仅有像素级边缘差异。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png九堆原素材及coal_07.png；可辨认的煤块排列、断面与纹理进入成图主体。render.py实际载入煤体素材并控制尺寸和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "煤体自身从地面到堆顶的完整高度承担份额编码，无另设柱体替代；地面投影与煤体分离，图面注明数量、占地和阴影不编码。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成标识、质量份额指标、百分比单位、全部类别及子类、刻度和口径说明均可读，无必要标签相互遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "每组由相互接触、前后叠压的写实煤块组成；底部落在共同地面，淡投影位于底部后方及周围，未延伸为煤体高度。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题说明固体燃料进口份额；副标题明确总进口固体燃料质量占比，类别说明为合成贸易伙伴及子类，脚注明确子类是父类内互斥部分。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "参考的按伙伴进口质量份额和煤堆表达仍在；原EU、2014及真实国家的统计语境依冻结输入改为合成伙伴与子类，属于许可的输入改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "原分辨率下最小5.9%煤体约70像素高，仍能看清多个煤块、完整堆形及着地关系；两项6.65%煤体约79–80像素高，未仅以数值标签代替几何。"
+          }
+        },
+        "semantic_attribution_zh": "未发现输出造成的主题或指标含义丢失。参考中EU/2014真实贸易语境转为合成伙伴及子类别由冻结输入规定，reference_meaning的部分保留不归为生成缺陷。像素边缘存在有限测量不确定性，未妨碍最小煤堆身份和高度判读。"
+      },
+      "primary_system_success": true,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/expanded/evaluation/items/5eba520aaea4a2",
+      "numeric_supported": true,
+      "joint_supported": true,
+      "critical_structure": "pass",
+      "semantic_meaning": "pass",
+      "reference_meaning": "partial",
+      "small_mark_visibility": "pass",
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -688,6 +720,22 @@
       "image_available": true,
       "review_id": "e3e0f4a12a8642",
       "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E01_baseline/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
         "round": 1,
         "render_succeeded": false,
         "pixel_identical": false,
@@ -759,7 +807,7 @@
         },
         "semantic_attribution_zh": "未观察到当前主题、指标或数据承载关系的输出丢失。真实地区、年份和国家身份的减少属于输入允许的合成改编，reference_meaning的partial不构成生成缺陷。约1像素边缘不确定性归于栅格分辨率。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/e3e0f4a12a8642",
@@ -769,7 +817,7 @@
       "semantic_meaning": "pass",
       "reference_meaning": "partial",
       "small_mark_visibility": "pass",
-      "joint_system_success": false,
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -882,6 +930,22 @@
       "review_id": "e1d099ab0fa659",
       "reproduction": {
         "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E21_baseline/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
+        "round": 1,
         "render_succeeded": false,
         "pixel_identical": false,
         "frozen_dependencies_restored": [
@@ -952,7 +1016,7 @@
         },
         "semantic_attribution_zh": "当前年度、森林火灾、烧毁面积及公顷语义均保留，未见输出造成的语义损失。参考中的加拿大真实统计被冻结输入改为合成研究数据，reference_meaning的部分保留归因于该输入适配。参考和当前核心均要求叠合，不能额外要求树形随折线起伏。小值仍可辨，但精细相对误差受描边与栅格分辨率限制。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/e1d099ab0fa659",
@@ -962,7 +1026,7 @@
       "semantic_meaning": "pass",
       "reference_meaning": "partial",
       "small_mark_visibility": "pass",
-      "joint_system_success": false,
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -979,6 +1043,22 @@
       "reused_identical_image": true,
       "reproduction": {
         "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E21_baseline/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
+        "round": 1,
         "render_succeeded": false,
         "pixel_identical": false,
         "frozen_dependencies_restored": [
@@ -1049,7 +1129,7 @@
         },
         "semantic_attribution_zh": "当前年度、森林火灾、烧毁面积及公顷语义均保留，未见输出造成的语义损失。参考中的加拿大真实统计被冻结输入改为合成研究数据，reference_meaning的部分保留归因于该输入适配。参考和当前核心均要求叠合，不能额外要求树形随折线起伏。小值仍可辨，但精细相对误差受描边与栅格分辨率限制。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/e1d099ab0fa659",
@@ -1059,7 +1139,7 @@
       "semantic_meaning": "pass",
       "reference_meaning": "partial",
       "small_mark_visibility": "pass",
-      "joint_system_success": false,
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -1074,6 +1154,22 @@
       "image_available": true,
       "review_id": "9e3eeac3244ff1",
       "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E41_baseline/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
         "round": 1,
         "render_succeeded": false,
         "pixel_identical": false,
@@ -1145,7 +1241,7 @@
         },
         "semantic_attribution_zh": "当前主题与参考一致。国家名及真实统计替换为合成人口组和新值来自冻结输入，图面补充了人口组父类与非观测说明，属于允许的输入适配；彩色环纹保留卷头类别标识。未见输出导致的主题、物体关系或统计含义丢失，也未见小值受分辨率限制而失去纸带关系。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/9e3eeac3244ff1",
@@ -1155,7 +1251,7 @@
       "semantic_meaning": "pass",
       "reference_meaning": "pass",
       "small_mark_visibility": "pass",
-      "joint_system_success": false,
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -1171,6 +1267,22 @@
       "review_id": "9e3eeac3244ff1",
       "reused_identical_image": true,
       "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E41_baseline/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
         "round": 1,
         "render_succeeded": false,
         "pixel_identical": false,
@@ -1242,7 +1354,7 @@
         },
         "semantic_attribution_zh": "当前主题与参考一致。国家名及真实统计替换为合成人口组和新值来自冻结输入，图面补充了人口组父类与非观测说明，属于允许的输入适配；彩色环纹保留卷头类别标识。未见输出导致的主题、物体关系或统计含义丢失，也未见小值受分辨率限制而失去纸带关系。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/9e3eeac3244ff1",
@@ -1252,7 +1364,7 @@
       "semantic_meaning": "pass",
       "reference_meaning": "pass",
       "small_mark_visibility": "pass",
-      "joint_system_success": false,
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -1267,6 +1379,22 @@
       "image_available": true,
       "review_id": "53d938e28728f9",
       "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E21_conflict/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
         "round": 1,
         "render_succeeded": false,
         "pixel_identical": false,
@@ -1338,7 +1466,7 @@
         },
         "semantic_attribution_zh": "未见输出造成的主题或统计角色丢失。参考的真实加拿大历史语境由冻结输入改为明确标识的合成年度数据，属于允许的输入适配，不是生成缺陷；当前主题及叠合结构延续。树木不与新峰谷对齐是冻结要求允许的非数据构图。小值剩余不确定性来自像素分辨率与线宽。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/53d938e28728f9",
@@ -1348,7 +1476,7 @@
       "semantic_meaning": "pass",
       "reference_meaning": "pass",
       "small_mark_visibility": "pass",
-      "joint_system_success": false,
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -1365,6 +1493,22 @@
       "reused_identical_image": true,
       "reproduction": {
         "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E21_conflict/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
+        "round": 1,
         "render_succeeded": false,
         "pixel_identical": false,
         "frozen_dependencies_restored": [
@@ -1435,7 +1579,7 @@
         },
         "semantic_attribution_zh": "未见输出造成的主题或统计角色丢失。参考的真实加拿大历史语境由冻结输入改为明确标识的合成年度数据，属于允许的输入适配，不是生成缺陷；当前主题及叠合结构延续。树木不与新峰谷对齐是冻结要求允许的非数据构图。小值剩余不确定性来自像素分辨率与线宽。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/53d938e28728f9",
@@ -1445,7 +1589,7 @@
       "semantic_meaning": "pass",
       "reference_meaning": "pass",
       "small_mark_visibility": "pass",
-      "joint_system_success": false,
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -1460,6 +1604,22 @@
       "image_available": true,
       "review_id": "f0e18b0828ed0e",
       "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E41_conflict/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
         "round": 1,
         "render_succeeded": false,
         "pixel_identical": false,
@@ -1531,7 +1691,7 @@
         },
         "semantic_attribution_zh": "输出保留当前主题、统计口径与纸带承载关系。参考中的真实国家统计被输入明确改为合成人口组，因而参考意义记为部分保留，不是生成器错误。最小值的纸面与撕口辨识不足归于像素分辨率，不能仅凭正确公式断言其完整可见，也不据此要求放大数据。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/f0e18b0828ed0e",
@@ -1541,7 +1701,7 @@
       "semantic_meaning": "pass",
       "reference_meaning": "partial",
       "small_mark_visibility": "partial",
-      "joint_system_success": false,
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -1556,6 +1716,22 @@
       "image_available": true,
       "review_id": "d20d55d74f7532",
       "reproduction": {
+        "round": 2,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E41_conflict/02/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      },
+      "original_reproduction": {
         "round": 2,
         "render_succeeded": false,
         "pixel_identical": false,
@@ -1627,7 +1803,7 @@
         },
         "semantic_attribution_zh": "未见输出造成的主题或统计口径丢失。真实国家到合成人口组的变化来自冻结输入允许的适配。最小标记的部分结构不可辨主要受真实比例与像素分辨率限制，不归为重大生成缺陷。"
       },
-      "primary_system_success": false,
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/expanded/evaluation/items/d20d55d74f7532",
@@ -1637,7 +1813,7 @@
       "semantic_meaning": "pass",
       "reference_meaning": "pass",
       "small_mark_visibility": "partial",
-      "joint_system_success": false,
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
@@ -23986,6 +24162,211 @@
       "small_mark_visibility": "partial",
       "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
+    }
+  ],
+  "controller_dependency_recovery": [
+    {
+      "trial": "E21_conflict",
+      "round": 1,
+      "original": {
+        "round": 1,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "frozen_dependencies_restored": [
+          "reference.png"
+        ],
+        "returncode": 1
+      },
+      "recovered": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E21_conflict/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      }
+    },
+    {
+      "trial": "E01_conflict",
+      "round": 1,
+      "original": {
+        "round": 1,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "frozen_dependencies_restored": [
+          "reference.png"
+        ],
+        "returncode": 1
+      },
+      "recovered": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E01_conflict/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      }
+    },
+    {
+      "trial": "E21_baseline",
+      "round": 1,
+      "original": {
+        "round": 1,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "frozen_dependencies_restored": [
+          "reference.png"
+        ],
+        "returncode": 1
+      },
+      "recovered": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E21_baseline/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      }
+    },
+    {
+      "trial": "E41_baseline",
+      "round": 1,
+      "original": {
+        "round": 1,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "frozen_dependencies_restored": [
+          "reference.png"
+        ],
+        "returncode": 1
+      },
+      "recovered": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E41_baseline/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      }
+    },
+    {
+      "trial": "E41_conflict",
+      "round": 2,
+      "original": {
+        "round": 2,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "frozen_dependencies_restored": [
+          "reference.png"
+        ],
+        "returncode": 1
+      },
+      "recovered": {
+        "round": 2,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E41_conflict/02/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      }
+    },
+    {
+      "trial": "E41_conflict",
+      "round": 1,
+      "original": {
+        "round": 1,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "frozen_dependencies_restored": [
+          "reference.png"
+        ],
+        "returncode": 1
+      },
+      "recovered": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E41_conflict/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      }
+    },
+    {
+      "trial": "E01_baseline",
+      "round": 1,
+      "original": {
+        "round": 1,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "frozen_dependencies_restored": [
+          "reference.png"
+        ],
+        "returncode": 1
+      },
+      "recovered": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "reproduction_attempt": 2,
+        "original_failure": "runs/expanded/reproduction/E01_baseline/01/attempt1_missing_input/verification.json",
+        "recovery_reason": "controller omitted frozen input.json from isolated reproduction, not a chart repair",
+        "returncode": 0
+      }
     }
   ]
 }
