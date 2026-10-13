@@ -2971,42 +2971,6 @@
     "conflict_type": "trend_shape",
     "trial": "E26_baseline",
     "condition": "baseline",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "e65d727431cdea",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/e65d727431cdea",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E26",
-    "source_case": "M022",
-    "name": "德国旗主题的实际GDP水平，非增长率",
-    "conflict_type": "trend_shape",
-    "trial": "E26_baseline",
-    "condition": "baseline",
     "stage": "final",
     "round": 2,
     "image_available": true,
@@ -3113,79 +3077,6 @@
     "source_case": "M025",
     "name": "睡眠时长分布",
     "conflict_type": "category_count",
-    "trial": "E07_baseline",
-    "condition": "baseline",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "fb027d297fcfde",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/fb027d297fcfde",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E07",
-    "source_case": "M025",
-    "name": "睡眠时长分布",
-    "conflict_type": "category_count",
-    "trial": "E07_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 1,
-    "image_available": true,
-    "review_id": "fb027d297fcfde",
-    "reused_identical_image": true,
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/fb027d297fcfde",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E07",
-    "source_case": "M025",
-    "name": "睡眠时长分布",
-    "conflict_type": "category_count",
     "trial": "E07_conflict",
     "condition": "conflict",
     "stage": "first",
@@ -3201,56 +3092,95 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图为浅灰背景中的横向布枕，左部白布，右部竖向色带。待评图保留蓬松枕体、布纹、皱褶、包边、伸出角和底部阴影。六项百分比及类别均可读，五项通过引线对应色带，52.1%直接标在蓝色带内。两个8.95%带视觉等宽。睡眠主题、小时单位、合成数据声明、子类父类名称及白布非数据说明清楚。彩色区域上缘有轻微阶梯状边界。",
+      "summary_zh": "数据、标签、睡眠语义及枕面宽度编码均保留，仅有轻微上缘裁切瑕疵。已保存review.json并通过schema校验；未运行submit.py。",
+      "issues": [
+        {
+          "category": "texture_boundary",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "色带沿写实枕头轮廓裁切，保持布面与包边的连续关系。",
+          "observed_zh": "灰色首带至蓝色带的上轮廓局部出现细小的短直线台阶，枕头结构仍完整可辨。",
+          "evidence_zh": "原尺寸图中约x=680–1710、y=400–485的着色上缘可见阶梯状轮廓，首个灰色带上端尤明显；未影响中部宽度或标签。",
+          "bbox_xyxy_normalized": [
+            0.338,
+            0.285,
+            0.856,
+            0.347
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接读取2000×1400的image.png像素，在y=799并以y=797、801复核。布面左右端约x=205、1783；分界约x=679–680、737、836、935、1131–1132、1707、1783。彩色总宽约1104像素，六带约58、99、99、197、575、76像素，换算约5.25%、8.97%、8.97%、17.84%、52.08%、6.88%，目标差均小于0.1个百分点。白布约占30.0%。源码另证实按中部轮廓及累计占比计算边界，属于代码证据，不替代像素测量。",
+      "uncertainties_zh": "抗锯齿及浅色背景使边界定位有约1–2像素误差，折合约0.2个百分点。素材来源依据所供素材与可见匹配，未检查生成日志；已检查capture_render.py保存逻辑，未核验实际执行记录。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "六个类别及色带齐全，三个子类均保留4–<6 h父类，白布明确排除。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "5.2%、8.95%、8.95%、17.9%、52.1%、6.9%均与输入一致，总和100%。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "五条引线落在相应色带内部，52.1%与6–8 h位于蓝色带内；顺序正确。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "像素宽度换算符合目标；计入边缘误差仍远小于3个百分点，白布约30%。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "原始及处理后素材的布纹、褶皱、包边和四角在主体中可见；render.py依据输入控制色带分界。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "色带直接构成同一枕头布面，保留织纹与明暗，按物体轮廓裁切；阴影位于枕体下方。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、合成声明、数值、单位、子类及宽度说明均清楚，无必要文字遮挡或截断。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "蓬松枕体、连接布面的包边与四角、皱褶及落地阴影保留；白布与六色区域连续相接，中段竖向分界承担份额编码。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题明确睡眠时长分布，指标为百分比、类别为小时区间；说明三个子类互斥且数据为合成示例。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "睡眠分布主题和枕面色带融合关系保留；数值替换及类别拆分来自冻结输入。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "最窄5.2%带约58像素，6.9%带约76像素，均有可辨布面、边界和绑定；两个8.95%带也清楚分离。"
+        }
+      },
+      "semantic_attribution_zh": "未发现当前主题、指标或融合关系丢失。合成数值及父类拆分属于输入许可的适配；轻微上缘裁切属于输出瑕疵，像素定位限制仅影响小数级估读。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/6fbc8fea560dbe",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E07",
-    "source_case": "M025",
-    "name": "睡眠时长分布",
-    "conflict_type": "category_count",
-    "trial": "E07_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 3,
-    "image_available": true,
-    "review_id": "1620d76770027e",
-    "reproduction": {
-      "round": 3,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/1620d76770027e",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "pass",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -3273,19 +3203,94 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以逐行香烟总长比较城市年度间接吸烟量，顶部为城市图案打火机与香烟插画。最终图保留该插画关系，明确显示合成数据声明、年度等效暴露标题及每居民每年单位。City A–M共13行，使用共同零点和0–150等距刻度。较长行可见滤嘴、纸身及右端烟丝断面；末几行缩成窄条，无法独立辨清全部部件。数值标签完整且无明显遮挡。",
+      "summary_zh": "数据、标签、统一尺度与当前主题均保留，未发现重大可见缺陷。小值行的完整香烟部件关系仅部分可辨。已保存并校验review.json；未运行submit.py。",
+      "issues": [
+        {
+          "category": "metaphor_identity",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "逐行保留滤嘴、纸身及烟丝断面的连接关系；小值保持真实长度，可辨性与数值准确性分别评价。",
+          "observed_zh": "City H–M呈竖向窄片状，尤其K–M无法独立辨清三部件，香烟身份主要依赖较长行提供的上下文。",
+          "evidence_zh": "位于x≈270、y≈1388–1788的短行。最终图中心线测得K/L/M分别仅有6/4/2列可见颜色差，按冻结尺度换算的目标长度为5.501/3.127/1.777px。源码保持38px高度并压缩各部件。这是小标记身份的部分损失，不是超过3%满量程的长度错误。",
+          "bbox_xyxy_normalized": [
+            0.2018,
+            0.651,
+            0.2259,
+            0.861
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接分析1328×2100的image.png。各行中心线与上方25px空白行比较以扣除网格，从x=270起计连续RGB最大通道差≥3的像素列。A–M实测889、506、288、164、93、53、30、18、10、10、6、4、2列。目标由冻结数据×980/150计算，整数列数与目标差均不足1px，即满量程0.103%，低于3%容差。像素列数包含部分覆盖，不能当作精确亚像素长度。源码另证实滤嘴、纸身和端部均包含在数据跨度内；该代码证据不替代像素测量。",
+      "uncertainties_zh": "微小行的亚像素覆盖和部件纹理不能仅凭RGB阈值精确恢复，不据满量程通过断言其相对误差或完整物体可辨性。最小目标长度约1.78px，本身限制部件识别。按限制未查日志、自检或历史记录，不能独立确认全部历史渲染均由capture_render.py执行。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "City A–M共13类按输入顺序呈现，单系列、13个非零标记及对应数值齐全。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "逐行数值与data.json一致，保留小数且未将正值写成零；136/0.272=500，右侧500×说明正确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "城市名称、香烟及数字逐行对应；City I/J均为1.481329且长度一致。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "共同零点与0–150线性尺度正确；最终图独立像素测量与目标长度相差不足1px，所有小值仍非零可见。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "原始素材中的城市打火机插画、滤嘴斑点、纸身纹理和烟丝断面实质出现在最终图中；render.py使用这些素材并控制长度及文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "香烟实体总长直接承担数据编码，滤嘴连接纸身，断面位于右端。较长行未见破坏连接、透视或层序的接缝；小值可辨性另记。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "标题、合成声明、城市标签、全部数值、单位、刻度及阅读说明均可读，无关键文字遮挡。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "顶部城市打火机与香烟插画保留，较长行具有完整三部件结构；末端短行压成窄片，尤其K–M难以独立辨明三部件。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题、城市空气间接吸烟说明和每居民每年单位明确当前指标；CITY及City A–M交代类别角色，合成声明清楚。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "城市年度间接吸烟主题及香烟长度比较关系保留。原澳大利亚真实城市与统计由冻结输入明确改为合成城市和新值，属于允许的输入改编。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "H–M均有非零像素标记；K/L/M仅6/4/2个可见像素列。数值保留，但最小行的断面及部件连接不能独立辨识，亚像素覆盖仍有不确定性。"
+        }
+      },
+      "semantic_attribution_zh": "当前指标、城市类别角色、单位及香烟总长承载关系未见输出语义丢失。真实城市与统计的替换属于冻结输入允许的改编。小值物体关系仅部分可辨，与极小跨度及固定非数据高度有关；分辨率限制不归为重大数据错误，也不推断原参考作者未明示的动作意图。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/2c5b05114aa504",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -3309,92 +3314,94 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以整支横向香烟表达城市每年间接吸烟等效支数，左侧滤嘴连接纸身，右侧有端面；顶部为城市图案打火机与香烟插画。最终图保留上述主体关系，显示SYNTHETIC DATA、年度等效暴露主题、每人每年单位及City A至City M共13行，数值标签清楚。前几行滤嘴、纸身与烟丝端面可见；后几行同时变短变细，City I至M的部件难以辨认。共同起点及0–150刻度可见，City A约136，City B约77；右侧标注两端值相差500倍。",
+      "summary_zh": "13行数据、标签、单位及统一线性长度映射通过核查，生成素材实质用于插画和数据香烟。最小几行的香烟部件难以辨认，属于局部可辨性不足；未发现重大可见违规。",
+      "issues": [
+        {
+          "category": "metaphor_identity",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "各行以滤嘴连接纸身、末端呈现烟丝断面的完整香烟承载数据，同时保持真实长度。",
+          "observed_zh": "City K至M仅剩极细短痕迹，无法可靠分辨滤嘴、纸身和烟丝端面的连接关系；上方较大行保留这些部件。",
+          "evidence_zh": "原尺寸查看时，标记位于x约270、y约1628/1708/1788。最终像素相对背景的RGB最大通道差阈值为3时，K/L/M分别占6/4/2列；M最大颜色差仅25/255。痕迹存在，但不能据此确认部件身份。",
+          "bbox_xyxy_normalized": [
+            0.202,
+            0.772,
+            0.211,
+            0.855
+          ]
+        }
+      ],
+      "measurement_notes_zh": "原图1328×2100；零点x=270，150刻度x=1250，满量程980像素，3%容差29.4像素。直接扫描image.png标记区域相对背景RGB(246,240,229)的颜色差：A右边界约1159，目标1158.533；B约775–776，目标775.025；D约433–434，目标433.152；I/J均约280，目标279.678；M约272，目标271.777。边界取像素区间右缘；低阈值可包含抗锯齿，D附近另有刻度线。13行均未发现超容差长度偏差。K/L/M目标长度5.501/3.127/1.777像素，源码推导高度为1.222/0.695/0.395像素，后者不是像素实测。136÷0.272=500。",
+      "uncertainties_zh": "最小行处于亚像素高度，颜色差可证明痕迹存在，不能证明滤嘴、纸身与端面的相对尺寸可被读者准确识别，也不能据满量程容差推定微小值相对精度。未重渲染或访问日志，无法独立确认所有历史渲染均经capture_render.py保存。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "City A至City M共13行按输入顺序呈现，单系列、城市父类、年度指标、单位及SYNTHETIC DATA声明完整。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "13个数值逐项对应输入，包括City I/J均为1.481329、City M为0.272；没有正数归零，500×比值正确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "城市名、香烟及数值位于同一行，无错绑或遮挡；I/J重复值对应等长标记。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "像素边界与0–150共享线性尺度一致，全部行在满量程3%容差内。源码将滤嘴、纸身和端面分配在value×980/150总跨度内，无额外最小长度。微小值的精细比例仍受分辨率限制。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png及cigarette_01.png；相同城市打火机、斜置香烟、滤嘴斑点、纸身纹理和烟丝端面在最终图中实质可见。render.py读取这些素材并控制长度和文字；capture_render.py源码提供完整渲染保存流程，历史执行未核查。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据边界是香烟自左侧滤嘴起点至右侧烟丝端面的实体总跨度，材质与数据几何融合。顶部城市图案包含在打火机表面，斜置香烟遮于前方；未见破坏结构的穿插或接缝。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、城市名、13个精确数值、刻度、单位及合成说明均可读。右侧注释位于空白区，没有遮挡数据；微小物体的可辨性另行记录。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "较大行清楚呈现左滤嘴连接浅色纸身、右端烟丝截面的关系，顶部吸烟与城市插画保留。最小几行部件压缩至无法独立辨认，整体结构保留但并非每行均可识别。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "Annual cigarette equivalent exposure、Indirect smoking in city air、城市行名及每位居民每年单位共同明确当前年度间接吸烟等效暴露含义；明确标为合成数据。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留参考图的城市空气与年度间接吸烟等效支数关系，以及香烟长度承载数量的方式。真实澳洲城市与旧数值改为City A–M及合成值是冻结输入允许的替换，主题和统计角色仍一致。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "A至H仍可见逐渐缩小的香烟，I/J呈约10像素细线，K/L/M为更弱痕迹。最小值未被人为放大，像素中仍有非背景信号，但末几行的纸身、滤嘴、烟丝关系无法可靠辨认。"
+        }
+      },
+      "semantic_attribution_zh": "主题及统计角色没有明显输出丢失；真实城市名称、旧统计数值和原排序结论的替换来自许可的合成输入。局部损失是最小标记的物体部件可辨性，与代码选用的递减厚度及最终像素分辨率有关；不据此认定数据缺失、重大比例错误或整体隐喻失败。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/360abbeeb59f98",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E47",
-    "source_case": "M040",
-    "name": "城市年度间接吸烟等效暴露",
-    "conflict_type": "numeric_range",
-    "trial": "E47_baseline",
-    "condition": "baseline",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "b0d8f84c99009c",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/b0d8f84c99009c",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E47",
-    "source_case": "M040",
-    "name": "城市年度间接吸烟等效暴露",
-    "conflict_type": "numeric_range",
-    "trial": "E47_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 1,
-    "image_available": true,
-    "review_id": "b0d8f84c99009c",
-    "reused_identical_image": true,
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/b0d8f84c99009c",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -3418,55 +3425,94 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "uncertain",
     "execution": "ok",
-    "review": null,
+    "review": {
+      "verdict": "fail",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图中绿色折线与输电塔、架空电线和栖鸟叠合。指定成图的主题、单位及合成声明清晰；绿色曲线整体下降，2009至2010略回升。1960附近数值与塔架重叠，1970附近数值与绝缘子重叠，局部辨读困难；其余文字清晰。",
+      "summary_zh": "数据几何、主题单位及电力场景融合符合要求。八个数值标签中，两处因同色结构重叠而无法可靠读全。已保存并校验review.json，未运行submit.py。",
+      "issues": [
+        {
+          "category": "layout_readability",
+          "severity": "major",
+          "requirement_id": "M1",
+          "expected_zh": "1960年的6.72和1970年的6.14应完整可辨，并与对应点、年份准确绑定。",
+          "observed_zh": "6.72与密集塔架混合，6.14的中间数字与绝缘子混合，两处均无法可靠独立读全。",
+          "evidence_zh": "原图像素区域[449,756,549,810]及[710,808,811,863]显示数字与深色结构重叠。源码写入正确字符串，但不能据此认定图面可读；其余六个值可以直接辨读。",
+          "bbox_xyxy_normalized": [
+            0.2245,
+            0.4283,
+            0.4055,
+            0.489
+          ]
+        }
+      ],
+      "measurement_notes_zh": "原图2000×1765。像素确认10与0横线约位于y=520、1450；八个绿色圆点中心约为(235,691)、(497,825)、(760,878)、(1022,1007)、(1285,1144)、(1547,1211)、(1783,1288)、(1810,1277)。最大纵差约满量程0.11%，测点精度约±1像素。末两点横距约27像素，目标26.25像素。源码用于定位测量窗口，未代替像素证据。",
+      "uncertainties_zh": "两处完整数字无法仅凭残余字形确认。未读取执行历史、日志或自检，因此不能独立确认全部渲染均经capture_render.py保存；此项未作为输出失败依据。未外推参考图未提供的国家、币值基年等统计口径。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "八个数据点及相连路径存在，八个年份通过轴标签或直接标注明确；系列、单位及合成声明齐全。"
+        },
+        "numeric_text": {
+          "status": "uncertain",
+          "evidence_zh": "六处数值可直接辨读且正确；6.72和6.14源码正确，但图面无法可靠读全。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "各点按年份排列；末两组年份和数值通过引线分别连接2009与2010，未见交换。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "像素位置符合真实年份和共同0–10线性轴，最大纵差约满量程0.11%，低于3%容差。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "生成素材中的塔架和四只鸟实质可见；render.py读取素材，并由输入数据控制折线、圆点及文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "绿色线接到塔架上层右侧绝缘子末端，四只鸟的足部接触绿色线；深色导线连接塔架硬件。"
+        },
+        "readability": {
+          "status": "fail",
+          "evidence_zh": "1960与1970的两处数值标签与同色塔架、绝缘子混合，不能可靠读全；其余主要文字清晰。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "塔身、横担、绝缘子、架空线与栖鸟保持连接或接触；绿色折线承担定量路径并兼作栖线。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "主题、经济产出解释、系列名称、BTU per GDP dollar及Year明确表达指标、单位和时间角色。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留参考的能源/GDP含义及输电场景与绿色曲线叠合关系；合成值替换属于输入授权。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "原像素可辨末端两个独立圆点及上升短段；最小值仍有约162像素基线高度，未见几何夸大。"
+        }
+      },
+      "semantic_attribution_zh": "当前主题、年份角色及物体与数据的关系保留。合成数值替换不是语义丢失；输出损失集中在两处数值文字的可读性。末端小标记在当前分辨率下仍可辨。"
+    },
     "primary_system_success": false,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/943c4191102388",
     "numeric_supported": null,
     "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E27",
-    "source_case": "M027",
-    "name": "单位经济产出的能源消耗强度",
-    "conflict_type": "trend_shape",
-    "trial": "E27_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "a74cb336614bab",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/a74cb336614bab",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "pass",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -3490,56 +3536,95 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.97,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：绿色下降折线与输电塔、架空黑线及栖鸟叠合，标注BTUs per dollar of GDP及1950—2010年份。\n待评图：标题SYNTHETIC Energy intensity、能源/经济产出解释、SYNTHETIC DATA、BTU per GDP dollar与0—10线性轴均可见。绿色线依次标注1.86、1.74、2.56、3.28、4.76、6.14、6.72、8.16；先略降后上升，2009和2010点位紧邻，年份标签分置并有引线。右侧格构输电塔完整，多层黑色电缆接于绝缘子；绿色线终点接到左上绝缘子，多只鸟立在绿色线或黑线上。底部说明仅绿色线编码数据。未见大面积遮挡或必需文字缺失；精确坐标与细部接触待核查。",
+      "summary_zh": "八个数据点、真实年份间距、单位与主题均保留，绿色曲线和塔、线、栖鸟的融合关系清楚。仅发现装饰电线轻微穿过底部轴文字，不影响识别。",
+      "issues": [
+        {
+          "category": "occlusion_layering",
+          "severity": "minor",
+          "requirement_id": "LABELS",
+          "expected_zh": "年份标签及YEAR轴标题保持清楚可读。",
+          "observed_zh": "两根黑色装饰电线穿过YEAR及1970的文字笔画，产生轻微划线遮挡；文字仍可辨读，未造成漏项或错绑。",
+          "evidence_zh": "原图1:1局部（x70–700、y1445–1500）直接显示这两处交叠。源码辅助证据：render.py先绘制轴文字，后绘制wire2、wire3，与可见层序一致。",
+          "bbox_xyxy_normalized": [
+            0.045,
+            0.825,
+            0.325,
+            0.85
+          ]
+        }
+      ],
+      "measurement_notes_zh": "在2000×1765原图中检测绿色圆环内的浅色中心，八点像素中心约为(189.5,1256.5)、(399.5,1267.5)、(609.5,1191.5)、(819.5,1124.5)、(1029.5,987.0)、(1239.85,858.0)、(1429.0,804.08)、(1449.0,671.0)。结合可见0–10轴与源码定位的y=1430至500范围换算，最大偏差约0.011单位，即满量程0.11%，低于3%容差；中心检测受抗锯齿影响约±1像素。源码给出的21像素/年与可见点距吻合；末两点横向约20像素，目标21像素。1950至1960的下降约11像素，目标11.16像素。4.39×与8.16÷1.86的四舍五入结果一致。未执行渲染。",
+      "uncertainties_zh": "像素中心估计和细鸟足接触存在约1像素级判读限制，不支持亚像素精度结论。已核查素材与渲染源码，但未核验历史执行记录；capture_render.py定义了保存流程，其存在本身不证明所有完整渲染均实际经该流程保存。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "八个年份、八个数值及单一能源强度系列齐全；2009与2010分别用引线绑定年份标签。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "1.86、1.74、2.56、3.28、4.76、6.14、6.72、8.16均与输入一致；单位BTU per GDP dollar及派生比值4.39×正确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "各数值对应相邻绿色标记，末两点以细引线区分；鸟、塔及黑色电线另有明确非数据说明。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "图像实测标记中心与共同0–10线性轴及真实年份间距相符，最大纵向误差约满量程0.11%；源码使用全部八点，未以装饰物代替数据点。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png，格构塔和四只鸟的具体造型在成图中实质可见；render.py加载相应切片并控制折线、标记及文字。capture_render.py的流程源码已查看，执行历史未核验。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "绿色线从左侧黑线接入并在右侧接触塔上绝缘子；三只鸟落在绿线上，另一只落在黑线上，塔和电缆构成连续电力场景。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "标题、合成声明、指标解释、数值、单位和图例清楚；YEAR及1970被细电线轻微划过但仍可读，已单列minor。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "格构塔包含横担及悬垂绝缘子，黑色架空线连接其端部；绿色数据线终点与左上绝缘子接触，鸟足与绿色或黑色线相接，保留参考的场景叠合关系。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "SYNTHETIC Energy intensity、每美元经济产出的能源消耗解释、BTU per GDP dollar及YEAR共同明确当前主题、指标、单位和时间角色。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "参考与成图均表达按年份变化的每GDP美元能源消耗，并将曲线融入电力场景。参考的下降走势并非当前要求；成图上升走势来自冻结合成数据。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "八个圆环中心均能在原分辨率检测；最低值1.74仍有约162像素的零线高度，首段小幅下降可见；2009与2010标记和引线可区分，无最低高度膨胀迹象。"
+        }
+      },
+      "semantic_attribution_zh": "当前主题与参考主题一致；数值及涨跌方向变化归于获准的合成输入替换，不构成输出语义丢失。塔的位置和鸟的数量、姿态属于非数据部件适配，未改变曲线承担量值的关系。确认的输出问题仅为两处轻微文字遮挡；细部接触及像素精度限制已单独说明。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/419c55a2e0d369",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E27",
-    "source_case": "M027",
-    "name": "单位经济产出的能源消耗强度",
-    "conflict_type": "trend_shape",
-    "trial": "E27_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "1a3b2c9047146b",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/1a3b2c9047146b",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "pass",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -3710,6 +3795,585 @@
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": null,
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E48",
+    "source_case": "M042",
+    "name": "香槟出口市场出货量",
+    "conflict_type": "numeric_range",
+    "trial": "E48_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "244fcb988d7808",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/244fcb988d7808",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E48",
+    "source_case": "M042",
+    "name": "香槟出口市场出货量",
+    "conflict_type": "numeric_range",
+    "trial": "E48_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "e05baf0440fec1",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/e05baf0440fec1",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E08",
+    "source_case": "M031",
+    "name": "鸡蛋的营养成分构成",
+    "conflict_type": "category_count",
+    "trial": "E08_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "66e6e3d3b85d66",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/66e6e3d3b85d66",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E08",
+    "source_case": "M031",
+    "name": "鸡蛋的营养成分构成",
+    "conflict_type": "category_count",
+    "trial": "E08_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 4,
+    "image_available": true,
+    "review_id": "8c048808c09ee5",
+    "reproduction": {
+      "round": 4,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/8c048808c09ee5",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E29",
+    "source_case": "M047",
+    "name": "按出生年份队列统计的左利手比例",
+    "conflict_type": "trend_shape",
+    "trial": "E29_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "480f2f68df36f7",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/480f2f68df36f7",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E29",
+    "source_case": "M047",
+    "name": "按出生年份队列统计的左利手比例",
+    "conflict_type": "trend_shape",
+    "trial": "E29_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "480f2f68df36f7",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/480f2f68df36f7",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E08",
+    "source_case": "M031",
+    "name": "鸡蛋的营养成分构成",
+    "conflict_type": "category_count",
+    "trial": "E08_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "cfcd1e560ae608",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/cfcd1e560ae608",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E08",
+    "source_case": "M031",
+    "name": "鸡蛋的营养成分构成",
+    "conflict_type": "category_count",
+    "trial": "E08_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 3,
+    "image_available": true,
+    "review_id": "89141e8a5f743b",
+    "reproduction": {
+      "round": 3,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/89141e8a5f743b",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E29",
+    "source_case": "M047",
+    "name": "按出生年份队列统计的左利手比例",
+    "conflict_type": "trend_shape",
+    "trial": "E29_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "eb1e99e19204ff",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/eb1e99e19204ff",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E29",
+    "source_case": "M047",
+    "name": "按出生年份队列统计的左利手比例",
+    "conflict_type": "trend_shape",
+    "trial": "E29_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "c8485b09a7edbe",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/c8485b09a7edbe",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E09",
+    "source_case": "M032",
+    "name": "无线运营网络的用户份额",
+    "conflict_type": "category_count",
+    "trial": "E09_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "f0465785e466cb",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/f0465785e466cb",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E09",
+    "source_case": "M032",
+    "name": "无线运营网络的用户份额",
+    "conflict_type": "category_count",
+    "trial": "E09_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "af105b081c0867",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/af105b081c0867",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E09",
+    "source_case": "M032",
+    "name": "无线运营网络的用户份额",
+    "conflict_type": "category_count",
+    "trial": "E09_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "66d5c96593ea1c",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/66d5c96593ea1c",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E09",
+    "source_case": "M032",
+    "name": "无线运营网络的用户份额",
+    "conflict_type": "category_count",
+    "trial": "E09_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "66d5c96593ea1c",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/66d5c96593ea1c",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E49",
+    "source_case": "M044",
+    "name": "航空公司市值",
+    "conflict_type": "numeric_range",
+    "trial": "E49_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "e38c34c77c3fbb",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/e38c34c77c3fbb",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E49",
+    "source_case": "M044",
+    "name": "航空公司市值",
+    "conflict_type": "numeric_range",
+    "trial": "E49_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "e38c34c77c3fbb",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/e38c34c77c3fbb",
     "numeric_supported": null,
     "joint_supported": null,
     "critical_structure": "unreviewed",

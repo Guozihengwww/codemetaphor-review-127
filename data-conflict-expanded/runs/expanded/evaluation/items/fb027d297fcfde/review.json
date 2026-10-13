@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：浅灰背景上为带包边、皱褶及角部的布枕，白布右侧依次是深褐、青绿、蓝、黄四条相连的竖向色带，主题为睡眠小时数。\n待评图：可见同类横向布枕，色带覆盖布面并保留纹理、明暗、包边和底部阴影；左白布注明 Decorative · not data。四条色带从左到右为窄褐、较宽青绿、最宽蓝、窄黄，下方引线对应 2–<4 h / 5.2%、4–<6 h / 35.8%、6–8 h / 52.1%、>8 h / 6.9%。顶部有 SYNTHETIC DATA、Sleep duration distribution 和 睡眠时长分布 · Share of total (%)；底部说明中点宽度编码、白布30%不编码，并显示 TOTAL 100.0%。标签无可见缺失或遮挡。尚未进行像素宽度测量。",
+  "summary_zh": "通过。四类数值、顺序和标签绑定正确，中部色带宽度符合份额容差。生成布枕的纹理、包边、角部及体积明暗实质用于主体，连续色带直接承载睡眠时长分布，主题与合成数据声明清晰。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1400的image.png像素，未重渲染。中部y=725处，背景与布面过渡约在x=251–255及1742–1745；取约253、1743为端点。最大相邻颜色跃迁给出内部边界约x=699、754、1127、1671，末端约1743，数据宽约1044像素；四带约55、373、544、72像素，即5.27%、35.73%、52.11%、6.90%，目标为5.2%、35.8%、52.1%、6.9%，最大差约0.08个百分点。白布约占29.9%，符合30%要求。y=650、725、800的四个内部边界位置一致。以上为成图像素分析；另据render.py源码，边界由中截面轮廓、30%白布及当前累计份额计算，属于源码核对，未以公式代替像素验证。",
+  "uncertainties_zh": "轮廓抗锯齿及浅色包边使截面端点约有数像素不确定性，不影响3个百分点容差结论。已查看必要源码和素材，但按限制未检查执行日志，不能独立确认capture_render.py的实际调用历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "四个时长类别、单一占比系列及全部四条色带完整；显示4 DURATION BANDS和TOTAL 100.0%。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见5.2%、35.8%、52.1%、6.9%，与冻结输入逐项一致；时长单位h、占比单位%均明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从左至右褐、青绿、蓝、黄带的底部引线分别对应2–<4 h、4–<6 h、6–8 h、>8 h及各自数值，未见错位或交叉；白布另标为非数据。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图中截面测得份额约5.27%、35.73%、52.11%、6.90%，与目标最大差约0.08个百分点；白布约30%，边界竖直，未用面积或伸出角宽度误判编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与pillow_clean.png；其凹曲上沿、包边及两侧皱褶可在成图对应。素材清单及提示词标明生成布枕，render.py读取处理素材并保留明暗纹理染色，代码控制份额边界和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "四条色带连续覆盖同一布枕表面，由枕头轮廓裁切，织纹和皱褶穿过各色区域；阴影位于枕头后下方，未见脱离布面的独立图表或破坏结构的遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下主题、SYNTHETIC DATA、类别、百分比、总计及白布不编码说明均可辨，必要文字没有裁切、重叠或被物体遮盖。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "横向蓬松布枕有连续包边、伸出角、布纹、皱褶和接地阴影；白布与四色布面连接为同一主体，右侧连续竖带的中部可见宽度承担数据。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Sleep duration distribution与中文睡眠时长分布给出主题，Share of total (%)说明指标，四个小时区间承担分类角色；合成声明和100%总计使当前分布含义明确。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图询问睡眠小时数，当前图保留睡眠时长分类、百分比及枕面色带融合关系。数值更新和合成声明符合冻结输入，不要求沿用旧真实统计。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最窄褐带和末端黄带在中截面仍约55、72像素宽，清楚保留布面纹理与轮廓裁切关系；对应引线可辨，像素核查支持其份额，并非仅凭数字判断。"
+    }
+  },
+  "semantic_attribution_zh": "未见输出造成的主题或数据承载关系丢失。当前与参考均为睡眠时长分布；旧数值替换为冻结合成份额及突出合成声明属于获准输入变化。姿态变宽及标签外置未改变同一布枕布面承载连续份额的关系；轮廓边缘仅有像素分辨率带来的测量不确定性。"
+}

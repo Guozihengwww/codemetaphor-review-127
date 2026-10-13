@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为浅灰背景中的横向布枕，左部白布，右部竖向色带。待评图保留蓬松枕体、布纹、皱褶、包边、伸出角和底部阴影。六项百分比及类别均可读，五项通过引线对应色带，52.1%直接标在蓝色带内。两个8.95%带视觉等宽。睡眠主题、小时单位、合成数据声明、子类父类名称及白布非数据说明清楚。彩色区域上缘有轻微阶梯状边界。",
+  "summary_zh": "数据、标签、睡眠语义及枕面宽度编码均保留，仅有轻微上缘裁切瑕疵。已保存review.json并通过schema校验；未运行submit.py。",
+  "issues": [
+    {
+      "category": "texture_boundary",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "色带沿写实枕头轮廓裁切，保持布面与包边的连续关系。",
+      "observed_zh": "灰色首带至蓝色带的上轮廓局部出现细小的短直线台阶，枕头结构仍完整可辨。",
+      "evidence_zh": "原尺寸图中约x=680–1710、y=400–485的着色上缘可见阶梯状轮廓，首个灰色带上端尤明显；未影响中部宽度或标签。",
+      "bbox_xyxy_normalized": [
+        0.338,
+        0.285,
+        0.856,
+        0.347
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接读取2000×1400的image.png像素，在y=799并以y=797、801复核。布面左右端约x=205、1783；分界约x=679–680、737、836、935、1131–1132、1707、1783。彩色总宽约1104像素，六带约58、99、99、197、575、76像素，换算约5.25%、8.97%、8.97%、17.84%、52.08%、6.88%，目标差均小于0.1个百分点。白布约占30.0%。源码另证实按中部轮廓及累计占比计算边界，属于代码证据，不替代像素测量。",
+  "uncertainties_zh": "抗锯齿及浅色背景使边界定位有约1–2像素误差，折合约0.2个百分点。素材来源依据所供素材与可见匹配，未检查生成日志；已检查capture_render.py保存逻辑，未核验实际执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个类别及色带齐全，三个子类均保留4–<6 h父类，白布明确排除。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "5.2%、8.95%、8.95%、17.9%、52.1%、6.9%均与输入一致，总和100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "五条引线落在相应色带内部，52.1%与6–8 h位于蓝色带内；顺序正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素宽度换算符合目标；计入边缘误差仍远小于3个百分点，白布约30%。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始及处理后素材的布纹、褶皱、包边和四角在主体中可见；render.py依据输入控制色带分界。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "色带直接构成同一枕头布面，保留织纹与明暗，按物体轮廓裁切；阴影位于枕体下方。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、数值、单位、子类及宽度说明均清楚，无必要文字遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "蓬松枕体、连接布面的包边与四角、皱褶及落地阴影保留；白布与六色区域连续相接，中段竖向分界承担份额编码。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确睡眠时长分布，指标为百分比、类别为小时区间；说明三个子类互斥且数据为合成示例。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "睡眠分布主题和枕面色带融合关系保留；数值替换及类别拆分来自冻结输入。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最窄5.2%带约58像素，6.9%带约76像素，均有可辨布面、边界和绑定；两个8.95%带也清楚分离。"
+    }
+  },
+  "semantic_attribution_zh": "未发现当前主题、指标或融合关系丢失。合成数值及父类拆分属于输入许可的适配；轻微上缘裁切属于输出瑕疵，像素定位限制仅影响小数级估读。"
+}
