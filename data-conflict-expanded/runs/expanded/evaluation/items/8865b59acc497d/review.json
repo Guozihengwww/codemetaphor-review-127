@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图将审计费用份额环带嵌入账表上的放大镜镜面，镜框连接右下手柄并在纸面投影。成图保留这些关系，八类环带围绕总额5,000；可读到审计费用份额标题、SYNTHETIC DATA、Synthetic audit fees、USD million及全部父类/子类标签。Firm A占最大扇区，两项347.5和两项560分别呈等宽；顶部Other为窄深色扇区，外引标签为20、0.4%。未见明显遮挡、标签串位或环带越出镜框。",
+  "summary_zh": "通过。八类审计费用、份额、单位和标签绑定正确，环带嵌入放大镜镜面的关系完整，微小Other扇区真实可见。review.json已保存并通过schema校验。",
+  "issues": [],
+  "measurement_notes_zh": "核查1600×2000原图。目标角宽依次为128.16°、25.02°、25.02°、50.04°、40.32°、40.32°、49.68°、1.44°。以源码中心为采样候选，在成图多个半径上按实际色值识别边界，大扇区测得约128.2°、25.0°、25.0°、50.1°、40.3°、40.2°、49.6°，偏差远低于3个百分点。对Other在y=470–741的成图混色边缘拟合，校正0.98纵缩后角宽约1.428°，对应0.397%，目标0.4%。水平实色色区约为x=221–527和1033–1338；近中心竖向色区约为y=457–757和1253–1553，支持内外半径比约0.45及纵横比约0.98。源码另证实360×金额/5000、固定内半径及统一纵缩；源码参数不冒充像素测量。",
+  "uncertainties_zh": "抗锯齿、整数像素采样和文字覆盖使边界位置存在约1–2像素不确定性；不将小扇区的数值标签当作几何证明。已查看capture_render.py的保存流程，但按限制未读取执行日志或历史，无法独立确认每次渲染的调用记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八个类别全部出现，顺时针顺序为Firm A、Firm B三子类、Firm C两子类、Firm D、Other；单系列和总额完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "金额依次为1,780、347.5、347.5、695、560、560、690、20；份额35.6%、6.95%、6.95%、13.9%、11.2%、11.2%、13.8%、0.4%，合计5,000和100%，单位USD million正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "七组标签位于对应扇区内；Other引线连接顶部窄扇区。Firm B和Firm C的父类与子类编号均明确，未见串位。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图色区抽样与全部目标份额一致，内外半径比约0.45、统一纵缩约0.98；Other边缘拟合约1.428°，目标1.44°。未通过环厚编码金额。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，成图的镜框高光、金属连接件、手柄、账表及投影均可与原始素材对应，使用范围实质且显著。render.py控制环带和文字；capture_render.py含完整成图保存流程。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据环带位于镜框内部并与镜面边界贴合，中心保留可见账表纹理；镜框连接右下手柄，投影落在纸面上，未见破坏包含或遮挡关系的错层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA、审计费用份额标题、系列名称、单位、八类数值及底部统计口径说明均可读；没有必要标签缺失或严重重叠。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "写实镜框环绕共心数据环带，右下金属连接件接至手柄，整体位于账表上并形成投影。数据由镜面内环带的径向分界承载，中心孔、镜框及手柄均不计入份额。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题与副标题明确表达合成审计费用份额及USD million；中心注明总费用5,000，底部说明同一费用池、子类互斥及非统计调查，类别与统计口径可理解。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留了审计费用市场份额主题及放大镜镜面承载环带的原有融合。参考图的真实机构、S&P 500和FY2022语境改为Firm A–D及合成费用池，归因于冻结输入的合成化，不属于输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Other在顶部形成从内孔边缘延续到外环边缘的窄深色色带；y=458和752的扫描分别检出12和4个近实色像素，混色边缘另计。外引标签可读，微小值未被归零或人为放大。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出层面的主题、类别角色或物体关系丢失。真实机构及历史样本语境的弱化来自冻结输入允许的合成改编，因此参考意义记为部分保留。Other仍保留环带关系；其边缘精度受像素与抗锯齿限制，而非数值标签能够单独证明。"
+}

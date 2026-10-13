@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为六色区域共用内部汇聚点的尖顶圆腹水滴，具有纸面质感。待评图保留完整水滴、六色分区和外置引线；六项标签及数值可读，家庭用水构成、合成数据、百分比口径及合计明确。最小Other区域清晰可辨，未见明显遮挡或断裂。",
+  "summary_zh": "数据、标签绑定、面积比例及水滴融合关系符合要求。review.json已保存并通过schema校验；按追加要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析1500×2007的image.png像素：按色度提取水滴主体，填补浅色纸纹导致的阈值漏检，再按色相分类。六区面积份额约28.1384%、22.3428%、17.2995%、14.8346%、12.0185%、5.3662%，最大偏差0.0572个百分点；阈值敏感性检查最大偏差约0.136个百分点，低于3个百分点容差。Other约32907像素。源码另显示按真实水滴遮罩的面积分位数求分界；未执行渲染或采用生成方自检结果。",
+  "uncertainties_zh": "抗锯齿、浅色颗粒及边界引线造成小量像素分类误差。按限制未检查日志、历史图像或自检，无法独立确认全部历史渲染均经capture_render.py保存；已核查相关原生源码。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六项用途均有独立区域、标签和百分比，顺时针顺序符合输入。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "28.1%、22.4%、17.3%、14.8%、12.0%、5.4%及合计100.0%均准确，单位明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "六条引线分别连接对应的青、绿、红、橙、黄、深蓝区域，无交叉误指。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素估算六区约28.14%、22.34%、17.30%、14.83%、12.02%、5.37%，均符合面积容差；区域连续相接。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的水滴轮廓、印刷颗粒和纸纹在成图可对应；源码将素材用于主体和背景，并控制面积分界。保存脚本存在，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "六个数据区域直接组成水滴，实际承载边界为水滴外轮廓及内部径向分界，生成纹理覆盖主体。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必要标题、合成声明、类别、数值、单位及统计口径完整清晰，无遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "尖顶朝上、圆腹闭合；六区包含于水滴内部并汇于约(750,1252)，共享边界，纸面材质和外置引线保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "家庭用水构成标题及六类用途明确主题与角色，单位、合计和面积说明明确表达同一合成总量的用途组成。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "家庭用水用途分配主题、六个用途角色及水滴分区融合关系保留；替换旧真实统计为明确标注的合成数据属于输入授权。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Other区域约32907像素、5.37%，原分辨率下可辨认其从汇聚点延伸至左侧外轮廓的完整区域及对应引线。"
+    }
+  },
+  "semantic_attribution_zh": "未见输出造成的主题或物体关系丢失。真实统计改为合成统计由冻结输入授权；当前主题和用途角色保留。水滴承载总量、内部区域承载用途份额。像素边界存在小量测量不确定性，但未限制最小区域识别。"
+}

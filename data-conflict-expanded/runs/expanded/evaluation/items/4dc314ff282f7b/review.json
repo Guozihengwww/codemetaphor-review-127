@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以六个独立白色纸堆的高度表达各年份税法页数。待评图六个年份及76,800、61,800、27,800、17,200、560、420标签完整，纸堆共用零线。前四堆可见纸层、顶面及右侧面；后两堆很薄，仍可见顶面与前缘。税法页数标题、单位和SYNTHETIC DATA清楚，无明显错绑或遮挡。",
+  "summary_zh": "通过。数据、绑定、纸堆结构和税法页数语义均保留。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "原图1395×2000。正面中央区域的前四堆上缘位于y≈508、733、1243、1402，共用零线y≈1660，高度约1152、927、417、258像素。0至80,000刻度相距1200像素，测量符合输入。小堆厚度约8–9、6–7像素，目标8.4、6.3像素，边缘判读约±1像素。源码另行证实高度=value×1200/80000、分类中心间距200像素；这些属于代码证据。投影顶面不计入数据高度。",
+  "uncertainties_zh": "小堆的纸面、前缘及落地关系可辨，但抗锯齿和零线限制亚像素厚度与精确相对比例的判断；1像素约合66.7页。未核验生图调用及capture_render.py执行历史，仅检查随附素材、相关源码和最终图片。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个年份按输入顺序排列，每年均有纸堆及数值，单一页数系列完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "六个数值全部匹配输入，pages单位及0–80,000刻度正确，小正值未写成零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值位于对应纸堆上方，年份在其下方，无可见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际正面高度符合共同线性比例尺，未见超出3%满量程容差的偏差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材的纸层和侧面纹理实际出现在主体中；制备代码提取表面，渲染代码按数据控制几何及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "纸堆正面本身承载数量；顶面、正面、右侧面相连，各堆接触共同地面，无破坏结构的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "合成提示、主题、副标题、年份、指标、单位、全部数值及比例说明清楚。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "独立白色散页纸堆、纸层、顶面、连接侧面及共同地面均保留，完整正面高度作为数据边界。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达税法文档年度页数，Year和Page count (pages)分别说明类别角色、指标与单位，并声明非历史统计。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留税法页数与年份比较及纸堆高度编码关系；原走势和历史数值由冻结合成输入替换。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "两个小堆仍可见独立顶面、细窄纸层前缘和共地接触，560对应堆略厚于420；精确亚像素厚度存在分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或核心关系丢失。历史数值及走势改变来自冻结合成输入；小值精确厚度的不确定性来自像素分辨率，并非已证实的结构缺陷。"
+}

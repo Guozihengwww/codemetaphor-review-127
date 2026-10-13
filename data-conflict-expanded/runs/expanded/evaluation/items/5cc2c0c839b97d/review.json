@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中，彩色资产柱嵌入银行立面的浅色支柱，屋顶、横梁、基座及后方金库门可辨。待评图显示十根Bank A–J柱，全部数值清晰，深色填充与浅色支柱共用轮廓并接触基座；屋顶圆徽、字母圆标及后方金库门保留。主题、SYNTHETIC DATA、资产指标和trillion USD单位清晰。最短J柱仍有可辨面积与凹槽纹理，未见明显错绑或结构性遮挡。",
+  "summary_zh": "通过。数值、类别绑定、线性柱高及银行立面融合关系符合冻结要求。review.json已保存并通过schema.json校验。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查2160×1876图像像素，避开数字识别深色柱顶。A–J顶部y约为806、1019、1027、1251、1348、1365、1387、1391、1415、1436，共同基线约1516；净高为710、497、489、265、168、151、129、125、101、80像素。以710像素对应7.60换算，最大偏差约为满量程0.074%，低于3%容差。源码另证实数据通过统一线性变换控制纹理裁切；此代码核对不替代像素测量。",
+  "uncertainties_zh": "抗锯齿与阈值带来约±1像素的边界测读不确定性，约为满量程0.14%，或最短柱相对高度的1.25%。未重放渲染或查阅受禁历史记录，无法独立确认历次capture_render.py调用情况。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "十个类别按Bank A–J顺序完整出现，资产系列、指标、单位、合成提示与总量齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "7.60、5.32、5.24、2.84、1.80、1.62、1.38、1.34、1.08、0.86逐项正确，总量29.08正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "上方字母圆标、柱内数值和下方银行名称同轴对应，未见交换或跨柱绑定。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素测量支持统一基线与线性净高编码，最大满量程偏差约0.074%；非数据建筑部分明确排除。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的屋顶圆徽、横梁、基座、金库门及柱身纹理在最终图中实质可见；源码载入这些部件并控制数据几何与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "深色资产区域嵌入浅色支柱下段，支柱连接横梁与基座，金库门位于立面后方；未见破坏结构或读数的错层和接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下主题、合成提示、十个名称与数值、指标单位和编码图例均清晰可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "屋顶、圆徽、横梁、十根立柱、阶梯基座及后方金库门齐全；数据边界为深色区域水平顶沿至共同柱脚。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、10 fictional central banks、Illustrative assets / trillion USD及图例明确表达虚构中央银行资产规模比较。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考图以银行立面柱高比较中央银行资产的主题、量纲及融合关系。真实银行与国旗替换为虚构银行和字母圆标来自冻结输入授权。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最短J柱约80像素高，凹槽、填充顶界及与基座的接触仍可辨；G与H约129和125像素的高度差保留，未见最小高度放大。"
+    }
+  },
+  "semantic_attribution_zh": "未见输出造成的主题或核心关系丢失。虚构名称、字母圆标及合成数值属于输入允许的身份与数据改编，央行资产比较的统计含义保留。原始真实排名不构成当前约束；小柱的不确定性主要来自像素边缘抗锯齿。"
+}

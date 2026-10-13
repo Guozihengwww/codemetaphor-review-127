@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：十根彩色资产柱嵌入正面银行立面，上方有圆形国旗徽记、三角屋顶和横梁，下方有基座与银行标签，右后方为金库门。待评图：三角屋顶、横梁、A–J圆徽、十根浅色满高支柱和阶梯基座相连，金库门位于后方；深蓝数据区在支柱下部共用基线，A满高，B约半高，其后逐级减小，H–J呈薄条。可见SYNTHETIC DATA、Central bank assets、Illustrative assets / trillion USD、虚构中央银行说明、十组Bank A–J标签与正数值，以及0–7.60线性刻度。图例区分深蓝资产净高与浅色结构支撑。末端薄条的相对精度与柱身细节需进一步核对。",
+  "summary_zh": "未发现违反冻结要求的可见缺陷。十组数据、标签、单位与线性柱高一致，资产柱嵌入银行支柱，必要建筑部件及后方金库门保留。极小柱的细节受像素分辨率限制；原真实银行主题按输入改编为虚构银行。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2160×1876的image.png像素，未重渲染。源码提供采样横坐标及680–1540绘图区定位；各柱中心60像素宽区域逐行红通道中位数低于125判为深色，边界约有±1像素不确定性。A–J实测深色顶行依次为680、1109、1324、1432、1486、1513、1526、1533、1537、1538，末行均为1539，对应净高860、431、216、108、54、27、14、7、3、2像素。按数据及860像素满量程推导的目标净高依次为860、431.135、216.136、108.353、54.320、27.231、13.652、6.844、3.431、1.720像素；最大阈值测量差约0.431像素，即满量程0.051%，小于3%容差。这是PNG阈值测量与数据推导的比较，不是仅凭源码公式作出的结论。",
+  "uncertainties_zh": "Bank I、J仅有约3、2行深色像素，抗锯齿影响边缘，不能据此精确判定小值相对误差或确认柱身沟槽细节。源码说明使用capture_render.py保存流程，但按限制未读取运行日志，实际捕获执行历史未独立核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "可见A–J十个圆徽、十根支柱及十组Bank A–J标签与数值，顺序和单一资产系列完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图中十值为7.6、3.810027、1.91004、0.95754、0.480033、0.24065、0.120642、0.06048、0.03032、0.0152，与输入一致；总额15.224932及trillion USD准确，正数未舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各圆徽、柱身、Bank标签与数值在同一竖向中心线上；底座分隔线清楚，无串位。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "PNG实测十柱均从同一基线向上延伸，净高与0–7.60线性编码吻合，阈值测量最大偏差约满量程0.051%。浅色满高支撑有独立图例，屋顶和基座未混入数据高度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png；其三角屋顶的石纹与檐线、阶梯基座、沟槽柱身及金库门在成图中占据主体区域。prepare_assets.py裁取这些部件，render.py加载并合成，同时控制文字与数据边界。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "深蓝资产区与浅色建筑支柱同宽、纹理连续，位于各支柱下部并接触基座。屋顶压在横梁上，横梁连接支柱顶部，金库门位于后方并被立面遮挡；未见破坏结构的错层或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题标题、SYNTHETIC DATA、虚构央行说明、Illustrative assets / trillion USD、全部标签数值、轴刻度及图例均可读，无关键文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "三角屋顶连接横梁，十个圆徽位于梁面并对应下方十根支柱；浅色支柱连接横梁与阶梯基座，深蓝数据区嵌入其下部，圆形金库门退后。数据实际承载边界是深蓝区的水平顶边至公共基线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Central bank assets、10 FICTITIOUS CENTRAL BANKS与SYNTHETIC DATA共同明确当前主题；Bank A–J为虚构央行类别，指标为示意资产、单位为万亿美元。总额表示十家资产相加，未引入年份、累计时间或百分比组成含义。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考的央行资产比较及柱身融合关系保留；参考中的真实银行与国旗榜单改为虚构银行和字母圆徽，是冻结输入明确授权的主题适配，原真实机构指称不再保留，不归为输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "原尺寸下H、I、J仍可见约7、3、2像素高的深蓝条，均与对应浅色柱脚同宽并接触基座，没有消失或人为放大。I、J的数据区主要呈薄线，独立柱身体积与沟槽细节难以辨认；完整建筑关系由连续的浅色支柱保留。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或核心关系丢失。真实国家央行榜单到虚构Bank A–J的变化归于允许的输入适配；圆徽由国旗改为字母仍保留类别对应角色。极小深蓝区的柱身细节减弱归于分辨率限制，不能将其夸大为数据错误，也不能以数值标签替代几何核验。"
+}

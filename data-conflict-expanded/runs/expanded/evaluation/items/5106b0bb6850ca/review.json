@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以盛装五种作物的透明玻璃容器表达收获量。待评图五类顺序、数值和单位齐全，总量为72,000，合成数据声明明确。作物纹理位于带椭圆杯口、玻璃侧边及底座的容器内；前两项很薄，后三项逐级增高。",
+  "summary_zh": "已保存并通过schema校验的review.json。数值、绑定、尺度与作物容器融合关系均保留，未发现重大可见缺陷；最小项几何仅部分可辨。",
+  "issues": [],
+  "measurement_notes_zh": "检查2000×1663原图。标尺像素端点为y=350和1345，跨度995 px；五项可见括线跨度约2、14、83、211、687 px。源码推导目标为1.3819、13.8194、82.9167、210.3319、686.55 px，差均小于1 px，低于满量程3%容差。测量对象是括线着色像素，并非亚像素椭圆中心；原尺寸检查支持括线与容器端面对应。底座和椭圆投影深度未计入数据高度。",
+  "uncertainties_zh": "100 t/year对应约1.38 px，受描边及抗锯齿影响，不能独立确认其微小相对精度。未读取执行日志或历史记录，因此未确认全部渲染的执行链。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五类作物、单一系列及指定顺序完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "100、1,000、6,000、15,220、49,680及总量72,000准确；五项百分比均为正确舍入。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值、类别及对应作物材质逐项绑定准确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见标尺、括线与容器高度支持共同线性编码，均在满量程3%容差内；最小项相对精度另保留不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的五种材质实质用于容器内容物；render.py控制数据高度、裁剪及文字，capture_render.py提供保存流程。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "作物被玻璃容器包围，内容物与底座相接，容器自身高度承担数值编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、类别、数值、单位及编码说明可读，无必要文字遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "椭圆杯口、透明侧壁、玻璃底座及内容物包含关系保留；前两项适配为浅容器。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达五类作物年度收获量，系列、t/year、总量及份额口径清楚。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的作物年产量主题及容器承载数量的融合关系；合成数值替换符合冻结输入。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "Legumes的顶面、杯口和底座可辨，但约1.38 px侧壁与细线接近合并；Vegetables薄侧面及其余三项高度仍可见。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或统计角色丢失。合成数量属于输入允许的改编；最小项的部分可辨性来自真实比例下的像素与描边限制，不构成重大数据错误。"
+}
