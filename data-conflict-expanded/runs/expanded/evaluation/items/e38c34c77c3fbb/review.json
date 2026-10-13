@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为深色世界地图上的七行航空公司、白尾迹和朝右客机。待评图七行Airline A–G完整，金额依次为31.2、27.2、18.1、17.8、15.0、14.7、14.7 bn。合成声明、市值标题、单位和0–35刻度清晰。客机机身、双翼、尾翼连接可辨；尾迹在后，金额在机鼻右侧。F、G等大且端点对齐，未见明显遮挡。",
+  "summary_zh": "符合冻结要求，未发现超出容差的可见缺陷。review.json已保存并通过schema.json校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×2000原图上，以0、35刻度约x=430、1770校准。亮度阈值150下，A–G机鼻最右像素为1623、1470、1122、1110、1003、992、992，对应31.160、27.164、18.075、17.761、14.966、14.679、14.679，最大偏差约满量程0.12%。独立局部亮度分割在120、135、150三个阈值下，客机面积比例估计偏差均小于满量程0.8%；未将尾迹、阴影或外接矩形作为实体面积。源码另确认线性机鼻定位及统一模板平方根缩放，仅作为实现核验。",
+  "uncertainties_zh": "亮度分割会漏计客机暗部，面积属于近似像素证据；抗锯齿也影响边缘。原分辨率目视、多阈值测量与源码相互支持结论。素材生成及捕获脚本的实际执行历史未独立核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七类、七架飞机、七个识别块和七项金额完整，顺序符合输入。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部金额与data.json一致，USD billion单位及0–35刻度正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别块、尾迹、飞机及右侧金额逐行对应；F、G同值且端点对齐。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "机鼻像素测量最大误差约满量程0.12%；多阈值面积比例估计误差低于0.8%，均在3%容差内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始客机和地图素材；成图的主体细节与背景纹理对应，源码控制缩放、定位及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "机鼻端点和机体面积实际承载市值；飞机覆盖后方尾迹，地图位于底层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "合成声明、主题、系列、单位、类别、金额和编码说明清楚，无重要遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "七架朝右俯视客机均保留连接的机身、双翼与尾翼；类别块接渐隐白带，飞机叠合于其右端，金额位于机鼻前方。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达合成航空公司的市值比较，保留类别角色、统计指标、USD billion单位及同值双重编码。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留航空公司市值主题及飞机叠合尾迹的比较关系；真实品牌与旧金额按冻结输入替换为合成类别和当前值。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值F、G的客机亮部包络约207×148像素，机身、双翼、尾翼及鼻端仍可辨。"
+    }
+  },
+  "semantic_attribution_zh": "品牌与金额的合成替换来自冻结输入，未改变航空公司市值主题，不属于输出语义损失。未见核心关系丢失；精确面积边界仍受材质暗部及抗锯齿限制。"
+}

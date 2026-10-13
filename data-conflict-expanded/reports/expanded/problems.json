@@ -3927,114 +3927,6 @@
     "confirmed_semantic_or_data_failure": false
   },
   {
-    "case": "E08",
-    "source_case": "M031",
-    "name": "鸡蛋的营养成分构成",
-    "conflict_type": "category_count",
-    "trial": "E08_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 3,
-    "image_available": true,
-    "review_id": "89141e8a5f743b",
-    "reproduction": {
-      "round": 3,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/89141e8a5f743b",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E29",
-    "source_case": "M047",
-    "name": "按出生年份队列统计的左利手比例",
-    "conflict_type": "trend_shape",
-    "trial": "E29_conflict",
-    "condition": "conflict",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "eb1e99e19204ff",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/eb1e99e19204ff",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E29",
-    "source_case": "M047",
-    "name": "按出生年份队列统计的左利手比例",
-    "conflict_type": "trend_shape",
-    "trial": "E29_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "c8485b09a7edbe",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/c8485b09a7edbe",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
     "case": "E09",
     "source_case": "M032",
     "name": "无线运营网络的用户份额",
@@ -4054,19 +3946,94 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以带类别圆牌的通信桁架塔表现无线用户市场份额。最终图可见八座塔、八组类别及百分比，顺序为 Others、Net A、Net B 两子类、Net C 三子类、Net D；无线用户份额标题、百分比单位和 SYNTHETIC DATA 清楚。共同零线横贯全部塔，下部支架等高；上段塔顶横梁随数值变化，同值塔等高。Others 上段压在零线附近，圆牌和下支架可辨，微小桁架及圆牌连接需原分辨率确认。其余塔的竖杆、交叉斜撑、顶横梁与下支架可见，未见明显遮挡或标签串位。",
+      "summary_zh": "数值、类别绑定、主题语义和塔身高度编码正确。仅 Others 的微小数据上段呈薄带，交叉桁架可辨性部分保留；未见重大缺陷。",
+      "issues": [
+        {
+          "category": "metaphor_integration",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "完整通信塔保留上段桁架、横梁、下支架及类别圆牌；微小值仍按真实比例，不人为扩大数据高度。",
+          "observed_zh": "Others 的圆牌、横梁及下支架可辨，但数据上段呈近水平金属薄带，难以分辨交叉桁架；整体通信塔身份仍保留。",
+          "evidence_zh": "原分辨率1600×2000下，Others中心约x=244；像素检测到顶横梁亮带始于y=1483，共同零线占y=1489–1490，上段仅约6–8像素。该问题是局部结构可辨性，不是数值归零或重大比例错误。",
+          "bbox_xyxy_normalized": [
+            0.119,
+            0.74,
+            0.186,
+            0.746
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接读取image.png像素：零线亮带y=1489–1490，40/30/20/10%网格线约y=520/762/1005/1247。源码仅用于定位横向搜索窗口，横梁端点由图像亮带检测得到，依次为y=1483、1281、1234、1234、1297、1297、1104、564。以零线中线估算的份额约为0.268、8.602、10.542、10.542、7.942、7.942、15.905、38.185%，均在约1–2像素定位不确定性内吻合目标，远低于规定容差。源码另证实采用24.25像素/百分点、无最小高度的裁切几何；这不是像素实测的替代。",
+      "uncertainties_zh": "抗锯齿、横梁厚度和零线覆盖使端点约有1–2像素不确定性；对Others而言1像素约占目标高度14%，不能把满量程通过等同于已精确验证微小值的相对误差。未读取运行日志或自检，因此只能确认capture_render.py的保存逻辑，不能独立证明所有历史渲染均经该脚本保存。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "八个类别、八座塔、一个份额系列全部可见，顺序与输入一致，Net B两子类及Net C三子类均保留。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "图面依次标出0.3%、8.6%、10.55%、10.55%、7.95%、7.95%、15.9%、38.2%；均与输入相同，合计100%。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "每组数值和圆牌位于对应塔顶上方；子类同时显示父网络名称及编号，未见串位。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "共同0–40%线性轴明确；实测横梁位置与目标吻合，同值塔等高。仅零线以上至顶横梁的数据上段参与编码。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "raw_01.png中的螺栓支架、浅色圆牌及金属表面在成图中可见且构成主体；prepare_assets.py裁切素材，render.py以这些素材控制杆件位置、上段边界和文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "份额直接控制通信塔上段高度；固定支架接于共同零线，圆牌通过短杆沿塔中心线连接，数值底板覆盖部分连接杆但不遮住数据横梁。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "标题、SYNTHETIC DATA、百分比单位、全部类别及数值清晰；读图说明明确排除圆牌和下支架，底注说明子类互斥及合成数据性质。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "七座较高塔的下支架、上段侧杆及交叉桁架、顶横梁和类别圆牌关系可辨；Others保留下支架、圆牌和横梁，但微小上段的交叉结构难以辨认。未见破坏主体连接的错层或接缝。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "Wireless subscriber shares及Share of total wireless subscribers (%)明确主题、指标和单位；网络父类、子类编号及互斥部分说明保留当前统计角色。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留参考图的通信网络主题、无线用户份额指标，以及通信塔本体承载数量的融合关系。真实品牌、日期和旧数值由冻结输入明确合成化，不要求沿用。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "Others的0.3%文字及略高于零线的横梁可见，未被夸大成明显高塔；约7像素的数据上段不足以稳定辨识交叉桁架，精细相对几何受分辨率限制。"
+        }
+      },
+      "semantic_attribution_zh": "当前主题和网络父子类语义没有输出性丢失。原参考的真实品牌、日期及数值替换属于冻结输入许可的合成化，不能算生成错误。局部损失仅为Others数据上段的结构可辨性；像素分辨率和杆件厚度共同限制其细节，不能据此断言通信塔隐喻整体丢失。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/f0465785e466cb",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -4090,19 +4057,94 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.95,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：五座桁架通讯塔共用底线，顶部圆牌和百分数绑定各运营商，主题为无线用户市场份额。待评图：八座塔按 Others、Net A、Net B 两个子类、Net C 三个子类、Net D 排列；标签依次显示 0.3%、8.6%、10.55%、10.55%、7.95%、7.95%、15.9%、38.2%。可见共同 0% 线、等高下部金属支架、上部桁架及圆形类别牌；两对相等数值的横梁分别齐平。Others 零线上段极薄，内部桁架关系在整图中难辨。标题说明无线用户份额，百分比单位、SYNTHETIC DATA、子类互斥及总计 100% 均可读。高塔保持支架—桁架—横梁的连接，未见明显遮挡或标签错绑。",
+      "summary_zh": "八类数值、绑定、比例和无线用户份额语义完整，生成金属素材与代码控制的塔高实际融合。仅 Others 的微小上段呈近乎实心的薄金属条，桁架细节部分丢失；未发现重大数据或结构错误。",
+      "issues": [
+        {
+          "category": "metaphor_identity",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "在保持0.3%真实高度、不设置最小数据高度的前提下，保留通讯塔上段桁架与顶横梁的可辨关系。",
+          "observed_zh": "Others 的圆牌、下部支架和正值高度仍可辨，上段交叉杆与孔隙则挤成近乎实心的薄金属条，局部桁架关系难以识别。",
+          "evidence_zh": "原尺寸图左下方 x约191–297、y约1482–1490 的上段仅约7–8px高；目视难分交叉杆和横梁。其他七座塔的上段交叉结构清晰。此项为局部结构辨识限制，不是超容差的数据高度错误。",
+          "bbox_xyxy_normalized": [
+            0.118,
+            0.74,
+            0.188,
+            0.746
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接读取1600×2000待评PNG像素：共同零线峰值在y=1490，40%网格线在y约520，跨度970px。按横梁中央79px采样带的亮度跃迁，八个上缘约在y=[1482,1281,1234,1234,1297,1297,1104,563]，换算约[0.330,8.619,10.557,10.557,7.959,7.959,15.918,38.227]%，与目标最大相差约0.03个百分点，远低于规定容差。反锯齿带来约±1px边界不确定性。源码另证实采用24.25px/百分点并裁剪数据上段；源码推导的Others高度为7.275px，不作为独立像素测量。未执行渲染。",
+      "uncertainties_zh": "微小上段约±1px的边界定位误差相当于约±0.04个百分点，对0.3%的相对精度不能据此作高精度断言。其桁架细节受当前呈现和像素分辨率共同限制。按范围限制未读取运行记录，无法独立确认capture_render.py的实际执行情况。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "八座塔、八个类别及单一用户份额系列完整；顺序与输入一致，Net B两个子类和Net C三个子类均保留父类名。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "可见数值依次为0.3%、8.6%、10.55%、10.55%、7.95%、7.95%、15.9%、38.2%，均准确；总计100%与输入一致。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "圆牌、百分数与同中心线的塔逐一对应，无交叉引线、错位或子类混绑。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "像素上缘读数支持共同0–40%线性尺度；两组相等数值分别齐平，全部高度偏差远小于满量程3%及3个百分点。0.3%仍有可见正高度。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png；其铆钉支架、金属圆牌及横梁表面在成图中实质可见。prepare_assets.py裁出对应部件，render.py将其用于下支架、圆牌和定量桁架构件。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据直接由零线上方的塔身至顶横梁承载；塔身下接等高非数据支架，上接圆牌支杆。圆牌和数值区位于数据端点之上，未遮住端点；未见破坏解释的透视、接缝或层级错误。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题标题、SYNTHETIC DATA、单位、八类名称、全部百分数、轴刻度及读图说明均可读，未见裁切或重叠。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "八座塔均有圆牌、顶横梁及接地支架；七座的上段交叉桁架清晰，Others仅保留薄上段轮廓，内部桁架关系难辨。整体支架—数据塔身—横梁—圆牌关系保留。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题和副标题明确无线用户占总用户的百分比；合成提示醒目，子类别显示父网络，脚注说明互斥子类及非真实调查，统计口径可理解。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留参考图中运营网络无线用户份额与通讯塔高度融合的关系。当前合成网络、子类和数值替换旧品牌及旧统计，符合冻结输入，未强加旧排名或日期。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "Others的非零横梁和薄上段可见，数值未归零或明显抬高；约7–8px高的上段无法清楚呈现交叉桁架。数值标签正确不能单独证明微小构件的相对精度。"
+        }
+      },
+      "semantic_attribution_zh": "品牌、旧统计日期及真实数值的替换属于冻结输入允许的合成改编，当前无线用户份额主题及类别角色没有输出层面的丢失。局部损失仅为Others上段桁架的可辨性，涉及微小真实高度下的呈现与分辨率限制，不外推为整体隐喻丢失或数据映射失败。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/af105b081c0867",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -4126,19 +4168,94 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.95,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：五座由左至右增高的桁架通讯塔，各塔顶部以圆牌显示运营商及无线用户份额。最终图：五塔依次标为 Others、Net A、Net B、Net C、Net D，数值分别为 0.3%、8.6%、21.1%、31.8%、38.2%；底部支架位于共同 0% 线下，数据塔段在其上，顶部横梁以橙色强调并通过短杆连接圆牌。主题、百分比单位、SYNTHETIC DATA 和固定支架说明清楚。四座较高塔的横梁与刻度目测相符；Others 的极薄上段贴近零线，不能辨清独立桁架细节。未见标签遮挡或明显部件脱离。",
+      "summary_zh": "数据、标签绑定、共享比例和当前主题均正确，生成素材实质构成塔体。仅 Others 的微小上段无法辨清内部桁架，属于局部结构可辨性限制；未见重大可见违约。",
+      "issues": [
+        {
+          "category": "metaphor_identity",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "完整通讯塔包含上段桁架、横梁、底部支架和类别圆牌；微小值仍按真实高度呈现。",
+          "observed_zh": "Others 的横梁与支架之间仅见极薄金属带，无法分辨独立的交叉桁架；圆牌、短连接杆、横梁和下部支架仍保留。",
+          "evidence_zh": "1600×2000 原图左一塔零线附近，顶横梁像素中心约 y=1547.67，零线约 y=1555，相距约7.33px。数值边界可定位，但内部杆件不可辨；不构成份额超差。",
+          "bbox_xyxy_normalized": [
+            0.145,
+            0.772,
+            0.255,
+            0.782
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接读取 image.png 像素：零线及40%线分别位于约 y=1555、595，满量程960px。五处橙色横梁像素行加权中心依次约1547.67、1348.44、1048.44、791.69、637.65，对应0.305%、8.607%、21.107%、31.805%、38.223%；最大点估计偏差约0.023个百分点，定位误差约±1px（±0.042个百分点），均在容差内。源码另证实高度按24px/百分点计算，未设置最小高度；此为代码证据，不替代像素检查。",
+      "uncertainties_zh": "Others 上段仅约7px，不能确认其内部所有桁架杆件在最终分辨率下仍可辨；满量程合格不等于微小结构清晰。未读取运行记录，无法独立确认 capture_render.py 的实际执行记录。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "五个类别和唯一用户份额系列齐全，顺序为 Others、Net A、Net B、Net C、Net D。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "依次显示0.3%、8.6%、21.1%、31.8%、38.2%，合计100%，与冻结数据一致；正小值未舍为零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "各圆牌同时显示对应类别和数值，通过短杆连接本塔顶部横梁，未见跨塔错配。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "共同零线至高亮横梁的像素高度符合0–40%线性轴，五项误差均远低于容差；圆牌和固定支架明确排除在编码外。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看 raw_01.png 及提取的塔身、支架素材，其金属杆件、铆钉、混凝土脚及圆牌纹理与成图吻合；render.py 对这些素材缩放合成并绘制数据文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据直接改变上段金属塔身和顶横梁高度；底部支架接塔脚，顶部短杆接圆牌，形成连续塔体。视角和前后层次一致，未见破坏读数的接缝或遮挡。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、SYNTHETIC DATA、百分比指标、刻度、所有类别和数值均可读；NETWORK GROUP 明示类别父级，底注说明固定支架和圆牌不编码。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "四座较高塔的上段桁架、横梁、下部支架及圆牌连接清楚。Others 保留圆牌到支架的连接，但极薄上段内部交叉杆件不可辨。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "Wireless subscriber shares、Wireless subscriber share (%)、网络分组标签及100%合计共同表达合成无线用户份额，未混入时间累计或其他统计含义。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留参考的无线用户份额主题、运营网络类别角色及塔高承载份额的融合关系；真实品牌、日期和旧数值按冻结输入替换，不要求沿用原统计。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "0.3%文字及高于零线约7px的横梁均可辨，未膨胀为最小高度；内部桁架已压缩为薄带，无法仅凭文字认定细部完整。"
+        }
+      },
+      "semantic_attribution_zh": "当前无线用户份额主题未丢失。真实运营商品牌和日期改为合成网络分组属于输入允许的改编，非输出语义错误。局部损失限于 Others 微小上段的桁架可辨性，与缩放及最终分辨率有关；不能据此判定数值错误或整体通讯塔隐喻丢失。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/66d5c96593ea1c",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -4163,92 +4280,94 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.95,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：五座由左至右增高的桁架通讯塔，各塔顶部以圆牌显示运营商及无线用户份额。最终图：五塔依次标为 Others、Net A、Net B、Net C、Net D，数值分别为 0.3%、8.6%、21.1%、31.8%、38.2%；底部支架位于共同 0% 线下，数据塔段在其上，顶部横梁以橙色强调并通过短杆连接圆牌。主题、百分比单位、SYNTHETIC DATA 和固定支架说明清楚。四座较高塔的横梁与刻度目测相符；Others 的极薄上段贴近零线，不能辨清独立桁架细节。未见标签遮挡或明显部件脱离。",
+      "summary_zh": "数据、标签绑定、共享比例和当前主题均正确，生成素材实质构成塔体。仅 Others 的微小上段无法辨清内部桁架，属于局部结构可辨性限制；未见重大可见违约。",
+      "issues": [
+        {
+          "category": "metaphor_identity",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "完整通讯塔包含上段桁架、横梁、底部支架和类别圆牌；微小值仍按真实高度呈现。",
+          "observed_zh": "Others 的横梁与支架之间仅见极薄金属带，无法分辨独立的交叉桁架；圆牌、短连接杆、横梁和下部支架仍保留。",
+          "evidence_zh": "1600×2000 原图左一塔零线附近，顶横梁像素中心约 y=1547.67，零线约 y=1555，相距约7.33px。数值边界可定位，但内部杆件不可辨；不构成份额超差。",
+          "bbox_xyxy_normalized": [
+            0.145,
+            0.772,
+            0.255,
+            0.782
+          ]
+        }
+      ],
+      "measurement_notes_zh": "直接读取 image.png 像素：零线及40%线分别位于约 y=1555、595，满量程960px。五处橙色横梁像素行加权中心依次约1547.67、1348.44、1048.44、791.69、637.65，对应0.305%、8.607%、21.107%、31.805%、38.223%；最大点估计偏差约0.023个百分点，定位误差约±1px（±0.042个百分点），均在容差内。源码另证实高度按24px/百分点计算，未设置最小高度；此为代码证据，不替代像素检查。",
+      "uncertainties_zh": "Others 上段仅约7px，不能确认其内部所有桁架杆件在最终分辨率下仍可辨；满量程合格不等于微小结构清晰。未读取运行记录，无法独立确认 capture_render.py 的实际执行记录。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "五个类别和唯一用户份额系列齐全，顺序为 Others、Net A、Net B、Net C、Net D。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "依次显示0.3%、8.6%、21.1%、31.8%、38.2%，合计100%，与冻结数据一致；正小值未舍为零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "各圆牌同时显示对应类别和数值，通过短杆连接本塔顶部横梁，未见跨塔错配。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "共同零线至高亮横梁的像素高度符合0–40%线性轴，五项误差均远低于容差；圆牌和固定支架明确排除在编码外。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看 raw_01.png 及提取的塔身、支架素材，其金属杆件、铆钉、混凝土脚及圆牌纹理与成图吻合；render.py 对这些素材缩放合成并绘制数据文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据直接改变上段金属塔身和顶横梁高度；底部支架接塔脚，顶部短杆接圆牌，形成连续塔体。视角和前后层次一致，未见破坏读数的接缝或遮挡。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、SYNTHETIC DATA、百分比指标、刻度、所有类别和数值均可读；NETWORK GROUP 明示类别父级，底注说明固定支架和圆牌不编码。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "四座较高塔的上段桁架、横梁、下部支架及圆牌连接清楚。Others 保留圆牌到支架的连接，但极薄上段内部交叉杆件不可辨。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "Wireless subscriber shares、Wireless subscriber share (%)、网络分组标签及100%合计共同表达合成无线用户份额，未混入时间累计或其他统计含义。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留参考的无线用户份额主题、运营网络类别角色及塔高承载份额的融合关系；真实品牌、日期和旧数值按冻结输入替换，不要求沿用原统计。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "0.3%文字及高于零线约7px的横梁均可辨，未膨胀为最小高度；内部桁架已压缩为薄带，无法仅凭文字认定细部完整。"
+        }
+      },
+      "semantic_attribution_zh": "当前无线用户份额主题未丢失。真实运营商品牌和日期改为合成网络分组属于输入允许的改编，非输出语义错误。局部损失限于 Others 微小上段的桁架可辨性，与缩放及最终分辨率有关；不能据此判定数值错误或整体通讯塔隐喻丢失。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/66d5c96593ea1c",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E49",
-    "source_case": "M044",
-    "name": "航空公司市值",
-    "conflict_type": "numeric_range",
-    "trial": "E49_baseline",
-    "condition": "baseline",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "e38c34c77c3fbb",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/e38c34c77c3fbb",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E49",
-    "source_case": "M044",
-    "name": "航空公司市值",
-    "conflict_type": "numeric_range",
-    "trial": "E49_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 1,
-    "image_available": true,
-    "review_id": "e38c34c77c3fbb",
-    "reused_identical_image": true,
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/e38c34c77c3fbb",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -4272,19 +4391,94 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.94,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以深色世界地图、七行朝右俯视飞机、白色尾迹和航空公司识别块表达市值。最终图的SYNTHETIC DATA、航空公司市值标题和USD billion清晰；Airline A至G顺序完整，七个金额与输入一致。飞机大小逐行减小，F/G位置与大小相同；共同零线及0–35刻度可见。A至E机身、双翼和尾部可见，F/G仅为很小的飞机轮廓。七行尾迹均在飞机左后方，未见明显文字遮挡或行间错绑。此观察已在读取源码前保存。",
+      "summary_zh": "数值、类别绑定和机鼻位置／实体面积双重编码符合要求，生成飞机与地图素材实质可见。仅末两行极小飞机的尾翼关系可辨性有限，未发现重大缺陷。",
+      "issues": [
+        {
+          "category": "metaphor_identity",
+          "severity": "minor",
+          "requirement_id": "M3",
+          "expected_zh": "按真实比例保留七架飞机的机身、双翼、尾翼及其连接关系；不为辨认而放大小值。",
+          "observed_zh": "F/G仍有机身与主翼轮廓，但尾翼与机身、尾迹的连接在原始分辨率下难以单独辨认，物体细部仅部分保留。",
+          "evidence_zh": "位于约(484,1508)和(484,1679)。源码推导的机体外框约20×14像素；原图中性亮像素阈值抽查约18×12像素。此处是可辨性限制，不是面积比例错误或整架飞机消失。",
+          "bbox_xyxy_normalized": [
+            0.236,
+            0.748,
+            0.248,
+            0.845
+          ]
+        }
+      ],
+      "measurement_notes_zh": "检查2000×2000原图。轴坐标由图面与源码交叉定位：零点x=492，35对应x=1622。直接在原图各机体区域筛取平均RGB>150、通道极差<35的亮像素，右边界约为1499、782、576、516、498、493、493；公式目标为1499.314、782.650、575.864、516.198、498.982、494.015、494.015。边界差不超过约1.02像素，即满量程0.10%。同阈值亮像素面积相对A约为1、0.28393、0.08237、0.02430、0.00642、0.00193、0.00193，目标为1、0.28854、0.08326、0.02402、0.00693、0.002、0.002。改变亮度阈值至170/190/210，按A归一化后的最大偏差仍小于满量程0.75%。这是实体亮区的近似抽查，不是精确透明度面积。源码另确认使用同一素材、平方根等比缩放和线性机鼻定位，未将尾迹算作飞机面积。",
+      "uncertainties_zh": "F/G目标机鼻仅在零点右侧约2.01像素，抗锯齿和亮度阈值足以显著影响其相对误差；满量程通过不代表微小值相对精度已被精确认证。未读取日志、自检或历史记录；capture_render.py的保存机制可核查，但每次实际执行记录未独立验证。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "七个类别、七架飞机、七个金额及单一市值系列完整，顺序为A至G。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "依次显示31.2、9.002447、2.597566、0.749502、0.216261、0.0624、0.0624；USD billion与合成数据声明清楚，无正值舍入为零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "每行左侧类别、飞机中心线、虚线引导和右侧金额一致；F/G相同数值对应相同位置与大小。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "原图端点与面积比例抽查未超出3%满量程容差；源码与可见几何一致。小值相对精度限制另列。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "raw_01中的机身、翼面与发动机纹理和raw_02地图均能在最终图对应；render.py加载这些素材并控制位置、尺寸及文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "飞机本体的面积和机鼻端点直接承载数值；尾迹位于机尾后方，地图位于底层，未被普通图形与旁置飞机替代。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、单位、全部类别和精确数值均可读，图下注明线性尺度及尾迹为装饰；无重大遮挡。"
+        },
+        "critical_structure": {
+          "status": "partial",
+          "evidence_zh": "深色地图、七行后置渐隐尾迹、朝右飞机、类别块和右侧金额完整。A至E机身与双翼、尾翼连接清楚；F/G保留飞机轮廓，但尾翼细部关系仅部分可辨。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题和副标题明确表达合成航空公司市值，类别为航空公司，指标单位为十亿美元；不是物体名或未解释的泛化分组。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "延续参考的航空公司市值主题及飞机承载金额的关系；真实品牌与旧金额替换为合成类别和当前值属于冻结输入许可，未要求复制旧统计。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "F/G飞机仍可定位并辨认机身和主翼，尾翼连接不够清楚；约2像素的机鼻零点距离不能仅靠标签证明细尺度几何精度。"
+        }
+      },
+      "semantic_attribution_zh": "航空公司市值的主题和统计角色未丢失；品牌、日期和原真实金额的替换属于输入许可的合成化，不是输出语义错误。局部不足集中在F/G真实缩小后的部件可辨性，主要受像素分辨率限制；未据此否定该方法或要求放大数据标记。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/6eaf1d19f0883f",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
+    "numeric_supported": true,
+    "joint_supported": false,
+    "critical_structure": "partial",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
     "joint_system_success": false,
     "confirmed_semantic_or_data_failure": false
   },
@@ -4308,20 +4502,80 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.94,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图为深色地图上的七行航空公司识别块、渐隐白尾迹、朝右飞机及金额。待评图保留这些关系；Airline A–G、七个金额、航空公司市值标题、SYNTHETIC DATA和USD billion均可读。飞机逐行缩小，F/G同样小；较大飞机部件清楚，F/G的部件及尾迹较难辨识。未见必需文字被遮挡。",
+      "summary_zh": "主要要求通过，未发现超容差数据偏差或核心语义损失。微小飞机细部仅部分可辨。review.json已保存并通过schema.json校验；未运行submit.py。",
+      "issues": [],
+      "measurement_notes_zh": "2000×2000原图中，轴零点和35刻度约位于x=492、1622。通过机身中心附近R≥160像素检测，七个机鼻右边缘约为1499、782、576、516、499、494、494像素；数据推导目标为1499.314、782.650、575.864、516.198、498.982、494.015、494.015。最大差约0.650像素，即满量程的0.06%。飞机局部框内亮色像素面积比例与目标最大相差约0.254个百分点。此面积检查受抗锯齿及少量辅助标记影响，不等同精确实体alpha面积。源码另行确认线性机鼻定位及平方根缩放，未以公式替代读图。",
+      "uncertainties_zh": "F/G高对比飞机区域各约25×15像素，细部、尾迹接触及微小值精确相对面积受分辨率和检测阈值限制。已核对capture_render.py源码，未独立验证历史执行记录。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "七行Airline A–G顺序正确，均有飞机、类别模块及金额。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "31.2、9.002447、2.597566、0.749502、0.216261、0.0624、0.0624全部准确，USD billion清楚，正值未舍入为零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "类别、机身中心、引导线与金额逐行对应；F/G同值对应相同位置和大小。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "原图端点最大偏差不足1像素，亮色区域面积比例交叉检查未发现超过规定容差的偏差。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看原始飞机和地图素材，其形状及纹理出现在成图主体中；代码控制飞机位置、缩放和文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "飞机面积与机鼻位置直接承载市值；尾迹位于机后，地图位于背景，未破坏遮挡关系。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、合成提示、类别、金额、单位、刻度及编码说明均可读。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "保留七行朝右俯视飞机、后方尾迹、类别块和右端金额；较大飞机的机身、双翼、尾翼连接明确，机鼻承担数值端点。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "主题明确为航空公司合成市值，类别带Airline父类，单位为美元十亿，没有时间、份额或累计口径混淆。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "延续航空公司市值主题及飞机与量值的融合关系；品牌和旧值替换为冻结输入规定的合成类别与数值。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "F/G保留约25×15像素的高对比飞机轮廓，机鼻在零点右侧约2像素；双翼、尾翼和淡尾迹的细节连接较难稳定辨识。"
+        }
+      },
+      "semantic_attribution_zh": "未发现输出丢失当前主题或核心数据关系。品牌和真实统计替换为合成类别与数值属于输入允许的改编。F/G细部限制归于真实比例缩小和像素分辨率，未据此要求放大标记或制造重大失败。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/4e0e3041c10cb0",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -4344,56 +4598,95 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.97,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以分层油桶替代人物面部，头巾在上后方，白须与肩部位于下方。成图显示合成声明、出口去向标题、百分比指标及100%总量；11个色层依次连接11行市场标签，子类别保留父市场名。桶沿、圆柱阴影及人物连接关系可见。右下肩部与辅助说明重叠，部分句首难辨，数据行未受影响。观察已在查看源码前保存。",
+      "summary_zh": "数据、绑定、桶脸融合结构及当前统计含义符合要求；右下辅助说明局部低对比，判为minor。review.json已保存并通过schema校验。",
+      "issues": [
+        {
+          "category": "layout_readability",
+          "severity": "minor",
+          "requirement_id": "LABELS",
+          "expected_zh": "读图说明中的层高定义和子类别关系应清楚可读。",
+          "observed_zh": "右下说明左端落在深色肩部上，部分深色字融入背景；类别和份额未受影响。",
+          "evidence_zh": "原图约x=1280–1428、y=1640–1788处，说明标题及Layer height、Subcategories、of their开头部分低对比。源码显示文字绘制在肩部之后，属于背景重叠。",
+          "bbox_xyxy_normalized": [
+            0.624,
+            0.82,
+            0.698,
+            0.894
+          ]
+        }
+      ],
+      "measurement_notes_zh": "原图2048×2000。在x≈810列，像素接缝约位于y=658、991、1048、1105、1159、1216、1273、1330、1387、1444、1501、1558，总高约900px。首层约333px、Market C约54px，其余约57px，符合37%、6%及约6.3333%的目标，低于3个百分点容差。接缝定位约有1–2px不确定性。其他两列亦显示相同层间距。源码核对确认H=900、界面为同一椭圆弧垂直平移，引线起点取所属层中点；未重渲染。",
+      "uncertainties_zh": "6.3333%与6.3336%的理论层高差仅0.0027px（源码推导），栅格图无法分辨，文本精度完整保留。未检查禁用执行记录，不能独立确认历史渲染均经capture_render.py保存；不作为成图缺陷。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "11层和11行去向标签完整，顺序、父市场及子类别与输入一致。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "37%、6%、8项6.3333%及1项6.3336%均正确，总计100%，合成声明和单位可读。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "各水平引线连接所属色层内部，颜色、顺序及数值一致。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "像素测得约333px、54px及57px的层高，符合900px总高下的目标份额；分界弧线一致平移。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "raw_01.png中的头巾、白须和双肩在成图中清晰匹配且构成主体；源码使用这些素材并控制桶身几何与文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "数据层直接组成桶形面部，头巾围绕上后方，桶底连接白须及双肩，未退化为旁置图表。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "必要标题、指标、单位、合成声明及全部类别数值清晰；辅助说明局部低对比另记minor。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "分层油桶占据人物面部，头巾、长白须、肩部及桶沿连接关系明确，圆柱阴影保留。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "石油出口去向、合成出口份额百分比及整桶代表全部出口的含义明确，类别保留父市场角色。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "保留出口去向份额和桶脸融合关系；原参考的伊朗、真实国家及1980年统计身份按冻结输入改为合成市场，属于允许改编。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "最薄层约54px，其余小层约57px，均可辨为连续圆柱侧壁分层，边界及引线明确。"
+        }
+      },
+      "semantic_attribution_zh": "真实国家及时期被合成市场替换来自冻结输入，不属于输出语义损失。输出保留桶脸融合及层高承载出口份额的关系；局部损失仅为辅助说明可读性。未推断参考人物的具体政治含义；末位份额差异不可见归于像素分辨率限制。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/6c8e7aa7ed1192",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E10",
-    "source_case": "M035",
-    "name": "石油出口去向份额",
-    "conflict_type": "category_count",
-    "trial": "E10_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "8fa033b924c585",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/8fa033b924c585",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "pass",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -4822,6 +5115,585 @@
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/89bcb92fedd5ac",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E51",
+    "source_case": "M048",
+    "name": "各观测年的造船净吨产量",
+    "conflict_type": "numeric_range",
+    "trial": "E51_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "02beb1729f20df",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/02beb1729f20df",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E51",
+    "source_case": "M048",
+    "name": "各观测年的造船净吨产量",
+    "conflict_type": "numeric_range",
+    "trial": "E51_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "02beb1729f20df",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/02beb1729f20df",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E31",
+    "source_case": "M053",
+    "name": "分来源的各期海洋塑料排放量",
+    "conflict_type": "trend_shape",
+    "trial": "E31_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "bb0a5e3fba91df",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/bb0a5e3fba91df",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E31",
+    "source_case": "M053",
+    "name": "分来源的各期海洋塑料排放量",
+    "conflict_type": "trend_shape",
+    "trial": "E31_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 3,
+    "image_available": true,
+    "review_id": "030b71b1db7e7a",
+    "reproduction": {
+      "round": 3,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/030b71b1db7e7a",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E31",
+    "source_case": "M053",
+    "name": "分来源的各期海洋塑料排放量",
+    "conflict_type": "trend_shape",
+    "trial": "E31_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "369977719c0147",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/369977719c0147",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E31",
+    "source_case": "M053",
+    "name": "分来源的各期海洋塑料排放量",
+    "conflict_type": "trend_shape",
+    "trial": "E31_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "6674c367586d1e",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/6674c367586d1e",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E11",
+    "source_case": "M036",
+    "name": "各地区意面产量",
+    "conflict_type": "category_count",
+    "trial": "E11_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "6e398fc9f7e8ba",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/6e398fc9f7e8ba",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E11",
+    "source_case": "M036",
+    "name": "各地区意面产量",
+    "conflict_type": "category_count",
+    "trial": "E11_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "6e398fc9f7e8ba",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/6e398fc9f7e8ba",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E11",
+    "source_case": "M036",
+    "name": "各地区意面产量",
+    "conflict_type": "category_count",
+    "trial": "E11_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "4588688bd0b23a",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/4588688bd0b23a",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E11",
+    "source_case": "M036",
+    "name": "各地区意面产量",
+    "conflict_type": "category_count",
+    "trial": "E11_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 3,
+    "image_available": true,
+    "review_id": "ff03d5c84c64d8",
+    "reproduction": {
+      "round": 3,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/ff03d5c84c64d8",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E32",
+    "source_case": "M055",
+    "name": "人均经济产出与跳水者姿态",
+    "conflict_type": "trend_shape",
+    "trial": "E32_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "26ee17ca8cc890",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/26ee17ca8cc890",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E32",
+    "source_case": "M055",
+    "name": "人均经济产出与跳水者姿态",
+    "conflict_type": "trend_shape",
+    "trial": "E32_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "03175a390c3f8d",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/03175a390c3f8d",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E32",
+    "source_case": "M055",
+    "name": "人均经济产出与跳水者姿态",
+    "conflict_type": "trend_shape",
+    "trial": "E32_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "19c270686f6c10",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/19c270686f6c10",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E32",
+    "source_case": "M055",
+    "name": "人均经济产出与跳水者姿态",
+    "conflict_type": "trend_shape",
+    "trial": "E32_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "b975041b549a9c",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/b975041b549a9c",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E52",
+    "source_case": "M050",
+    "name": "宗教信仰及无归属人口构成",
+    "conflict_type": "numeric_range",
+    "trial": "E52_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "16617a89d05f84",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/16617a89d05f84",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E52",
+    "source_case": "M050",
+    "name": "宗教信仰及无归属人口构成",
+    "conflict_type": "numeric_range",
+    "trial": "E52_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "16617a89d05f84",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/16617a89d05f84",
     "numeric_supported": null,
     "joint_supported": null,
     "critical_structure": "unreviewed",

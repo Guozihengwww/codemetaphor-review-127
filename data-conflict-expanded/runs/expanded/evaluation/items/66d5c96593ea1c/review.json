@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：五座由左至右增高的桁架通讯塔，各塔顶部以圆牌显示运营商及无线用户份额。最终图：五塔依次标为 Others、Net A、Net B、Net C、Net D，数值分别为 0.3%、8.6%、21.1%、31.8%、38.2%；底部支架位于共同 0% 线下，数据塔段在其上，顶部横梁以橙色强调并通过短杆连接圆牌。主题、百分比单位、SYNTHETIC DATA 和固定支架说明清楚。四座较高塔的横梁与刻度目测相符；Others 的极薄上段贴近零线，不能辨清独立桁架细节。未见标签遮挡或明显部件脱离。",
+  "summary_zh": "数据、标签绑定、共享比例和当前主题均正确，生成素材实质构成塔体。仅 Others 的微小上段无法辨清内部桁架，属于局部结构可辨性限制；未见重大可见违约。",
+  "issues": [
+    {
+      "category": "metaphor_identity",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "完整通讯塔包含上段桁架、横梁、底部支架和类别圆牌；微小值仍按真实高度呈现。",
+      "observed_zh": "Others 的横梁与支架之间仅见极薄金属带，无法分辨独立的交叉桁架；圆牌、短连接杆、横梁和下部支架仍保留。",
+      "evidence_zh": "1600×2000 原图左一塔零线附近，顶横梁像素中心约 y=1547.67，零线约 y=1555，相距约7.33px。数值边界可定位，但内部杆件不可辨；不构成份额超差。",
+      "bbox_xyxy_normalized": [
+        0.145,
+        0.772,
+        0.255,
+        0.782
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接读取 image.png 像素：零线及40%线分别位于约 y=1555、595，满量程960px。五处橙色横梁像素行加权中心依次约1547.67、1348.44、1048.44、791.69、637.65，对应0.305%、8.607%、21.107%、31.805%、38.223%；最大点估计偏差约0.023个百分点，定位误差约±1px（±0.042个百分点），均在容差内。源码另证实高度按24px/百分点计算，未设置最小高度；此为代码证据，不替代像素检查。",
+  "uncertainties_zh": "Others 上段仅约7px，不能确认其内部所有桁架杆件在最终分辨率下仍可辨；满量程合格不等于微小结构清晰。未读取运行记录，无法独立确认 capture_render.py 的实际执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五个类别和唯一用户份额系列齐全，顺序为 Others、Net A、Net B、Net C、Net D。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次显示0.3%、8.6%、21.1%、31.8%、38.2%，合计100%，与冻结数据一致；正小值未舍为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各圆牌同时显示对应类别和数值，通过短杆连接本塔顶部横梁，未见跨塔错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同零线至高亮横梁的像素高度符合0–40%线性轴，五项误差均远低于容差；圆牌和固定支架明确排除在编码外。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看 raw_01.png 及提取的塔身、支架素材，其金属杆件、铆钉、混凝土脚及圆牌纹理与成图吻合；render.py 对这些素材缩放合成并绘制数据文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据直接改变上段金属塔身和顶横梁高度；底部支架接塔脚，顶部短杆接圆牌，形成连续塔体。视角和前后层次一致，未见破坏读数的接缝或遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、百分比指标、刻度、所有类别和数值均可读；NETWORK GROUP 明示类别父级，底注说明固定支架和圆牌不编码。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "四座较高塔的上段桁架、横梁、下部支架及圆牌连接清楚。Others 保留圆牌到支架的连接，但极薄上段内部交叉杆件不可辨。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Wireless subscriber shares、Wireless subscriber share (%)、网络分组标签及100%合计共同表达合成无线用户份额，未混入时间累计或其他统计含义。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的无线用户份额主题、运营网络类别角色及塔高承载份额的融合关系；真实品牌、日期和旧数值按冻结输入替换，不要求沿用原统计。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "0.3%文字及高于零线约7px的横梁均可辨，未膨胀为最小高度；内部桁架已压缩为薄带，无法仅凭文字认定细部完整。"
+    }
+  },
+  "semantic_attribution_zh": "当前无线用户份额主题未丢失。真实运营商品牌和日期改为合成网络分组属于输入允许的改编，非输出语义错误。局部损失限于 Others 微小上段的桁架可辨性，与缩放及最终分辨率有关；不能据此判定数值错误或整体通讯塔隐喻丢失。"
+}

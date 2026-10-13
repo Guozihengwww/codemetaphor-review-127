@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.94,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为深色地图上的七行航空公司识别块、渐隐白尾迹、朝右飞机及金额。待评图保留这些关系；Airline A–G、七个金额、航空公司市值标题、SYNTHETIC DATA和USD billion均可读。飞机逐行缩小，F/G同样小；较大飞机部件清楚，F/G的部件及尾迹较难辨识。未见必需文字被遮挡。",
+  "summary_zh": "主要要求通过，未发现超容差数据偏差或核心语义损失。微小飞机细部仅部分可辨。review.json已保存并通过schema.json校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "2000×2000原图中，轴零点和35刻度约位于x=492、1622。通过机身中心附近R≥160像素检测，七个机鼻右边缘约为1499、782、576、516、499、494、494像素；数据推导目标为1499.314、782.650、575.864、516.198、498.982、494.015、494.015。最大差约0.650像素，即满量程的0.06%。飞机局部框内亮色像素面积比例与目标最大相差约0.254个百分点。此面积检查受抗锯齿及少量辅助标记影响，不等同精确实体alpha面积。源码另行确认线性机鼻定位及平方根缩放，未以公式替代读图。",
+  "uncertainties_zh": "F/G高对比飞机区域各约25×15像素，细部、尾迹接触及微小值精确相对面积受分辨率和检测阈值限制。已核对capture_render.py源码，未独立验证历史执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七行Airline A–G顺序正确，均有飞机、类别模块及金额。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "31.2、9.002447、2.597566、0.749502、0.216261、0.0624、0.0624全部准确，USD billion清楚，正值未舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、机身中心、引导线与金额逐行对应；F/G同值对应相同位置和大小。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "原图端点最大偏差不足1像素，亮色区域面积比例交叉检查未发现超过规定容差的偏差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始飞机和地图素材，其形状及纹理出现在成图主体中；代码控制飞机位置、缩放和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "飞机面积与机鼻位置直接承载市值；尾迹位于机后，地图位于背景，未破坏遮挡关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成提示、类别、金额、单位、刻度及编码说明均可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "保留七行朝右俯视飞机、后方尾迹、类别块和右端金额；较大飞机的机身、双翼、尾翼连接明确，机鼻承担数值端点。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题明确为航空公司合成市值，类别带Airline父类，单位为美元十亿，没有时间、份额或累计口径混淆。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "延续航空公司市值主题及飞机与量值的融合关系；品牌和旧值替换为冻结输入规定的合成类别与数值。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "F/G保留约25×15像素的高对比飞机轮廓，机鼻在零点右侧约2像素；双翼、尾翼和淡尾迹的细节连接较难稳定辨识。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出丢失当前主题或核心数据关系。品牌和真实统计替换为合成类别与数值属于输入允许的改编。F/G细部限制归于真实比例缩小和像素分辨率，未据此要求放大标记或制造重大失败。"
+}
