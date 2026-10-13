@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以五只彩色热气球的大小和吊篮高度表示两项薪酬。成图中Company A至E顺序完整，五个气囊逐渐缩小，吊篮位置随员工工资变化。十个数值、USD/year、SYNTHETIC DATA和双尺度图例清楚；五组气囊、细绳和吊篮均可辨。",
+  "summary_zh": "数据、绑定及热气球融合结构符合冻结要求，未发现可见缺陷。review.json已保存并通过schema校验；按追加要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "原图1980×2000。成图色差分割得到A至E气囊面积约287693、83185、16724、3646、840平方像素。以素材掩膜和源码参考高度推导的满量程面积约303625平方像素为基准，最大估算偏差约满量程0.21%，不同分割阈值下最大约0.26%。篮体像素中点依次约1023.5、1159.5、1015.5、1271.5、1415.5；与目标中心相差约0.5像素，即工资满量程0.08%。",
+  "uncertainties_zh": "色差分割受抗锯齿及少量相连绳线影响，不是精确透明度积分。E气囊面积在不同阈值下约826–856平方像素，不能据此断言精确相对误差。已查看capture_render.py源码，但未独立核验其实际调用，未读取禁止的执行记录或自检。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五家公司、五气囊、五吊篮及两组薪酬完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "CEO值20,800,000、6,000,000、1,200,000、260,000、60,000；员工值78,000、61,000、79,000、47,000、29,000，全部符合输入。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "CEO标签绑定对应气囊，员工数值紧邻对应吊篮；公司标签与竖向导线一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立成图像素估计支持面积比例与工资高度映射，均在满量程3%容差内；源码控制同模板等比缩放和固定大小吊篮定位。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "所供原始气囊素材的布纹、纵向分瓣和明暗在成图主体中明显可见。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "气囊实体面积承载CEO薪酬，悬篮中心距共同地面的高度承载员工工资，物体本身参与编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成数据标记、数值、公司名、单位及图例均清楚，无必要标签遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "五只热气球共享天空与绿地，圆鼓收尖气囊经细绳连接下方吊篮，分类颜色及连接关系保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达公司年度CEO报酬与员工工资中位数比较，单位USD/year；两套独立尺度及C工资最高的说明正确。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考图的薪酬统计角色及气囊大小—吊篮高度关系，未强行沿用旧数值或排序。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "D气囊约70×74像素、E约34×36像素；原尺寸仍可辨收尖轮廓、分瓣、绳线和吊篮，未发现人为放大最小面积。"
+    }
+  },
+  "semantic_attribution_zh": "公司身份和数值合成化属于冻结输入允许的改编，比较主题与统计角色未变，未观察到输出语义丢失。最小气囊的精确面积不确定性来自分辨率和分割方法，不等同于结构失败。"
+}

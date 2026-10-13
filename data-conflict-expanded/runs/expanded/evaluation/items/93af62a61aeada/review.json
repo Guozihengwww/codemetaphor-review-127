@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以杯内彩色液层表示家庭室内用水，左侧用途引线接入各层，水龙头与水滴位于杯口上方。待评图保留水龙头、下落水滴、椭圆杯口、收窄杯壁和厚杯底；八层液体位于杯内，各层有引线对应八项用途。可读数值依次为22%、18%、20%、17%、13%、6%、1.5%、2.5%；底部深蓝与浅蓝灰薄层可分辨。图面显示SYNTHETIC DATA、家庭室内用水标题、份额指标与%单位，并说明层高编码、杯宽/体积/水滴不编码。未见明显遮挡文字或液体越出杯壁。",
+  "summary_zh": "八项数值、顺序、引线绑定和液层高度均符合冻结数据。杯内分层、水龙头向杯口滴水及玻璃边界保留，家庭室内用水份额与合成数据属性清楚，未发现实质性可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1680×2000待评图像素，在x=1050–1199中央条带检测颜色跳变：液体边界约为y=700、920、1100、1300、1470、1600、1660、1675、1700。共同总高1000像素，各层高约220、180、200、170、130、60、15、25像素，分别对应22%、18%、20%、17%、13%、6%、1.5%、2.5%，未见超过3个百分点的偏差。抗锯齿与高光使边界定位存在约1–2像素不确定性。源码另证实使用同一总高按累计份额划分多边形，并以各层中点确定引线终点；这是代码证据，与像素测量分开核验。",
+  "uncertainties_zh": "玻璃反光改变局部颜色与边缘观感，测量取杯内中央区域；不将渐缩杯宽解释为面积或体积编码。已查阅capture_render.py源码，但按审查限制未读取运行记录、历史图或自检，无法独立确认完整捕获执行历史；这不构成可见输出缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八项用途按输入顺序完整出现，八层液体、八条用途引线及全部数值可见；合成标识、指标与单位齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次显示Toilet 22%、Clothes Washer 18%、Shower 20%、Faucets 17%、Leaks 13%、Bath 6%、Dishwasher 1.5%、Other 2.5%，合计100%，与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各用途引线终点落入相应颜色层；底部Bath、Dishwasher、Other引线分开接入橙色、深蓝色、浅蓝灰色层，没有互换或跨层终点。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "中央像素边界形成220、180、200、170、130、60、15、25像素八层，共1000像素，符合线性份额。图面明确仅层高编码，杯宽、体积及水滴数量不编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看assets/raw_01.png，其玻璃反光、杯口杯底、金属龙头和水滴与成图对应，构成大面积可见主体；prepare_assets.py裁切这些部件，render.py控制液层多边形、文字及引线。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色数据层被玻璃侧壁包围，前景杯壁高光覆盖其边缘，最底层接近杯内底部而厚杯底位于数据区下方；龙头出水口与下落水滴对准杯口内部，数据直接承载于杯内。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下八项名称、数值及%均清晰；底部小项标签错开并以折线对应，未见遮挡。SYNTHETIC DATA、标题和层高编码说明可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "可见连接完整的龙头手柄、阀体及朝下出水口，水滴位于出水口下方并朝向椭圆杯口；杯壁围住分层液体，杯底承接其下缘，各用途引线接入杯内。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题Indoor household water use及副标题Synthetic share of indoor household water use (%)共同说明主题、指标和单位；用途类别有明确家庭用水语义，100% TOTAL与页脚说明支持单系列总份额的解读。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考图的家庭室内用水用途角色、杯内份额分层及水龙头滴水关系。冻结输入以合成值替换原数值，成图明确标示，未要求或暗示沿用原真实统计。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下Dishwasher深蓝薄层约15像素，Other浅蓝灰薄层约25像素，两者及其共同边界可分辨；引线分别落在层内，浅色Other仍位于玻璃底部结构上方，未仅靠数字表示或人为放大。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题与参考主题一致；真实统计改为合成份额属于冻结输入允许的数据替换，成图已有明确归属标识，未见输出造成的主题或类别角色丢失。液体高度承担数据，玻璃宽度、体积和水滴仅承担物体身份。小层仍可见，边界精度受约1–2像素抗锯齿与反光限制。"
+}

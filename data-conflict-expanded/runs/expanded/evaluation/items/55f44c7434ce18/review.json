@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为悬挂的拼接长袖上衣，八类标签在左侧连接布料色层。最终图保留白领、门襟纽扣、木衣架、金属挂钩、袖口和下摆；八层颜色直接铺在衣身与袖子上，袖身遮挡及褶皱可见。八个类别与百分数清楚可读，标题、SYNTHETIC DATA、合成人口份额单位及面积编码说明完整。",
+  "summary_zh": "通过。八类数值、顺序和标签绑定正确；可见布料面积与目标份额相符，保留了悬挂上衣的结构及布料承载人口构成的融合关系，未发现必要要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "在1460×2000原图检查。使用已目视核对的cloth_mask轮廓及源码投影位置，以最终PNG的色差定位七条分层边界，近似面积份额依次为11.092、22.374、9.781、6.937、10.078、12.534、9.682、17.522%；相对目标最大偏差约0.322个百分点，低于3个百分点容差。这是基于最终像素和素材轮廓的估算，并非读取生成器自检。源码另显示按可见布料并集的加权面积分位数划分，而非按带高分配。",
+  "uncertainties_zh": "面积估算依赖素材轮廓与色差边界，抗锯齿、纹样及褶皱会造成局部定位误差，数值不表示精确分割真值。按限制未检查生成日志、渲染历史或自检，因此不对capture_render.py的历史执行完整性作断言。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列八个职业及长期失业类别全部出现，顺序与输入一致；八层布料及08 CATEGORIES相符。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见百分数依次为11.1%、22.4%、9.8%、6.9%、10.1%、12.6%、9.9%、17.2%，逐项匹配输入。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个类别与百分数同排，外置引线止于对应色层左缘；未见错连或跨层歧义。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终图边界面积估算的最大偏差约0.322个百分点；白领、衣架与背景排除，袖身交叠按可见轮廓只计一次。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png的衣架、白领、纽扣、褶皱及袖口形态在最终图中可对应，素材实质构成主体。render.py读取数据、划分面积并绘制文字；capture_render.py提供完整渲染保存路径。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区域就是上衣的可见布料；纹理、纽扣、门襟及折痕保留在各色层内，白领和衣架承担非数据结构。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、类别、百分数、人口份额单位及面积编码说明均清晰，无裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "金属挂钩连接木衣架，衣架位于白领后并支撑肩部；门襟向下连接衣身，两袖接肩并自然垂下。左袖叠在衣身前，右袖与身之间的空隙保留，袖口和下摆完整。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Occupational composition及副标题明确职业群体与长期失业；Share of the synthetic population (%)明确指标、总体和单位。八类组成100%的解释与输入一致。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的职业层级及长期失业类别含义，并保留以拼接上衣布料表达份额的关系；旧百分数由当前合成数值替换符合冻结要求。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小份额6.9%的深蓝细纹层在原尺寸清楚可辨，中央x约950处局部厚度约69像素，延伸至两袖且仍显布料纹理；该厚度只用于判断可见性。"
+    }
+  },
+  "semantic_attribution_zh": "本案未改变职业人口构成主题。合成数值与合成人口声明来自冻结输入，不是输出丢失真实统计语义。参考未明确调查年份或抽样范围，不额外推定；当前图的物体结构、类别角色和面积承载关系均得到保留。"
+}
