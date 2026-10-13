@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：红色护框包围顶部阀门并与圆肩瓶体相接，水平彩色带连续组成瓶身，右侧有体积阴影；主题为按国家划分的天然气储量。指定图：标题为GAS RESERVES BY REGION，显示SYNTHETIC DATA、Illustrative gas reserves (tcm)、总量192.0及18个地区类别。红色护框、阀门、圆肩、直身和右侧阴影清楚可见。Region A至E及Other Regions标在带内，Region F至Q用两侧引线连接，底部窄带均能分辨；未见明显标签遮挡、带间空隙或数据带脱离瓶体。此记录写于查看渲染源码之前。",
+  "summary_zh": "18个地区的数值、顺序、标签绑定及带高均符合当前数据。气瓶结构与数据融合关系完整，未见实质可见缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在1440×1991原图上，瓶肩最高数据线约y=565，瓶底y=1805，H≈1240 px。像素色度跃变检测得到17条内部边界，各带份额偏差最大约0.083个百分点；三个横向取样区的分界位置一致。源码另确认累积数值控制水平分界，生成素材提供轮廓、纹理和阴影；源码核查未代替像素测量。",
+  "uncertainties_zh": "抗锯齿使边界定位存在约1 px不确定性，最小带的亚像素相对精度不能仅凭整数边界确认。按限制未读取运行历史或自检，无法独立确认所有完整渲染是否均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A至Q及Other Regions共18项、18条连续色带均存在；总量192.0 tcm完整显示。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "18项可见数值均与data.json一致；显示的百分比符合除以192后保留一位小数。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A至E及Other Regions标在对应带内；F至Q的12条引线分别连接对应色带，顺序正确，未见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "数据高度约1240 px，各带份额偏差最大约0.083个百分点，低于3个百分点容差；阴影未移动水平分界。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "图面注明合成数据及本地data.json来源。已查看原始及派生素材，其护框、阀门、金属纹理和阴影在成图主体中可辨认。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色带连续构成同一个圆肩直身瓶体，纹理跨带延续，护框和阀门与瓶肩连接，未见破坏融合关系的错位。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、指标、单位释义、总量及18组类别数值清晰；外置标签无明显重叠，高度编码说明可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "红色横梁和立柱围住阀门，阀杆通过瓶口接入圆肩；立柱与肩部接触，下方直身由18条水平色带组成，右侧阴影表现体积。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Illustrative gas reserves (tcm)、单位释义及合成声明明确当前主题和指标；地区角色、总量及份额解释均可理解。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "天然气储量按地理类别汇成气瓶的关系保留。真实国家、已探明口径和日期按冻结输入改编为合成地区示例储量，属于输入授权。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "底部小带仍是可区分的瓶身区域，各有独立引线。最小Region Q带约12–13 px，目标12.92 px，未消失或仅剩数字标签。"
+    }
+  },
+  "semantic_attribution_zh": "当前地区角色、储量指标、单位和份额解释未见输出丢失。真实国家统计改为合成地区示例属于冻结输入允许的改编，参考意义部分保留不构成输出缺陷。最小带保留可见瓶身关系，其精细相对测量受像素分辨率限制。"
+}

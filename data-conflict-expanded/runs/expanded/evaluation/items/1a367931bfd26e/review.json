@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：背面举球运动员与白色年度折线叠合，保留球、双臂和球衣。最终图：双手接触头顶篮球，两臂连接肩膀，折线覆盖球衣下部。2010—2024年15个点和全部数值可辨，纵轴0—1,500。主题、平均每场观众指标、千人单位和SYNTHETIC DATA清楚可读；最小值163的点与相邻折线可区分。",
+  "summary_zh": "通过。数据、年份绑定、线性几何及人物叠合关系符合要求。review.json已保存并通过schema校验；按追加要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析1600×2000图像，以可见轴线y=1740（0）与y=770（1500）校准15个紫色点中心。首点换算1360.7，目标1360；最小点163.3，目标163；末点247.2，目标246。最大偏差约1.23千人/场，即0.082%满量程，低于3%容差。相邻年份点距约92.7—93.8像素。源码另确认共用线性映射；上述数值来自像素检查。",
+  "uncertainties_zh": "抗锯齿和颜色阈值使中心测量约有1像素不确定性。素材清单及图像对应支持生图素材使用，未核验生成工具调用记录；已检查capture_render.py的保存逻辑，但未核验实际调用链。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "15个年度类别、单一系列、15个点和14段折线完整，必要标题、单位及合成声明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部15个数值与data.json一致，纵轴0至1,500每300一格。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各点与对应年份垂直对齐，邻近数值上下交错排列，无明显错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部点的最大像素测量偏差约0.082%满量程；年份间距均匀，升降关系正确。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始及双色素材的篮球、双手、辫发和球衣与最终主体对应，使用面积显著。render.py合成素材并控制数据点、折线和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "折线实际覆盖球衣，保留参考叠合关系。数值由二维点位高度承担，无须随球衣透视变形。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下主题、指标、单位、全部年份及数值清晰，无必要文字或点线被遮断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "球位于头顶，两手接触球，双臂经肘部连接肩膀，头部与球衣完整可辨；上半身裁切与参考相容，折线穿越球衣区域。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题明确为女子篮球观众，注明每场平均值、千人单位与观察年份，合成声明完整，未误写为累计统计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留女子篮球年度平均观众及举球叠合含义。原参考的WNBA常规赛ESPN口径和上升宣传由冻结输入泛化为当前合成主题，属于允许改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值163的点距零线约105.6像素，紫色内部约10×10像素，白边和相邻折线可辨，未压零或抬高小值。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、年度角色、平均每场口径、单位及叠合结构均保留。参考特定联赛、转播范围和上升叙事的变化归于冻结输入允许的改编，不归因于输出丢失。固定物体结构与定量约束兼容；分辨率仅限制亚像素精度。"
+}
