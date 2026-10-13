@@ -1810,164 +1810,95 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/cc14b03747f057",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E04",
-    "source_case": "M019",
-    "name": "失业人口年龄、性别及族群构成",
-    "conflict_type": "category_count",
-    "trial": "E04_conflict",
-    "condition": "conflict",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "097797c5d3baab",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.98,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以焦木主干、枝梢和火色下段承载年度堆叠高度。待评图可见2001–2023年23棵焦木，橙色基部与黑色上段连续相接。主题、SYNTHETIC DATA、两来源图例和百万公顷单位清楚；下方列有全部年度数值。2008年29.7最高，2023年13.0最低；2023年的1.7仍有可见橙色基部。右上年份之间似有缺字方框。",
+      "summary_zh": "数据、堆叠几何和焦木融合关系均保留，仅右上年份间箭头显示为缺字框。已保存review.json并通过schema校验；未运行submit.py。",
+      "issues": [
+        {
+          "category": "layout_readability",
+          "severity": "minor",
+          "requirement_id": "LABELS",
+          "expected_zh": "右上端点年份对比中的箭头应正常显示。",
+          "observed_zh": "2001与2023之间显示缺字方框；年份、下方数值箭头及完整年度轴仍清楚。",
+          "evidence_zh": "原图右上可见方框。源码指定该处为→，字体字符表确认Sans-Bold.ttf不含U+2192。横向范围约x=1072–1085为字体度量推算，并非像素测量。",
+          "bbox_xyxy_normalized": [
+            0.669,
+            0.086,
+            0.68,
+            0.099
+          ]
+        }
       ],
-      "returncode": 0
+      "measurement_notes_zh": "直接扫描1600×2000的image.png，未重渲染。像素检测确认0与30水平线分别位于y=1590、540，对应35像素/百万公顷，3%满量程容差为31.5像素。检出23个橙色基部，接点对目标位置最大偏差0.5像素。目标位置限定搜索窗后，树尖像素检测在RGB各通道低于130和70两种阈值下，最大偏差分别为3.5和6.5像素。2023年火色段约59像素，目标59.5像素。目标坐标由冻结数据与刻度推算，检测边界来自最终图像。",
+      "uncertainties_zh": "细枝抗锯齿使树尖边界随阈值变化数像素，不影响容差结论。未读取日志、自检或历史结果，未重新渲染，因此未独立确认capture_render.py的历史执行记录。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "23个年份、23棵树、46个来源值及23个年度合计均完整。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "逐年数值与data.json一致；合计为当年两来源之和，2008最高29.7及端点28.2、13.0正确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "年份、树和表格列对应；橙色下段绑定火灾损失，黑色上段绑定非火灾损失。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "共同0–30线性标尺；最终像素检测的接点及树尖偏差均低于31.5像素容差，未发现额外加高或跨年累计。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看原始焦木及烟火素材，枝形和火焰纹理在最终主体中可辨；源码裁切素材并控制年度总高和火灾分界。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "火色基部与同一黑色树干相接，枝梢连于主干，树体直接承载数据。未见破坏解释的遮挡、层序、透视或接缝问题。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "必要主题、合成声明、单位、图例、年份和数据表清楚完整；辅助箭头缺字不影响必要标签理解。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "逐年主干、枝梢和火色基部完整；橙黑交界表示火灾量，树尖至基线表示总量，黑色上段表示非火灾量。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "年度森林损失、火灾与非火灾来源、百万公顷单位及一树一年均明确，表达当年两来源相加。"
+        },
+        "reference_meaning": {
+          "status": "pass",
+          "evidence_zh": "保留森林损失主题、两来源角色及焦木堆叠关系；旧恶化趋势句和真实峰值按冻结要求无需沿用。"
+        },
+        "small_mark_visibility": {
+          "status": "pass",
+          "evidence_zh": "最小火灾值1.7仍对应约59像素高、20像素宽的可见火色基部，与黑色树干连续相接，未见最小高度抬升。"
+        }
+      },
+      "semantic_attribution_zh": "当前主题及两来源统计含义完整保留。合成数值、2008峰值和端点下降由冻结输入决定，不属于输出语义丢失；未发生主题替换。输出损失仅为辅助箭头字形，细枝端点存在数像素的抗锯齿不确定性。"
     },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/097797c5d3baab",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E04",
-    "source_case": "M019",
-    "name": "失业人口年龄、性别及族群构成",
-    "conflict_type": "category_count",
-    "trial": "E04_conflict",
-    "condition": "conflict",
-    "stage": "final",
-    "round": 3,
-    "image_available": true,
-    "review_id": "d0acde77fa890c",
-    "reproduction": {
-      "round": 3,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/d0acde77fa890c",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E04",
-    "source_case": "M019",
-    "name": "失业人口年龄、性别及族群构成",
-    "conflict_type": "category_count",
-    "trial": "E04_baseline",
-    "condition": "baseline",
-    "stage": "first",
-    "round": 1,
-    "image_available": true,
-    "review_id": "b739a46bb8303e",
-    "reproduction": {
-      "round": 1,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/b739a46bb8303e",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
-    "confirmed_semantic_or_data_failure": false
-  },
-  {
-    "case": "E04",
-    "source_case": "M019",
-    "name": "失业人口年龄、性别及族群构成",
-    "conflict_type": "category_count",
-    "trial": "E04_baseline",
-    "condition": "baseline",
-    "stage": "final",
-    "round": 2,
-    "image_available": true,
-    "review_id": "a82091b784abf4",
-    "reproduction": {
-      "round": 2,
-      "render_succeeded": true,
-      "pixel_identical": true,
-      "frozen_dependencies_restored": [
-        "reference.png"
-      ],
-      "returncode": 0
-    },
-    "quality": "unreviewed",
-    "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
-    "confirmation": null,
-    "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/a82091b784abf4",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "review_path": "runs/expanded/evaluation/retries/cc14b03747f057",
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "pass",
+    "small_mark_visibility": "pass",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -1990,20 +1921,80 @@
       ],
       "returncode": 0
     },
-    "quality": "unreviewed",
+    "quality": "pass",
     "execution": "ok",
-    "review": null,
-    "primary_system_success": false,
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以军费时间曲线叠加三架朝右上飞行的战机及向左下延伸的尾迹。最终图保留三架完整战机，机翼、机身、尾翼相连，尾迹接续机尾，曲线叠于其前方；标题为DEFENCE SPENDING BY REGION，显示Annual expenditure、USD billion (synthetic)及SYNTHETIC DATA。年份2003–2023、纵轴0–1000可读；A标934→438，B标306→34，右侧列出其余系列2023值，底部提供八组首末值。低值曲线集中在零轴上方，局部交叉，细线辨识需结合原始像素核对。",
+      "summary_zh": "未发现违反冻结要求的重大可见缺陷。八组年度曲线、端点数值、单位及合成数据语义一致，完整战机与尾迹保持参考的背景叠合关系。局部同值重合限制了小标记的独立辨认。",
+      "issues": [],
+      "measurement_notes_zh": "对1600×2000的image.png进行原始像素检查。可见纵轴网格1000、800、600、400、200、0分别位于y≈493、732、972、1211、1450、1690；检测到从x=144至1188的21个年度刻度。结合这些边界，数据目标坐标为x=144+52.2×(年份−2003)、y=1690−1.197×数值，与源码一致。168个目标点附近有165处找到对应颜色笔画，匹配像素距目标点的纵向偏移最大1.54px；这是笔画支持检查，不是全部中心线误差测量。三处未独立匹配均有另一系列同值重合。C的2023端点对应色像素位于y=1667–1671，目标中心1669.65为映射推导，零轴实测y=1690。源码读取的数据与冻结data.json一致。",
+      "uncertainties_zh": "C在2017年、D在2013年、F在2008年的标记与其他系列同值重合，原始像素不足以分别确认被覆盖的笔画，不能据此判为漏数。未读取日志、自检或历史记录，也未重渲染，故无法独立确认所有历史渲染均经过capture_render.py；该限制不构成图像缺陷。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "八个Region系列均有身份及首末值标签；图示2003–2023并标注每组21个年度点，原图可检测21个年度刻度。源码逐组连接冻结数据的全部21点，共168点。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "首末值依次为A 934→438、B 306→34、C 113→17、D 88→36、E 79→54、F 70→39、G 63→44、H 51→32，均与输入一致。A的−53.1%符合计算值−53.1049%；八组末值均低于首值。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "曲线颜色与底部系列键、右侧端点标签一致；右侧E54、G44、F39、D36、B34、H32、C17通过细引线连接对应末点。标签错位排布未改变实际端点高度。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "可见网格与年度刻度支持共享0–1000线性纵轴及等间隔真实年份轴；主要曲线、低值端点和165个可辨目标点的像素支持均与输入相符，未发现超过满量程3%的偏移。源码确认未平滑或设最小数值高度。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "raw_01.png中的三架战机、相接尾迹及云层与最终图逐一对应，素材在主体区域显著可见。render.py负责素材合成、数据坐标、曲线及文字；capture_render.py提供完整渲染捕获入口，执行历史未作验证。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "战机与尾迹置于绘图区背景，曲线和网格叠于其前方；保留参考的叠合关系。机身轮廓和尾迹均不承担数值边界，无须让其随曲线改变形状。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、Annual expenditure、USD billion (synthetic)、SYNTHETIC DATA、年份与八组端点标签清楚完整。低值区局部交叉，但右侧引线及底部系列键仍可读，无重大遮挡。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "三架战机的机身、机翼、座舱、尾翼及发动机保持连通，机头朝右上，尾迹由机尾向左下延伸。完整物体与多条时间曲线处于同一叠合画面，实际数据由曲线纵向位置承载。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "DEFENCE SPENDING BY REGION配合Annual expenditure、YEAR及USD billion (synthetic)，明确表示各地区年度国防支出。Region A–H与冻结语义角色一致，底部说明其为示意地区而非真实国家预算；没有累计或组成份额误读。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "军事支出主题、年度比较及战机背景叠合保留；参考中的具体国家身份与真实统计改为冻结输入明确指定的合成地区数据。此处partial记录输入改编，不是输出丢失或对旧涨跌结论的要求。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "最小值C17的末点距零轴约20px，正值没有消失或被人为放大。C/H在2017年同为53、D/H在2013年同为56、F/G在2008年同为49，局部笔画重合而不能分别辨认；其余低值走势及全部末值标签可见。"
+        }
+      },
+      "semantic_attribution_zh": "当前军事支出主题、年度指标、地区角色及单位未见输出损失。reference_meaning的partial归因于冻结输入将真实国别统计改为合成地区；small_mark_visibility的partial归因于同值重合及像素分辨率，不能据此推断数值错误。参考明确要求背景叠合，不应另加机体轮廓编码要求。"
+    },
+    "primary_system_success": true,
     "confirmation": null,
     "confirmed_failure": false,
     "review_path": "runs/expanded/evaluation/items/82bd51f8e15453",
-    "numeric_supported": null,
-    "joint_supported": null,
-    "critical_structure": "unreviewed",
-    "semantic_meaning": "unreviewed",
-    "reference_meaning": "unreviewed",
-    "small_mark_visibility": "unreviewed",
-    "joint_system_success": false,
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
     "confirmed_semantic_or_data_failure": false
   },
   {
@@ -2026,13 +2017,774 @@
       ],
       "returncode": 0
     },
+    "quality": "pass",
+    "execution": "ok",
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.97,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图为军费时间曲线与战机、尾迹背景叠合；飞机轮廓不承担数值编码。最终图显示三架完整战机，机身、机翼、尾翼相连，尾迹从机尾向左下延伸；曲线与网格位于图像前景。标题为DEFENCE SPENDING BY REGION，含Annual expenditure、USD billion (synthetic)、SYNTHETIC DATA及2003–2023年份。蓝线从934降至438，中段回升；其余七线在底部，右侧分别标出54、44、39、36、34、32、17，底部列出八组首末值。低值线密集但多种颜色可见，尚需核查局部几何与引线绑定。未见明显断机体、裁断飞机或文字遮盖数据。",
+      "summary_zh": "通过。八地区年度支出曲线、数值标签、共同线性尺度及战机尾迹背景叠合关系符合冻结要求。低值交点有局部分辨限制，未发现主要可见缺陷。",
+      "issues": [],
+      "measurement_notes_zh": "原图为1600×2000。原图像素确认1000与0网格分别位于y=493、1690，满量程1197px，3%容差为35.91px。源码推导映射为x=144+52.2×(年份−2003)、y=1690−1.197×数值；项目数据与冻结data.json一致。使用源码色表在原图预期节点附近检索颜色，165/168个节点检出对应颜色，检出像素行中位数相对预期的最大偏差1.82px；这是局部颜色核查，不是对所有重叠线的独立分割。2023年A/B/C/D/E/F/G/H端点对应像素行中位数约1165/1649/1669.5/1646.5/1624.5/1643/1636.5/1651。A降幅计算为−53.1049%，与可见−53.1%一致。",
+      "uncertainties_zh": "C在2017年与H同为53，D在2013年与H同为56，F在2008年与G同为49；上述三个节点未单独检出原系列色，不能据公式声称每个重合点均独立可见。其余紧邻低值线的逐点辨读也受线宽及抗锯齿影响。按限定未检查日志、历史渲染或自检，无法独立认证全部渲染的执行历史。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "八个Region系列及2003–2023年份轴完整；源码为每系列连接21个年度点，原图可见八组端点标签和首末值登记，未见遗漏系列。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "A至H首末值依次为934→438、306→34、113→17、88→36、79→54、70→39、63→44、51→32，均与输入一致；−53.1%及全部地区低于2003年的说明正确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "曲线、右侧端点引线、Region名称和底部色键对应一致。右侧低值标签按E/G/F/D/B/H/C排列，与54/44/39/36/34/32/17端点相符；年份顺序未改变。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "共享0–1000线性纵轴、2003–2023等距年份轴；蓝线先降后回升再下降，符合当前A系列。原图节点颜色核查的可测偏差远小于35.91px容差；未见截断零点、错误堆叠或沿用参考峰值。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png及aircraft_layer.png，三架战机、机身纹理和成对尾迹在最终图中清楚且大面积可见。render.py读取原始素材并以代码控制折线坐标、刻度和文字；capture_render.py实现完整成图保存。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "战机和尾迹位于绘图区背景，蓝色及其他曲线置于前景，保留参考的叠合关系。无要求将支出映射到机翼、机身或透视表面，因此平面曲线与立体飞机的方向不同不构成错位。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、Annual expenditure、USD billion (synthetic)、SYNTHETIC DATA、年份、八组名称及首末数值可读；右侧分散标签未遮挡数据路径，底部说明完整。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "三架飞机均有连贯机身、座舱、机翼及尾翼，机头朝右上，成对尾迹从机尾向左下延伸。物体完整叠合于曲线背景；实际数据边界是各彩色折线的纵向位置，不是飞机轮廓或尾迹宽度。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "DEFENCE SPENDING BY REGION结合Annual expenditure、YEAR、USD billion (synthetic)明确表达各地区逐年国防支出；Region A–H为合成地区系列。图面未将年度值解释为时间累计或百分比分配。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "保留参考的国防支出时间序列主题与战机背景叠合关系；原图真实国家名称和历史说明被冻结输入明确替换为合成地区及当前数值。这是输入允许的语义改编，不是输出遗漏。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "最小端点C=17仍在零线上方约20px，未膨胀或归零；各低值系列和端点颜色可见。但B/D/H末端仅相隔约2–3px，另有三个等值重合节点无法单独辨认，细小差异的逐点识别有限。"
+        }
+      },
+      "semantic_attribution_zh": "未发现输出造成的主题或关键结构丢失。真实国别改为Region A–H、真实统计改为合成支出源自冻结输入，reference_meaning的部分保留归因于该允许改编。飞机上升朝向与当前支出下降不矛盾：参考及core均规定飞机为背景叠合对象，其飞行方向不编码增长。小值局部不可分辨归因于等值重合和像素/线宽限制，不据此判定数值错误。"
+    },
+    "primary_system_success": true,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/f9a424ded03354",
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E25",
+    "source_case": "M018",
+    "name": "各地区年度国防支出",
+    "conflict_type": "trend_shape",
+    "trial": "E25_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "54637386def441",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "pass",
+    "execution": "ok",
+    "review": {
+      "verdict": "minor",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图为战机与尾迹背景叠加八条军费曲线。成图可见三架完整战机，机翼、尾翼连接机身，尾迹从机尾向左下方延伸；曲线叠在背景前方。主题、年度支出、合成声明和单位清楚，八个末值为934、306、113、88、79、70、63、51，A起点438。A/B端点名称与数值挤靠，底部低值曲线局部重叠。",
+      "summary_zh": "已保存并通过schema校验的review.json。数据、年度尺度及背景叠合关系保持，仅发现A/B端点文字轻微重叠。",
+      "issues": [
+        {
+          "category": "layout_readability",
+          "severity": "minor",
+          "requirement_id": "M1",
+          "expected_zh": "端点系列名称与数值应分别清楚可读。",
+          "observed_zh": "Region A与934、Region B与306的相邻字形轻微重叠，但仍能辨认。",
+          "evidence_zh": "原图碰撞位于约x1430—1437、y548—577及y1333—1362。源码字体框推算水平重叠分别为6px和5.5px；此为字体框推算，不是字形像素重叠面积测量。",
+          "bbox_xyxy_normalized": [
+            0.889,
+            0.273,
+            0.901,
+            0.683
+          ]
+        }
+      ],
+      "measurement_notes_zh": "原图1600×2000。源码和SVG使用x=146+53.7×(年份−2003)、y=1730−1.25×值，8条路径各21点，与冻结数据一致。纵轴满量程约1250px，3%为37.5px。直接读取原图，在预期点横向±4px、纵向±6px内搜索对应系列色，164/168点找到相符像素，最近距离最大约2.92px。此为局部像素佐证，不是全路径中心线误差测量。",
+      "uncertainties_zh": "D-2004、G-2018、H-2009、H-2013位于重叠或紧邻处，未独立检出对应色，不能仅凭公式证明各自点形可见。未检查运行历史，无法独立确认capture_render.py实际调用记录。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "图面有八地区端点标签及2003—2023年份；SVG每系列21点，共168点，项目数据与冻结数据一致。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "八个末值及A起点438均正确，0—1000刻度、合成声明和单位正确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "曲线、端点、引线与地区标签颜色对应；低值标签移位未改变实际端点。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "年度等距、共享线性纵轴，可见峰谷和起止位置符合数据；未发现超过3%满量程的偏差。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png，其战机、云雾与尾迹在成图大面积可见；代码读取素材并控制数据几何及文字。图面明确本地合成来源。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "曲线跨过飞机和尾迹区域，保留参考要求的背景叠合；机体轮廓无需编码数值。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "必要文字整体可读；A/B端点轻微碰撞已列为minor，无重大不可读。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "完整机头、机身、机翼和尾部保持连接，尾迹从机尾向左下延伸，机头朝右上。折线位于背景前层，由年份位置和高度承载数据。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "主题、Annual expenditure、年份和USD billion (synthetic)共同明确各地区年度国防支出，未误作累计或组成比例。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "具名国家改为合成Region A—H属于冻结输入允许的改编；年度军费比较及战机尾迹叠合关系保留。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "低值保持真实比例，C的17及八个末端可见；部分密集点与他线合并，四点不能独立辨认。"
+        }
+      },
+      "semantic_attribution_zh": "具名国家到合成地区的变化归因冻结输入，非输出语义丢失。低值点的局部辨认限制来自叠压及像素分辨率。参考原本为背景叠合，不追加机体轮廓编码要求。"
+    },
+    "primary_system_success": true,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/54637386def441",
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E25",
+    "source_case": "M018",
+    "name": "各地区年度国防支出",
+    "conflict_type": "trend_shape",
+    "trial": "E25_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "af6e6d9fca744e",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "pass",
+    "execution": "ok",
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图以战机和尾迹背景叠合多条支出曲线，机体轮廓不承载数值。成图保留三架完整战机，尾迹向左下延伸，蓝线覆盖中央机体且连续可见。主题、合成数据声明、年度指标、单位和年份清晰。右侧八个地区终值可读，六条低值线集中于底部并局部交叉。",
+      "summary_zh": "数值、共享尺度、标签及战机尾迹叠合结构符合冻结要求，未发现重大可见缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+      "issues": [],
+      "measurement_notes_zh": "检查1600×2000原图。像素检索确认网格行位于y=480、730、980、1230、1480、1730。源码定义每年53.7像素、每十亿美元1.25像素，SVG的8×21点与冻结数据完全一致，此项为代码核对。成图对应颜色检索匹配163/168个预期点，最近匹配像素纵向偏差最大2像素，折合1.6十亿美元，低于满量程3%的30十亿美元；另5点存在重合，未能独立匹配。八个终点均检出对应颜色。",
+      "uncertainties_zh": "五个低值点因相等或紧邻数值产生覆盖或颜色混合，不能从像素独立确认其中心。颜色检索不等同于测得所有线条中心。已检查capture_render.py源码，但未运行复现或查看执行记录，其实际执行历史未独立确认。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "八条系列及八个终点标签齐全；年份顺序正确。代码及SVG各含21点，图面注明21个年度观测、8个地区。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "终值934、306、113、88、79、70、63、51及A起值438均正确；单位、年份和0—1000刻度准确。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "Region A—H通过同色折线、终点和引线绑定；低值标签移位，数据终点仍保持正确量值位置。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "源码、SVG与成图像素共同支持共享线性轴和完整逐年路径；可独立匹配点远在容差内，未发现可见错误映射。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png；其中战机、尾迹及烟云纹理在成图大面积可见。render.py使用该素材并控制数据几何和文字。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "曲线覆盖战机及尾迹背景，保留参考的叠合关系；无需贴合机身表面或由机体轮廓编码。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、合成声明、年度指标、单位、关键年份及八个终值清晰，无重大文字遮挡。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "三架战机朝右上方，机翼和尾翼连接机身，座舱及双发动机可辨；尾迹从机尾向左下延伸。实际数据载体为前景折线。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "标题、Annual expenditure及USD billion (synthetic)明确地区年度国防支出；地区为系列、年份为时间轴，没有累计量或组成份额误读。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "军事支出的年度比较意义保留；具体国家、真实统计及政策注释按冻结输入改为合成地区，属于允许的输入改编。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "低值线和终点可见，最小值17的C起点仍在零线上方；少数相等或紧邻点局部覆盖，无法逐点独立辨认，未见人为抬高小值的证据。"
+        }
+      },
+      "semantic_attribution_zh": "未发现输出造成的实质语义丢失。真实国家改为合成地区来自冻结输入，不要求保留旧数值、峰谷或政策结论。少量小点不可分辨归于曲线重合与像素分辨率限制，不据此推定数据错误。"
+    },
+    "primary_system_success": true,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/af6e6d9fca744e",
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E45",
+    "source_case": "M029",
+    "name": "社交账号关注者数量",
+    "conflict_type": "numeric_range",
+    "trial": "E45_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "fa2fb78b32c7c4",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "pass",
+    "execution": "ok",
+    "review": {
+      "verdict": "pass",
+      "confidence": 0.96,
+      "brief_is_feasible": true,
+      "reference_viewed": true,
+      "final_viewed": true,
+      "generated_assets_visibly_used": true,
+      "code_controls_data_geometry": true,
+      "visual_observations_before_code_zh": "参考图：大型写实蓝鸟覆盖数据板右上角；五行账号头像、名称、关注者数与重复小鸟对应。成图：同样有大型蓝鸟叠在数据板右上边缘，五个头像与Account A–E逐行排列；主题Social account followers、SYNTHETIC DATA及一鸟等于10 million followers清楚。五行数值依次为107.4、22.712335、4.803074、1.015726、0.2148 M；总数136.145935 million followers。A行可见十只完整小鸟及末尾裁片，B行两只完整小鸟及裁片，C行不足半只的左侧裁片，D行为几个分离窄片，E行接近一个微小蓝点并有Tiny slice: 2.148% of one bird引线说明。未见大鸟遮住数据或必要文字。",
+      "summary_zh": "数值、图符计数与裁切、账号绑定及大型蓝鸟叠合结构符合冻结要求。D/E微小裁片的鸟形可辨性仅部分保留，属于真实裁切与输出分辨率限制；未发现需要判为失败的可见缺陷。",
+      "issues": [],
+      "measurement_notes_zh": "只读分析2160×1800的image.png，未重绘。以蓝色对白底的估算覆盖率≥10%筛选像素：A有10段、B有2段完整图符，各宽80px；末片可见列范围依次为A x1790–1849、B x1038–1059、C x850–888、D x850–858、E x850–851，即60、22、39、9、2列。按冻结数据推导的目标裁宽分别为59.2、21.69868、38.424592、8.125808、1.7184px。可见范围与目标相差不到1px；阈值列宽不是精确亚像素裁宽，不能据此声称恢复了全部小数。未见超满量程120的3%（3.6百万）偏差。源码另证实以数值/10取整计数，并按紧致图符宽度从左向右裁切；此项为代码证据。",
+      "uncertainties_zh": "E在上述阈值下仅有位于y1531的两个像素，无法凭这些像素验证其精细相对比例或辨认完整鸟形；D也呈分离窄片。数值标签不能消除这一限制。已读取capture_render.py，但按限制未查运行日志、历史或自检，无法独立确认所有完整渲染的调用记录。",
+      "checks": {
+        "completeness": {
+          "status": "pass",
+          "evidence_zh": "Account A–E五行按输入顺序出现，均有头像、标签、数值和对应图符或裁片；图例及总计齐全。"
+        },
+        "numeric_text": {
+          "status": "pass",
+          "evidence_zh": "107.4、22.712335、4.803074、1.015726、0.2148均完整显示；总计136.145935与输入之和一致，正值未归零。"
+        },
+        "binding": {
+          "status": "pass",
+          "evidence_zh": "各行头像、账号名、数值与右侧图符水平对应，分隔线明确；M由页脚解释为million followers，一完整小鸟对应10百万。"
+        },
+        "geometry": {
+          "status": "pass",
+          "evidence_zh": "像素计数确认A为10个完整图符加末片，B为2个加末片；C–E仅余左侧裁片。整鸟等宽，裁片边界与目标在抗锯齿像素范围内一致，未见挤压、面积换算或最小长度膨胀。"
+        },
+        "source": {
+          "status": "pass",
+          "evidence_zh": "已查看raw_01.png与raw_02.png，其蓝鸟羽毛、眼喙和五张人像与成图对应；render.py加载这些派生素材并独立控制图符与文字，生成素材在主体中实质可见。"
+        },
+        "integration": {
+          "status": "pass",
+          "evidence_zh": "大型蓝鸟胸腹覆盖数据板右上边缘，尾羽向右下延伸，阴影落在板面；小鸟计数排列在板内。该叠合关系保留参考结构，未遮挡必要数据。"
+        },
+        "readability": {
+          "status": "pass",
+          "evidence_zh": "主题、SYNTHETIC DATA、五个账号及全部数字清楚；图例说明宽度裁切，页脚解释单位和大型蓝鸟不编码，E另有引线定位。"
+        },
+        "critical_structure": {
+          "status": "pass",
+          "evidence_zh": "写实蓝鸟的头、喙、胸腹、折叠翼与长尾连贯，身体叠在数据板上缘；五个账号头像位于相应行左侧。实际数据由板内同一鸟形的重复个数和最后裁切边界承载，大鸟不承担量值。"
+        },
+        "semantic_meaning": {
+          "status": "pass",
+          "evidence_zh": "Social account followers及Followers by account明确表达社交账号关注者数；Account A–E是账号类别，million followers为单位，合成声明醒目，未误作百分比组成或时间趋势。"
+        },
+        "reference_meaning": {
+          "status": "partial",
+          "evidence_zh": "参考的账号关注者指标、头像和鸟形计数含义保留；真实Twitter名人排行榜改为虚构社交账号，是冻结输入明确允许的合成改编，不能归为输出语义丢失。"
+        },
+        "small_mark_visibility": {
+          "status": "partial",
+          "evidence_zh": "A/B末片及C裁片清楚；D仅为几个窄片，E在原分辨率下近似微小淡蓝点，不能独立辨认鸟形。引线与文字有助定位，但不证明微小几何的精细相对准确性。"
+        }
+      },
+      "semantic_attribution_zh": "输出保留当前主题、账号类别角色、关注者指标与单位，没有以物体标题替代统计意义。原图真实Twitter账号及最高关注者语境的变化来自允许的输入改编。大鸟与数据板是参考已有的叠合关系，无需额外要求融合成量值轮廓；D/E形态辨认受真实左裁与像素分辨率限制，不据此制造数据错误或不可行结论。"
+    },
+    "primary_system_success": true,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/fa2fb78b32c7c4",
+    "numeric_supported": true,
+    "joint_supported": true,
+    "critical_structure": "pass",
+    "semantic_meaning": "pass",
+    "reference_meaning": "partial",
+    "small_mark_visibility": "partial",
+    "joint_system_success": true,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E45",
+    "source_case": "M029",
+    "name": "社交账号关注者数量",
+    "conflict_type": "numeric_range",
+    "trial": "E45_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "bd7e6c7d78033f",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
     "quality": "unreviewed",
     "execution": "ok",
     "review": null,
     "primary_system_success": false,
     "confirmation": null,
     "confirmed_failure": false,
-    "review_path": "runs/expanded/evaluation/items/f9a424ded03354",
+    "review_path": "runs/expanded/evaluation/items/bd7e6c7d78033f",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E05",
+    "source_case": "M020",
+    "name": "书籍销量",
+    "conflict_type": "category_count",
+    "trial": "E05_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "ceeca7b5fa9852",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/ceeca7b5fa9852",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E05",
+    "source_case": "M020",
+    "name": "书籍销量",
+    "conflict_type": "category_count",
+    "trial": "E05_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 3,
+    "image_available": true,
+    "review_id": "a86453352a4ebd",
+    "reproduction": {
+      "round": 3,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/a86453352a4ebd",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E05",
+    "source_case": "M020",
+    "name": "书籍销量",
+    "conflict_type": "category_count",
+    "trial": "E05_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "4605b825366158",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/4605b825366158",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E05",
+    "source_case": "M020",
+    "name": "书籍销量",
+    "conflict_type": "category_count",
+    "trial": "E05_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "cf227eb049b965",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/cf227eb049b965",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E06",
+    "source_case": "M023",
+    "name": "各虚构国家人均年度工作时长",
+    "conflict_type": "category_count",
+    "trial": "E06_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "9a2e34dd5329c8",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/9a2e34dd5329c8",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E06",
+    "source_case": "M023",
+    "name": "各虚构国家人均年度工作时长",
+    "conflict_type": "category_count",
+    "trial": "E06_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "9a2e34dd5329c8",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/9a2e34dd5329c8",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E06",
+    "source_case": "M023",
+    "name": "各虚构国家人均年度工作时长",
+    "conflict_type": "category_count",
+    "trial": "E06_conflict",
+    "condition": "conflict",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "812392eb21c21d",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/812392eb21c21d",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E06",
+    "source_case": "M023",
+    "name": "各虚构国家人均年度工作时长",
+    "conflict_type": "category_count",
+    "trial": "E06_conflict",
+    "condition": "conflict",
+    "stage": "final",
+    "round": 1,
+    "image_available": true,
+    "review_id": "812392eb21c21d",
+    "reused_identical_image": true,
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/812392eb21c21d",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E46",
+    "source_case": "M034",
+    "name": "年度可再生水资源",
+    "conflict_type": "numeric_range",
+    "trial": "E46_baseline",
+    "condition": "baseline",
+    "stage": "first",
+    "round": 1,
+    "image_available": true,
+    "review_id": "787fc9f4bca520",
+    "reproduction": {
+      "round": 1,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/787fc9f4bca520",
+    "numeric_supported": null,
+    "joint_supported": null,
+    "critical_structure": "unreviewed",
+    "semantic_meaning": "unreviewed",
+    "reference_meaning": "unreviewed",
+    "small_mark_visibility": "unreviewed",
+    "joint_system_success": false,
+    "confirmed_semantic_or_data_failure": false
+  },
+  {
+    "case": "E46",
+    "source_case": "M034",
+    "name": "年度可再生水资源",
+    "conflict_type": "numeric_range",
+    "trial": "E46_baseline",
+    "condition": "baseline",
+    "stage": "final",
+    "round": 2,
+    "image_available": true,
+    "review_id": "ebfa1d82e5516f",
+    "reproduction": {
+      "round": 2,
+      "render_succeeded": true,
+      "pixel_identical": true,
+      "frozen_dependencies_restored": [
+        "reference.png"
+      ],
+      "returncode": 0
+    },
+    "quality": "unreviewed",
+    "execution": "ok",
+    "review": null,
+    "primary_system_success": false,
+    "confirmation": null,
+    "confirmed_failure": false,
+    "review_path": "runs/expanded/evaluation/items/ebfa1d82e5516f",
     "numeric_supported": null,
     "joint_supported": null,
     "critical_structure": "unreviewed",

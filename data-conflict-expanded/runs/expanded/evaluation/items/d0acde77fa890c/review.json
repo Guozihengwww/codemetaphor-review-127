@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以正视人脸融合共心扇区，保留左右不同发型、左耳、双眼、鼻和嘴唇。最终图保留这些部件；12个外围类别及百分比可读，小扇区仍有可见宽度，边界汇聚于鼻部。失业人口构成主题、百分比单位和SYNTHETIC DATA标识明确，未见明显漏项或文字重叠。",
+  "summary_zh": "数值、顺序、引线绑定和人脸融合关系均符合要求，未发现明确可见缺陷。已保存review.json并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "原图为1800×2040。采用源码中心(810,1150)，与可见鼻部交点核对，直接采样最终图半径470像素圆环。按输入顺序估测份额为6.531、6.489、6.503、6.528、6.989、1.475、8.469、2.539、4.969、5.017、9.011、35.481%，最大偏差约0.04个百分点。上述为图像采样估计，源码公式另作核对。",
+  "uncertainties_zh": "像素估测受线宽、纹理及抗锯齿影响；未逐像素测量五官遮挡下的内部边界。未读取受限过程材料或重渲染，历史完整渲染是否全部留存未独立核实。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "全部12类均有可见扇区和标签，包含要求的四个女性子类及两个男性子类。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "6.5%×4、7%、1.5%、8.5%、2.5%、5.0%×2、9%、35.5%均与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "12条引线连接对应扇区，顺时针类别顺序、子类序号和语义父类正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "圆盘以鼻部为中心，从12点顺时针分割；像素采样最大偏差约0.04个百分点，低于容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始生图中的头发、耳和五官在最终图中实质可见；源码由冻结数据控制扇角及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "扇区直接构成脸部，五官叠合其上，头发环绕圆盘，左耳连接轮廓。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、全部类别、百分比、合成声明和阅读规则均可读，无明显遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整正视人脸及必要部件均保留，射线汇聚于鼻部并可追踪至圆周。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达失业人口按年龄、性别和族群划分的百分比构成；子类别保留父类且声明互斥。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留人脸融合扇区表达失业人口构成的关系；历史数值替换为合成数据符合冻结输入。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "1.5%和2.5%均有独立色带、边界及引线；按采样角度折算，470像素半径处弧长约44和75像素。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或核心关系丢失。历史统计改为合成构成、增加互斥子类属于输入允许的改编；当前主题与参考一致。五官局部遮挡符合简报，小扇区仍可辨。"
+}

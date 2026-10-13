@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以战机和尾迹背景叠合多条支出曲线，机体轮廓不承载数值。成图保留三架完整战机，尾迹向左下延伸，蓝线覆盖中央机体且连续可见。主题、合成数据声明、年度指标、单位和年份清晰。右侧八个地区终值可读，六条低值线集中于底部并局部交叉。",
+  "summary_zh": "数值、共享尺度、标签及战机尾迹叠合结构符合冻结要求，未发现重大可见缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "检查1600×2000原图。像素检索确认网格行位于y=480、730、980、1230、1480、1730。源码定义每年53.7像素、每十亿美元1.25像素，SVG的8×21点与冻结数据完全一致，此项为代码核对。成图对应颜色检索匹配163/168个预期点，最近匹配像素纵向偏差最大2像素，折合1.6十亿美元，低于满量程3%的30十亿美元；另5点存在重合，未能独立匹配。八个终点均检出对应颜色。",
+  "uncertainties_zh": "五个低值点因相等或紧邻数值产生覆盖或颜色混合，不能从像素独立确认其中心。颜色检索不等同于测得所有线条中心。已检查capture_render.py源码，但未运行复现或查看执行记录，其实际执行历史未独立确认。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八条系列及八个终点标签齐全；年份顺序正确。代码及SVG各含21点，图面注明21个年度观测、8个地区。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "终值934、306、113、88、79、70、63、51及A起值438均正确；单位、年份和0—1000刻度准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "Region A—H通过同色折线、终点和引线绑定；低值标签移位，数据终点仍保持正确量值位置。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "源码、SVG与成图像素共同支持共享线性轴和完整逐年路径；可独立匹配点远在容差内，未发现可见错误映射。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png；其中战机、尾迹及烟云纹理在成图大面积可见。render.py使用该素材并控制数据几何和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "曲线覆盖战机及尾迹背景，保留参考的叠合关系；无需贴合机身表面或由机体轮廓编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、年度指标、单位、关键年份及八个终值清晰，无重大文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "三架战机朝右上方，机翼和尾翼连接机身，座舱及双发动机可辨；尾迹从机尾向左下延伸。实际数据载体为前景折线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Annual expenditure及USD billion (synthetic)明确地区年度国防支出；地区为系列、年份为时间轴，没有累计量或组成份额误读。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "军事支出的年度比较意义保留；具体国家、真实统计及政策注释按冻结输入改为合成地区，属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "低值线和终点可见，最小值17的C起点仍在零线上方；少数相等或紧邻点局部覆盖，无法逐点独立辨认，未见人为抬高小值的证据。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的实质语义丢失。真实国家改为合成地区来自冻结输入，不要求保留旧数值、峰谷或政策结论。少量小点不可分辨归于曲线重合与像素分辨率限制，不据此推定数据错误。"
+}

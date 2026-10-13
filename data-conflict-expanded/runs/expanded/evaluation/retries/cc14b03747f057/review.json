@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以焦木主干、枝梢和火色下段承载年度堆叠高度。待评图可见2001–2023年23棵焦木，橙色基部与黑色上段连续相接。主题、SYNTHETIC DATA、两来源图例和百万公顷单位清楚；下方列有全部年度数值。2008年29.7最高，2023年13.0最低；2023年的1.7仍有可见橙色基部。右上年份之间似有缺字方框。",
+  "summary_zh": "数据、堆叠几何和焦木融合关系均保留，仅右上年份间箭头显示为缺字框。已保存review.json并通过schema校验；未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "右上端点年份对比中的箭头应正常显示。",
+      "observed_zh": "2001与2023之间显示缺字方框；年份、下方数值箭头及完整年度轴仍清楚。",
+      "evidence_zh": "原图右上可见方框。源码指定该处为→，字体字符表确认Sans-Bold.ttf不含U+2192。横向范围约x=1072–1085为字体度量推算，并非像素测量。",
+      "bbox_xyxy_normalized": [
+        0.669,
+        0.086,
+        0.68,
+        0.099
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接扫描1600×2000的image.png，未重渲染。像素检测确认0与30水平线分别位于y=1590、540，对应35像素/百万公顷，3%满量程容差为31.5像素。检出23个橙色基部，接点对目标位置最大偏差0.5像素。目标位置限定搜索窗后，树尖像素检测在RGB各通道低于130和70两种阈值下，最大偏差分别为3.5和6.5像素。2023年火色段约59像素，目标59.5像素。目标坐标由冻结数据与刻度推算，检测边界来自最终图像。",
+  "uncertainties_zh": "细枝抗锯齿使树尖边界随阈值变化数像素，不影响容差结论。未读取日志、自检或历史结果，未重新渲染，因此未独立确认capture_render.py的历史执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "23个年份、23棵树、46个来源值及23个年度合计均完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐年数值与data.json一致；合计为当年两来源之和，2008最高29.7及端点28.2、13.0正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份、树和表格列对应；橙色下段绑定火灾损失，黑色上段绑定非火灾损失。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同0–30线性标尺；最终像素检测的接点及树尖偏差均低于31.5像素容差，未发现额外加高或跨年累计。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始焦木及烟火素材，枝形和火焰纹理在最终主体中可辨；源码裁切素材并控制年度总高和火灾分界。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "火色基部与同一黑色树干相接，枝梢连于主干，树体直接承载数据。未见破坏解释的遮挡、层序、透视或接缝问题。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必要主题、合成声明、单位、图例、年份和数据表清楚完整；辅助箭头缺字不影响必要标签理解。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "逐年主干、枝梢和火色基部完整；橙黑交界表示火灾量，树尖至基线表示总量，黑色上段表示非火灾量。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "年度森林损失、火灾与非火灾来源、百万公顷单位及一树一年均明确，表达当年两来源相加。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留森林损失主题、两来源角色及焦木堆叠关系；旧恶化趋势句和真实峰值按冻结要求无需沿用。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小火灾值1.7仍对应约59像素高、20像素宽的可见火色基部，与黑色树干连续相接，未见最小高度抬升。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题及两来源统计含义完整保留。合成数值、2008峰值和端点下降由冻结输入决定，不属于输出语义丢失；未发生主题替换。输出损失仅为辅助箭头字形，细枝端点存在数像素的抗锯齿不确定性。"
+}

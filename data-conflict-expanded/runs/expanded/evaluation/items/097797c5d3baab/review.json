@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为正面人脸与径向扇区融合，左右不同发型、左耳、双眼、鼻和嘴唇可见。指定成图保留这些部件，扇区在鼻部汇合，12组外围类别及百分比均可见。1.5%与2.5%呈窄扇区；主题、单位、合成数据声明及角度规则清楚可读。初看无缺失类别、明显错接引线或大面积遮挡。",
+  "summary_zh": "12类数值、标签绑定及人脸融合关系正确，未发现违反冻结要求的可见缺陷。已保存review.json并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "检查1800×2040原图。以源码圆心(810,1150)为基准，在半径440–480像素带采样实际图像，定位12条边界。换算份额约为6.497、6.502、6.509、6.511、7.009、1.491、8.501、2.490、4.998、5.017、9.007、35.468%，最大偏差约0.032个百分点。圆心取自源码，边界测量来自指定成图。",
+  "uncertainties_zh": "角度估计受抗锯齿、线宽及采样基准影响。五官遮挡的射线段无法直接测量，但外围边界可辨。未读取运行日志或自检，未核验capture_render.py的实际调用记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列12类全部可见，六个拆分子类均保留语义父类。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部百分比与data.json一致，合计100%，没有将正值舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "外围引线可逐项追踪至对应扇区，类别顺序及子类序号绑定正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "从12点顺时针编码，实际像素边界换算份额最大偏差约0.032个百分点，低于3个百分点容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材中的发型、左耳和五官在成图中实质可见；源码加载派生素材并控制扇区角度、引线锚点和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "扇区构成脸盘，发耳位于盘外，五官叠合其上；未见破坏身份或读数的错位、遮挡及纹理接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、全部类别与百分比、子类后缀、合成声明、单位和读图说明均清晰，无必要标签截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "左右不同发型连接脸盘，左耳接触左缘，双眼、鼻及嘴唇构成完整正脸；射线在鼻部汇合。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题和说明明确表达失业人口按年龄、性别及族群划分的百分比构成，并解释合成数据及互斥子类。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考以组合人脸表达失业人口构成的融合关系；历史日期及真实数值不属于当前合成输入的保留要求。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "1.5%及2.5%窄区均可辨两侧边线、色区和独立引线；按实际边界角度推算，半径470像素处弧宽约44.0和73.5像素。"
+    }
+  },
+  "semantic_attribution_zh": "历史统计改为合成数据、部分父类拆分为子类，均来自冻结输入，不属于输出语义丢失。当前主题及物体承载关系保留；小扇区判断基于原始分辨率下的可见边界，遮挡处保留测量限制。"
+}
