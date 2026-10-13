@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图有六组黑色煤块堆置于蓝色地面，带来源标签、数值和地面投影。成图有九堆煤，按输入顺序排列并落在同一基线上；九个百分比与父类、子类标签齐全。煤体高度与0–30%刻度目视相符，最小煤堆仍可辨认块体与地面接触。主题、进口质量份额指标及SYNTHETIC DATA清晰；未见明显遮挡或破坏堆形的接缝。",
+  "summary_zh": "通过。九项数值、类别绑定、线性高度编码及煤堆承载关系均保留；素材实质可见，当前统计主题和单位明确。",
+  "issues": [],
+  "measurement_notes_zh": "独立读取2000×1148的image.png像素，未运行渲染器或读取自检结果。图中0与30刻度位于约y=798和438，对应12像素/百分点。在煤堆区域以RGB最大通道≤160、通道差≤32分离近中性暗色连通体，九堆高度依次为343、134、134、118、118、121、70、80、79像素；对应28.583、11.167、11.167、9.833、9.833、10.083、5.833、6.667、6.583%，最大偏差约0.067个百分点。将通道差阈值改为18或24，最大偏差仍仅0.15个百分点。源码另显示height=value×12、共同底部y=798及先阴影后煤体的合成顺序；这是代码佐证，不代替像素测量。",
+  "uncertainties_zh": "抗锯齿使煤体边缘阈值测量相差约1–2像素，不影响容差结论。按限制未查看执行日志、轮次或自检，无法独立确认所有完整渲染均实际经过capture_render.py；仅确认其保存机制及当前素材、源码与成图的一致性。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列九个类别全部出现，顺序为A、B两子类、C两子类、D、E、F两子类。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "九项显示28.6%、11.2%、11.2%、9.85%、9.85%、10.1%、5.9%、6.65%、6.65%，与输入一致；总额100%正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每堆上方数值以短竖线对应本堆，下方为其类别；B、C、F均保留父类名称和subcategory 1/2。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "九堆共享线性0–30%刻度和底线；独立像素测量的误差远低于满量程3%及3个百分点容差，等值煤堆仅有像素级边缘差异。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png九堆原素材及coal_07.png；可辨认的煤块排列、断面与纹理进入成图主体。render.py实际载入煤体素材并控制尺寸和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "煤体自身从地面到堆顶的完整高度承担份额编码，无另设柱体替代；地面投影与煤体分离，图面注明数量、占地和阴影不编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成标识、质量份额指标、百分比单位、全部类别及子类、刻度和口径说明均可读，无必要标签相互遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "每组由相互接触、前后叠压的写实煤块组成；底部落在共同地面，淡投影位于底部后方及周围，未延伸为煤体高度。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题说明固体燃料进口份额；副标题明确总进口固体燃料质量占比，类别说明为合成贸易伙伴及子类，脚注明确子类是父类内互斥部分。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考的按伙伴进口质量份额和煤堆表达仍在；原EU、2014及真实国家的统计语境依冻结输入改为合成伙伴与子类，属于许可的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下最小5.9%煤体约70像素高，仍能看清多个煤块、完整堆形及着地关系；两项6.65%煤体约79–80像素高，未仅以数值标签代替几何。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或指标含义丢失。参考中EU/2014真实贸易语境转为合成伙伴及子类别由冻结输入规定，reference_meaning的部分保留不归为生成缺陷。像素边缘存在有限测量不确定性，未妨碍最小煤堆身份和高度判读。"
+}

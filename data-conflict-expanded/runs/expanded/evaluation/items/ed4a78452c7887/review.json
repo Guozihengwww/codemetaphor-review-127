@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：蓝色台面上有碎屑，五列写实芝麻糖顶面首尾相接，按WK1至WK5排列，底部对齐；糖块本身构成柱形。待评图：标题为Weekly revenue in sesame slabs，并显示SYNTHETIC DATA、Synthetic weekly revenue · USD及总额$1,080,000。五周数值依次为$18,000、$36,000、$72,000、$54,000、$900,000。前四柱可见1、2、4、3个窄矩形芝麻糖单元，WK5由许多同形单元组成并到达$900,000刻度；此时尚未逐段验证50个。所有柱底贴共同零线，单元表面可见芝麻纹理，右侧有薄阴影；蓝色背景和零散碎屑保留。图例写1 whole slab = $18,000，轴范围为$0至$990,000。主要文字清晰，未见标签遮挡。",
+  "summary_zh": "五周数值、单元计数、标签绑定及线性尺度正确。完整芝麻糖顶面直接构成柱形，蓝色台面、碎屑和共同零线保留；小值仍可辨认完整单元。未发现违反冻结要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×2005原图上，颜色检测得到五柱顶边y=1741、1717、1669、1693、565；零线棕色像素位于y=1764–1765，柱高约24、48、96、72、1200像素。WK5内部检出49条亮接缝，y=589至1741、间距均24像素，支持50个完整单元。源码另定义零位1765、最高刻度445及每单元24像素；据此推导满量程1320像素、3%容差39.6像素。像素观察与代码映射一致，边缘误差约1–2像素；代码公式未单独作为正确性证明。",
+  "uncertainties_zh": "抗锯齿及零线覆盖带来约1–2像素边缘定位不确定性，未影响单元计数。单元仅24像素高，可确认芝麻顶面及边界，不能可靠判断单颗芝麻的细微形变。依限制未检查运行日志或历史，无法独立确认全部渲染是否均由capture_render.py执行。参考图未明确写出具体业务指标。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "WK1至WK5依原顺序齐全，单系列收入、USD、合成声明、单位图例及0–990000量尺均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "五柱标值18000、36000、72000、54000、900000准确；单元数1、2、4、3、50及总计1080000均正确，50 of 60 slabs与数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个金额位于对应糖柱上方，周标签和单元计数位于同一柱下方，未见跨柱错绑或遮挡。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "图像检出的五柱高度约24、48、96、72、1200像素，与1、2、4、3、50个等高单元吻合；WK5的49条内部接缝支持实际50段，最高顶边对齐900000刻度。偏差远小于3%满量程。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及slab_01.png，原始素材中的芝麻糖纹理在全部数据柱和图例中实质可见。prepare_assets.py提取顶面，render.py使用这些素材，并以数据计算单元数量、位置和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "芝麻糖完整顶面就是计量单元；各顶面沿柱方向相接，其并集边界承载柱高。薄右侧阴影及台面碎屑不增加数值，文字和图例说明一致。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、收入指标、USD、周标签、全部金额、单元图例和合成声明清晰；未见必要文字被柱体、纹理或其他文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "五列近俯视的完整芝麻糖顶面纵向接续，底端贴共同零线；表面芝麻嵌在糖体中，右侧薄影与蓝色台面关系一致，零散碎屑保留。数据由糖体顶面及其连续排列承载。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Weekly revenue in sesame slabs、Synthetic weekly revenue · USD、WEEK及WK1–WK5共同表达合成每周收入。1 whole slab = $18,000解释单位编码；五周总额明确为求和，未将柱形表述为逐周累计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "core明确reference_semantic_scope为adapted_topic，当前每周收入主题属于输入允许的改编。参考的糖块组成柱形、周类别、金额尺度和台面关系保留；参考未明确写出的原业务含义不作推断。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小单元约156×24像素，仍可见完整矩形顶面、芝麻纹理和边界。前四柱的1、2、4、3段可直接区分，未通过抬高小值或添加分数糖块增强辨认。"
+    }
+  },
+  "semantic_attribution_zh": "未发现当前主题或关键数据承载关系的输出丢失。参考意义的部分保留源于core允许的主题改编，不计为生成缺陷；原图具体业务指标仍不明确。小单元的顶面关系可见，微细材质判断受24像素高度限制。"
+}
