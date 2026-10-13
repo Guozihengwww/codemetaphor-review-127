@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以相连的西装袖、袖口、腕表、前臂和向右拳头替代部门横条。成图标题、合成数据声明、六部门及数值清晰完整。A、B手臂结构可辨，C明显缩小，D仅见微小双色痕迹，E近乎不可分辨，F无手臂。未见文字遮挡。",
+  "summary_zh": "数值、标签绑定及全尺度几何符合要求。D、E的完整部件关系难以辨认，属于局部可辨性限制，未见重大缺陷。review.json已保存并通过schema校验。",
+  "issues": [
+    {
+      "category": "metaphor_identity",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "非零手臂保留相连的西装袖、袖口、腕表、前臂与拳头；微小值保持真实跨度。",
+      "observed_zh": "D仅剩微小蓝色与肤色痕迹，E近似零线旁的小点，原分辨率下无法辨清完整部件及连接。",
+      "evidence_zh": "直接检查成图像素，D包围框为[480,1187,492,1194]，E为[480,1379,483,1381]，即12×7与3×2像素。未据此认定部件实际断开或数据错误。",
+      "bbox_xyxy_normalized": [
+        0.2526,
+        0.5935,
+        0.259,
+        0.6905
+      ]
+    }
+  ],
+  "measurement_notes_zh": "独立比较成图各行物体区域与同列空白行，RGB差阈值8、16、32得到相同边界。零点x=480，100%位置x=1800。A–E可见跨度为1268、268、57、12、3像素，数据推导目标为1267.2、267.9801696、56.6709132、11.9844384、2.5344像素，最大外边界误差约0.061个百分点；F未检出标记。E整像素包围宽较理论跨度多约18.4%，不能将其直接视为连续覆盖宽度误差。源码比例公式仅作辅助证据。",
+  "uncertainties_zh": "D、E的子像素精度及全部部件关系无法由栅格独立确认。任务允许尺寸适配并禁止放大微小值，编码可行，局部可辨性受分辨率限制。已检查capture_render.py源码，未读取运行日志或自检，不能确认全部渲染的历史保存流程。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六部门依输入顺序齐全，五个正值标记及一个无手臂的零值行。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "96.0%、20.301528%、4.293251%、0.907912%、0.192%、0%均准确，正值未舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "部门、数值及对应手臂逐行绑定，无错位。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "拳头最右实体与线性跨度一致，最大像素外边界误差约0.061个百分点，零值无最小手臂。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理素材，其纹理、纽扣、袖口、腕表和拳头实质用于成图；源码控制总跨度与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "手臂本身承载横条数据，袖从零点起，拳头构成端点；未见破坏结构的错层、遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、类别、数值、单位与刻度清晰，副标题明确部门内统计分母。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "A、B完整连接清晰，C保留缩小手臂轮廓；D、E的完整部件关系无法在原分辨率确认。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达各部门全部提名者中男性的比例，类别角色及百分比单位完整，未暗示部门份额合计100%。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留男性提名者比例及手臂替代横条关系；政府具名语境改为合成部门属于冻结输入允许的改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "C约57×24像素仍可辨袖与拳；D约12×7、E约3×2像素有非零痕迹，但全部部件不可辨。"
+    }
+  },
+  "semantic_attribution_zh": "输出保留当前主题、统计分母、类别角色及单位。参考政府语境的变化属于允许的输入改编；D、E部件可辨性下降属于分辨率限制，不足以断言拓扑错误或主题丢失。"
+}

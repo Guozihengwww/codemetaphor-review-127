@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图按年份排列蓝色船坞图符，船体位于支架内，1915行有红色条带。成图完整显示11个指定年份、精确数值、净吨单位及SYNTHETIC DATA，图例为每枚45,000净吨。完整图符保留框架内船体；1923、1933仅见窄竖线，1915、1926只剩左框架及少量船体。未见文字遮挡或图符跨行。",
+  "summary_zh": "数据、标签和船坞计数关系符合冻结要求。微小分数仍非零可见，但物体关系仅部分可辨。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1430原图中识别蓝色像素横向区间。完整图符均宽44像素，逐行完整枚数为6、0、13、0、27、0、3、0、1、0、0，与数据一致；行距78像素。末枚目标宽度依次为34.569、37.617、23.567、9.454、0、4.739、17.679、9.454、31.037、2.376、18.858像素；阈值实测为35、38、24、10、0、5、18、10、31、3、19像素。最大边界差0.624像素，低于满量程3%容差。源码另证实整枚计数及余量从左裁切，未将公式作为唯一证据。",
+  "uncertainties_zh": "抗锯齿和阈值影响微小标记的边缘判读，整数像素宽度不能保证其高相对精度。未查看渲染履历，无法独立确认全部渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11个年份顺序完整，单系列、图例、单位和合成数据提示齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "11个数值与输入一致，保留小数；最小值为2,430.0，未舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份、图符及数值逐行对应，1915红带绑定正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素区间统计支持全部整枚计数及分数宽度；边缘差不足1像素。1920的27枚正确对应1,215,000净吨。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始与处理素材的船艏、桁架、立柱均用于成图主体；源码实际读取该素材构成数据图符。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "船坞自身承担计数和分数边界；船体位于两柱及桁架围成的空间内，无破坏解读的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、年份、精确值、单位、合成提示和分数读法均清晰完整。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "同形船坞、船体在框架内的关系、年份行及红色条带保留；微小裁片限制单独记录。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达各观测年的造船净吨产量，年份角色、指标、单位和合成统计口径可理解。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考的造船主题、年份与净吨角色及重复图符计数关系保留；旧真实数值和换算单位按冻结输入替换。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "1923、1933主要只剩约5及3列蓝色像素的左立柱，无法独立辨认完整船坞。裁片仍非零可见，未发现人为增大最小标记。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题和统计角色无可见输出丢失。合成值及每枚45,000净吨属于输入适配。微小值的物体关系仅部分可辨，源于规定裁切和像素尺度，不构成整体隐喻丢失或已证实的量值错误。"
+}

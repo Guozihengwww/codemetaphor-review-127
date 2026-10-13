@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：五条朝右的西装手臂连接袖口、腕表、前臂和握拳，共用左侧零点；有六个部门类别，末行无手臂，底轴为0–100%。主题为政府男性提名者。\n待评图：SYNTHETIC DATA醒目；标题和副标题明确表达各部门男性提名者比例。Department A–F依序排列，标注96%、86%、85%、78%、73%、0%。前五行从共同零点延伸至右侧拳头，部件连续，腕表覆盖腕部；F行仅有类别和0%。B与C长度接近，A最长，E为最短非零手臂；可见拳头端点与底轴比例大体一致，尚未量测。文字清楚，未见明显遮挡或破坏对象连接的接缝。",
+  "summary_zh": "六个部门的数值、顺序和绑定正确；完整手臂直接承载横向比例，像素量测符合容差，零值未被扩成最小手臂。主题、单位和合成数据声明清楚。未发现需列为缺陷的可见问题。",
+  "issues": [],
+  "measurement_notes_zh": "对1900×2000原图独立量测，未采用生成方自检结果。底轴刻度像素中心依次为x=460、706、952、1198、1444、1690，满量程1230像素。各行以minRGB<200或通道极差>28提取最大连通块，拳头右端像素中心依次为1640.5、1517.5、1505.5、1419.5、1357.5，对应95.976%、85.976%、85.000%、78.008%、72.967%，最大偏差约0.033个百分点。肤色边界另测与其相差1–2像素。零值行未检出肤色像素，目视亦无手臂。源码采用x=460+12.3×数值，并仅拉伸连续袖身；这是代码证据，不替代上述像素量测。",
+  "uncertainties_zh": "抗锯齿及阈值使实体边缘存在约1–2像素定位差异，远小于3个百分点容差。按限制未检查运行记录，无法独立确认capture_render.py的实际调用历史。当前无微小正值，不能据此推断更小正值时的部件可辨性。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Department A–F六类依序完整；五个非零手臂及F行0%符合当前单系列数据。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "六行分别显示96%、86%、85%、78%、73%、0%，与data.json逐项一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "部门、手臂和端点数值逐行水平对应；F行0%位于共同零点右侧，无歧义。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同零点至拳头最右实体的独立像素量测最大偏差约0.033个百分点，低于3个百分点；零值行无最小手臂。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png及arm_master.png中的布料纹理、纽扣、腕表和拳头形态在最终五行实质可见；图面同时标明SYNTHETIC DATA及非真实统计说明。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "手臂本身替代横条，其总跨度承载比例；袖口、腕表及拳头包含在数据长度内，并非旁置装饰。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、副标题、六个部门标签、百分数、0–100%刻度和底部编码说明均清晰完整，无明显遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "每条非零手臂的蓝色西装袖连接白色袖口，裸露腕部连接朝右握拳，腕表覆于腕部；外轮廓连续，共用左侧零点，未见破坏结构的接缝或层次错误。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Male nominees by department及副标题明确分母为各部门提名者，列头注明男性提名者百分比；Department A–F保留部门角色，未将跨部门比例误作100%组成。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考图具体指向特朗普政府及其机构；冻结输入改用合成Department A–F。男性提名者比例及西装手臂替代横条的关系保留，具体政府语境的消退属于输入授权改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最短非零值为73%，其袖口、腕表、腕部和拳头均可辨；唯一零值按要求仅保留类别和0%标签，没有人为放大。"
+    }
+  },
+  "semantic_attribution_zh": "未观察到当前主题或核心连接关系的输出损失。原图的政府及具名机构改为合成部门，归因于冻结输入允许的语义改编，因此参考意义记为部分保留，不列为生成缺陷。不推断原作者未明示的政治寓意；像素边缘的不确定性仅涉及抗锯齿定位。"
+}
