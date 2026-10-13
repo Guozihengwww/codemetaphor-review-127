@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以单枚上窄下圆的鸡蛋承载营养成分分区，分界在蛋体内部汇聚，壳面有颗粒及明暗。待评图保留完整蛋形、壳面纹理、左亮右暗与底部阴影；右上八个较小分区和大面积水分区共享汇聚点，分界延伸至外轮廓。九个类别和1%、1.5%、3.1%、4.7%、四个3.25%、76.7%均可读，蛋白质子类别保留父类名。标题、SYNTHETIC DATA、百分比单位、总和100%及面积编码说明清晰。最窄顶部条带仍可辨，引线在上方密集；仅凭目视尚不能精确确认面积比例。",
+  "summary_zh": "九项数据、主题、单位及完整蛋体分区关系均保留，屏幕面积估计符合容差。仅顶部两条引线重合，造成局部追踪歧义，未发现重大缺陷。",
+  "issues": [
+    {
+      "category": "data_label_binding",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "类别引线应能清楚地从标签追踪至对应分区。",
+      "observed_zh": "Vitamins minerals and salt（1%）与Saturated fat（3.1%）的引线在蛋顶上方共用一段可见水平线，随后分叉，局部绑定不易独立追踪；数值和端点未见错配。",
+      "evidence_zh": "原图在约x=907–1358、y=385处只显示一条重叠水平线。源码几何推导确认两水平段高度为385.128与385.115像素，重叠长度约451.5像素；这些精确坐标是代码推导，非逐像素边界测量。",
+      "bbox_xyxy_normalized": [
+        0.404,
+        0.208,
+        0.684,
+        0.231
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接读取2000×1800的image.png，在蛋体区域按颜色饱和度提取最大连通轮廓，并用素材着色调色板拟合明暗后统计像素；未使用提供的区域掩码或自检报告。按输入顺序估计占比为1.183%、1.664%、3.080%、4.787%、3.295%、3.262%、3.241%、3.204%、76.283%。去除2像素外轮廓边缘后为1.027%、1.530%、3.095%、4.742%、3.229%、3.255%、3.247%、3.216%、76.659%。改变分割阈值的结果均距目标不足0.45个百分点。源码另显示按蛋形透明度加权面积分位求分界，而非直接按中心角赋值。",
+  "uncertainties_zh": "面积统计受低透明度轮廓、颜色混合和抗锯齿影响，属于像素分割估计，不代表亚像素精度。素材生成身份依据本地清单与可见对应；未检查运行日志，不能独立证明历史捕获执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个类别和九个分区齐全，四项Protein子类别均保留，图面明确标示9 CATEGORIES。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见值为1%、1.5%、3.1%、4.7%、四个3.25%及76.7%，与输入一致，总和100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别与数值正确配对，分区沿轮廓遵循输入顺序；引线端点对应相应区域。两条顶部引线重合造成轻微追踪歧义，见问题项。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "直接原图颜色统计及边缘敏感性检查均在3个百分点容差内；完整蛋形无可见分区空洞，四个3.25%区域的面积估计相近。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与egg_shell.png，生成素材的轮廓、孔隙和光影在最终主体中实质可见；render.py读取该素材并控制分区几何及文字。capture_render.py包含完整渲染保存流程，历史执行未独立核实。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "各色数据区域直接构成同一蛋体表面，共享纹理和光照，分界抵达外轮廓；阴影在蛋体下方，未遮挡数据或破坏包含关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、九项类别、全部数值、百分比单位及页脚说明清晰，外部文字无裁切或相互遮挡；仅引线存在局部重合。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "单枚近正面鸡蛋上窄下圆，壳面颗粒与明暗保留；九个闭合区域在约(859,1019)处汇聚并连续铺满蛋体，标签位于外部。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Egg nutrient composition、Percent of egg composition、Total = 100%及SYNTHETIC DATA明确表达主题、指标、单位和合成性质；页脚解释Protein子类为互斥合成组成部分。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的营养成分占比与整枚蛋体分区融合关系；Protein拆成四项来自当前输入，未沿用参考旧数值。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下1%与1.5%均可见为独立壳面条带；在y=420处其可识别横向宽度约25与35像素，并向内部汇聚点收尖。小区域并非仅靠数字标签存在。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出丢失主题或物体—数据关系。四项Protein子类别及合成声明由冻结输入规定，属于同主题下的允许细化，不应归为参考意义丢失。最小分区仍可辨；面积测量的不确定性来自轮廓抗锯齿和颜色分割。"
+}

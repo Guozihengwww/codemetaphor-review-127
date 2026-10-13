@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为营养成分分区直接构成的完整鸡蛋。成图可见九个连续分区，共享蛋内汇聚点，保留蛋壳纹理与明暗。九组外部标签及百分比可读，四个子类均显示Protein父类；主题、单位、SYNTHETIC DATA和子类互斥说明完整。最小两个分区仍可辨认，未见明显空洞、断裂或文字遮挡。",
+  "summary_zh": "通过。九类数据、面积比例、标签绑定及蛋体融合关系均符合要求。已保存review.json并通过schema校验；按追加要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "对指定2000×1800成图进行基于调色板的像素分类，并估计抗锯齿边缘透明度。九区面积比例约为1.013%、1.487%、3.097%、4.671%、3.234%、3.256%、3.237%、3.222%、76.782%；最大偏差约0.083个百分点，低于3个百分点容差。此为成图像素估计。源码另显示边界由蛋形遮罩的累计面积求解。",
+  "uncertainties_zh": "抗锯齿、半透明外缘及相近绿色带来小幅分类误差，不主张测量具有千分位精度。汇聚点附近的亚像素尖端无法逐像素区分。未读取禁止访问的运行日志、自检或历史输出，因此未独立核实全部历史渲染是否经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个分区与九组标签完整，包含四个Protein子类及Water。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "1%、1.5%、3.1%、4.7%、四个3.25%及76.7%均准确，总量100%与百分比单位明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各引线可追踪至对应分区外缘附近，Water对应大面积橙色区，未见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素面积估计最大偏差约0.083个百分点；分区依输入顺序排列，无可见空缺或重叠。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材raw_01.png的蛋形、孔隙和光照在成图中实质可见；代码利用其衍生蛋壳素材控制分区面积并绘制文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "分区共同组成完整蛋体，纹理与光照跨区域连续，保留物体与数据融合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、全部类别与数值、单位及解释文字清楚，无明显裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整鸡蛋上窄下圆，具有壳纹理和明暗；各闭合分区从共同内部点延伸至外轮廓，Water占据其余连续区域。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "营养构成主题、组成百分比、营养类别与Protein父类明确；合成声明及互斥子类说明保留统计解释。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考与成图均以完整蛋体分区表达鸡蛋营养组成；合成数值和Protein拆分属于输入规定的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小两区在原始分辨率可辨；y=500处横向宽约28和38像素，y=800处约12和17像素，连续接入蛋体并自然收尖。"
+    }
+  },
+  "semantic_attribution_zh": "未观察到输出造成的语义损失。数值更新与Protein子类拆分属于冻结输入授权的适配，营养组成主题及参考融合关系保留；极窄汇聚尖端存在分辨率限制。"
+}
