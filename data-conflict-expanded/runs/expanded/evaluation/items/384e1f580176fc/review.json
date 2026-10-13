@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为四色米粒圆盘与盛米木勺融合，勺碗靠近中心、木柄向下。待评图显示米业市场份额、百分比单位及SYNTHETIC DATA；A 21%、B 7%、C 15%、D 57%的同色引线落入对应扇区。紫色小扇区及两侧白色边界可见。木勺盛米、碗柄连接和投影清楚，文字无明显遮挡或裁切。",
+  "summary_zh": "通过。份额、标签绑定和扇角一致，米粒圆盘与盛米木勺的融合结构保留。review.json已保存并通过schema验证；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "检查2000×2000原始image.png。以源码给定且与可见圆盘一致的(1010,1110)为中心，在半径500、550、590像素处读取白色分隔线，推得份额范围：A 20.993–21.010%、B 7.000–7.035%、C 14.979–15.013%、D 56.978–56.994%，均在3个百分点容差内。这是原图边界采样，圆心未经独立拟合。源码另生成75.6°、25.2°、54°、205.2°扇角，此项为代码推导。项目brief/data/core与冻结输入一致；未执行渲染。",
+  "uncertainties_zh": "边界测量受白缝宽度、抗锯齿及整数像素采样影响；中央被木勺遮住的射线无法直接逐像素验证，外侧三圈结果一致。未读取执行记录，无法独立确认capture_render.py的实际调用过程。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "四个生产者类别、四个份额、百分比单位、100%总量及合成数据标识完整；顺时针顺序为A、B、C、D。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A 21%、B 7%、C 15%、D 57%，合计100%，与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A蓝、B紫、C橙、D绿的数值和引线分别绑定对应扇区，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共用圆形外缘；原图分隔线采样推得约21%、7%、15%、57%，最大偏差约0.04个百分点。源码控制同一圆心、半径及累计扇角。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其米粒、勺碗和木柄纹理与主体一致；源码读取并着色该素材，用遮罩保留木勺原色，素材构成主体。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "米粒摄影纹理直接填充数据扇区，盛米木勺叠在同一圆盘中央，接触阴影保留；遮挡符合非定量装饰角色。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、指标、单位、四个完整类别及数值清晰；底部明确说明扇角编码市场份额。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "盛米勺碗靠近中心并连接向下的木柄，白米由木质碗缘包围，木勺覆盖米粒圆盘。数据承载边界为扇区白缝与共用圆弧，勺碗面积不编码份额。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "米业市场份额主题、生产者类别角色、百分比指标和100%总量明确，合成属性与角度编码均有可读说明。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考的米业参与者市场份额主题及米粒圆盘—盛米木勺融合关系保留；品牌与旧数值按冻结输入替换为合成生产者和当前份额。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "7%紫色扇区仍可见米粒纹理、外圆弧、两条白缝及引线，木勺只遮住内端；原图采样约7.000–7.035%。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或核心关系丢失。真实品牌及旧统计替换为合成生产者与当前份额属于冻结输入允许的改编。木勺保留原色并承担非定量遮挡角色符合当前编码；中央遮挡和像素采样限制已单列。"
+}

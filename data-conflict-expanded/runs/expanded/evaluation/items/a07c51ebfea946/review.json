@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.94,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以金色啤酒杯柱表示消费量，保留人物、瓶装注释和比较线。待评图显示合成数据声明、人均年度啤酒消费主题及单位；A–T依次排列，杯下有数值。长杯可见泡沫、液体和杯底，末端杯柱呈细薄标记。Region U比较值为48.6，11个瓶装注释及底部人物可见。",
+  "summary_zh": "数值、类别绑定、完整杯高编码和比较线符合要求，未发现重大可见缺陷。微小杯柱的部件关系仅部分可辨。已保存review.json并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查2000×1540图像像素：零基线约y=1100，150刻度约y=300，满量程800px，3%容差24px。A–T阈值可见高度依次为772、535、371、258、179、124、86、86、59、41、28、20、14、14、9、6、4、3、2、2px。与冻结数值换算高度相比，最大偏差约0.802px，即满量程0.101%；阈值边缘约有1px不确定性。比较线位于y=840–841，48.6的目标位置为y=840.8。源码另确认泡沫和杯底包含在数据高度内。",
+  "uncertainties_zh": "Q–T目标高度约4.625、3.209、2.226、1.545px，无法逐一验证泡沫、液体与杯底的独立边界及亚像素相对精度。未读取执行日志、自检或历史记录，无法独立确认全部渲染的capture_render.py执行历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "20个地区数据杯、对应标签、20个人物及11个瓶装注释完整；Region U单独标为区外比较项。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "20个数值与冻结数据一致，包括两组相等值和最小值0.2896；比较值为48.6，没有将正值舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A–T按输入顺序排列，名称、数值与杯柱对应；11个瓶装注释的地区和瓶色绑定正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终像素杯高符合共同线性尺度，最大阈值偏差约满量程0.101%；相等值杯高相等，比较线对齐48.6。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材及杯体素材，泡沫、液体、杯底、瓶和人物在终图实质使用；源码控制杯高、文字及比较线，项目数据与冻结数据一致。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "完整杯体的顶缘至杯底承载数据高度；液体位于杯壁内，泡沫在上、玻璃底在下。瓶和人物明确为非定量元素。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、单位、地区、数值及比较说明可读；竖排数值互不遮挡，比较线位于杯柱后方。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "大中杯保持泡沫、液体、杯壁及杯底的关系，人物、瓶装注释和比较虚线完整；最小杯柱无法逐一辨认三层部件。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Annual consumption per person及L/person/year清楚表达人均年度消费量；地区父类、合成性质和区外比较角色明确。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留啤酒消费比较主题与杯体柱高融合。合成地区和当前数值来自冻结输入；人物位置及持杯姿态属于允许的非数据适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "Q–T仍有非零薄标记，S和T阈值高度均约2px；数值可读，但无法可靠区分泡沫、液体与杯底，微小值相对精度仍不确定。"
+    }
+  },
+  "semantic_attribution_zh": "主题与参考一致。真实地区、品牌和旧统计替换为合成标签及当前数据属于输入授权。主要杯体数据融合保持；最末端部件关系仅部分可见，属于当前比例下约1–5px的分辨率限制，不构成重大失败。"
+}

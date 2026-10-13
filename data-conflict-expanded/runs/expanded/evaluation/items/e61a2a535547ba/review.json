@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：俯视圆桌由不同织物扇区构成，人物围桌，礼盒、餐盘和酒具置于桌面；文字主题为圣诞礼物预算。成图：织物圆桌保留，左侧两人靠桌，礼盒、酒具和食物覆盖桌面；九类标签显示计数及百分比，最大金色扇区标为 Price not a factor，183 responses、36.6%；Budget E 为可见的橙色细扇区，标为 3 responses、0.6%。图面有 SYNTHETIC DATA、礼物预算偏好主题、500 simulated responses、互斥单选及全桌对应100%的说明。初看标签无缺失或相互遮挡。以上为查看图像后、读取渲染源码前的可见记录。",
+  "summary_zh": "九类计数、百分比及可见扇区几何吻合；数据织物直接构成宴会圆桌，人物与桌面接触，礼盒和食物置于桌上。主题、单位及互斥单选口径清楚，未发现实质性缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析2000×1412的image.png像素，未使用生成方的检查结果或几何掩膜。以源码圆心(1030,805)作为采样原点，在半径420–450像素、目标边界附近±0.85°检测RGB跃迁。九类像素估计份额依次为15.17%、7.61%、7.83%、8.60%、8.82%、9.01%、5.79%、0.61%、36.56%，与目标的最大差约0.04个百分点。Budget E边界约226.16°和228.34°，角宽约2.18°，目标2.16°；按源码半径465像素推算外缘弧长约17.7像素，此弧长为推算而非直接像素计数。源码累计计数生成角度，标签引线使用各扇区中角，与可见边界及绑定相符。",
+  "uncertainties_zh": "RGB边界估计受织物纹理、采样圆心及抗锯齿影响，不是精密角度标定；小扇区靠近圆心处无法分辨完整织纹，但中外段仍清楚可见。按限制未查阅执行日志、历史渲染或自检，不能独立确认所有完整渲染均经capture_render.py留存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个预算选项及全部计数、百分比均可见；总数500、simulated responses、互斥单选说明和SYNTHETIC DATA齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依输入顺序显示76、38、39、43、44、45、29、3、183；百分比为15.2、7.6、7.8、8.6、8.8、9.0、5.8、0.6、36.6，总计500及100%，均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "右侧五条引线分别连接A的三个子类、B的两个子类；左下引线连接C、D、E；Price not a factor文字置于金色对应扇区。父类、子类、颜色与数值一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "顺时针扇区次序正确，最终像素估计份额与目标相差最多约0.04个百分点，低于3个百分点容差；0.6%扇区未被置零或明显放大。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和raw_02.png；其两位宾客、礼盒、三组餐饮部件及九种织物均实质用于成图。prepare_assets.py提取素材，render.py控制圆盘分区和文字，capture_render.py提供保存入口。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "织物扇区共享圆心和外缘，直接形成桌面；宾客位于桌外并将手杯伸至桌上，礼盒与食物覆盖桌面且有接触阴影。俯视方向及前后层次协调。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、九类标签、计数、百分比、单位和统计说明在原图可读，未见必要文字被遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "共同圆形桌面由九个织物扇区拼合；桌沿包围数据区，人物在外缘接触桌面，礼盒及餐盘包含于桌面范围。实际承载数据的是桌面扇区角宽。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "英文礼物预算偏好标题、中文节日主题及HOLIDAY GIVING明确当前主题；Budget父类和子类、价格不重要选项、500个模拟响应及每人互斥单选均可理解。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留节日礼物预算主题和宴会桌面承载份额的关系。原图特定女性人群、日元门槛及真实调查背景已由冻结输入改为合成预算类别和模拟参与者，属于输入允许的改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Budget E的橙色窄扇区在左下方可连续辨认，夹于金色与条纹桌面之间，共用圆心和外沿；0.6%、3 responses及引线清楚，小标记仍保持桌面分区关系。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的关键结构或当前统计语义丢失。参考调查人群和货币区间的变化来自冻结输入，故参考意义记为部分保留而非生成失败。细扇区圆心附近的织纹辨识受分辨率限制，不代表数值缺失。"
+}

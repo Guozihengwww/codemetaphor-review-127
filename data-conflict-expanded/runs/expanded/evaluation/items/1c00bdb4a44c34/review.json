@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图呈现成人共同涂绘街道，刷子接地，黄绿折线叠合于街景。成图可见五名成人，两名前景人物持短刷、三名后景人物持滚筒，工具接触路面。当前主题、SYNTHETIC DATA、百分点单位及净支持定义清楚；曲线从+28.4降至−4.0，正段黄、负段绿，未见参考图的末端上冲。",
+  "summary_zh": "通过。数据映射、标签、共绘动作和街景叠合关系符合冻结要求，未发现实质缺陷。review.json已保存并通过schema校验；按追加要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "先查看原始分辨率图像并保存观察，再检查必要源码和原始素材。项目数据与冻结数据一致。采用源码绘图区边界及冻结数据计算目标位置，读取实际PNG比较：60个目标顶点均有对应线像素；沿路径1633列中1632列通过颜色阈值，线像素纵向中位数相对目标的绝对偏差中位数0.20像素、最大4.92像素，低于3%满量程的17.94像素。插值零点目标约为(1392.89,960.33)，附近第959行检测到黄色、第961行检测到绿色。目标坐标为数据推导，像素差异为实际图像测量。",
+  "uncertainties_zh": "0.1百分点约为1.66像素，无法仅凭肉眼分别认证所有微小差值；线宽、端点圆标和抗锯齿限制亚像素判读。未检查被禁止的执行日志、自检或历史记录，因此不独立认证capture_render.py的历史调用。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "1个系列、60个日期全部进入路径，对应位置均检测到线条；页脚标注60 synthetic observations。密集日期采用允许的年份刻度和关键点标签。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "+28.4、−4.0、首个负值−0.4及对应日期正确；期间变化−32.4 pp等于末值减首值，纵轴范围和百分点单位正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "关键数值和日期通过引线绑定相应点位；黄绿图例分别对应正负净支持，年份刻度对应真实日期位置。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际PNG支持全部点位及真实日期间距、−6至30线性尺度的容差内映射；换色位置符合插值零点，末端没有复制参考尖峰。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_02.png中的人物、工具、建筑和路面实质构成成图主体。render.py使用场景素材并由数据控制路径、刻度和文字；保存脚本存在。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "折线直接叠合于完整街景，保留参考的叠合关系。定量边界是折线中心路径，路面色块不承担数值面积编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、单位、图例、关键日期数值及统计定义清楚，必要文字未被遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "两名前景成人使用接地短刷，三名后景成人使用长柄滚筒；手柄与工具相连，工具落在共同涂绘路面。人物、桶及工具形成合理前后遮挡，折线叠合于场景上方。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确社区街头艺术净支持，页脚说明计划主题及赞成百分比减反对百分比；日期、单位和合成观察数明确当前单系列时间统计含义。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考主题为Black Lives Matter净支持增加；core明确许可adapted_topic。当前议题及趋势变化属于输入改编，共绘动作和图景叠合关系仍保留。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "+0.9点的线中心约y=945、−0.4点约y=967，分别位于约y=960.33零线上下，符合目标间距；微小正负值可见，未被置零或人为放大。"
+    }
+  },
+  "semantic_attribution_zh": "原议题改为社区街头共绘计划、原增长走势改为当前下降走势，均由冻结输入明确许可，不属于输出语义丢失。共绘动作、工具接地和折线叠合关系保留；微小差值判读受分辨率及线宽限制。"
+}

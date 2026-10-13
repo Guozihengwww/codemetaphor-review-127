@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "查看源码前的可见证据：参考图在数字账表上放置写实放大镜，镜框连接右下手柄并投下阴影；四个大色块和顶部极窄 Other 扇区位于镜面环带，中心透出账表。待评图保留同样的包含、连接及接触关系。标题 Audit fee market shares、SYNTHETIC DATA、AUDIT FIRMS 和 Synthetic audit fees / USD million 清晰。右侧 Firm A 为 1,780 / 35.6%，底部 Firm B 为 1,390 / 27.8%，左侧 Firm C 为 1,120 / 22.4%，左上 Firm D 为 690 / 13.8%；顶部深色窄扇区经引线连接 Other 20 / 0.4%。中心标明 TOTAL AUDIT FEES 5,000 USD million；账表在中心区仍可见。未见明显文字遮挡、断开的手柄或镜框外的数据扇区。",
+  "summary_zh": "数据、标签、单位及镜面内环带的融合关系符合冻结要求，未发现需报告的可见缺陷。真实统计范围的合成化来自输入。",
+  "issues": [],
+  "measurement_notes_zh": "对1600×2000的image.png作只读像素测量。源码提供采样中心(770,1080)、外半径595及纵缩0.98；在不穿过标签的0.54R采样圈按实际像素颜色分类，A/B/C/D/Other约为35.619%、27.819%、22.375%、13.789%、0.397%，目标为35.6%、27.8%、22.4%、13.8%、0.4%。对实际颜色边界拟合，内椭圆半轴约268.30/263.18像素，外椭圆约595.72/582.97像素，水平内外比约0.4504，外椭圆纵横比约0.9786。该阈值法存在约1至2像素边界不确定性。Other在y=500的近实体色像素为x=756至769，在y=800为x=763至769，实际窄色块连续到中心孔边缘。源码的角宽公式与这些像素证据相符，未将公式当作测量。",
+  "uncertainties_zh": "Other内缘仅约6至7个实体色像素，抗锯齿和取整限制其相对精度，不能以标签或满量程容差保证亚像素准确。已检查capture_render.py源码，但按审查范围未查看历史记录或执行渲染，无法独立确认所有历史完整渲染均经该入口保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "M1：五个类别、单一审计费用系列、单位、总额及SYNTHETIC DATA声明均出现。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "金额依次为1780、1390、1120、690、20；份额35.6%、27.8%、22.4%、13.8%、0.4%，合计5000 USD million，均与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A/B/C/D分别位于右侧桃色、底部黄色、左侧绿色、左上蓝色扇区；Other由引线连接顶部深色窄扇区。顺时针顺序符合输入。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "M2：实际像素份额与目标差异均远小于3个百分点；内外半径比约0.4504，纵缩约0.979，与0.45及0.98一致。镜框和中心孔不承担费用份额。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "M4：已查看raw_01.png及归一化素材；成图中对应的蓝黑纹理镜框、银色接头和条纹手柄清晰且占据实质画面。render.py加载素材，以SVG扇区控制数据几何并绘制文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "M3/M6：环带同心嵌入镜框内，中心区透出账表；右下手柄经金属接头与框体连接，阴影落在账表上。边缘及遮挡关系未破坏镜面承载数据的结构。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、审计机构父类、系列及单位均清晰；类别金额、份额和总额无实质遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "保留账表下层、镜框围合的镜面环带、透明中心区、相连手柄及接触阴影；实际数据边界是镜面内的扇区径向边界。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "M5：Audit fee market shares、AUDIT FIRMS、Synthetic audit fees / USD million及底部份额说明共同明确机构类别、费用指标、单位和占总费用的统计含义。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留原图的审计费用市场份额主题和放大镜查看账表的关系。原图真实机构及S&P 500/FY2022统计范围被冻结输入改为合成机构、未限定年份的合成费用，属于输入许可适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Other虽仅0.4%，仍可见从镜框内缘延伸至中心孔边缘的窄扇区；颜色边界与引线可分辨，20和0.4%清晰。未见为增强辨识而明显放大的几何。"
+    }
+  },
+  "semantic_attribution_zh": "未见输出导致的当前主题或物体融合关系丢失。reference_meaning的部分保留归因于冻结输入将真实品牌、S&P 500及FY2022范围合成化，不归因于生成缺陷。小扇区的细微相对精度限制来自栅格分辨率及抗锯齿，不影响其作为镜面环带一部分的可见关系。"
+}

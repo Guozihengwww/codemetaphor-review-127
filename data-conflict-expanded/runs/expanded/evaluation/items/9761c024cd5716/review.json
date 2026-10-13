@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中成人共同涂绘街道，刷具接地，人物有前后遮挡，绿黄折线叠合于街景。成图保留六名成人、刷子、滚筒与漆桶；可见−4.0、−4.9、+6.5、+10.2、+28.4，纵轴−6至+30，时间从2017年5月至2020年6月。合成声明、社区街头共绘主题、百分点单位及净支持定义清楚可辨。零点说明的小字与黄色折线局部交叠。",
+  "summary_zh": "已保存并校验review.json。数据、语义和街头共绘叠合结构均保留；仅零点注释局部遮线，属于轻微问题。按补充要求未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "日期说明和数据路径均可辨，注释不遮住局部小起伏。",
+      "observed_zh": "零点日期说明中部叠在黄色折线上，文字描边遮住部分线段，整体走势仍可辨。",
+      "evidence_zh": "交叠约位于x=748–824、y=700–728像素。由冻结数据和坐标映射推导的2018-06-06、+2.4点为(765.74,713.93)；成图对应像素呈注释浅灰色，最近黄色像素距离2.74像素。位置对应为推导，颜色及距离为实测。",
+      "bbox_xyxy_normalized": [
+        0.374,
+        0.35,
+        0.412,
+        0.364
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接检查2000×2000成图，未重渲染。绘图区高566像素，满量程3%为16.98像素或1.08百分点。60个目标横坐标中59个在目标纵坐标±14像素内检出相应线色，另一个受到文字遮挡。沿59个区间取649个位置，距附近可见线色均不超过4.25像素；这是邻近性检查，并非中心线精确回归。目标零点为(613.15,751.67)，实测y=752行在x=612–614由绿转黄。源码使用全部60点及真实日期，项目数据与冻结数据一致。",
+  "uncertainties_zh": "文字交叠处不能从像素完整恢复中心线；部分0.1百分点变化仅约1.57像素，微幅起伏的逐点辨识有限。未查看执行记录，未独立确认capture_render.py的实际调用历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列覆盖全部60个日期；源码接入全部点，图面日期范围及关键点对应。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "五个可见关键数值、60次观测、日期、纵轴范围和百分点单位均与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "关键值通过标记或引线绑定对应点；负值绿、正值黄，跨零日期说明正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素核查支持真实日期间距、线性纵轴及插值换色；未发现超过满量程3%的偏移。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_02.png，其人物、建筑、刷具和路面在成图全幅实质可见；源码控制折线及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "折线叠合在同一街景上，延续参考关系；数据由折线纵向位置承载，路面黄色面积不承担数量编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、声明、定义、单位及关键数值清晰；零点说明仍可读，但存在已记录的局部压线。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "成人共同涂绘，手连接刷柄、刷毛及滚筒接触路面，前景人物遮住后方部分工具；场景叠合关系保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "社区街头共绘净支持主题明确，定义为赞成比例减反对比例，以百分点表示；日期和合成调查属性清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "共同涂绘与净支持折线关系保留；Black Lives Matter主题改编由core明确允许，属于输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "−0.4至+0.9的跨零关系可见；+2.4附近及随后微小回落受到日期说明遮挡，局部轮廓不完全可辨。"
+    }
+  },
+  "semantic_attribution_zh": "主题改编来自冻结输入，不属于输出语义丢失。输出保留共同涂绘、刷具接地、前后遮挡与折线叠合。局部注释遮线属于输出排布问题；微幅变化的分辨限制不扩大为数据映射失败。"
+}

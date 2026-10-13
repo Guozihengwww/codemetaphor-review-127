@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图将红色价格曲线与前景屈腿融合。成图可见礼帽、两臂、两条网袜腿和两只高跟鞋，红线沿前景腿及鞋延伸。五个年份、五个数值、美元单位及合成数据声明清晰可读；1980点最高，1982点最低。",
+  "summary_zh": "通过。数据、标签及腿部融合关系符合要求，未发现必要结构的可见缺陷。已写入review.json并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1936原图上测得五个圆心约为(649.8,1358.2)、(919.8,1331.8)、(1189.8,661.2)、(1459.8,1269.8)、(1729.8,1490.2)，横距均270像素。以可见65,000和20,000网格线标定，反推价格约22,002、23,499、61,530、27,015、14,516 USD，最大偏差约0.054%满量程，低于3%容差。另由源码确认线性映射和数据控制的前景腿内缘；像素测量独立于源码坐标。",
+  "uncertainties_zh": "像素测量受约1像素抗锯齿影响。已检查capture_render.py实现，但按限制未查看历史记录、日志或自检，无法独立确认全部历史渲染调用。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "1978—1982五个年份、一个Fictional price系列和五个圆点完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "22,000、23,500、61,500、27,000、14,500及USD per one-carat diamond均准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份刻度与圆心横坐标对应，价格标签与对应点清晰绑定。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素测量确认年份等距、价格高度准确；四段折线无额外峰谷。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材中的人物、高跟鞋及网纹在成图中实质可见；render.py控制几何与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据路径与前景腿下缘、内缘共享边界，并沿鞋面延伸至鞋尖。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、系列、单位、年份、价格及刻度完整清晰，无关键遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "帽在头上，两臂完整；两条网袜腿从衣摆下连接躯干，前景屈腿遮挡后方伸展腿，两腿末端各接高跟鞋。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确一克拉钻石价格，YEAR标明年份，Fictional price及美元单位说明指标，文字明确点高表示价格。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留钻石价格与屈腿融合关系；参考图的D-flawless均价及历史市场语境被冻结输入改为虚构价格，属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "五个圆心清晰；最接近的前两点仍相差约26.4像素高。最低值点位于鞋尖，腿—鞋—路径关系可辨。"
+    }
+  },
+  "semantic_attribution_zh": "未见当前主题或数据承载关系的输出丢失。原图真实均价、D-flawless细分及历史来源的变化归于冻结输入的合成口径；人物外观适配仍保留规定身份和姿态关系，不构成生成失败。"
+}

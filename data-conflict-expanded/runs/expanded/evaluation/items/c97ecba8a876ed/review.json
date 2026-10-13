@@ -1,0 +1,90 @@
+{
+  "verdict": "minor",
+  "confidence": 0.94,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以金色啤酒杯柱表示各类别消费量，杯顶白色泡沫，底部有人物，瓶装注释放在柱间上方，并有横向比较线。待评图显示 Annual beer consumption、SYNTHETIC DATA、Annual consumption per person 和 L/person/year；20个杯柱从 Region A 到 Region T 排列，前段高杯有泡沫、金色液体和杯底，后段杯柱逐渐压成极薄条。底部保留逐项数值及20个人物，上方11个瓶装注释带类别名，红色虚线标注 Region U 48.6。类别行较拥挤；最小杯柱的部件关系在原图中难以分别辨认。",
+  "summary_zh": "数值、绑定、比例及杯体承载数据的主要关系正确。类别标签略拥挤，人物与数据杯柱的贴近关系减弱；微小杯柱的部件可辨性有限，未发现重大缺陷。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "相邻地区标签应便于逐项区分。",
+      "observed_zh": "类别名称几乎连续排成一行，仍能辨认，但快速区分相邻标签稍困难。",
+      "evidence_zh": "原图类别行位于y≈1142；直接检测文字深色像素，相邻标签的墨迹间隔为4–11像素，Region M与Region N之间仅4像素；没有发现文字重叠或错绑。",
+      "bbox_xyxy_normalized": [
+        0.076,
+        0.74,
+        0.935,
+        0.757
+      ]
+    },
+    {
+      "category": "metaphor_integration",
+      "severity": "minor",
+      "requirement_id": "M6",
+      "expected_zh": "允许姿态调整，同时保留参考中人物与杯柱底部的贴近、叠合关联。",
+      "observed_zh": "人物移到独立的下方一行，各自持有另一个小杯，与上方数据杯柱分离；整杯高度编码仍保留。",
+      "evidence_zh": "参考图底部可见人物头手贴近并叠在杯柱下部；最终图杯柱止于y≈1100，人物从y≈1320开始，中间隔着类别和数值文字。此项仅记录画面接触关系减弱，不推断原作者的具体饮用动作。",
+      "bbox_xyxy_normalized": [
+        0.073,
+        0.698,
+        0.937,
+        0.925
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接读取2000×1540的image.png，并以原像素裁片检查标签和微小杯柱。图上0与150刻度约在y=1100、300，满量程800像素，3%容差为24像素或4.5 L/person/year。以各杯中央32列与同排空隙的RGB差值中位数>15检测连至基线的可见范围，A–T高度约为772、536、372、258、179、124、86、86、60、42、29、20、14、14、10、7、5、4、3、2像素；与数据目标相差均不足0.8像素，约0.15 L。红色虚线主要落在y=840–841，符合48.6。以上是含抗锯齿误差的像素估读；render.py的height=value×800/150及泡沫/杯底分段映射另作为源码证据，不替代像素验证。",
+  "uncertainties_zh": "Region Q–T目标总高仅约4.625、3.209、2.226、1.545像素，泡沫与杯底可低于一像素；可见行数不能证明这些极小值的相对精度或各部件完整可辨。参考图仅606×466，人物的精确手部动作解释有限。已查看capture_render.py源码，未读取受限历史记录，因此不独立确认全部渲染的实际调用路径。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "A–T共20个杯柱、20组类别及数值、20个人物、11个瓶装注释和Region U比较虚线均可见；主题、单位和SYNTHETIC DATA齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "20项文字与data.json逐项一致，保留全部给定小数；最小值显示0.2896，比较值显示48.6，没有将正值写成零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、数值及杯柱沿同一列对齐；瓶号01–11依次绑定D/F/G/H/J/K/L/N/O/Q/S，颜色对应输入，Region U明确标为20地区之外的比较项。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "20柱与比较线的直接像素估读均通过3%满量程容差；G/H和M/N两组相等值具有相等可见高度。微小标记另列可辨性限制。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png、提取杯素材、素材清单和必要源码；生成素材的泡沫、气泡、杯底、三色瓶及红衣人物在成图中实质使用，代码控制完整杯高及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "生成杯体直接构成定量柱：泡沫在金色液体上方，杯壁包围液体，杯底接在下端；整体高度承载消费量。瓶与人物明确为非数据尺寸。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、指标、单位、数值、比较说明及瓶号清楚可读；类别行间距偏紧但没有重大不可读或缺字。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "大中杯的泡沫—液体—杯底关系、瓶装注释和比较虚线保留。末端极薄杯柱不能分别辨认所有部件；人物与数据杯柱由贴近叠合改为分离排列。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "图面明确表达合成地区的人均年度啤酒消费量，单位为L/person/year；每地区是独立量值，同一线性尺度，未被表述为份额或累计量。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考的人均年度啤酒消费主题及以杯柱比较消费量的统计含义保留；国家和品牌改为合成地区与瓶号由输入规定，不要求沿用旧数据或排序。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最小几项仍有细条状非零痕迹和精确数值；Q–T仅约2–5个可见像素行，泡沫、金色液体与杯底难以分别辨认。未以放大这些标记作为合格要求。"
+    }
+  },
+  "semantic_attribution_zh": "合成地区及瓶号替换真实国家、品牌属于输入许可，消费主题未改变。人物与数据杯柱分离属于输出画面关系的部分损失，但杯体与数值的核心融合仍在；参考人物具体动作不作确定归因。末端杯部件难辨主要受规定比例与分辨率限制，不据此推定数值错误或任务不可行。"
+}

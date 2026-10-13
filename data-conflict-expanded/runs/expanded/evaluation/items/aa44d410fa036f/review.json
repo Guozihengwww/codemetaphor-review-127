@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图与最终图均可见地球下缘连接积液、滴流越过浅透视底座，黑红折线叠加其上。最终图主题、合成声明、百分比单位及预测身份清楚；关键数值标签可读，红色负值位于零线下。",
+  "summary_zh": "已保存review.json并通过schema校验。数据、语义及融化地球结构保留；1965年两系列顶点局部重叠，属于轻微可辨性问题。未运行submit.py。",
+  "issues": [
+    {
+      "category": "occlusion_layering",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "两系列路径及相近转折可追踪，不夸大真实差距。",
+      "observed_zh": "1965年红色3.3%顶点覆盖黑色3.2%顶点的大部分笔画；配对标签准确，但几何间距难以直接辨认。",
+      "evidence_zh": "约位于(773,754)。原图x=773列附近黑色深色核心仅在y758检出。源码推算两点中心纵距约3.86像素，小于6.4像素线宽；此距离不是像素中心实测。",
+      "bbox_xyxy_normalized": [
+        0.379,
+        0.648,
+        0.395,
+        0.677
+      ]
+    }
+  ],
+  "measurement_notes_zh": "检查2000×1140原图。可见纵轴约跨y300至918，对应16个百分点，3%满量程容差为0.48个百分点。46个年份位置的单列彩色笔画区间中点估值最大偏差约0.16个百分点，但该估值受斜率和线宽影响。1982年两端空心环中心约y508.5和860，换算约9.60%和0.50%。项目数据与冻结数据一致，未执行渲染代码。",
+  "uncertainties_zh": "交点及抗锯齿限制亚像素中心恢复。未读取执行日志或自检，因此不能独立确认所有完整渲染均经capture_render.py保存；不将记录不可核查视为输出失败。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "23年、2系列完整；每年有刻度，源码使用全部46个值，对应位置均见曲线。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "关键标签5.9%、13.4%、12.7%、3.2%/3.3%、−0.4%、9.6%和0.5%均准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "黑色绑定通胀、红色绑定产出；关键年份标签及1982预测身份正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "两系列共用线性轴、年份等距；未发现超容差偏差，负值和接近零的正值均保留。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材的大陆纹理、经纬线、积液和滴流构成可见主体；源码控制曲线及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "曲线直接叠加地球及积液区域，延续参考的叠合关系；折线路径承载数据。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、年度口径、系列、单位、年份及预测标识均可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "球体连续连接积液，积液接触底座，三条滴流向下跨过前沿；暗背板和浅透视底座保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达价格通胀与实际产出相对上一年的年度百分比变化。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留年度通胀与产出增长主题及融化地球上的双线叠合；未强制沿用旧统计结论。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "−0.4%负谷和0.5%末点可与零线区分；1965年的微小系列间距受笔画重叠限制。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题和系列角色未丢失。原图真实统计范围与旧涨跌叙事由冻结合成输入替换，不计为输出损失。局部不足来自1965年笔画重叠，未发现数据改写。"
+}
