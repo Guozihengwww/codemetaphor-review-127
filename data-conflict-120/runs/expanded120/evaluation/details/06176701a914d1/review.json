@@ -1,0 +1,286 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为蓝色台面上的五列写实芝麻糖，矩形顶面纵向接续，共用底线，周围有碎屑和阴影。成图可见每周收入标题、SYNTHETIC DATA、USD及总额$1,080,000；WK1–WK5金额依次为18000、36000、72000、54000、900000。前四柱可辨1、2、4、3个完整单元，WK5为密集长柱，其50块计数随后核验。量尺0–990000、共同零线及五周标签均可见，未见文字裁切或重叠。以上观察已在读取源码前保存。",
+  "summary_zh": "五周金额、完整糖块计数、柱高及标签绑定一致；生成芝麻糖素材实际构成数据单元，代码控制数量与尺寸。当前收入主题、单位及合成数据性质清楚，未发现违反必要要求的可见缺陷。参考意义的部分保留来自冻结输入明确允许的主题改编。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量指定image.png（2000×2005）。从原图未遮挡处检测到最高量尺线y≈445、零线y≈1765，满量程1320像素；五柱顶边约为1741、1717、1669、1693、565，对应高度24、48、96、72、1200像素。独立按顶面接缝计数为1、2、4、3、50。亮度剖面用显著暗边分离接缝，排除较弱的芝麻纹理起伏；WK5的49条接缝间距均为24像素。源码公式仅作交叉佐证，未作为像素测量。",
+  "uncertainties_zh": "像素边缘和零线中心约有±1–2像素定位不确定性，最小柱的相对精度不能仅由满量程通过来保证。24像素高的顶面仍可辨，但单粒芝麻细节受缩小影响。参考图未写明原统计指标名称，当前收入主题按core中的adapted_topic评价。未查看执行日志或自检，无法独立确认所有历史渲染均经capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "WK1–WK5按输入顺序全部出现，单系列、五个金额、五个块数、美元量尺、单位图例及SYNTHETIC DATA均完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "18000、36000、72000、54000、900000美元均正确；总额1080000、总块数60、WK5为50块及每块18000美元相互一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每柱金额位于柱顶上方，WK及块数标签居于同一柱中心下方；未见跨柱错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素高度为24、48、96、72、1200，满量程1320对应990000美元；反算符合全部输入。接缝计数独立确认1、2、4、3、50个完整单元，阴影不增加纵向高度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和slab_01.png，生成素材中的芝麻及糖浆顶面纹理实质用于所有数据单元；render.py读取素材并按数据计算块数和位置。capture_render.py提供完整渲染封装，但未据此声称历史执行已获证实。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "芝麻糖顶面本身构成柱体；逐块计数和顶面联合高度承载金额。蓝色台面、碎屑及侧向投影保留，未用旁置物体代替数据融合。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、Synthetic weekly revenue · USD、五周金额、周标签、块数、单位图例、量尺范围及页脚说明均可读，无必要文字被遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "小柱有闭合糖块顶面、芝麻纹理与右侧投影；大柱由50个完整顶面沿纵向贴接，内部边界清楚。五柱底部共用零线，位于蓝色台面，碎屑散布在计量区外。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Weekly revenue in sesame slabs及Synthetic weekly revenue · USD明确当前主题和指标；WEEK、WK1–WK5明确类别角色。五周总额与单周贡献说明清楚，未把各周数值表述成累计序列。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留以整块芝麻糖数量及柱高对比各周金额的关系。core明确允许主题改编；当前单位、量尺和分布依输入更新，不要求沿用参考中的旧金额或涨跌。此partial归因输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "WK1约155×24像素，单个完整顶面、内部芝麻纹理及与零线的接触可辨；WK2–WK4的接缝也可分辨，未把正值隐藏或放大为固定最小柱高。"
+    }
+  },
+  "semantic_attribution_zh": "当前每周收入及合成数据主题为冻结输入的显式改编；WK5变为50块长柱来自当前数值，不能视为丢失旧趋势。横向糖块顶面沿纵向接续仍保持完整单元计数和共同零线。未发现输出遗漏；细纹理缩小与边界抗锯齿仅限制微观细节及像素精度。原参考未明示统计指标，不能推定其更具体论点。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK1",
+        "expected_value": 18000,
+        "observed_value": 18000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 24,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.2015,
+          0.868329,
+          0.279,
+          0.880299
+        ],
+        "evidence_zh": "原图中可辨1个完整顶面，无内部接缝；按图例每块18000美元换算。",
+        "uncertainty_zh": "误差为可辨完整单元计数的换算结果，不表示顶面像素边缘具有无限精度。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK2",
+        "expected_value": 36000,
+        "observed_value": 36000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 48,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.3565,
+          0.856359,
+          0.434,
+          0.880299
+        ],
+        "evidence_zh": "原图中有1条内部接缝（约y=1740），分成2个完整顶面。",
+        "uncertainty_zh": "误差为可辨完整单元计数的换算结果，不表示顶面像素边缘具有无限精度。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK3",
+        "expected_value": 72000,
+        "observed_value": 72000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 96,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.5115,
+          0.832419,
+          0.589,
+          0.880299
+        ],
+        "evidence_zh": "原图中有3条内部接缝（约y=1692、1716、1740），分成4个完整顶面。",
+        "uncertainty_zh": "误差为可辨完整单元计数的换算结果，不表示顶面像素边缘具有无限精度。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK4",
+        "expected_value": 54000,
+        "observed_value": 54000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 72,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.6665,
+          0.844389,
+          0.744,
+          0.880299
+        ],
+        "evidence_zh": "原图中有2条内部接缝（约y=1716、1740），分成3个完整顶面。",
+        "uncertainty_zh": "误差为可辨完整单元计数的换算结果，不表示顶面像素边缘具有无限精度。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK5",
+        "expected_value": 900000,
+        "observed_value": 900000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 1200,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.8215,
+          0.281796,
+          0.899,
+          0.880299
+        ],
+        "evidence_zh": "原图条带亮度剖面检出49条清晰内部接缝，y约588至1740、间距24像素，形成50个完整顶面；未把图例或碎屑计入。",
+        "uncertainty_zh": "误差为可辨完整单元计数的换算结果，不表示顶面像素边缘具有无限精度。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK1",
+        "expected_value": 18000,
+        "observed_value": 18000,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 24,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.2015,
+          0.868329,
+          0.279,
+          0.880299
+        ],
+        "evidence_zh": "原图顶边约y=1741，共同零线中心约y=1765，高24像素；最高量尺线y=445，满量程1320像素对应990000美元，反算18000美元。",
+        "uncertainty_zh": "边缘抗锯齿及轴线中心约有±1–2像素定位不确定性；0为误差点估计，2像素相当于最小值的8.33%，不能据此保证小值的亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK3",
+        "expected_value": 72000,
+        "observed_value": 72000,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 96,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.5115,
+          0.832419,
+          0.589,
+          0.880299
+        ],
+        "evidence_zh": "原图顶边约y=1669，共同零线中心约y=1765，高96像素；最高量尺线y=445，满量程1320像素对应990000美元，反算72000美元。",
+        "uncertainty_zh": "边缘及轴线中心约有±1–2像素定位不确定性；0为误差点估计，2像素约占满量程0.15%。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK5",
+        "expected_value": 900000,
+        "observed_value": 900000,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1200,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.8215,
+          0.281796,
+          0.899,
+          0.880299
+        ],
+        "evidence_zh": "原图顶边约y=565，共同零线中心约y=1765，高1200像素；最高量尺线y=445，满量程1320像素对应990000美元，反算900000美元。",
+        "uncertainty_zh": "边缘及轴线中心约有±1–2像素定位不确定性；0为误差点估计，2像素约占满量程0.15%。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "WK1（最小正值）",
+        "required_parts": [
+          "完整芝麻糖顶面",
+          "芝麻与糖浆纹理",
+          "薄边缘及右侧投影",
+          "蓝色台面",
+          "共同零线"
+        ],
+        "relationship": "顶面为封闭矩形，纹理包含于顶面内；底边接触零线，投影落在右侧台面且不增加数据高度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.199,
+          0.866833,
+          0.288,
+          0.882793
+        ],
+        "evidence_zh": "约x403–558、y1741–1765可辨单个完整顶面；表面颗粒与下缘暗边保留，未只剩数字标签。"
+      },
+      {
+        "category": "WK3（中间实例）",
+        "required_parts": [
+          "4个完整顶面",
+          "3条内部接缝",
+          "共同零线",
+          "侧向投影"
+        ],
+        "relationship": "四块沿纵向相邻接续，内部接缝划分完整单位，最底块接触共同零线；阴影位于数据顶面外侧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.509,
+          0.830923,
+          0.596,
+          0.882793
+        ],
+        "evidence_zh": "顶边y≈1669；内部接缝约1692、1716、1740，联合高度约96像素，未见单元截断或互相遮住。"
+      },
+      {
+        "category": "WK5（最大值）",
+        "required_parts": [
+          "50个完整芝麻糖顶面",
+          "49条内部接缝",
+          "共同零线",
+          "蓝色台面及右侧投影"
+        ],
+        "relationship": "完整顶面沿纵向贴接形成长柱；可计数的顶面及其联合边界承载金额，影子和旁侧碎屑不计量。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.819,
+          0.2798,
+          0.906,
+          0.882793
+        ],
+        "evidence_zh": "顶边y≈565，底部到y≈1765；49条重复暗边稳定分隔50个表面单元。柱顶对应900000刻度，贴接未造成可见缺块或额外增量。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core声明adapted_topic：当前主题为用芝麻糖单元表示每周收入，单位18000美元，量尺0–990000，允许姿态与非数据部件适配新值。",
+      "output_added_or_lost_meaning_zh": "增加准确的五周总额及WK5贡献说明，保留整块糖作货币单位的图形论证；未发现当前语义损失。参考中未明示的统计指标不作强制复原。",
+      "visible_inscription_evidence_zh": "图面可读SYNTHETIC DATA、Weekly revenue in sesame slabs、Synthetic weekly revenue · USD、WEEK、WK1–WK5、1 whole slab = $18,000及TOTAL SYNTHETIC REVENUE。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "冻结core明确为adapted_topic；当前收入主题及合成属性已写入成图，参考意义partial不是输出缺陷。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前数值要求1、2、4、3、50块，导致WK5远高于其他周；图面按该数值关系呈现，未沿用参考固定五块峰值。"
+      }
+    ],
+    "measurement_coverage_zh": "逐项核对全部5类、1系列的金额、顺序、块数与单位；独立计数覆盖全部5柱，像素高度实际检查全部5柱，表内另列最小WK1、中间WK3和最大WK5的直接测量。部件关系检查小、中、大3个实例；未逐粒检查芝麻纹理或核验历史执行记录。"
+  }
+}

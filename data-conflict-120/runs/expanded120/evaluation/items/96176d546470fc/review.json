@@ -1,0 +1,221 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为白瓷杯、右侧杯柄、杯碟与接触阴影，咖啡液面由三个扇区构成。待评图保留这些部件及液面融合关系；深棕、窄橙棕、浅棕区域分别通过独立引线绑定Breakfast 62%、With other meals 7%、Between meals 31%。顶部合成声明及底部标题、指标、单位和总量说明均可读，未目见扇区缺块或显著遮挡。",
+  "summary_zh": "三类数据、标签及物体关系正确，独立逆投影测量符合容差。review.json已保存并通过schema.json验证；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2160×1800原图中独立拟合液面椭圆：中心约(1042.67,573.60)，半轴约(515.56,187.02)px。按实测半轴逆投影，在归一化半径0.65处测得分界角31.05°、254.17°、279.34°；另以0.35和0.50半径复核。mark_extent_px为主色区域水平宽度，分色掩膜的3×3开运算用于排除引线及抗锯齿混色细带，未改动图像。满量程100%，误差亦为百分点。",
+  "uncertainties_zh": "抗锯齿、纹理和分色阈值带来约±0.1个百分点的保守测量不确定度，区域宽度约±3px；小值的名义相对误差不代表测量精度。参考图未给出抽样口径。归档脚本实现已查看，实际执行状态未核验；未查看受限日志或历史记录，未复跑渲染。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "三类别、单一Synthetic occasion share系列、三个扇区和三组百分数齐全；标题、合成声明与Total 100%可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "Breakfast 62%、With other meals 7%、Between meals 31%逐项符合数据，合计100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别顺序正确；引线分别终止于约(627,524)深棕区、(1021,432)窄橙棕区、(1430,554)浅棕区。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立逆投影估计61.98%、6.99%、31.03%，偏差约0.02、0.01、0.03个百分点，均小于3个百分点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材和液面纹理；素材中的杯、柄、碟与阴影构成成图主体。render.py读取素材并按数据累计角度控制扇区。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区域直接构成杯内液面，共用中心、椭圆边界和纹理；杯沿包围液面，杯柄连接杯身，杯底接触杯碟。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需类别、数值、标题、指标、单位和合成声明均可读，无重大遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "斜俯视白瓷杯、完整杯沿、连接杯柄、完整杯碟及接触阴影均保留；三个扇区共同构成液面。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "COFFEE MOMENTS和Share of coffee occasions (%)明确主题与指标；三类命名、Synthetic occasion share及Total 100%明确统计角色和口径。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "咖啡时段比较、三类命名及液面融合保持；旧真实统计按冻结输入改为合成场合份额，没有冒充真实人群偏好结论。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "7%主色区约222px宽、186px高，两条径向边、后侧外弧和内部引线终点均可辨。"
+    }
+  },
+  "semantic_attribution_zh": "62/7/31、合成声明和场合份额口径来自冻结输入；替换旧真实统计与偏好措辞属于允许的输入改写。当前主题、类别角色及液面融合没有丢失，形状变化由当前数值驱动。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "occasion_share",
+        "category": "Breakfast",
+        "expected_value": 62,
+        "observed_value": 61.98,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 954,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.243981,
+          0.218889,
+          0.685648,
+          0.422778
+        ],
+        "evidence_zh": "深棕区逆投影角约31.05°至254.17°，角差223.12°，占61.98%；主区包围框约[527,394,1481,761]px。",
+        "uncertainty_zh": "三条采样环估计61.957%—61.978%；保守不确定度约±0.1个百分点。"
+      },
+      {
+        "series_id": "occasion_share",
+        "category": "With other meals",
+        "expected_value": 7,
+        "observed_value": 6.99,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 222,
+        "full_scale_error_percent": 0.01,
+        "small_value_relative_error_percent": 0.14,
+        "bbox_xyxy_normalized": [
+          0.418519,
+          0.214444,
+          0.521296,
+          0.317778
+        ],
+        "evidence_zh": "两侧逆投影角约254.17°和279.34°，角差25.17°，占6.99%；主区包围框约[904,386,1126,572]px。",
+        "uncertainty_zh": "三条采样环估计6.992%—7.006%。0.14%为按四舍五入观测值计算的名义相对误差；±0.1个百分点对应此小值约±1.4%的相对不确定度。"
+      },
+      {
+        "series_id": "occasion_share",
+        "category": "Between meals",
+        "expected_value": 31,
+        "observed_value": 31.03,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 515,
+        "full_scale_error_percent": 0.03,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.483333,
+          0.216111,
+          0.721759,
+          0.371667
+        ],
+        "evidence_zh": "浅棕区从279.34°跨零至31.05°，角差111.71°，占31.03%；主区包围框约[1044,389,1559,669]px。",
+        "uncertainty_zh": "三条采样环估计31.031%—31.040%；交界混色带取中心位置，保守不确定度约±0.1个百分点。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体杯具",
+        "required_parts": [
+          "白瓷杯身",
+          "完整杯沿",
+          "右侧杯柄",
+          "杯碟",
+          "接触阴影"
+        ],
+        "relationship": "杯沿包围液面，杯柄两端连接杯身，杯底坐于杯碟，接触处及碟下保留阴影。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.11,
+          0.185,
+          0.882,
+          0.835
+        ],
+        "evidence_zh": "杯柄约位于x1450—1895、y585—1050；杯底接触线约在y1210—1280，未见悬空或断接。"
+      },
+      {
+        "category": "Breakfast：大扇区",
+        "required_parts": [
+          "深棕液面",
+          "共享中心",
+          "外侧液面弧",
+          "杯沿",
+          "标签引线"
+        ],
+        "relationship": "区域连续覆盖左侧及前侧，径向边连接共享中心，外弧止于杯内边界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.216,
+          0.69,
+          0.425
+        ],
+        "evidence_zh": "共享中心约(1043,574)，引线端点约(627,524)位于内部；前侧杯沿沿弧包围区域，未造成缺块。"
+      },
+      {
+        "category": "With other meals：最小扇区",
+        "required_parts": [
+          "窄橙棕液面",
+          "两条径向边",
+          "后侧外弧",
+          "共享中心",
+          "标签引线"
+        ],
+        "relationship": "两边在杯内中心汇合，外弧接后侧液面边界，与另外两区共面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.417,
+          0.213,
+          0.523,
+          0.321
+        ],
+        "evidence_zh": "窄区由约(904,394)、(1126,389)延伸至中心(1043,574)；后缘连续，引线约(1021,432)落在内部。"
+      },
+      {
+        "category": "Between meals：中间值扇区",
+        "required_parts": [
+          "浅棕液面",
+          "共享中心",
+          "右侧外弧",
+          "杯沿",
+          "标签引线"
+        ],
+        "relationship": "与另外两区沿径向边相接，右侧外弧沿杯口内部延伸。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.481,
+          0.214,
+          0.725,
+          0.374
+        ],
+        "evidence_zh": "共享中心约(1043,574)，引线端点约(1430,554)位于内部；右侧弧与杯沿方向一致。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许以当前合成场合份额替换旧统计，并调整姿态和非数据部件；未要求延续真实人群偏好结论。",
+      "output_added_or_lost_meaning_zh": "保留三类咖啡时段的份额比较及液面融合；Total 100%与输入一致，没有引入时间累计或未定义分组。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；COFFEE MOMENTS；Share of coffee occasions (%)；Synthetic occasion share · 3 categories · Total 100%；三类名称及62%、7%、31%。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "旧真实统计改为冻结指定的合成场合份额，主题与类别保持。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "扇区随62/7/31改变，独立像素测量支持当前份额。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "原图未显示抽样范围或具体分母，不据偏好措辞补造统计口径。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一面板、唯一系列的全部三个扇区，包括最小值7、最大值62及中间值31；全部必需标签另行逐项检查。几何结论来自原图像素，源码仅作路线佐证。"
+  }
+}

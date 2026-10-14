@@ -1,0 +1,267 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：白瓷杯内咖啡液面由三块棕色扇区组成，杯沿、右侧杯柄、杯碟与接触阴影可见，标注65%、5%、30%。指定成图：五块棕金色扇区直接构成杯内液面，共用中心，外缘贴合杯内开口；最小浅金色扇区位于左前侧，7%文字在其内部。顶部依次显示15.5%、15.5%、31%、7%、31%，三个Breakfast分别保留synthetic subcategory 1/2/3。合成声明、指标单位、咖啡主题、饮用场合分母和五类别说明均可读。未见文字裁切或严重遮挡；此时尚未量测比例。",
+  "summary_zh": "五项数据文字、色彩绑定及仿射投影份额符合要求；扇区直接构成杯内液面，杯沿、杯柄、杯碟和接触阴影完整。未发现实质可见缺陷。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "量测对象为2160×1800的image.png。依据成图轮廓与径向分界拟合，交点约(1057.6,635.0)，半轴约(392.0,141.6)像素；用椭圆逆变换后的角差求份额，未直接用屏幕极角或源码目标角代替量测。两种像素提取结果最多相差约0.38个百分点，均在3个百分点容差内。mark_extent_px表示扇区外缘两分界端点的直线距离。误差字段为近似点估计。",
+  "uncertainties_zh": "题面“三分类”与五项数据可按三个语义父类、早餐拆成三个子类一致解释。抗锯齿、纹理及外缘细圈限制亚像素量测精度；最小值文字正确不等于其相对误差得到精密保证。未检查禁止查看的运行日志、自检或历次归档，因此不确认每次渲染归档实际执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五个类别及唯一系列完整；三个Breakfast子类编号1/2/3、With other meals、Between meals均可读，数量与底部5 categories一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "顶部和液面分别显示15.5%、15.5%、31%、7%、31%；Total 100%、PERCENT及SYNTHETIC DATA与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "五个标签的色短线对应液面五种棕金色；从12点方向顺时针为所给数据顺序，内部数值位于相应扇区。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素逆仿射估计份额为15.51%、15.48%、31.03%、6.99%、30.99%，均未超过3个百分点容差；完整椭圆外缘未被杯沿裁掉。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和cup_normalized.png，杯体、右柄、杯碟与阴影在成图中实质可见。render.py读取数据控制扇区、统一仿射变换及文字；capture_render.py提供归档实现，执行历史未检查。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "五块区域共用杯内液面中心和椭圆外缘，被白瓷内壁包含；前缘贴着杯口内侧，杯柄连接杯体，杯底接触杯碟。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "数值、父类与子类、单位、合成声明、标题及统计口径在原分辨率均可读，没有裁切或文字互遮。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "斜俯视白瓷杯具有连续杯沿、杯身、上下连接的右侧环形杯柄、完整杯碟及接触阴影；数据边界就是杯内液面分区边界。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "COFFEE MOMENTS与Share of all coffee-drinking occasions明确主题和分母；SYNTHETIC OCCASION SHARE / PERCENT明确指标单位；早餐父类和三个合成子类关系有脚注说明。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "咖啡饮用时段与杯内份额的融合含义保留。原图关于most people prefer的真实人群偏好表述，当前改为合成饮用场合份额；这是输入口径适配，不构成输出遗漏或失败。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小7%浅金色扇区具有两条可见径向边及约109像素的外缘端点间距，文字处于其内，仍可辨为同一咖啡液面的部分；未见人为膨胀。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、百分比指标、饮用场合分母和类别父子关系均保留。真实偏好论断变为合成场合统计，以及早餐由单块拆为三块，属于输入允许的适配与数据驱动形变。未发现输出导致的语义缺失；像素分辨率只限制精密误差估计。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "occasion_share",
+        "category": "Breakfast / synthetic subcategory 1",
+        "expected_value": 15.5,
+        "observed_value": 15.51,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 330.3,
+        "full_scale_error_percent": 0.01,
+        "small_value_relative_error_percent": 0.06,
+        "bbox_xyxy_normalized": [
+          0.48962,
+          0.27413,
+          0.63982,
+          0.35277
+        ],
+        "evidence_zh": "成图分界线逆仿射后的边界角约−89.99°至−34.15°，份额约15.51%；外缘端点间距约330.3像素。",
+        "uncertainty_zh": "抗锯齿、像素插值和外缘细圈影响拟合；误差为近似点估计。"
+      },
+      {
+        "series_id": "occasion_share",
+        "category": "Breakfast / synthetic subcategory 2",
+        "expected_value": 15.5,
+        "observed_value": 15.48,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 137.5,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": 0.13,
+        "bbox_xyxy_normalized": [
+          0.48962,
+          0.30862,
+          0.67111,
+          0.38168
+        ],
+        "evidence_zh": "成图分界线逆仿射后的边界角约−34.15°至21.57°，份额约15.48%；外缘端点间距约137.5像素。",
+        "uncertainty_zh": "抗锯齿、像素插值和外缘细圈影响拟合；误差为近似点估计。"
+      },
+      {
+        "series_id": "occasion_share",
+        "category": "Breakfast / synthetic subcategory 3",
+        "expected_value": 31,
+        "observed_value": 31.03,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 635.3,
+        "full_scale_error_percent": 0.03,
+        "small_value_relative_error_percent": 0.1,
+        "bbox_xyxy_normalized": [
+          0.36522,
+          0.35277,
+          0.6584,
+          0.43141
+        ],
+        "evidence_zh": "成图分界线逆仿射后的边界角约21.57°至133.27°，份额约31.03%；外缘端点间距约635.3像素。",
+        "uncertainty_zh": "抗锯齿、像素插值和外缘细圈影响拟合；误差为近似点估计。"
+      },
+      {
+        "series_id": "occasion_share",
+        "category": "With other meals",
+        "expected_value": 7,
+        "observed_value": 6.99,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 108.6,
+        "full_scale_error_percent": 0.01,
+        "small_value_relative_error_percent": 0.14,
+        "bbox_xyxy_normalized": [
+          0.32085,
+          0.35277,
+          0.48962,
+          0.41003
+        ],
+        "evidence_zh": "成图分界线逆仿射后的边界角约133.27°至158.43°，份额约6.99%；外缘端点间距约108.6像素。",
+        "uncertainty_zh": "两种像素提取法得到约6.93%与6.99%；相对误差字段仅为所采用点估计，不保证该精度。"
+      },
+      {
+        "series_id": "occasion_share",
+        "category": "Between meals",
+        "expected_value": 31,
+        "observed_value": 30.99,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 412.8,
+        "full_scale_error_percent": 0.01,
+        "small_value_relative_error_percent": 0.03,
+        "bbox_xyxy_normalized": [
+          0.30814,
+          0.27413,
+          0.48964,
+          0.38169
+        ],
+        "evidence_zh": "成图分界线逆仿射后的边界角约158.43°至270.01°，份额约30.99%；外缘端点间距约412.8像素。",
+        "uncertainty_zh": "抗锯齿、像素插值和外缘细圈影响拟合；误差为近似点估计。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体咖啡液面与白瓷杯口",
+        "required_parts": [
+          "五个液面扇区",
+          "连续白瓷杯沿",
+          "内壁",
+          "共同分区中心"
+        ],
+        "relationship": "扇区在杯口内部相接，整体椭圆外缘与内壁接触，构成杯内液面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.28009,
+          0.23667,
+          0.70093,
+          0.43611
+        ],
+        "evidence_zh": "白瓷杯沿连续包围五色椭圆；分界汇于杯内，后侧可见内壁，前侧外缘止于杯口内侧，没有覆盖杯身。"
+      },
+      {
+        "category": "Breakfast / synthetic subcategory 3（大扇区）",
+        "required_parts": [
+          "深棕31%扇区",
+          "两条径向边",
+          "前侧液面外缘",
+          "白瓷杯沿"
+        ],
+        "relationship": "大扇区从共同中心展开至前侧内缘，与相邻扇区在同一液面相接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.36522,
+          0.35277,
+          0.6584,
+          0.43141
+        ],
+        "evidence_zh": "深棕区域两条边、弧形外缘及内部31%清楚；外缘贴合杯内开口，未被瓷面切去。"
+      },
+      {
+        "category": "With other meals（最小扇区）",
+        "required_parts": [
+          "浅金7%扇区",
+          "两条径向边",
+          "左前侧液面外缘",
+          "内部7%文字"
+        ],
+        "relationship": "小扇区连接共同中心与左前杯内边界，属于连续液面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.32085,
+          0.35277,
+          0.48962,
+          0.41003
+        ],
+        "evidence_zh": "外缘端点约为(789,738)及(693,687)；两条径向边和外缘可辨，文字未遮掉整体形状。"
+      },
+      {
+        "category": "杯柄与杯体",
+        "required_parts": [
+          "右侧环形杯柄",
+          "杯柄上连接",
+          "杯柄下连接",
+          "杯身"
+        ],
+        "relationship": "杯柄在杯身右侧上下连接，环内保持可见空隙。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.63889,
+          0.35389,
+          0.81944,
+          0.60056
+        ],
+        "evidence_zh": "弧柄上端接近杯口，下端连接杯身较低处；中央开孔清楚，没有悬空或断裂。"
+      },
+      {
+        "category": "杯底、杯碟与接触阴影",
+        "required_parts": [
+          "杯底",
+          "杯碟",
+          "杯底接触暗边",
+          "碟下阴影"
+        ],
+        "relationship": "杯底落在杯碟内，杯碟位于杯体下层，阴影表达接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.17315,
+          0.44278,
+          0.81019,
+          0.82778
+        ],
+        "evidence_zh": "杯底有窄暗边，白瓷杯碟包围杯体；杯碟外轮廓完整，碟下柔和阴影与桌面相连。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入指定合成occasion share百分比，早餐分为三个保留父类名的合成子类；当前五项与新数值替代原三项真实统计。",
+      "output_added_or_lost_meaning_zh": "保留咖啡时段与杯内液面份额融合，补充合成声明、分母和子类解释；未沿用原图真实人群偏好论断，属于统计口径适配。",
+      "visible_inscription_evidence_zh": "可见COFFEE MOMENTS、SYNTHETIC DATA、SYNTHETIC OCCASION SHARE / PERCENT、Share of all coffee-drinking occasions、Breakfast及synthetic subcategory 1/2/3、With other meals、Between meals、5 categories / Total 100%。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成饮用场合统计与早餐子类拆分来自冻结输入；原图真实人群偏好含义只部分延续，不归责于输出。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "液面从参考三块改为当前五块，份额由当前15.5、15.5、31、7、31控制；完整杯体及液面融合关系保持。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一百分比通道的全部五个扇区均做像素边界逆仿射估计，覆盖最小7%、大31%及中间15.5%标记；另逐项核对所有类别、数值、单位、父子关系、合成声明和总数。无辅助面板或未覆盖的其他定量通道。"
+  }
+}

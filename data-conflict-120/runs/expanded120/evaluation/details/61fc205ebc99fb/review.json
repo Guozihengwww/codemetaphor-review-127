@@ -1,0 +1,326 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以星区和红白横纹填充债务面积图，右侧预测为虚线。指定成图可见SYNTHETIC DATA、Debt relative to output、指标单位及历史/预测图例；织物星条旗上缘随年度折线起伏，底部闭合至0%。关键标注为1900 120.0%、1989 108.2%、2018 3.0%、2024→2025 4.0%→4.2%、2035 7.2%。2025分界及预测虚线可见，低值处仍有薄红色织物面积，未见明显遮挡或纹样越界。",
+  "summary_zh": "未发现违反冻结要求的可见缺陷。9个代表点的像素抽测均在容差内，主题、单位、关键标签及旗帜融合关系保留。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量指定image.png原始1600×2000像素。可见130%与0%网格约在y650、1735，满量程1085px；横轴1900与2035端点约在x150、1490。按实线中心、圆标或虚线间隙中的织物边界测量高度，以高度/1085×130换算。满量程误差分母为130，小值相对误差分母为各自输入值。小数是近似定位的换算结果，不代表等量精度；源码仅作完整性及实现旁证。",
+  "uncertainties_zh": "未逐一独立测量136个年度顶点。线宽与抗锯齿带来约1.5–2px定位不确定度，最小值不能据满量程通过推断高相对精度。按限制未查日志、自检或其他成图；已读capture_render.py保存机制，但全部历史调用是否经过该入口未独立证实。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "年度范围、唯一系列、单位、合成声明、历史/预测图例、分界及关键标签完整。源码使用全部136点，含125个历史点和11个预测点；项目数据与冻结data.json逐字节一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "120.0%、108.2%、3.0%、4.0%→4.2%、7.2%及其年份均与输入一致；极值年份、136年度计数和0–130%刻度正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "极值、内部峰和末年标签通过位置或引线对应数据点；边界两值明确注明年份。图例与实线、预测虚线一致，纹样未充当额外系列。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "9点独立像素抽测的满量程误差中心估计最大约0.125%，低于3%容差。最小值面积约25px；预测分界实测x1390–1391，符合线性年份位置。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始和处理后的旗帜素材，星区、条纹及织纹在成图主体可对应。代码将素材裁入数据多边形并绘制文字；capture_render.py包含完整渲染保存流程。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "旗帜上缘直接承载年度数值，织物连续闭合至零线，星区和横纹位于同一面积内；未见影响解释的错位、遮挡或越界。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下主题、合成声明、指标单位、年份、图例、关键数值和来源说明均可读；密集年份采用刻度，符合简报。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "蓝色星区、红白横纹共同裁切于年度面积，底部接触零线；历史实线、预测虚线和分界清楚，低值段保持连续且未被人为增高。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题与英文说明明确债务相对合成经济产出的比例；指标、百分比单位、年度类别及历史/预测角色完整，来源说明明确并非真实经济统计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留债务相对产出主题及国旗面积融合关系。原真实美国联邦债务/GDP与旧预测论述改为合成序列和中性标题，属于冻结输入允许的改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "2018、2025、2035面积高度分别约25、35、60.5px，织物薄带、上缘与零线可分辨且连续。局部只保留红纹符合真实比例裁切；相对精度仍受线宽限制。"
+    }
+  },
+  "semantic_attribution_zh": "原真实统计和旧预测论述的变化属于输入允许的改编；新峰谷及低薄尾段属于数据驱动形状变化。未见当前主题、单位或融合关系的输出遗漏。低值相对精度受像素限制，不等于结构丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "debt_output_ratio",
+        "category": "1900",
+        "expected_value": 120,
+        "observed_value": 119.995,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1001.5,
+        "full_scale_error_percent": 0.004,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.091,
+          0.364,
+          0.097,
+          0.868
+        ],
+        "evidence_zh": "起点圆标及实线中心约(150,733.5)，至零线高1001.5px。",
+        "uncertainty_zh": "圆标及抗锯齿定位约±1.5px。"
+      },
+      {
+        "series_id": "debt_output_ratio",
+        "category": "1941",
+        "expected_value": 48.2,
+        "observed_value": 48.226,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 402.5,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.345,
+          0.664,
+          0.351,
+          0.868
+        ],
+        "evidence_zh": "x≈557处实线上缘中心y≈1332.5，至零线高402.5px。",
+        "uncertainty_zh": "线宽与抗锯齿定位约±1.5px。"
+      },
+      {
+        "series_id": "debt_output_ratio",
+        "category": "1961",
+        "expected_value": 23.8,
+        "observed_value": 23.963,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 200,
+        "full_scale_error_percent": 0.125,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.469,
+          0.764,
+          0.475,
+          0.868
+        ],
+        "evidence_zh": "x≈755处局部谷底实线中心约y1535，高约200px。",
+        "uncertainty_zh": "折线转角定位约±2px。"
+      },
+      {
+        "series_id": "debt_output_ratio",
+        "category": "1989",
+        "expected_value": 108.2,
+        "observed_value": 108.194,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 903,
+        "full_scale_error_percent": 0.005,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.642,
+          0.413,
+          0.651,
+          0.868
+        ],
+        "evidence_zh": "峰顶及右侧实线给出边界约(1033,832)，高约903px。",
+        "uncertainty_zh": "陡坡与圆标叠合，顶点定位约±2px。"
+      },
+      {
+        "series_id": "debt_output_ratio",
+        "category": "2018",
+        "expected_value": 3,
+        "observed_value": 2.995,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 25,
+        "full_scale_error_percent": 0.004,
+        "small_value_relative_error_percent": 0.15,
+        "bbox_xyxy_normalized": [
+          0.823,
+          0.851,
+          0.831,
+          0.868
+        ],
+        "evidence_zh": "最低点约(1321,1710)，红色织物闭合至y1735，高约25px。",
+        "uncertainty_zh": "定位约±2px，相当于约±0.24个百分点、该值约±8%相对不确定度。"
+      },
+      {
+        "series_id": "debt_output_ratio",
+        "category": "2024",
+        "expected_value": 4,
+        "observed_value": 4.014,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 33.5,
+        "full_scale_error_percent": 0.011,
+        "small_value_relative_error_percent": 0.35,
+        "bbox_xyxy_normalized": [
+          0.859,
+          0.847,
+          0.865,
+          0.868
+        ],
+        "evidence_zh": "历史末端附近实线中心约y1701.5，高约33.5px。",
+        "uncertainty_zh": "转换处定位约±2px，对该值约±6%相对不确定度。"
+      },
+      {
+        "series_id": "debt_output_ratio",
+        "category": "2025",
+        "expected_value": 4.2,
+        "observed_value": 4.194,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 35,
+        "full_scale_error_percent": 0.005,
+        "small_value_relative_error_percent": 0.15,
+        "bbox_xyxy_normalized": [
+          0.868,
+          0.848,
+          0.873,
+          0.868
+        ],
+        "evidence_zh": "x1391–1392的红色面积始于约y1700，高约35px；分界位于x1390–1391。",
+        "uncertainty_zh": "虚线间隙中的纹理边界定位约±2px，对该值约±5.7%相对不确定度。"
+      },
+      {
+        "series_id": "debt_output_ratio",
+        "category": "2030",
+        "expected_value": 5,
+        "observed_value": 5.032,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 42,
+        "full_scale_error_percent": 0.025,
+        "small_value_relative_error_percent": 0.65,
+        "bbox_xyxy_normalized": [
+          0.898,
+          0.844,
+          0.903,
+          0.868
+        ],
+        "evidence_zh": "x1440–1442的红色面积上缘约y1693，高约42px。",
+        "uncertainty_zh": "纹理阈值及抗锯齿定位约±2px，对该值约±4.8%相对不确定度。"
+      },
+      {
+        "series_id": "debt_output_ratio",
+        "category": "2035",
+        "expected_value": 7.2,
+        "observed_value": 7.249,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 60.5,
+        "full_scale_error_percent": 0.038,
+        "small_value_relative_error_percent": 0.68,
+        "bbox_xyxy_normalized": [
+          0.929,
+          0.835,
+          0.934,
+          0.868
+        ],
+        "evidence_zh": "末端浅色圆标覆盖y1672–1676，中心约y1674.5，高约60.5px。",
+        "uncertainty_zh": "圆标定位约±1.5px，对该值约±2.5%相对不确定度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "左侧大值与蓝色星区",
+        "required_parts": [
+          "蓝色星区",
+          "白星",
+          "红白横纹",
+          "数据上缘",
+          "零线"
+        ],
+        "relationship": "星区与横纹包含于同一面积并直接接触，上缘编码数值，底部接触零线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.093,
+          0.365,
+          0.258,
+          0.868
+        ],
+        "evidence_zh": "白星位于蓝色织物内，蓝区下边接白纹，横纹向右延续；整体由下降的数据上缘裁切并延至0%。"
+      },
+      {
+        "category": "1989内部高峰",
+        "required_parts": [
+          "红白织物条纹",
+          "实线峰顶",
+          "连续面积",
+          "零线"
+        ],
+        "relationship": "横纹穿过峰体，峰顶连接两侧数据边界，峰体连续至零线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.612,
+          0.414,
+          0.683,
+          0.868
+        ],
+        "evidence_zh": "108.2%峰内可见多条红白织纹；条纹在峰侧裁切，上缘实线随之转折，没有独立装饰峰或空隙。"
+      },
+      {
+        "category": "2018最低点与低值尾段",
+        "required_parts": [
+          "红色织物薄带",
+          "数据上缘",
+          "零线",
+          "相邻年度面积"
+        ],
+        "relationship": "低值面积保持非零厚度，左右连接同一主体，下面接触共同零线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.821,
+          0.835,
+          0.934,
+          0.869
+        ],
+        "evidence_zh": "2018处约25px高红色织物向右延续至预测末年；虽仅保留底部红纹，仍与主体相连，上缘和基线可分别辨认。"
+      },
+      {
+        "category": "预测分界与表面层次",
+        "required_parts": [
+          "2025竖分界",
+          "历史实线",
+          "预测虚线",
+          "织物面积"
+        ],
+        "relationship": "分界标示年份，上缘线叠在织物面积边界，预测背景位于面积之后。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.857,
+          0.323,
+          0.934,
+          0.869
+        ],
+        "evidence_zh": "x1390–1391可见竖虚线；右侧上缘为浅色虚线并止于2035圆标，面积未因分界移位或与线条分离。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入采用合成债务/产出比及当前年度数据，允许峰谷适配，不要求延续原真实数值或涨跌结论。",
+      "output_added_or_lost_meaning_zh": "保留年度比值与历史/预测解释；原旧预测论述改为中性主题说明，属于输入改编，未添加累积量或分区占比含义。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Debt relative to output；Debt / Output (%)；percent of synthetic output；ANNUAL SERIES / 1900–2035；Historical · 1900–2024；Forecast · 2025–2035；Not observed economic statistics."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原真实美国联邦债务/GDP与旧预测论述换成明确标识的合成债务/产出序列，符合冻结主题。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "1900高值、1989内部峰及2018后的低薄面积对应当前数据，未强制复制参考峰位或右侧高度。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最低面积约25px高且可见，但约2px定位不确定度相当于约8%小值相对不确定度，不能据满量程通过保证微小相对误差。"
+      }
+    ],
+    "measurement_coverage_zh": "单系列单面板抽测9/136年度点，覆盖最大值、内部峰谷、最小值、历史末点及预测起点、内部点和末点；另核对网格、年度端点及预测分界。未逐像素核验其余127点；必须文字和关键数值另行核对，全部136点使用由源码旁证。"
+  }
+}

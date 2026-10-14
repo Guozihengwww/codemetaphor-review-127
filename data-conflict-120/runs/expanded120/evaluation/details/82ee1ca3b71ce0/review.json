@@ -1,0 +1,309 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：蓝色台面上的芝麻糖完整顶面首尾排列成五列，柱底接近同一零线；有侧边、投影和散落碎屑，横轴为WK1–WK5。\n待评图：标题为Weekly revenue in sesame slabs，SYNTHETIC DATA清楚可见；左轴标USD及0–990,000。底部五列依次可见1、2、4、3、5条有芝麻纹理的横向顶面，标注$18,000、$36,000、$72,000、$54,000、$90,000。中心文字为FIVE-WEEK TOTAL $270,000、15 whole slabs across 5 weeks及1 complete top = $18,000。各柱共用零线，蓝色台面与碎屑保留；顶面很扁，需原始分辨率确认边界和物体关系。",
+  "summary_zh": "通过。五周金额、完整顶面计数及固定线性量尺一致；芝麻糖顶面直接构成数据柱，主题、单位和周次完整可读。参考主题为输入明确改编，单独记为部分保留，不计输出缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "独立读取2000×2005的image.png像素，未使用渲染掩膜或几何报告。深棕刻度实测y=415、540、790、1040、1290、1540、1665、1790；零线笔画覆盖1789–1791，中心1790。满量程1375像素。橙色主体逐行覆盖至少75像素用于定位柱顶，R−B阈值30/40/50的结果一致；散落碎屑不计入主体。五柱高度25/50/100/75/125像素，全部在3%满量程容差内。原图目视核对全部1/2/4/3/5个完整单元；源码公式仅作交叉佐证。",
+  "uncertainties_zh": "连续边界有约±1像素定位不确定性，最小柱相对高度不确定性约4%，不能由满量程合格推出小值亚像素精确。极薄侧边的立体细节有限，但顶面数量与接触边界可辨。已阅读capture_render.py入口；依限制未查运行日志或历史记录，无法独立确认所有历史完整渲染均由其保存。未依据参考图推断未写明的商业结论。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "WK1–WK5依输入顺序完整出现，唯一系列Synthetic weekly revenue (USD)、SYNTHETIC DATA、WEEK、图例和0–990,000量尺齐全；共15个数据顶面。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "五周标签依次$18,000/$36,000/$72,000/$54,000/$90,000，块数1/2/4/3/5；图例$18,000、总额$270,000和15块均与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各周名称、金额与块数在对应柱中心正下方，无错配；中央图例与五周总额有明确文字说明。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素测量五柱高约25/50/100/75/125，量尺0至990,000跨1375像素，分别对应冻结五值。完整顶面实数为1/2/4/3/5，投影不增量，无抬高最小值或截轴。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及slab_01_rectified.png；其芝麻、焦糖纹理实质用于全部数据柱和图例，碎屑也可见。render.py读取处理后素材并由数据计算数量、尺寸和文字；capture_render.py提供完整渲染保存入口。历史调用未审计。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "完整芝麻糖顶面本身就是每18,000美元的单元，各柱由这些单元沿高度方向连续排列；物体不是旁置装饰。共同零线、台面接触、薄侧边和右下投影关系一致，无遮挡导致少计。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下主题、单位、系列、周次、金额、块数、合成声明及图例全部可读；图例明确阴影与碎屑不赋值。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大小实例均保留含芝麻颗粒的焦糖顶面、完整矩形轮廓和相邻单元接触关系；顶面形成共同零线上的柱。蓝色台面和散落碎屑可见。横向细长顶面适配当前数值，不改变数据承载关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Weekly revenue in sesame slabs、Synthetic weekly revenue (USD)、WEEK与WK1–WK5明确表达每周收入；FIVE-WEEK TOTAL区分五周总额和每周柱值，没有百分比组成或累计时间曲线的误导。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "core明确reference_semantic_scope=adapted_topic。保留芝麻糖构成周别金额柱的关系；当前合成收入主题与18,000美元单位由输入指定，不要求继承参考旧金额或未明示的真实商业语境。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小WK1约150×25像素，仍可辨一个完整芝麻纹理顶面、四周边界和零线接触；WK5的五个25像素高单元边界也可区分。薄侧边细节有限，但未丢失计数关系。"
+    }
+  },
+  "semantic_attribution_zh": "主题改编归因于冻结输入；柱高较低、顶面横向细长与当前数据和固定量尺相容。未观察到输出遗漏或主题丢失。极薄侧边细节及约1像素边界误差属于分辨率限制，不影响整数计数。参考未明示的商业论点不作推断。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK1",
+        "expected_value": 18000,
+        "observed_value": 18000,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 25,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.2175,
+          0.880299,
+          0.2925,
+          0.892768
+        ],
+        "evidence_zh": "原图中柱顶约y=1765，共同零线中心y=1790，高约25像素。图上990,000刻度位于y=415，按实测1375像素满量程换算为18,000美元；可见完整顶面1个。",
+        "uncertainty_zh": "像素定位及抗锯齿约±1像素，即约±720美元、±0.073%满量程、相对该值约±4.00%。零误差为边界点估计，不表示亚像素精确；投影和零线笔画厚度未计入柱高。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK2",
+        "expected_value": 36000,
+        "observed_value": 36000,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 50,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.375,
+          0.86783,
+          0.45,
+          0.892768
+        ],
+        "evidence_zh": "原图中柱顶约y=1740，共同零线中心y=1790，高约50像素。图上990,000刻度位于y=415，按实测1375像素满量程换算为36,000美元；可见完整顶面2个。",
+        "uncertainty_zh": "像素定位及抗锯齿约±1像素，即约±720美元、±0.073%满量程、相对该值约±2.00%。零误差为边界点估计，不表示亚像素精确；投影和零线笔画厚度未计入柱高。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK3",
+        "expected_value": 72000,
+        "observed_value": 72000,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 100,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.5325,
+          0.842893,
+          0.6075,
+          0.892768
+        ],
+        "evidence_zh": "原图中柱顶约y=1690，共同零线中心y=1790，高约100像素。图上990,000刻度位于y=415，按实测1375像素满量程换算为72,000美元；可见完整顶面4个。",
+        "uncertainty_zh": "像素定位及抗锯齿约±1像素，即约±720美元、±0.073%满量程、相对该值约±1.00%。零误差为边界点估计，不表示亚像素精确；投影和零线笔画厚度未计入柱高。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK4",
+        "expected_value": 54000,
+        "observed_value": 54000,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 75,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.69,
+          0.855362,
+          0.765,
+          0.892768
+        ],
+        "evidence_zh": "原图中柱顶约y=1715，共同零线中心y=1790，高约75像素。图上990,000刻度位于y=415，按实测1375像素满量程换算为54,000美元；可见完整顶面3个。",
+        "uncertainty_zh": "像素定位及抗锯齿约±1像素，即约±720美元、±0.073%满量程、相对该值约±1.33%。零误差为边界点估计，不表示亚像素精确；投影和零线笔画厚度未计入柱高。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK5",
+        "expected_value": 90000,
+        "observed_value": 90000,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 125,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.8475,
+          0.830424,
+          0.9225,
+          0.892768
+        ],
+        "evidence_zh": "原图中柱顶约y=1665，共同零线中心y=1790，高约125像素。图上990,000刻度位于y=415，按实测1375像素满量程换算为90,000美元；可见完整顶面5个。",
+        "uncertainty_zh": "像素定位及抗锯齿约±1像素，即约±720美元、±0.073%满量程、相对该值约±0.80%。零误差为边界点估计，不表示亚像素精确；投影和零线笔画厚度未计入柱高。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK1",
+        "expected_value": 18000,
+        "observed_value": 18000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 25,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.2175,
+          0.880299,
+          0.2925,
+          0.892768
+        ],
+        "evidence_zh": "原始分辨率逐个辨认出1个完整芝麻纹理顶面；依可见图例每面18,000美元，计数得到18,000美元。各面边界可区分，没有分数块。",
+        "uncertainty_zh": "计数误差与连续边界定位误差分开评价；此项零误差仅指可见整数单元计数。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK3",
+        "expected_value": 72000,
+        "observed_value": 72000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 100,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.5325,
+          0.842893,
+          0.6075,
+          0.892768
+        ],
+        "evidence_zh": "原始分辨率逐个辨认出4个完整芝麻纹理顶面；依可见图例每面18,000美元，计数得到72,000美元。各面边界可区分，没有分数块。",
+        "uncertainty_zh": "计数误差与连续边界定位误差分开评价；此项零误差仅指可见整数单元计数。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "WK5",
+        "expected_value": 90000,
+        "observed_value": 90000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 125,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.8475,
+          0.830424,
+          0.9225,
+          0.892768
+        ],
+        "evidence_zh": "原始分辨率逐个辨认出5个完整芝麻纹理顶面；依可见图例每面18,000美元，计数得到90,000美元。各面边界可区分，没有分数块。",
+        "uncertainty_zh": "计数误差与连续边界定位误差分开评价；此项零误差仅指可见整数单元计数。"
+      },
+      {
+        "series_id": "synthetic_revenue",
+        "category": "FIVE-WEEK TOTAL",
+        "expected_value": 270000,
+        "observed_value": 270000,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.275,
+          0.346,
+          0.59,
+          0.474
+        ],
+        "evidence_zh": "中心明确写FIVE-WEEK TOTAL、$270,000及15 whole slabs across 5 weeks，与五周数值之和一致。",
+        "uncertainty_zh": "总额采用直接文字编码；其字号和图上高度不构成定量几何。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "WK1（最小正值）",
+        "required_parts": [
+          "一个完整芝麻糖顶面",
+          "焦糖与芝麻颗粒",
+          "薄下缘及投影",
+          "共同零线",
+          "蓝色台面"
+        ],
+        "relationship": "芝麻颗粒位于焦糖顶面内；完整面下缘接触零线，投影在主体下方及右侧，不构成额外单元。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.879,
+          0.296,
+          0.897
+        ],
+        "evidence_zh": "约x435–585、y1765–1790可见完整纹理面，底缘与其他柱共线；不存在只剩金额文字而看不到顶面的情况。"
+      },
+      {
+        "category": "WK3（内部类别）",
+        "required_parts": [
+          "四个完整顶面",
+          "三处内部接缝",
+          "下缘",
+          "零线"
+        ],
+        "relationship": "四个面沿柱高方向相邻接触，横向接缝区分单元；下端接触共同零线，投影位于主体之后。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.531,
+          0.842,
+          0.61,
+          0.897
+        ],
+        "evidence_zh": "约x1065–1215、y1690–1790可见四个连续纹理面；三条内部边界没有遮掉一个完整面。"
+      },
+      {
+        "category": "WK5（最大值）",
+        "required_parts": [
+          "五个完整顶面",
+          "四处内部接缝",
+          "薄侧边及投影",
+          "零线",
+          "邻近碎屑"
+        ],
+        "relationship": "五面沿柱高方向连续接触并形成数据外轮廓；右下投影与台面上的离散碎屑位于数量承载面之外。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.845,
+          0.828,
+          0.927,
+          0.897
+        ],
+        "evidence_zh": "约x1695–1845、y1665–1790可见五个面，顶端与90,000刻度同高。碎屑体量小且与柱分离，未误作第六面。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结core将参考语义指定为adapted_topic，当前主题为用芝麻糖单元表示每周收入；允许姿态与非数据厚度适配，旧金额和旧结论无需继承。",
+      "output_added_or_lost_meaning_zh": "输出补充五周总额及完整块数，均由当前数据支持；每周柱与跨周总额区分明确。未观察到当前主题、美元单位或周次角色丢失。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Weekly revenue in sesame slabs.、Synthetic weekly revenue (USD)、WEEK、WK1–WK5、1 complete top = $18,000、FIVE-WEEK TOTAL及Fixed linear scale: 0–990,000 USD。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "core明确许可当前合成每周收入主题；reference_meaning的partial归因于该输入改编，不是输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前柱值仅占固定990,000量尺的约1.82%–9.09%；实测25–125像素的低柱与该比例一致，不能仅因空白多或面较扁判错。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "每单元25像素高，仍足以数清完整面；极薄侧边不能精确测厚，约1像素误差对最小柱相对影响约4%。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一数据面板全部五柱的像素高度、所有类别金额及1/2/4/3/5计数；对最小WK1、内部WK3及最大WK5另列独立符号计数。总额单列为文字编码。未将阴影、碎屑、图例或总额文字的尺寸当作数据；未逐粒测量芝麻纹理。"
+  }
+}
