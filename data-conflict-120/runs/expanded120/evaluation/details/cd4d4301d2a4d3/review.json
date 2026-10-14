@@ -1,0 +1,240 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图用树干横截面承载各国森林份额，年轮跨越彩色扇区，外围可见粗糙树皮。待评图保留略椭圆的木面、年轮、裂缝、树皮和软阴影；26组外围标签清晰，子类别保留Region父类。SYNTHETIC DATA、森林面积份额、百分比及互斥说明明确。Remaining 25.6%位于左上，O、P两个1%细扇区位于左下偏左，边界和木纹仍可见。以上记录先于源码检查。",
+  "summary_zh": "通过。26项数据、标签和引线完整，扇区直接融合木材表面，独立像素测量未发现超容差偏差。review.json已保存并通过schema.json校验；按后续要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量对象为1685×2000的image.png。以可见交汇点约(842,1049.5)为中心，按规定将纵坐标除以0.96；聚合归一化半径280–465像素范围内的像素色度，检出26条分界，再以局部亮缝估计边界。角宽除以3.6得到百分比。mark_extent_px为半径450像素处两边界间的屏幕弦长。未将渲染公式或生成方掩膜作为像素测量。",
+  "uncertainties_zh": "纹理、细线和抗锯齿影响边界定位。两种定位方法的份额差异最高约0.09个百分点，代表测量按约±0.1个百分点理解；满量程合格不保证1%项的高相对精度。未读取运行日志或自检，未独立认证每次渲染的capture保存过程。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "26组类别、数值及扇区齐全；A、B各4个子类，C、D、E各2个子类，F至P和Remaining完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部百分比逐项与data.json一致，包括5.125%的精度、O和P各1%、Remaining 25.6%；总量100%和类别数26正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从START顺时针保持输入顺序；引线圆点位于对应扇区。O、P标签分别连接浅色和棕色细扇区，未见错接。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立扫描检出26条分界，两种定位估计的全部份额偏差均小于0.1个百分点。所有扇区共用椭圆木面，无最小宽度膨胀或树皮计入分母的可见证据。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其年轮、裂缝与树皮在成图对应可见。素材清单将其标为生成素材；render.py加载校正素材并控制扇角、投影和文字。capture_render.py源码存在，未执行。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "年轮和裂缝跨越着色扇区，树皮包围数据木面，阴影处于主体外侧；未见破坏结构或读数的错位、遮挡和接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、单位、父类、子类及数值清晰，两侧标签无明显重叠；页脚解释面积编码和统计口径。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "髓心、同心年轮、径向裂缝、粗糙树皮和软投影可辨；数据扇区从共同髓心延伸至木面边缘，包含于树皮包围的切面内。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Forest area shares、Synthetic forest-area share · percent (%)、Region父类和互斥子类说明共同表达合成地区森林面积份额。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "树干切面表达森林份额的关系保留；原具体国家及真实统计被冻结输入规定的合成地区和子类替换。此部分变化属于输入改编，不是输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "两个1%扇区在归一化半径450像素处宽约26、28像素，木纹、分界和独立引线圆点可辨；向髓心自然收尖。"
+    }
+  },
+  "semantic_attribution_zh": "原国家及旧比例改为合成地区和互斥子类，属于允许的输入改编；扇区数量和角宽变化由当前数据驱动。未发现主题或融合关系遗漏。小值精度的不确定性来自像素和分界线定位，不等于小扇区不可见。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Region O",
+        "expected_value": 1,
+        "observed_value": 0.9583,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 26.07,
+        "full_scale_error_percent": 0.0417,
+        "small_value_relative_error_percent": 4.17,
+        "bbox_xyxy_normalized": [
+          0.219,
+          0.524,
+          0.501,
+          0.588
+        ],
+        "evidence_zh": "浅色细扇区的亮缝边界估计为164.67°、168.12°，角宽3.45°，对应约0.9583%；标签为1%。",
+        "uncertainty_zh": "色度梯度法估计约1.0472%。两种定位相差约0.089个百分点，不能据此确认真实4.17%的相对误差。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region P",
+        "expected_value": 1,
+        "observed_value": 1.0222,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 27.78,
+        "full_scale_error_percent": 0.0222,
+        "small_value_relative_error_percent": 2.22,
+        "bbox_xyxy_normalized": [
+          0.211,
+          0.524,
+          0.501,
+          0.575
+        ],
+        "evidence_zh": "棕色细扇区边界估计为168.12°、171.80°，角宽3.68°，对应约1.0222%；标签为1%。",
+        "uncertainty_zh": "色度梯度法估计约0.9333%；可确认独立细扇区，但不能保证百分之一量级的相对精度。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Remaining",
+        "expected_value": 25.6,
+        "observed_value": 25.6139,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 632.52,
+        "full_scale_error_percent": 0.0139,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.208,
+          0.289,
+          0.501,
+          0.56
+        ],
+        "evidence_zh": "天然木色大扇区边界171.80°至264.01°，角宽92.21°，对应约25.6139%；标签为25.6%。",
+        "uncertainty_zh": "两种边界定位相差约0.06个百分点；没有将不规则树皮外缘作为分母。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region A / subcategory 1",
+        "expected_value": 5.125,
+        "observed_value": 5.1333,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 144.5,
+        "full_scale_error_percent": 0.0083,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.468,
+          0.289,
+          0.564,
+          0.526
+        ],
+        "evidence_zh": "START右侧深绿色扇区边界−95.99°至−77.51°，角宽18.48°，对应约5.1333%；标签保留5.125%。",
+        "uncertainty_zh": "裂缝和细线影响边界峰值，估计精度约±0.1个百分点。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region C / subcategory 1",
+        "expected_value": 4.2,
+        "observed_value": 4.2444,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 116.08,
+        "full_scale_error_percent": 0.0444,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.499,
+          0.524,
+          0.77,
+          0.67
+        ],
+        "evidence_zh": "右下深蓝扇区边界22.37°至37.65°，角宽15.28°，对应约4.2444%；标签与引线对应4.2%。",
+        "uncertainty_zh": "色度梯度法估计约4.1583%；两种定位均在容差内，差异不能解释为确定的几何偏差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体树干横截面",
+        "required_parts": [
+          "木材切面",
+          "髓心",
+          "同心年轮",
+          "裂缝",
+          "粗糙树皮",
+          "软投影",
+          "数据扇区"
+        ],
+        "relationship": "扇区由髓心延伸至木面边缘，树皮环绕木面，阴影处于主体后下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.173,
+          0.264,
+          0.825,
+          0.807
+        ],
+        "evidence_zh": "木面约位于(352,580)至(1333,1521)，外围树皮不随类别着色；年轮跨扇区连续，裂缝保留于木材表面。"
+      },
+      {
+        "category": "Remaining 25.6%",
+        "required_parts": [
+          "天然木色扇区",
+          "木面年轮",
+          "径向分界",
+          "外围树皮",
+          "引线圆点"
+        ],
+        "relationship": "大扇区与邻区共用髓心及连续木面，外端接触树皮内缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.173,
+          0.264,
+          0.502,
+          0.579
+        ],
+        "evidence_zh": "左上大扇区保留密集年轮和长裂缝，上边界接首项绿色扇区，下边界接P项；引线终点位于木面内。"
+      },
+      {
+        "category": "Region O与Region P，各1%",
+        "required_parts": [
+          "两条细木面扇区",
+          "各自径向边界",
+          "年轮纹理",
+          "外围树皮",
+          "两条独立引线"
+        ],
+        "relationship": "相邻细扇区均从髓心延伸至共同木面外缘，各自圆点连接对应标签。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.179,
+          0.518,
+          0.502,
+          0.593
+        ],
+        "evidence_zh": "浅色O与棕色P保留可辨木纹；约(373,1158)和(367,1130)分别有引线圆点，细扇区未悬浮于木面之外。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "真实国家及旧统计允许替换为当前合成地区和互斥子类，数量与数值由data.json决定。",
+      "output_added_or_lost_meaning_zh": "森林面积份额、百分比及整体分割关系保留，明确增加合成数据及非统计调查声明；原具体国家身份因输入改编不再出现。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Forest area shares；Synthetic forest-area share · percent (%)；100% TOTAL FOREST AREA；26 synthetic categories；页脚说明扇区面积、排除树皮及互斥子类别。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "国家与真实统计改为合成地区及子类符合冻结输入；reference_meaning的partial不归因于输出遗漏。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前26项形成26个连续扇区，最大项为Remaining 25.6%，未复制参考图旧比例。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "细线及抗锯齿使边界定位存在约0.1个百分点量级不确定性；两个1%扇区的木面关系仍可见。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单系列、单一角度/面积通道。扫描26条分界并核算全部角宽，记录两个最小值、最大值及两个内部类别共5例；全部26组标签和数值单独核对。未进行逐像素面积分割或历史渲染认证。"
+  }
+}

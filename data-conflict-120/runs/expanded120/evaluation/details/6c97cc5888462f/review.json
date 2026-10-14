@@ -1,0 +1,258 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：树干横截面上的彩色扇区承载各国森林份额，年轮贯穿各扇区，树皮环绕外缘。待评图：标题为 Forest area shares，另有 SYNTHETIC DATA、按合成地区划分的总森林面积份额（%）说明。可见 Region A–P 和 Remaining 共17个外围标签及引线，百分比分别为20.5、12.4、8.4、7.6、5.4、3.4、3.2、2.4、1.9、1.7、1.5、1.4、1.4、1.2、1.0、1.0、25.6。彩色扇区在共同中心汇聚，木面年轮和裂缝仍可见，粗糙树皮包围略扁的圆盘，底部有软阴影。左侧两个1.0%扇区可见为独立窄色带，分别接引线。页脚声明整片木面为100%、树皮排除在分母外、从12点方向按输入顺时针排列。暂未见文字遮挡、标签缺失或明显错接；比例尚待独立像素核对。",
+  "summary_zh": "通过。17项数值、类别和引线完整；木面扇区比例、椭圆投影及材质融合符合冻结要求。两个1.0%扇区具有可辨认的木面区域。真实国家改为合成地区属于输入允许的语义适配。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1685×2000原图像素，归一化RGB检测颜色边界；顶部竖界与右上斜界拟合得到中心约(859.5,1039.3)。按声明将纵向偏移除以0.96，在半径260、340、420、490像素处测角宽并除以3.6，估算百分比。71个木面颜色退出点拟合椭圆半轴约525.3、503.9像素，轴比0.9593。mark_extent_px为拟合外缘上的扇区弧长，不是半径。测量来自最终图片，不使用渲染器的面积自检。",
+  "uncertainties_zh": "抗锯齿、裂缝和中心定位影响边界测量，所报小数为近似值；多半径估计中Region O为1.000–1.044%，Region P为0.978–0.989%，不据满量程合格宣称亚像素精度。按限制未检查执行日志、历史记录或自检，故无法独立确认全部渲染均经过capture_render.py；已核对封装源码、实际素材及当前渲染源码。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A–P与Remaining共17类、17个扇区及17条外围引线齐全，单系列百分比与合成数据声明可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项核对17个数值均与data.json一致，包括Region L/M各1.4%、Region O/P各1.0%及Remaining 25.6%；未将正值舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从12点方向顺时针为A至P再到Remaining；各引线端点落在对应扇区外缘，左侧密集标签按空间位置展开，未见错接或交叉歧义。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "17个扇区的独立逆投影角宽估计最大偏差约0.024个百分点，远小于3个百分点容差；木面轴比约0.9593符合0.96投影，树皮位于数据域之外。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的年轮、上缘至髓心裂缝及左下长裂缝可在主体中对应辨认。render.py读取处理后的木材素材，并用累计数据角度控制像素扇区及标签位置；素材不是旁置装饰。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色扇区直接占据树干木面，年轮穿过各色区、裂缝仍保留；中心与髓心重合，树皮包围数据外缘，软阴影位于主体后方，无破坏结构的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、全部类别数值及页脚口径可读；外围标签未互相覆盖，百分号与类别绑定明确。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "共同中心放射出的扇区构成完整略扁木面；木面包含年轮和裂缝，外圈接触粗糙树皮，底部有软投影。大扇区和两个1.0%窄扇区均保持这种包含及接触关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Forest area shares与副标题Share of total forest area, by synthetic region (%)明确森林面积份额、合成地区角色及单位；ONE WOOD FACE = 100%及树皮排除说明明确共同分母。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考图以树干分区表达森林份额的关系。参考的真实国家及实际统计来源被冻结输入明确替换为合成地区和合成数据，此部分变化归因于输入适配，不是输出缺失。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Region O/P分别为紫粉色与黄色窄扇区，外缘弧长约32.4/31.2像素；木纹可见、两侧边界可分辨，各有独立引线端点。极近中心的汇聚受像素分辨率限制，外围主体未消失或被夸大。"
+    }
+  },
+  "semantic_attribution_zh": "当前森林面积份额主题、百分比单位、地区类别角色及100%整体分配含义均保留。真实国家、旧数值与旧来源的替换属于输入适配；扇区大小变化由当前数据决定。未发现输出造成的必要语义丢失。近中心的细部与小值测量精度受分辨率限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Region A",
+        "expected_value": 20.5,
+        "observed_value": 20.5,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 665.8,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5101,
+          0.2677,
+          0.8095,
+          0.5196
+        ],
+        "evidence_zh": "原图色界逆投影约为−90.00°至−16.20°，角宽73.80°；大扇区面积份额估计20.500%。",
+        "uncertainty_zh": "四个半径处结果约20.472–20.514%；零偏差只是中位边界估计的舍入结果。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region D",
+        "expected_value": 7.6,
+        "observed_value": 7.608,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 250.0,
+        "full_scale_error_percent": 0.008,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5101,
+          0.5196,
+          0.6721,
+          0.771
+        ],
+        "evidence_zh": "右下紫色扇区原图色界逆投影约为58.68°至86.07°，对应7.608%。",
+        "uncertainty_zh": "四个半径处约7.594–7.631%；木纹与抗锯齿影响边界定位。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region H",
+        "expected_value": 2.4,
+        "observed_value": 2.401,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 77.7,
+        "full_scale_error_percent": 0.001,
+        "small_value_relative_error_percent": 0.06,
+        "bbox_xyxy_normalized": [
+          0.2789,
+          0.5196,
+          0.5101,
+          0.7148
+        ],
+        "evidence_zh": "内部序位的粉色扇区原图色界逆投影约为129.220°至137.865°，对应2.401%。",
+        "uncertainty_zh": "四个半径处约2.389–2.403%；报告值为近似角宽估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region O",
+        "expected_value": 1.0,
+        "observed_value": 1.024,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 32.4,
+        "full_scale_error_percent": 0.024,
+        "small_value_relative_error_percent": 2.36,
+        "bbox_xyxy_normalized": [
+          0.1999,
+          0.5196,
+          0.5101,
+          0.5609
+        ],
+        "evidence_zh": "并列最小的紫粉色扇区原图色界逆投影约为170.570°至174.255°，对应1.024%；外缘及引线端点均可见。",
+        "uncertainty_zh": "四个半径处约1.000–1.044%；相对误差估计2.36%与边界测量波动同量级，不视为确定的几何偏差。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region P",
+        "expected_value": 1.0,
+        "observed_value": 0.986,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 31.2,
+        "full_scale_error_percent": 0.014,
+        "small_value_relative_error_percent": 1.39,
+        "bbox_xyxy_normalized": [
+          0.1986,
+          0.5196,
+          0.5101,
+          0.5449
+        ],
+        "evidence_zh": "并列最小的黄色扇区原图色界逆投影约为174.255°至177.805°，对应0.986%；与Remaining之间仍有独立可见边界。",
+        "uncertainty_zh": "四个半径处约0.978–0.989%；中心和像素边界定位会产生系统性小偏移，不能据此声称精确缩小了1.39%。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Remaining",
+        "expected_value": 25.6,
+        "observed_value": 25.61,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 827.7,
+        "full_scale_error_percent": 0.01,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1983,
+          0.2677,
+          0.5101,
+          0.5293
+        ],
+        "evidence_zh": "最大扇区从左侧近水平边界延伸至顶部竖界；逆投影约177.805°至270.000°，对应25.610%。",
+        "uncertainty_zh": "四个半径处约25.597–25.636%；外缘轮廓拟合受天然木纹及边缘过渡影响。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体树干横截面",
+        "required_parts": [
+          "髓心",
+          "同心年轮",
+          "木面扇区",
+          "裂缝",
+          "粗糙树皮",
+          "软投影"
+        ],
+        "relationship": "扇区从髓心向外展开；年轮和裂缝属于同一木面；树皮环绕并接触木面，投影位于主体之后。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.165,
+          0.235,
+          0.86,
+          0.82
+        ],
+        "evidence_zh": "整个数据盘略呈椭圆，色界与木面共用中心；树皮不分摊扇区面积，底部阴影没有覆盖数据。"
+      },
+      {
+        "category": "Region A与Remaining大扇区",
+        "required_parts": [
+          "着色木面",
+          "跨色区年轮",
+          "髓心",
+          "外缘树皮",
+          "外围引线"
+        ],
+        "relationship": "大扇区属于同一木面并在中心接合，年轮穿过色界，外围引线接触各自扇区的外缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.198,
+          0.267,
+          0.81,
+          0.53
+        ],
+        "evidence_zh": "上半部青色及棕色区域保留连续木纹；两者顶部交界为清楚的径向色界，右上和左上引线各自连接对应区域。"
+      },
+      {
+        "category": "Region O与Region P最小扇区",
+        "required_parts": [
+          "紫粉色窄木面",
+          "黄色窄木面",
+          "年轮纹理",
+          "共同中心",
+          "树皮接触边",
+          "独立引线端点"
+        ],
+        "relationship": "两个窄扇区在共同木面内相邻，向髓心收敛，外端接触树皮内沿，各有自己的引线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.165,
+          0.505,
+          0.512,
+          0.566
+        ],
+        "evidence_zh": "左侧紫粉色和黄色带在外缘各约32及31像素宽，可见木纹及不同颜色；约(341,1106)和(338,1074)的端点分别连接O/P标签。中心附近汇聚没有改变外围包含关系。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结输入将真实国家标签及参考统计值替换为Region A–P、Remaining和当前合成份额；允许适配姿态及标签布局。",
+      "output_added_or_lost_meaning_zh": "整体森林面积按地区分配的统计关系保留；没有添加时间趋势、累计关系或真实世界统计主张。原国家、年份及来源不再出现属于允许替换。",
+      "visible_inscription_evidence_zh": "Forest area shares；SYNTHETIC DATA；Share of total forest area, by synthetic region (%)；ONE WOOD FACE = 100%；Sector area encodes forest-area share; bark is excluded；页脚说明区域为示意且非现实估计。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考的真实国家分布被当前冻结输入指定的合成地区分布替换，图面明确标注SYNTHETIC DATA。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前17项份额决定扇区宽度，未复制参考的旧数值；轮廓及引线位置适配不改变木面承载份额的关系。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "1.0%扇区外围清楚，极近中心自然汇聚；抗锯齿导致小值角宽估计在不同半径有约百分之几的相对波动。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单一面积份额通道。对17个扇区均检测四个半径处的色界；详细记录最大项、大项、两个内部序位项及两个并列最小项，共6项。另独立核对全部17个标签、数值与引线。未进行逐像素完整面积分割或亚像素级小值精度认证。"
+  }
+}
