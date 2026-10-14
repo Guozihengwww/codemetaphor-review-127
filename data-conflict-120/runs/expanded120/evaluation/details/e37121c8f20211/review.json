@@ -1,0 +1,238 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：黑、红、金三带相接并填满GDP曲线下方至零线的面积；顶部为德国与停滞增长主题，末端标有766.4B。成图：GERMANY、SYNTHETIC GDP level和SYNTHETIC DATA醒目；注明REAL GDP LEVEL、billion synthetic currency units及level, not growth rate。黑红金纹理构成同一面积，起伏上缘为数据边界，横轴为1991至2024，纵轴为0至800。四个引线标注分别为1991-Q1/503、2009-Q1/616、2020-Q2/684、2024-Q2/774.8。底部写明134 quarters、1 series及三色不是独立数据系列。初看未见明显遮挡、色带脱离或必要文字不可读。",
+  "summary_zh": "未发现违反必要要求的可见缺陷。合成GDP水平的单系列面积与黑红金旗帜融合，标签、单位及134季度计数正确；代表性像素测量符合容差。参考图的停滞增长论述按冻结任务改编，单独记为参考意义部分保留。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量指定image.png（1600×2000）。从实际刻度短线测得0/200/400/600/800对应y=1740/1435/1130/825/520，满量程1220px；用v=(1740-y)×800/1220换算。年份刻度像素中心为155、312、508、704、900、1097、1293、1450，对应1991、1995、2000、2005、2010、2015、2020、2024；回归约39.244px/年。上缘或圆点中心读数约有±2px不确定性。误差为近似像素读数差，不是源码公式的精确误差。",
+  "uncertainties_zh": "抽样覆盖单一数量通道，未独立逐点测量全部134个顶点；全部点入路径由源码与相同输入补证。2024-Q1至Q2的0.5单位变化按实测量尺仅约0.76px，不能保证亚像素差值可辨。未查看历史记录、日志或自检，不能确认所有完整渲染的历史保存过程，也未独立验证原始素材的生图调用记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "冻结输入与project/data.json一致，含134类别、134值、134时间点及1系列；源码按顺序将全部点连线并闭合。图面连续覆盖1991-Q1至2024-Q2，显示134 quarters · 1 series；密集类别采用年份刻度及关键点标签，符合M1。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图中1991-Q1=503、2009-Q1=616、2020-Q2=684、2024-Q2=774.8均与输入一致；纵轴0、200、400、600、800及134季度、1系列计数正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "四组季度与值通过引线接到各自上缘圆点；年份刻度顺序正确。单位与REAL GDP LEVEL相邻，底部显示Synthetic real GDP level；文字明确三色不是三个系列。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素读得最小值约501.6（目标501）、内部点607.2（607）、最大值778.0（778）及2020-Q2约683.9（684）；抽样满量程读数差均小于0.1%，低于3%容差。面积落到可见零线，时间间距符合季度映射。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及黑、金裁切素材，原始三色印刷纹理实质性覆盖成图旗帜主体。prepare_assets.py负责裁切调色，render.py将素材通过数据多边形遮罩合成；capture_render.py提供保存入口，历史执行未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "旗帜自身上缘承载GDP值，三色共同填至零线，未另置一个与数据脱离的旗帜。平面结构中无透视错位、断裂、遮挡数据边界或使色带成为额外系列的关系错误。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下标题、SYNTHETIC DATA、指标、单位、季度范围、系列名、计数与关键值均可读；浅色引线和文字在黑色区域清楚，底部声明完整且未裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "黑带位于红带上方，红带接金带，金带底边接零线；全部色带包含于同一闭合数据面积。最小季度仍有约155px黑带厚度，最大季度黑带约576.5px，均保持三带连接。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "GERMANY与SYNTHETIC GDP level说明当前主题；REAL GDP LEVEL、billion synthetic currency units及Quarterly observations · level, not growth rate明确指标、单位和季度角色。合成提示与非官方统计声明避免真实统计误读。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留德国旗帜与GDP面积融合关系。原图Stalling GDP Growth及旧真实统计论述未沿用；冻结任务明确改为合成GDP水平并不要求旧涨跌结论，属于输入允许的语义改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值501仍对应约765px整体高度，黑红金三部件和零线关系清楚，没有人为最小高度。相邻季度的亚像素差异不能保证肉眼精确区分，已单列分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "原参考的增长停滞论述、真实币值和旧末值被替换，归因于冻结输入的合成GDP水平改编，不是输出遗漏。旗帜填充数据面积的核心关系保留；末端微小季度变化的可辨限制归于像素分辨率。未发现当前主题、指标、单位或类别角色丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_output",
+        "category": "1991-Q2",
+        "expected_value": 501,
+        "observed_value": 501.64,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 765,
+        "full_scale_error_percent": 0.08,
+        "small_value_relative_error_percent": 0.13,
+        "bbox_xyxy_normalized": [
+          0.1025,
+          0.487,
+          0.10375,
+          0.8705
+        ],
+        "evidence_zh": "最小正值。原图x=165列的浅色上缘位于y=974至976，中心约975；至零线1740的高度约765px，按实测轴换算约501.64。",
+        "uncertainty_zh": "季度横坐标取最近像素列，折线拐角及抗锯齿使中心约有±2px（约±1.31单位）不确定性；相对误差仅为近似读数差。"
+      },
+      {
+        "series_id": "synthetic_output",
+        "category": "2004-Q1",
+        "expected_value": 607,
+        "observed_value": 607.21,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 926,
+        "full_scale_error_percent": 0.027,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.415,
+          0.4065,
+          0.416875,
+          0.8705
+        ],
+        "evidence_zh": "内部季度。原图x=665列可见浅色边线中心约y=814，至零线约926px，换算约607.21。",
+        "uncertainty_zh": "边线约有±2px读取不确定性；未以源码计算坐标代替像素读数。"
+      },
+      {
+        "series_id": "synthetic_output",
+        "category": "2022-Q3",
+        "expected_value": 778,
+        "observed_value": 778.03,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1186.5,
+        "full_scale_error_percent": 0.004,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.86875,
+          0.276,
+          0.870625,
+          0.8705
+        ],
+        "evidence_zh": "最大值。原图x=1391列上缘亮线位于y=553至554，中心约553.5；至零线1186.5px，换算约778.03。",
+        "uncertainty_zh": "峰顶描边及采样列取整带来约±2px不确定性；小读数差不表示具有相同精度的几何证明。"
+      },
+      {
+        "series_id": "synthetic_output",
+        "category": "2020-Q2",
+        "expected_value": 684,
+        "observed_value": 683.93,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1043,
+        "full_scale_error_percent": 0.008,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.81125,
+          0.346,
+          0.8175,
+          0.8705
+        ],
+        "evidence_zh": "下探季度。原图圆点位于x约1303、y约697，局部白色圆点在y=696至697最宽；对应高度约1043px，换算约683.93，与可见684标签一致。",
+        "uncertainty_zh": "圆点与陡峭边线、垂直引线相接，中心估计约±2px；未把引线长度作为数据高度。"
+      },
+      {
+        "series_id": "synthetic_output",
+        "category": "2024-Q2",
+        "expected_value": 774.8,
+        "observed_value": 774.8,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.79,
+          0.205,
+          0.919,
+          0.246
+        ],
+        "evidence_zh": "右上关键点标签清楚写有2024-Q2及774.8，小数未被舍弃。",
+        "uncertainty_zh": "此项只核验数字文字，不据此证明末端小数变化的几何精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体旗帜与数据面积",
+        "required_parts": [
+          "起伏GDP上缘",
+          "黑色上带",
+          "红色中带",
+          "金色下带",
+          "零基线"
+        ],
+        "relationship": "三带上下接触并共同包含于闭合面积；上缘位置承载单系列GDP水平，金带底边落到零线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.0969,
+          0.276,
+          0.9125,
+          0.8705
+        ],
+        "evidence_zh": "原图三带无空隙，顶边连续起伏，左右边闭合到同一零线；图中文字说明One flag. One level series.，与可见结构相符。"
+      },
+      {
+        "category": "最小季度1991-Q2所在截面",
+        "required_parts": [
+          "约501单位的上缘",
+          "黑带",
+          "红带",
+          "金带",
+          "零线"
+        ],
+        "relationship": "较低上缘下方仍保有黑带，黑接红、红接金，金接零线；不另设最小数据高度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.096,
+          0.483,
+          0.132,
+          0.8705
+        ],
+        "evidence_zh": "x=165处上缘约y=975；黑红交界y=1130，红金交界y=1435，基线y=1740。黑带约155px，红、金各约305px，三部件均可辨。"
+      },
+      {
+        "category": "最大季度2022-Q3所在截面",
+        "required_parts": [
+          "约778单位的上缘",
+          "黑带",
+          "红带",
+          "金带",
+          "零线"
+        ],
+        "relationship": "上缘升高增加同一旗帜黑色区域的高度，其下红金连续相接；无额外系列或浮置色块。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.86,
+          0.275,
+          0.88,
+          0.8705
+        ],
+        "evidence_zh": "x=1391处上缘约y=553.5，黑带延伸至y=1130，厚约576.5px；红、金交界仍为y=1435，金带落到y=1740。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结任务将参考设计改编为德国旗主题的合成实际GDP水平，明确不是增长率，并允许峰谷与关键点随当前数据变化。",
+      "output_added_or_lost_meaning_zh": "输出保留旗帜与GDP面积的融合，补充单系列、季度观察与合成统计声明；原参考停滞增长论述未沿用，符合输入改编。",
+      "visible_inscription_evidence_zh": "GERMANY；SYNTHETIC GDP level；SYNTHETIC DATA；REAL GDP LEVEL；billion synthetic currency units；Quarterly observations · level, not growth rate；1991-Q1 — 2024-Q2；134 quarters · 1 series；Synthetic study data · not official German statistics。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "从参考的真实GDP及停滞增长论述转为合成GDP水平，是冻结任务明确规定的语义变化，参考意义因此记partial而不列输出缺陷。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前最小501、最大778和2020-Q2的684下探体现于同一旗帜上缘；色带身份部件保持相接。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "按实测纵轴比例，2024-Q1的775.3到Q2的774.8仅约0.76px变化；不能将正确文字或满量程通过解释为亚像素变化完全可辨。"
+      }
+    ],
+    "measurement_coverage_zh": "全图仅一个线性GDP高度通道；独立测量最小、最大、内部季度及2020下探共4点，另核末端数字文字。全部必要标题、单位、系列、期间、计数、8个年份刻度及4组关键点标签分别核对。未逐点测量其余130个顶点；134点完整入路径由源码和冻结输入一致性补证。"
+  }
+}

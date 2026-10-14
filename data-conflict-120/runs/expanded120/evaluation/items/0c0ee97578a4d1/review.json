@@ -1,0 +1,249 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为20项瀑布高度横条排行，条首国旗与类别对应，右侧独立岩峰、跌水、水池插画与排行并置。成图可见Falls A–T共20行、地区字母徽标及各行全高文字，轴标700、800、900、1,000并明确截断；三个842 m横条等长，754 m横条仍清楚可见。右侧岩峰有上下两段跌水，沿岩壁流入底部水池，未遮挡数值。标题、SYNTHETIC DATA、米单位、9个地区图例及插画非比例声明清晰可读。",
+  "summary_zh": "成图满足当前冻结合同。20项高度及地区绑定正确，截断轴明确，横条像素测量符合容差；岩峰、相连跌水与水池保留并置关系。真实地点改为虚构类别是输入许可的语义适配。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量指定image.png（1600×2000）。从轴线像素定位700和1000刻度于x=400、1400，跨度1000像素；在各条中央19行检测连续青色区域，得到20条长度。依可见截断映射h=700+300L/1000反算，满量程按300 m计算，3%容差为9 m。实测长度依次为957、940、727、680、644、597、544、510、474、474、474、450、404、390、317、297、247、230、210、180像素，估计最大偏差0.2 m。源码公式仅作旁证。小值相对误差以实际编码的h−700为分母。",
+  "uncertainties_zh": "抗锯齿使边界定位约有1像素不确定性，整数像素测量不保证小值的亚像素精度。已查看capture_render.py源码，但按限制未查看运行日志、自检或历史归档，不能独立确认每次渲染的归档执行情况；未据此判定可见输出有缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "可见Falls A–T全部20行、20个地区徽标、Region A–I全部9项图例；标题、合成声明、指标、单位、截断说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行可见全高为987、982、918、904、893、879、863、853、842、842、842、835、821、817、795、789、774、769、763、754 m，与数据一致；754–987 m范围及3项842 m说明正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、徽标、横条及末端数值按同一行对齐。Falls A–T的地区码依次为A、B、C、D、C、E、E、E、F、D、G、H、E、E、D、D、E、C、I、E，均与合同及图例一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素检测覆盖20条；按700–1000 m截断轴反算，最大估计偏差0.2 m（跨度的约0.067%），远低于9 m容差。I、J、K均约474像素，T约180像素，无人为抬高最小值。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "assets_manifest.json将raw_01.png标为生成来源；实看该素材、waterfall.png和water_texture.png，其岩缝、双级跌水、池岸及水纹在成图中可辨。render.py按数据裁切横条并绘制文字，素材实质可见。归档执行情况未独立核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "右侧岩峰托住上游水道，两级跌水经中间水道相连，底部白色水花接入青色池水；整体与排行并置，符合参考关系。插画未遮住横条或必需文字，水纹留在条形边界内。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下20组类别、数值和地区码均清晰，9项地区图例不重叠；合成声明、米单位、断轴标记与插画非比例说明可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "岩峰—上段跌水—中间水道—下段跌水—底池的接触与向下流动连续可见；左侧条形排行及地区徽标独立排列。数据边界是横条左右端，岩体和徽标不承担高度比例。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Synthetic Waterfall Heights、20 fictional waterfalls、9 synthetic regions、Waterfall height (m)共同明确当前对象、指标、单位和类别角色；文字说明条长仅编码超过700 m的部分。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "瀑布高度比较及岩峰跌水入池的关系保留。参考的真实世界最高瀑布、真实地名与国旗改为虚构瀑布和地区，属于冻结输入明确许可的适配，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最短Falls T仍有约180像素长、约37像素高的连续青色条形；左侧E徽标与右侧754 m清楚，水纹未破坏边界。合同要求单独瀑布插画并置，不要求每个小条都成为完整瀑布。"
+    }
+  },
+  "semantic_attribution_zh": "原参考真实地点及全球最高的语境被冻结输入明确改为虚构瀑布和合成地区，因此reference_meaning记partial。当前主题、米制高度、排行与地区角色没有观察到输出损失。两级跌水是身份兼容的非数据部件适配；横条长度变化由当前数据与700 m基线决定。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "height",
+        "category": "Falls A",
+        "expected_value": 987,
+        "observed_value": 987.1,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 957,
+        "full_scale_error_percent": 0.0333,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.2465,
+          0.848125,
+          0.265
+        ],
+        "evidence_zh": "最长条中央青色连续像素为x=400–1356，共957像素；按可见标尺反算约987.1 m，末端文字987 m。",
+        "uncertainty_zh": "抗锯齿边界约±1像素，标尺端点也有约1像素定位不确定性；反算值为近似值。"
+      },
+      {
+        "series_id": "height",
+        "category": "Falls I",
+        "expected_value": 842,
+        "observed_value": 842.2,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 474,
+        "full_scale_error_percent": 0.0667,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.4745,
+          0.54625,
+          0.493
+        ],
+        "evidence_zh": "内部条连续像素为x=400–873，共474像素；反算约842.2 m，文字842 m。",
+        "uncertainty_zh": "抗锯齿边界约±1像素，标尺端点也有约1像素定位不确定性；反算值为近似值。"
+      },
+      {
+        "series_id": "height",
+        "category": "Falls J",
+        "expected_value": 842,
+        "observed_value": 842.2,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 474,
+        "full_scale_error_percent": 0.0667,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.503,
+          0.54625,
+          0.5215
+        ],
+        "evidence_zh": "与I同长，连续像素为x=400–873；反算约842.2 m，文字842 m。",
+        "uncertainty_zh": "抗锯齿边界约±1像素，标尺端点也有约1像素定位不确定性；反算值为近似值。"
+      },
+      {
+        "series_id": "height",
+        "category": "Falls K",
+        "expected_value": 842,
+        "observed_value": 842.2,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 474,
+        "full_scale_error_percent": 0.0667,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.5315,
+          0.54625,
+          0.55
+        ],
+        "evidence_zh": "与I、J同长，连续像素为x=400–873；反算约842.2 m，文字842 m。",
+        "uncertainty_zh": "抗锯齿边界约±1像素，标尺端点也有约1像素定位不确定性；反算值为近似值。"
+      },
+      {
+        "series_id": "height",
+        "category": "Falls T",
+        "expected_value": 754,
+        "observed_value": 754,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 180,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.788,
+          0.3625,
+          0.8065
+        ],
+        "evidence_zh": "最小正标记连续像素为x=400–579，共180像素，编码净高54 m；反算全高754 m，文字754 m。",
+        "uncertainty_zh": "整数像素阈值下约±1像素，即约±0.3 m、净高54 m的±0.56%；零偏差不代表亚像素精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "主体岩峰与水流",
+        "required_parts": [
+          "岩峰",
+          "上游水道",
+          "上段跌水",
+          "中间水道",
+          "下段跌水",
+          "底部水池"
+        ],
+        "relationship": "水沿岩壁向下流动，两段跌水由中间水道连接，下段水花与底池接触；插画与排行横条并置。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.593,
+          0.414,
+          0.95,
+          0.843
+        ],
+        "evidence_zh": "右侧上段水流越过岩缘，落入中间低处后继续越过下一岩缘；下段在池面形成白色水花。岩体侧壁、水道和池岸可分别辨认，未出现断开或反向流动。"
+      },
+      {
+        "category": "Falls A（最大标记）",
+        "required_parts": [
+          "Falls A标签",
+          "Region A徽标",
+          "青色横条",
+          "987 m文字"
+        ],
+        "relationship": "类别、徽标、横条和数值同一行；水纹包含在数据条形内，横条长度编码987−700。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.069,
+          0.245,
+          0.914,
+          0.266
+        ],
+        "evidence_zh": "A徽标位于条首左侧且不计入条长；横条由x约400延伸至1357，987 m在右端外侧。完整岩峰插画独立并置，未被当作这条的数据几何。"
+      },
+      {
+        "category": "Falls T（最小标记）",
+        "required_parts": [
+          "Falls T标签",
+          "Region E徽标",
+          "青色横条",
+          "754 m文字"
+        ],
+        "relationship": "小条保持独立矩形及内部水纹，E徽标在左、754 m在右，与类别水平绑定。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.069,
+          0.787,
+          0.43,
+          0.808
+        ],
+        "evidence_zh": "约180像素长的小条仍清楚可辨，左右端未被徽标或数值遮挡；条内水纹可见。无需在小条内复制整座岩峰瀑布，符合参考的并置结构。"
+      },
+      {
+        "category": "地区图例",
+        "required_parts": [
+          "A–I九个地区徽标",
+          "Region A–I文字"
+        ],
+        "relationship": "每枚字母徽标与相邻同名地区说明配对，同码颜色与排行行内一致。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.049,
+          0.92,
+          0.936,
+          0.942
+        ],
+        "evidence_zh": "底部九个徽标及地区名完整可见；E码在最小Falls T行与Region E图例一致，徽标尺寸没有编码高度。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入要求用20个虚构瀑布、9个合成地区替代原真实地点，当前数值和明确截断轴取代旧注释；允许调整非数据岩峰姿态及部件。",
+      "output_added_or_lost_meaning_zh": "当前瀑布高度排行与地区归属完整保留；全球最高、真实地名及参考排除水下瀑布的现实语境未延续，归因于许可的输入适配。跌水沿岩壁入池的可见动作仍在。",
+      "visible_inscription_evidence_zh": "Synthetic Waterfall Heights；SYNTHETIC DATA；20 fictional waterfalls / 9 synthetic regions / Height in metres；Waterfall height (m)；Truncated scale • bar length = height − 700 m；Illustrative landform • not to scale；SYNTHETIC REGIONS。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原参考真实瀑布与国家旗帜变为Falls A–T及Region A–I；标题、合成声明和页脚明确虚构身份，与当前合同一致。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "横条按超过700 m的净高变化，最大约957像素、最小180像素，三个842 m条形等长；未要求沿用参考旧数值或峰值。"
+      }
+    ],
+    "measurement_coverage_zh": "仅一个定量通道：20个高度横条均进行独立像素长度检测，逐项核对全部数值、类别与地区码；详细列出最大值、三个内部并列值及最小正值。岩体、徽标和水池为明示非数据部件，不测作高度比例。未检查其他图像或历史结果。"
+  }
+}
