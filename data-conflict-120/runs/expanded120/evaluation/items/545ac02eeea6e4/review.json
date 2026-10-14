@@ -1,0 +1,318 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：黑白人像被相邻竖向柱形裁切，柱顶带国家标签，左侧为0–100刻度，标题为Gender (In) equity；头发、脸、颈部及衣服位于连续照片中。\n待评图：暖白纸面上横向条带从共同左边界出发，顶底轴均为0–100；同一黑白人像在条带中连续，头发包围脸部，下接颈部、衣领及肩部。右端逐行标有数值与类别；首行为15/A01，较长行可读61/M01及61/T02。下部新增类别保留父类代码和additional synthetic comparable编号。标题、SYNTHETIC DATA、Synthetic opportunity index、Index points、89 categories及非实测统计说明可读。最短首条仅见浅灰纸/照片背景纹理，没有独立的人体部件；整体人像仍连续可认。未见明显数字重叠或主体错层。",
+  "summary_zh": "通过。89类的标签、数值、顺序及水平长度一致，照片素材实质构成条带，连续人像的头发、脸、颈与衣领关系保留。最短首条的局部人体身份有限；原参考主题的改变属于冻结输入授权，均不构成重大缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量指定image.png（1572×2200）。顶部刻度中心约x=96至1476，相邻10点刻度相距138px。按条带中心扫描照片与纸色的边界，89条端点对应值的最大满量程误差约0.095%，低于3%阈值；下列列出8个代表样本。左侧横向亮分隔检测得到88条内部间隔，支持89条计数。所有89个数值和类别另经原分辨率读图转录核对。源码仅佐证统一缩放、裁切与文字绑定，不代替像素测量。",
+  "uncertainties_zh": "像素端点采用首次持续纸色的外缘，存在约±1.5px定位误差及约1px抗锯齿外扩，不宣称亚像素精度。首条只有照片背景，不能单凭它确认人体部件，但整体人像完整可认。未读取禁止的日志、自检或结果文件，故未独立核实每次渲染均经capture_render.py归档。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "89条可见条带，对应59个基础类别及30个新增可比类别；单系列、单位、合成声明与全部标签齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行读图转录的89个数值与data.json一致，包括51.5、30.5、58.5等小数；范围15–61及59+30类别说明准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每条右端紧接该行数值和类别，89个类别及顺序与输入一致；新增类别完整保留父类代码和1–30编号。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同零点约x=96，100点约x=1476；89条的独立像素端点读数最大误差约0.095%满量程，无截轴、排序或最小长度抬高。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "所供raw_01.png及portrait_print.png中的发丝、五官、衣领与成图对应，覆盖主要数据区域；render.py实际以照片裁切条带，并按数据生成数量、端点与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "照片本身填充数据条带，右端裁切边界承载值；相邻条带中的脸、发丝及衣料保持同一坐标关系，未见破坏结构的错层或拉伸。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "在原始1572×2200分辨率可逐行辨认全部89对值与类别，长新增名称未裁出画布；标题、单位、刻度及合成口径说明清晰。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "头发围绕脸，鼻口与下颌连续，下颌接颈部，颈部进入衣领与肩部；密集横带裁切同一纸面质感人像，实际数据边界清楚。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Synthetic opportunity index、Index points、common 0–100 scale、Single series及非实测统计说明共同表达当前主题、单位与口径；新增类别保留父类。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考图表达Gender (In) equity的国家比较；冻结core明确改为合成机会指数。输出保留照片与数据形状融合，但不再表达原性别平等统计，属于许可输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最短A01=15约208×18px，数值和端点清楚，条内仅见照片背景，局部人体关系有限；Y01=22约304px，仍可见与邻行连续的头发。没有小值消失或人为放大证据。"
+    }
+  },
+  "semantic_attribution_zh": "原性别平等与国家角色改为合成机会指数及代码类别，由冻结输入明确授权；横向跨度也是M2的明确要求。89行的锯齿边界属于数据驱动裁切。首条局部仅有照片背景，整体人像部件关系仍在；未发现实质输出遗漏或分辨率导致的几何消失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_index",
+        "category": "A01",
+        "expected_value": 15,
+        "observed_value": 15.0725,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 208,
+        "full_scale_error_percent": 0.0725,
+        "small_value_relative_error_percent": 0.4831,
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.163182,
+          0.193384,
+          0.171818
+        ],
+        "evidence_zh": "原图第1行中心y=368，从x≈96至首次持续纸色x≈304，跨度约208px；按可见1380px的0–100轴换算。",
+        "uncertainty_zh": "外缘估计约±1.5px（±0.11指数点）；抗锯齿可能多计约1px，相对误差仅为此读数的估计。"
+      },
+      {
+        "series_id": "synthetic_index",
+        "category": "I01",
+        "expected_value": 36,
+        "observed_value": 36.087,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 498,
+        "full_scale_error_percent": 0.087,
+        "small_value_relative_error_percent": 0.2415,
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.379091,
+          0.377863,
+          0.387727
+        ],
+        "evidence_zh": "原图第26行中心y=843，从x≈96至首次持续纸色x≈594，跨度约498px；按可见1380px的0–100轴换算。",
+        "uncertainty_zh": "外缘估计约±1.5px（±0.11指数点）；抗锯齿可能多计约1px，相对误差仅为此读数的估计。"
+      },
+      {
+        "series_id": "synthetic_index",
+        "category": "M01",
+        "expected_value": 61,
+        "observed_value": 61.087,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 843,
+        "full_scale_error_percent": 0.087,
+        "small_value_relative_error_percent": 0.1426,
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.456818,
+          0.597328,
+          0.465455
+        ],
+        "evidence_zh": "原图第35行中心y=1014，从x≈96至首次持续纸色x≈939，跨度约843px；按可见1380px的0–100轴换算。",
+        "uncertainty_zh": "外缘估计约±1.5px（±0.11指数点）；抗锯齿可能多计约1px，相对误差仅为此读数的估计。"
+      },
+      {
+        "series_id": "synthetic_index",
+        "category": "T02",
+        "expected_value": 61,
+        "observed_value": 61.087,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 843,
+        "full_scale_error_percent": 0.087,
+        "small_value_relative_error_percent": 0.1426,
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.612273,
+          0.597328,
+          0.620909
+        ],
+        "evidence_zh": "原图第53行中心y=1356，从x≈96至首次持续纸色x≈939，跨度约843px；按可见1380px的0–100轴换算。",
+        "uncertainty_zh": "外缘估计约±1.5px（±0.11指数点）；抗锯齿可能多计约1px，相对误差仅为此读数的估计。"
+      },
+      {
+        "series_id": "synthetic_index",
+        "category": "Y01",
+        "expected_value": 22,
+        "observed_value": 22.029,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 304,
+        "full_scale_error_percent": 0.029,
+        "small_value_relative_error_percent": 0.1318,
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.646818,
+          0.254453,
+          0.655455
+        ],
+        "evidence_zh": "原图第57行中心y=1432，从x≈96至首次持续纸色x≈400，跨度约304px；按可见1380px的0–100轴换算。",
+        "uncertainty_zh": "外缘估计约±1.5px（±0.11指数点）；抗锯齿可能多计约1px，相对误差仅为此读数的估计。"
+      },
+      {
+        "series_id": "synthetic_index",
+        "category": "A02 / additional synthetic comparable 2",
+        "expected_value": 51.5,
+        "observed_value": 51.5942,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 712,
+        "full_scale_error_percent": 0.0942,
+        "small_value_relative_error_percent": 0.1829,
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.681364,
+          0.513995,
+          0.69
+        ],
+        "evidence_zh": "原图第61行中心y=1508，从x≈96至首次持续纸色x≈808，跨度约712px；按可见1380px的0–100轴换算。",
+        "uncertainty_zh": "外缘估计约±1.5px（±0.11指数点）；抗锯齿可能多计约1px，相对误差仅为此读数的估计。"
+      },
+      {
+        "series_id": "synthetic_index",
+        "category": "C06 / additional synthetic comparable 15",
+        "expected_value": 30.5,
+        "observed_value": 30.5797,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 422,
+        "full_scale_error_percent": 0.0797,
+        "small_value_relative_error_percent": 0.2613,
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.793636,
+          0.329517,
+          0.802273
+        ],
+        "evidence_zh": "原图第74行中心y=1755，从x≈96至首次持续纸色x≈518，跨度约422px；按可见1380px的0–100轴换算。",
+        "uncertainty_zh": "外缘估计约±1.5px（±0.11指数点）；抗锯齿可能多计约1px，相对误差仅为此读数的估计。"
+      },
+      {
+        "series_id": "synthetic_index",
+        "category": "K01 / additional synthetic comparable 30",
+        "expected_value": 58.5,
+        "observed_value": 58.5507,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 808,
+        "full_scale_error_percent": 0.0507,
+        "small_value_relative_error_percent": 0.0867,
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.923182,
+          0.575064,
+          0.931818
+        ],
+        "evidence_zh": "原图第89行中心y=2040，从x≈96至首次持续纸色x≈904，跨度约808px；按可见1380px的0–100轴换算。",
+        "uncertainty_zh": "外缘估计约±1.5px（±0.11指数点）；抗锯齿可能多计约1px，相对误差仅为此读数的估计。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体连续人像",
+        "required_parts": [
+          "头发",
+          "脸",
+          "颈部",
+          "衣领与肩部",
+          "横向数据条带"
+        ],
+        "relationship": "头发围脸，脸经下颌接颈，颈进入衣领；同一照片被横向条带共同裁切。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.163182,
+          0.597328,
+          0.931818
+        ],
+        "evidence_zh": "中央五官、下颌至颈部和下方衣领连续；细横缝未造成逐行错位，纸面及织物纹理可见。"
+      },
+      {
+        "category": "大值M01=61及邻行",
+        "required_parts": [
+          "鼻部与面颊",
+          "两侧头发",
+          "条带右边界"
+        ],
+        "relationship": "鼻颊与周围发丝在相邻切片中连续，右端裁切线而非人体外轮廓承担值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.448182,
+          0.597328,
+          0.474091
+        ],
+        "evidence_zh": "M01条带跨度约843px；鼻部、面颊与发丝横向延续，端点与61/M01同一行。"
+      },
+      {
+        "category": "大值T02=61及邻行",
+        "required_parts": [
+          "颈部",
+          "垂落头发",
+          "横带"
+        ],
+        "relationship": "颈部位于脸下方并与衣领上方区域相接，头发从面部两侧向下延续。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.603636,
+          0.597328,
+          0.629545
+        ],
+        "evidence_zh": "长条保留颈部及周围头发的明暗关系，邻行照片没有独立缩放或跳接。"
+      },
+      {
+        "category": "小值Y01=22及邻行",
+        "required_parts": [
+          "头发",
+          "照片纹理",
+          "短条端点"
+        ],
+        "relationship": "短条仍包含连续头发，发丝从相邻长条进入其内部，右端负责数值截断。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.638182,
+          0.254453,
+          0.664091
+        ],
+        "evidence_zh": "Y01条带约304px，深色发丝可辨并与上下行衔接；右端旁22/Y01清楚。"
+      },
+      {
+        "category": "最小值A01=15",
+        "required_parts": [
+          "照片背景",
+          "数据条带",
+          "局部人体部件"
+        ],
+        "relationship": "首条为全局照片的顶部切片；可见纸状照片背景，但没有可辨人体部件。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.061069,
+          0.163182,
+          0.193384,
+          0.171818
+        ],
+        "evidence_zh": "约208px宽的浅灰纹理条与共同左边界和15/A01绑定；不能单凭该条认出人像，其身份由后续相邻条带承担。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core明确声明合成主题适配，M2指定水平跨度；无需复现参考的国家、旧性别平等数值、竖柱方向或峰值。",
+      "output_added_or_lost_meaning_zh": "输出保留数据切片形成连续人像的关系，并明确数据非人口实测统计；原性别平等论题未沿用，属于许可适配。未增加时间趋势、构成百分比或累积含义。",
+      "visible_inscription_evidence_zh": "A Profile of Opportunity；SYNTHETIC DATA；Synthetic opportunity index；Index points · common 0–100 scale；89 categories, in supplied order；Synthetic illustrative data; not measured population statistics.；新增类别逐行保留additional synthetic comparable及父类。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原Gender (In) equity与国家类别被冻结输入改为Synthetic opportunity index及合成代码类别；参考语义只部分延续，不归责为输出错误。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "89条的不同端点形成新轮廓，且照片一次整体缩放后裁切；最短首条仅覆盖照片背景，其他短条仍保留头发等局部关系。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单系列、唯一水平长度通道；像素扫描覆盖全部89条，详列最小值、两个61点大值、36点内部值、22点短条及三个新增小数值，共8例。89个类别、数值与顺序单独全部核对；人体部件关系检查整体及大、小代表条带。未把源码公式或数值文字当作几何测量。"
+  }
+}

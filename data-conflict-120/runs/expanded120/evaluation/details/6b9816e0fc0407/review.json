@@ -1,0 +1,290 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：浅灰背景中的横向布枕，白布与黑、绿、蓝、黄色带共处同一布面，包边、皱褶、角部和底部阴影可见；标题询问睡眠时长。待评图：六条连续竖向色带呈灰、浅青、青绿、深绿、蓝、黄，左侧白布明确标注不计入数据。五组外置标签由引线连接各色带，52.1%与6–8 h置于蓝色布面内。可读值为5.2%、8.95%、8.95%、17.9%、52.1%、6.9%；三个4–<6 h子类保留父类名称。睡眠时长标题、百分比单位、SYNTHETIC DATA和互斥子类说明完整。布纹和皱褶贯穿色带，包边、伸出角及落地阴影可辨；此时尚未核验像素比例与源码。",
+  "summary_zh": "六类数值、顺序、语义父类与标记绑定完整。中间截面实测份额最大偏差约0.075个百分点，白布约占30.06%。生图布枕实际承载色带，大小色带均保留布面关系；未发现违反冻结要求的可见缺陷。已保存review.json并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1400的image.png像素，在目视中部y≈798识别布面边缘与色度跃变，并核对y=795、800、805邻行。布面左右端约x=205、1783.5；彩布边界约679.5、736.5、835.5、934.5、1131.5、1706.5、1783.5。彩布宽1104px，白布宽474.5px、占全幅约30.06%。使用规定的中部水平宽度编码，不以面积或角部宽度判错。各误差为像素测量的近似推算；render.py仅作路线和映射机制佐证，未采用布局或自检数值。",
+  "uncertainties_zh": "抗锯齿、布纹及中部行选择带来约1px量级的边界不确定性。最小条带约57px，±2px宽度对应约3.5%的小值相对不确定性，不能把满量程通过解释为亚像素精确。素材与成图可见一致，capture_render.py具有完整保存机制；依本次限制未检查执行日志或历史记录，因此不声称已证明每次渲染实际调用该脚本。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个类别均出现且顺序与输入一致；三项4–<6 h分别标出subcategory 1、2、3。六条色带、全部百分比、主题、单位及SYNTHETIC DATA均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项读到5.2%、8.95%、8.95%、17.9%、52.1%、6.9%，与输入一致，总计100%。白布非数据及30%说明明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "五组外置标签各有引线落入对应灰、浅青、青绿、深绿、黄色带；52.1%和6–8 h直接置于蓝色带内。三条相邻子类色带顺序及引线端点无混淆。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "六条中部宽度约57、99、99、197、575、77px，对应5.163%、8.967%、8.967%、17.844%、52.083%、6.975%，均在3个百分点容差内。白布约30.06%，色带边界竖直且受布枕轮廓裁切。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与pillow_neutral.png；其两侧皱褶、上缘凹弧、包边和四角在成图主体中可辨。素材清单将原件标为生图；render.py读取处理后的布枕并保留材质明暗，代码由输入份额计算着色边界和文字。未核验历史执行记录。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据色带就是枕头布面的着色区域，布纹与明暗贯穿其中；上方包边及下方填充轮廓与色带相接，阴影位于枕头下方。未见独立图表旁置枕头或遮挡破坏结构。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下标题、中英文主题、百分比、时长单位、子类文字及底部互斥合成说明均可读；引线不遮住必需文字，白布明确排除在数据之外。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "浅灰背景上横向布枕具有蓬松主体、布纹、褶皱、连接的包边与伸出角，底部阴影形成落地关系。约三成白布与六条彩布共用连续轮廓；小灰带和大蓝带均属于同一布面。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Sleep duration distribution、睡眠时长分布和Share by sleep duration (%)共同明确主题与指标。各类别带h单位，子类保留4–<6 h父类；脚注说明互斥合成子类、非统计调查，彩布代表完整分布。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图询问睡眠时长并将百分比置于枕面；成图保留同一主题和枕面承载分布的关系。当前合成值与子类替代旧统计属于允许输入改编，未要求延续旧占比或额外趋势论断。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值5.2%的灰带中部约57px宽，上下均接布枕轮廓，内部布纹可辨，引线端点落在带内。右侧6.9%黄色带中部约77px，仍包含可见布纹、侧边包边和角部，未因小值丢失物体关系。"
+    }
+  },
+  "semantic_attribution_zh": "睡眠主题与枕面承载关系未改变；旧值替换为合成数据、4–<6 h拆成三个互斥子类均来自允许的输入改编。色带宽窄变化由当前份额驱动，未观察到输出遗漏或动作含义改变。像素边缘的不确定性限制测量精度，但未造成小色带身份丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "share",
+        "category": "2–<4 h",
+        "expected_value": 5.2,
+        "observed_value": 5.163,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 57,
+        "full_scale_error_percent": 0.037,
+        "small_value_relative_error_percent": 0.71,
+        "bbox_xyxy_normalized": [
+          0.33975,
+          0.564286,
+          0.36825,
+          0.575714
+        ],
+        "evidence_zh": "原图中部y≈798，色带左右边界约x=679.5、736.5，宽57px；以实测彩布总宽1104px为分母，份额约5.163%。对应文字为5.2%。",
+        "uncertainty_zh": "单边定位约±1px，两边合计约±2px，相当于±0.18个百分点；最小条带的相对精度不能仅凭满量程容差保证。"
+      },
+      {
+        "series_id": "share",
+        "category": "4–<6 h / subcategory 1",
+        "expected_value": 8.95,
+        "observed_value": 8.967,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 99,
+        "full_scale_error_percent": 0.017,
+        "small_value_relative_error_percent": 0.19,
+        "bbox_xyxy_normalized": [
+          0.36825,
+          0.564286,
+          0.41775,
+          0.575714
+        ],
+        "evidence_zh": "原图中部y≈798，色带左右边界约x=736.5、835.5，宽99px；以实测彩布总宽1104px为分母，份额约8.967%。对应文字为8.95%。",
+        "uncertainty_zh": "抗锯齿及纹理使单边定位约有±1px不确定性；表内误差为近似中心估计。"
+      },
+      {
+        "series_id": "share",
+        "category": "4–<6 h / subcategory 2",
+        "expected_value": 8.95,
+        "observed_value": 8.967,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 99,
+        "full_scale_error_percent": 0.017,
+        "small_value_relative_error_percent": 0.19,
+        "bbox_xyxy_normalized": [
+          0.41775,
+          0.564286,
+          0.46725,
+          0.575714
+        ],
+        "evidence_zh": "原图中部y≈798，色带左右边界约x=835.5、934.5，宽99px；以实测彩布总宽1104px为分母，份额约8.967%。对应文字为8.95%。",
+        "uncertainty_zh": "抗锯齿及纹理使单边定位约有±1px不确定性；表内误差为近似中心估计。"
+      },
+      {
+        "series_id": "share",
+        "category": "4–<6 h / subcategory 3",
+        "expected_value": 17.9,
+        "observed_value": 17.844,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 197,
+        "full_scale_error_percent": 0.056,
+        "small_value_relative_error_percent": 0.31,
+        "bbox_xyxy_normalized": [
+          0.46725,
+          0.564286,
+          0.56575,
+          0.575714
+        ],
+        "evidence_zh": "原图中部y≈798，色带左右边界约x=934.5、1131.5，宽197px；以实测彩布总宽1104px为分母，份额约17.844%。对应文字为17.9%。",
+        "uncertainty_zh": "抗锯齿及纹理使单边定位约有±1px不确定性；表内误差为近似中心估计。"
+      },
+      {
+        "series_id": "share",
+        "category": "6–8 h",
+        "expected_value": 52.1,
+        "observed_value": 52.083,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 575,
+        "full_scale_error_percent": 0.017,
+        "small_value_relative_error_percent": 0.03,
+        "bbox_xyxy_normalized": [
+          0.56575,
+          0.564286,
+          0.85325,
+          0.575714
+        ],
+        "evidence_zh": "原图中部y≈798，色带左右边界约x=1131.5、1706.5，宽575px；以实测彩布总宽1104px为分母，份额约52.083%。对应文字为52.1%。",
+        "uncertainty_zh": "抗锯齿及纹理使单边定位约有±1px不确定性；表内误差为近似中心估计。"
+      },
+      {
+        "series_id": "share",
+        "category": ">8 h",
+        "expected_value": 6.9,
+        "observed_value": 6.975,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 77,
+        "full_scale_error_percent": 0.075,
+        "small_value_relative_error_percent": 1.08,
+        "bbox_xyxy_normalized": [
+          0.85325,
+          0.564286,
+          0.89175,
+          0.575714
+        ],
+        "evidence_zh": "原图中部y≈798，色带左右边界约x=1706.5、1783.5，宽77px；以实测彩布总宽1104px为分母，份额约6.975%。对应文字为6.9%。",
+        "uncertainty_zh": "右侧布面轮廓存在抗锯齿；单边定位约±1px，表内误差为近似中心估计。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体布枕与非数据白布",
+        "required_parts": [
+          "蓬松布面",
+          "包边",
+          "褶皱",
+          "伸出角",
+          "地面阴影",
+          "白布与连续彩布"
+        ],
+        "relationship": "白布和彩布同属一个枕头表面；包边沿外轮廓连接四角，主体底部与阴影接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.052,
+          0.253,
+          0.948,
+          0.913
+        ],
+        "evidence_zh": "左侧白布延续至第一灰色带，连续布纹和下缘轮廓未被切断；四角突出、侧缘内收、底部阴影均可见。白布文字明确其非数据身份。"
+      },
+      {
+        "category": "最小正值：2–<4 h，5.2%",
+        "required_parts": [
+          "灰色窄布带",
+          "上缘包边",
+          "下缘布面",
+          "布纹",
+          "标签引线"
+        ],
+        "relationship": "窄色带包含布纹，上下由枕头轮廓截断；引线接触色带上部内部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3395,
+          0.324,
+          0.3685,
+          0.88
+        ],
+        "evidence_zh": "约57px宽灰带从上缘延伸到枕头底缘，内部有细布纹与明暗，5.2%引线端点约在(708,473)，位于灰带内。"
+      },
+      {
+        "category": "内部类别：4–<6 h / subcategory 3，17.9%",
+        "required_parts": [
+          "深绿色布带",
+          "相邻青绿与蓝色布带",
+          "上下布面边界",
+          "标签引线"
+        ],
+        "relationship": "深绿色带与两侧布带直接相邻，竖直边界连续，上下随共同枕头轮廓裁切。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.467,
+          0.325,
+          0.5665,
+          0.881
+        ],
+        "evidence_zh": "中部约197px宽的深绿色布面完整连接上缘与下缘；17.9%的引线端点约在(1033,477)，落在该带内部。"
+      },
+      {
+        "category": "最大值：6–8 h，52.1%",
+        "required_parts": [
+          "蓝色大布带",
+          "上缘包边",
+          "蓬松下缘",
+          "布纹与褶皱",
+          "内部数值文字"
+        ],
+        "relationship": "蓝色区域作为枕头表面承载最大份额，纹理连续至上包边与底部轮廓，文字位于本区域内部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.5655,
+          0.287,
+          0.8535,
+          0.887
+        ],
+        "evidence_zh": "约575px中部宽度内可见棉布纹理和右下褶皱；52.1%与6–8 h居于蓝色带内部，未跨越相邻绿色或黄色边界。"
+      },
+      {
+        "category": "末端小值：>8 h，6.9%",
+        "required_parts": [
+          "黄色窄布带",
+          "右侧包边",
+          "右上角",
+          "右下角",
+          "标签引线"
+        ],
+        "relationship": "黄色带与蓝色带直接接触，并随枕头右侧轮廓延展到两个角部；中部宽度而非角部面积编码。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.853,
+          0.254,
+          0.948,
+          0.887
+        ],
+        "evidence_zh": "黄色中部约77px宽，包边和两端突出角仍清楚，6.9%引线端点约在(1745,415)且位于黄色布面。角部较宽符合轮廓裁切规则。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许用当前六类合成份额替换参考旧统计，并将4–<6 h拆成三个互斥子类；睡眠主题保持一致，不要求复制旧最大值或旧调查结论。",
+      "output_added_or_lost_meaning_zh": "新增白布排除说明、水平截面宽度读法及合成子类说明，使当前统计口径明确。未观察到主题、指标、父类或枕面融合关系丢失；静态分布未被改写成趋势或因果结论。",
+      "visible_inscription_evidence_zh": "可见Sleep duration distribution、睡眠时长分布、Share by sleep duration (%)、SYNTHETIC DATA、WHITE FABRIC / not part of the data，以及three mutually exclusive synthetic subcategories和not a statistical survey。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成声明及4–<6 h父类下三个子类均与当前输入一致；参考旧数值被替换并非输出遗漏。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前份额决定六条中部宽度，特别是两个相等8.95%子类和最大52.1%蓝带；角部仍随布枕轮廓变化，不承担额外面积编码。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一量化面板为中部水平宽度，六类全部进行了原图像素测量，覆盖最小正值、最大值及全部内部类别；另检查白布30%排除区。六项数字、时长、三个子类父类和必需说明逐项目视核对。未用布面面积、体积或皱褶测量份额，未读取自检、日志或其他成图。"
+  }
+}

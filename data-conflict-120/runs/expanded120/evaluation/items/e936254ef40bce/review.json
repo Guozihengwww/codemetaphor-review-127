@@ -1,0 +1,412 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图可见双手持钞、倾斜天平、三行情境对照和底部汇率折线。待评图保留这些结构，左青右红；强弱卡片分别显示1.066、2015-12-28和0.690、2007-12-31；三行左侧均约0.938 CAD，右侧均约1.449 CAD。底部可见0.65–1.10刻度、年度刻度、填充和高低点标注。SYNTHETIC DATA醒目，钞票与图标数量不代表金额的说明可见。上述观察已在检查源码前保存。",
+  "summary_zh": "数据映射、购买力换算及主要结构正确，仅发现缺字框和角标局部遮挡两处轻微问题。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "周样本数量应显示为可读的“561 周”。",
+      "observed_zh": "561后的“周”显示为空心缺字框。",
+      "evidence_zh": "原图x153–161、y1703–1718为封闭空心矩形；源码该行使用latin=True字体，佐证字体缺字。周度口径在其他位置仍可读。",
+      "bbox_xyxy_normalized": [
+        0.137273,
+        0.773182,
+        0.149091,
+        0.782273
+      ]
+    },
+    {
+      "category": "occlusion_layering",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "“锚点取自当前完整序列”应完整可读。",
+      "observed_zh": "右托盘纸钞顶部遮住开头“锚点”的部分下方笔画。",
+      "evidence_zh": "原图x874–896、y616–624处文字下半部被纸钞横层替代；源码先写角标后绘制纸钞，佐证局部遮挡。后续文字仍清楚。",
+      "bbox_xyxy_normalized": [
+        0.792727,
+        0.275909,
+        0.818182,
+        0.284545
+      ]
+    }
+  ],
+  "measurement_notes_zh": "原图1100×2200。可见1.10顶线约y1789、0.65基线约y2092，量程0.45、跨度303 px；以v=0.65+(2092-y)×0.45/303反算像素读数。mark_extent_px表示到0.65基线的填充高度，不含标记外圈。辅助面板仅核对文字与1/r舍入，不以圆面积作金额编码。",
+  "uncertainties_zh": "周样本横向间距约1.64 px，未逐点独立量测561个值；全部样本入线由源码和冻结数据一致性佐证。按限制未查看日志、自检、结果文件或归档，不能独立确认capture_render.py执行历史。生图来源依据本地原始素材及可见对应关系，未核实生成服务执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "一个周度系列、两个锚点、双列三行情境、日期范围及单位均在图中；源码使用与冻结数据一致的561个连续周样本。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "极值及日期正确；六处≈0.938或≈1.449 CAD符合1/r至三位小数，平价和轴刻度正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "左青色较强、右红色较弱贯穿各面板；消费更省／多付和收入换回较少／较多的方向正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最小、最大及内部点像素反算的满量程误差约0.187%、0.047%、0.561%，均低于3%；线性轴和0.65填充基线正确。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png；双手、金币及三类生活图标与成图对应且构成实质主体。素材处理与渲染源码佐证复用和数据驱动几何。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "手指夹握纸钞，纸钞接触托盘，托盘经杆连接梁，金币遮挡梁中央；折线与填充边界连续。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、单位、合成标识、强弱数值日期和情境文字可读；缺字和角标遮挡为孤立轻微问题。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "双手持钞、中心金币天平、双列三行情境及底部周折线保留，连接和接触关系可辨。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题、USD received per CAD、USD/CAD、每1 USD归一化及CAD=USD÷r明确，消费与收入角色清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "原投资题材按core明确允许适配为合成购买力；强加元降低美元消费成本、同额美元收入换回较少CAD的关系保留。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最低点及约27.5 px的基线以上填充可辨；小支票的纸面和笔、衣物与衣架仍可见。图标尺寸不是金额编码。"
+    }
+  },
+  "semantic_attribution_zh": "主题变化属于允许的输入适配，峰谷和姿态变化由当前数据驱动。未见统计角色实质丢失；缺字和遮挡属于输出局部排印损失，密集周线的逐点精度核查受分辨率限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "exchange_rate",
+        "category": "2007-12-31",
+        "expected_value": 0.69,
+        "observed_value": 0.690842,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 27.5,
+        "full_scale_error_percent": 0.187,
+        "small_value_relative_error_percent": 0.122,
+        "bbox_xyxy_normalized": [
+          0.206364,
+          0.936364,
+          0.215455,
+          0.950909
+        ],
+        "evidence_zh": "最小值标记中心约(231.5,2064.5)，到0.65基线约27.5 px。",
+        "uncertainty_zh": "中心约±1 px；相对基线以上0.04高度的误差约2.1%，满量程通过不保证微小高度精度。"
+      },
+      {
+        "series_id": "exchange_rate",
+        "category": "2015-12-28",
+        "expected_value": 1.066,
+        "observed_value": 1.066213,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 280.25,
+        "full_scale_error_percent": 0.0473,
+        "small_value_relative_error_percent": 0.02,
+        "bbox_xyxy_normalized": [
+          0.827273,
+          0.821364,
+          0.837273,
+          0.950909
+        ],
+        "evidence_zh": "最大值内部圆点中心约(915,1811.75)，到基线约280.25 px。",
+        "uncertainty_zh": "中心约±1 px，外圈及引线不计入数值高度。"
+      },
+      {
+        "series_id": "exchange_rate",
+        "category": "2011-11-14",
+        "expected_value": 0.98,
+        "observed_value": 0.977475,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 220.5,
+        "full_scale_error_percent": 0.5611,
+        "small_value_relative_error_percent": 0.2576,
+        "bbox_xyxy_normalized": [
+          0.509091,
+          0.848636,
+          0.514545,
+          0.950909
+        ],
+        "evidence_zh": "日期对应x≈563；该列深色折线像素y=1869–1874，中点约1871.5。",
+        "uncertainty_zh": "斜线、约1.64 px周间距和抗锯齿造成约±3 px读数不确定性。"
+      },
+      {
+        "series_id": "CAD_per_1_USD",
+        "category": "夏威夷旅行／较强加元",
+        "expected_value": 0.9380863039399624,
+        "observed_value": 0.938,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.238182,
+          0.516818,
+          0.361818,
+          0.578636
+        ],
+        "evidence_zh": "可见≈0.938 CAD，符合1/1.066至三位小数。",
+        "uncertainty_zh": "仅文字编码，圆面积及图标不编码金额。"
+      },
+      {
+        "series_id": "CAD_per_1_USD",
+        "category": "夏威夷旅行／较弱加元",
+        "expected_value": 1.4492753623188408,
+        "observed_value": 1.449,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.638182,
+          0.516818,
+          0.761818,
+          0.578636
+        ],
+        "evidence_zh": "可见≈1.449 CAD，符合1/0.690至三位小数。",
+        "uncertainty_zh": "仅文字编码，圆面积及图标不编码金额。"
+      },
+      {
+        "series_id": "CAD_per_1_USD",
+        "category": "美国商场购衣／较强加元",
+        "expected_value": 0.9380863039399624,
+        "observed_value": 0.938,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.238182,
+          0.591818,
+          0.361818,
+          0.653636
+        ],
+        "evidence_zh": "可见≈0.938 CAD，符合1/1.066至三位小数。",
+        "uncertainty_zh": "衣物件数及圆面积不编码金额。"
+      },
+      {
+        "series_id": "CAD_per_1_USD",
+        "category": "美国商场购衣／较弱加元",
+        "expected_value": 1.4492753623188408,
+        "observed_value": 1.449,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.638182,
+          0.591818,
+          0.761818,
+          0.653636
+        ],
+        "evidence_zh": "可见≈1.449 CAD，符合1/0.690至三位小数。",
+        "uncertainty_zh": "衣物件数及圆面积不编码金额。"
+      },
+      {
+        "series_id": "CAD_per_1_USD",
+        "category": "美元收入换回加元／较强加元",
+        "expected_value": 0.9380863039399624,
+        "observed_value": 0.938,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.238182,
+          0.666818,
+          0.361818,
+          0.728636
+        ],
+        "evidence_zh": "可见≈0.938 CAD，配合“换回较少”，折算正确。",
+        "uncertainty_zh": "支票面积及数量不编码金额。"
+      },
+      {
+        "series_id": "CAD_per_1_USD",
+        "category": "美元收入换回加元／较弱加元",
+        "expected_value": 1.4492753623188408,
+        "observed_value": 1.449,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.638182,
+          0.666818,
+          0.761818,
+          0.728636
+        ],
+        "evidence_zh": "可见≈1.449 CAD，配合“换回较多”，折算正确。",
+        "uncertainty_zh": "支票面积及数量不编码金额。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "顶部持钞双手",
+        "required_parts": [
+          "左右手",
+          "扇形纸钞",
+          "拇指"
+        ],
+        "relationship": "手指夹握纸钞下部，拇指遮住纸张前面，扇面向中上方展开。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0,
+          0.114545,
+          1,
+          0.265455
+        ],
+        "evidence_zh": "两侧握持和纸张前后层次清楚；中央等式并置说明兑换，钞票张数不是汇率单位。"
+      },
+      {
+        "category": "较强加元／大值天平左侧",
+        "required_parts": [
+          "纸钞层",
+          "左托盘",
+          "竖杆",
+          "斜梁",
+          "金币"
+        ],
+        "relationship": "纸钞接触盘沿，盘底经杆连接斜梁，金币遮住梁中央。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.152727,
+          0.295909,
+          0.599091,
+          0.399545
+        ],
+        "evidence_zh": "左盘沿约y738、杆底约y803，比右端低，符合较强侧的示意方向。"
+      },
+      {
+        "category": "较弱加元／小值天平右侧",
+        "required_parts": [
+          "纸钞层",
+          "右托盘",
+          "竖杆",
+          "斜梁",
+          "金币"
+        ],
+        "relationship": "纸钞、托盘、杆和梁保持接触连接；右侧高于左侧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.400909,
+          0.279091,
+          0.847273,
+          0.395909
+        ],
+        "evidence_zh": "右盘沿约y654、杆底约y719；双方纸钞层数一致，与非计量图标合同相容。"
+      },
+      {
+        "category": "旅行图标",
+        "required_parts": [
+          "酒店",
+          "行李箱",
+          "棕榈树",
+          "金额文字"
+        ],
+        "relationship": "行李位于酒店前，树在酒店旁；图标与金额圆形并列。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.059091,
+          0.516364,
+          0.940909,
+          0.579091
+        ],
+        "evidence_zh": "两侧部件一致，箭头绑定对应金额；建筑面积不承担数据比例。"
+      },
+      {
+        "category": "购衣小图标",
+        "required_parts": [
+          "外套",
+          "长裤",
+          "衣架"
+        ],
+        "relationship": "外套与长裤分别悬挂在可见衣架上。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.059091,
+          0.591818,
+          0.940909,
+          0.654091
+        ],
+        "evidence_zh": "衣领和裤腰上方挂钩、夹杆可辨，没有把件数当购买量。"
+      },
+      {
+        "category": "收入行小支票",
+        "required_parts": [
+          "纸张边框",
+          "纸面横线",
+          "钢笔",
+          "金额文字"
+        ],
+        "relationship": "钢笔覆盖纸面，笔尖落在纸面范围；金额在相邻圆形区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.059091,
+          0.666818,
+          0.940909,
+          0.729091
+        ],
+        "evidence_zh": "小尺寸下纸张边框、横线和笔尖接触仍可辨；金额不是纸面积编码。"
+      },
+      {
+        "category": "周折线及填充",
+        "required_parts": [
+          "折线",
+          "填充区域",
+          "0.65基线",
+          "高低标记"
+        ],
+        "relationship": "折线作为填充上边界，填充落到统一基线；标记连接相应线位置。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.094545,
+          0.813182,
+          0.93,
+          0.951364
+        ],
+        "evidence_zh": "最小与最大值附近填充高度约27.5和280.25 px，边界连续，无明显越线或脱离。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core明确允许合成主题适配及当前数据驱动的峰谷、姿态和非数据部件调整。",
+      "output_added_or_lost_meaning_zh": "增加兑换等式、归一化与非零基线说明；消费和收入的不同方向保留。原投资总题变化归于输入适配，局部文字缺损未改变统计角色。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、合成汇率与日常购买力、USD received per CAD、USD/CAD、1 CAD = r USD、每1 USD归一化及填充至0.65（非零起点）。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "冻结core允许合成主题适配，不要求复现原真实统计与投资总题。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前最低点在2007-12-31，最高点在2015-12-28，成图已相应改变。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "“周”字缺字框和角标笔画遮挡属于局部输出文字损失。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "561个周样本占918 px横轴，不能逐个独立确认全部细微周变化。"
+      }
+    ],
+    "measurement_coverage_zh": "独立像素测量覆盖连续通道的最小、最大和一个内部点；核对三行双列六项文字金额。另检查全部系列、样本数、日期范围、两端锚点、11个年度刻度、6个纵轴刻度、三类情境及单位。未将全部561点或天平示意倾角声称为逐点实测。"
+  }
+}
