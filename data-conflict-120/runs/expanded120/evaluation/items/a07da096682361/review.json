@@ -1,0 +1,357 @@
+{
+  "verdict": "pass",
+  "confidence": 0.94,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中，古铜牛居左向右、熊居右向左张口，金橙蓝面积在动物前方叠合。成图保留这一关系；标题、SYNTHETIC DATA、百分比轴、月度时间轴、15 个阶段注释和登记表可读。牛角、头颈、躯干及熊耳、口鼻、前爪连接可辨。金色段出现先高后低及末端尖峰，橙色段位于零线下；最小正值紧邻零线，不能凭全图确认精确厚度。",
+  "summary_zh": "未发现重大可见缺陷。15 个独立阶段、牛熊叠合、统计语义及代表性几何符合合同；极小值的独立像素精度有限。review.json 已保存并通过 schema 校验，未运行 submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "使用原始 1600×2000 成图。零线约 y1260，100% 网格间隔约 200 px；纵向全量程为 500 个百分点。横向 x165–1505 对应 648 月。误差使用各自全量程；近似零误差不表示无限精度。原生坐标核对仅作佐证。",
+  "uncertainties_zh": "663 个样本仅做有界像素抽测，不能声称逐点视觉精确。最小正值及蓝色小谷受基线、描边和抗锯齿影响。按要求未读取日志、自检或归档审计，未验证 capture_render.py 的执行历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "成图有 15 个阶段注释及登记行、三种角色和完整时间轴；原生 SVG 的 15 条独立数据线包含全部 663 个样本。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "15 个终值依次为 248、−27、94、−46、146、−22、326、−67、284、−31、172、−43、91、−19、18（%），均正确；日期、持续月数及蓝色峰值 24% 一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "终值由阶段号、同色引线和登记行绑定；金、橙、蓝分别对应 bull、bear、uncategorized。登记明确终值口径，未将蓝色 18% 误称峰值。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "代表性正负高度、蓝色高度及月跨度均在 3% 全量程容差内；阶段分别闭合至零线，未见跨阶段斜连。小值可见性另记。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "所供原始素材的牛角、头部和熊爪匹配成图；SVG 内嵌素材与 bronze_pair.png 相同。图面明确注明合成来源及非历史黄金收益。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "生成的古铜牛熊占据主要绘图区，面积与网格前置叠合。实际数值由彩色边界至零线的区域承载，与参考关系一致。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始尺寸下标题、合成声明、指标单位、图例、15 个阶段注释、登记日期及来源均可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "牛角连接头颈躯干、腿连蹄；熊耳口鼻连接头颈躯干、前肢连爪，两者相向。独立面积与零线位于动物前方。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "黄金市场标题、合成声明、阶段内变化率、月度时间轴及独立重置说明共同明确当前主题、单位和统计口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "黄金市场牛熊对峙和阶段身份保留；真实历史收益及政策解释被合成阶段数据替代，属于冻结输入明确许可的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最短 P06 橙段和末端蓝色区域仍可辨且接触零线；0.2% 与蓝色 2% 样本无法可靠分离出独立边界。"
+    }
+  },
+  "semantic_attribution_zh": "历史实绩和政策解释的移除归于输入许可的合成化适配；先高后低及终端尖峰来自当前数据。未见当前主题或必要结构被输出遗漏。极小样本辨识受分辨率及基线覆盖限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "P01",
+        "category": "40 / 阶段内变化率（%）",
+        "expected_value": 0.2,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1531,
+          0.6275,
+          0.1569,
+          0.631
+        ],
+        "evidence_zh": "约 x248 的样本紧邻零线；1259–1260 行为亮色基线，无法分离其独立高度。",
+        "uncertainty_zh": "代码名义高度为 0.4 px，仅作佐证；邻点、描边和基线混合，不能可靠反推数值。"
+      },
+      {
+        "series_id": "P07",
+        "category": "120 / 阶段内变化率（%）",
+        "expected_value": 326,
+        "observed_value": 326,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 652,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2563,
+          0.3035,
+          0.26,
+          0.6305
+        ],
+        "evidence_zh": "x412–413 的金色细尖峰从约 y608 延至 y1260，约 652 px，对应 326%。顶部与引线间有空隙。",
+        "uncertainty_zh": "端点约 ±1–2 px；零误差是取整后的中心估计。"
+      },
+      {
+        "series_id": "P13",
+        "category": "580 / 阶段内变化率（%）",
+        "expected_value": 22.2,
+        "observed_value": 23,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 46,
+        "full_scale_error_percent": 0.16,
+        "small_value_relative_error_percent": 3.6,
+        "bbox_xyxy_normalized": [
+          0.8513,
+          0.6055,
+          0.8544,
+          0.6305
+        ],
+        "evidence_zh": "x1364 附近金色边界约 y1214，距零线约 46 px，反推约 23%。",
+        "uncertainty_zh": "样本间距约 2.07 px，局部谷点受相邻斜边及描边影响，约 ±1–2 px。"
+      },
+      {
+        "series_id": "P08",
+        "category": "354 / 阶段内变化率（%）",
+        "expected_value": -67,
+        "observed_value": -67,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 134,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5588,
+          0.6295,
+          0.5625,
+          0.698
+        ],
+        "evidence_zh": "末端橙色细边约至 y1394，低于零线 134 px，对应 −67%。",
+        "uncertainty_zh": "端点约 ±1 px；更低位置的独立引线未计入面积高度。"
+      },
+      {
+        "series_id": "P08",
+        "category": "205 / 阶段内变化率（%）",
+        "expected_value": -53.9,
+        "observed_value": -54,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 108,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.3669,
+          0.6295,
+          0.37,
+          0.685
+        ],
+        "evidence_zh": "x589 的橙色填充边界约 y1368，距零线 108 px，反推 −54%。",
+        "uncertainty_zh": "边界约 ±1 px。"
+      },
+      {
+        "series_id": "P15",
+        "category": "639 / 阶段内变化率（%）",
+        "expected_value": 24,
+        "observed_value": 24,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 48,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.9269,
+          0.6045,
+          0.9306,
+          0.6305
+        ],
+        "evidence_zh": "x1486 附近蓝色峰顶约 y1212，至零线约 48 px，反推 24%。",
+        "uncertainty_zh": "峰顶约 ±1 px；页脚峰值文字仅作核对。"
+      },
+      {
+        "series_id": "P15",
+        "category": "633 / 阶段内变化率（%）",
+        "expected_value": 18,
+        "observed_value": 18,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 36,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.9194,
+          0.6095,
+          0.9225,
+          0.6305
+        ],
+        "evidence_zh": "x1474 附近蓝色轮廓过渡约在 y1224，距零线 36 px，对应约 18%。",
+        "uncertainty_zh": "斜边抗锯齿带约 2 px，取整相符不代表精确相等。"
+      },
+      {
+        "series_id": "P15",
+        "category": "647 / 阶段内变化率（%）",
+        "expected_value": 2,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.9375,
+          0.6225,
+          0.9413,
+          0.631
+        ],
+        "evidence_zh": "蓝色小谷仍可见，但与下一月 18% 的陡边混合，无法独立定位 2% 样本边界。",
+        "uncertainty_zh": "名义高度 4 px 仅为代码佐证，不能用邻点区域厚度替代测量。"
+      },
+      {
+        "series_id": "P06",
+        "category": "105–108 / 阶段跨度（月）",
+        "expected_value": 3,
+        "observed_value": 2.9,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 6,
+        "full_scale_error_percent": 0.015,
+        "small_value_relative_error_percent": 3.3,
+        "bbox_xyxy_normalized": [
+          0.2381,
+          0.6295,
+          0.2444,
+          0.633
+        ],
+        "evidence_zh": "零线下橙段约从 x382 至 x388，宽约 6 px；按横轴反推约 2.90 月。",
+        "uncertainty_zh": "约 ±1 px，即 ±0.48 月。"
+      },
+      {
+        "series_id": "P08",
+        "category": "120–354 / 阶段跨度（月）",
+        "expected_value": 234,
+        "observed_value": 234.05,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 484,
+        "full_scale_error_percent": 0.008,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2575,
+          0.6295,
+          0.5625,
+          0.633
+        ],
+        "evidence_zh": "长橙段左右边界约 x413、x897，跨度 484 px，反推约 234.05 月。",
+        "uncertainty_zh": "两侧边界合计约 ±1–2 px。"
+      },
+      {
+        "series_id": "P09",
+        "category": "354–456 / 阶段跨度（月）",
+        "expected_value": 102,
+        "observed_value": 102.04,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 211,
+        "full_scale_error_percent": 0.006,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5594,
+          0.6275,
+          0.6938,
+          0.6305
+        ],
+        "evidence_zh": "金色段左右边界约 x897、x1108，跨度 211 px，反推约 102.04 月。",
+        "uncertainty_zh": "约 ±1–2 px；时间按月份编码，未按阶段数等宽。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "古铜牛与熊主体",
+        "required_parts": [
+          "牛角、头颈、躯干、腿蹄",
+          "熊耳、口鼻、躯干、前肢爪"
+        ],
+        "relationship": "各自部件连续连接；牛向右、熊向左张口，相向而未直接接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.048,
+          0.216,
+          0.959,
+          0.702
+        ],
+        "evidence_zh": "牛角从头部延伸，头颈连接肩背；熊口鼻、头肩和前爪连贯，未见破坏身份的接缝。"
+      },
+      {
+        "category": "大幅正值与长负段",
+        "required_parts": [
+          "P07 金色面积",
+          "P08 橙色面积",
+          "共享零线",
+          "后层古铜牛熊"
+        ],
+        "relationship": "金色区域向下闭合至零线，橙色区域向上闭合至零线；各阶段独立重置，图形位于动物前方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.303,
+          0.562,
+          0.698
+        ],
+        "evidence_zh": "约 x413 的正尖峰与右侧橙段分别从零线起止，未出现跨阶段斜连。"
+      },
+      {
+        "category": "最短 P06 阶段",
+        "required_parts": [
+          "窄橙色面积",
+          "零线",
+          "阶段引线与标注"
+        ],
+        "relationship": "窄橙段在零线下并与之接触，外部注释通过引线绑定。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2375,
+          0.629,
+          0.324,
+          0.728
+        ],
+        "evidence_zh": "约 6 px 宽的数据区域仍可辨；外置 −22% 标签没有人为加宽面积。"
+      },
+      {
+        "category": "最小正值与蓝色小谷",
+        "required_parts": [
+          "近零金色边界",
+          "蓝色小谷",
+          "亮色零线"
+        ],
+        "relationship": "整体彩色区域闭合到零线，但极小单点边界与基线难以稳定分离。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.152,
+          0.604,
+          0.942,
+          0.632
+        ],
+        "evidence_zh": "0.2% 名义高度低于一个像素；蓝色 2% 谷点与相邻陡边混合。正确文字不能补证其精确几何。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结合同明确采用合成黄金阶段数据，允许依数据改变走势和非数据姿态，无须保留旧峰值或历史因果说明。",
+      "output_added_or_lost_meaning_zh": "保留黄金市场、相向牛熊和三类阶段身份；增加独立重置及颜色不强制月趋势说明。历史政策解释未延用，符合输入适配。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；GOLD: BULL & BEAR CYCLES；Within-phase change (%)；MONTHLY；EACH PHASE RESTARTS AT 0%；PHASE REGISTER；NOT HISTORICAL GOLD RETURNS。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实历史数据和政策论述改为明确标注的合成阶段序列，参考含义部分沿用。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "金色段先高后低并在末月尖升，符合当前样本；颜色仅表示阶段身份。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "0.2% 与零线混合；蓝色 2% 谷点受相邻陡边及抗锯齿影响。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖单面板纵向变化率与横向月份两个通道：抽测最小正值、最大正值、最大负幅度、内部正负样本、蓝色峰与内部/小谷，并测最短、最长和中等阶段跨度。15 阶段标签、终值、日期及持续月数逐项核对；其他月度点仅核对原生坐标，不冒充像素测量。"
+  }
+}

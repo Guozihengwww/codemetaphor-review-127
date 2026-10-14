@@ -1,8 +1,8 @@
 # 120组数据冲突实验
 
-北京时间：2026-10-14T16:18:05.512054+08:00
+北京时间：2026-10-14T17:05:56.852021+08:00
 
-总任务已结束 162/240；新增任务已结束 42/120。原60组保留，新增60组，三类各40。
+总任务已结束 170/240；新增任务已结束 50/120。原60组保留，新增60组，三类各40。
 统计状态：运行中描述性进度；待评与技术异常单列。附加详细评估不会覆盖原标签。
 
 | 类别 | 指标 | 完整配对 | 冲突−相近（百分点） |
@@ -11,10 +11,10 @@
 | 类别数 | critical_structure | 22/40 | 0.0 |
 | 类别数 | semantic_meaning | 22/40 | 0.0 |
 | 类别数 | small_mark_visibility | 22/40 | 0.0 |
-| 趋势形状 | numeric_supported | 20/40 | 0.0 |
-| 趋势形状 | critical_structure | 20/40 | 0.0 |
-| 趋势形状 | semantic_meaning | 20/40 | 0.0 |
-| 趋势形状 | small_mark_visibility | 20/40 | 0.0 |
+| 趋势形状 | numeric_supported | 21/40 | 0.0 |
+| 趋势形状 | critical_structure | 21/40 | 0.0 |
+| 趋势形状 | semantic_meaning | 21/40 | 0.0 |
+| 趋势形状 | small_mark_visibility | 21/40 | 0.0 |
 | 数值范围 | numeric_supported | 20/40 | 0.0 |
 | 数值范围 | critical_structure | 20/40 | -25.0 |
 | 数值范围 | semantic_meaning | 20/40 | 0.0 |

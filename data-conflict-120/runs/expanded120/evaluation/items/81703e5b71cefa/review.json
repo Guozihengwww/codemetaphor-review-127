@@ -1,0 +1,213 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "已先查看 reference.png 与 image.png 原分辨率图像。参考图为切片面包与纸钞并排衔接，中间窄白缝，底部阴影和反射；文字谈食物浪费及年度费用。成图保留左侧完整切片面包、右侧纸钞、窄白缝及共用底面，主体外观宽比约七比三。Used／£1,050／70% 位于面包下方，Wasted／£450／30% 位于纸钞下方，括线分别对应两主体。总额 £1,500、浪费占比 30%、Current measure、GBP per household per year、中文年度食品预算损耗及 SYNTHETIC DATA 均可见。未见遮挡必需标签或明显破坏物体身份的接缝；净宽比例及素材路线尚待核对。",
+  "summary_zh": "通过。两主体净宽、金额及标签对应正确，面包与纸钞的邻接、窄白缝、接触阴影均保留。当前合成预算主题和每户每年英镑口径清楚；原真实统计的改写属于输入允许的适配。",
+  "issues": [],
+  "measurement_notes_zh": "独立读取指定 image.png 的1440×2040原始像素，在主体区 x=70–1364、y=810–1395以RGB色差分割两最大连通物体，测水平外接净宽，不以括线或源码分配宽度代替主体测量。四组色差阈值得854/366 px，净宽总和1220 px；白缝 x=959–968不计入。更严格阈值得851/366 px，份额偏差约0.074个百分点，仍远低于3个百分点。金额按实测宽比乘总额1500换算。",
+  "uncertainties_zh": "抗锯齿及浅色边缘使水平支撑存在数像素阈值敏感性；表中零误差是选定像素阈值的结果，不代表无限精度。未读取日志、自检或轮次记录，不能据capture_render.py的存在证明每次归档实际执行。参考原真实统计与当前合成口径不同，原宣传含义仅作部分保留判断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列Current measure、Used与Wasted两类完整，顺序与数据一致；总预算、类别金额、百分比、单位及合成提示均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图面为£1,050、£450、£1,500，份额70%与30%，上方浪费占比亦为30%；全部与当前数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "左侧括线和Used／已使用／£1,050／70%对应面包；右侧括线和Wasted／浪费／£450／30%对应纸钞，无交叉或歧义。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图像素实测面包854 px、纸钞366 px，排除10 px白缝后为70%／30%；严格阈值的最大份额偏差约0.074个百分点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其面包切片纹理及纸钞肖像、花纹在成图主体中实质使用。prepare_assets.py提取两主体，render.py依据当前金额分配宽度、添加文字；归档实际执行未另行核实。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "主体本身的水平边界承载份额，保持参考的并排衔接；两物体共用底面，白缝分隔且阴影、淡反射位于其下方，未见破坏结构的遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、Current measure、GBP per household per year、Used/Wasted及全部金额清楚可读；底部明确解释净宽编码与合成口径，没有必需文字被遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整切片面包位于左侧，纸钞位于右侧，两者相邻并保留约10 px白缝；下缘均约在y=1396，底部接触阴影及反射可见。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确合成年度食品预算损耗；每户每年英镑、总预算以及已使用/浪费角色均写出，70%和30%可解释为同一预算的两部分。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "食物浪费对应金钱损耗的联想及物体邻接关系保留；原图1/3食物与£400真实年度损耗改为合成预算，这是冻结输入明确允许的适配，非输出错误。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值Wasted=450仍占366 px宽，纸张外缘、折角、肖像花纹、底边及白缝均可辨；不存在仅靠数值标签辨认的微小主体。"
+    }
+  },
+  "semantic_attribution_zh": "原真实食品浪费统计改为合成年度预算，归因于输入适配。面包与纸钞宽度由1050/450确定，属于数据驱动形状变化。未发现当前主题、指标单位或类别角色的输出遗漏；像素边缘敏感性不影响此例较小主体的辨识。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_food_budget",
+        "category": "Used",
+        "expected_value": 1050,
+        "observed_value": 1050,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 854,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.072917,
+          0.409804,
+          0.665972,
+          0.684314
+        ],
+        "evidence_zh": "原图主体色差连通域水平范围为[105,959)，宽854 px；854/(854+366)×1500=1050 GBP/户/年。测量未使用源代码的宽度常量。",
+        "uncertainty_zh": "四组阈值相同；更严格取色将浅色右缘排除3 px，换算约1048.89，满量程偏差约0.074%，相对该值约0.106%。"
+      },
+      {
+        "series_id": "annual_food_budget",
+        "category": "Wasted",
+        "expected_value": 450,
+        "observed_value": 450,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 366,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.672917,
+          0.409804,
+          0.927083,
+          0.684314
+        ],
+        "evidence_zh": "原图纸钞色差连通域水平范围为[969,1335)，宽366 px；366/(854+366)×1500=450 GBP/户/年，为此图最小正值。",
+        "uncertainty_zh": "纸钞宽度在所试阈值下稳定；严格阈值改变面包分母后换算约451.11，满量程偏差约0.074%，相对小值约0.247%。不将像素点估计解释为亚像素精度保证。"
+      },
+      {
+        "series_id": "annual_food_budget",
+        "category": "年度食品总预算（文字）",
+        "expected_value": 1500,
+        "observed_value": 1500,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.069444,
+          0.269608,
+          0.371528,
+          0.348039
+        ],
+        "evidence_zh": "上方年度食品总预算处直接写出£1,500；1050+450=1500。此处为文字编码，不作为物体几何测量。",
+        "uncertainty_zh": "无独立的总额几何标记，几何长度与误差不适用。"
+      },
+      {
+        "series_id": "annual_food_budget",
+        "category": "浪费占比（上方文字，单位%）",
+        "expected_value": 30,
+        "observed_value": 30,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.729167,
+          0.269608,
+          0.930556,
+          0.357843
+        ],
+        "evidence_zh": "右上方30%明确标注为浪费占比，与450/1500一致；下方Wasted也写30%。",
+        "uncertainty_zh": "这是文字核验，不用字号或文字外接宽度推断数值。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Used：较大主体",
+        "required_parts": [
+          "完整面包轮廓",
+          "靠拢的切片",
+          "烤色外皮与浅色面包纹理",
+          "底边接触阴影"
+        ],
+        "relationship": "切片靠拢组成完整面包，外皮与浅色表面连续；底边落在共同承托面上，整体水平极值边界承载Used份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.072917,
+          0.409804,
+          0.665972,
+          0.693627
+        ],
+        "evidence_zh": "左侧面包可见连续上缘、多个切片和完整左端；切片缝隙未被用作计数编码。底边下方有窄暗影与淡反射，主体测宽约854 px。"
+      },
+      {
+        "category": "Wasted：最小正值主体",
+        "required_parts": [
+          "纸钞外缘",
+          "右上折角",
+          "肖像及钞票花纹",
+          "底边接触阴影"
+        ],
+        "relationship": "肖像和花纹包含于纸张轮廓内，纸钞下缘与面包近乎同高；向左邻接面包但保留白缝，纸张水平外缘承载Wasted份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.672917,
+          0.409804,
+          0.927083,
+          0.693627
+        ],
+        "evidence_zh": "366 px宽纸钞仍清晰呈现纸张侧边、右上折角、向左的肖像及£符号；下缘约y=1396并有暗色接触影，没有缩成无法辨认的色块。"
+      },
+      {
+        "category": "两主体衔接",
+        "required_parts": [
+          "面包右缘",
+          "纸钞左缘",
+          "微小白缝",
+          "共同底面及阴影"
+        ],
+        "relationship": "两物体沿水平轴相邻，微白缝位于中间；底部阴影位于物体之后及下方，避免将阴影计入数据净宽。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.652778,
+          0.409804,
+          0.6875,
+          0.70098
+        ],
+        "evidence_zh": "两主体水平边界约x=959与969，白缝约10 px；下缘均约y=1396。原参考亦采用窄缝衔接，不额外要求两种材质无缝融合。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结简报明确使用合成年度食品预算，类别为Used/Wasted、单位GBP per household per year；原参考1/3和£400不需沿用。",
+      "output_added_or_lost_meaning_zh": "食物浪费与金钱损耗的关联保留，并增加明确的净宽编码解释。未见当前统计语义遗漏；原参考关于购买烹饪和环境的宣传细节未重述，当前合同未要求沿用。",
+      "visible_inscription_evidence_zh": "可读铭文包括“面包与纸钞：合成年度食品预算损耗”“Current measure · GBP per household per year”“年度食品总预算”“Used · 已使用”“Wasted · 浪费”“主体水平净宽按金额占比映射，白缝与阴影不计入”及“SYNTHETIC DATA · 非真实统计”。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原真实食物浪费比例及年度费用被指定合成预算替代，参考含义部分保留不归咎于生成输出。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前两物体净宽实测854/366 px；render.py读取当前金额并分配宽度，与像素结果一致。"
+      }
+    ],
+    "measurement_coverage_zh": "只有一个几何面板、一个系列、两个正值，已覆盖全部主体，包括最大值和最小值；无第三个内部类别可抽测。另核验总额与浪费占比文字。全部必需标签、单位及合成提示已逐项检查；未把阴影、反射、切片数或字号当作定量通道。"
+  }
+}
