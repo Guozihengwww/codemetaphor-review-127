@@ -1,0 +1,196 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以17支不同颜色的完整水平铅笔比较国家年度工时，右侧保留木屑。成图可见Country A至Country Q共17行，数值与对应铅笔同行，最短A、最长O；共同起点、笔尾、杆身、削木及石墨尖连续可见。Annual working hours、人均年度口径、h/year、SYNTHETIC DATA及虚构国家声明均清楚可读。初看未见错行、部件脱离或严重遮挡，随后进行独立像素测量。",
+  "summary_zh": "通过。17个类别、数值及单位完整且绑定正确；完整铅笔长度的像素测量符合线性编码，最大满量程误差约0.085%。生成素材实质构成数据标记，必要部件连续。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1386成图像素。由笔尾暗像素识别17个行带；可见零线约x=286，2300小时网格线约x=1726，满量程跨度1440px。在各行中部定位实体尖端，排除淡阴影；长度乘2300/1440换算小时。三个深色阈值所得尖端至多相差1px。测量来自成图像素，不是渲染公式输出。",
+  "uncertainties_zh": "抗锯齿及像素中心与实体外缘的差别使长度约有±2px（约3.2h）不确定性，不影响3%容差判定。最小值占满量程62.4%，不存在亚像素小标记。未查看日志、自检或历史渲染，不能独立核实所有渲染均经capture_render.py；仅核对其保存机制源码。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Country A至Q依原顺序显示17行、17支完整铅笔；主题、合成声明、国家角色、指标、单位及编码说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行数值1435、1710、1625、1595、1730、2075、2215、1705、1810、1695、1490、1920、1795、1760、2285、1450、1750与data.json全部一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "Country标签位于对应笔杆内，数值与铅笔同行；无错行，类别未重新排序。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "17行均从约x=286起始，像素测量最大误差约0.085%满量程。A、J、O的完整实体长度约898、1060、1430px，端部包含在内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及pencil.png，其笔尾、金属环、木纹尖端和木屑在成图可辨。render.py读取素材、调整完整长度并排布文字；capture_render.py包含保存机制，未据脚本存在推断历史执行。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "量值终点就是完整铅笔最右石墨尖，尾到尖距离随工时变化；木屑位于右侧，未遮挡数据。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下全部类别、数值、刻度、单位、人均年度口径及合成声明清晰，无必要文字遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "最短A与最长O均保留连续接触的黑色圆尾、金属环、彩色杆身、木质锥面及向右石墨尖；17行平行排列，右缘有卷曲木屑。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual working hours及Hours worked per person, per year.明确指标与口径；17 FICTIONAL COUNTRIES及Country A–Q明确类别角色，h/year明确单位，SYNTHETIC DATA明确合成性质。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留以铅笔全长比较各国年度工时的关系；原真实国家及统计替换为允许的虚构国家合成输入，原具体统计内容不再表达，属于输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值A=1435h/year，约898px长、34px厚，各必要部件仍可分辨；未见为识别物体而抬高最小长度。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家到Country A–Q及合成数值的改变来自明确允许的输入改编；长度变化由当前数据驱动。年度人均工时、国家类别及完整长度比较关系均保留。未发现输出遗漏，边缘像素不确定性不影响结论。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_hours",
+        "category": "Country A",
+        "expected_value": 1435,
+        "observed_value": 1434.306,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 898,
+        "full_scale_error_percent": 0.0302,
+        "small_value_relative_error_percent": 0.0484,
+        "bbox_xyxy_normalized": [
+          0.143,
+          0.2633,
+          0.5925,
+          0.2886
+        ],
+        "evidence_zh": "最小正值；笔尾约x=286，深色尖端最右像素约x=1184，长度898px，以可见刻度跨度1440px换算。",
+        "uncertainty_zh": "长度约±2px；像素中心差略小于外缘全长，误差为近似值。"
+      },
+      {
+        "series_id": "annual_hours",
+        "category": "Country J",
+        "expected_value": 1695,
+        "observed_value": 1693.056,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1060,
+        "full_scale_error_percent": 0.0845,
+        "small_value_relative_error_percent": 0.1147,
+        "bbox_xyxy_normalized": [
+          0.143,
+          0.5945,
+          0.674,
+          0.6198
+        ],
+        "evidence_zh": "内部行代表；笔尾约x=286，尖端约x=1346，长度1060px；Country J与1695同行。",
+        "uncertainty_zh": "长度约±2px；反算值与文字差约1.94h，处于像素边缘测量不确定范围。"
+      },
+      {
+        "series_id": "annual_hours",
+        "category": "Country O",
+        "expected_value": 2285,
+        "observed_value": 2284.028,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1430,
+        "full_scale_error_percent": 0.0423,
+        "small_value_relative_error_percent": 0.0425,
+        "bbox_xyxy_normalized": [
+          0.143,
+          0.7785,
+          0.8585,
+          0.8038
+        ],
+        "evidence_zh": "最大值；笔尾约x=286，尖端约x=1716，长度1430px，位于2300刻度左侧约10px。",
+        "uncertainty_zh": "长度约±2px，尖端未被装饰或文字遮挡。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Country A（最小正值）",
+        "required_parts": [
+          "黑色笔尾",
+          "金属环",
+          "彩色笔杆",
+          "木质削尖",
+          "石墨尖"
+        ],
+        "relationship": "部件从左到右连续接触，木质锥面收束连接向右石墨尖；笔尾至尖端整体承担长度编码。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.143,
+          0.2633,
+          0.5925,
+          0.2886
+        ],
+        "evidence_zh": "黄色杆身左接金属环与圆尾，右接削木及深灰尖端；没有分离、遮断或缺失端部。"
+      },
+      {
+        "category": "Country O（最大值）",
+        "required_parts": [
+          "黑色笔尾",
+          "金属环",
+          "彩色笔杆",
+          "木质削尖",
+          "石墨尖"
+        ],
+        "relationship": "绿色长杆连接尾部与削尖，各部件同向同轴，最右实体尖端构成量值终点。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.143,
+          0.7785,
+          0.8585,
+          0.8038
+        ],
+        "evidence_zh": "尾端与其他行对齐；长杆两端部件仍相接且清楚，尖端未进入木屑装饰区。"
+      },
+      {
+        "category": "右侧木屑装饰",
+        "required_parts": [
+          "薄木片",
+          "彩色边缘",
+          "卷曲及开口"
+        ],
+        "relationship": "木片以扇形、螺旋和带状卷曲位于数据区右侧，不承载工时量值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.882,
+          0.022,
+          1,
+          1
+        ],
+        "evidence_zh": "木纹、彩漆边缘及卷曲开口可见；局部画布裁切不遮挡铅笔尖端或必要文字。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许以17个虚构国家和当前合成工时替换原真实统计，并适配姿态、非数据厚度及标签布局。",
+      "output_added_or_lost_meaning_zh": "保留各国人均年度工时比较及完整铅笔长度融合；原具体真实统计不再出现属于允许改编，未添加累计、组成或趋势含义。",
+      "visible_inscription_evidence_zh": "Annual working hours；Hours worked per person, per year.；Annual hours (h/year)；17 FICTIONAL COUNTRIES；Country A–Q；SYNTHETIC DATA；完整铅笔长度编码说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原真实国家及数值被明确声明的虚构国家合成数据替换，reference_meaning的部分保留归因于此。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "O最长、A最短及其余长度差异与当前数据一致，没有复制旧参考的固定数值。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单系列、单一线性长度通道。像素提取覆盖17/17支铅笔，最大估计误差约0.085%满量程；详细列出最小A、内部J、最大O。17/17类别、数值及必要语义文字另行逐项核对；未测非数据木屑面积。"
+  }
+}

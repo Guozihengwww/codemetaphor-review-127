@@ -1,0 +1,437 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：黄色背景上一排10本等宽书脊，共同零线穿过书体；书名和作者位于零线下，数量在书顶，标题为TOP 10 MOST READ BOOKS IN THE WORLD。成图：一排15本等宽、有皮革或布纹和金色包边的书脊，底部齐平于书架；白色共同零线穿过书体，零线以下为书名、作者和装饰。主标题SYNTHETIC / Book sales、Synthetic copies sold (million copies)、SYNTHETIC DATA及15本总量15,148可读。Book A最高，Book added 1至5逐项增高；Book D至J顶端均略高于零线，数值标签分列。全部书名顺序与输入一致；未见明显遮挡或脱离书体的独立数据柱。以上为查看源码前的可见观察，尚未进行像素测量。",
+  "summary_zh": "15本完整书脊、全部标签和销量映射符合冻结要求。零线上方高度的像素估计最大误差约为满量程0.041%；最小26百万册仍有约6px可见延伸。未发现实质缺陷。参考原有阅读量与50年语境由输入明确改编为合成销量。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1869原图上测量；轴刻度4000与0分别约位于y=270、1220，满量程950px，反算值=上方延伸像素×4000/950。依据黄色背景至书脊顶边的转换读取端点，排除内部金色饰线；只量零线上方，不计390px共同装饰区。各高度约±1px，即±4.21百万册、±0.105%满量程。独立测量后以render.py线性公式旁证，未把公式当作像素证据。",
+  "uncertainties_zh": "最小书脊仅约6px；1px相当于其目标值约16.2%，不能据此确认小值的亚像素或高相对精度。原始素材的生图来源依据所供素材清单，未核验生成日志；capture_render.py的捕获入口可见，但按限制未检查历史执行记录。未运行渲染或submit.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "图中15本书依次为Book A–J、Book added 1–5；15个数值、15组书名及作者、合成声明、单位、零线和总量完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部15个值逐项匹配输入，包括661.6667、1297.3333、1933.0、2568.6667、3204.3333；总量15,148与输入求和一致，没有正值被写成零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各类别文字位于对应书脊内，值紧邻各自顶端；小值标签分列，新增类别的小数标签虽向左延伸，仍与各自顶端明确绑定。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部15个可见延伸依次约912、202、100、26、16、14、11、8、7、6、157、308、459、610、761px；最大点估计偏差0.04079%满量程，连同约±1px读边不确定性仍低于3%容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png六款原始书脊素材；成图主体可辨对应皮革、布纹及底部金饰。prepare_assets.py与render.py显示素材裁切、铺设和数值边界控制；capture_render.py提供完整捕获入口，未核验执行历史。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "承载数值的是完整书脊自身的上端边界；其纹理和侧包边跨越零线连续接入下方书名、作者及底饰，并共同接触书架。没有旁置独立柱形替代书体。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、销量指标、million copies、SYNTHETIC DATA及15组类别和数值均可读；原分辨率局部图可辨作者和小值端点，未见影响解释的遮挡或接缝。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "15本书脊均约106px宽、约12px间隔、底部齐平；每本保留书名、作者、侧包边和底饰。共同零线穿过连续书体，仅上方延伸编码销量。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "可见SYNTHETIC / Book sales、Synthetic copies sold (million copies)及Book类别前缀；说明明确限定零线上方测量销量，下段不编码，合成总量口径清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留书脊高度比较书籍数量的融合关系；参考TOP 10 MOST READ BOOKS及过去50年的阅读代理含义未延续。冻结输入明确改为15本合成书籍销量，此差异归于输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下Book H/I/J上端分别约高于零线8/7/6px，顶边、少量纹理和与下方完整书脊的连续关系可辨。能确认正值与连接，不能从这些像素保证高相对精度。"
+    }
+  },
+  "semantic_attribution_zh": "原参考的实名书籍、TOP 10、阅读量及50年语境被冻结输入明确替换为15个虚构类别的合成销量，属于允许的输入改编。当前成图保留主题、指标、单位、类别角色及书脊高度承载关系；未见输出语义遗漏。小值精度限制来自像素分辨率。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book A",
+        "expected_value": 3840,
+        "observed_value": 3840,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 912,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.09,
+          0.164794,
+          0.143,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=308，零线约y=1220；上方延伸约912px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book B",
+        "expected_value": 850,
+        "observed_value": 850.5263,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 202,
+        "full_scale_error_percent": 0.01316,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.149,
+          0.544676,
+          0.202,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1018，零线约y=1220；上方延伸约202px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book C",
+        "expected_value": 420,
+        "observed_value": 421.0526,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 100,
+        "full_scale_error_percent": 0.02632,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.208,
+          0.599251,
+          0.261,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1120，零线约y=1220；上方延伸约100px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book D",
+        "expected_value": 108,
+        "observed_value": 109.4737,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 26,
+        "full_scale_error_percent": 0.03684,
+        "small_value_relative_error_percent": 1.365,
+        "bbox_xyxy_normalized": [
+          0.267,
+          0.638844,
+          0.32,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1194，零线约y=1220；上方延伸约26px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book E",
+        "expected_value": 69,
+        "observed_value": 67.3684,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 16,
+        "full_scale_error_percent": 0.04079,
+        "small_value_relative_error_percent": 2.365,
+        "bbox_xyxy_normalized": [
+          0.326,
+          0.644195,
+          0.379,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1204，零线约y=1220；上方延伸约16px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book F",
+        "expected_value": 59,
+        "observed_value": 58.9474,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 14,
+        "full_scale_error_percent": 0.00132,
+        "small_value_relative_error_percent": 0.089,
+        "bbox_xyxy_normalized": [
+          0.385,
+          0.645265,
+          0.438,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1206，零线约y=1220；上方延伸约14px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book G",
+        "expected_value": 45,
+        "observed_value": 46.3158,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 11,
+        "full_scale_error_percent": 0.03289,
+        "small_value_relative_error_percent": 2.924,
+        "bbox_xyxy_normalized": [
+          0.444,
+          0.64687,
+          0.497,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1209，零线约y=1220；上方延伸约11px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book H",
+        "expected_value": 35,
+        "observed_value": 33.6842,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 8,
+        "full_scale_error_percent": 0.03289,
+        "small_value_relative_error_percent": 3.759,
+        "bbox_xyxy_normalized": [
+          0.503,
+          0.648475,
+          0.556,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1212，零线约y=1220；上方延伸约8px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book I",
+        "expected_value": 31,
+        "observed_value": 29.4737,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 7,
+        "full_scale_error_percent": 0.03816,
+        "small_value_relative_error_percent": 4.924,
+        "bbox_xyxy_normalized": [
+          0.562,
+          0.64901,
+          0.615,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1213，零线约y=1220；上方延伸约7px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book J",
+        "expected_value": 26,
+        "observed_value": 25.2632,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 6,
+        "full_scale_error_percent": 0.01842,
+        "small_value_relative_error_percent": 2.834,
+        "bbox_xyxy_normalized": [
+          0.621,
+          0.649545,
+          0.674,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1214，零线约y=1220；上方延伸约6px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book added 1",
+        "expected_value": 661.6667,
+        "observed_value": 661.0526,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 157,
+        "full_scale_error_percent": 0.01535,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.68,
+          0.568754,
+          0.733,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=1063，零线约y=1220；上方延伸约157px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book added 2",
+        "expected_value": 1297.3333,
+        "observed_value": 1296.8421,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 308,
+        "full_scale_error_percent": 0.01228,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.739,
+          0.487961,
+          0.792,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=912，零线约y=1220；上方延伸约308px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book added 3",
+        "expected_value": 1933,
+        "observed_value": 1932.6316,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 459,
+        "full_scale_error_percent": 0.00921,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.798,
+          0.40717,
+          0.851,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=761，零线约y=1220；上方延伸约459px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book added 4",
+        "expected_value": 2568.6667,
+        "observed_value": 2568.4211,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 610,
+        "full_scale_error_percent": 0.00614,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.857,
+          0.326378,
+          0.91,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=610，零线约y=1220；上方延伸约610px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book added 5",
+        "expected_value": 3204.3333,
+        "observed_value": 3204.2105,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 761,
+        "full_scale_error_percent": 0.00307,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.916,
+          0.245586,
+          0.969,
+          0.652755
+        ],
+        "evidence_zh": "原图书顶约y=459，零线约y=1220；上方延伸约761px。",
+        "uncertainty_zh": "高度读边约±1px；数值及误差为像素点估计，不代表亚像素精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Book A（大值）",
+        "required_parts": [
+          "完整书脊",
+          "侧包边",
+          "零线上方数据区",
+          "下方书名与作者",
+          "底部金饰",
+          "书架"
+        ],
+        "relationship": "上方数据区与下方装饰区连续；文字包含在书脊内；底饰接触书架。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.09,
+          0.164794,
+          0.143,
+          0.861423
+        ],
+        "evidence_zh": "黑色皮革书脊由y≈308连续至1610；白色零线在1220叠于书体，Book A与AUTHOR A位于线下，左右边界贯通。"
+      },
+      {
+        "category": "Book J（最小正值）",
+        "required_parts": [
+          "顶边",
+          "红色布纹",
+          "侧包边",
+          "共同零线",
+          "书名与作者",
+          "底饰"
+        ],
+        "relationship": "约6px上端延伸保持为同一书脊的一部分；零线横跨书体，侧边继续向下包围标签和底饰。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.621,
+          0.649545,
+          0.674,
+          0.861423
+        ],
+        "evidence_zh": "原尺寸局部可见上端暗边、金色细饰及红色区域，位于白色零线上方；下方Book J、AUTHOR J与底饰完整，无断接或独立小柱。"
+      },
+      {
+        "category": "Book added 3（内部量值）",
+        "required_parts": [
+          "蓝色布纹书脊",
+          "数据顶端",
+          "侧包边",
+          "书名与作者",
+          "底饰"
+        ],
+        "relationship": "数据顶端控制整体书脊上边界；纹理、包边跨零线连续，底部与书架接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.798,
+          0.40717,
+          0.851,
+          0.861423
+        ],
+        "evidence_zh": "约459px上方蓝色延伸与下方Book added 3、AUTHOR 3属于同一等宽书体；数值1,933.0位于其顶端上方。"
+      },
+      {
+        "category": "整排结构",
+        "required_parts": [
+          "15本等宽书脊",
+          "共同零线",
+          "共同底部书架"
+        ],
+        "relationship": "类别按输入顺序横向排列；所有书脊共享零线与底部，顶端分别承担量值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.09,
+          0.164794,
+          0.969,
+          0.861423
+        ],
+        "evidence_zh": "可见15个约106px宽的独立书体，间隔约12px；零线统一在y≈1220，书架接触边统一在y≈1610。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入明确使用合成书籍销量、15个虚构书籍类别及当前数值；不要求复现原10本实名书、50年阅读代理或旧排名。",
+      "output_added_or_lost_meaning_zh": "当前销量意义完整；新增虚构作者有脚注说明。原参考的最常阅读与50年语境未保留，符合输入改编，不构成输出遗漏。",
+      "visible_inscription_evidence_zh": "主标题SYNTHETIC / Book sales；指标Synthetic copies sold (million copies)；说明Only the spine above zero measures sales及total book height is not the value；脚注Book labels and author credits are fictional。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原阅读排名改为合成销量，实名书籍改为Book A–J及Book added 1–5；冻结brief与data明确规定。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "各上端高度随当前数值改变，Book A最高、五个新增类别逐级增高；未强行延续参考排序。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "Book H/I/J仅约8/7/6px延伸；端点抗锯齿与约1px读边误差限制小值相对精度，但完整书体关系仍可见。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单系列、线性高度通道；15/15个书脊均独立读边测量，覆盖最小正值、最大值及所有内部值。另逐项检查15个数值、类别及作者，核对单位、声明、零线和总量。无需面积、透视或非线性反变换。"
+  }
+}
