@@ -1,0 +1,374 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：八支香烟以金色滤嘴为共同下部，白纸烟身连接烟草、灰烬或余烬顶端；右上有独立三列股票价格。待评图：八支香烟按Region A–H排列，滤嘴等高且上沿同接缝基线；A的白纸烟身最高，B、D顶部为灰烬，C、E顶部可见余烬；F、G为等高的短白纸与薄灰烬，H为极短白纸与烟草顶面。全部八个产量原值、LMT及三家公司450/1,740/3,460 CU可读且对应清楚。当前主题、SYNTHETIC DATA、合成类别、每股虚构货币和对数变换说明均可见。上述观察先于源码检查。",
+  "summary_zh": "八个产量烟身与三个独立股价卡片完整且绑定正确。实图高度符合声明的对数映射，必要部件保持连接，未见超容差几何、错标或结构性缺失。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1600×2000的image.png像素，未使用生成方掩膜或自检。22与0刻线中心分别为y≈474、1414，全高H≈940像素；滤嘴接缝亦在y≈1414。实体边缘相对背景RGB(247,245,239)，采用最大通道差25、45、65三个阈值所得首行一致。八个烟身高约940、652、398、205、90、35、35、13像素，以V=exp(h/H×ln23)−1反算。full_scale_error_percent为反算产量误差/22×100；产量及高度最大满量程误差分别约0.0376%和0.0397%。具体M2、core及additional_contract的log1p定义优先于笼统linear字段。",
+  "uncertainties_zh": "像素边界约±1像素；最小H烟身对应约0.04084–0.04781 LMT，不能据满量程合格保证小值高相对精度。最小烟草顶面的细粒纹理不可逐粒辨认，但顶面、白纸及滤嘴关系可见。按限制未查看日志、自检或历史归档，不能独立证实每次渲染均执行capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A–H八类依次出现；单产量系列、Company P/Q/R三张股价卡、单位、合成声明和合计完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "产量22.0、7.80898065、2.77182631、0.98386991、0.34922823、0.12395984、0.12395984、0.044；股价450、1,740、3,460 CU；合计34.20582478 LMT，均符合数据。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各产量箭头指向同列烟头，地区标签在对应香烟下方；公司名称与价格同卡绑定，并明示企业与地区不配对。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实图八个烟身符合log1p映射，产量和高度最大满量程误差均低于0.04%，远低于3%。F、G均约35像素；滤嘴不计。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的白纸褶纹、滤嘴斑点、灰烬和余烬实质覆盖香烟主体。prepare_assets.py提取部件，render.py按数据控制数量、包络高度及文字；实图像素测量支持源码映射。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "接缝至实体烟头直接承载数据。滤嘴、白纸和烟头上下连续连接，未见破坏结构的悬浮、错层或遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、全部数值、类别、单位定义、映射公式和滤嘴不计说明可读，无必需标签遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "A保留烟草顶面、白纸筒及滤嘴；D保留灰烬与白纸接触；F/G/H仍可辨顶端材料、短白纸及滤嘴。三列股价保持独立。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达合成地区未加工烟草产量及合成企业示例股价；LMT=十万吨，CU为虚构每股货币。总量明确指八地区合计，灰烬与余烬不表示额外系列。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留香烟烟身编码产量、固定滤嘴和独立股价并置关系；真实国家、2021及印度股票身份按冻结输入改为合成类别，属于允许适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "F/G约35像素烟身仍含灰烬与白纸；H约13像素烟身仍见烟草顶面、白纸带及滤嘴连接。未归零，但不能保证亚像素精度或细纹辨识。"
+    }
+  },
+  "semantic_attribution_zh": "真实地区、年份、企业及币种的变化归于明确的合成输入适配；短烟身与压薄烟头归于当前数据映射。最小烟头细纹和精确边界受分辨率限制。未发现当前主题、单位、统计角色或必要连接关系的输出遗漏；不推断参考隐含的健康或涨跌论点。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Region A",
+        "expected_value": 22.0,
+        "observed_value": 22.0,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 940,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.1175,
+          0.237,
+          0.17,
+          0.707
+        ],
+        "evidence_zh": "实体首行y≈474，接缝y≈1414，测得940像素；映射目标940像素。",
+        "uncertainty_zh": "边缘约±1像素；反算范围约21.92341–22.07685 LMT。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region B",
+        "expected_value": 7.80898065,
+        "observed_value": 7.80070787,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 652,
+        "full_scale_error_percent": 0.037604,
+        "small_value_relative_error_percent": 0.105939,
+        "bbox_xyxy_normalized": [
+          0.2275,
+          0.381,
+          0.28,
+          0.707
+        ],
+        "evidence_zh": "实体首行y≈762，接缝y≈1414，测得652像素；目标约652.282像素。",
+        "uncertainty_zh": "边缘约±1像素；反算范围约7.77140–7.83011 LMT。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region C",
+        "expected_value": 2.77182631,
+        "observed_value": 2.77191034,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 398,
+        "full_scale_error_percent": 0.000382,
+        "small_value_relative_error_percent": 0.003031,
+        "bbox_xyxy_normalized": [
+          0.3375,
+          0.508,
+          0.39,
+          0.707
+        ],
+        "evidence_zh": "实体首行y≈1016，接缝y≈1414，测得398像素；目标约397.993像素。",
+        "uncertainty_zh": "边缘约±1像素；反算范围约2.75935–2.78451 LMT。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region D",
+        "expected_value": 0.98386991,
+        "observed_value": 0.98140183,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 205,
+        "full_scale_error_percent": 0.011219,
+        "small_value_relative_error_percent": 0.250854,
+        "bbox_xyxy_normalized": [
+          0.4475,
+          0.6045,
+          0.5,
+          0.707
+        ],
+        "evidence_zh": "实体首行y≈1209，接缝y≈1414，测得205像素；目标约205.373像素。",
+        "uncertainty_zh": "边缘约±1像素；反算范围约0.97480–0.98802 LMT。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region E",
+        "expected_value": 0.34922823,
+        "observed_value": 0.35013811,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 90,
+        "full_scale_error_percent": 0.004136,
+        "small_value_relative_error_percent": 0.260541,
+        "bbox_xyxy_normalized": [
+          0.5575,
+          0.662,
+          0.61,
+          0.707
+        ],
+        "evidence_zh": "实体首行y≈1324，接缝y≈1414，测得90像素；目标约89.798像素。",
+        "uncertainty_zh": "边缘约±1像素；反算范围约0.34564–0.35465 LMT。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region F",
+        "expected_value": 0.12395984,
+        "observed_value": 0.1238352,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 35,
+        "full_scale_error_percent": 0.000567,
+        "small_value_relative_error_percent": 0.100545,
+        "bbox_xyxy_normalized": [
+          0.6675,
+          0.6895,
+          0.72,
+          0.707
+        ],
+        "evidence_zh": "实体首行y≈1379，接缝y≈1414，测得35像素；目标约35.033像素。",
+        "uncertainty_zh": "边缘约±1像素；反算范围约0.12009–0.12759 LMT。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region G",
+        "expected_value": 0.12395984,
+        "observed_value": 0.1238352,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 35,
+        "full_scale_error_percent": 0.000567,
+        "small_value_relative_error_percent": 0.100545,
+        "bbox_xyxy_normalized": [
+          0.7775,
+          0.6895,
+          0.83,
+          0.707
+        ],
+        "evidence_zh": "实体首行y≈1379，接缝y≈1414，测得35像素；与F等高，目标约35.033像素。",
+        "uncertainty_zh": "边缘约±1像素；反算范围约0.12009–0.12759 LMT。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region H",
+        "expected_value": 0.044,
+        "observed_value": 0.04431714,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 13,
+        "full_scale_error_percent": 0.001442,
+        "small_value_relative_error_percent": 0.720774,
+        "bbox_xyxy_normalized": [
+          0.8875,
+          0.7005,
+          0.94,
+          0.707
+        ],
+        "evidence_zh": "实体首行y≈1401，接缝y≈1414，测得13像素；目标约12.909像素。",
+        "uncertainty_zh": "边缘约±1像素；反算范围约0.04084–0.04781 LMT。点估计相对误差不构成小值精度保证。"
+      },
+      {
+        "series_id": "share_prices",
+        "category": "Company P",
+        "expected_value": 450,
+        "observed_value": 450,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.46375,
+          0.2505,
+          0.605,
+          0.33
+        ],
+        "evidence_zh": "Company P同卡可读450 CU；面板单位CU/share。",
+        "uncertainty_zh": "仅文字编码，几何误差不适用。"
+      },
+      {
+        "series_id": "share_prices",
+        "category": "Company Q",
+        "expected_value": 1740,
+        "observed_value": 1740,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.6225,
+          0.2505,
+          0.76375,
+          0.33
+        ],
+        "evidence_zh": "Company Q同卡可读1,740 CU；面板单位CU/share。",
+        "uncertainty_zh": "仅文字编码，几何误差不适用。"
+      },
+      {
+        "series_id": "share_prices",
+        "category": "Company R",
+        "expected_value": 3460,
+        "observed_value": 3460,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.78125,
+          0.2505,
+          0.9225,
+          0.33
+        ],
+        "evidence_zh": "Company R同卡可读3,460 CU；面板单位CU/share。",
+        "uncertainty_zh": "仅文字编码，几何误差不适用。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Region A（大值）",
+        "required_parts": [
+          "固定金色滤嘴",
+          "白纸烟身",
+          "烟草实体顶面"
+        ],
+        "relationship": "滤嘴在白纸筒下方相接，烟草顶面位于上端并被纸缘围合；接缝至最高实体顶端承载数据。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1175,
+          0.237,
+          0.17,
+          0.779
+        ],
+        "evidence_zh": "顶端y≈474、接缝y≈1414、下端y≈1558，三部分清晰相接。"
+      },
+      {
+        "category": "Region D（内部值）",
+        "required_parts": [
+          "固定金色滤嘴",
+          "短白纸烟身",
+          "灰烬烟头"
+        ],
+        "relationship": "灰烬在白纸上方通过深色燃烧边界接触，白纸下接滤嘴，三者同轴。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4475,
+          0.6045,
+          0.5,
+          0.779
+        ],
+        "evidence_zh": "最高灰烬y≈1209，接缝y≈1414；灰烬包含在205像素数据段内，无悬浮顶饰。"
+      },
+      {
+        "category": "Region F、G（相等小值）",
+        "required_parts": [
+          "等高固定滤嘴",
+          "薄白纸带",
+          "压薄灰烬端"
+        ],
+        "relationship": "灰烬端、白纸带、滤嘴自上而下连续连接，两支数据顶端同高。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.6675,
+          0.6895,
+          0.83,
+          0.779
+        ],
+        "evidence_zh": "实体顶端均y≈1379，接缝均1414；35像素数据段仍可分出灰黑端部与白纸带。"
+      },
+      {
+        "category": "Region H（最小正值）",
+        "required_parts": [
+          "固定金色滤嘴",
+          "极短白纸带",
+          "薄烟草顶面"
+        ],
+        "relationship": "褐色顶面覆在白纸带上端，白纸带下缘接触滤嘴；滤嘴不属于数据段。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.8875,
+          0.7005,
+          0.94,
+          0.779
+        ],
+        "evidence_zh": "烟草顶端y≈1401，约1407–1413见白纸色带，1414转为金色滤嘴；连接可辨，细纹受分辨率限制。"
+      },
+      {
+        "category": "独立股价面板",
+        "required_parts": [
+          "标题及CU/share单位",
+          "Company P/Q/R徽章与名称",
+          "三项价格"
+        ],
+        "relationship": "三个同尺寸卡片独立并排，各名称与价格同卡绑定，不与香烟逐一配对。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.44625,
+          0.1925,
+          0.9525,
+          0.3665
+        ],
+        "evidence_zh": "右上面板显示Illustrative Share Prices及三项价格，下方明示企业与地区不配对。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "真实国家产量与真实股票改为八个合成地区产量、三家合成企业股价；冻结输入不要求原年份、国家名、旧极值或旧数值。",
+      "output_added_or_lost_meaning_zh": "保留产量与股价角色，以及烟身定量、股价文字标注的关系。新增合成声明、总量、公式和不配对说明符合输入；未强加时间趋势或份额分区。",
+      "visible_inscription_evidence_zh": "可见当前完整标题、Unmanufactured tobacco production (LMT)、八个合成可比地区、1 LMT=十万吨、CU虚构每股定义、企业与地区不配对及对数公式。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实国家、年份与股票身份的变化由合成输入明确允许，并以SYNTHETIC DATA和合成类别说明落实。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "F/G约35像素、H约13像素烟身符合对数映射；烟头压薄仍保留部件连接。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "H保留三段关系，但±1像素边界不确定性影响小值相对精度，文字精度不能代替几何精度。"
+      }
+    ],
+    "measurement_coverage_zh": "全部八个产量标记均读取像素顶端并反变换，覆盖最大、内部、相等小值和最小正值；三项股价按合同核对文字。全部类别、单位、合成声明及合计另行核对。未将卡片尺寸当作价格几何，也未使用生成方自检或诊断图。"
+  }
+}

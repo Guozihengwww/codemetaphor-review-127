@@ -1,0 +1,254 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以红色护框、阀门、圆肩直身瓶体承载天然气储量，彩带直接组成瓶身。待评图明确显示GAS RESERVES / BY REGION、Illustrative gas reserves (tcm)、SYNTHETIC DATA及192.0总量。18类标签与数值可读；小带仍横贯瓶身，引线连接对应区域。护框包围阀门，阀座接触瓶肩，右侧阴影贯穿各带且不改变水平分界。查看源码前已将这些观察保存为UTF-8文本。",
+  "summary_zh": "通过。18类数值、份额及绑定完整，彩带高度符合数据，气瓶部件及数据融合关系保留。参考真实国家统计改为合成地区数据属于允许的输入改编。review.json已保存并通过schema.json验证；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在1440×1991原图读取像素：最高彩色肩线约y=565，底线约y=1805，共同高度约1240px。于三个无文字横向位置测量17条内部颜色过渡；18带反算的最大满量程绝对误差约0.03%。源码只作实现佐证。",
+  "uncertainties_zh": "抗锯齿及纹理影响边界插值，条带厚度保守不确定度约±1px，即±0.155tcm；对最小值约相当于±7.7%相对量，不主张亚像素精确。未读取执行历史，capture_render.py源码不能独立证明所有历史渲染均经过保存流程。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A–Q及Other Regions共18类、18带；6个瓶内标签与12个外置标签完整，系列和单位可读。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "18个数值逐项与data.json一致，总量192.0和类别数18正确；全部份额符合value/192保留一位小数。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A–E及Other Regions标签位于对应带内；F–Q引线连接对应带内，未见交叉误接。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "18带像素高度反算均在容差内。A约249.48px、D约91.49px、Q约13px；分界贯穿左右明暗区域。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材及瓶身、护框派生素材；其纹理、阀杆、圆肩高光和右侧阴影可在成图辨认。render.py使用素材构成主体并依数据控制分界与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色数据区域本身组成瓶体，护框与阀门连接其上方；阴影改变亮度而不改变带高。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成提示、系列、单位、总量及18类标签清楚，无明显遮挡或裁切；高度而非面积编码有说明。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "护框围绕阀门，旋钮经黄铜阀杆和银色阀座接入瓶肩；连续彩带组成同一瓶体，右侧体积阴影与轮廓一致。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确天然气地区储量，Illustrative和SYNTHETIC DATA限定合成统计；tcm展开为trillion cubic meters，地区角色及总量份额可理解。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留天然气储量主题及各部分共同组成储量容器的关系；真实国家、探明储量年份及来源按冻结输入改成合成地区示例。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Q带约13px高，位于P橙带与Other Regions紫带之间，仍横贯瓶身且引线落在其中。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家及历史探明储量语境改为合成地区示例，由输入明确规定，其部分语义保留不归因于输出遗漏。气瓶及数据承载关系完整。最小带精度的不确定性来自像素与抗锯齿，未见其区域或连接关系丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Region A",
+        "expected_value": 38.6,
+        "observed_value": 38.629,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 249.48,
+        "full_scale_error_percent": 0.0152,
+        "small_value_relative_error_percent": 0.08,
+        "bbox_xyxy_normalized": [
+          0.31458,
+          0.28378,
+          0.68611,
+          0.40908
+        ],
+        "evidence_zh": "像素界线约y=565.00至814.48；以实测高度1240px及总量192tcm反算。",
+        "uncertainty_zh": "厚度保守不确定度约±1px；记录小数不代表亚像素精度。"
+      },
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Region D",
+        "expected_value": 14.2,
+        "observed_value": 14.166,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 91.49,
+        "full_scale_error_percent": 0.0176,
+        "small_value_relative_error_percent": 0.24,
+        "bbox_xyxy_normalized": [
+          0.31458,
+          0.59493,
+          0.68611,
+          0.64088
+        ],
+        "evidence_zh": "像素界线约y=1184.50至1275.99；按同一实测尺度反算。",
+        "uncertainty_zh": "厚度保守不确定度约±1px，约±0.155tcm。"
+      },
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Region O",
+        "expected_value": 2.3,
+        "observed_value": 2.244,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 14.49,
+        "full_scale_error_percent": 0.0294,
+        "small_value_relative_error_percent": 2.45,
+        "bbox_xyxy_normalized": [
+          0.31458,
+          0.82396,
+          0.68611,
+          0.83124
+        ],
+        "evidence_zh": "像素界线约y=1640.51至1655.00；该小带仍具有独立可见区域。",
+        "uncertainty_zh": "厚度保守不确定度约±1px，相对小值的精度弱于满量程结果。"
+      },
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Region Q",
+        "expected_value": 2.0,
+        "observed_value": 2.013,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 13.0,
+        "full_scale_error_percent": 0.0067,
+        "small_value_relative_error_percent": 0.65,
+        "bbox_xyxy_normalized": [
+          0.31458,
+          0.83852,
+          0.68611,
+          0.84505
+        ],
+        "evidence_zh": "最小正值带界线约y=1669.50至1682.50，右侧引线连接其内部。",
+        "uncertainty_zh": "约±1px对应±7.7%的相对量，不将点估计误差视为小值精度保证。"
+      },
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Other Regions",
+        "expected_value": 19.0,
+        "observed_value": 18.968,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 122.5,
+        "full_scale_error_percent": 0.0168,
+        "small_value_relative_error_percent": 0.17,
+        "bbox_xyxy_normalized": [
+          0.31458,
+          0.84505,
+          0.68611,
+          0.90658
+        ],
+        "evidence_zh": "底部紫带约y=1682.50至1805.00；平直底线终止数据高度。",
+        "uncertainty_zh": "厚度保守不确定度约±1px；底部接触阴影不计入带高。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "气瓶顶部组件",
+        "required_parts": [
+          "红色护框",
+          "红色旋钮",
+          "黄铜阀杆",
+          "银色阀座",
+          "圆肩瓶体"
+        ],
+        "relationship": "护框围绕阀门；旋钮向下经阀杆、阀座连接瓶肩，框脚在肩部两侧相接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.31458,
+          0.1778,
+          0.68611,
+          0.36163
+        ],
+        "evidence_zh": "完整阀门位于开口框内；阀座接触蓝色瓶肩，框脚位于肩部后侧，未见悬空缝隙。"
+      },
+      {
+        "category": "Region A（大值）",
+        "required_parts": [
+          "蓝色数据带",
+          "圆肩轮廓",
+          "B带",
+          "右侧阴影"
+        ],
+        "relationship": "蓝带构成瓶肩和上段瓶体，下缘与B带共用水平界线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.31458,
+          0.28378,
+          0.68611,
+          0.40934
+        ],
+        "evidence_zh": "蓝带从最高肩线延伸至y约814.48；轮廓随肩部收窄，右侧变暗但水平分界不偏移。"
+      },
+      {
+        "category": "Region D（中间值）",
+        "required_parts": [
+          "蓝紫色数据带",
+          "上邻C带",
+          "下邻E带",
+          "瓶身左右外缘"
+        ],
+        "relationship": "D带接触上下相邻带，并被同一瓶身轮廓裁切。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.31458,
+          0.59493,
+          0.68611,
+          0.64088
+        ],
+        "evidence_zh": "标签在带内；两条水平分界贯穿至右侧暗面，无浮贴或错层。"
+      },
+      {
+        "category": "Region Q（最小正值）",
+        "required_parts": [
+          "灰青色细带",
+          "P橙带",
+          "Other Regions紫带",
+          "右侧引线"
+        ],
+        "relationship": "Q在P与Other Regions之间连续堆叠，引线接触其右侧中部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.31458,
+          0.82622,
+          0.90278,
+          0.85635
+        ],
+        "evidence_zh": "约13px高的Q带横贯瓶身，引线端点约(988,1676)落在带内。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "使用18个合成地区及Illustrative gas reserves替换真实国家和历史统计，不要求保留旧排名、年份或数值。",
+      "output_added_or_lost_meaning_zh": "当前主题、指标、地区角色、单位和份额关系保留；旧国家及年份语境的减少属于输入改编。",
+      "visible_inscription_evidence_zh": "可见GAS RESERVES / BY REGION、Illustrative gas reserves (tcm)、SYNTHETIC DATA、192.0 tcm / TOTAL及高度而非面积编码说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "冻结输入明确将真实国家和历史统计替换为合成地区示例，reference_meaning因此为partial。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "18条彩带依新值形成不同高度；肩部归入A带，护框与阀门处于数据尺度之外。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小带关系可辨，但约1px厚度不确定性相对2.0tcm较显著。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一系列的18条彩带均作像素边界测量；详细列出最大值A、中间值D、小值O、最小值Q及底部Other Regions。全部18项数值、份额、标签和引线另行核对；未检查禁止访问的执行历史。"
+  }
+}

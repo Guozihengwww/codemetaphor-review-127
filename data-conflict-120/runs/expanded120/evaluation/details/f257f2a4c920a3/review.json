@@ -1,0 +1,272 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图用彩色水平分带直接构成气瓶瓶身，红色护框围住阀门，瓶身圆肩直壁，右侧有暗色体积阴影。成图同样将彩带置于单一瓶身内，阀门与红色护框位于瓶肩上方；顶部蓝带最大，下部多条窄带仍可辨。两侧可见01–27编号、父类与子类别标签及数值，引线接到对应彩带侧缘。可见GAS RESERVES BY REGION、Illustrative gas reserves、trillion cubic meters (tcm)、总量192和SYNTHETIC DATA。Region Q的2.0窄带位于底部两条紫带上方，未见标签遮住瓶身或明显断裂。",
+  "summary_zh": "未发现违反必要要求的可见缺陷。27类数值、标签和连续分带完整；像素估计最大满量程误差约0.052%，最小带约13px且保持瓶身关系。气瓶结构及生成素材实质可见。原真实国家统计改为合成地区统计属于输入允许的改编。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析1440×1991的image.png，未重渲染。对x=640–800的逐行RGB中位数检测色阶突变，得到肩顶y≈560、瓶底y≈1800及26条内部边界，共同高度H≈1240px。逐带以192×像素高度/H换算并核对全部27值，最大绝对误差为满量程0.05208%，低于3%。另在x=520–580、820–880、900–940重复检测，26条内部边界的整数像素行均一致。源码公式仅作旁证，未充当像素测量。",
+  "uncertainties_zh": "抗锯齿使边界定位约有1px/边的不确定性，最小带的相对精度不能由满量程容差或整数像素点估计保证。按限定未查执行日志及历史记录，不能独立证明素材生成服务或所有capture调用历史；素材在指定成图中的使用有直接视觉对应。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "可见01–27全部编号、27条彩带及27个类别/数值条目。Region B、C各4个子类，D、E及Other Regions各2个子类，其他地区均保留；一条Illustrative系列及总量192齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项核对27个可见值与data.json一致，包括38.6、四个7.975、四个6.35、两个7.1及最小2.0；底部两个9.5与总量192正确，单位tcm及完整释义可读。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "两侧交错编号保持输入的自上而下顺序；27条引线分别接到对应色带侧缘，徽章颜色与带色一致。父类与subcategory编号完整，未见交叉误接。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部27条带的独立像素换算均在容差内，最大满量程误差约0.05208%；最小Region Q约13px对应2.0129tcm，目标2.0。亮部与右侧阴影区的水平分界对齐。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png、hardware.png及body_material.png；红色护框、黄铜阀门、圆肩轮廓和金属明暗在成图主体中对应可见。render.py引用这些素材并按数据设置边界；capture_render.py提供完整渲染保存流程，未执行。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩带直接组成同一气瓶的肩部及直身，各带连续接触，瓶身纹理与右侧阴影贯穿数据区域；不是旁置物体。护框和阀门位于数据高度之外，并经瓶颈连接瓶肩。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题标题、SYNTHETIC DATA、指标、单位、总量及全部类别数值可读；子类别父类名称没有丢失。双侧标签未遮住数据区，底部编码及互斥子类说明完整。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "红色护框围住阀门，阀门坐落在银色瓶颈上，瓶颈接触圆肩；两侧直壁及右侧体积阴影连续。最大蓝带包含瓶肩，最小黄带仍横贯瓶身并接触上下带。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "GAS RESERVES BY REGION与Illustrative gas reserves明确当前主题和指标，trillion cubic meters (tcm)说明单位。父类/子类及互斥说明、总量192与高度编码说明共同表达一个合成储量总量的地区分配。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考图为按国家列示的2021已探明天然气储量；冻结输入改为合成地区/子类示例。气瓶承载储量、各部分组成总量的关系保留，原国家名称、年份及真实统计口径的变化归于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Region Q的2.0带约13px高，位于y≈1664–1677；上下分界、左侧引线接点及右侧阴影内的带面均可辨，与Region P和Other Regions第一子类连续接触。没有仅依靠数值文字证明几何。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、指标、单位、父类及互斥子类角色未见输出遗漏。参考图的真实国家/年份统计改为合成地区示例，是冻结输入允许的语义改编，因此reference_meaning记partial而不判生成失败。27条带及细带厚度随数据变化；小值精度的剩余不确定性来自像素分辨率。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Region A",
+        "expected_value": 38.6,
+        "observed_value": 38.55484,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 249,
+        "full_scale_error_percent": 0.02352,
+        "small_value_relative_error_percent": 0.117,
+        "bbox_xyxy_normalized": [
+          0.333333,
+          0.281266,
+          0.666667,
+          0.406328
+        ],
+        "evidence_zh": "原图中央色阶边界约在y=560与809，带高249px；以实测共同高度1240px和总量192tcm换算。",
+        "uncertainty_zh": "边界按整数像素行定位，抗锯齿造成约1px/边的不确定性；换算值与误差均为近似测量。"
+      },
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Region B / subcategory 1",
+        "expected_value": 7.975,
+        "observed_value": 8.05161,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 52,
+        "full_scale_error_percent": 0.0399,
+        "small_value_relative_error_percent": 0.96066,
+        "bbox_xyxy_normalized": [
+          0.333333,
+          0.406328,
+          0.666667,
+          0.432446
+        ],
+        "evidence_zh": "原图中央色阶边界约在y=809与861，带高52px；以实测共同高度1240px和总量192tcm换算。",
+        "uncertainty_zh": "边界按整数像素行定位，抗锯齿造成约1px/边的不确定性；换算值与误差均为近似测量。"
+      },
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Region F",
+        "expected_value": 8.6,
+        "observed_value": 8.67097,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 56,
+        "full_scale_error_percent": 0.03696,
+        "small_value_relative_error_percent": 0.82521,
+        "bbox_xyxy_normalized": [
+          0.333333,
+          0.678553,
+          0.666667,
+          0.70668
+        ],
+        "evidence_zh": "原图中央色阶边界约在y=1351与1407，带高56px；以实测共同高度1240px和总量192tcm换算。",
+        "uncertainty_zh": "边界按整数像素行定位，抗锯齿造成约1px/边的不确定性；换算值与误差均为近似测量。"
+      },
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Region Q",
+        "expected_value": 2,
+        "observed_value": 2.0129,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 13,
+        "full_scale_error_percent": 0.00672,
+        "small_value_relative_error_percent": 0.64516,
+        "bbox_xyxy_normalized": [
+          0.333333,
+          0.835761,
+          0.666667,
+          0.84229
+        ],
+        "evidence_zh": "原图中央色阶边界约在y=1664与1677，带高13px；以实测共同高度1240px和总量192tcm换算。",
+        "uncertainty_zh": "上下边界各有约1px抗锯齿定位不确定性；13px窄带清晰可见，但0.64516%的相对误差仅为整数像素点估计，不保证亚像素精度。"
+      },
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Other Regions / subcategory 1",
+        "expected_value": 9.5,
+        "observed_value": 9.6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 62,
+        "full_scale_error_percent": 0.05208,
+        "small_value_relative_error_percent": 1.05263,
+        "bbox_xyxy_normalized": [
+          0.333333,
+          0.84229,
+          0.666667,
+          0.87343
+        ],
+        "evidence_zh": "原图中央色阶边界约在y=1677与1739，带高62px；以实测共同高度1240px和总量192tcm换算。",
+        "uncertainty_zh": "边界按整数像素行定位，抗锯齿造成约1px/边的不确定性；换算值与误差均为近似测量。"
+      },
+      {
+        "series_id": "illustrative_reserves",
+        "category": "Other Regions / subcategory 2",
+        "expected_value": 9.5,
+        "observed_value": 9.44516,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 61,
+        "full_scale_error_percent": 0.02856,
+        "small_value_relative_error_percent": 0.57725,
+        "bbox_xyxy_normalized": [
+          0.333333,
+          0.87343,
+          0.666667,
+          0.904068
+        ],
+        "evidence_zh": "原图中央色阶边界约在y=1739与1800，带高61px；以实测共同高度1240px和总量192tcm换算。",
+        "uncertainty_zh": "边界按整数像素行定位，抗锯齿造成约1px/边的不确定性；换算值与误差均为近似测量。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "气瓶顶部组件",
+        "required_parts": [
+          "红色护框",
+          "阀门及向右出口",
+          "银色瓶颈",
+          "圆肩"
+        ],
+        "relationship": "护框环绕阀门，阀门下接瓶颈，瓶颈底部与瓶肩接触；硬件位于数据带上方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3333,
+          0.1688,
+          0.6667,
+          0.3541
+        ],
+        "evidence_zh": "x≈535–904、y≈337–560可见红色护框和金色阀门；银色瓶颈在y≈560接入蓝色肩部，未见漂浮或断开。"
+      },
+      {
+        "category": "Region A：最大数据带",
+        "required_parts": [
+          "蓝色圆肩",
+          "直身上段",
+          "右侧阴影",
+          "下邻Region B带"
+        ],
+        "relationship": "最大蓝带从肩顶延伸到水平下界，包含瓶肩并与下邻带直接接触，右侧明暗仍在同一瓶壁内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.333333,
+          0.281266,
+          0.666667,
+          0.406328
+        ],
+        "evidence_zh": "y≈560–809为完整蓝色区域，肩部弧线收接上方瓶颈，往下转为直壁；y≈809下界横贯亮部及暗部，左引线接入该带。"
+      },
+      {
+        "category": "Region F：内部数据带",
+        "required_parts": [
+          "青绿色带",
+          "上邻Region E带",
+          "下邻Region G带",
+          "瓶身侧壁与阴影"
+        ],
+        "relationship": "内部带被同一瓶壁包含，上下带面无空隙接触；右侧阴影连续覆盖而不挪动定量分界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.333333,
+          0.678553,
+          0.666667,
+          0.70668
+        ],
+        "evidence_zh": "青绿色区域约位于y=1351–1407，直接夹在浅黄色与鲑红色区域之间；右侧14号引线落在带内，亮暗区域的上下边界一致。"
+      },
+      {
+        "category": "Region Q：最小正值带",
+        "required_parts": [
+          "13px黄褐色带",
+          "上邻Region P带",
+          "下邻Other Regions第一子类带",
+          "左引线接点",
+          "右侧阴影"
+        ],
+        "relationship": "窄带仍横贯同一瓶身，两条水平边界分别接触上下区域；引线接点位于窄带内部，阴影没有吞没整个带面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3299,
+          0.828729,
+          0.666667,
+          0.87343
+        ],
+        "evidence_zh": "Region Q位于y≈1664–1677，左侧接点约y=1671；上邻绿色Region P，下邻深紫色Other Regions第一子类。原分辨率下仍可辨连续窄带及右侧较暗延伸。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入允许把真实国家与年份口径改为无观测年份的合成地区/互斥子类别；原数值与旧类别数量不需保留。",
+      "output_added_or_lost_meaning_zh": "当前语义未见遗漏；储量分配到同一气瓶的融合关系保留。参考的真实国家及2021已探明统计含义由输入改编；输出加入高度非面积编码说明，与当前契约一致。",
+      "visible_inscription_evidence_zh": "可读GAS RESERVES BY REGION、Illustrative gas reserves · trillion cubic meters (tcm)、One total, divided by region.、Linear scale · 0–192 tcm及Subcategories are mutually exclusive parts of their named parent.；顶部和底部均有SYNTHETIC DATA。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考的国家、2021年份及真实已探明口径改为冻结输入指定的合成地区和子类别；reference_meaning的部分保留归因于此。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前27个输入类别分别形成27条连续色带与编号，带厚随当前值变化；最大带包含圆肩，较小带位于直身内。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小带约13px，关系仍可辨；抗锯齿边界的整数行定位限制了其相对误差估计精度。"
+      }
+    ],
+    "measurement_coverage_zh": "单一线性轴向高度通道：已从图像检测全部27带及26条内部边界，逐带与数据核对，并跨四个横向区域比较内部边界；表中列出最大带、内部带、最小带及底部两带共6个代表测量。其余21项未逐条展开，全部参与最大误差统计。27个标签、数值、编号及引线另行逐项目视核对；不声称恢复亚像素真实边界。"
+  }
+}
