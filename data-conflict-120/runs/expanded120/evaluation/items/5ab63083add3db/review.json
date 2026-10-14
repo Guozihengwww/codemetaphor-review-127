@@ -1,0 +1,213 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：俯视红色果酱馅饼置于绿色圆底盘，右下缺口有白点；上方旧食品券以细红线连接饼体，右侧文字为28%及未参与食品券计划的说明。待评图：标题明确为食品支持参与率，顶部有SYNTHETIC DATA，副标题标Enrollment share、percent (%)及全部合成样本=100%。左侧同心圆底盘承托俯视格根果酱馅饼；右侧约四分之一为白点缺口，余下饼皮由径向细线分成两个近似等大扇区。白点区域引线对应未参与26%，饼皮内分别标已参与合成子类1、2及各37%；右侧列出同名英文子类及已参与合计74%。旧食品券位于右上，细红线连接至饼体附近；底部说明扇区面积编码、白点数量与外露底盘不编码。未见必需文字遮挡或裁切。此记录完成于查看源码前。",
+  "summary_zh": "三类扇区、数值及语义绑定正确，像素拟合份额约为26.01%、37.01%、36.98%。果酱馅饼、圆底盘、白点缺口和旧食品券关系完整，生图材质实质参与数据区域。未发现应列为缺陷的可见问题。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1500原图上检测奶白色径向分隔线，拟合共同交点约(682.22,823.67)，顺时针方向角约53.58°、186.82°、319.96°。相邻夹角除以360°得到份额；同半径圆盘中该比例等于面积比例。可见圆轮廓约跨x=197至1167、y=339至1309，半径约485像素。mark_extent_px记录两个外圆交点之间的弦长，来自像素边界拟合，并非条形长度或源码掩膜计数。误差按显示舍入值估算。",
+  "uncertainties_zh": "抗锯齿及约4像素宽分隔线使边界位置存在约1至2像素不确定性，份额读数保守按约±0.1个百分点理解；百分之一位是拟合近似，不代表同等精度保证。未读取运行记录或自检，未独立核验每次渲染的归档历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "全部三类、一个Enrollment share系列及percent (%)单位齐全；S1、合成数据提示和全部合成样本=100%的口径均可见。两合成子类保留Enrolled父类。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "未参与26%，参与子类1与2各37%，参与合计74%，三类合计100%，与冻结数据一致。未沿用参考28%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "26%的引线落在白点缺口；子类1的37%位于下方饼皮扇区，子类2的37%位于上方饼皮扇区，右侧中英文条目对应。顺时针为未参与、子类1、子类2。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素拟合的三个圆心角约93.62°、133.24°、133.14°，对应26.01%、37.01%、36.98%；最大舍入偏差约0.02个百分点，低于3个百分点容差。外露底盘和白点数量明确不编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png；其格栅饼皮、红果酱和旧纸券纹理在成图中清晰对应。prepare_assets.py提取这些素材，render.py读取派生素材并按当前数据裁切。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "饼皮本身填充两个参与扇区，移除饼皮的白点缺口承载未参与份额；生成素材位于数据承载区域。绿色底盘承托饼体，食品券与饼体以细红线连接。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、三类名称与百分比、系列单位、合计及统计口径均清楚可读；未见必需文字被遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "俯视果酱与格栅饼皮位于圆底盘内；三扇区共用圆心及外圆，白点区明确没有饼皮。旧食品券保留纸边与印刷装饰，并通过红线与饼盘构图连接。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "食品支持参与率、Enrollment share、percent (%)和全部合成样本=100%共同明确当前主题、指标、单位与分母。Not enrolled和两个Enrolled合成子类构成互斥分区，合计100%。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留食品支持参与主题及以缺失饼片表达未参与的关系。参考图关于加州、2017年及不知晓计划的历史和原因说明未延续；冻结输入已改为合成样本，未要求复现这些旧事实，因此该部分差异归于输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值为26%，其缺口外端弦长约707像素，径向边界、白点与露出的绿色底盘均清楚可辨；本例不存在亚像素小扇区，也未见人为抬高小值。"
+    }
+  },
+  "semantic_attribution_zh": "输出保留当前食品支持参与主题、百分比指标及父子类别角色。原参考具体地域、年份、28%和不知晓计划的原因不属于当前合成数据合同，其未延续归于允许的输入适配。三分区和较大缺口属于当前数据驱动的形状变化；未发现输出遗漏导致的核心含义损失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Not enrolled",
+        "expected_value": 26.0,
+        "observed_value": 26.01,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 707.2,
+        "full_scale_error_percent": 0.01,
+        "small_value_relative_error_percent": 0.04,
+        "bbox_xyxy_normalized": [
+          0.3411,
+          0.3411,
+          0.5836,
+          0.8093
+        ],
+        "evidence_zh": "白点缺口两边的像素拟合方向为319.96°和53.58°，跨零度夹角约93.62°，折合26.01%。外圆端点约(1054,512)、(970,1214)，弦长约707像素；文字为26%。",
+        "uncertainty_zh": "最小正值仍是清晰的大扇区。角度份额估计约±0.1个百分点；弦长依赖约485像素的轮廓半径，允许数像素误差。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Enrolled / synthetic subcategory 1",
+        "expected_value": 37.0,
+        "observed_value": 37.01,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 890.4,
+        "full_scale_error_percent": 0.01,
+        "small_value_relative_error_percent": 0.03,
+        "bbox_xyxy_normalized": [
+          0.0986,
+          0.5107,
+          0.4851,
+          0.8724
+        ],
+        "evidence_zh": "顺序居中的下方饼皮扇区位于53.58°至186.82°之间，夹角约133.24°，折合37.01%。外圆端点约(970,1214)、(201,766)，内置标签为子类1和37%。",
+        "uncertainty_zh": "份额估计约±0.1个百分点；标注框遮住局部纹理，但未遮挡决定份额的径向边界。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Enrolled / synthetic subcategory 2",
+        "expected_value": 37.0,
+        "observed_value": 36.98,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 890.0,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": 0.05,
+        "bbox_xyxy_normalized": [
+          0.1003,
+          0.2258,
+          0.5268,
+          0.5491
+        ],
+        "evidence_zh": "上方饼皮扇区位于186.82°至319.96°之间，夹角约133.14°，折合36.98%。外圆端点约(201,766)、(1054,512)，内置标签为子类2和37%。",
+        "uncertainty_zh": "份额估计约±0.1个百分点；该扇区与子类1同为最大值，微小拟合差异低于边界定位不确定性。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Not enrolled（最小正值）",
+        "required_parts": [
+          "白点缺口",
+          "绿色圆底盘",
+          "相邻果酱饼皮",
+          "共同圆心"
+        ],
+        "relationship": "两条径向边界连接共同圆心与外圆；缺口内露出底盘并容纳白点，饼皮位于边界另一侧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3411,
+          0.3411,
+          0.5836,
+          0.8093
+        ],
+        "evidence_zh": "右侧扇区没有饼皮，绿色区域内白点清晰，未参与引线端点落在该区；缺口与相邻饼皮无明显错位。"
+      },
+      {
+        "category": "Enrolled / synthetic subcategory 1（并列最大值）",
+        "required_parts": [
+          "格栅饼皮",
+          "红色果酱",
+          "外圈饼边",
+          "圆底盘"
+        ],
+        "relationship": "格栅饼皮覆盖果酱，外圈饼边沿扇区外圆接续，整体置于更大的圆底盘内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.0986,
+          0.5107,
+          0.4851,
+          0.8724
+        ],
+        "evidence_zh": "下方扇区可见连续果酱、交错格栅和金色外圈；外圆以内承载37%区域，外侧绿色盘沿不计入份额。"
+      },
+      {
+        "category": "Enrolled / synthetic subcategory 2（并列最大值）",
+        "required_parts": [
+          "格栅饼皮",
+          "红色果酱",
+          "径向分隔线",
+          "共同圆心"
+        ],
+        "relationship": "上方饼皮扇区与下方饼皮共享圆心及圆形轮廓，以细白径向线分隔两合成子类。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1003,
+          0.2258,
+          0.5268,
+          0.5491
+        ],
+        "evidence_zh": "格栅与果酱在上部扇区清楚可识别；子类2标签位于区内，左侧白色分隔线延伸至共同圆心，未形成额外缺口。"
+      },
+      {
+        "category": "食品券与饼盘的整体关系",
+        "required_parts": [
+          "旧纸食品券",
+          "俯视果酱馅饼",
+          "圆底盘",
+          "细红连接线"
+        ],
+        "relationship": "纸券与饼盘并置，细红线从右上饼缘及盘面跨向券左侧，纸券覆盖部分线尾。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.45,
+          0.2,
+          0.945,
+          0.43
+        ],
+        "evidence_zh": "右上纸券有旧纸边、食品插画及FOOD COUPON/食品支持券文字；红线与饼盘相连，层序与参考的并置连接方式一致。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结数据将统计改为合成样本，未参与26%、参与合成子类各37%；允许按当前数值调整缺口及参与分区，不保留旧28%或旧真实统计断言。",
+      "output_added_or_lost_meaning_zh": "保留未参与对应缺失饼片、参与对应饼皮的核心关系，并明确补充参与总份额74%。原参考关于特定地域、年份和不知晓计划的说明未由当前输入要求，输出未擅自延续这些断言。",
+      "visible_inscription_evidence_zh": "可见“食品支持参与率”“Enrollment share · percent (%)”“口径：全部合成样本=100%”“Not enrolled”“Enrolled / synthetic subcategory 1/2”“合计74%”“SYNTHETIC DATA”及“扇区面积表示份额”。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "具体旧统计语境改为明确标记的合成数据；当前三类名称及父类来自冻结输入，未引入无法解释的泛称组。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "缺口按26%绘制，剩余74%分成两个37%饼皮扇区；这种形状变化符合当前数据并保留原缺口关系。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一单面板的全部三个定量扇区，包括最小正值、顺序居中类别及两个并列最大值。另逐项核对三类文字、参与合计74%、总计100%、系列、单位和合成提示。白点个数、外露盘沿及食品券为非定量部件，不作数值测量。"
+  }
+}

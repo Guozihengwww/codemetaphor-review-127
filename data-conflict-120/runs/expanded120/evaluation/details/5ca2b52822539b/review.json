@@ -1,0 +1,324 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以黑色焦木和火色基部承载逐年两来源损失。成图可见2001–2023共23棵焦木，橙黄下段与黑色上段直接相接，枝梢连接主干；主题、合成声明、百万公顷单位及逐年数表可读。2008标注最高29.7，2023标注13.0且短橙色基部清晰可见。以上观察已在检查源码前保存。",
+  "summary_zh": "通过。数值、绑定和树体堆叠关系符合要求，未发现超容差的可见缺陷。review.json已保存并通过schema.json校验；按后续要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量指定image.png（1600×2000）。直接读取网格y=540、715、890、1065、1240、1415及零线1590，得到35像素/百万公顷。扫描与基部连通的树体像素，读取树梢与橙黑分界；非火灾厚度由两条实测边界相减。全部23年三个高度通道的最大点估计误差约0.0143百万公顷，即0.0477%满量程。源码仅作控制方式佐证。",
+  "uncertainties_zh": "抗锯齿和颜色阈值造成约1像素边界不确定性；最小火灾段的相对误差点估计约0.84%，不代表亚像素精度。未逐像素检查全部侧枝。按限制未读取日志、自检或历史记录，不能独立确认所有渲染均经capture_render.py执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "23棵树与2001–2023年份完整；46个来源值、23个总量、图例、单位及合成声明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐列目视核对46个来源值，均符合data.json；总量及树顶标签正确。2008最高29.7、首尾28.2→13.0正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "树干、年份和数表逐列对应；橙色绑定火灾来源，黑色绑定非火灾来源；最高值引线指向2008。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素扫描覆盖全部23年，两段及总高度的点估计误差均远低于3%满量程容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始焦木、烟火及处理素材，其枝形和火焰纹理实质用于主体。render.py控制素材高度、分段及文字；capture_render.py存在。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "火纹包含于下段树干，黑色主干与枝梢构成上段，两段接触并共同决定总树高。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原图中的标题、图例、刻度、年份、数表与阅读说明可辨，必需标签无明显遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大实例2008与小实例2023均具有连续主干、相连枝梢及贴接黑段的火色基部；树体共享零线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "图面明确表达年度森林损失、百万公顷及火灾/非火灾来源；同年两项相加，没有跨年累计或百分比组成误读。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留森林损失主题、两来源和焦木堆叠关系；参考旧恶化叙述及峰值改为当前合成数据的首尾下降和2008最高，属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小火灾段约59–60像素，纹理、零线接触及橙黑分界可辨；最小非火灾段约364像素，未见最小长度膨胀。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、指标、单位、年份及来源角色保留。旧恶化论述与旧峰值因冻结合成数值改变而替换，不属于输出遗漏。小段约1像素的边界差异归于光栅分辨率与阈值。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "fire_related",
+        "category": "2023",
+        "expected_value": 1.7,
+        "observed_value": 1.685714,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 59,
+        "full_scale_error_percent": 0.047619,
+        "small_value_relative_error_percent": 0.840336,
+        "bbox_xyxy_normalized": [
+          0.90375,
+          0.7655,
+          0.926875,
+          0.795
+        ],
+        "evidence_zh": "最小正值：橙色起始行1531至零线1590，共59像素。",
+        "uncertainty_zh": "降低颜色阈值可读到1530，边界约±1像素。"
+      },
+      {
+        "series_id": "fire_related",
+        "category": "2001",
+        "expected_value": 11.3,
+        "observed_value": 11.285714,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 395,
+        "full_scale_error_percent": 0.047619,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.12,
+          0.5975,
+          0.143125,
+          0.795
+        ],
+        "evidence_zh": "最大火灾段：橙色起始行1195至零线1590，厚395像素。",
+        "uncertainty_zh": "整数像素读数，边界约±1像素。"
+      },
+      {
+        "series_id": "fire_related",
+        "category": "2010",
+        "expected_value": 5.8,
+        "observed_value": 5.8,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 203,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.440625,
+          0.6935,
+          0.46375,
+          0.795
+        ],
+        "evidence_zh": "内部年份：橙色起始行1387至零线1590，厚203像素。",
+        "uncertainty_zh": "整数像素读数，零点估计误差不代表无限精度。"
+      },
+      {
+        "series_id": "non_fire",
+        "category": "2021",
+        "expected_value": 10.4,
+        "observed_value": 10.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 364,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.8325,
+          0.543,
+          0.855625,
+          0.725
+        ],
+        "evidence_zh": "最小非火灾段：树梢1086至橙色起点1450，相差364像素。",
+        "uncertainty_zh": "两条边界均为整数像素定位，约±1像素。"
+      },
+      {
+        "series_id": "non_fire",
+        "category": "2007",
+        "expected_value": 21.7,
+        "observed_value": 21.714286,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 760,
+        "full_scale_error_percent": 0.047619,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.33375,
+          0.284,
+          0.356875,
+          0.664
+        ],
+        "evidence_zh": "最大非火灾段：树梢568至橙色起点1328，厚760像素。",
+        "uncertainty_zh": "改变颜色阈值使分界移动约1像素。"
+      },
+      {
+        "series_id": "non_fire",
+        "category": "2010",
+        "expected_value": 17.8,
+        "observed_value": 17.8,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 623,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.440625,
+          0.382,
+          0.46375,
+          0.6935
+        ],
+        "evidence_zh": "内部年份：树梢764至橙色起点1387，黑色上段厚623像素。",
+        "uncertainty_zh": "整数像素边界约±1像素。"
+      },
+      {
+        "series_id": "total",
+        "category": "2023",
+        "expected_value": 13,
+        "observed_value": 13,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 455,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.90375,
+          0.5675,
+          0.926875,
+          0.795
+        ],
+        "evidence_zh": "最小总树高：树梢1135至零线1590，共455像素。",
+        "uncertainty_zh": "树梢定位约±1像素，未将数字标签计入高度。"
+      },
+      {
+        "series_id": "total",
+        "category": "2008",
+        "expected_value": 29.7,
+        "observed_value": 29.685714,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1039,
+        "full_scale_error_percent": 0.047619,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.369375,
+          0.2755,
+          0.3925,
+          0.795
+        ],
+        "evidence_zh": "最大总树高：深色树梢551至零线1590，共1039像素。",
+        "uncertainty_zh": "较宽松深色阈值可读到550，树梢约1像素不确定性。"
+      },
+      {
+        "series_id": "total",
+        "category": "2010",
+        "expected_value": 23.6,
+        "observed_value": 23.6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 826,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.440625,
+          0.382,
+          0.46375,
+          0.795
+        ],
+        "evidence_zh": "内部年份：树梢764至零线1590，共826像素；两段203+623像素与总高一致。",
+        "uncertainty_zh": "整数像素边界约±1像素。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "2001：最大火灾段",
+        "required_parts": [
+          "火色基部",
+          "黑色主干",
+          "相连枝梢",
+          "零线"
+        ],
+        "relationship": "火色纹理包含于树干下段，下接零线，上接黑色主干；枝梢连接主干。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.106,
+          0.3015,
+          0.155,
+          0.795
+        ],
+        "evidence_zh": "橙黑分界约1195，树梢603，零线1590；没有额外顶饰抬高总树高。"
+      },
+      {
+        "category": "2008：最大总高度",
+        "required_parts": [
+          "火色基部",
+          "黑色主干",
+          "侧枝",
+          "顶梢"
+        ],
+        "relationship": "两段沿同一主干上下相接；侧枝向外伸展，顶梢是总高度上界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.358,
+          0.275,
+          0.403,
+          0.795
+        ],
+        "evidence_zh": "橙色起点约1272，顶梢约550–551；数值及引线位于树体外。"
+      },
+      {
+        "category": "2023：最小火灾段与总树高",
+        "required_parts": [
+          "短火色基部",
+          "黑色主干",
+          "相连枝梢",
+          "零线"
+        ],
+        "relationship": "短火色段位于主干底部，直接接触黑段及零线；枝梢仍连接同一主干。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.893,
+          0.5675,
+          0.938,
+          0.795
+        ],
+        "evidence_zh": "约59–60像素的火色段仍有可辨纹理及两端接触关系。"
+      },
+      {
+        "category": "2021：最小非火灾段",
+        "required_parts": [
+          "黑色树梢与主干",
+          "侧枝",
+          "火色下段"
+        ],
+        "relationship": "黑段以树梢为上界、橙黑分界为下界，向下接触火色段。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.821,
+          0.543,
+          0.865,
+          0.795
+        ],
+        "evidence_zh": "黑段约364像素，主干和分枝可辨，来源没有被分离为旁置物体。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结简报要求采用当前合成数据，不沿用旧涨跌或峰值；允许适配树形及标签位置。",
+      "output_added_or_lost_meaning_zh": "保留年度损失及两来源；以当前首尾下降和2008最高替换参考旧论述，未增加累计、百分比或真实统计声明。",
+      "visible_inscription_evidence_zh": "Forest loss by cause、SYNTHETIC DATA、Annual forest loss, split into two sources、LOSS / MILLION HECTARES、两来源图例及One tree = one year均可读。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "旧恶化论述及旧峰值由当前合成数据对应的首尾变化和2008最高替换。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "2008树最高、2023树最低，与当前两来源之和一致。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "部分分界及树梢随像素阈值变化1像素；小段结构仍可辨。"
+      }
+    ],
+    "measurement_coverage_zh": "扫描全部23年的火灾段、非火灾段及总树高，列出9条代表测量覆盖三个通道的最小、大值及内部年份；另核对全部来源值、总量、年份和必需说明。未逐像素审计全部侧枝与纹理。"
+  }
+}

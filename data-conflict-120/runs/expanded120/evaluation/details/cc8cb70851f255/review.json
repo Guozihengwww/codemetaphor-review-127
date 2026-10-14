@@ -1,0 +1,306 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：23棵逐年焦木以火色下段和黑色上段叠合，主干连接枝梢；共用纵轴，主题为森林火灾随时间恶化。待评图：23棵同基线焦木，橙色下段与黑色主干相接，枝梢处于各树高度范围；标题Forest loss by cause、SYNTHETIC DATA、Annual forest loss、MILLION HECTARES、两类图例及逐年数值表可读。2016标为最高总量29.7，2023为28.2；2001的1.7火灾段仍清晰可见。尚未作像素测量。",
+  "summary_zh": "通过。23年两来源数值、标签绑定、堆叠树高和必要文字一致；代表性像素测量均在容差内。参考图的恶化论点按冻结要求改为合成年度损失来源比较，参考意义单独记为部分保留。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1600×2000的image.png像素。纵轴0、20、25、30分别位于约y=1570、890、720、550，得到34像素/百万公顷。火色边界按树干附近橙色像素识别；尖端按局部背景亮度差约20识别，排除上方文字及引线。长度除以34换算数值，满量程分母为30。代表性测量最大偏差约0.10%满量程；源码只作旁证。",
+  "uncertainties_zh": "细尖端受抗锯齿影响，端点约有1–2像素不确定性；最小火灾段约58像素，1像素已约占其1.7%，不能据小数结果宣称亚像素精度。上段和总高采用代表性抽样，未逐像素测量全部23棵。遵守限制未读取运行历史，因此不能独立确认所有完整渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "可见2001—2023共23棵树，表格23个年份、两来源46个数值及23个合计齐全；图例、单位、合成提示及来源说明均在图面。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "从成图逐格读取并与data.json比较，46个来源值及23个合计全部一致；六处总量标注13.0、19.8、23.3、29.7、23.5、28.2正确。2016最高总量29.7及火灾范围1.7—11.3正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "橙色下段对应Fire-related loss，黑色上段对应Non-fire loss；年份按原顺序从左到右，表格列与树列对齐，关键总量引线指向对应树顶。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "由最终像素独立测得共用34像素/百万公顷。火灾、非火灾及总高各抽测最小、大值和内部值，最大偏差约0.10%满量程，小于3%；树梢包含在总高内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png的五棵焦木及raw_02.png的烟火纹理，最终主体的枝形、树皮及烟云与之对应。render.py按数据缩放树体并限定火色区域；capture_render.py含完整图保存机制，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "同一树体的橙色下段和黑色上段直接相接，树尖给出年度总量；素材轮廓自身承担堆叠高度，未见以旁置树图替代数据融合。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、合成提示、年度角色、百万公顷单位、图例、23年表格及页脚可读；枝条交叠未遮住主要树干、分界或必要标签。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大小树均有相连的主干、枝梢与火色下段；下段从共同零基线起，上段延续至树尖，颜色分界位于树体内部，符合两来源叠高关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Forest loss by cause、Annual forest loss、Each tree represents one year及million hectares明确当前主题、年度类别与计量单位；说明两段相加为当年总量，未表达跨年累计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留焦木承载年度森林损失及火灾/非火灾来源的关系；参考标题的恶化论点和旧峰值不再呈现，这是冻结输入明确允许的合成数据适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值2001火灾1.7对应约58像素高的可见橙色树干，与黑色部分相接；最小非火灾2003的10.4对应约353像素上段，结构可辨，未见为辨识而放大。"
+    }
+  },
+  "semantic_attribution_zh": "参考恶化叙事及旧真实峰值的替换归于允许的输入适配，不能归为输出遗漏；2016成为最高总树是当前数据驱动的形状变化。当前年度森林损失、两来源角色和单位未见丢失。细尖端存在分辨率不确定性，但未破坏部件连接或数量解读。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "fire_related",
+        "category": "2001",
+        "expected_value": 1.7,
+        "observed_value": 1.706,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 58,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": 0.346,
+        "bbox_xyxy_normalized": [
+          0.095,
+          0.756,
+          0.118125,
+          0.785
+        ],
+        "evidence_zh": "最终图橙色起点约y=1512，共同零基线y=1570，差58像素。",
+        "uncertainty_zh": "分界约±1像素；最小段相对测量不确定性约1.7%，不宣称亚像素精度。"
+      },
+      {
+        "series_id": "fire_related",
+        "category": "2012",
+        "expected_value": 6.2,
+        "observed_value": 6.206,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 211,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": 0.095,
+        "bbox_xyxy_normalized": [
+          0.5075,
+          0.6795,
+          0.530625,
+          0.785
+        ],
+        "evidence_zh": "最终图橙色起点约y=1359，至基线1570为211像素。",
+        "uncertainty_zh": "色彩边缘及基线覆盖约±1像素。"
+      },
+      {
+        "series_id": "fire_related",
+        "category": "2023",
+        "expected_value": 11.3,
+        "observed_value": 11.294,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 384,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": 0.052,
+        "bbox_xyxy_normalized": [
+          0.92,
+          0.593,
+          0.943125,
+          0.785
+        ],
+        "evidence_zh": "最大火灾段橙色起点约y=1186，至基线1570为384像素。",
+        "uncertainty_zh": "色彩边缘及基线覆盖约±1像素。"
+      },
+      {
+        "series_id": "non_fire",
+        "category": "2003",
+        "expected_value": 10.4,
+        "observed_value": 10.382,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 353,
+        "full_scale_error_percent": 0.059,
+        "small_value_relative_error_percent": 0.17,
+        "bbox_xyxy_normalized": [
+          0.154375,
+          0.5405,
+          0.208125,
+          0.717
+        ],
+        "evidence_zh": "最小非火灾段：局部对比可辨树尖约y=1081，黑橙分界1434，差353像素。",
+        "uncertainty_zh": "尖端抗锯齿与分界合计约±2像素。"
+      },
+      {
+        "series_id": "non_fire",
+        "category": "2012",
+        "expected_value": 17.1,
+        "observed_value": 17.088,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 581,
+        "full_scale_error_percent": 0.039,
+        "small_value_relative_error_percent": 0.069,
+        "bbox_xyxy_normalized": [
+          0.491875,
+          0.389,
+          0.545625,
+          0.6795
+        ],
+        "evidence_zh": "树尖约y=778，黑橙分界1359，黑色上段纵向跨度581像素。",
+        "uncertainty_zh": "尖端与分界合计约±2像素；测量纵向跨度，不以枝条路径长度计量。"
+      },
+      {
+        "series_id": "non_fire",
+        "category": "2017",
+        "expected_value": 21.7,
+        "observed_value": 21.706,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 738,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": 0.027,
+        "bbox_xyxy_normalized": [
+          0.679375,
+          0.2885,
+          0.733125,
+          0.6575
+        ],
+        "evidence_zh": "最大非火灾段树尖约y=577，黑橙分界1315，差738像素。",
+        "uncertainty_zh": "细尖端及分界合计约±2像素。"
+      },
+      {
+        "series_id": "total",
+        "category": "2001",
+        "expected_value": 13.0,
+        "observed_value": 12.971,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 441,
+        "full_scale_error_percent": 0.098,
+        "small_value_relative_error_percent": 0.226,
+        "bbox_xyxy_normalized": [
+          0.079375,
+          0.5645,
+          0.133125,
+          0.785
+        ],
+        "evidence_zh": "最小总树的可辨树尖约y=1129，至基线1570为441像素。",
+        "uncertainty_zh": "更淡的抗锯齿像素见于前一行；端点约±1–2像素。"
+      },
+      {
+        "series_id": "total",
+        "category": "2012",
+        "expected_value": 23.3,
+        "observed_value": 23.294,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 792,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": 0.025,
+        "bbox_xyxy_normalized": [
+          0.491875,
+          0.389,
+          0.545625,
+          0.785
+        ],
+        "evidence_zh": "内部年度样本树尖约y=778，至基线1570为792像素。",
+        "uncertainty_zh": "细树尖与基线约±2像素。"
+      },
+      {
+        "series_id": "total",
+        "category": "2016",
+        "expected_value": 29.7,
+        "observed_value": 29.676,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1009,
+        "full_scale_error_percent": 0.078,
+        "small_value_relative_error_percent": 0.079,
+        "bbox_xyxy_normalized": [
+          0.641875,
+          0.2805,
+          0.695625,
+          0.785
+        ],
+        "evidence_zh": "最大总树在局部对比阈值下约从y=561起，至基线1570为1009像素。",
+        "uncertainty_zh": "y=560有更淡的尖端像素；约±2像素，不将阈值差当作实质几何偏差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "2001：最小总树及最小火灾段",
+        "required_parts": [
+          "主干",
+          "枝梢",
+          "火色下段",
+          "共同基线"
+        ],
+        "relationship": "橙色下段接触基线并向上连接黑色主干；枝梢连接主干，树尖限定总高度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.079375,
+          0.5645,
+          0.133125,
+          0.785
+        ],
+        "evidence_zh": "约x=127—213、y=1129—1570内，橙色58像素下段在y≈1512与黑干直接相接，分叉枝梢清楚，无脱离的独立数据条。"
+      },
+      {
+        "category": "2016：最大总树",
+        "required_parts": [
+          "黑色主干",
+          "相连枝梢",
+          "火色下段",
+          "共同基线"
+        ],
+        "relationship": "上下两色共用连续树体轮廓；上段枝梢均包含于树尖至分界的纵向范围。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.641875,
+          0.2805,
+          0.695625,
+          0.785
+        ],
+        "evidence_zh": "约x=1027—1113、y=561—1570内，火色与黑干在y≈1261相接，枝条由黑干向外分出；与邻枝交叠未遮住分界或树尖。"
+      },
+      {
+        "category": "2023：最大火灾段",
+        "required_parts": [
+          "火色树干及短枝",
+          "黑色上段",
+          "枝梢"
+        ],
+        "relationship": "暖色区域沿同一树干轮廓从基线向上延伸，与黑色上段在内部水平界面接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.904375,
+          0.3055,
+          0.958125,
+          0.785
+        ],
+        "evidence_zh": "右端树的暖色区域约y=1186—1570，可见树皮与连接的短枝；黑色主干继续向上至约y=611，未出现旁置火柱或额外树冠加高。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结要求使用合成年度值并允许改写旧涨跌结论及峰位；不要求复制参考图关于火灾恶化的标题或真实统计。",
+      "output_added_or_lost_meaning_zh": "输出保留年度森林损失及火灾/非火灾分解，新增当前数据的最高总量与火灾范围提示；旧恶化论点未保留，属于允许适配，未见当前指标含义遗漏。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA、Forest loss by cause、Annual forest loss、Each tree represents one year、Tree height = total forest loss、MILLION HECTARES、Non-fire loss及Fire-related loss均可见；页脚说明total = fire-related + non-fire loss及数据非真实估计。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "旧恶化叙事改为合成年度损失来源比较，符合冻结标题及不复制旧结论的要求。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前2016合计29.7最高、2023火灾11.3最高；树高及分界随这些当前值变化。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "少数树尖首行只有较淡抗锯齿像素，端点有1–2像素不确定性；最小火灾段仍约58像素，可辨其连接关系。"
+      }
+    ],
+    "measurement_coverage_zh": "独立像素测量9项，覆盖火灾、非火灾和总树高各自的最小值、大值及内部值，共涉及6个年份。全部23年、46个来源数值、23个合计及六处关键总量标注另作可见文字完整核对；未对其余年份逐一测量树尖，代码只提供映射旁证。"
+  }
+}
