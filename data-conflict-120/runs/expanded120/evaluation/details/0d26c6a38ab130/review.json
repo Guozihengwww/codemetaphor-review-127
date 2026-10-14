@@ -1,0 +1,440 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图可见八行朝右侧视列车，水平车体连接共用起点与鼻尖，顶部速度双单位轴与底部一小时距离参照呼应。指定成图显示合成声明、速度与一小时距离主题及Train A–H。主图A–C的车身、车窗、轮组和受电弓清楚；E–H逐渐缩为短痕。右下细节框明确标注0–20 km/h及18倍水平尺度，包含递减的E–H列车。初看未见必要标签遮挡或类别错配。",
+  "summary_zh": "通过。列车实体长度、类别绑定、数值及一小时距离尺度符合要求。微小主图的部件辨识受分辨率限制，细节图补足主要关系。已保存review.json并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析2000×2000的image.png，未重渲染。主轴七个刻度实测x=350、610、870、1130、1390、1650、1910，底部距离刻度完全相同，尺度2.6 px/(km/h)。细节轴刻度x=940、1174、1408、1642、1876，对应0、5、10、15、20，尺度46.8 px/(km/h)，确为18倍。用标记区域与邻近空白行同列RGB之差定位边界，比较16、32、64阈值，主要报告阈值32的右侧像素外沿。主图误差分母600，细节图分母20。源码只作映射和素材拼接佐证。",
+  "uncertainties_zh": "抗锯齿边界通常约±1 px。主图G、H无法可靠识别实体鼻尖，反算值和误差留空。细节H的轮组及受电弓接触细节仍有限。未读取执行日志或自检，capture_render.py的实际执行历史未独立认证。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Train A–H八类按输入顺序完整呈现，八个km/h及mph值齐全；细节图明确重复E–H。标题、合成声明、双单位轴及一小时距离参照完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "速度依次为598.0、246.112709、101.290076、41.686915、17.156655、7.060988、2.906018、1.196 km/h；mph依次为371.6、152.9、62.9、25.9、10.7、4.4、1.8、0.7，全部正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、速度、mph与同行列车对应；细节图逐行重标E–H，顺序及颜色与主图一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "主图A–F可测边界的满量程点估计误差均小于0.052%；细节E–H均小于0.049%。主图G、H仅确认数像素痕迹，不声称精确鼻尖位置。上下七个刻度同横坐标。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png和train_h.png中的车色、窗带、轮组及流线鼻形在成图中实质可见。render.py通过Axis和train_sprite控制长度、拼接及文字；未仅凭公式判断可见正确性。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "实际车身从共用零点连续延伸至承担数据终点的鼻尖；细节图同样使用实体列车，没有旁置图标替代数据边界。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、八类标签、全部数值、单位、倍率及距离说明可读，无必要标签遮挡。微小数据标记另行评价。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "大、中列车及细节E–G保留车体、右向鼻尖、窗、轮组及受电弓关系。主图F–H退化为短痕；细节H仍难确认受电弓接触及独立轮组细节。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题标题、Synthetic peak speed、EIGHT HYPOTHETICAL TRAINS、类别及双单位明确当前语义；一小时距离公式和底注明确恒定峰值速度假设。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留列车长度比较速度及一小时行程关系。原真实列车名称、地区和纽约—蒙特利尔参照被合成类别及通用距离尺取代，属于冻结输入允许的改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "主图E约45 px、F约18 px、G约7–8 px、H约2–3 px；后三者部件难辨。独立细节图将H呈为约56 px长列车，恢复车体和朝向，细小接触关系仍有限。未发现主图最小长度膨胀。"
+    }
+  },
+  "semantic_attribution_zh": "真实统计改为合成列车角色属于允许的输入改编。递减长度及非数据高度、车厢数量调整属于数据驱动适配。微小标记的部件限制属于分辨率损失，不能据此断言整个融合关系丢失；未发现主题、单位或类别角色的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train A（主图）",
+        "expected_value": 598,
+        "observed_value": 598.076923,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1555,
+        "full_scale_error_percent": 0.012821,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.238,
+          0.9525,
+          0.2825
+        ],
+        "evidence_zh": "零点x=350，鼻尖边界约x=1905。",
+        "uncertainty_zh": "阈值16–64对应1554–1555 px；约±1 px。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train B（主图）",
+        "expected_value": 246.112709,
+        "observed_value": 246.153846,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 640,
+        "full_scale_error_percent": 0.006856,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.313,
+          0.495,
+          0.3565
+        ],
+        "evidence_zh": "鼻尖边界约x=990，车体从零点连续到鼻尖。",
+        "uncertainty_zh": "阈值16–64边界一致；保留约±1 px取样不确定性。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train C（主图）",
+        "expected_value": 101.290076,
+        "observed_value": 101.538462,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 264,
+        "full_scale_error_percent": 0.041398,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.398,
+          0.307,
+          0.4325
+        ],
+        "evidence_zh": "橙色列车右端约x=614，略超出100刻度x=610。",
+        "uncertainty_zh": "阈值64时长度263 px；所报264 px对应阈值32。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train D（主图）",
+        "expected_value": 41.686915,
+        "observed_value": 41.923077,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 109,
+        "full_scale_error_percent": 0.03936,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.493,
+          0.2295,
+          0.5075
+        ],
+        "evidence_zh": "鼻尖约x=459，长度约109 px。",
+        "uncertainty_zh": "阈值64时长度108 px。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train E（主图）",
+        "expected_value": 17.156655,
+        "observed_value": 17.307692,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 45,
+        "full_scale_error_percent": 0.025173,
+        "small_value_relative_error_percent": 0.880342,
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.5765,
+          0.1975,
+          0.5825
+        ],
+        "evidence_zh": "零点附近可见约45 px长的右向青色车体。",
+        "uncertainty_zh": "约±1 px；不能据此可靠判断轮组及受电弓接触细节。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train F（主图）",
+        "expected_value": 7.060988,
+        "observed_value": 6.923077,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 18,
+        "full_scale_error_percent": 0.022985,
+        "small_value_relative_error_percent": 1.953141,
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.6555,
+          0.184,
+          0.6575
+        ],
+        "evidence_zh": "阈值32下标记从x=350延伸至右边界x=368。",
+        "uncertainty_zh": "阈值16时右边界为369；1 px约占目标长度5.4%，相对误差仅对应选定像素边界。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train G（主图）",
+        "expected_value": 2.906018,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": 8,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.7315,
+          0.179,
+          0.7325
+        ],
+        "evidence_zh": "色痕约7–8 px长、2 px高。",
+        "uncertainty_zh": "实体鼻尖不可独立辨认，不把抗锯齿色痕换算为精确数值。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train H（主图）",
+        "expected_value": 1.196,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.807,
+          0.1765,
+          0.808
+        ],
+        "evidence_zh": "最小标记约2–3 px长，低阈值下占3×2 px范围。",
+        "uncertainty_zh": "阈值32仅余2 px，阈值64无像素；无法可靠定位鼻尖或辨认部件。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train E（细节图）",
+        "expected_value": 17.156655,
+        "observed_value": 17.15812,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 803,
+        "full_scale_error_percent": 0.007323,
+        "small_value_relative_error_percent": 0.008537,
+        "bbox_xyxy_normalized": [
+          0.47,
+          0.5995,
+          0.8715,
+          0.63
+        ],
+        "evidence_zh": "细节零点x=940，鼻尖约x=1743，长度约803 px。",
+        "uncertainty_zh": "阈值16–64边界一致；约±1 px，满量程分母20 km/h。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train F（细节图）",
+        "expected_value": 7.060988,
+        "observed_value": 7.051282,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 330,
+        "full_scale_error_percent": 0.04853,
+        "small_value_relative_error_percent": 0.137459,
+        "bbox_xyxy_normalized": [
+          0.47,
+          0.659,
+          0.635,
+          0.6895
+        ],
+        "evidence_zh": "金色列车右端约x=1270，长度约330 px。",
+        "uncertainty_zh": "阈值16时331 px，阈值32–64时330 px。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train G（细节图）",
+        "expected_value": 2.906018,
+        "observed_value": 2.905983,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 136,
+        "full_scale_error_percent": 0.000175,
+        "small_value_relative_error_percent": 0.001208,
+        "bbox_xyxy_normalized": [
+          0.47,
+          0.732,
+          0.538,
+          0.75
+        ],
+        "evidence_zh": "浅蓝车体鼻尖约x=1076，长度约136 px。",
+        "uncertainty_zh": "阈值16–64边界一致；数值换算不消除约±1 px不确定性。"
+      },
+      {
+        "series_id": "synthetic_peak_speed",
+        "category": "Train H（细节图）",
+        "expected_value": 1.196,
+        "observed_value": 1.196581,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 56,
+        "full_scale_error_percent": 0.002906,
+        "small_value_relative_error_percent": 0.048595,
+        "bbox_xyxy_normalized": [
+          0.47,
+          0.8025,
+          0.498,
+          0.81
+        ],
+        "evidence_zh": "最小细节列车从x=940延伸至鼻尖约x=996。",
+        "uncertainty_zh": "约±1 px相当于±0.021 km/h或目标值的±1.8%；点估计误差0.049%不是实际精度保证。"
+      },
+      {
+        "series_id": "one_hour_distance_reference",
+        "category": "一小时距离标尺（km）",
+        "expected_value": 600,
+        "observed_value": 600,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1560,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.8615,
+          0.955,
+          0.868
+        ],
+        "evidence_zh": "0和600 km刻度位于x=350和1910；七个刻度与顶部逐一同横坐标。",
+        "uncertainty_zh": "这是标尺跨度与对齐测量，底部没有独立数据标记。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Train A（主图，大值）",
+        "required_parts": [
+          "连续车身",
+          "车厢接头",
+          "朝右鼻尖",
+          "车窗",
+          "轮组",
+          "受电弓"
+        ],
+        "relationship": "车厢水平连接，窗包含于车体，轮组接下缘，受电弓位于车顶；鼻尖承担数据终点。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.238,
+          0.9525,
+          0.2825
+        ],
+        "evidence_zh": "多节青色车厢及接头清楚，车体从零点连续至流线鼻尖，未见断裂或错层。"
+      },
+      {
+        "category": "Train C（主图，中间值）",
+        "required_parts": [
+          "车身",
+          "朝右鼻尖",
+          "车窗",
+          "轮组",
+          "受电弓"
+        ],
+        "relationship": "窗位于车体内，轮组接下缘，受电弓在车顶，鼻尖为水平数据边界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.175,
+          0.398,
+          0.307,
+          0.4325
+        ],
+        "evidence_zh": "橙色短车仍可辨车窗、两处轮组及顶部折线受电弓；车厢数量不承担数据。"
+      },
+      {
+        "category": "Train F–H（主图，小值）",
+        "required_parts": [
+          "车身",
+          "朝右鼻尖",
+          "车窗",
+          "轮组",
+          "受电弓"
+        ],
+        "relationship": "连续实体车身连接零点和鼻尖，其他部件与车体相接或包含。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.1745,
+          0.655,
+          0.1845,
+          0.808
+        ],
+        "evidence_zh": "三行仅见递减短痕；标记存在，但主图不能确认窗、轮及受电弓关系。"
+      },
+      {
+        "category": "Train E（细节图）",
+        "required_parts": [
+          "连接的车厢",
+          "朝右鼻尖",
+          "车窗",
+          "轮组",
+          "受电弓"
+        ],
+        "relationship": "车厢连续连接，轮组在下、受电弓在上，鼻尖仍承担细节尺度终点。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.47,
+          0.5995,
+          0.8715,
+          0.63
+        ],
+        "evidence_zh": "连接车厢、窗带、轮组、受电弓及右向尖鼻均清楚，没有普通条形替代车身。"
+      },
+      {
+        "category": "Train G（细节图）",
+        "required_parts": [
+          "车身",
+          "朝右鼻尖",
+          "车窗",
+          "轮组",
+          "受电弓"
+        ],
+        "relationship": "窗包含于车身，轮组接下缘，顶部支架连接车顶，连续车身以鼻尖结束。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.47,
+          0.732,
+          0.538,
+          0.75
+        ],
+        "evidence_zh": "约136 px车体可辨窗格、轮状部件和顶部折线支架，鼻尖朝右。"
+      },
+      {
+        "category": "Train H（细节图，最小值）",
+        "required_parts": [
+          "连续车身",
+          "朝右鼻尖",
+          "车窗",
+          "轮组",
+          "受电弓"
+        ],
+        "relationship": "车体连接零点与鼻尖，其他部件保持包含或接触关系。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.47,
+          0.8025,
+          0.498,
+          0.81
+        ],
+        "evidence_zh": "约56×15 px车体可辨右向鼻尖、深色窗带及下缘暗点；受电弓支架接触和独立轮组细节不明确。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结数据将真实列车统计改为Train A–H合成峰值速度，允许非数据厚度及车厢配置适配，不要求旧品牌、地区或城市距离。",
+      "output_added_or_lost_meaning_zh": "保留速度与一小时行程的对应关系，并明确恒定峰值速度假设。新增独立细节尺度，没有混入主尺度。真实排名及原城市路线未沿用，与合成输入一致。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、EIGHT HYPOTHETICAL TRAINS、Train speed & one-hour distance、Synthetic peak speed、km/h、mph、IN ONE HOUR及SPEED × 1 HOUR = DISTANCE。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实列车和地理参照被冻结的合成类别及通用距离标尺取代，图面明确说明合成与假想列车。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "主图长度从约1555 px递减至约3 px，车高和车厢数量随长度适配，未作为独立数值尺度。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "主图G、H仅数像素，细节H约56×15 px；车体和朝向可辨，微细接触关系仍有限。"
+      }
+    ],
+    "measurement_coverage_zh": "检查全部八类及全部速度、mph文字；记录八个主图标记、四个细节标记及底部标尺。两幅数据视图均覆盖最大、内部及最小正值。主图G、H仅记录可见范围，不伪造鼻尖反算值。部件关系抽查大、中、小实例；车窗及轮组不编码数据，未逐个计数。"
+  }
+}

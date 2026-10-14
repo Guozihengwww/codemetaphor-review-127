@@ -1,0 +1,274 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图的彩色比例槽位于笔记本屏幕内，键盘、茶壶和窗景可见。成图保留这些关系，屏幕内有12行类别与比例；顶部明确标注SYNTHETIC DATA及合成远程办公体验，屏幕说明指标、百分比和多选口径。60%最长、15%最短，填充和空槽边界清楚，未见数据越出屏幕或必需文字被遮挡。",
+  "summary_zh": "未见违反冻结必要要求的可见缺陷。12行数据、标签及单位完整，实际比例符合容差，屏幕内数据融合关系保留。review.json已以UTF-8保存并通过schema.json验证；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×2000原图中，每行沿顶部无字区域读取3条像素扫描线，识别左右槽框及填充终点，再用声明单应矩阵逆变换实测位置。12行最大点估计误差为0.071个百分点。源码公式仅作佐证，没有代替像素测量。",
+  "uncertainties_zh": "抗锯齿及取整造成约±1像素端点不确定性，比例保守约±0.2个百分点；报告的小数是点估计，不表示相应精度。逆变换矩阵来自声明投影，未独立标定。按限制未查看日志、自检或历史归档，不能独立确认每次渲染的归档执行情况。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "1个系列、12行类别及数值全部可见，顺序正确；4项新增类别完整保留父类名称和synthetic comparable编号。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次为60%、49%、41%、34%、29%、23%、18%、15%、54.5%、45.0%、37.5%、31.5%，全部匹配输入。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每行比例、类别和对应填充槽明确对齐，未见错配或重排。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "12行实测边界逆投影后，最大点估计误差0.071个百分点，低于3个百分点容差；15%约测得15.052%，60%约测得59.989%。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_02.png，其笔记本、键盘、茶壶、窗台及窗景实质构成成图主体；render.py读取该素材并依据data.json控制填充、标签和统一投影。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "槽框、填充、刻度和文字同处屏幕平面，没有越过边框；屏幕连接键盘机身，茶壶位于右侧窗台且不遮挡数据。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、指标、全部类别、数值及多选脚注可读，长类别没有截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "屏幕包含多行比例槽，下缘连接键盘机身；机身和茶壶接触窗台，窗景保留。大、小填充均具有明确边界和空槽段。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "合成远程办公体验、Hypothetical benefit selected (%)、具名益处类别及可多选说明，使主题、指标、单位和非组成口径明确。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "居家办公益处主题和屏幕内比例槽关系保留；原美国工作者真实调查断言改为合成假设选择比例，属于冻结输入明确允许的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最短15%填充约151像素长、37像素高，左端、终点和空槽可辨；其几何并非仅凭数字标签判断。"
+    }
+  },
+  "semantic_attribution_zh": "真实美国工作者统计改为合成假设远程办公益处，归于允许的输入适配，因此reference_meaning为partial，不计输出缺陷。新增类别和条长变化由当前数据驱动。未观察到输出遗漏或分辨率导致的核心关系丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Flexible hours",
+        "expected_value": 60,
+        "observed_value": 59.989,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 594.45,
+        "full_scale_error_percent": 0.011,
+        "small_value_relative_error_percent": 0.018,
+        "bbox_xyxy_normalized": [
+          0.2365,
+          0.332,
+          0.534,
+          0.3515
+        ],
+        "evidence_zh": "首行扫描线左框约(473,671.41)、填充终点约(1067.43,666.97)、右框约(1466,664)；逆变换实测边界后计算比例。",
+        "uncertainty_zh": "端点约±1像素，比例保守约±0.2个百分点；声明矩阵未独立标定，小数仅为点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Calmer workspace",
+        "expected_value": 34,
+        "observed_value": 33.995,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 339.44,
+        "full_scale_error_percent": 0.005,
+        "small_value_relative_error_percent": 0.015,
+        "bbox_xyxy_normalized": [
+          0.235,
+          0.4045,
+          0.4045,
+          0.4235
+        ],
+        "evidence_zh": "第4行扫描线左框约(469,814.77)、填充终点约(808.43,812.49)、右框约(1471,808.05)。",
+        "uncertainty_zh": "端点约±1像素，比例保守约±0.2个百分点；声明矩阵未独立标定，小数仅为点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Fewer distractions",
+        "expected_value": 15,
+        "observed_value": 15.052,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 151.48,
+        "full_scale_error_percent": 0.052,
+        "small_value_relative_error_percent": 0.344,
+        "bbox_xyxy_normalized": [
+          0.2325,
+          0.5025,
+          0.3085,
+          0.521
+        ],
+        "evidence_zh": "第8行扫描线左框约(465,1009.29)、填充终点约(616.48,1008.43)、右框约(1476,1003.56)，短填充与空槽明显分离。",
+        "uncertainty_zh": "端点约±1像素，比例保守约±0.2个百分点；相对误差为点估计，不能据此宣称千分位准确。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Flexible hours / additional synthetic comparable 1",
+        "expected_value": 54.5,
+        "observed_value": 54.481,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 550.55,
+        "full_scale_error_percent": 0.019,
+        "small_value_relative_error_percent": 0.035,
+        "bbox_xyxy_normalized": [
+          0.232,
+          0.526,
+          0.5075,
+          0.546
+        ],
+        "evidence_zh": "第9行扫描线左框约(464,1058.53)、填充终点约(1014.54,1055.55)、右框约(1477,1053.05)。",
+        "uncertainty_zh": "端点约±1像素，比例保守约±0.2个百分点；声明矩阵未独立标定，小数仅为点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Daily routines / additional synthetic comparable 3",
+        "expected_value": 37.5,
+        "observed_value": 37.571,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 381.57,
+        "full_scale_error_percent": 0.071,
+        "small_value_relative_error_percent": 0.19,
+        "bbox_xyxy_normalized": [
+          0.231,
+          0.5765,
+          0.4215,
+          0.5955
+        ],
+        "evidence_zh": "第11行通过3条顶部扫描线识别填充和槽框，逆投影比例约37.571%；这是12行中最大的点估计偏差。",
+        "uncertainty_zh": "端点约±1像素，比例保守约±0.2个百分点；该偏差小于测量不确定性，不判为可见数据错误。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Calmer workspace / additional synthetic comparable 4",
+        "expected_value": 31.5,
+        "observed_value": 31.502,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 320.76,
+        "full_scale_error_percent": 0.002,
+        "small_value_relative_error_percent": 0.007,
+        "bbox_xyxy_normalized": [
+          0.23,
+          0.6015,
+          0.3905,
+          0.6205
+        ],
+        "evidence_zh": "末行实际填充边界与完整槽框经逆投影得到约31.502%，3条扫描线估计范围31.497%至31.505%。",
+        "uncertainty_zh": "端点约±1像素，比例保守约±0.2个百分点；声明矩阵未独立标定，小数仅为点估计。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Flexible hours：60%大标记",
+        "required_parts": [
+          "屏幕",
+          "完整槽框",
+          "彩色填充",
+          "空槽段",
+          "类别与比例"
+        ],
+        "relationship": "屏幕包含槽；填充从槽左端延伸至内部边界，右侧保留空槽，标签位于同一行。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.189,
+          0.329,
+          0.735,
+          0.354
+        ],
+        "evidence_zh": "粉色填充约594.45像素，终点约x1067，槽延伸至约x1466；类别与60%均清楚可读。"
+      },
+      {
+        "category": "Fewer distractions：15%小标记",
+        "required_parts": [
+          "屏幕",
+          "完整槽框",
+          "短彩色填充",
+          "长空槽段",
+          "类别与比例"
+        ],
+        "relationship": "短填充与槽左端接触并被槽框包含，终点与右侧空段明确分离。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.184,
+          0.498,
+          0.74,
+          0.523
+        ],
+        "evidence_zh": "填充约从x465至x616，完整槽至约x1476；文字跨填充终点，但上下仍有可见数据边界。"
+      },
+      {
+        "category": "笔记本整机与窗台",
+        "required_parts": [
+          "屏幕与边框",
+          "下缘铰链",
+          "键盘",
+          "触控板",
+          "机身",
+          "窗台"
+        ],
+        "relationship": "屏幕通过下缘铰链连接键盘机身，触控板在键盘前方，机身接触窗台。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.02,
+          0.252,
+          0.885,
+          0.899
+        ],
+        "evidence_zh": "屏幕边框连续、铰链接合可见；触控板及机身边缘完整，窗台上有接触阴影。"
+      },
+      {
+        "category": "茶壶与窗景",
+        "required_parts": [
+          "玻璃壶身",
+          "壶盖",
+          "壶嘴",
+          "把手",
+          "茶液",
+          "窗台",
+          "窗框和建筑背景"
+        ],
+        "relationship": "盖、嘴及把手连接壶身，茶液被壶身包含，壶底接触右侧窗台；窗景位于笔记本后方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.775,
+          0.525,
+          1,
+          0.734
+        ],
+        "evidence_zh": "玻璃茶壶和琥珀色茶液可辨，壶底接触石质窗台且不遮屏幕；后方窗框和建筑持续可见。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入要求当前12项合成假设益处比例，与原真实统计分开；允许调整姿态和排版，不要求旧数值或原调查人群断言。",
+      "output_added_or_lost_meaning_zh": "保留远程办公益处和屏幕内比例槽关系，明示新增合成对照。真实调查断言被合成假设口径替代属于允许适配；多选比例没有被解释成100%组成。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；合成远程办公体验；Hypothetical benefit selected (%)；12项·可多选；可多选，比例不合计100%；非真实调查结果。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成假设口径由冻结输入指定，并在成图标题与脚注明示，解释参考真实调查含义的部分保留。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前12项数据对应12行槽及实际比例长度，新增类别保留父类；行数和条长变化没有破坏物体关系。"
+      }
+    ],
+    "measurement_coverage_zh": "单系列、单面板、单一长度通道：12/12行均进行了3条像素扫描线测量与逆投影，详细列出6行，覆盖最小、最大、中间、分数值和末行。全部标签、数值、单位及顺序另行逐项目视检查；未检查其他条件或历史图像。"
+  }
+}

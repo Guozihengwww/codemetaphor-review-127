@@ -1,0 +1,254 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中背面举球运动员与年度折线叠合，双手接触篮球。待评图保留完整举球人物，白色折线从腿部前方穿过后向右上升。可见2010–2024全部15个年份及数值，纵轴标0、500、1,000、1,500。主题、平均观众指标、千人/场单位及SYNTHETIC DATA均明确。最小值163的圆点和连接可辨，末点1,360低于1,500网格线。以上观察已在读取源码前记录。",
+  "summary_zh": "已保存review.json并通过schema校验。数据、标签、举球人物及折线叠合关系符合冻结要求，未发现实质可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "测量原始1600×2000 image.png。由像素行对比定位1500与0刻度中心约为y=760和1760；分割15个紫色圆环，按v=1500×(1760−y)/1000反算。全部点最大偏差0.75千人/场，即满量程0.05%。14段连线各抽样33处，均检测到连续白线。mark_extent_px表示圆点深色核心外径，数值由圆心高度编码；源码仅作旁证。",
+  "uncertainties_zh": "圆心与网格中心定位约有±1px不确定性，对应约±1.5千人/场，所列小数不代表亚像素精度。未检查运行记录，无法单凭capture_render.py确认每次渲染均通过该入口。未运行submit.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "15个年份、15个数据圆点及15个数值齐全；主题、指标、单位、合成声明及纵轴刻度完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项读到246、260、170、221、234、197、217、163、228、241、202、303、366、432、1,360，与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份刻度与圆点横向对齐，数值紧邻对应点；1,360和2024直接邻接右上端点。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部15个圆心符合共用0–1500线性轴，最大反算误差为满量程0.05%；最小点反算162.75，最大点反算1359.75。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理后人物素材，其球纹、马尾、衣褶、鞋和姿态实质出现在成图中。render.py加载该素材并用数据控制点位、折线及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "白色折线穿过人物袜和脚踝前景，并连续延伸至右上，保留参考的共享场景叠合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、指标、单位、全部年份和数值、合成数据提示及来源说明可读，未见影响绑定的遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "双手接触头顶篮球，两臂连接肩部和球衣躯干，短裤、双腿、袜及鞋完整可辨；局部标题遮挡未破坏举球关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "WOMEN'S BASKETBALL VIEWERS、Average viewers per game和thousand viewers per game明确主题与口径；YEAR及ANNUAL SERIES明确年度类别。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "举球动作与折线叠合保留。原参考真实WNBA/ESPN统计及增长论述按冻结输入改为合成女子篮球平均观众数据，属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值163的圆环核心约16×16px，两侧线段连续，圆心距零轴约108.5px；不依靠数字标签也能辨认该点。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、平均每场口径、千人单位及年度角色均保留。原参考真实统计语境的变化属于输入允许的改编；曲线形状变化来自当前数据。未发现输出遗漏造成的语义损失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "average_viewers",
+        "category": "2010",
+        "expected_value": 246,
+        "observed_value": 246.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 16,
+        "full_scale_error_percent": 0.05,
+        "small_value_relative_error_percent": 0.3049,
+        "bbox_xyxy_normalized": [
+          0.08875,
+          0.794,
+          0.09875,
+          0.802
+        ],
+        "evidence_zh": "圆心约(149.5,1595.5)px，距零轴164.5px，反算246.75千人/场；标签246。",
+        "uncertainty_zh": "定位约±1px，圆环抗锯齿边缘略宽于深色核心。"
+      },
+      {
+        "series_id": "average_viewers",
+        "category": "2016",
+        "expected_value": 217,
+        "observed_value": 216.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 16,
+        "full_scale_error_percent": 0.0167,
+        "small_value_relative_error_percent": 0.1152,
+        "bbox_xyxy_normalized": [
+          0.436875,
+          0.804,
+          0.446875,
+          0.812
+        ],
+        "evidence_zh": "内部点圆心约(706.5,1615.5)px，距零轴144.5px，反算216.75千人/场；圆环及相邻白线可辨。",
+        "uncertainty_zh": "定位约±1px，使用圆心而非阴影计量。"
+      },
+      {
+        "series_id": "average_viewers",
+        "category": "2017",
+        "expected_value": 163,
+        "observed_value": 162.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 16,
+        "full_scale_error_percent": 0.0167,
+        "small_value_relative_error_percent": 0.1534,
+        "bbox_xyxy_normalized": [
+          0.495,
+          0.822,
+          0.505,
+          0.83
+        ],
+        "evidence_zh": "最小正值圆心约(799.5,1651.5)px，距零轴108.5px，反算162.75千人/场；圆环和两侧折线清楚。",
+        "uncertainty_zh": "±1px约对应该值±0.92%的相对误差；中心估计偏差不等于精度保证。"
+      },
+      {
+        "series_id": "average_viewers",
+        "category": "2023",
+        "expected_value": 432,
+        "observed_value": 432.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 16,
+        "full_scale_error_percent": 0.05,
+        "small_value_relative_error_percent": 0.1736,
+        "bbox_xyxy_normalized": [
+          0.843125,
+          0.732,
+          0.853125,
+          0.74
+        ],
+        "evidence_zh": "圆心约(1356.5,1471.5)px，距零轴288.5px，反算432.75千人/场；前后连接连续。",
+        "uncertainty_zh": "定位约±1px。"
+      },
+      {
+        "series_id": "average_viewers",
+        "category": "2024",
+        "expected_value": 1360,
+        "observed_value": 1359.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 44,
+        "full_scale_error_percent": 0.0167,
+        "small_value_relative_error_percent": 0.0184,
+        "bbox_xyxy_normalized": [
+          0.8925,
+          0.416,
+          0.92,
+          0.438
+        ],
+        "evidence_zh": "最大值端点圆心约(1449.5,853.5)px，距零轴906.5px，反算1359.75千人/场；1,360及2024与其邻接。",
+        "uncertainty_zh": "定位约±1px；放大的端点圆环为强调样式，不按面积编码。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "共用主体：举球上半身",
+        "required_parts": [
+          "篮球",
+          "双手",
+          "双臂",
+          "肩部",
+          "背面球衣"
+        ],
+        "relationship": "双手从两侧接触头顶篮球，两臂经肘和肩连接球衣躯干。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.38,
+          0.016,
+          0.7,
+          0.435
+        ],
+        "evidence_zh": "球纹、贴球手指、弯曲手臂及球衣肩口可辨，未见破坏关系的悬空或断裂。"
+      },
+      {
+        "category": "共用主体：完整下肢",
+        "required_parts": [
+          "球衣下摆",
+          "短裤",
+          "双腿",
+          "袜",
+          "双鞋"
+        ],
+        "relationship": "衣裤衔接，裤腿分别连接双腿，再经袜部连接鞋。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4,
+          0.365,
+          0.69,
+          0.896
+        ],
+        "evidence_zh": "衣摆、裤口、膝部、袜及鞋底均在画布内可辨，前景折线未破坏身体整体识别。"
+      },
+      {
+        "category": "2017最小值及邻近年份",
+        "required_parts": [
+          "163圆点",
+          "左右白色折线",
+          "人物脚踝及鞋"
+        ],
+        "relationship": "圆点连接两侧线段并位于双脚之间，邻近折线叠在袜和脚踝前方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.425,
+          0.786,
+          0.64,
+          0.855
+        ],
+        "evidence_zh": "163点连接完整；2016附近线条跨过左袜，2019附近跨过右脚踝，数据由圆心高度承担。"
+      },
+      {
+        "category": "2024最大值及末段",
+        "required_parts": [
+          "2023圆点",
+          "上升白线",
+          "2024端点圆环",
+          "数值与年份标签"
+        ],
+        "relationship": "白线从2023向右上连续延伸至2024圆心，标签直接邻接末点。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.83,
+          0.335,
+          0.945,
+          0.76
+        ],
+        "evidence_zh": "末段位于人物右侧，但与穿过人物的前段连续；参考的叠合要求无需每个点接触身体。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入指定合成女子篮球平均观众数，允许姿态适配，并明确不沿用原真实统计或旧上升标题。",
+      "output_added_or_lost_meaning_zh": "举球动作与折线叠合保留；原WNBA/ESPN限定和真实增长论述由当前合成口径替代。未新增无依据增长率或累计解释。",
+      "visible_inscription_evidence_zh": "可见WOMEN'S BASKETBALL VIEWERS、Average viewers per game、thousand viewers per game、ANNUAL SERIES、YEAR和SYNTHETIC DATA。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实WNBA/ESPN语境改为合成女子篮球平均观众口径，符合冻结输入。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "低值段经过腿部，1360末点位于右上；曲线随当前数据变化，身体尺寸不承担定量编码。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "像素及抗锯齿限制约±1px定位精度，但最小圆点与连接仍可辨。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单系列：实测全部15个圆心和4条刻度线，14段连接各抽样33处；详列首点、内部点、最小值、较大内部值及最大值5例。全部年份和数值另作逐项核对。"
+  }
+}
