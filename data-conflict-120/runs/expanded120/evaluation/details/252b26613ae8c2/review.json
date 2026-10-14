@@ -1,0 +1,307 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：输电塔位于左下，黑色架空线贯穿画面，鸟靠近或栖于线条，绿色数据曲线总体向右下；上方标注BTUs per dollar of GDP，底部年份1950至2010。\n指定成图：右侧为大型格构输电塔，横担带绝缘子与深色弧形架空线；绿色折线从左下先小降再上升，末端接于塔左上绝缘子，三只鸟的脚接触绿色线。可见八个绿色圆点及1.86、1.74、2.56、3.28、4.76、6.14、6.72、8.16，年份1950、1960、1970、1980、1990、2000、2009、2010；最后两年位置很近且用引线分开标签。0至10刻度、BTU per GDP dollar、YEAR、Synthetic energy intensity、Energy consumed per dollar of economic output及SYNTHETIC DATA可读。底部说明只有绿色线编码数据，塔、鸟与深色线为插画。未见明显标签遮挡或主体接缝。",
+  "summary_zh": "八个数据点、年份、数值及语义标签完整，像素测量符合共同0–10线性轴与真实年份间距。鸟脚、绿色线、绝缘子和输电塔形成可见连接，生成素材承担主体；未发现需列为问题的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "测量对象为2000×1765的image.png，坐标原点在左上。独立检查栅格中的10与0网格线位于y≈500、1430，得到93像素/单位；圆点白心连通区域用于定位中心。mark_extent_px记点位相对0轴的编码高度，并非圆点直径或实体柱长。八点横坐标约189.5、399.5、609.5、819.5、1029.5、1239.5、1428.5、1449.5；独立读取年份刻度列为190、400、610、820、1030、1240、1429、1450。十年、九年、一年间距分别为210、189、21像素。源码仅作映射及素材来源佐证，不作为像素测量。",
+  "uncertainties_zh": "栅格定位约±1.5像素，因此表内小数不是亚像素精度保证；最小值相对误差估计约0.42%，定位不确定性约±0.93%。仅静态检查capture_render.py，未检查执行历史，不能据此证明每次完整渲染均经过该脚本。参考图未明示额外因果论断，不推断作者意图。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列含8个圆点、8个年份及全部8个数值，1950至2010按输入顺序出现；标题、合成声明、单位、系列名与YEAR均存在。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "1.86、1.74、2.56、3.28、4.76、6.14、6.72、8.16均准确；附加比较8.16÷1.86≈4.39×也正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "前六个值邻近对应圆点；6.72与8.16通过细引线分别关联2009、2010端点。两年刻度标签分开排布且引线清楚；图例明确只有绿色线编码数据。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "八个点独立像素测量的满量程误差均约0.03%–0.08%，远低于3%；最小值1960测得约1.747，最大值2010约8.167。横向间距符合真实年份，最后一年约21像素。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png；其中格构塔、绝缘子和四种鸟的轮廓与纹理在成图中可辨，塔占据主要画面。render.py实际合成素材并绘制数据线与文字；capture_render.py具备保存完整渲染的实现，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "绿色曲线接入上横担左侧绝缘子，三只鸟脚接触绿色线，左端还接入深色导线。生成物体与数据线有实际接触，不是仅在普通图表旁摆放图标。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "数值、年份、0–10刻度、单位及底部系列说明可读。2009和2010以引线避让；塔和鸟未遮住必需数值或圆点中心。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "可见塔尖、横担、格构塔身、塔脚、悬挂绝缘子、深色架空线与栖鸟；绿色数据线接至塔的绝缘子端部，低值和中间段保留鸟脚接触。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Energy intensity与Energy consumed per dollar of economic output明确当前指标；BTU per GDP dollar、YEAR、Synthetic energy intensity和SYNTHETIC DATA保留单位、时间及合成系列角色。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的单位产出能耗主题及输电场景中绿色曲线与栖鸟相接的关系。当前上升趋势来自冻结新数据；未要求继承参考的下降走势或旧统计。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值1960=1.74的圆点及白心可辨，距0轴约162.5像素；1950至1960约11像素下降可见，低值段仍有清楚的鸟脚与线接触。圆点大小不承担量值编码。"
+    }
+  },
+  "semantic_attribution_zh": "真实统计替换为明确声明的合成数值属于输入适配，当前主题和单位未改变。曲线转为上升、塔移至右侧属于允许的数据及姿态适配；未见输出遗漏或对象关系丢失。像素分辨率只限制微小误差的精确估计，不影响此例最小值与连接关系辨认。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "energy_intensity",
+        "category": "1950",
+        "expected_value": 1.86,
+        "observed_value": 1.86559,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 173.5,
+        "full_scale_error_percent": 0.0559,
+        "small_value_relative_error_percent": 0.3006,
+        "bbox_xyxy_normalized": [
+          0.09075,
+          0.70737,
+          0.09875,
+          0.71643
+        ],
+        "evidence_zh": "从原图绿色圆点内浅色连通区域测得中心约(189.5, 1256.5)像素；距0轴173.5像素。对应文字为1.86。",
+        "uncertainty_zh": "轴线与抗锯齿边缘定位约±1.5像素，即±0.016单位；小于此量级的差异不代表精确误差。"
+      },
+      {
+        "series_id": "energy_intensity",
+        "category": "1960",
+        "expected_value": 1.74,
+        "observed_value": 1.74731,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 162.5,
+        "full_scale_error_percent": 0.0731,
+        "small_value_relative_error_percent": 0.4202,
+        "bbox_xyxy_normalized": [
+          0.19575,
+          0.7136,
+          0.20375,
+          0.72266
+        ],
+        "evidence_zh": "从原图绿色圆点内浅色连通区域测得中心约(399.5, 1267.5)像素；距0轴162.5像素。对应文字为1.74。",
+        "uncertainty_zh": "轴线与抗锯齿边缘定位约±1.5像素，即±0.016单位；小于此量级的差异不代表精确误差。"
+      },
+      {
+        "series_id": "energy_intensity",
+        "category": "1970",
+        "expected_value": 2.56,
+        "observed_value": 2.56452,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 238.5,
+        "full_scale_error_percent": 0.0452,
+        "small_value_relative_error_percent": 0.1764,
+        "bbox_xyxy_normalized": [
+          0.30075,
+          0.67054,
+          0.30875,
+          0.6796
+        ],
+        "evidence_zh": "从原图绿色圆点内浅色连通区域测得中心约(609.5, 1191.5)像素；距0轴238.5像素。对应文字为2.56。",
+        "uncertainty_zh": "轴线与抗锯齿边缘定位约±1.5像素，即±0.016单位；小于此量级的差异不代表精确误差。"
+      },
+      {
+        "series_id": "energy_intensity",
+        "category": "1980",
+        "expected_value": 3.28,
+        "observed_value": 3.28495,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 305.5,
+        "full_scale_error_percent": 0.0495,
+        "small_value_relative_error_percent": 0.1508,
+        "bbox_xyxy_normalized": [
+          0.40575,
+          0.63258,
+          0.41375,
+          0.64164
+        ],
+        "evidence_zh": "从原图绿色圆点内浅色连通区域测得中心约(819.5, 1124.5)像素；距0轴305.5像素。对应文字为3.28。",
+        "uncertainty_zh": "轴线与抗锯齿边缘定位约±1.5像素，即±0.016单位；小于此量级的差异不代表精确误差。"
+      },
+      {
+        "series_id": "energy_intensity",
+        "category": "1990",
+        "expected_value": 4.76,
+        "observed_value": 4.76344,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 443,
+        "full_scale_error_percent": 0.0344,
+        "small_value_relative_error_percent": 0.0723,
+        "bbox_xyxy_normalized": [
+          0.51075,
+          0.55467,
+          0.51875,
+          0.56374
+        ],
+        "evidence_zh": "从原图绿色圆点内浅色连通区域测得中心约(1029.5, 987.0)像素；距0轴443.0像素。对应文字为4.76。",
+        "uncertainty_zh": "轴线与抗锯齿边缘定位约±1.5像素，即±0.016单位；小于此量级的差异不代表精确误差。"
+      },
+      {
+        "series_id": "energy_intensity",
+        "category": "2000",
+        "expected_value": 6.14,
+        "observed_value": 6.14516,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 571.5,
+        "full_scale_error_percent": 0.0516,
+        "small_value_relative_error_percent": 0.0841,
+        "bbox_xyxy_normalized": [
+          0.61575,
+          0.48187,
+          0.62375,
+          0.49093
+        ],
+        "evidence_zh": "从原图绿色圆点内浅色连通区域测得中心约(1239.5, 858.5)像素；距0轴571.5像素。对应文字为6.14。",
+        "uncertainty_zh": "轴线与抗锯齿边缘定位约±1.5像素，即±0.016单位；小于此量级的差异不代表精确误差。"
+      },
+      {
+        "series_id": "energy_intensity",
+        "category": "2009",
+        "expected_value": 6.72,
+        "observed_value": 6.72581,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 625.5,
+        "full_scale_error_percent": 0.0581,
+        "small_value_relative_error_percent": 0.0864,
+        "bbox_xyxy_normalized": [
+          0.71025,
+          0.45127,
+          0.71825,
+          0.46034
+        ],
+        "evidence_zh": "从原图绿色圆点内浅色连通区域测得中心约(1428.5, 804.5)像素；距0轴625.5像素。对应文字为6.72。",
+        "uncertainty_zh": "轴线与抗锯齿边缘定位约±1.5像素，即±0.016单位；小于此量级的差异不代表精确误差。"
+      },
+      {
+        "series_id": "energy_intensity",
+        "category": "2010",
+        "expected_value": 8.16,
+        "observed_value": 8.16667,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 759.5,
+        "full_scale_error_percent": 0.0667,
+        "small_value_relative_error_percent": 0.0817,
+        "bbox_xyxy_normalized": [
+          0.72075,
+          0.37535,
+          0.72875,
+          0.38442
+        ],
+        "evidence_zh": "从原图绿色圆点内浅色连通区域测得中心约(1449.5, 670.5)像素；距0轴759.5像素。对应文字为8.16。",
+        "uncertainty_zh": "轴线与抗锯齿边缘定位约±1.5像素，即±0.016单位；小于此量级的差异不代表精确误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "低值段1950–1960（含最小值）",
+        "required_parts": [
+          "绿色曲线及圆点",
+          "鸟身",
+          "腿与脚",
+          "左侧深色导线"
+        ],
+        "relationship": "鸟身经腿脚接触绿色线，绿色线左端与深色导线连续相接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.08,
+          0.674,
+          0.211,
+          0.725
+        ],
+        "evidence_zh": "低值段约从(190,1257)至(400,1268)，鸟位于其上方，脚落在绿色线附近；1960圆点与鸟分离且保持可见。"
+      },
+      {
+        "category": "中间段1970–2000",
+        "required_parts": [
+          "绿色折线",
+          "1970至2000圆点",
+          "两只鸟的身体及脚"
+        ],
+        "relationship": "两鸟的脚分别接触上升线段，白心圆点独立标识数据位置。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.299,
+          0.49,
+          0.626,
+          0.68
+        ],
+        "evidence_zh": "鸟脚约在(690,1166)和(1130,925)附近与绿色线接触；2.56、3.28、4.76、6.14的点和标签未被替代或遮蔽。"
+      },
+      {
+        "category": "最大值2010与塔上部",
+        "required_parts": [
+          "8.16圆点及绿色线",
+          "左侧悬挂绝缘子",
+          "上横担",
+          "塔身"
+        ],
+        "relationship": "绿色线末端接触绝缘子下端；绝缘子悬挂于与塔身相连的横担。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.715,
+          0.28,
+          0.94,
+          0.411
+        ],
+        "evidence_zh": "最大值圆点中心约(1449.5,670.5)，与上横担左端垂下的绝缘子末端相接；8.16文字通过细引线关联该点。"
+      },
+      {
+        "category": "完整输电塔与非数据导线",
+        "required_parts": [
+          "塔尖与横担",
+          "格构支撑与塔脚",
+          "绝缘子",
+          "深色架空线",
+          "右侧栖鸟"
+        ],
+        "relationship": "横担连接格构塔身，支撑向下延续至塔脚；导线接于悬垂绝缘子，右侧鸟脚接触深色导线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.69,
+          0.229,
+          1,
+          0.824
+        ],
+        "evidence_zh": "塔主体从约y406延续至y1450，横担、斜撑及塔脚清楚；左右深色线接到绝缘子末端，右上鸟站在弧形导线上。非数据导线无额外数值或数据圆点。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结要求允许合成数值替代旧统计、改变走势以及调整塔的位置和鸟的姿态；当前仍是单位经济产出的能源消耗强度。",
+      "output_added_or_lost_meaning_zh": "新增2010相对1950的4.39倍比较，计算正确且明确指向单位产出能耗；未丢失当前指标、年份角色或电力场景中的接触关系。",
+      "visible_inscription_evidence_zh": "顶部SYNTHETIC、Energy intensity、SYNTHETIC DATA及Energy consumed per dollar of economic output；图内BTU per GDP dollar和0–10 linear scale；底部YEAR、Synthetic energy intensity及Only the green line encodes data。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考历史数值被输入指定的合成值替换；图面醒目标示SYNTHETIC DATA，主题和单位保持。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "绿色曲线按新值先小降后上升，输电塔改在右侧接住最大值端点，属于允许的定量与姿态适配。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿与约1像素轴线影响亚像素数值估计；未观察到最小值点或鸟脚接触因此消失。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一面板、唯一系列的全部8个纵向数值位置，包含最小正值、最大值及所有中间点；并核对全部8个横向年份刻度与间距。全部必需文字和计数另行逐项检查；附加4.39倍为文字编码，无独立几何通道。物体关系检查覆盖低值段、中间段、最大值连接处与完整塔架。"
+  }
+}

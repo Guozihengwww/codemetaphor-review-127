@@ -1,0 +1,306 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以男女劳动参与率双向横条围绕中央国家标签排列，办公人物与横条叠置。待评图保留中央Region A至T及Benchmark共21行、左右男女系列、0–100刻度和42个百分比标签；显著标有SYNTHETIC DATA。女性最小6%仍有短粉色条。男性提包看表、女性坐椅操作电脑的部件可辨；若干条底边横穿人物或桌腿，主体轮廓仍连续。底部说明各比例独立、不相加为100%。",
+  "summary_zh": "通过。数据、标签、人物叠置和当前统计语义均保留。review.json已保存并通过schema.json校验。",
+  "issues": [],
+  "measurement_notes_zh": "原图为1500×1992。独立读取顶部刻度，左右0–100均跨470像素。扫描全部42条可见底边，按长度/470×100换算，最大绝对偏差约0.149个百分点，低于3个百分点容差。测量对象是横条水平长度，不是圆角面积或人物轮廓；源码仅用于交叉佐证。",
+  "uncertainties_zh": "抗锯齿和色差阈值带来约±1像素、即±0.21个百分点的测量不确定性；最小6%条的相对精度不能视为零误差。人物遮住部分填色，但底边与端点可见。未查阅生成日志、自检或归档记录，不能独立确认生图调用及每次渲染归档的执行历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "21个类别按输入顺序排列，男女两系列共42条及42个百分比标签完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部数值与data.json一致；例如A为70%/6%、D为89%/31%、F为62%/7%、Benchmark为75%/50%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "左青色Men、右粉色Women，各对横条、数值和中央地区标签逐行对应；Benchmark仍按左右位置区分男女。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "两侧满量程均470像素。42条底边实测最大偏差约0.149个百分点；6%约28像素，89%约418像素。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始人物素材和两张透明素材，均在成图中明显使用。render.py读取数据控制条长及文字；调用与归档执行历史未查验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "人物与实际横条叠置，未替代数据条。底边位于人物前层、主要填色在人物后层，量值端点与办公部件关系均可辨。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、类别、百分比、刻度及口径说明在原分辨率下可读；人物附近的数值使用浅色衬底。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "双向横条与中央标签列完整；男性握包看表并迈步，女性坐于椅面、手接触键盘，显示器支架与桌面、桌腿与桌板连接可辨。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题说明虚构地区劳动参与率，保留Men/Women及%单位；说明20个虚构地区、1个合成基准、独立比例和左右不表示负值。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "办公动作和男女参与率比较保留。真实国家、World及原排名论题改为虚构地区和合成基准，属于冻结输入允许的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "女性6%短条约28像素宽，7%约33像素宽，均保留填色、曲角及底边；未消失或被固定最小长度放大。"
+    }
+  },
+  "semantic_attribution_zh": "原参考真实国家论题仅部分保留，原因是输入明确允许的主题适配，非输出遗漏。当前劳动参与率、性别角色、百分比与独立比例口径完整；条长变化由当前数据驱动。抗锯齿限制小值测量精度，但未造成可见身份丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "men",
+        "category": "Region F",
+        "expected_value": 62,
+        "observed_value": 61.9149,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 291,
+        "full_scale_error_percent": 0.0851,
+        "small_value_relative_error_percent": 0.1373,
+        "bbox_xyxy_normalized": [
+          0.216,
+          0.37249,
+          0.41,
+          0.393574
+        ],
+        "evidence_zh": "原图y=782底边连续色段x=324–614，共291像素；以470像素满量程换算。",
+        "uncertainty_zh": "抗锯齿阈值约±1像素，不宣称亚像素精度。"
+      },
+      {
+        "series_id": "men",
+        "category": "Region D",
+        "expected_value": 89,
+        "observed_value": 88.9362,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 418,
+        "full_scale_error_percent": 0.0638,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.131333,
+          0.309237,
+          0.41,
+          0.330321
+        ],
+        "evidence_zh": "原图y=656底边连续色段x=197–614，共418像素。",
+        "uncertainty_zh": "抗锯齿阈值约±1像素。"
+      },
+      {
+        "series_id": "men",
+        "category": "Region A",
+        "expected_value": 70,
+        "observed_value": 70,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 329,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.190667,
+          0.214357,
+          0.41,
+          0.235442
+        ],
+        "evidence_zh": "原图y=467底边连续色段x=286–614，共329像素。",
+        "uncertainty_zh": "零为该阈值下的估计偏差，仍有约±1像素边界不确定性。"
+      },
+      {
+        "series_id": "men",
+        "category": "Region O",
+        "expected_value": 88,
+        "observed_value": 87.8723,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 413,
+        "full_scale_error_percent": 0.1277,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.134667,
+          0.657129,
+          0.41,
+          0.678213
+        ],
+        "evidence_zh": "原图y=1349底边色段x=202–614，共413像素；跨过男性上身后仍连续。",
+        "uncertainty_zh": "测量可见底边，不推断被人物遮住的填色面积；边界约±1像素。"
+      },
+      {
+        "series_id": "women",
+        "category": "Region A",
+        "expected_value": 6,
+        "observed_value": 5.9574,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 28,
+        "full_scale_error_percent": 0.0426,
+        "small_value_relative_error_percent": 0.7092,
+        "bbox_xyxy_normalized": [
+          0.59,
+          0.214357,
+          0.608667,
+          0.235442
+        ],
+        "evidence_zh": "原图y=467底边色段x=885–912，共28像素，换算约5.957%。",
+        "uncertainty_zh": "约±1像素相当于目标6%的约3.5%；满量程合格不意味着小值相对精度无误差。"
+      },
+      {
+        "series_id": "women",
+        "category": "Region C",
+        "expected_value": 24,
+        "observed_value": 24.0426,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 113,
+        "full_scale_error_percent": 0.0426,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.59,
+          0.27761,
+          0.665333,
+          0.298695
+        ],
+        "evidence_zh": "原图y=593底边色段x=885–997，共113像素。",
+        "uncertainty_zh": "抗锯齿阈值约±1像素。"
+      },
+      {
+        "series_id": "women",
+        "category": "Region L",
+        "expected_value": 36,
+        "observed_value": 35.9574,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 169,
+        "full_scale_error_percent": 0.0426,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.59,
+          0.562249,
+          0.702667,
+          0.583333
+        ],
+        "evidence_zh": "原图y=1160底边色段x=885–1053，共169像素；桌腿重叠处端点仍可辨。",
+        "uncertainty_zh": "测量可见底边，边界约±1像素。"
+      },
+      {
+        "series_id": "women",
+        "category": "Benchmark",
+        "expected_value": 50,
+        "observed_value": 50,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 235,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.59,
+          0.855924,
+          0.746667,
+          0.877008
+        ],
+        "evidence_zh": "原图y=1745灰色底边色段x=885–1119，共235像素。",
+        "uncertainty_zh": "零为该阈值下的估计偏差，仍有约±1像素边界不确定性。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "双向条形与中央类别列",
+        "required_parts": [
+          "Men横条",
+          "中央地区标签",
+          "Women横条",
+          "两侧0–100刻度"
+        ],
+        "relationship": "每行两条对应同一地区，分别从中央两侧0%向外延伸。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.096667,
+          0.151606,
+          0.903333,
+          0.881024
+        ],
+        "evidence_zh": "中央标签未被人物遮挡；实际量值由各条外端至对应0%基线的距离承担。"
+      },
+      {
+        "category": "大值男性条与行走人物",
+        "required_parts": [
+          "Region O男性88%条",
+          "头颈及躯干",
+          "屈臂及手表",
+          "手与包柄",
+          "双腿与鞋"
+        ],
+        "relationship": "人物头颈、手臂、腿鞋连接可辨，手握包柄并看表；人物覆盖条形填色，底边位于人物前层。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.134667,
+          0.642068,
+          0.41,
+          0.87751
+        ],
+        "evidence_zh": "提包、看表和迈步动作完整；88%底边跨过上身仍可追踪，未由人体轮廓替代。"
+      },
+      {
+        "category": "较小女性条与办公桌椅",
+        "required_parts": [
+          "女性",
+          "双手与键盘",
+          "显示器及支架",
+          "桌板及桌腿",
+          "座椅",
+          "17%/22%/36%条"
+        ],
+        "relationship": "女性坐于椅面，手搭键盘，显示器支架立于桌面，桌腿连接桌板；横条与桌腿叠置。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.59,
+          0.390562,
+          0.944667,
+          0.60241
+        ],
+        "evidence_zh": "办公接触关系清楚，数值有衬底，桌腿处粉色底边可追踪。图表没有要求条形投影到物理桌面。"
+      },
+      {
+        "category": "最小正值Region A女性6%",
+        "required_parts": [
+          "0%起点",
+          "曲角粉色短条",
+          "6%标签",
+          "Region A标签"
+        ],
+        "relationship": "短条从右侧0%基线向右延伸，数值位于外端右侧并与地区同一行。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.452667,
+          0.214357,
+          0.653333,
+          0.235944
+        ],
+        "evidence_zh": "短条有可见填色、圆角和约28像素底边，无人物遮挡；参考未要求每条内部包含缩放人物。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确改用虚构地区和合成基准，允许按当前数据改变条长和布局，不要求旧国家身份、极值或排名标题。",
+      "output_added_or_lost_meaning_zh": "劳动参与率、男女系列、百分比及办公动作保留；真实国家论题未沿用属于允许适配。独立比例与缺失年份、年龄范围说明符合当前数据。",
+      "visible_inscription_evidence_zh": "可见“虚构地区劳动参与率”“SYNTHETIC DATA”“Men (%)”“Women (%)”“按输入顺序”，以及左右不表示负值、各比例不相加为100%的说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实国家和World改为Region A–T及Benchmark由冻结输入规定，reference_meaning的partial不归因于生成失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前女性范围6%–50%、男性范围62%–89%；可见横条随数值变化，人物保持独立办公插图身份。"
+      }
+    ],
+    "measurement_coverage_zh": "已核对全部21类、两系列及42个数值，并扫描全部42条可见底边。详细记录8条，覆盖两系列各自最小值、最大值、内部值及人物重叠区域。未把插图大小或被遮挡填色面积当作定量通道。"
+  }
+}

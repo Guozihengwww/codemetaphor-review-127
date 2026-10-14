@@ -1,0 +1,214 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为浅底橙色沙体，折线上缘承载年度走势，斜铲覆盖沙面，周围有散粒。待评图显示颗粒砂石区域、12个上缘节点及数值、2008—2019年份、0—400纵轴和million tonnes单位。标题表达砂石开采量，SYNTHETIC DATA醒目。铲柄连接铲头，铲头覆盖砂石纹理；底缘有落影和散粒。最低点为2009，最高点为2018，未见明显标签错绑或遮挡。",
+  "summary_zh": "通过。12项数值与年份绑定准确，沙体高度符合线性量尺，生成素材承担主体和数据区域。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量image.png原始2000×2000像素。网格线y=650、882.5、1115、1347.5、1580，满量程930像素。通过可见圆节点内部像素定位12个中心，以400×(1580−y)/930换算，未将代码坐标当作像素结果。最大估计偏差0.224 million tonnes，即满量程0.056%，低于3%容差。另检查最小值、内点和峰值两侧的实际颗粒边缘。",
+  "uncertainties_zh": "抗锯齿和定位约有±1.5像素（±0.65 million tonnes）不确定性；最小值相对定位不确定度约0.6%，不声称亚像素精确。仅静态检查capture_render.py，未核验历史运行链。生成属性依据供应素材及清单，实际可见使用已核对。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列、12年份、12节点、12数值标签和5个纵轴刻度完整；单位及合成标识均出现。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次显示124、109、127、143、146、159、201、193、184、274、342、334，与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值位于相应圆节点上方，年份与节点横向对齐；副标题和单位明确绑定唯一系列。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "12节点像素换算均在容差内，最大估计偏差为满量程0.056%；横向间距144.36—145.00像素。沙体上缘与节点相接，底缘共用零线。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材中的砂石和D形柄铲对应成图整个沙面及斜铲；代码实际读取素材并通过数据多边形裁切。捕获脚本存在，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "砂石本身填充零线至年度折线的定量区域；斜铲覆盖沙面，下端由砂石遮叠。散粒与落影未扩张数据高度。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、系列、单位、全部年份与数值均可读；合成标识醒目，铲子未遮挡必要文字。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "握把、木柄、金属套与铲头连续连接；铲头和沙面发生遮叠。沙体上缘承载走势，大小值处均保留颗粒面和共同底线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题标题、Illustrative系列说明、Annual series、million tonnes和年份共同表达年度砂石开采量；页脚明确为合成而非实测统计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "年度砂石开采量及沙体与铲子的叠合保留；原图Demand和全球工业实测表述改为合成示例，属于冻结输入适配，不计输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值109对应约253.68像素高度，上缘、颗粒面和共同底线均可辨，无需用数值标签替代几何辨识。"
+    }
+  },
+  "semantic_attribution_zh": "参考真实统计及Demand表述转为SYNTHETIC年度开采量，归因于输入允许的适配。峰值及年度走势由当前数据决定；未观察到当前主题、单位或年度角色的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "sand_gravel",
+        "category": "2009",
+        "expected_value": 109,
+        "observed_value": 109.109,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 253.68,
+        "full_scale_error_percent": 0.0273,
+        "small_value_relative_error_percent": 0.1001,
+        "bbox_xyxy_normalized": [
+          0.19416,
+          0.66016,
+          0.20016,
+          0.7905
+        ],
+        "evidence_zh": "最小正值，谷底圆节点中心约(394.32,1326.32)，以可见零线y=1580和400刻度y=650换算；两侧颗粒边缘与谷底相接。",
+        "uncertainty_zh": "定位约±1.5像素，即±0.65 million tonnes；误差为像素估算残差。"
+      },
+      {
+        "series_id": "sand_gravel",
+        "category": "2018",
+        "expected_value": 342,
+        "observed_value": 342.074,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 795.32,
+        "full_scale_error_percent": 0.0184,
+        "small_value_relative_error_percent": 0.0216,
+        "bbox_xyxy_normalized": [
+          0.84466,
+          0.38934,
+          0.85066,
+          0.7905
+        ],
+        "evidence_zh": "峰顶圆节点中心约(1695.32,784.68)，下方连续颗粒区域延伸到零线，高度换算约342.074 million tonnes。",
+        "uncertainty_zh": "定位约±1.5像素，即±0.65 million tonnes；不代表亚像素精度。"
+      },
+      {
+        "series_id": "sand_gravel",
+        "category": "2014",
+        "expected_value": 201,
+        "observed_value": 201.152,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 467.68,
+        "full_scale_error_percent": 0.038,
+        "small_value_relative_error_percent": 0.0757,
+        "bbox_xyxy_normalized": [
+          0.55566,
+          0.55316,
+          0.56166,
+          0.7905
+        ],
+        "evidence_zh": "内部节点中心约(1117.32,1112.32)，上升段转为下降段，节点贴合颗粒沙体上缘。",
+        "uncertainty_zh": "定位约±1.5像素，即±0.65 million tonnes。"
+      },
+      {
+        "series_id": "sand_gravel",
+        "category": "2016",
+        "expected_value": 184,
+        "observed_value": 184.224,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 428.32,
+        "full_scale_error_percent": 0.0561,
+        "small_value_relative_error_percent": 0.1219,
+        "bbox_xyxy_normalized": [
+          0.70016,
+          0.57284,
+          0.70616,
+          0.7905
+        ],
+        "evidence_zh": "内部低点中心约(1406.32,1151.68)，是全部12节点中像素换算残差最大的一项，仍明显低于容差。",
+        "uncertainty_zh": "定位约±1.5像素，即±0.65 million tonnes。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "2009最小正值处",
+        "required_parts": [
+          "谷底上缘",
+          "颗粒沙面",
+          "共同零线"
+        ],
+        "relationship": "相邻直线在谷底相接，颗粒区域连续包含在上缘与水平零线之间。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.124,
+          0.638,
+          0.272,
+          0.799
+        ],
+        "evidence_zh": "可见下降再上升的上缘；谷底下面约254像素砂石连续延伸到底线，散粒位于底缘外。"
+      },
+      {
+        "category": "2018最大值处",
+        "required_parts": [
+          "峰顶上缘",
+          "颗粒沙面",
+          "右侧年度连接",
+          "共同零线"
+        ],
+        "relationship": "2017上升段接2018峰顶，再下降至2019；颗粒面闭合到底线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.771,
+          0.387,
+          0.924,
+          0.799
+        ],
+        "evidence_zh": "峰顶下方为完整颗粒面，右侧334节点与同一沙体连续相连，没有另置柱形或第二底线。"
+      },
+      {
+        "category": "斜铲与共享沙体",
+        "required_parts": [
+          "D形握把",
+          "木柄",
+          "金属套",
+          "铲头",
+          "砂石表面",
+          "接触阴影"
+        ],
+        "relationship": "握把至铲头连续连接，柄向左上倾斜；铲头覆盖沙面，下端由砂石遮叠。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.298,
+          0.418,
+          0.461,
+          0.747
+        ],
+        "evidence_zh": "铲柄穿过局部上缘进入沙体区域，金属铲头可辨，下缘与砂石交叠，附近有柔和暗影。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "允许合成年度开采量替代真实统计，采用中性标题，不复制旧数值、峰谷或需求论述；允许调整铲子姿态及非数据部分。",
+      "output_added_or_lost_meaning_zh": "增加合成提示与读图说明，当前开采量主题、年度角色及单位完整。参考全球工业实测范围与Demand措辞的改变属于输入适配。",
+      "visible_inscription_evidence_zh": "Sand and gravel extraction、Illustrative sand and gravel extraction、SYNTHETIC DATA、Annual series、million tonnes及2008—2019均可读；页脚说明高度代表年度开采量。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成标识及Not measured extraction statistics对应输入指定的示例数据身份。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "12个节点符合当前输入，2018峰值342、2019为334，无需保留参考335、330或旧轮廓。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板单系列的线性高度通道：像素定位全部12节点，核对全部年份和数值；详列最小值、大值、内部点及最大估计残差点，并采样三处相邻沙体边缘。未逐像素审计全部纹理和阴影，未核验历史运行记录。"
+  }
+}
