@@ -1,0 +1,286 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为写实蓝鸟叠合白色数据板，五行头像、账号和小鸟计数。成图保留该关系，主题与SYNTHETIC DATA清楚；Account A–E及五个数值完整。A行十只完整鸟加裁片，B行两只完整鸟加裁片，C为较宽裁片，D为细碎裁片，E近点状并附引线说明。大鸟未遮挡必要数据。",
+  "summary_zh": "通过。数值、绑定、可测计数与裁宽符合要求，生成素材及叠合结构保留。微小裁片的鸟形仅部分可辨，E的精确几何比例受分辨率限制。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量2160×1800原图，未重渲染。完整图符宽80px、起点间距94px。以完整鸟为像素模板，对裁片逐列色差归一后估计宽度，再结合完整鸟数量换算；不按着色总面积编码。满量程误差分母为120。估计裁边不确定度约±1px，即±0.125百万，计算小数不代表同等测量精度。",
+  "uncertainties_zh": "E只有约两列微弱蓝色像素，不能可靠恢复精确裁宽或小值相对误差。满量程通过不保证微小值精度。按限制未检查执行日志，capture_render.py的实际调用记录未独立核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五个账号按指定顺序出现，头像、数值、图符或裁片完整；系列、单位、合成提示、图例和总计均存在。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "107.4、22.712335、4.803074、1.015726、0.2148 M及总计136.145935均正确；图例10 million followers与E注记2.148%正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "头像、账号、数字及蓝色标记同处对应分隔行，没有错行或串类。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "A为10整鸟加约59.23/80，B为2整鸟加约21.70/80，C约38.42/80，D约8.16/80，均在容差内。E实见两列微弱像素，其精确比例保留不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张原始生成素材；大鸟和五个人像在成图中实质可见并对应。render.py读取素材，按数据控制图符数量、裁宽和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "大鸟腹部覆盖板顶，长尾向右下跨过白板并伸出右缘；小鸟承担数量，大鸟明确不编码，保留参考叠合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、全部账号与数字、单位、图例和页脚说明在原尺寸可读，未被大鸟遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大鸟头喙、躯干、翅尾连接连续并叠合数据板；账号头像及同形计数鸟保留。微小裁片的局部身份另行记录。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Social account followers、Followers by account、ACCOUNT / FOLLOWERS和million followers明确主题、类别角色及单位；合成身份清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "账号关注者规模比较得到保留；参考中的真实Twitter名人排行榜由冻结输入改为合成账号，属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "C尚可见尾翼与躯干左段；D仅剩不连贯细片，E近点状，不能独立辨认为鸟。图例及引线保留联系，但不证明微小几何精度。"
+    }
+  },
+  "semantic_attribution_zh": "真实Twitter排行榜转为合成社交账号属于输入改编。D/E鸟形弱化来自规定裁切和量值缩小，E进一步受像素分辨率限制；未发现输出遗漏主题、单位、账号角色或叠合关系。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "followers",
+        "category": "Account A",
+        "expected_value": 107.4,
+        "observed_value": 107.403446,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 1000,
+        "full_scale_error_percent": 0.002872,
+        "small_value_relative_error_percent": 0.003209,
+        "bbox_xyxy_normalized": [
+          0.393519,
+          0.462778,
+          0.856481,
+          0.499444
+        ],
+        "evidence_zh": "十只完整鸟像素模板相同；完整鸟宽80px，末片占60个着色列，归一估计裁宽59.228px。",
+        "uncertainty_zh": "裁边约±1px；计算小数不代表同等精度。横向跨度包含图符间空隙。"
+      },
+      {
+        "series_id": "followers",
+        "category": "Account B",
+        "expected_value": 22.712335,
+        "observed_value": 22.711907,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 210,
+        "full_scale_error_percent": 0.000357,
+        "small_value_relative_error_percent": 0.001884,
+        "bbox_xyxy_normalized": [
+          0.393519,
+          0.551667,
+          0.490741,
+          0.588333
+        ],
+        "evidence_zh": "两只完整鸟与A行模板相同；末片占22个着色列，估计裁宽21.695px。",
+        "uncertainty_zh": "裁边约±1px；横向跨度包含图符间空隙。"
+      },
+      {
+        "series_id": "followers",
+        "category": "Account C",
+        "expected_value": 4.803074,
+        "observed_value": 4.802465,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 39,
+        "full_scale_error_percent": 0.000507,
+        "small_value_relative_error_percent": 0.012679,
+        "bbox_xyxy_normalized": [
+          0.393519,
+          0.642778,
+          0.411574,
+          0.677222
+        ],
+        "evidence_zh": "裁片占39个着色列，归一估计宽38.420px；右边缘为直裁边。",
+        "uncertainty_zh": "抗锯齿造成约±1px边界不确定度。"
+      },
+      {
+        "series_id": "followers",
+        "category": "Account D",
+        "expected_value": 1.015726,
+        "observed_value": 1.019428,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 9,
+        "full_scale_error_percent": 0.003085,
+        "small_value_relative_error_percent": 0.364468,
+        "bbox_xyxy_normalized": [
+          0.393519,
+          0.731667,
+          0.397685,
+          0.763889
+        ],
+        "evidence_zh": "蓝色碎片横跨9个着色列，归一估计裁宽8.155px；纵向分成数段。",
+        "uncertainty_zh": "裁边约±1px，相对不确定度不可忽略；所列误差仅为近似估计。"
+      },
+      {
+        "series_id": "followers",
+        "category": "Account E",
+        "expected_value": 0.2148,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.393519,
+          0.850556,
+          0.394444,
+          0.851111
+        ],
+        "evidence_zh": "较明显蓝色像素位于(850,1531)、(851,1531)，RGB分别为[186,229,243]、[146,214,236]；数值0.2148 M可读。",
+        "uncertainty_zh": "像素不足以恢复精确裁宽。源码目标1.7184px仅为代码佐证，不作为实测值。"
+      },
+      {
+        "series_id": "followers",
+        "category": "TOTAL",
+        "expected_value": 136.145935,
+        "observed_value": 136.145935,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.050926,
+          0.919444,
+          0.300926,
+          0.936111
+        ],
+        "evidence_zh": "页脚总计与五项之和相同，单位为million followers。",
+        "uncertainty_zh": "仅为文字编码，未声明为去重人数。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "大型蓝鸟与数据板",
+        "required_parts": [
+          "头喙",
+          "躯干与羽翼",
+          "长尾",
+          "数据板"
+        ],
+        "relationship": "头与躯干相连，翼覆盖躯干，尾向右下延伸；腹尾位于数据板前景。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.624074,
+          0.027778,
+          0.985185,
+          0.430556
+        ],
+        "evidence_zh": "腹部跨过板顶y约552，尾部越过板右缘x约2050，边缘及阴影连续。"
+      },
+      {
+        "category": "Account A",
+        "required_parts": [
+          "完整鸟的头喙与躯干尾翼",
+          "重复单元",
+          "末鸟裁边",
+          "账号行"
+        ],
+        "relationship": "同形完整鸟排列于账号行，末鸟保留左侧并垂直裁去右侧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.074074,
+          0.45,
+          0.856481,
+          0.513333
+        ],
+        "evidence_zh": "十个完整图符一致，头喙朝右；末片截止于x约1849，未挤压轮廓。"
+      },
+      {
+        "category": "Account C",
+        "required_parts": [
+          "尾翼与腹部左段",
+          "直裁边",
+          "账号行"
+        ],
+        "relationship": "保留完整鸟左侧约48%宽度，同起点且未缩小高度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.388889,
+          0.636111,
+          0.416667,
+          0.680556
+        ],
+        "evidence_zh": "尾翼与躯干左段连续，右侧在x约888处直裁；头部缺失符合规定裁切。"
+      },
+      {
+        "category": "Account D",
+        "required_parts": [
+          "左端裁片",
+          "共同起点",
+          "账号数值"
+        ],
+        "relationship": "细窄裁片保留在对应行起点。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.390741,
+          0.727778,
+          0.400463,
+          0.767778
+        ],
+        "evidence_zh": "上部细片与下方尾端不连成完整躯干，头喙不可见；账号绑定清楚。"
+      },
+      {
+        "category": "Account E",
+        "required_parts": [
+          "微小裁片",
+          "说明引线",
+          "账号数值"
+        ],
+        "relationship": "蓝点承担数据，灰色引线定位并说明裁宽比例。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.390741,
+          0.822222,
+          0.611111,
+          0.855556
+        ],
+        "evidence_zh": "仅两列明显着色像素，无法辨认部件连接；引线未增加蓝色编码长度。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "允许合成账号替代参考中的真实Twitter名人和旧统计，不要求保留真实最高排名宣称。",
+      "output_added_or_lost_meaning_zh": "关注者规模比较及鸟与社交传播的联系保留。微小裁片鸟形弱化，未改成面积比例、组成份额或时间累计。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Social account followers；Followers by account；ACCOUNT / FOLLOWERS；10 million followers；大蓝鸟不承担数量的页脚说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实Twitter排行榜改为合成账号来自冻结输入，非输出遗漏。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "C/D/E不足一个完整单位，规定裁切自然移除右侧头喙；D仅余左缘片段。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "E仅呈两列淡蓝像素，无法独立确认精确裁宽及相对误差。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一followers通道的全部五项，含最大值、中间值和最小正值。A/B完整单元逐一计数并比较像素，A–D估计裁宽，E记录像素支撑及不确定性；全部标签、单位、数字和总计另行核对。"
+  }
+}

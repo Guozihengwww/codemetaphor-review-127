@@ -1,0 +1,468 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以三架战机、向左下延伸的尾迹叠合八条军事支出曲线，机体轮廓不编码数值。待评图保留三架完整战机与尾迹背景，折线位于前景。DEFENCE SPENDING BY REGION、SYNTHETIC DATA、Annual expenditure、USD billion (synthetic)和2003—2023可读。纵轴为0至1,000。右侧八地区末值齐全，低值曲线密集但有分色引线；底部列出全部首末值。",
+  "summary_zh": "通过。数据、必要标签及战机与尾迹背景叠合关系符合要求；14个代表点的像素估计误差均低于满量程0.1%。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "读取1600×2000原图像素：1,000水平线位于y=493，零线位于y=1690，跨度1197像素。按色带中心计算v=(1690−y)/1197×1000。横轴检出21个年度刻度，x从144至1188。源码调色板仅用于识别颜色，未读取geometry.json或自检。mark_extent_px为点中心至零线的垂直距离，不是线宽。",
+  "uncertainties_zh": "未逐点测量全部168个顶点。抗锯齿、描边及覆盖带来约±1–1.5像素定位不确定性，相当于约±0.84–1.25十亿美元；最小值17的相对精度不能由很小的满量程误差保证。同值交叠无法逐系列分离。未检查执行日志，不能独立确认历史上每次渲染均通过capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八地区及首末值完整；2003—2023有21个年度刻度、11个隔年文字标签。源码连接每系列全部21项，项目数据与冻结数据相同；可见走势与抽样一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A 934→438、B 306→34、C 113→17、D 88→36、E 79→54、F 70→39、G 63→44、H 51→32均正确；−53.1%及八地区末值低于首值的文字符合数据。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "曲线颜色与底部地区登记、右侧引线及数值一致。低值末端按E54、G44、F39、D36、B34、H32、C17标注，未见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共享0—1000线性轴和等距真实年份轴。14个像素抽样覆盖大值、内部点和全部末点，最大估计满量程误差约0.087%；最小C2023折算约17.13。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "所供生成素材中的三架战机、双尾迹及云雾在最终图中央大面积可见。render.py控制数据折线、点与文字；capture_render.py提供完整渲染保存流程，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "战机与尾迹位于绘图区背景，A线跨过小战机及中央大机体，曲线保持前景。符合原有背景叠合关系，不要求机体轮廓编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成标识、年度支出、单位、年份、全部地区名和末值可读；低值通过引线及底部登记补充辨识，无必要文字截断或重大遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "三架飞机均有连续机身、相接机翼与尾翼；后部喷口连接向左下延伸的成对尾迹，机头朝右上。数据曲线在前景叠合。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题与Annual expenditure表达年度地区国防支出；YEAR及2003—2023为观察年份，USD billion为单位，Region A—H为合成地区。未改成累计量或组成比例。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "军事支出比较及战机尾迹叠合保留；原真实国家、政策注释与旧涨幅被当前合成地区数据替换。该变化由冻结输入明确允许，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最小C2023仍在零线上方约20.5像素。部分低值末端仅隔约2—3像素；2013年D与H同为56，最终只能辨认H色，不能独立分离重合顶点。未见人为放大小值。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家身份及旧政策叙述的改变属于允许的输入改编；当前下降曲线来自新数据。低值局部辨识限制来自栅格分辨率及真实同值重合，不据此认定删项。未发现当前主题、单位或地区角色的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "A",
+        "category": "2003",
+        "expected_value": 934,
+        "observed_value": 934,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1118,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.08688,
+          0.2835,
+          0.09312,
+          0.2885
+        ],
+        "evidence_zh": "原图色带中心约(144,572)，距零线1118像素。",
+        "uncertainty_zh": "中心定位约±1–1.5像素；估计误差接近零不表示精确无误差。"
+      },
+      {
+        "series_id": "A",
+        "category": "2013",
+        "expected_value": 680,
+        "observed_value": 680.87,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 815,
+        "full_scale_error_percent": 0.087,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.41313,
+          0.435,
+          0.41938,
+          0.44
+        ],
+        "evidence_zh": "原图色带中心约(666,875)，距零线815像素。",
+        "uncertainty_zh": "描边与抗锯齿使中心定位约有±1–1.5像素不确定性。"
+      },
+      {
+        "series_id": "A",
+        "category": "2023",
+        "expected_value": 438,
+        "observed_value": 438.18,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 524.5,
+        "full_scale_error_percent": 0.018,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.73938,
+          0.58025,
+          0.74562,
+          0.58525
+        ],
+        "evidence_zh": "原图色带中心约(1188,1165.5)，距零线524.5像素。",
+        "uncertainty_zh": "中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "B",
+        "category": "2003",
+        "expected_value": 306,
+        "observed_value": 306.18,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 366.5,
+        "full_scale_error_percent": 0.018,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.08688,
+          0.65925,
+          0.09312,
+          0.66425
+        ],
+        "evidence_zh": "原图色带中心约(144,1323.5)，距零线366.5像素。",
+        "uncertainty_zh": "中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "B",
+        "category": "2013",
+        "expected_value": 175,
+        "observed_value": 175.44,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 210,
+        "full_scale_error_percent": 0.044,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.41313,
+          0.7375,
+          0.41938,
+          0.7425
+        ],
+        "evidence_zh": "原图色带中心约(666,1480)，距零线210像素。",
+        "uncertainty_zh": "中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "B",
+        "category": "2023",
+        "expected_value": 34,
+        "observed_value": 34.67,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 41.5,
+        "full_scale_error_percent": 0.067,
+        "small_value_relative_error_percent": 1.97,
+        "bbox_xyxy_normalized": [
+          0.73938,
+          0.82175,
+          0.74562,
+          0.82675
+        ],
+        "evidence_zh": "可分离的红色色带中心约(1188,1648.5)，距零线41.5像素。",
+        "uncertainty_zh": "邻线覆盖及抗锯齿影响中心估计，约±1–1.5像素；相对误差为近似值。"
+      },
+      {
+        "series_id": "C",
+        "category": "2003",
+        "expected_value": 113,
+        "observed_value": 113.62,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 136,
+        "full_scale_error_percent": 0.062,
+        "small_value_relative_error_percent": 0.55,
+        "bbox_xyxy_normalized": [
+          0.08688,
+          0.7745,
+          0.09312,
+          0.7795
+        ],
+        "evidence_zh": "原图浅色色带中心约(144,1554)，距零线136像素。",
+        "uncertainty_zh": "中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "C",
+        "category": "2013",
+        "expected_value": 91,
+        "observed_value": 91.48,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 109.5,
+        "full_scale_error_percent": 0.048,
+        "small_value_relative_error_percent": 0.53,
+        "bbox_xyxy_normalized": [
+          0.41313,
+          0.78775,
+          0.41938,
+          0.79275
+        ],
+        "evidence_zh": "原图浅色色带中心约(666,1580.5)，距零线109.5像素。",
+        "uncertainty_zh": "中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "C",
+        "category": "2023",
+        "expected_value": 17,
+        "observed_value": 17.13,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 20.5,
+        "full_scale_error_percent": 0.013,
+        "small_value_relative_error_percent": 0.74,
+        "bbox_xyxy_normalized": [
+          0.73938,
+          0.83225,
+          0.74562,
+          0.83725
+        ],
+        "evidence_zh": "最小正值末点的浅色色带位于y=1669–1670，中心约1669.5；距零线20.5像素。",
+        "uncertainty_zh": "约±1–1.5像素的不确定性相对于此小值不可忽略；0.74%只是中心估计，不能保证百分之一相对精度。"
+      },
+      {
+        "series_id": "D",
+        "category": "2023",
+        "expected_value": 36,
+        "observed_value": 36.34,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 43.5,
+        "full_scale_error_percent": 0.034,
+        "small_value_relative_error_percent": 0.95,
+        "bbox_xyxy_normalized": [
+          0.73938,
+          0.82075,
+          0.74562,
+          0.82575
+        ],
+        "evidence_zh": "黄色末点色带中心约(1188,1646.5)，距零线43.5像素。",
+        "uncertainty_zh": "相邻低值线密集，中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "E",
+        "category": "2023",
+        "expected_value": 54,
+        "observed_value": 54.72,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 65.5,
+        "full_scale_error_percent": 0.072,
+        "small_value_relative_error_percent": 1.33,
+        "bbox_xyxy_normalized": [
+          0.73938,
+          0.80975,
+          0.74562,
+          0.81475
+        ],
+        "evidence_zh": "绿色末点色带中心约(1188,1624.5)，距零线65.5像素。",
+        "uncertainty_zh": "中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "F",
+        "category": "2023",
+        "expected_value": 39,
+        "observed_value": 39.68,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 47.5,
+        "full_scale_error_percent": 0.068,
+        "small_value_relative_error_percent": 1.75,
+        "bbox_xyxy_normalized": [
+          0.73938,
+          0.81875,
+          0.74562,
+          0.82375
+        ],
+        "evidence_zh": "紫色末点色带中心约(1188,1642.5)，距零线47.5像素。",
+        "uncertainty_zh": "中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "G",
+        "category": "2023",
+        "expected_value": 44,
+        "observed_value": 44.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 53.5,
+        "full_scale_error_percent": 0.07,
+        "small_value_relative_error_percent": 1.58,
+        "bbox_xyxy_normalized": [
+          0.73938,
+          0.81575,
+          0.74562,
+          0.82075
+        ],
+        "evidence_zh": "蓝灰色末点色带中心约(1188,1636.5)，距零线53.5像素。",
+        "uncertainty_zh": "中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "H",
+        "category": "2023",
+        "expected_value": 32,
+        "observed_value": 32.58,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 39,
+        "full_scale_error_percent": 0.058,
+        "small_value_relative_error_percent": 1.82,
+        "bbox_xyxy_normalized": [
+          0.73938,
+          0.823,
+          0.74562,
+          0.828
+        ],
+        "evidence_zh": "粉色末点色带中心约(1188,1651)，距零线39像素。",
+        "uncertainty_zh": "相邻低值线密集，中心定位约±1–1.5像素。"
+      },
+      {
+        "series_id": "D",
+        "category": "2013",
+        "expected_value": 56,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.413,
+          0.81,
+          0.42,
+          0.814
+        ],
+        "evidence_zh": "x=666、y约1622–1623处可见粉色H线，无法独立分离黄色D顶点。输入中D与H均为56，源码分别绘制后由H覆盖。",
+        "uncertainty_zh": "源码仅佐证D存在，不作为其独立像素测量。"
+      },
+      {
+        "series_id": "A",
+        "category": "2003→2023，百分比变化",
+        "expected_value": -53.104925053533194,
+        "observed_value": -53.1,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.132,
+          0.537,
+          0.269,
+          0.569
+        ],
+        "evidence_zh": "可见−53.1%及934→438；按首末值计算约−53.1049%，一位小数显示正确。",
+        "uncertainty_zh": "这是文字编码，不是独立几何比例通道。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "中央大型战机与高值曲线",
+        "required_parts": [
+          "机身与机头",
+          "主翼和尾翼",
+          "双喷口",
+          "双尾迹",
+          "Region A折线"
+        ],
+        "relationship": "翼面连接机身；尾迹由后部喷口向左下延伸，机头朝右上；数据线在前景。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.43,
+          0.402,
+          0.815,
+          0.602
+        ],
+        "evidence_zh": "中央大飞机完整，双喷口与尾迹连续；蓝线跨越机翼。数据承载边界为蓝线中心，不是机翼外缘。"
+      },
+      {
+        "category": "上方较小战机",
+        "required_parts": [
+          "机身",
+          "机翼和尾翼",
+          "喷口",
+          "尾迹",
+          "叠合曲线"
+        ],
+        "relationship": "较小实例保留部件连接、右上飞行及左下尾迹方向。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.265,
+          0.392,
+          0.45,
+          0.49
+        ],
+        "evidence_zh": "尖机头、翼面、尾部及成对尾迹可辨；A线从其下部前方经过。飞机尺寸不编码支出。"
+      },
+      {
+        "category": "右下较小战机",
+        "required_parts": [
+          "完整机身",
+          "主翼和尾翼",
+          "双尾迹"
+        ],
+        "relationship": "翼面接于机身，后部连接向左下延伸的尾迹，共处背景层。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.565,
+          0.583,
+          0.755,
+          0.685
+        ],
+        "evidence_zh": "右下飞机未被裁切，两个后喷口邻接淡色尾迹，不替换地区数据点。"
+      },
+      {
+        "category": "最小值C2023与零线",
+        "required_parts": [
+          "C浅色末段和末点",
+          "零线",
+          "C17标签引线"
+        ],
+        "relationship": "末段连接2022与2023；末点在零线上方，引线通向C17标注。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.706,
+          0.824,
+          0.813,
+          0.848
+        ],
+        "evidence_zh": "末点约(1188,1669.5)，零线y=1690，约20.5像素间距保持正值。背景叠合结构不要求小值制成微型飞机。"
+      },
+      {
+        "category": "低值同值顶点",
+        "required_parts": [
+          "D2013顶点",
+          "H2013顶点",
+          "公共坐标"
+        ],
+        "relationship": "两个56共享坐标，但栅格无法独立显示重合的两种颜色。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.413,
+          0.81,
+          0.42,
+          0.814
+        ],
+        "evidence_zh": "该处只能观察到粉色H线；源码显示D先画、H后画。不据此认定D未绘制。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确以Region A—H的合成年度数据替代真实国家统计，不要求旧峰谷、上涨方向或政策结论；姿态及非数据尺寸可适配。",
+      "output_added_or_lost_meaning_zh": "新增八地区末值均低于2003及A下降53.1%的结论，均成立。原国家身份和政策注释因输入改编而不适用；军事主题与飞行背景关系保留。",
+      "visible_inscription_evidence_zh": "DEFENCE SPENDING、BY REGION、Annual expenditure、USD billion (synthetic)、YEAR、2003—2023、SYNTHETIC DATA、Region A—H，以及示例地区而非实际国家预算的页脚说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实国家比较被明确替换为八个合成地区，reference_meaning记partial，不归责于输出。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "A从934降至438且八地区均下降，当前曲线不沿用旧上涨叙述。D/H2013同值56的重合来自输入。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "低值线宽约数像素，相邻末点约隔2—3像素，局部颜色被覆盖；最小17仍距零线约20.5像素。"
+      }
+    ],
+    "measurement_coverage_zh": "单一线性面板独立抽测14/168个顶点：全部8个2023末点及A/B/C的2003、2013点，覆盖最大934与最小正值17。另记录D2013重合点不可测及A变化百分比文字核验。其余154个顶点未逐点测量；必要标签已另行核对，源码仅作完整路径的补充佐证。"
+  }
+}
