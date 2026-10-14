@@ -1,0 +1,292 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以五座桁架通讯塔、顶部运营商圆牌和百分数表达无线用户市场份额。本次图中八座塔按输入顺序排列；可见 Others 0.3%、Net A 8.6%、Net B 子类1/2各10.55%、Net C 子类1/2各7.95%、子类3为15.9%、Net D 38.2%。标题为 Wireless subscriber shares，另有 SYNTHETIC DATA 标识、百分比指标、0–40%刻度及互斥子类别说明。所有塔共用零线，零线下有等高金属支架，上方是桁架与横梁，圆牌位于横梁上方。Others 上段仅剩很薄的一段，桁架细部不易辨认；大塔和中间塔的交叉杆及与底架的接触可见。尚未读取渲染代码或据此判断几何准确性。",
+  "summary_zh": "八项数据、标签、主题及塔高编码均符合要求，生成素材实质用于主体。最小项保持真实比例，但其上段桁架细节仅部分可辨；未发现需判失败的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "在1600×2000原图测得0%线y≈1490、40%线y≈520，量程约970像素。扫描各横梁宽度内像素，以亮度半升位置估计上沿，按40×(1490−上沿y)/970反算份额；未使用源码坐标充当实测。满量程误差为|观测−输入|/40×100；相对误差以各输入值为分母。读数约±1像素，八项名义偏差均小于0.04个百分点。",
+  "uncertainties_zh": "0.3%上段仅约7–8像素，抗锯齿及零线覆盖限制其内部交叉杆辨认与相对精度判断。源码可佐证无最小高度放大，但不能替代像素证据。按限制未检查生成执行日志或历次捕获记录，无法独立确认所有完整渲染均经过capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八座塔与八个类别完整，顺序为Others、Net A、Net B子类1/2、Net C子类1/2/3、Net D；单一份额系列完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次可读0.3%、8.6%、10.55%、10.55%、7.95%、7.95%、15.9%、38.2%；未将正数舍为零，合计100%与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个圆牌、百分数与对应塔身同轴排列；子类编号及Net B、Net C父类明确，同值类别未混淆。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "八个横梁上沿均已独立测量；统一零线与0–40%线性刻度一致，名义满量程偏差最大约0.086%，远低于容差。最小项相对精度另保留不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png及其圆牌、螺栓支架、金属横梁纹理与成图可见主体对应。render.py加载这些素材，以数值控制上段高度、杆件端点、裁剪和文字；capture_render.py提供保存完整渲染的路径，未执行复现。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "实际承载数据的是通讯塔上段桁架至横梁的高度。圆牌位于塔顶，底架接在共同零线下；图面明确排除圆牌与底架的定量贡献，并非旁置装饰。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题标题、SYNTHETIC DATA、百分比指标、0–40%刻度、全部类别和数值均可读；底部说明互斥子类别、合成性质及高度读法。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "中大塔可见圆牌、细支杆、顶横梁、交叉桁架、零线处底架接合及双脚。Others保留圆牌、薄横梁和完整底架，但约7–8像素的上段内无法清楚分辨交叉桁架连接。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Wireless subscriber shares及Share of total wireless subscribers (%)明确主题、指标和单位；子类保留网络父类，图注明确其为互斥部分与合成值。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考图的无线用户份额主题、网络类别角色及通讯塔高度比较关系。真实品牌、日期和旧数值由允许的合成类别替代；没有强加旧排序或旧统计结论。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "Others的0.3%文字及非零薄上段可见，未明显放大；上段交叉杆压缩在约7–8像素内，圆牌—支杆—横梁—底架链条可部分追踪，内部桁架关系不清楚。"
+    }
+  },
+  "semantic_attribution_zh": "品牌和子类别的改写来自冻结输入，当前主题仍是无线用户份额。塔高变化由数据驱动；Others上段细节的部分损失归于小值形变与像素分辨率，不是主题、类别或数值的输出遗漏。未发现改变参考比较含义的新增论断。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "subscriber_share",
+        "category": "Others",
+        "expected_value": 0.3,
+        "observed_value": 0.3211,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 7.79,
+        "full_scale_error_percent": 0.0528,
+        "small_value_relative_error_percent": 7.05,
+        "bbox_xyxy_normalized": [
+          0.117,
+          0.741,
+          0.188,
+          0.745
+        ],
+        "evidence_zh": "横梁上沿约y=1482.2，至零线约7.8像素；0.3%文字清楚。",
+        "uncertainty_zh": "抗锯齿边界读数约±1像素，即±0.041个百分点；对0.3%相当于约±13.7%的相对不确定度。表内7.05%为名义读数偏差，不能确认为真实几何误差。"
+      },
+      {
+        "series_id": "subscriber_share",
+        "category": "Net A",
+        "expected_value": 8.6,
+        "observed_value": 8.6341,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 209.38,
+        "full_scale_error_percent": 0.0853,
+        "small_value_relative_error_percent": 0.397,
+        "bbox_xyxy_normalized": [
+          0.226,
+          0.64,
+          0.298,
+          0.745
+        ],
+        "evidence_zh": "横梁上沿约y=1280.6；塔身与8.6%及Net A圆牌居中对应。",
+        "uncertainty_zh": "抗锯齿边界读数约±1像素，即±0.041个百分点；所列值为近似像素估计。"
+      },
+      {
+        "series_id": "subscriber_share",
+        "category": "Net B / subcategory 1",
+        "expected_value": 10.55,
+        "observed_value": 10.5789,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 256.54,
+        "full_scale_error_percent": 0.0722,
+        "small_value_relative_error_percent": 0.274,
+        "bbox_xyxy_normalized": [
+          0.336,
+          0.616,
+          0.407,
+          0.745
+        ],
+        "evidence_zh": "横梁上沿约y=1233.5，与相邻同值子类等高。",
+        "uncertainty_zh": "抗锯齿边界读数约±1像素，即±0.041个百分点；所列值为近似像素估计。"
+      },
+      {
+        "series_id": "subscriber_share",
+        "category": "Net B / subcategory 2",
+        "expected_value": 10.55,
+        "observed_value": 10.5789,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 256.54,
+        "full_scale_error_percent": 0.0722,
+        "small_value_relative_error_percent": 0.274,
+        "bbox_xyxy_normalized": [
+          0.445,
+          0.616,
+          0.516,
+          0.745
+        ],
+        "evidence_zh": "横梁上沿约y=1233.5；圆牌明确显示Net B与subcategory 2。",
+        "uncertainty_zh": "抗锯齿边界读数约±1像素，即±0.041个百分点；所列值为近似像素估计。"
+      },
+      {
+        "series_id": "subscriber_share",
+        "category": "Net C / subcategory 1",
+        "expected_value": 7.95,
+        "observed_value": 7.9745,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 193.38,
+        "full_scale_error_percent": 0.0613,
+        "small_value_relative_error_percent": 0.308,
+        "bbox_xyxy_normalized": [
+          0.554,
+          0.648,
+          0.625,
+          0.745
+        ],
+        "evidence_zh": "横梁上沿约y=1296.6，与相邻同值子类等高。",
+        "uncertainty_zh": "抗锯齿边界读数约±1像素，即±0.041个百分点；所列值为近似像素估计。"
+      },
+      {
+        "series_id": "subscriber_share",
+        "category": "Net C / subcategory 2",
+        "expected_value": 7.95,
+        "observed_value": 7.9745,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 193.38,
+        "full_scale_error_percent": 0.0613,
+        "small_value_relative_error_percent": 0.308,
+        "bbox_xyxy_normalized": [
+          0.663,
+          0.648,
+          0.734,
+          0.745
+        ],
+        "evidence_zh": "横梁上沿约y=1296.6；圆牌明确显示Net C与subcategory 2。",
+        "uncertainty_zh": "抗锯齿边界读数约±1像素，即±0.041个百分点；所列值为近似像素估计。"
+      },
+      {
+        "series_id": "subscriber_share",
+        "category": "Net C / subcategory 3",
+        "expected_value": 15.9,
+        "observed_value": 15.9331,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 386.38,
+        "full_scale_error_percent": 0.0829,
+        "small_value_relative_error_percent": 0.208,
+        "bbox_xyxy_normalized": [
+          0.772,
+          0.551,
+          0.844,
+          0.745
+        ],
+        "evidence_zh": "横梁上沿约y=1103.6；约为两个7.95%标记高度的两倍。",
+        "uncertainty_zh": "抗锯齿边界读数约±1像素，即±0.041个百分点；所列值为近似像素估计。"
+      },
+      {
+        "series_id": "subscriber_share",
+        "category": "Net D",
+        "expected_value": 38.2,
+        "observed_value": 38.214,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 926.69,
+        "full_scale_error_percent": 0.0349,
+        "small_value_relative_error_percent": 0.037,
+        "bbox_xyxy_normalized": [
+          0.882,
+          0.281,
+          0.954,
+          0.745
+        ],
+        "evidence_zh": "横梁上沿约y=563.3，低于40%刻度；圆牌与38.2%文字不纳入高度。",
+        "uncertainty_zh": "抗锯齿边界读数约±1像素，即±0.041个百分点；所列值为近似像素估计。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Net D",
+        "required_parts": [
+          "类别圆牌",
+          "圆牌支杆",
+          "顶部横梁",
+          "上段交叉桁架",
+          "非数据底架",
+          "双脚"
+        ],
+        "relationship": "圆牌位于横梁之上，细支杆在数值牌上下露出；横梁覆盖桁架上端，向下加宽的桁架在零线处与底架接合，底架向下支承于双脚。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.873,
+          0.194,
+          0.962,
+          0.829
+        ],
+        "evidence_zh": "右端圆牌约y=389–519，数据横梁约y=563，上段延至y=1490；底架延至约y=1655。杆件交叉、接触及上下层次可见，数据边界为横梁上沿。"
+      },
+      {
+        "category": "Net B / subcategory 1",
+        "required_parts": [
+          "父类和子类圆牌",
+          "顶部横梁",
+          "上段交叉桁架",
+          "非数据底架"
+        ],
+        "relationship": "圆牌与10.55%位于同一塔身上方；上段交叉杆在顶部横梁与共同零线之间，下端两侧接到底架。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.327,
+          0.529,
+          0.415,
+          0.829
+        ],
+        "evidence_zh": "第三座塔横梁约y=1233.5，上段约256.5像素；圆牌、数值牌不遮挡横梁测量端点，底部接合处可见零线穿过。"
+      },
+      {
+        "category": "Others",
+        "required_parts": [
+          "Others圆牌",
+          "圆牌支杆",
+          "薄顶部横梁",
+          "微小上段桁架",
+          "非数据底架"
+        ],
+        "relationship": "圆牌在数值牌上方，细支杆局部可见；薄横梁紧邻零线上方，底架及两脚位于零线下。上段内部交叉杆不能清楚分离辨认。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.109,
+          0.653,
+          0.197,
+          0.829
+        ],
+        "evidence_zh": "左端圆牌约y=1307–1438，横梁上沿约y=1482.2，零线y≈1490；仅约7.8像素的数据区与完整的约166像素非数据底架对照明显。未凭0.3%文字推定微小桁架细节正确。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结输入允许以合成网络名替代真实品牌，并将Net B、Net C拆为互斥子类；当前仍比较无线用户份额，不要求参考日期、旧数值和旧排序。",
+      "output_added_or_lost_meaning_zh": "没有发现主题、指标、单位或类别角色丢失。图面明确说明上段高度与非数据部件的分工；最小项仅有结构细节的可辨性损失。",
+      "visible_inscription_evidence_zh": "可见Wireless subscriber shares、Share of total wireless subscribers (%)、SYNTHETIC DATA、HEIGHT ABOVE ZERO = SHARE，以及Net B/Net C子类为其网络互斥部分、非真实统计调查的说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实运营商品牌及历史统计被冻结输入中的合成网络类别、子类和数值替代；无线用户份额主题保持。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "0.3%对应约7–8像素的上段，而38.2%对应约927像素；固定圆牌与底架不参与编码。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小上段内横梁和斜杆视觉挤合，无法可靠区分交叉连接；其像素读数的相对不确定性明显高于中大值。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一量化通道为统一线性轴上的上段高度；八项均作原图像素测量，覆盖最小正值、最大值及全部中间值。八组标签和百分数另外逐一核对。对大、中、小三种尺度记录了部件关系，未将源码自报坐标或自检结果当作实测。"
+  }
+}

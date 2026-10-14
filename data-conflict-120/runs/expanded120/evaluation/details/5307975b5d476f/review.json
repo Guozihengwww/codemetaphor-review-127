@@ -1,0 +1,287 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以方格纸上的弯曲长指及掌部表达按出生年份统计的左利手比例。指定成图可见完整长指、圆钝指尖、紫色指甲、关节纹和连接的掌部；7个年份自下而上排列，对应12.6%、12.4%、11.8%、10.5%、6.5%、3.9%、5.1%。紫色截面线和圆点位于指身上。标题、出生队列语义、百分比单位及SYNTHETIC DATA均清楚，未见明显遮挡或部件断裂。",
+  "summary_zh": "通过。全部数值、标签及融合结构保留；7个截面的像素测量均符合容差。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量指定image.png原始1560×2000像素。实测横轴端点x=286、1322分别对应0%、14%，即74像素/个百分点。避开紫色标注，以邻行皮肤及棕色轮廓估计截面左右边界并求中点；1880使用上方邻行外推。满量程误差分母为14，相对误差分母为对应目标值。年份刻度从上到下位于y=590、738、886、1035、1183、1331、1480，符合20年等距排列。代码仅作佐证。",
+  "uncertainties_zh": "轮廓抗锯齿、描边和邻行拟合带来约±2像素的位置不确定性，相当于±0.027个百分点，对最小3.9%约为±0.69%相对量。点估计误差不代表同等测量精度。未读取执行日志、历史渲染或自检，因此不能确认历史每次渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "7个出生年份队列、7个数据截面、全部数值、0–14%刻度、单位、主题和合成数据声明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项核对1880=12.6%、1900=12.4%、1920=11.8%、1940=10.5%、1960=6.5%、1980=3.9%、2000=5.1%，均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各标签经水平引线连接同年份的指身截面与中点，无错行、交换或遮挡。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部7个轮廓中点经独立像素估测吻合线性横轴；最大估计误差约0.0088个百分点，即0.063%满量程。六段内部共764行轮廓检查未发现超过像素误差的相邻值越界。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始手部素材中的甲片、皮肤纹理、关节纹和掌纹对应成图主体；render.py采样hand_clean.png并按数据重映射指身。已检查capture_render.py的保存实现，未推断其历史执行情况。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "指身截面轮廓中点实际承载比例；生成纹理随轮廓弯曲。指身连接掌部，甲片附着端部，网格位于手部之后，数据标记位于皮肤之前。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、轴名、7个年份与数值均清楚；阅读说明明确中点编码比例、宽度和甲片为装饰，无必要文字裁切或重叠。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "长指、圆头、紫色甲片、关节纹与掌部及其连接关系保留；圆头位于2000截面以上，掌部位于1880以下，均未遮挡数据截面。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、LEFT-HANDEDNESS RATE (%)和BIRTH YEAR COHORT共同表达按出生年份队列统计的左利手比例；合成性质明确，未将队列比例解释为组成份额。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考主题、出生年份角色及手指轮廓承载走势的融合关系。新弯曲方向来自冻结合成数据，不要求复制旧增长结论。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小3.9%以位置编码，中点距零轴约289像素；完整皮肤截面、圆标和横截线均可见。约125像素的截面宽度明确为非数据部分，未夸大小值的数据长度。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题与参考相同；以合成数值替换真实统计属于明示输入适配。长指先向左弯再向右转属于数据驱动形状变化，未发现输出意义遗漏；不额外推断举指姿势的作者意图。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_rate",
+        "category": "1880",
+        "expected_value": 12.6,
+        "observed_value": 12.6026,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 125.2,
+        "full_scale_error_percent": 0.0183,
+        "small_value_relative_error_percent": 0.0203,
+        "bbox_xyxy_normalized": [
+          0.7282,
+          0.734,
+          0.8341,
+          0.746
+        ],
+        "evidence_zh": "由y=1468–1474的轮廓外推至1480，左右边界约1156.0、1281.2，中点约1218.6像素，对应12.6026%。宽度为非数据尺寸。",
+        "uncertainty_zh": "单侧邻行外推，约±2像素；排除下方掌部和屈指。"
+      },
+      {
+        "series_id": "synthetic_rate",
+        "category": "1900",
+        "expected_value": 12.4,
+        "observed_value": 12.3958,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 125.1,
+        "full_scale_error_percent": 0.03,
+        "small_value_relative_error_percent": 0.0339,
+        "bbox_xyxy_normalized": [
+          0.7184,
+          0.6598,
+          0.8243,
+          0.6718
+        ],
+        "evidence_zh": "y≈1331.5，左右轮廓约1140.7、1265.8，中点约1203.3像素，对应12.3958%。",
+        "uncertainty_zh": "邻行拟合与抗锯齿约±2像素；截面宽度不编码比例。"
+      },
+      {
+        "series_id": "synthetic_rate",
+        "category": "1920",
+        "expected_value": 11.8,
+        "observed_value": 11.7976,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 125.1,
+        "full_scale_error_percent": 0.0168,
+        "small_value_relative_error_percent": 0.02,
+        "bbox_xyxy_normalized": [
+          0.69,
+          0.5858,
+          0.7959,
+          0.5978
+        ],
+        "evidence_zh": "y≈1183.5，左右轮廓约1096.5、1221.6，中点约1159.0像素，对应11.7976%。",
+        "uncertainty_zh": "邻行拟合与抗锯齿约±2像素；截面宽度不编码比例。"
+      },
+      {
+        "series_id": "synthetic_rate",
+        "category": "1940",
+        "expected_value": 10.5,
+        "observed_value": 10.4912,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 125.3,
+        "full_scale_error_percent": 0.0627,
+        "small_value_relative_error_percent": 0.0837,
+        "bbox_xyxy_normalized": [
+          0.627,
+          0.5115,
+          0.734,
+          0.5235
+        ],
+        "evidence_zh": "y≈1035，左右轮廓约999.7、1125.0，中点约1062.4像素，对应10.4912%。",
+        "uncertainty_zh": "邻行拟合与抗锯齿约±2像素；截面宽度不编码比例。"
+      },
+      {
+        "series_id": "synthetic_rate",
+        "category": "1960",
+        "expected_value": 6.5,
+        "observed_value": 6.5034,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 125.8,
+        "full_scale_error_percent": 0.0242,
+        "small_value_relative_error_percent": 0.0521,
+        "bbox_xyxy_normalized": [
+          0.4387,
+          0.4373,
+          0.545,
+          0.4493
+        ],
+        "evidence_zh": "y≈886.5，左右轮廓约704.4、830.1，中点约767.3像素，对应6.5034%。",
+        "uncertainty_zh": "邻行拟合与抗锯齿约±2像素；截面宽度不编码比例。"
+      },
+      {
+        "series_id": "synthetic_rate",
+        "category": "1980",
+        "expected_value": 3.9,
+        "observed_value": 3.9056,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 125,
+        "full_scale_error_percent": 0.0399,
+        "small_value_relative_error_percent": 0.1433,
+        "bbox_xyxy_normalized": [
+          0.3157,
+          0.3633,
+          0.4215,
+          0.3753
+        ],
+        "evidence_zh": "y≈738.5，左右轮廓约512.5、637.5，中点约575.0像素，距零轴约289像素，对应3.9056%。",
+        "uncertainty_zh": "约±2像素，对该最小值约±0.69%相对量；点估计误差不代表精度保证。"
+      },
+      {
+        "series_id": "synthetic_rate",
+        "category": "2000",
+        "expected_value": 5.1,
+        "observed_value": 5.0946,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 125.2,
+        "full_scale_error_percent": 0.0386,
+        "small_value_relative_error_percent": 0.106,
+        "bbox_xyxy_normalized": [
+          0.3721,
+          0.289,
+          0.4779,
+          0.301
+        ],
+        "evidence_zh": "y≈590，左右轮廓约600.4、725.6，中点约663.0像素，对应5.0946%。",
+        "uncertainty_zh": "邻行拟合与抗锯齿约±2像素；指尖和甲片未参与量值测量。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "大值1880与掌部",
+        "required_parts": [
+          "指身轮廓",
+          "横截线",
+          "指根",
+          "屈指",
+          "手掌"
+        ],
+        "relationship": "指身连续接入下方掌部，屈指不得覆盖数据截面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.62,
+          0.729,
+          0.95,
+          0.968
+        ],
+        "evidence_zh": "1880截面边界清楚；下方纹理连续进入指根和手掌，邻侧屈指出现在截面以下。"
+      },
+      {
+        "category": "最小值1980",
+        "required_parts": [
+          "皮肤表面",
+          "左右轮廓",
+          "关节纹",
+          "横截线",
+          "中点圆标"
+        ],
+        "relationship": "横截线跨越完整指身，圆标位于两侧轮廓中部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.323,
+          0.315,
+          0.432,
+          0.406
+        ],
+        "evidence_zh": "最左弯曲处皮肤连续，上方关节纹可辨；横截线与3.9%标签同高连接，未退化为孤立数字。"
+      },
+      {
+        "category": "2000与指尖",
+        "required_parts": [
+          "指身",
+          "圆钝指尖",
+          "紫色甲片",
+          "2000截面"
+        ],
+        "relationship": "甲片附着端部，指尖连接指身且位于观测区之外。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.376,
+          0.211,
+          0.534,
+          0.304
+        ],
+        "evidence_zh": "圆头约在y=425，2000截面在y≈590；甲片被端部轮廓包围，未遮挡数据截面。"
+      },
+      {
+        "category": "手部与纸面",
+        "required_parts": [
+          "方格纸",
+          "手部",
+          "截面标记",
+          "坐标轴"
+        ],
+        "relationship": "网格在手部之后，数据标记在皮肤之前，截面与比例轴同向。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.048,
+          0.175,
+          0.951,
+          0.966
+        ],
+        "evidence_zh": "皮肤遮住内部网格，紫色截面线清楚叠于皮肤；正视二维坐标关系一致。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "保留左利手比例与出生队列主题，明示合成数据，允许新值改变弯曲方向及非数据部件姿态。",
+      "output_added_or_lost_meaning_zh": "新增阅读说明解释中点编码及装饰宽度；未丢失当前指标、单位、队列角色或原融合关系。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Left-handedness by birth year、LEFT-HANDEDNESS RATE (%)、BIRTH YEAR COHORT及Years identify birth cohorts."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成数值替换旧真实统计由冻结输入授权，图面明确声明合成性质。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "手指按当前7个量值改变弯曲方向，同时保留与掌部的连接。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一比例通道覆盖全部7个截面，包括最小值、最大值和全部内部值；另核对全部年份刻度、数值文字及六段内部共764行轮廓。指尖、掌部、宽度和甲片作为非数据部件检查关系，不虚构量值。"
+  }
+}

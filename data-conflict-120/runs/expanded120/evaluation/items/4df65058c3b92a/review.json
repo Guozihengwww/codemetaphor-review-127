@@ -1,0 +1,326 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以火箭喷口连接多色年份尾焰，任务点沿左缘，通过直线或波浪线连接操作者。成图可见相同结构、2031–2037七个年份、19个任务点、合成数据提示、月份单位及载人／无人图例。底部密集引线仍可辨认；尾焰中下部有横向纹理接缝。",
+  "summary_zh": "已保存并通过schema校验的review.json。数据、标签、绑定和核心结构通过；仅尾焰材质存在轻微横向接缝。按后续要求未运行submit.py。",
+  "issues": [
+    {
+      "category": "texture_boundary",
+      "severity": "minor",
+      "requirement_id": "M6",
+      "expected_zh": "连续尾焰保持可辨的流动表面及部件衔接。",
+      "observed_zh": "青色、蓝色和红色尾焰中下部出现水平亮暗阶跃与纹理错接；连续轮廓及任务归属仍清楚。",
+      "evidence_zh": "2033至2031主瓣及右侧红色长带内可见横向拼接带；plasma_material.png也有相应行间断层，未改变数据位置。",
+      "bbox_xyxy_normalized": [
+        0.435,
+        0.6,
+        0.96,
+        0.912
+      ]
+    }
+  ],
+  "measurement_notes_zh": "测量image.png原始1230×2000像素。右侧主刻度y为480、672、864、1056、1248、1440、1632、1824，间距192像素/12个月。颜色阈值与连通域检测找到19个任务点，全部反算最大偏差约0.0177个月，即0.0211%满量程。源码仅作旁证；任务数值由位置编码，点径和尾焰宽度不编码。",
+  "uncertainties_zh": "抗锯齿和阈值带来约±1像素的保守定位不确定性，相当于±0.0625个月；最小值2.5个月对应约±2.5%的相对定位不确定性。未检查禁止访问的运行日志、自检或归档记录，因此未独立认证每次capture_render.py执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "E01–E19全部出现；2031–2037任务数依次为3、6、2、3、2、2、1，总计19；Robotic 15、Crewed 4。必需标题、单位和图例完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "19个月数逐项符合data.json，包括79.5、19.5、7.5和2.5；年份计数正确，无正值取整为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "任务、Lab、Program及M/Q对应正确；E02、E08为Q。E12、E15、E17、E19使用载人波浪引线，其余为直线，均能追踪到对应圆点。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "19点最大独立测量偏差约0.0211%满量程，低于3%容差；年份在左侧数据边界按12个月分段。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始生成素材和处理素材，火箭与覆盖尾焰主体的纹理可对认；render.py控制任务位置、色瓣、数量及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "主喷口接触白色过渡焰，过渡焰连接汇聚的年份色带；任务点压在尾焰外缘，通过引线对应操作者。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "19组任务标签、七个年份及计数、单位、图例和脚注可读；2032附近两侧排布未形成明显错绑或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "机身、喷口、连续尾焰、年份主瓣、任务点及操作者引线完整；尾焰外缘实际承载任务时间位置。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、Mission planning time及months since 2031明确主题和指标；脚注解释合成Programs/Labs及月、季中点口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "月球任务、载人／无人和尾焰时间轴关系保留；真实机构、旧年份及资金／研发状态改为合成规划，属于冻结输入允许的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值E19圆点浅色填充约11×10像素，仍可辨其红色尾焰外缘位置和波浪引线；E15与E16点心相隔16像素，保持独立。"
+    }
+  },
+  "semantic_attribution_zh": "真实机构与旧年份转为合成任务属于输入适配，参考意义部分保留不归为输出遗漏。任务位置变化由当前数据驱动。纹理横缝为轻微输出瑕疵；亚像素定位限制单独记录。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "mission_time",
+        "category": "E19 / Lab 01",
+        "expected_value": 2.5,
+        "observed_value": 2.5167,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.0198,
+        "small_value_relative_error_percent": 0.6667,
+        "bbox_xyxy_normalized": [
+          0.296748,
+          0.8895,
+          0.305691,
+          0.8945
+        ],
+        "evidence_zh": "浅色点心约(370.36,1783.73)像素，由可见0与84刻度反算。尺寸指浅色填充高度，不是数值长度。",
+        "uncertainty_zh": "保守定位误差约±1像素；相对误差为点估计，不保证亚像素精度。"
+      },
+      {
+        "series_id": "mission_time",
+        "category": "E01 / Lab 12",
+        "expected_value": 79.5,
+        "observed_value": 79.5167,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.0198,
+        "small_value_relative_error_percent": 0.021,
+        "bbox_xyxy_normalized": [
+          0.781301,
+          0.2735,
+          0.790244,
+          0.2785
+        ],
+        "evidence_zh": "浅色点心约(965.64,551.73)像素，由可见标尺反算。",
+        "uncertainty_zh": "保守定位误差约±1像素，即±0.0625个月。"
+      },
+      {
+        "series_id": "mission_time",
+        "category": "E09 / Lab 06",
+        "expected_value": 41.5,
+        "observed_value": 41.5167,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.0198,
+        "small_value_relative_error_percent": 0.0402,
+        "bbox_xyxy_normalized": [
+          0.515447,
+          0.5775,
+          0.52439,
+          0.5825
+        ],
+        "evidence_zh": "浅色点心约(638.64,1159.73)像素，由可见标尺反算。",
+        "uncertainty_zh": "保守定位误差约±1像素，即±0.0625个月。"
+      },
+      {
+        "series_id": "mission_time",
+        "category": "E02 / Lab 11",
+        "expected_value": 19.5,
+        "observed_value": 19.5167,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.0198,
+        "small_value_relative_error_percent": 0.0855,
+        "bbox_xyxy_normalized": [
+          0.389431,
+          0.7535,
+          0.398374,
+          0.7585
+        ],
+        "evidence_zh": "浅色点心约(484.36,1511.73)像素；季度任务仍按给定中点定位。",
+        "uncertainty_zh": "保守定位误差约±1像素，即±0.0625个月。"
+      },
+      {
+        "series_id": "mission_time",
+        "category": "E08 / Lab 07",
+        "expected_value": 7.5,
+        "observed_value": 7.5167,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.0198,
+        "small_value_relative_error_percent": 0.2222,
+        "bbox_xyxy_normalized": [
+          0.320325,
+          0.8495,
+          0.329268,
+          0.8545
+        ],
+        "evidence_zh": "浅色点心约(399.36,1703.73)像素，由可见标尺反算。",
+        "uncertainty_zh": "保守定位误差约±1像素，即±0.0625个月。"
+      },
+      {
+        "series_id": "mission_time",
+        "category": "E16 / Lab 01",
+        "expected_value": 14.5,
+        "observed_value": 14.5167,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.0198,
+        "small_value_relative_error_percent": 0.1149,
+        "bbox_xyxy_normalized": [
+          0.365854,
+          0.7935,
+          0.374797,
+          0.7985
+        ],
+        "evidence_zh": "浅色点心约(455.36,1591.73)像素；与相邻E15保持16像素纵向间距。",
+        "uncertainty_zh": "保守定位误差约±1像素，即±0.0625个月。"
+      },
+      {
+        "series_id": "mission_count",
+        "category": "全部任务点",
+        "expected_value": 19,
+        "observed_value": 19,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.29,
+          0.27,
+          0.8,
+          0.9
+        ],
+        "evidence_zh": "检测到19个独立浅黄色圆点，并对应全部E01–E19标签。",
+        "uncertainty_zh": "计数不采用连续量满量程误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "火箭喷口与尾焰整体",
+        "required_parts": [
+          "火箭机身",
+          "主喷口",
+          "白色连接焰",
+          "七条年份色带"
+        ],
+        "relationship": "机身连接向下开口的喷口；连接焰贴合喷口下缘，并与彩色尾焰接续。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.814,
+          0.018,
+          0.958,
+          0.29
+        ],
+        "evidence_zh": "喷口下方无背景色断口，色带从连接段连续扩展为年份主瓣。"
+      },
+      {
+        "category": "大时间值E01 / Lab 12",
+        "required_parts": [
+          "2037黄色主瓣",
+          "任务点",
+          "Lab 12标签",
+          "直线引线"
+        ],
+        "relationship": "点位于黄色主瓣左外缘，引线从标签伸至点旁；主瓣向上收束到喷口。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.45,
+          0.239,
+          0.915,
+          0.337
+        ],
+        "evidence_zh": "79.5个月点位于72–84个月的2037段，标签及Program G、M可读。"
+      },
+      {
+        "category": "中间时间值E09 / Lab 06",
+        "required_parts": [
+          "2034橙色主瓣",
+          "任务点",
+          "Lab 06标签",
+          "直线引线"
+        ],
+        "relationship": "点压在2034瓣左边界，水平引线对应左侧标签。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.18,
+          0.563,
+          0.64,
+          0.611
+        ],
+        "evidence_zh": "41.5个月点位于36–48个月的2034段。"
+      },
+      {
+        "category": "最小正值E19 / Lab 01",
+        "required_parts": [
+          "2031红色主瓣",
+          "任务点",
+          "Lab 01标签",
+          "波浪引线"
+        ],
+        "relationship": "圆点靠近零刻度并压在红色尾焰外缘，波浪线终止于点旁。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.055,
+          0.87,
+          0.515,
+          0.913
+        ],
+        "evidence_zh": "圆点高于零刻度约40.27像素；红色瓣、白边、标签及载人波浪线均可辨。"
+      },
+      {
+        "category": "密集任务E15与E16",
+        "required_parts": [
+          "两个任务点",
+          "E15右侧波浪引线",
+          "E16左侧直线引线",
+          "2032蓝色主瓣"
+        ],
+        "relationship": "任务点上下分离，引线分向两侧，并以线型区分任务角色。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.055,
+          0.773,
+          0.81,
+          0.816
+        ],
+        "evidence_zh": "两点纵向相距16像素；15.5和14.5个月标签均可追踪。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入指定合成七年任务、Labs/Programs身份及2031起84个月线性时间，允许更新年份、点位与非数据布局。",
+      "output_added_or_lost_meaning_zh": "保留未来月球任务时间轴及载人／无人角色；真实资金和研发状态改为合成规划，属于允许的输入适配。",
+      "visible_inscription_evidence_zh": "可见Lunar Mission Timeline、SYNTHETIC DATA、Mission planning time、Linear 0–84 months since 2031、Robotic (15)、Crewed (4)，脚注说明合成身份与尾焰宽度仅作装饰。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实机构和旧年份替换为明示的合成身份及2031–2037规划。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "任务随当前月份重新定位，E01在2037、E02在2032、E08在2031，年份计数相应更新。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "圆点质心受抗锯齿和阈值影响；未用正确文字代替小值几何测量。"
+      },
+      {
+        "cause": "none",
+        "evidence_zh": "当前语义及必需部件未见遗漏；轻微材质横缝单独记为minor。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一连续定量通道为任务点纵向月份位置。已检测并反算全部19点，详细列出最小、最大、中间、季度及密集区代表共6项，并记录点数；全部标签、年份计数及任务线型另行核对。"
+  }
+}

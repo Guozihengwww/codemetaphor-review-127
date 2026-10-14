@@ -1,0 +1,326 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为六行小兽计数与大炮发射旅行人物的组合。成图两组各六个年份及十二个数值均可见；小兽末只采用彩灰分界，旅行者腰部有青色圆点。低值人物接近零线，高值人物位于右上。标题、合成声明、统计角色和单位可读。1980年人物行李箱顶部似被标签底色截断。",
+  "summary_zh": "数据、标签及主要物体关系符合要求，仅1980年行李箱存在局部遮挡。完整评审已保存为review.json并通过schema校验；未运行submit.py。",
+  "issues": [
+    {
+      "category": "occlusion_layering",
+      "severity": "minor",
+      "requirement_id": "M6",
+      "expected_zh": "人物及行李的连接和轮廓应保持可辨，标签避免截断部件。",
+      "observed_zh": "1980年旅行者行李箱上部及握持区域被标签底色遮住；人物、腰点和数值仍清楚。",
+      "evidence_zh": "x约1655—1705、y约740—795处出现水平截断；像素检查显示y760—765没有该箱体的橙棕色，y766开始出现连续箱体。代码中后绘制的标签底色矩形佐证遮挡来源。",
+      "bbox_xyxy_normalized": [
+        0.8225,
+        0.509003,
+        0.855,
+        0.552632
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接分析2000×1444原图。A逐排计数，比较末兽与完整兽的像素分界，满量程19800事件。B独立提取腰点圆心，按声明的零线1200及1000像素对应12000000人换算。全部测量支持3%满量程容差；像素估计不代表同等相对精度。",
+  "uncertainties_zh": "9600人的位移仅0.8像素，相对精度受抗锯齿和定位误差限制。按要求未检查历史、日志或自检，不能确认历次归档执行情况；仅确认归档代码存在。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "A、B各六个年份和六个标记完整；A的1940与B的1950正确区分。标题、合成声明、图例、单位和辅助面板齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A六值3420、10620、3510、19080、7020、4860及合计48510正确；B六值42000、540000、9600、84000、4200000、10800000正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A年份、兽列与数值逐行绑定；B人物腰点与年份逐列绑定，低值标签有引导线。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "A整兽数1、5、1、10、3、2，末兽分数吻合。B圆心约y1196.50、1155.00、1199.17、1193.00、850.00、300.00；横向间距约235像素。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材表和旅行者素材，三类素材在成图中实质可见。代码控制图标数量、分数边界、人物腰点及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "兽体承担单位与分数计数，人物腰点承担人数位置。炮口、烟圈和首个人物保留向右发射关系；行李局部遮挡不影响数据编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需标题、统计角色、数值、单位、年份、刻度和说明均可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "双面板、完整及分数兽、大炮轮架与炮管、烟圈、旅行人物和腰部锚点均保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "事件计数、出境旅行者、事件/人数单位、线性刻度、各自年份和等距非实际时间间隔均明确。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考真实犯罪统计被输入明确适配为合成事件统计；原真实统计含义仅部分保留，发射动作和图像计数关系保留。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "小值人物及其部件仍完整，但9600人的腰点距零线不足1像素，肉眼难以独立辨认正位移；未见人为抬高。"
+    }
+  },
+  "semantic_attribution_zh": "真实统计改为合成Incident count属于允许的输入适配；数量及高度变化由当前数据驱动。最小人数的辨识限制来自分辨率。输出自身仅造成行李箱局部遮挡，未丢失当前统计角色、单位或主要发射关系。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "incidents",
+        "category": "1900",
+        "expected_value": 3420,
+        "observed_value": 3417.2,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 57.5,
+        "full_scale_error_percent": 0.0142,
+        "small_value_relative_error_percent": 0.082,
+        "bbox_xyxy_normalized": [
+          0.099,
+          0.193906,
+          0.174,
+          0.252078
+        ],
+        "evidence_zh": "1只完整兽及末兽约57.5/64宽度着色；extent为末兽彩色宽度。",
+        "uncertainty_zh": "抗锯齿分界约±1像素，对应约±28事件。"
+      },
+      {
+        "series_id": "incidents",
+        "category": "1960",
+        "expected_value": 19080,
+        "observed_value": 19082.8,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 38.5,
+        "full_scale_error_percent": 0.0142,
+        "small_value_relative_error_percent": 0.015,
+        "bbox_xyxy_normalized": [
+          0.099,
+          0.42036,
+          0.561,
+          0.478532
+        ],
+        "evidence_zh": "10只完整兽及末兽约38.5/64宽度着色。",
+        "uncertainty_zh": "分界约±1像素，属于近似像素测量。"
+      },
+      {
+        "series_id": "incidents",
+        "category": "1990",
+        "expected_value": 4860,
+        "observed_value": 4851.6,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 44.5,
+        "full_scale_error_percent": 0.0426,
+        "small_value_relative_error_percent": 0.174,
+        "bbox_xyxy_normalized": [
+          0.099,
+          0.57133,
+          0.217,
+          0.629501
+        ],
+        "evidence_zh": "2只完整兽及末兽约44.5/64宽度着色。",
+        "uncertainty_zh": "分界约±1像素，不能视为精确事件数读取。"
+      },
+      {
+        "series_id": "travellers",
+        "category": "1950",
+        "expected_value": 9600,
+        "observed_value": 9950,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 0.829,
+        "full_scale_error_percent": 0.00292,
+        "small_value_relative_error_percent": 3.646,
+        "bbox_xyxy_normalized": [
+          0.575,
+          0.823525,
+          0.585,
+          0.837376
+        ],
+        "evidence_zh": "独立分割青色腰点，圆心y约1199.171；extent为距声明零线的高度。",
+        "uncertainty_zh": "约±0.5像素对应±6000人；所列相对差仅为中心估计，不能证明小值的真实相对误差。"
+      },
+      {
+        "series_id": "travellers",
+        "category": "1980",
+        "expected_value": 4200000,
+        "observed_value": 4200020,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 350.002,
+        "full_scale_error_percent": 0.00017,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.81,
+          0.581716,
+          0.82,
+          0.595566
+        ],
+        "evidence_zh": "青色腰点圆心y约849.998，距零线约350像素。",
+        "uncertainty_zh": "定位及零线光栅化约±0.5像素；相对误差字段经舍入，不表示绝对无误差。"
+      },
+      {
+        "series_id": "travellers",
+        "category": "1990",
+        "expected_value": 10800000,
+        "observed_value": 10800010,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 900.001,
+        "full_scale_error_percent": 8e-05,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.9275,
+          0.20083,
+          0.9375,
+          0.214681
+        ],
+        "evidence_zh": "青色腰点圆心y约299.999，距零线约900像素。",
+        "uncertainty_zh": "定位约±0.5像素；中心估计的微小误差不代表同等精度保证。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "A最小正值1900",
+        "required_parts": [
+          "兽头",
+          "躯干",
+          "尾巴",
+          "四肢",
+          "彩灰分界"
+        ],
+        "relationship": "各部件保持连接，末兽彩灰区域位于同一完整轮廓内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.099,
+          0.193906,
+          0.174,
+          0.252078
+        ],
+        "evidence_zh": "一只全彩兽加约90%彩兽，灰色窄条保留右端轮廓。"
+      },
+      {
+        "category": "A大值1960",
+        "required_parts": [
+          "十只完整兽",
+          "分数兽",
+          "灰色余部"
+        ],
+        "relationship": "重复完整兽与同轮廓内的分数着色共同计数。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.099,
+          0.42036,
+          0.561,
+          0.478532
+        ],
+        "evidence_zh": "末兽约60%着色，其灰色头、躯干和脚与彩色部分接续。"
+      },
+      {
+        "category": "B炮口与首个人物",
+        "required_parts": [
+          "炮管",
+          "炮口",
+          "轮架",
+          "烟圈",
+          "旅行者"
+        ],
+        "relationship": "轮架支承炮管，炮口朝右，烟圈连接首个人物的飞行方向。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.06,
+          0.786011,
+          0.405,
+          0.955679
+        ],
+        "evidence_zh": "炮口约(518,1200)，烟圈及首个人物脚部依次位于右侧。"
+      },
+      {
+        "category": "B最小正值1950",
+        "required_parts": [
+          "头与躯干",
+          "腰带及圆点",
+          "四肢",
+          "手与行李箱"
+        ],
+        "relationship": "身体部件相连，前伸手握箱，青点位于腰带区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.525,
+          0.787396,
+          0.64,
+          0.848338
+        ],
+        "evidence_zh": "完整飞行人物和手箱连接可辨；亚像素高度限制不等于物体身份丢失。"
+      },
+      {
+        "category": "B大值1990",
+        "required_parts": [
+          "头与帽子",
+          "躯干和腿",
+          "腰点",
+          "上举手与箱"
+        ],
+        "relationship": "人物向上旋转，手与箱保持连接，腰点仍注册于身体。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.8975,
+          0.125346,
+          0.945,
+          0.284626
+        ],
+        "evidence_zh": "脚至行李箱的轮廓连续，腰点距零线约900像素。"
+      },
+      {
+        "category": "B内部大值1980",
+        "required_parts": [
+          "上举手",
+          "行李箱",
+          "躯干与腰点"
+        ],
+        "relationship": "手箱连接应可辨，标签应避开箱体。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.77,
+          0.509003,
+          0.855,
+          0.649584
+        ],
+        "evidence_zh": "躯干与腰点清楚；箱体上部及握持区域被水平标签底色截断。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结输入明确采用合成事件及旅行者数据，不要求原真实值、极值或固定涨跌。",
+      "output_added_or_lost_meaning_zh": "当前统计口径和发射关系保留；增加了腰点、灰色不计数和等距年份说明。局部行李遮挡未改变统计含义。",
+      "visible_inscription_evidence_zh": "可读SYNTHETIC DATA、INCIDENT COUNT、OUTBOUND TRAVELLERS、腰部圆点=人数位置、人物大小不编码及非实际时间间隔。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考犯罪真实统计被明确改为合成Incident count。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "兽数、着色分数和腰点高度依据当前数据变化。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小人数仅对应0.8像素位移，限制相对精度与肉眼辨识。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "1980年行李箱上部被后绘制标签底色局部遮挡。"
+      }
+    ],
+    "measurement_coverage_zh": "已测量A全部六行及B全部六个腰点；此处列出代表性最小、大值和内部值，review.json保存全部十二项。所有必需年份、数值、单位、图例和合计另行逐一核对。"
+  }
+}
