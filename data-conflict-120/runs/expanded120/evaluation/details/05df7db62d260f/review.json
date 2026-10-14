@@ -1,0 +1,366 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：八个绿色瓶形按US、GB、JP、DE、IT、AU、BE、CH排列并共用底线；文字说明2023年香槟出口市场、百万瓶单位及整体出口总量。\n成图：米白底、深绿色标题，SYNTHETIC DATA与出口市场说明清楚；八类顺序一致，数值27.8、11.44136、4.708803、1.937954、0.797584、0.328253、0.135096、0.0556均可读，总数为47.20465 million bottles。写实金色瓶口和瓶颈连接绿色肩部及瓶身，纸标签位于瓶身内，瓶底落在同一零线。大瓶部件清楚，右侧小瓶逐渐压扁，BE和CH在原尺寸下仅见薄小标记，不能确认全部部件。图面声明完整瓶高使用共同0–30线性尺度、宽度不编码数据；数值和国家名称未见互相遮挡。",
+  "summary_zh": "数据、标签、共同线性瓶高及主体融合正确。BE、CH的完整瓶体部件在原图分辨率下仅部分保留，属于轻微可辨性限制；未发现重大缺陷。",
+  "issues": [
+    {
+      "category": "metaphor_identity",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "保留瓶口、颈、肩、瓶身与标签的连接关系；微小值仍按真实高度绘制，并单独评价部件可辨性。",
+      "observed_zh": "BE、CH可定位为小标记，但不能分别辨认瓶口、颈、肩和纸标签的完整关系。",
+      "evidence_zh": "2000×2000原图中，BE在x≈1594、y≈1610–1614约高5px；CH在x≈1814、y≈1613–1614约高2px。仅剩金绿浅色薄痕，数字清楚。该限制与真实微小高度及像素分辨率相符，不是抬高或漏画证据。",
+      "bbox_xyxy_normalized": [
+        0.791,
+        0.804,
+        0.912,
+        0.808
+      ]
+    }
+  ],
+  "measurement_notes_zh": "仅测指定image.png。原图2000×2000；右侧网格位于y=505、690、875、1060、1245、1430，零线约y=1615，得到37px/百万瓶、满量程1110px。局部排除数字、引线和地面线，以相对底色(245,243,235)的最大RGB差>64确定瓶体行支持；检查其他阈值以识别边缘不确定性。US至AU像素换算点估计偏差均小于满量程0.05%，远低于3%。BE、CH只报告可见像素高度，不声称亚像素精度。源码公式仅作旁证。",
+  "uncertainties_zh": "BE、CH无法可靠恢复连续高度及完整部件；AU的约1px边界不确定性已足以显著影响相对误差。未读取运行日志或自检记录，因而未独立验证capture_render.py实际执行历史；所供源码、素材与图面足以核对当前可见素材使用及几何控制。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八个市场US、GB、JP、DE、IT、AU、BE、CH按输入顺序出现，各有数值及标记；国家全名、单位、合成数据提示及合计齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "八个数值逐一匹配27.8、11.44136、4.708803、1.937954、0.797584、0.328253、0.135096、0.0556；合计47.20465准确，无正数被写为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值、瓶体、国家代码和全名同列对齐；小值以短引线定位，未见串列或错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素测量得到八瓶高约1029、423、174、72、30、12、5、2px；与共同0–30尺度相容，未发现超过33.3px即满量程3%的偏差。微小值相对精度另保留不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "查看raw_01.png及bottle_cutout.png后，成图金箔纹理、绿色玻璃和米白标签可与素材对应；render.py加载该素材并按输入值变换完整瓶高、绘制文字，生成素材实质构成数据主体。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界就是金色封口顶端至瓶底的整瓶高度，并非普通柱形旁置瓶图；各瓶落在共同零线，标签贴附瓶身，未见破坏关系的遮挡、接缝或透视错位。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成提示、出口市场角色、million bottles单位、刻度、八个精确值和全名均清晰；注释卡没有遮挡数据瓶。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "US、GB、JP及DE可辨封口—颈—肩—瓶身连接、瓶身内纸标签及接地关系；IT仍具完整小瓶形，AU部件分界较弱，BE、CH无法逐项确认。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Champagne shipments、Synthetic champagne shipments by export market及million bottles明确表达香槟出口市场出货量；国家代码和全名明确类别角色，合计仅指所示八市场。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的香槟出口市场数量比较及瓶高承载数量关系。2023真实统计、旧总额和旧数值由冻结输入明确替换为合成示例；同一主题与类别角色未丢失。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "IT约30px仍能识别瓶体和纸标；AU约12px保留金色上部、深绿基部与浅色带。BE约5px、CH约2px只剩薄痕，位置及非零存在可见，完整部件与亚像素精度不能确认。"
+    }
+  },
+  "semantic_attribution_zh": "参考真实年份、金额和旧统计数值的移除属于冻结输入许可的合成数据适配，当前出口市场出货量主题完整保留。瓶体高度急剧缩小来自当前数据，BE、CH的部件不可辨主要归因于分辨率；没有证据表明输出遗漏类别或改变指标。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "shipment_volume",
+        "category": "US",
+        "expected_value": 27.8,
+        "observed_value": 27.810811,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1029,
+        "full_scale_error_percent": 0.036036,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.0845,
+          0.293,
+          0.1895,
+          0.8075
+        ],
+        "evidence_zh": "原图局部瓶体在对底色最大RGB差>64时占据y=586至1614行，约1029px高；每百万瓶37px来自成图网格测量。由像素高度换算近似量值，数值标签另行核对。",
+        "uncertainty_zh": "边界和抗锯齿约有1px不确定性；报告的是近似像素测量。"
+      },
+      {
+        "series_id": "shipment_volume",
+        "category": "GB",
+        "expected_value": 11.44136,
+        "observed_value": 11.432432,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 423,
+        "full_scale_error_percent": 0.029759,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.596,
+          0.279,
+          0.8075
+        ],
+        "evidence_zh": "原图局部瓶体在对底色最大RGB差>64时占据y=1192至1614行，约423px高；每百万瓶37px来自成图网格测量。由像素高度换算近似量值，数值标签另行核对。",
+        "uncertainty_zh": "边界和抗锯齿约有1px不确定性；报告的是近似像素测量。"
+      },
+      {
+        "series_id": "shipment_volume",
+        "category": "JP",
+        "expected_value": 4.708803,
+        "observed_value": 4.702703,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 174,
+        "full_scale_error_percent": 0.020334,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.3375,
+          0.7205,
+          0.3765,
+          0.8075
+        ],
+        "evidence_zh": "原图局部瓶体在对底色最大RGB差>64时占据y=1441至1614行，约174px高；每百万瓶37px来自成图网格测量。由像素高度换算近似量值，数值标签另行核对。",
+        "uncertainty_zh": "边界和抗锯齿约有1px不确定性；报告的是近似像素测量。"
+      },
+      {
+        "series_id": "shipment_volume",
+        "category": "DE",
+        "expected_value": 1.937954,
+        "observed_value": 1.945946,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 72,
+        "full_scale_error_percent": 0.02664,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4545,
+          0.7715,
+          0.4795,
+          0.8075
+        ],
+        "evidence_zh": "原图局部瓶体在对底色最大RGB差>64时占据y=1543至1614行，约72px高；每百万瓶37px来自成图网格测量。由像素高度换算近似量值，数值标签另行核对。",
+        "uncertainty_zh": "边界和抗锯齿约有1px不确定性；报告的是近似像素测量。"
+      },
+      {
+        "series_id": "shipment_volume",
+        "category": "IT",
+        "expected_value": 0.797584,
+        "observed_value": 0.810811,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 30,
+        "full_scale_error_percent": 0.044089,
+        "small_value_relative_error_percent": 1.6584,
+        "bbox_xyxy_normalized": [
+          0.569,
+          0.7925,
+          0.585,
+          0.8075
+        ],
+        "evidence_zh": "原图局部瓶体在对底色最大RGB差>64时占据y=1585至1614行，约30px高；每百万瓶37px来自成图网格测量。由像素高度换算近似量值，数值标签另行核对。",
+        "uncertainty_zh": "边界约有1px不确定性；对该小值相对影响明显，点估计误差不是精度保证。"
+      },
+      {
+        "series_id": "shipment_volume",
+        "category": "AU",
+        "expected_value": 0.328253,
+        "observed_value": 0.324324,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 12,
+        "full_scale_error_percent": 0.013096,
+        "small_value_relative_error_percent": 1.1968,
+        "bbox_xyxy_normalized": [
+          0.6815,
+          0.8015,
+          0.6925,
+          0.8075
+        ],
+        "evidence_zh": "原图局部瓶体在对底色最大RGB差>64时占据y=1603至1614行，约12px高；每百万瓶37px来自成图网格测量。由像素高度换算近似量值，数值标签另行核对。",
+        "uncertainty_zh": "边界约有1px不确定性；对该小值相对影响明显，点估计误差不是精度保证。"
+      },
+      {
+        "series_id": "shipment_volume",
+        "category": "BE",
+        "expected_value": 0.135096,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 5,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.793,
+          0.805,
+          0.801,
+          0.8075
+        ],
+        "evidence_zh": "原图局部瓶体在对底色最大RGB差>64时占据y=1610至1614行，约5px高；每百万瓶37px来自成图网格测量。仅报告离散像素支持，不恢复连续量值。",
+        "uncertainty_zh": "极小标记受抗锯齿和阈值影响，无法可靠恢复亚像素高度或部件；量值与误差留空。"
+      },
+      {
+        "series_id": "shipment_volume",
+        "category": "CH",
+        "expected_value": 0.0556,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.904,
+          0.8065,
+          0.91,
+          0.8075
+        ],
+        "evidence_zh": "原图局部瓶体在对底色最大RGB差>64时占据y=1613至1614行，约2px高；每百万瓶37px来自成图网格测量。仅报告离散像素支持，不恢复连续量值。",
+        "uncertainty_zh": "极小标记受抗锯齿和阈值影响，无法可靠恢复亚像素高度或部件；量值与误差留空。"
+      },
+      {
+        "series_id": "shipment_volume",
+        "category": "TOTAL ACROSS THE 8 SHOWN MARKETS",
+        "expected_value": 47.20465,
+        "observed_value": 47.20465,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.517,
+          0.35,
+          0.811,
+          0.442
+        ],
+        "evidence_zh": "总计卡可读47.20465 million bottles；八个输入值用十进制求和为47.204650，数值相等。",
+        "uncertainty_zh": "总计只以文字呈现，不属于几何编码。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "US",
+        "required_parts": [
+          "封口",
+          "颈",
+          "肩",
+          "瓶身",
+          "纸标签",
+          "共同地面"
+        ],
+        "relationship": "封口向下连接细颈，颈经外扩肩连至瓶身；标签附着瓶身内部，瓶底接共同零线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.0845,
+          0.293,
+          0.1895,
+          0.8075
+        ],
+        "evidence_zh": "金色封口、长颈和绿色肩身连续；米白标签被瓶身轮廓包围，底端约y=1615；完整顶底边界承担出货量。"
+      },
+      {
+        "category": "JP",
+        "required_parts": [
+          "封口",
+          "颈",
+          "肩",
+          "瓶身",
+          "纸标签",
+          "共同地面"
+        ],
+        "relationship": "上部封口和短颈连续接入肩身，浅色标签位于下部瓶身内，底部与US共线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3375,
+          0.7205,
+          0.3765,
+          0.8075
+        ],
+        "evidence_zh": "约174px瓶高下，各主要部件仍可分辨，标签未浮到瓶身外，未被数值或地面遮挡。"
+      },
+      {
+        "category": "IT",
+        "required_parts": [
+          "封口及颈",
+          "肩与瓶身",
+          "纸标签",
+          "共同地面"
+        ],
+        "relationship": "金色上部连接绿色外扩肩身，浅色标签留在瓶身区域，底部接地。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.569,
+          0.7925,
+          0.585,
+          0.8075
+        ],
+        "evidence_zh": "原尺寸约30px高，仍可辨完整小瓶轮廓、上部金色与下部纸标；宽度适配未增加数据高度。"
+      },
+      {
+        "category": "AU",
+        "required_parts": [
+          "封口",
+          "颈",
+          "肩",
+          "瓶身",
+          "纸标签",
+          "共同地面"
+        ],
+        "relationship": "金色上部与浅色带及深绿底部连成小标记，但细颈和肩的分界不清。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.6815,
+          0.8015,
+          0.6925,
+          0.8075
+        ],
+        "evidence_zh": "约12px高，浅色带和深色基部可见；瓶口、颈肩及标签附着细节不能完整逐项辨认。"
+      },
+      {
+        "category": "BE / CH",
+        "required_parts": [
+          "封口",
+          "颈",
+          "肩",
+          "瓶身",
+          "纸标签",
+          "共同地面"
+        ],
+        "relationship": "薄小痕迹位于共同地面并各自对准类别；内部连接及标签包含关系无法可靠辨认。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.791,
+          0.804,
+          0.912,
+          0.808
+        ],
+        "evidence_zh": "BE约5px、CH约2px高，数字与定位线可读，但不能据此证明瓶体内部全部部件可见。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "输入明确使用合成香槟出货量；允许替换参考真实数值、旧统计年份及总体金额，并按新数据调整瓶形非数据宽度。",
+      "output_added_or_lost_meaning_zh": "当前主题、出口市场类别、百万瓶指标及市场间比较完整；未增加真实统计宣称。只在极小瓶中失去可辨的部件细节，未失去数字或类别。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Champagne shipments；Synthetic champagne shipments by export market；million bottles；TOTAL ACROSS THE 8 SHOWN MARKETS；Full height encodes volume on a shared 0–30 scale; width carries no data。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考2023真实出口统计被当前合成出货量替换；图面明确标注合成并将合计限定为八市场，符合冻结主题。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前数值从27.8降至0.0556；完整瓶高同尺度缩小，宽度不承载数据并有图面说明。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "BE、CH分别仅约5px、2px高，连续部件关系不能逐项辨认；数字正确不被当作微小结构正确的替代证据。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一几何通道的全部八个瓶高，含最大US、内部JP/DE及最小正值CH；合计另以numeric_text_only记录。全部类别、数值、单位和必要标题逐项核对。未把非数据宽度、纹理或总计文字当作几何测量；微小值连续高度未强行估计。"
+  }
+}
