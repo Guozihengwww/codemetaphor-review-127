@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以油桶彩色侧壁分层承载产品份额，外围用途插画连接对应区域。成图保留金属桶盖、筋纹、底圈和接触阴影；11层、类别、百分比及用途插画齐全。合成数据标识、主题、每日总量口径和单位清楚。底部五条薄层可分色辨认，未见必要标签缺失或大面积遮挡。",
+  "summary_zh": "数据、标签和油桶分层关系均正确。仅桶底两侧存在轻微矩形裁切接缝。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [
+    {
+      "category": "texture_boundary",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "桶身、底圈及接触阴影保持连贯的物体外观。",
+      "observed_zh": "桶底两侧灰色素材在白底上出现矩形上沿，局部贴片边界可见；不影响层高、物体身份或数据解释。",
+      "evidence_zh": "接缝约位于y=1650。实际像素在x=1210处从y=1648的RGB(255,255,255)变为y=1651的(183,183,184)。源码将底缘素材从(455,1650)起矩形贴入，与可见位置一致；贴入坐标来自源码。",
+      "bbox_xyxy_normalized": [
+        0.267,
+        0.748,
+        0.733,
+        0.811
+      ]
+    }
+  ],
+  "measurement_notes_zh": "读取1700×2200成图像素，以色度识别纵向色带，并交叉核对多个列。x=1150处侧壁高度约1210像素，各层厚度约508、252、152、91、73、49、23、18、17、16、11像素，对应41.983%、20.826%、12.562%、7.521%、6.033%、4.050%、1.901%、1.488%、1.405%、1.322%、0.909%。最大近似偏差0.05个百分点。源码另证实统一弧线平移、按累计份额划层，无最小高度设置；未以公式代替像素核验。",
+  "uncertainties_zh": "抗锯齿界面有约1像素定位不确定度。未查看被禁止的运行记录，无法独立确认capture_render.py实际执行历史；当前图像的素材使用和几何已有直接证据。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11个类别、11层及11组用途插画完整，指定用途主体均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部百分比与输入一致，总计100.0%，类别数11正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "层内标签及底部五组引线正确绑定类别；用途插画连接对应层。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素取样最大近似偏差0.05个百分点，符合3个百分点容差；桶盖不计入数据高度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张原始素材，桶盖、金属纹理及用途主体在成图中实质使用；源码控制层界、引线和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "份额直接占据金属桶身侧壁，用途图注接入对应层；局部接缝未破坏融合。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成标识、指标、单位及11项类别和值均清楚可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "金属盖连接连续分层侧壁，底圈与接触阴影相接，外围用途插画连接对应数据区域。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题及副标题明确表达石油产品用途与合成每日总量份额；插画不构成额外数量系列。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的石油产品份额与用途关系；真实统计背景按冻结输入替换为合成每日总量。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "底部五个薄层约23、18、17、16、11像素，连续桶身区域、边界和引线落点仍可辨，未人为加厚。"
+    }
+  },
+  "semantic_attribution_zh": "主题及产品份额、用途角色保留。真实统计背景改为合成口径由冻结输入授权，不属于输出语义损失。输出仅有桶底局部裁切瑕疵；小层精细厚度判断受约1像素边缘分辨率限制。"
+}

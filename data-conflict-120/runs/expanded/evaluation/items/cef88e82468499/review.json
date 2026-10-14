@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以方格纸上的前臂、腕部和右向握拳承载年数。待评图可见七行国家或国家组、六条完整手臂，数值为22.6、20.8、19.4、15.6、12.7、11.8；Country J标0.0且无手臂。共同零点、0–25年份轴、主题、合成提示和分组说明清楚，未见腕部断开或标签遮挡。",
+  "summary_zh": "通过。数据、绑定、结构与主题完整，实体臂长符合容差。已保存并校验review.json；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量原分辨率image.png：0与25年刻度中心分别为x=470、1490，比例40.8像素/年。六条手臂的可见端点换算约22.56、20.77、19.40、15.60、12.66、11.80年，最大偏差约占满量程0.163%，低于3%容差。改变色彩分割阈值，端点变化不超过1像素。零值行未检出手臂。源码另外确认线性映射及前臂缩放，未以公式代替像素核查。",
+  "uncertainties_zh": "色彩分割可能排除最外层深色轮廓及抗锯齿，端点约有1–2像素识别误差。仅阅读capture_render.py，未检查执行历史，不能确认其实际运行。本例无接近像素分辨率的正值，不能外推更小数值的可辨性。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七行按输入顺序完整呈现，组内成员齐全，零值行保留。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "七个数值逐项准确，轴范围0–25，YEARS单位及SYNTHETIC DATA提示清楚。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "国家标签、同行手臂和端点数值一一对应；底注明确组内各国同值且不相加。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实体端点的最大测量偏差约占满量程0.163%；零值未添加最小拳头。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的肤色、纹理、指甲与握拳轮廓在最终主体中清楚可辨；源码读取切出的手臂素材并控制长度和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "从共同零点到拳头实体端点的全长承担数值编码。前臂、腕部和握拳连续连接，方格位于主体后方，无破坏结构的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、类别、数值、系列、单位、合成提示和统计口径均可读，无裁切或相互遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "六条前臂从左侧零点伸向右侧，经腕部连接握拳；方格纸、年份轴和类别分组保留。零值按要求不画实体。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "女性国家元首任期主题、虚构国家角色、年数指标和单位明确；分组值未被解释为成员年数之和。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图的主题、国家比较角色及握拳臂长编码保留。现实国家和数值替换为虚构国家与合成值，属于冻结输入指定的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最短正值11.8年仍有约481像素臂长，前臂、腕部与握拳可辨；0.0行无实体，有数值和说明。"
+    }
+  },
+  "semantic_attribution_zh": "未观察到输出造成的主题、指标或物体数据关系丢失。现实国家及统计值的替换来自冻结输入，主题本身未改变。不推断参考图额外作者意图；像素边缘存在有限测量不确定性。"
+}

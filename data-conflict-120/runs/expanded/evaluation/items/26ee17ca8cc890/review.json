@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：方格纸上有侧视俯身跳水者，左侧脚腿抬升到泳裤处的髋峰，再沿躯干和前伸手臂向右下降；红泳帽、头颈、蓝泳裤和底部水面可见，标题为 Greek GDP Per Capita。指定成图：保留同类人体与水面关系，折线与十个圆点从左脚经腿、髋、躯干至右手，峰点为2008年31,200。十期年份2000—2018、十个给定数值、0—35,000刻度、GDP per capita与USD per person均可读；显著标注SYNTHETIC DATA。头颈与肩部相连，双腿和双臂以重叠轮廓表现；未见明显断肢、折线离体或数值遮蔽。底部水面与零线重合，最小值5,900的圆点位于右手内且明显高于零线。",
+  "summary_zh": "十期数据、单位、年份绑定及跳水者与数据路径的融合均保留，几何误差远低于容差。17,100标签局部遮住折线，属轻微遮挡。",
+  "issues": [
+    {
+      "category": "occlusion_layering",
+      "severity": "minor",
+      "requirement_id": "M2",
+      "expected_zh": "逐点直线连接的唯一数值路径在人体内保持可追踪。",
+      "observed_zh": "2014年的17,100标签底片遮住2014—2016线段的一小段及其下方手臂纹理；点位与走势仍可辨。",
+      "evidence_zh": "原尺寸局部查看可见折线在标签上缘进入、下缘重新出现，中间约44像素高的区域被浅色底片遮住，位置约为x1490—1525、y1150—1194。源码也显示标签在折线之后绘制。",
+      "bbox_xyxy_normalized": [
+        0.698,
+        0.574,
+        0.768,
+        0.599
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接测量2000×2000成图：左轴刻度y为480、650、820、990、1160、1330、1500、1670，分别对应35,000至0。十个红色圆心像素簇的x从249.5至1779.5、等距170；按年份顺序y为1288.675、1030.5、816、673.5、608.675、724.5、880.675、1088、1302.5、1469。由这些像素位置及可见刻度反算，最大绝对偏差约17.7 USD，即满量程0.051%，低于3%容差。最小值5,900距零线约201像素，目标200.6像素。另据源码，年份线性映射至250—1780，金额线性映射至1670—480，人体通过同组锚点变形；此项为代码证据，不替代像素测量。",
+  "uncertainties_zh": "圆心质心及抗锯齿带来约1像素以内的测量不确定性。参考图未明确说明人体哪一条外缘承担精确统计值，当前按冻结的唯一折线通道评估。依限制未查看运行日志或自检，不能独立确认全部历史渲染均经capture_render.py执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "2000至2018每两年一期，共10个年份、10个数据点及一个GDP per capita系列完整出现。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次可读11,200、18,800、25,100、29,300、31,200、27,800、23,200、17,100、10,800、5,900，与输入逐项一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各圆点与对应年份垂直对齐，数值邻接或由短引线连接；2008峰点绑定31,200，无串位。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素标定确认共同线性零线与等距年份，最大点位误差约满量程0.051%；可见折线依序连接全部点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png的皮肤纹理、红泳帽及带浅色斜带的深蓝泳裤在成图主体中可辨；diver_warped.png与主体对应。render.py控制点位、人体变形和文字，capture_render.py包含完整渲染保存逻辑。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据路径沿脚、腿、髋、躯干、肩臂至手穿行，圆点位于人体内；人体实际承载路径。水面上沿对应共同零线，标签仅有一处轻微遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题标题、SYNTHETIC DATA、GDP per capita、USD per person、Year、全部数值及刻度清晰，图例明确说明高度编码与非定量人体厚度。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "左脚与重叠双腿连至泳裤包覆的髋部，髋连躯干及右侧肩臂，手臂延伸到右下双手；头颈接肩，红帽覆盖头部。人体悬于底部水面上方，位于方格纸坐标中。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题及说明明确表达经济产出按人计量、单位USD per person和年份序列；水面以上折线高度表示人均GDP，并明确为非真实国家统计的合成数据。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "人均GDP时间变化与跳水姿态融合的含义保留；参考的希腊特定国家语境改为非国别合成示例，属于冻结输入允许的语义改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值5,900的圆点及相连线段在右手内可辨，距零线约201像素；其手部轮廓仍可识别，无需靠数值文字推定几何，也未见最小值被人为放大。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、指标、单位及人体承载关系未见输出层语义丢失。希腊语境改为合成非国别数据归于输入改编，reference_meaning的partial不计为生成缺陷。参考外缘的旧精确编码存在解释不确定性，当前以冻结折线定义为准；本图最小数据的高度和手部关系未受分辨率限制。"
+}

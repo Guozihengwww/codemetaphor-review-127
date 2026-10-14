@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以黑色枯树和火色树干下段承载年度森林损失。待评图可见23棵有主干、枝梢的树，橙黄下段与黑色上段相接，共用零基线；有0–30刻度、年度和百万公顷单位。标题、SYNTHETIC DATA、两来源图例、完整年度数值表均可读；2016年29.7被标为最高总量。未见明显文字遮挡或树体与数据图分离，精确边界待核。",
+  "summary_zh": "23个年度及两类来源完整，数值、标签绑定和可见堆叠高度符合冻结要求。焦木主干、枝梢与火色下段直接承载数据，主题、单位和合成数据身份清楚，未发现需列为问题的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "源码设定基线y=1570、比例34像素/百万公顷，0–30满量程为1020像素，3%容差30.6像素。另对image.png原始像素检测：逐年45像素宽条带内取深色主连通区域，检测顶端与数据推导目标差0.6–12.4像素（最高约1.22%满量程）；主干中心9列的橙色起点中位数与目标分界差不超过0.6像素。阈值检测会漏掉浅色、细碎的树梢抗锯齿像素，不能把这些偏差直接解释为树高误差。2001年火色段约58像素，对应目标57.8像素；最大总量29.7可容纳于共同0–30标尺。",
+  "uncertainties_zh": "细枝端点受抗锯齿与分割阈值影响，逐像素边缘位置存在数像素不确定性；未见影响容差判断或物体辨认的证据。依限制未查看运行日志、历史或自检，无法独立确认capture_render.py的实际调用历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "2001–2023共23棵树及23列表格完整；火灾、非火灾两系列均保留，顺序与输入一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "底表46个来源值与输入逐项一致，23个年度总量加和正确；2016最高总量29.7、2023总量28.2及火灾范围1.7–11.3均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各树沿年度顺序对应下方刻度及表格列；橙色绑定Fire-related loss，黑色绑定Non-fire loss，关键总量标签位于相应树梢上方。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "23个可见颜色分界与数据目标误差不超过0.6像素；保守深色连通区域顶端检测最大偏差12.4像素，低于30.6像素容差。未见额外树冠高度或最小长度夸大。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与raw_02.png；前者的树形、树皮和后者的烟雾、火色纹理可在成图对应。render.py读取这些素材及树体裁片，按数据控制高度、分段与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "火色下段与黑色上段属于同一连续树干轮廓，侧枝连接主干；树体直接构成堆叠标记。共用基线、正视方向一致，枝条局部交叠未遮掉分段边界或改变年度绑定。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始1600×2000分辨率下，主题、合成数据声明、图例、单位、刻度、年度及底部数值均可读，无必要文字被遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "逐年均有焦黑主干和相连枝梢，橙黄下段接续黑色上段并落在共同零线；上下两段厚度及整株高度分别承担两来源和年度总量。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Forest loss by cause、Annual forest loss、来源图例与million hectares明确指标及单位；Each tree represents one year及两段相加说明明确逐年加和，不是跨年累计。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的年度森林损失主题、火灾/非火灾统计角色及树体融合关系。原图真实统计、旧峰年和恶化论断不属于当前必须复现的含义，成图未将其套用于合成数据。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小火灾值1.7对应2001年约58像素的橙黄树干下段，仍能辨认其与黑色主干的接触及共同零线；其他分段更高，无须依靠数字标签替代几何辨认。"
+    }
+  },
+  "semantic_attribution_zh": "年度森林损失及两类来源的核心语义未见输出丢失。以合成数值替换真实统计、按新数据标出2016峰年，属于冻结输入允许的适配，不是参考意义失真。参考与成图均由树体承载堆叠高度；细枝像素边缘的不确定性来自分辨率和抗锯齿，不影响该关系。"
+}

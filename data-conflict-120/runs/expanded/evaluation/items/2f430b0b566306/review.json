@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中住宅屋顶承载价格走势，房体升离草地，右下家庭仰望。待评图可见11组年份及价格，沿橙色屋顶上缘递增排列；住宅有墙体、门窗、侧壁和底部厚度，与地面分离。标题、USD和SYNTHETIC DATA清楚，未见额外装饰峰。",
+  "summary_zh": "数据与核心隐喻正确，仅左下辅助说明末尾轻微遮挡。review.json已保存并通过校验；未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "左下“0–80,000 · linear scale”辅助说明应完整可见。",
+      "observed_zh": "“scale”的末字母右部被住宅左墙遮住，不影响主刻度、数值或单位识读。",
+      "evidence_zh": "位置约为原图x=274、y=1530。源码及字体宽度推导文字右端约x=279.1，后绘墙体从x=274开始；约5像素重叠属于代码推导，并非像素实测。",
+      "bbox_xyxy_normalized": [
+        0.05,
+        0.759,
+        0.161,
+        0.774
+      ]
+    }
+  ],
+  "measurement_notes_zh": "独立检测1760×2000原图：80,000与0网格位于y=500和1490；11个标记横向间距均为111像素。反算价格最大偏差68.69 USD，占满量程0.0859%。10段屋顶边界抽样与标记连线约在2像素内吻合。源码公式仅作交叉核对，未执行渲染。",
+  "uncertainties_zh": "抗锯齿带来约1–2像素定位误差。未读取日志、自检或历史结果，不能独立确认全部渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "一个系列、11个年份及11个屋顶标记完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "11项价格均与输入一致；首末差值41,700正确，USD及合成提示清楚。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份和价格成对连接对应屋顶顶点，顺序正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "等时距对应等间距；像素反算最大偏差为满量程0.0859%，屋顶外缘实际承载数据。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材的瓦片、门窗和家庭在成图中清晰可见；源码控制轮廓、裁切与标签。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "价格路径构成屋顶外缘，屋顶与墙体连接；非数据侧壁未改变数据坐标。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必要标题、年份、价格、单位及主刻度可读；遮挡仅涉及辅助说明末尾。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整斜视住宅的屋顶、墙体、门窗和底部相连，房体离地，下方家庭仰望。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "年度住宅价格、示意新房价格指标、USD与年度类别角色均明确。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留价格屋顶与家庭关系；原真实统计口径及“噩梦”论断由输入允许改为合成示意价格，不属于输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "所有标记及屋顶转折可辨；最小相邻涨幅对应约22像素纵差，无接近零的价格。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题与角色未丢失。原参考真实统计口径和价值判断的变化来自允许的输入适配；分辨率限制不妨碍本例结构辨认。"
+}

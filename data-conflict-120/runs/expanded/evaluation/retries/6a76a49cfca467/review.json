@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：黑、红、金三色纹样填入同一GDP面积图，黑色上缘随时间起伏，红金分界水平，图内有原实际统计与增长停滞说明。待评图：黑红金三色相接并填满从零线到折线上缘的区域；可见0、200、400、600、800刻度及1991至2024年份刻度。标题为SYNTHETIC GDP level，顶部有SYNTHETIC DATA；图内注明REAL GDP LEVEL、billion synthetic currency units及level, not growth rate。关键点标注1991-Q1 503、2009-Q1 616、2020-Q2 684、2024-Q2 774.8；底部显示134 quarters · 1 series，并说明三色不是独立系列。纹理在主体大面积可见，标签和引线未见明显互相遮挡。以上为查看原图后、读取渲染源码前的可见观察。",
+  "summary_zh": "通过。季度GDP水平、关键点标签和单系列语义准确；黑红金印刷纹样实际填入数据面积，上缘承载数值，未见超出容差的几何偏差或结构损失。",
+  "issues": [],
+  "measurement_notes_zh": "查看1600×2000原图后独立读取像素。源码映射为x=155至1460、零线y=1740、800刻度y=520；据此推导每单位1.525像素、3%满量程容差24单位即36.6像素。按冻结数据计算134个预期点位，在相应整数像素列附近检出浅色上缘，最近描边像素的纵向距离最大1.625像素；这是像素接近度，不是中心线精确误差。503、616、684、774.8对应位置分别检出y约973、801、697、558。图像内部x=650处黑红及红金分界实测约y=1130、1435，与400、200刻度一致。项目data.json与冻结data.json完全一致；源码使用全部134点并闭合至零线。",
+  "uncertainties_zh": "相邻0.3及0.5单位变化按当前尺度仅约0.46及0.76像素，无法仅凭肉眼确认这些微小差值的相对精度；整体水平及旗帜关系清楚。按限制未检查工具调用日志或历史渲染记录；capture_render.py的存在不能证明所有历史渲染均经其保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "134个季度、1个系列，范围1991-Q1至2024-Q2；图面数量与冻结数据一致。源码遍历全部点，像素核对覆盖全部134个预期位置。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "四个可见关键点1991-Q1=503、2009-Q1=616、2020-Q2=684、2024-Q2=774.8均匹配数据；0至800刻度、134 quarters及1 series正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "四组季度和值通过引线接触各自上缘圆点；年份沿时间递增，单位绑定REAL GDP LEVEL，三色明确说明为同一纹样而非额外系列。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见上缘与134个线性时间、线性水平预期点位吻合，局部最近描边距离最大1.625像素，远小于36.6像素容差。底边沿零线闭合，没有累计或增长率编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及prepare_assets.py、render.py；原始黑红金材质经裁切调色后实质填满主体，颗粒纹理在成图可见。代码控制裁剪轮廓、坐标和文字；未将历史执行情况视作已验证。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "黑、红、金色带上下接触、共用左右边界及零线底边，被同一数据轮廓包含；黑色上缘直接表示GDP。平面印刷关系一致，未见错层、溢出或破坏身份的接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、实际GDP指标、单位、季度范围、关键数值和单系列说明均清楚；浅色引线与深色主体有足够对比，未见必要文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "上黑、中红、下金组成连续印刷旗帜面积；红金分界水平，最上方轮廓随季度数值变化，左右边界连接零线。旗帜纹样与数据区域融合关系保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "GERMANY、SYNTHETIC GDP level、REAL GDP LEVEL及billion synthetic currency units共同明确当前主题和单位；Quarterly observations及level, not growth rate明确时间角色与统计解释。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留德国旗承载GDP水平的关系。参考图的真实货币统计与增长停滞论述被明确改为合成GDP水平；此改编来自冻结brief/data/core，不归为输出语义失败。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "本组水平为501至778，最小值仍占满量程62.625%，没有近零面积标记。季度横向间距约9.81像素，上缘及旗帜区域可辨；亚像素相邻起伏的精细辨识另保留不确定性。"
+    }
+  },
+  "semantic_attribution_zh": "真实统计及旧增长结论的变化属于冻结输入允许的主题改编；未见输出丢失当前GDP水平、季度、单位或单系列含义。三色属于同一数据面积的判断有图面与文字共同支持。微小相邻差值的辨识限制来自当前分辨率，不据此制造结构失败。"
+}

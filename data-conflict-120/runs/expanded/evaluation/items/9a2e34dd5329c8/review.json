@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：17支彩色铅笔按行排列，数值在左，国家名在笔杆，右端有削木和石墨尖，右缘有木屑。待评图：17支完整铅笔从共同零线延伸，Country A–Q顺序完整，数值与输入一致；笔尾、金属环、笔杆、削木及石墨尖连续。O最长、A最短。标题、人均年度说明、h/year及SYNTHETIC DATA清晰，木屑未遮挡数据。",
+  "summary_zh": "通过。数据、标签、完整铅笔长度编码和主题语义均符合要求。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "检查2000×1386原始像素图。零线约x=286，2300刻度线x=1726，满量程约1440像素。各行中心取5条扫描线，以亮度<180识别实体端点并排除浅色网格和阴影。17支笔起点均为x=286；尖端与线性目标的最大差约0.72像素，即满量程0.05%，低于43.2像素容差。A尖端约1184.5，目标1184.43；O约1716.5，目标1716.61。源码另显示完整素材宽度由数值控制，与像素核对一致。",
+  "uncertainties_zh": "抗锯齿与阴影使实体边缘定位约有1–2像素不确定性，不影响容差结论。未查阅禁止的日志或历史记录，不能独立确认capture_render.py的实际执行历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "17支铅笔对应Country A–Q，顺序完整；Annual hours及h/year可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部17个数值逐项匹配data.json，刻度范围0–2300正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "国家名位于对应笔杆，左侧数值与同一行铅笔对齐，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "17个实体尖端均距线性目标约1像素以内；笔尾及石墨尖包含于编码全长。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的笔尾、金属环、木纹、石墨尖和木屑在成图中可辨；源码裁切、重着色并拼接素材构成主体。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "完整铅笔的实体边界直接承担工时长度编码，国家标签位于笔杆，木屑保留于装饰区。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、人均年度说明、国家名、数值及单位均清晰，无必要文字被遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "彩色铅笔逐行排列，笔尾接金属环和笔杆，笔杆接削木并收束至石墨尖，部件连续；右侧保留卷曲木屑。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual working hours、Hours worked per person, per year.、虚构国家说明和h/year共同明确主题、统计口径、类别角色及单位。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "按国家比较年度工时并以完整铅笔长度承载数值的关系保留；国家名和数值的合成替换由冻结输入许可，主题未改变。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值1435占满量程约62.4%，对应约898像素长、34像素厚的铅笔；无微小标记，端部结构均可辨。"
+    }
+  },
+  "semantic_attribution_zh": "国家类别、年度工时指标及铅笔全长编码均保留。虚构国家和合成数值来自输入许可，不属于输出语义损失。未见部件连接或统计口径丢失；边缘像素定位的不确定性不影响物体识别及数据判断。"
+}

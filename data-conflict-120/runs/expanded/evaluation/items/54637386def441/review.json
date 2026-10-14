@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为战机与尾迹背景叠加八条军费曲线。成图可见三架完整战机，机翼、尾翼连接机身，尾迹从机尾向左下方延伸；曲线叠在背景前方。主题、年度支出、合成声明和单位清楚，八个末值为934、306、113、88、79、70、63、51，A起点438。A/B端点名称与数值挤靠，底部低值曲线局部重叠。",
+  "summary_zh": "已保存并通过schema校验的review.json。数据、年度尺度及背景叠合关系保持，仅发现A/B端点文字轻微重叠。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "端点系列名称与数值应分别清楚可读。",
+      "observed_zh": "Region A与934、Region B与306的相邻字形轻微重叠，但仍能辨认。",
+      "evidence_zh": "原图碰撞位于约x1430—1437、y548—577及y1333—1362。源码字体框推算水平重叠分别为6px和5.5px；此为字体框推算，不是字形像素重叠面积测量。",
+      "bbox_xyxy_normalized": [
+        0.889,
+        0.273,
+        0.901,
+        0.683
+      ]
+    }
+  ],
+  "measurement_notes_zh": "原图1600×2000。源码和SVG使用x=146+53.7×(年份−2003)、y=1730−1.25×值，8条路径各21点，与冻结数据一致。纵轴满量程约1250px，3%为37.5px。直接读取原图，在预期点横向±4px、纵向±6px内搜索对应系列色，164/168点找到相符像素，最近距离最大约2.92px。此为局部像素佐证，不是全路径中心线误差测量。",
+  "uncertainties_zh": "D-2004、G-2018、H-2009、H-2013位于重叠或紧邻处，未独立检出对应色，不能仅凭公式证明各自点形可见。未检查运行历史，无法独立确认capture_render.py实际调用记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "图面有八地区端点标签及2003—2023年份；SVG每系列21点，共168点，项目数据与冻结数据一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "八个末值及A起点438均正确，0—1000刻度、合成声明和单位正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "曲线、端点、引线与地区标签颜色对应；低值标签移位未改变实际端点。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "年度等距、共享线性纵轴，可见峰谷和起止位置符合数据；未发现超过3%满量程的偏差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其战机、云雾与尾迹在成图大面积可见；代码读取素材并控制数据几何及文字。图面明确本地合成来源。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "曲线跨过飞机和尾迹区域，保留参考要求的背景叠合；机体轮廓无需编码数值。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必要文字整体可读；A/B端点轻微碰撞已列为minor，无重大不可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整机头、机身、机翼和尾部保持连接，尾迹从机尾向左下延伸，机头朝右上。折线位于背景前层，由年份位置和高度承载数据。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题、Annual expenditure、年份和USD billion (synthetic)共同明确各地区年度国防支出，未误作累计或组成比例。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "具名国家改为合成Region A—H属于冻结输入允许的改编；年度军费比较及战机尾迹叠合关系保留。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "低值保持真实比例，C的17及八个末端可见；部分密集点与他线合并，四点不能独立辨认。"
+    }
+  },
+  "semantic_attribution_zh": "具名国家到合成地区的变化归因冻结输入，非输出语义丢失。低值点的局部辨认限制来自叠压及像素分辨率。参考原本为背景叠合，不追加机体轮廓编码要求。"
+}

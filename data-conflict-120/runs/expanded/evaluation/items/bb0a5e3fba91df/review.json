@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以海水纹理和四种颜色构成向下堆叠层，游艇位于右侧水面。最终图保留这一关系，可见合成数据标识、海洋塑料排放主题、单位、16个时期和四来源数据表。早期部分色层很薄，底表首列数字与行名距离较小。",
+  "summary_zh": "未发现主要数据或结构缺陷；底表首列间距存在轻微问题。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "底表系列名与P01数值应清楚分列。",
+      "observed_zh": "四行系列名紧贴P01数字，呈现为“Plastic source A52”“Plastic source C88”等连续文本；借助列头仍可识别。",
+      "evidence_zh": "原始像素局部查看确认拥挤。根据源码位置及字体边框推算，间距仅2.5–3.5像素；这是布局推算，不是像素测量。",
+      "bbox_xyxy_normalized": [
+        0.052,
+        0.797,
+        0.136,
+        0.901
+      ]
+    }
+  ],
+  "measurement_notes_zh": "最终图2200×1552，满量程深度800像素，3%容差对应24像素。独立抽查16个时期附近采样列的四条边界，使用颜色分类及红绿差转折识别，最大偏差约4.2像素，含总边界点标记外缘，约为满量程0.52%。可见分项与总值匹配输入，P15最高总值7,020、P16总值6,480正确。",
+  "uncertainties_zh": "P01、P02来源B理论厚度约1.78、1.67像素，可见蓝色细条，但抗锯齿使细微相对误差难以判断。未读取日志、自检或历史结果，未重渲染，因此不确认capture_render.py的历史执行情况。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "16个时期、四来源、64个分项值及16个总值完整，路径使用全部输入点。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "底表数值与输入一致，最高值、单位和合成数据标识正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "图例、底表色块及层末端A–D一致绑定四来源，时期列与剖面横坐标对齐。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同零水面、向下线性尺度及当期分项堆叠成立；像素抽查未见超过3%满量程的偏差，无第五层或跨时期累加。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始海水与游艇素材均已查看，其纹理和船体细节在最终图中明显可见；源码以数据掩膜控制海水区域。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "海水纹理直接填入四个数量区域，游艇船底接触共同水面，未见破坏数据尺度的遮挡或拼接。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "所有必要文字完整可读；底表首列拥挤影响扫读，但未造成主要歧义。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "船体、甲板、舱窗和桅杆保持连接；船底贴合水面，四来源海水区域向下层叠，实际底边承载当期总量。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题、来源、时期和每期百吨单位明确，并说明层厚为分项排放、底边为当期总量，各期不随时间累积。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "海洋塑料排放主题及水深承载量值的关系保留；韩国ERP背景、具体来源名称和年份被冻结输入改为合成来源与时期，属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "早期四种颜色仍可辨，来源B仅约1–2像素厚；其水纹细节和精细相对厚度受分辨率限制，不能仅凭数值标签确认。"
+    }
+  },
+  "semantic_attribution_zh": "输出保留当前主题、类别角色、单位及当期独立求和含义。具体地域、来源名称和年份的抽象来自冻结输入，不归责于生成输出；早期薄层细节不足属于分辨率限制，与满量程几何准确性分别记录。"
+}

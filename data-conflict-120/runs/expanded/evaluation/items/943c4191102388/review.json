@@ -1,0 +1,76 @@
+{
+  "verdict": "fail",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中绿色折线与输电塔、架空电线和栖鸟叠合。指定成图的主题、单位及合成声明清晰；绿色曲线整体下降，2009至2010略回升。1960附近数值与塔架重叠，1970附近数值与绝缘子重叠，局部辨读困难；其余文字清晰。",
+  "summary_zh": "数据几何、主题单位及电力场景融合符合要求。八个数值标签中，两处因同色结构重叠而无法可靠读全。已保存并校验review.json，未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "major",
+      "requirement_id": "M1",
+      "expected_zh": "1960年的6.72和1970年的6.14应完整可辨，并与对应点、年份准确绑定。",
+      "observed_zh": "6.72与密集塔架混合，6.14的中间数字与绝缘子混合，两处均无法可靠独立读全。",
+      "evidence_zh": "原图像素区域[449,756,549,810]及[710,808,811,863]显示数字与深色结构重叠。源码写入正确字符串，但不能据此认定图面可读；其余六个值可以直接辨读。",
+      "bbox_xyxy_normalized": [
+        0.2245,
+        0.4283,
+        0.4055,
+        0.489
+      ]
+    }
+  ],
+  "measurement_notes_zh": "原图2000×1765。像素确认10与0横线约位于y=520、1450；八个绿色圆点中心约为(235,691)、(497,825)、(760,878)、(1022,1007)、(1285,1144)、(1547,1211)、(1783,1288)、(1810,1277)。最大纵差约满量程0.11%，测点精度约±1像素。末两点横距约27像素，目标26.25像素。源码用于定位测量窗口，未代替像素证据。",
+  "uncertainties_zh": "两处完整数字无法仅凭残余字形确认。未读取执行历史、日志或自检，因此不能独立确认全部渲染均经capture_render.py保存；此项未作为输出失败依据。未外推参考图未提供的国家、币值基年等统计口径。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八个数据点及相连路径存在，八个年份通过轴标签或直接标注明确；系列、单位及合成声明齐全。"
+    },
+    "numeric_text": {
+      "status": "uncertain",
+      "evidence_zh": "六处数值可直接辨读且正确；6.72和6.14源码正确，但图面无法可靠读全。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各点按年份排列；末两组年份和数值通过引线分别连接2009与2010，未见交换。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素位置符合真实年份和共同0–10线性轴，最大纵差约满量程0.11%，低于3%容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "生成素材中的塔架和四只鸟实质可见；render.py读取素材，并由输入数据控制折线、圆点及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "绿色线接到塔架上层右侧绝缘子末端，四只鸟的足部接触绿色线；深色导线连接塔架硬件。"
+    },
+    "readability": {
+      "status": "fail",
+      "evidence_zh": "1960与1970的两处数值标签与同色塔架、绝缘子混合，不能可靠读全；其余主要文字清晰。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "塔身、横担、绝缘子、架空线与栖鸟保持连接或接触；绿色折线承担定量路径并兼作栖线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题、经济产出解释、系列名称、BTU per GDP dollar及Year明确表达指标、单位和时间角色。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的能源/GDP含义及输电场景与绿色曲线叠合关系；合成值替换属于输入授权。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原像素可辨末端两个独立圆点及上升短段；最小值仍有约162像素基线高度，未见几何夸大。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、年份角色及物体与数据的关系保留。合成数值替换不是语义丢失；输出损失集中在两处数值文字的可读性。末端小标记在当前分辨率下仍可辨。"
+}

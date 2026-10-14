@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：白底单排十卷纸，侧面椭圆卷头带国家纹样，纸带与卷头连接，横向穿孔虚线与锯齿下缘可见；标题表达每人每年卷纸用量。最终图：十卷纸同高排列，Group A–J依次对应94、89、83、61、58、54、48、47、32、25；白色纹理纸带从共同零线下垂，长度随数值递减，卷头大小近似一致且带彩色同心环。图面可读到Annual toilet paper use、Annual use · rolls/person/year及SYNTHETIC DATA，并将A–J解释为示意人口组。纸带、卷头、穿孔及锯齿边连接关系可见；初看未见遮挡标签或断开的主体。精确比例和素材来源待核对。",
+  "summary_zh": "十个类别、数值、单位与纸带长度正确对应。卷头与下垂纸带保持连接，生成素材可见，主题及合成人口组含义完整，未发现违反冻结要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "对2000×1978的image.png直接读取像素：轴刻度中心约为y=629.5、845.5、1061.5、1277.5、1493.5、1709.5，满量程1080像素。沿纸带侧线定位下缘，并以锯齿描边像素估计平均端点；A–J读数约94.02、89.02、83.04、61.05、58.04、54.02、48.04、47.02、32.02、25.03，最大偏差约0.06%满量程。上述为最终图像素估计；源码另显示end=630+value×10.8及对称±4像素锯齿，与可见结果吻合。",
+  "uncertainties_zh": "抗锯齿及线宽使端点估计存在约±1像素、即约0.1%满量程的不确定性。已核对素材和渲染源码，但依检查限制未查执行历史，不能独立确认所有完整渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "十条纸带及Group A–J完整，顺序与输入一致；标题、合成提示、系列和单位齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见数值依次为94、89、83、61、58、54、48、47、32、25，与data.json逐项一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别位于各卷正上方，数值位于对应纸带下端；没有跨列、遮挡或系列混淆。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同零线至锯齿平均下缘的像素长度符合0–100线性轴；十项最大测量偏差约0.06%满量程，低于3%容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png、roll_head.png和paper_texture.png；最终卷头的孔洞、卷层及纸面压纹与素材对应。render.py加载这些素材并按数据裁剪纸带，capture_render.py含完整图像保存流程。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界就是白色下垂纸带的侧边与锯齿下缘；卷头接触并连接纸带，网格位于纸后，未见破坏融合关系的层次或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下十组标签、数值、Annual use及rolls/person/year均清晰；SYNTHETIC DATA醒目，人口组父类和读图说明可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "白底单排十卷纸均有椭圆端面、中心孔、环状卷层及彩色纹样；白纸从卷体下缘连续向下延伸，保留横向穿孔虚线和锯齿撕口。卷头大小一致，不承担量值。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual toilet paper use与rolls/person/year明确人均年度卷纸用量；SYNTHETIC POPULATION GROUPS解释Group A–J的类别角色，说明明确这些不是观测国家统计。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的人均年度卷纸用量主题及纸带长度承载数量的融合关系；国家及原统计值按冻结输入替换为合成人口组和新数值。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最短Group J纸带约270像素，卷头连接、纸面、穿孔与锯齿仍可辨；47和48两条下缘相差约11像素，没有人为最小长度或小值消失。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题与参考一致。国家名及真实统计替换为合成人口组和新值来自冻结输入，图面补充了人口组父类与非观测说明，属于允许的输入适配；彩色环纹保留卷头类别标识。未见输出导致的主题、物体关系或统计含义丢失，也未见小值受分辨率限制而失去纸带关系。"
+}

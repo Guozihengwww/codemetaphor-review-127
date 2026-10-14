@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为十个单排卷纸，椭圆卷头带国旗纹样，连接带穿孔虚线和锯齿末端的白色纸带。待评图保留同高卷头、彩色环纹及下垂纸带。Group A至J与全部数值清楚可见，主题、单位、合成数据和人口组说明完整。长纸带结构清晰，0.2和0.1的独立纸面与撕口难以分辨。未见标签遮挡或错列。以上观察已在读取代码前保存。",
+  "summary_zh": "通过。数据、绑定、主题与纸带隐喻均保留，未发现重大可见缺陷。极小标记的结构可辨性部分保留。review.json已保存并通过schema校验。",
+  "issues": [],
+  "measurement_notes_zh": "已查看2000×1978原图。源码定义零线y=606、满量程1120px。独立读取成图像素，零线和100刻度最深像素行中心约为606.5、1726.5；A至J平均端点约为1658.9、1188.5、908.5、740.5、662.1、628.5、617.3、611.6、608.3、607.2px，与目标差异均约1px以内，远小于33.6px容差。轮廓抽样不能独立证明微小纸带的面积或相对精度。未运行渲染、自检或submit.py。",
+  "uncertainties_zh": "0.2和0.1的设计长度仅2.24和1.12px，描边、卷头底缘及抗锯齿限制独立纸面的辨识，不能据标签或公式断言其微小相对精度。未读取执行日志，无法独立确认capture_render.py的实际调用记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "十个卷头与Group A至J顺序完整，Annual use及单位均显示。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "94、52、27、12、5、2、1、0.5、0.2、0.1全部准确，无正值写成零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别位于对应卷头上方，数值位于对应纸带下方；短纸带引线没有跨列误绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图端点符合共同0–100线性尺度，偏差未超满量程3%；代码直接控制长度和对称锯齿，不设最小长度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材、卷头和纸纹资产，其纸芯、彩色环纹、阴影及纹理实际出现在主体中；源码直接使用这些资产。合成数据及本地来源说明明确。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "纸带连续连接卷头下缘，长度本身承载数值；未见破坏连接的遮挡或错位。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、人口组父类、类别、数值、单位及读图说明清晰，标签不遮挡数据端点。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "保留单排等尺寸卷头、椭圆侧面、纸芯和彩色纹样；白纸从卷绕面向下接出，长纸带具有穿孔虚线和锯齿撕口，平均撕口高度承载数据。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题及rolls/person/year明确人均年度卷纸用量，synthetic population groups解释Group A至J的类别角色。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留以展开纸带长度比较每人每年卷纸用量的含义；国家名和旗纹改为合成人口组及彩色环纹，符合当前输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "0.2和0.1仅在卷头底部留下数像素边带，独立白纸面和锯齿难辨。数值与引线清晰，但不能替代微小几何证据；未见人为放大。"
+    }
+  },
+  "semantic_attribution_zh": "未见输出造成的主题或统计口径丢失。真实国家到合成人口组的变化来自冻结输入允许的适配。最小标记的部分结构不可辨主要受真实比例与像素分辨率限制，不归为重大生成缺陷。"
+}

@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中，悬空住宅的屋顶承载上升价格走势，家庭位于下方。待评图保留陶瓦屋顶、墙体、门窗、右侧墙及下方家庭；屋顶外缘有11个依次下降的圆点，各点显示年份和价格。标题、USD、合成声明、纵轴刻度及−61.2%的变化说明清晰可见。",
+  "summary_zh": "通过。年度价格准确绑定屋顶外缘，住宅结构及其与下方家庭的关系保留，未发现必要要求的可见缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在1760×2000原图上测得五个纵轴刻度位于y=470、720、970、1220、1470，对应80,000至0 USD。11个黄色标记横向间距均为123像素；按可见刻度反算价格，最大偏差40 USD，即满量程0.05%。排除圆点覆盖区后，1000个采样列均检出红色屋顶边线，其中心相对相邻实测标记插值最大偏差约1.37像素。源码另行核对为x=330+123t、y=1470−v/80；此项为源码证据，非像素测量。端点差−41,700 USD、变化率−61.23348%，与显示文字一致。",
+  "uncertainties_zh": "抗锯齿和颜色阈值带来约1像素定位不确定性，不影响容差判断。按限制未检查执行日志或自检记录，不能独立确认全部历史渲染均经capture_render.py保存。参考图的情绪表达不作确定性作者意图判断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11个年份、11个屋顶标记及单一价格系列完整，路径经过全部点，顺序正确。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "11项价格逐项与输入一致；USD、纵轴范围、41,700 USD lower及−61.2%均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各年份和价格通过短竖线对齐对应圆点，未见串位。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实测标记等距123像素，价格最大误差为满量程0.05%；连续数据边线构成陶瓦屋顶真实上缘，无额外装饰峰。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始生成素材及屋顶、立面素材；瓦片、四窗一门和三人家庭与成图对应，源码实际载入并映射这些素材。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界限定陶瓦屋面，屋顶连接含门窗的立面和右侧墙；家庭立于地面并仰望悬空房体，融合关系明确。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、指标、单位、合成声明、全部年份和价格均可读，无明显遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "屋顶、立面、四窗一门及右侧墙相接；房体离地，三人家庭位于下方，屋顶外缘实际承载走势。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Illustrative new-home price · USD及年度标签明确主题、指标、单位和时间角色；下降走势符合当前数据。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "住宅价格与悬空房体、家庭的联系保留。参考真实成交中位数及噩梦叙事已由冻结输入改为合成示意价格，并明确不要求原上涨结论；部分变化归因于输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值占满量程33%，没有接近零的微小跨度。11个圆点均可辨，末端仍位于可辨陶瓦屋面的外缘。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、时间类别、USD单位和屋顶承载关系均保留。真实统计改为示意价格、旧上涨叙事改为下降走势来自冻结输入及明确许可，不属于输出缺陷。像素定位存在轻微分辨率误差，未见关键物体关系因此丢失。"
+}

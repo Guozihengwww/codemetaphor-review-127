@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以蓝色横条比较船只数量，首行航道接触俯视船的船尾，船艏朝右，甲板与浮冰可见。待评图包含Fleet A–H八行，标注63、20、11、8、6、6、3、3及总计120；首行航道连接完整船体，船艏位于约63刻度。最小两条仍清楚可辨。主题、船种口径、单位、合成声明和编码说明完整，未见明显错绑或遮挡。",
+  "summary_zh": "数据、标签、尺度及隐喻结构均符合冻结要求，未见实质缺陷。已保存review.json，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量2000×2000原图：0–70轴从x=430至1830，每艘20像素。B–H条形宽度分别为400、220、160、120、120、60、60像素，对应20、11、8、6、6、3、3。船艏右侧边界随像素阈值为x=1690–1691，对应63.00–63.05艘，低于2.1艘容差。源码统一线性映射及船艏定位仅作为佐证。",
+  "uncertainties_zh": "船艏抗锯齿产生约1像素边界差异。未复现渲染；快照缺少project/input.json，且按要求未查运行记录，无法独立确认历史渲染均经过capture_render.py。这不影响指定图像的直接核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八类、单系列、0–70轴、统计口径、单位及合成声明齐全，类别顺序正确。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "八行数值及总计120均与data.json一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、标记和数值逐行对应；63邻接船艏，其余数值邻接对应条形右端。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素测量符合共同20像素/艘尺度；船体包含于首行总跨度内，无额外加长。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材与船体裁片；相同船体、橙色艇、甲板和浮冰实质出现在首行。源码控制定量几何、素材合成及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "航道接触船尾，船艏承担数值端点；船体遮挡部分浮冰，甲板位于船壳内，融合关系明确。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、完整船种口径、舰队类别、艘数单位、数值和底部编码说明均清楚可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "各行保留蓝色航道；首行完整俯视船宽尾朝左、尖艏朝右，航道与船尾接触，甲板包含于船体，浮冰围绕并与船体叠合。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "舰队规模标题、船种副标题和ships单位明确指标；Fleet A–H具有FLEET父类，并注明合成标签。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留船只数量比较主题及航道—船尾—船艏关系；冻结输入允许合成舰队类别，不要求旧国家实名、数值或最大项结论。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小两条各60×76像素，区域及端点可辨；两个6分别为120像素宽，未放大最小数据长度。"
+    }
+  },
+  "semantic_attribution_zh": "主题与统计指标保留；国家实名及真实统计改为合成舰队标签属于冻结输入允许的适配，不构成输出语义损失。可见连接、包含和叠合关系支持隐喻保留；约1像素边界差异属于分辨率与抗锯齿限制。"
+}

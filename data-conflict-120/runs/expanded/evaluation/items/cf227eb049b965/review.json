@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：十本等宽完整书脊并排立于共同底部；白色零线穿过书脊，书名、作者和装帧位于其下，上方延伸高度承担数量。主题为全球最常读书籍，说明使用过去50年印售册数。\n最终图：15本等宽书脊按Book A至Book J、Book added 1至5排列，皮革/织物纹理和金色包边清晰，书名与作者位于共同零线下，书底接触横向书架。零线以上延伸高度呈左高、中低、右递增；108至26的小值仍有窄幅上伸。数值标签、Synthetic copies sold、million copies、SYNTHETIC DATA和Book sales均可读；页脚明确共同下部不编码，并显示总计15,148。未见明显文字遮挡或书脊断裂。",
+  "summary_zh": "最终图保留完整书脊与销量高度的融合关系；15项数值、顺序、标签、单位及总计一致，像素边界符合线性比例。未发现违反冻结要求的可见缺陷。参考统计口径的变化属于允许的输入改编。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1869原图读取像素：白色零线位于y≈1220，4000刻度位于y≈270，满量程约950像素。按各书脊内部横条相对背景的颜色差检测连续主体上沿，15项顶端依次约为308、1017、1120、1194、1203、1206、1209、1211、1212、1213、1063、911、761、610、458像素；换算后的最大偏差约为满量程0.12%，远小于3%。该阈值会包含抗锯齿边缘，定位约有1像素误差。y=1240横截面检出15个106像素宽主体，间隔12像素。源码另证实top=1220−value×950/4000且未设最小高度；此公式核对不是像素测量。",
+  "uncertainties_zh": "最小值26的公式目标高度为6.175像素，原图可见约6–7像素延伸；抗锯齿及零线笔画使小值的亚像素高度和精确相对误差不能仅靠原图确定，不能由满量程合格推断其相对误差为零。按限制未读取执行日志、自检或进行重渲染，因此不独立认证capture_render.py的实际执行历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "15本书按Book A至Book J、Book added 1至5原序排列；单一销量系列、类别、数值、作者、单位、零线及合成数据声明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图面数值依次为3,840、850、420、108、69、59、45、35、31、26、661.6667、1,297.3333、1,933.0、2,568.6667、3,204.3333，与输入一致；总计15,148等于输入求和。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "书名和作者位于各自书脊内部，整数值置于对应顶端上方；长小数标签右端对齐所属书脊右缘，错开相邻高度，无可见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "以共同零线为起点的上伸高度与0–4000线性刻度吻合；15项像素检测偏差最大约0.12%满量程。共同下部约390像素，并明确声明不编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png六款书脊素材；其黑色皮革、红色与蓝色织物、绿/棕/酒红纹理及底部金饰实质出现在最终15本主体中。prepare_assets.py裁切素材，render.py控制形状和文字；另有capture_render.py保存流程源码。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "承载数值的上沿属于书脊本体，材质跨越零线连续进入标题、作者和装订区，书底接触共同书架；没有旁置普通柱图替代融合。正视方向、遮挡次序与表面文字一致，未见破坏解释的接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "销量标题、Synthetic copies sold、million copies、SYNTHETIC DATA、全部数值和书名在原分辨率可读；页脚解释完整书高不代表销量，未见必要文字被裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "15个等宽完整书脊并排，侧缘包边与底部金饰附着于主体，书名框和作者包含于零线下装饰区，所有书底接触同一书架。零线穿过连续书脊，上方顶端为真实数据边界，满足M2、M3、M6。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC与Book sales明确当前主题；Synthetic copies sold及million copies说明指标和单位，Book类别具有书籍语义父类。图面明确合成性质与零线上方编码规则，没有引入百分比分割或跨期累计解释。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考图以过去50年印售册数表达“最常读书籍”；最终图保留书籍与册数高度关系，改为明确的合成销量及虚构书名。冻结输入已授权这一主题口径改编，不属于输出丢失，也不要求保留旧排名或真实统计。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Book D至J的微小上伸在原图仍可见，阈值检测高度约26、17、14、11、9、8、7像素；它们与下方完整书脊直接连续，零线可辨。最小值没有被抬高到统一最小柱高，也未仅剩数字；亚像素准确性保留不确定性。"
+    }
+  },
+  "semantic_attribution_zh": "当前销量主题、书籍类别、指标单位和书脊数据关系均保留。参考“最常读/过去50年”的历史表述被输入明确改编为合成销量，reference_meaning的partial归于允许的输入适配。小值的精细相对高度受像素分辨率限制；未据此归因输出语义丢失。"
+}

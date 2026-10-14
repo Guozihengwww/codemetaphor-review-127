@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为游艇位于水面的横向海洋剖面，四种水下色层承载排放量。最终图保留这一关系，海水纹理位于四层内部；P01–P16、四来源、分项数表、单位及合成数据提示可读。文字明确说明同一期来源相加、各期不跨时间累计。最初两期蓝层极薄，需核对像素边界。",
+  "summary_zh": "数据、标签、向下堆叠及海洋剖面融合关系通过。微小蓝层的局部辨识受分辨率限制。review.json已保存并通过schema校验。",
+  "issues": [],
+  "measurement_notes_zh": "最终图2200×1552；零线约y=370，7200线约y=1170，满量程800像素，3%容差24像素。实际图像16期附近颜色边界抽样支持正确映射：P03四边界约y=397/402/450/466，对照目标397.22/402/449.33/465.56；P12约560/606/994/1049，对照559.33/605.67/994.67/1048.89。源码另行证实累计和与逐段线性插值控制掩膜；这属于代码证据，不替代像素观察。",
+  "uncertainties_zh": "P01/P02的B层仅约2/1个蓝色像素，无法可靠区分16与15的相对厚度或各自内部水纹。未查阅运行历史，无法独立确认所有完整渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "16个有序时期、四来源、64个分项及16个当期总值完整显示。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "数表逐项匹配冻结数据；当期总值均正确，最高总值7020对应P15。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "图例、表格色块及层内A–D一致；时期列与引导线对齐，总值对应四层底边。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同水面为零，线性尺度向下；实际像素边界与目标一致，未见负厚度、过冲或跨期累计。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张原始素材；海水光纹和游艇在最终图中明确对应并构成主体，源码显示实际合成路径。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "水纹直接进入数据层，海水边界承担数量；游艇船底贴近共同水面，未遮断数据区域。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、来源、时期、单位、刻度及数表清晰，无必需文字截断或实质遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "船舱、甲板和船体相连；船底接触水面，四层在水面下依次相接。层厚代表分项，紫层底缘代表当期总量。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "海洋塑料排放主题、来源父类、时期及100 tonnes/period明确，正文正确说明期内相加而非跨期累计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留海洋塑料排放及水下分层关系；韩国背景和具名来源改为输入指定的合成来源，属于允许的改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最初两期B层仍有约1–2像素的正值蓝带，位于A与C之间；独立水纹与精确相对厚度难以辨认。"
+    }
+  },
+  "semantic_attribution_zh": "原真实背景、具名来源和旧趋势的变化属于冻结输入允许的合成改编，未发现额外输出语义损失。微小层的局部辨识限制归于分辨率，不构成严重结构失败。"
+}

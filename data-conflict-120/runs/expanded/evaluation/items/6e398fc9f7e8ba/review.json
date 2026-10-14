@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：六束金色意面置于青绿色纸套中，纸套有侧面、套口与折角，下方国旗和国家名，上方数量；主题为 PASTA PRODUCTION (TONS)。成图：九束意面依次对应 Italy、USA 子类别1至4、Germany、France、Spain、UK，国旗与标签逐列对应；数值依次为3,280,000、四个515,000、278,000、246,000、229,000、34,000。九个纸套前缘在零线处同高，Italy最高、四个USA等高，UK仅有极短金色尖端露出。纸套前面遮住面条下端，右侧面与折角可见。标题为Pasta production，另有Synthetic pasta production by region、metric tonnes、线性范围0–3,500,000、SYNTHETIC DATA及总量6,127,000。底注明确USA子类别互斥且数据为示意合成值。UK微小标记的露出关系需进一步核对原始像素。",
+  "summary_zh": "通过：九类数值、标签绑定及露出高度正确；意面插入纸套的融合结构、地区产量主题和合成数据口径均保留。当前比例与结构要求可同时实现。",
+  "issues": [],
+  "measurement_notes_zh": "直接核对2000×1484的image.png。纸套前缘约y=1080，满量程刻度约y=240，跨度840像素。以R−B>65、G−B>35、R>145且每行至少3个金色像素定位最高尖端，九类露出高度依次约787、124、124、124、124、67、59、55、8像素；按输入推导目标为787.2、123.6、123.6、123.6、123.6、66.72、59.04、54.96、8.16像素。最大名义差0.4像素，约满量程0.05%；边界判定约有±1像素不确定性，均远低于25.2像素容差。源码的value/3500000×840公式仅作实现佐证。",
+  "uncertainties_zh": "UK露出仅约8像素，可确认非零尖端及前后遮挡，但±1像素已约为该小标记高度的12%，不能据此宣称亚像素相对精度或充分辨清每根面条。按限制未读取运行日志或历史记录，因此不能独立证实所有完整渲染均实际经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列九类齐全，顺序与输入一致，四个USA子类别均独立显示，未遗漏UK。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见值为3,280,000、四个515,000、278,000、246,000、229,000、34,000；总量6,127,000与输入求和一致，单位为metric tonnes。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个数值位于对应意面束上方，国旗及国家名在同列下方；USA各列分别标明subcategory 1至4，并有共同父类括线。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "九束从共同前缘到最高可见尖端的像素高度与0–3,500,000线性刻度吻合；四个USA等高，UK约8像素且未被完全遮没。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及提取的pasta.png、sleeve.png；其金色纹理、参差尖端、纸面纹理和折角在九组主体中实际可见。render.py使用这些位图并控制数据高度与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "意面本身的露出部分承担数量编码，纸套保持固定非数据高度；纸套后口在面条后方，前纸面遮挡面条下端，未见破坏解读的接缝或错层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、单位、全部数值、国家及子类别标签均可读；底部明确数据为合成示意、USA子类别互斥。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "九束金色意面位于青绿色开口纸套内，统一前缘约在y=1080；纸套前面、右侧面、口内暗部及右下折角可辨，国别标识完整。UK仍有短尖端从前缘上方露出。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Pasta production与Synthetic pasta production by region明确表达地区意面产量，metric tonnes及线性范围清楚；USA父类与四个互斥合成子类的角色明确。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考的国家意面产量比较及面条露出高度承载数量的关系保留。当前仍是同一主题和指标；合成数值及USA拆分来自冻结输入，不要求沿用旧统计。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下，UK在y=1072至1079有金色尖端像素，y=1080起被前纸面遮住；仍可见面条在套口内的关系，约8像素符合8.16像素目标。微小纹理及亚像素精度受分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或关键关系丢失。真实统计改为合成示意、USA拆为四个互斥子类均由输入规定，未改变地区意面产量主题。UK细节辨识限制来自其真实比例下约8像素的露出高度，不应要求放大数据标记。"
+}

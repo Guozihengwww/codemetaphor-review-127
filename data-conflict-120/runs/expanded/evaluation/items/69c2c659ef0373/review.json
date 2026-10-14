@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以彩色水平带构成正面气瓶瓶身，红色护框包围阀门，瓶肩呈圆弧，右侧有连续暗部；主题为按国家划分的天然气储量。成图显示 GAS RESERVES BY REGION、Illustrative gas reserves (tcm)、SYNTHETIC DATA、192.0 总量与 18 类。红色有纹理护框包围红色阀门，阀门经金属颈部连接蓝色圆肩；彩色带连续构成直身瓶体，右侧阴影延续到瓶底。Region A–E 与 Other Regions 标签在带内，F–Q 在两侧并有引线；小值带可逐条辨认，未见标签遮挡或明显脱离瓶身。此记录先于源码检查；尚未量测比例。",
+  "summary_zh": "18类数值、标签绑定和带高比例符合要求；生成素材实质构成气瓶，关键连接与数据融合关系保留。参考中的真实国家统计改为合成地区统计，属于输入许可改编。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查1440×1991成图像素。蓝色瓶肩起于y=565，瓶底位于y=1805，数据高度约1240px。在x=480、800、900、960扫描色度突变，横向分界检测相差至多1px。以x=900为例，含起点的边界为565、815、1020、1184、1276、1356、1412、1453、1493、1531、1566、1589、1607、1624、1641、1655、1670、1682、1805；由相邻峰间距计算，各带与1240×数值/192的目标高度相差至多约1.03px，即0.083个百分点。x=444与1000处检测到的12条引线水平段均在对应色带区间内。源码另证实累计值控制分界、统一素材亮度控制阴影；此源码证据与上述像素测量分别记录。",
+  "uncertainties_zh": "抗锯齿使分界定位约有1px不确定性。最小Q带的色度峰间距为12px，目标为12.92px；可确认其可见、未被放大，但不能据此证明亚像素精度。已检查capture_render.py保存逻辑，未读取禁查日志，未核实历史每次渲染是否均经其保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A至Q及Other Regions共18类全部出现，18条连续色带按输入顺序从上到下排列；系列、单位与总量完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图上18个储量数值逐项对应输入，包含Q的2.0与Other Regions的19.0；总量192.0 tcm正确，各百分比符合数值除以192后保留一位小数。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A至E和Other Regions文字在各自色带内；F至Q的外置标签引线可追踪且无交叉，像素检测的12个水平连接段均落在相应色带高度范围内。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实测共同高度约1240px，18条色带的最大高度偏差约0.083个百分点，低于3个百分点容差。瓶肩与瓶底纳入高度，护框和阀门在尺度外；右侧阴影未移动水平分界。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，红色护框纹理、阀轮、黄铜颈部、金属圆肩和右侧暗部可与成图对应。prepare_assets.py分离部件，render.py实际加载这些素材并按输入重着色，素材使用覆盖主体。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据带直接构成同一个气瓶瓶身，沿共同轮廓连续堆叠；材质和右侧阴影跨越色带延续，阀门经瓶口连接圆肩，未见破坏结构的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、系列、tcm释义、总量及18类标签均可读；外置标签与细带分开排布，未见必需文字裁切或重叠。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "红色护框包围阀轮，阀轮下方黄铜杆和银色瓶口连接圆肩；圆肩向两侧过渡到直身，右侧暗部表现体积。实际承载数值的是瓶肩最高线至平底之间的连续水平色带高度。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "GAS RESERVES BY REGION与Illustrative gas reserves (tcm)明确地区储量主题、指标和单位；合成标识及示意说明清楚，18个地区构成192.0 tcm总量，图面说明带高表示份额、面积不编码数值。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考的天然气储量主题、地理类别汇总与气瓶色带融合关系保留。真实国家、已探明口径和2021时点按冻结输入改为示意地区数据，原统计语境仅部分保留；这是许可的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "按原始分辨率检查，最小Q带仍是贯穿瓶身的独立灰蓝色窄带，约12至13px高，引线位于其内部；P、O等相邻小带也能分开辨认，保持连续瓶身关系。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家及历史统计口径的变化归于冻结输入允许的合成地区改编，不归因于输出丢失。当前主题、类别角色、单位和总量解释均保留，气瓶身份与数据构成瓶身的融合关系可见；最小带的亚像素精度受栅格分辨率限制。"
+}

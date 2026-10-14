@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以装有五类作物的透明圆柱杯融合编码收获量，杯底对齐、饲草最高。成图保留相同类别顺序，杯口椭圆、侧壁高光、作物内容层和透明底座可见；豆类虽薄仍可见内容层。五个数值、百分比、年度收获标题、合成数据声明及单位清楚，无明显遮挡或错绑。以上观察在读取源码前已记录。",
+  "summary_zh": "通过。五类年度收获量、总量、份额和绑定正确，可见杯体高度符合共同线性尺度。作物实际填入玻璃容器，物体部件关系与数据融合均保留。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1663成图像素：共同刻度位于y=360、600、840、1080、1320，满量程跨度960像素。五杯左侧上端短线分别位于y=1296、1277、1238–1239、1171、657–658，下端均为1320；据其估计中心间距为24、43、81.5、149、662.5像素，对应2.50%、4.48%、8.49%、15.52%、69.01%，与目标2.5%、4.5%、8.5%、15.5%、69.0%一致，误差远小于3个百分点。短线与可见杯口切点相符；五杯中央作物纹理底端约在y=1355–1356，浅色底座位于其下。源码推导的目标高度为24、43.2、81.6、148.8、662.4像素，底座中心差32像素，椭圆半径比为sin(17°)；这些属于源码推导，不作为独立像素测量。",
+  "uncertainties_zh": "抗锯齿、高光和玻璃透明边缘使边界定位存在约1–2像素不确定性；最小杯的相对精度不能据满量程容差无限推定，但其薄层实际可见。未执行渲染，也未读取日志或自检，无法独立证明所有历史完整渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Legumes、Vegetables、Potatoes、Cereals、Forage五类齐全且顺序正确，单一Synthetic harvest系列、单位及合成数据声明均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "数值依次为1,800、3,240、6,120、11,160、49,680 t/year，合计72,000；份额2.5%、4.5%、8.5%、15.5%、69.0%与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每杯上方数值与下方类别垂直对应，豆、胡萝卜、土豆、谷粒、绿叶纹理分别与五类绑定，无交叉指向。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图共同刻度和可见端点测得的高度比例与目标一致，最大差异约0.03个百分点；未把椭圆投影厚度或透明底座计为数据高度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png五栏作物素材，其纹理在成图顶面及侧面实质可见。prepare_assets.py裁切素材，render.py按数据计算并裁剪内容物、杯壁、椭圆和文字；capture_render.py提供完整渲染保存流程。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "作物纹理构成杯内数据承载区域，杯口与作物顶面接合、侧壁包围内容物、底座接在内容物之下；融合关系清楚。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、系列、单位、五类标签、数值、份额和总量可读；底部明确解释高度、年度份额及非数据底座，无必要文字被遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "五杯均有闭合椭圆杯口、两侧玻璃边缘及反光、下方透明底座，作物处于这些边界之内；高矮变化由杯口到共同内容物底面的距离承载。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual crop harvest、Synthetic harvest与t/year明确表达年度收获量；百分比被解释为同一年度总量份额，无时间累积或观察年份混淆。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图的年度作物收获、五类作物、年度总量份额及装满作物的玻璃杯高度编码均保留；旧统计数值由冻结输入授权替换。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下豆类杯仍能区分绿色顶面、薄侧面、杯口和透明底座；约24像素的数据高度可辨，未见人为最小高度抬升。其余较小杯的内容层也清楚。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题与参考的年度作物收获含义一致。旧总量及百分比替换为合成数据属于冻结输入授权，不构成输出语义丢失；作物平齐杯口及姿态变化符合允许的非数据部件适配。边缘精度受栅格分辨率限制，未发现因此丢失容器与内容物关系。"
+}

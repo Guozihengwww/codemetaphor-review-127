@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为六个独立白色散页纸堆，共用底线，以高度比较税法页数。成图可见六个等距年份及420、560、17,200、27,800、61,800、76,800，指标单位、线性标度和SYNTHETIC DATA完整。纸层构成正面，顶面、右侧面相接并落于共用地面；前两堆极薄但仍可辨纸边和顶面。标题表达税法文档年度页数，无明显标签遮挡。",
+  "summary_zh": "未见违反必要要求的可见缺陷。数据、绑定、纸堆结构及主题含义均保留。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "原始1395×2000成图的正面中央亮度扫描显示，上沿约在y=1683、1681、1415、1245、701、461，共用零线约y=1690；高度约7、9、275、445、989、1229像素。80,000网格位于y=410，满量程1280像素，对应目标高度6.72、8.96、275.2、444.8、988.8、1228.8像素。边界判读误差约一像素，远低于38.4像素容差。源码另行证实线性高度公式、194像素分类间距及独立的14像素顶面投影；后者属于代码证据。",
+  "uncertainties_zh": "抗锯齿与细描边带来约一像素边界判读范围，一像素对应62.5页，因此小值精细相对比例不能读到个位页数。已阅读capture_render.py，但未查看执行历史，不能独立确认所有完整渲染均经该入口保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六年份、六纸堆和单一页数系列完整，顺序符合输入。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部数值逐一匹配输入，pages单位及0–80,000线性标度正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值位于对应纸堆上方，年份位于下方，归属明确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见正面高度符合数据比例，误差低于满量程3%；共用零线，顶面投影与定量正面可区分。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材及正面纹理；纸层和不齐纸边实质用于主体。素材提取及渲染源码显示代码控制高度和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "纸堆正面本身承担定量高度，纹理填满柱身，顶面和侧面连接正面并落于共用地面。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、单位、年份、数值和编码说明清晰，无必要文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "六个独立白色散页纸堆的纸边、纸层、顶面、侧面和接地关系保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题及副标题明确税法文档年度页数，Page count (pages)和YEAR明确指标、单位及分类角色。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留按年份用纸堆高度比较税法页数的关系；合成值替换符合输入，没有强加旧统计结论。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "前两堆约7、9像素正面均非零，纸边、顶面、侧面和接地关系仍可辨；未用最低高度夸大小值。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或数据承载关系丢失。真实统计替换为输入规定的合成数据属于许可改编，税法页数与年份角色仍保留。小值细层及精细比例的不确定性来自像素分辨率，不据此判定结构失败。"
+}

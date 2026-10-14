@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：俯拍草地包围的泥土地面，六列彩色绳网下边近似对齐；网绳连接边缘桩点，旁有施工人物、独轮车、工具与散放木条；无可读指标文字。成图：六个彩绳网区置于泥土，底边共线，长度从左向右增加，木桩位于边角及长边；两名人物分别靠近蓝网与红网，工具和草地可见。Plot A–F依次位于网区下方；上方数值依次为15、17、29、38、55、86 kg；左轴为0–90 kg，顶端显示240 kg与6 PLOTS。标题SYNTHETIC Garden plot yield、SYNTHETIC DATA及底部共同基线长度编码说明可读。最短两网仍有清楚边框、交叉绳与桩点；未见明显遮挡数据顶边或标签的情况。",
+  "summary_zh": "六个产量网区的数据、标签与共同线性尺度一致；生成素材实质用于地面、绳网、木桩、人物和工具，关键接触关系保留。未发现违反明确要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析2100×1295成图像素：0与90刻度横线分别位于y=1044、324，满量程720 px。按网绳色相筛选各网内部横向区域，六条顶绳色带依次为y=922–925、906–909、810–813、738–741、602–605、354–357；底绳均在1042–1045附近。以顶绳色带中点和1044基线换算，约为15.06、17.06、29.06、38.06、55.06、86.06 kg，边缘定位约±2 px；均远低于2.7 kg（21.6 px）的容差。源码另行确认SCALE=8 px/kg、top=1044−value×SCALE；此为代码证据，不替代上述像素核对。",
+  "uncertainties_zh": "绳纤维和个别细小结扣无法在当前分辨率逐一验证，但网区边界、木桩和人物接触可辨。参考图无可读原统计主题。已检查capture_render.py源码，按本次限制未查阅执行历史，因此不能独立确认每次完整渲染均经其保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个网区、Plot A–F及单一Harvest yield系列齐全；顺序与冻结数据一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "15、17、29、38、55、86 kg全部准确；240 kg合计、6 PLOTS与0–90刻度正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各数值牌位于对应网区顶边上方并由短线指向该网，下方Plot标签与同列网区对齐，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素核对六条顶边和共同基线，长度符合15、17、29、38、55、86的线性比例；满量程720 px，定位偏差远低于21.6 px容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和raw_02.png；土地、草地、两名园丁、工具及桩材与成图对应。render.py将绳材映射至按数据计算的网区，并控制标签与刻度。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界就是地面彩绳网的顶边和底边；绳网落在泥土上并连接木桩，人物手部在Plot C左上桩和Plot F右侧桩附近接触遮挡，未破坏端点可读性。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题标题、SYNTHETIC DATA、类别、数值、kg单位及底部编码说明均可读，必需文字无明显遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "保留俯拍土地、外围草地、彩绳交叉网、边角及侧边木桩、施工人物和工具；绳与桩连接、人物局部覆盖接触部位，网区实际长度承担定量编码。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Garden plot yield、GARDEN TRIALS、HARVEST YIELD (kg)及Plot A–F明确园艺地块、产量指标和类别角色；底部说明长度编码及宽度、绳密度、桩数不编码，合成标识醒目。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "原图的土地上绳网施工关系得到保留；参考图无可读指标，园艺产量主题由core明确指定为adapted_topic，属于输入允许的主题改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最短两个网区约120、136 px高，均能辨认完整边界、多条交叉绳、木桩和泥土地面关系；未出现为辨认而抬高最小长度的可见迹象。"
+    }
+  },
+  "semantic_attribution_zh": "园艺地块产量是冻结输入明确允许的主题改编，reference_meaning的partial不归因于生成器。输出保留当前主题、指标、单位及绳网长度的数据关系，未见语义丢失；不确定性限于原图未说明的统计含义、细结扣分辨率及未核验的渲染历史。"
+}

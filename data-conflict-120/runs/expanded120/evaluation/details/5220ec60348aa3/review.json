@@ -1,0 +1,325 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为六组写实煤块置于共同浅蓝地面，煤体下有软阴影，上下分别标注百分数与进口伙伴。指定成图可见九个煤堆：A最高，E最低，B、C、F的两个子类分别等高；九项数值与类别顺序符合输入。合成数据提示、进口质量份额标题、百分比单位和编码说明清楚。大小煤堆均有相接叠置的煤块、接地底部及浅软阴影，无明显遮挡或文字缺失。该记录已在源码检查前保存。",
+  "summary_zh": "九类标签、数值与绑定准确，独立像素测量均在容差内。煤体本身承担高度编码，生成素材实质可见，大小煤堆均保留叠置、接地及独立阴影。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1148原图中检测到0至30刻度位于y=798至438，每5个百分点相隔60像素，即12像素/百分点。按可见间隙分区，以RGB最大通道<140且通道差<30的主连通区域测煤体高度，排除蓝色文字和阴影。九项高度为343、134、133、118、118、121、70、79、79像素。最大绝对偏差约0.117个百分点，即满量程0.389%。阈值110及170复核仍全部通过。误差为绝对值，源码仅作映射及分层印证。",
+  "uncertainties_zh": "抗锯齿边界及亮面造成约1–2像素定位不确定，不能证明亚像素精度。最小项测得约5.833%，相对目标5.9%的误差约1.13%。已检查capture_render.py实现，但未读取运行历史，无法独立证明每次完整渲染均实际经过该包装器。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个煤堆、九项数值和九个类别齐全；B、C、F的六个子类别均保留父类名称，顺序正确。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "九项依次为28.6%、11.2%、11.2%、9.85%、9.85%、10.1%、5.9%、6.65%、6.65%；总量100%及0–30尺度正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "百分数位于对应堆体上方，并由短竖线指向堆顶；父类及子类文字对应下方各煤堆。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "九项像素高度全部通过容差，主阈值最大偏差约0.117个百分点；煤体底部距共同地面约0–1像素。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png的九个煤堆轮廓及块面对应成图。prepare_assets.py提取素材，render.py读取coal_01至coal_09并控制尺寸和文字；capture_render.py提供保存实现，历史调用未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据高度由完整写实煤体外轮廓承担，阴影另层绘制；没有以普通柱形替代煤体编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成提示、指标单位、全部类别数值及底部编码和互斥性说明均可读，无明显裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大小实例均由相接叠置的棱面煤块构成，底层接共同地面，柔软阴影位于煤体下方，背景网格不穿透煤体。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确固体燃料进口份额，副标题明确总进口质量占比及百分比单位；合成伙伴、父子类别及互斥关系均可理解。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留以煤堆比较进口来源质量份额的关系；EU、2014及真实国家改为输入要求的合成伙伴和子类，旧统计情境的部分缺席属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Partner E约145×70像素，仍可辨上层、前景和基底煤块及地面阴影；两组F也保留这些关系，未人为放大小值。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家和年份转为合成伙伴及互斥子类属于输入允许的改编。高度变化来自当前数据，未观察到当前主题、关键部件或融合关系遗漏；边界定位的不确定性属于栅格分辨率限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Partner A",
+        "expected_value": 28.6,
+        "observed_value": 28.5833,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 343,
+        "full_scale_error_percent": 0.0556,
+        "small_value_relative_error_percent": 0.0583,
+        "bbox_xyxy_normalized": [
+          0.0775,
+          0.396341,
+          0.252,
+          0.695122
+        ],
+        "evidence_zh": "煤体像素包围框[155,455,504,798]，右下界不含，高343像素；按可见刻度折算28.5833%。",
+        "uncertainty_zh": "阈值110时341像素，140和170时343像素；边缘定位约1–2像素不确定。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Partner B / subcategory 1",
+        "expected_value": 11.2,
+        "observed_value": 11.1667,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 134,
+        "full_scale_error_percent": 0.1111,
+        "small_value_relative_error_percent": 0.2976,
+        "bbox_xyxy_normalized": [
+          0.261,
+          0.578397,
+          0.341,
+          0.695122
+        ],
+        "evidence_zh": "煤体包围框[522,664,682,798]，高134像素，折算11.1667%。",
+        "uncertainty_zh": "三个阈值下高度相同，仍存在栅格边缘定位不确定。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Partner B / subcategory 2",
+        "expected_value": 11.2,
+        "observed_value": 11.0833,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 133,
+        "full_scale_error_percent": 0.3889,
+        "small_value_relative_error_percent": 1.0417,
+        "bbox_xyxy_normalized": [
+          0.35,
+          0.578397,
+          0.43,
+          0.694251
+        ],
+        "evidence_zh": "煤体包围框[700,664,860,797]，高133像素，折算11.0833%。",
+        "uncertainty_zh": "更严格阈值下为132像素；底部抗锯齿与地面约有1像素定位差。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Partner C / subcategory 1",
+        "expected_value": 9.85,
+        "observed_value": 9.8333,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 118,
+        "full_scale_error_percent": 0.0556,
+        "small_value_relative_error_percent": 0.1692,
+        "bbox_xyxy_normalized": [
+          0.439,
+          0.592334,
+          0.5215,
+          0.695122
+        ],
+        "evidence_zh": "煤体包围框[878,680,1043,798]，高118像素，折算9.8333%。",
+        "uncertainty_zh": "三个阈值下高度相同，不能据此证明亚像素精度。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Partner C / subcategory 2",
+        "expected_value": 9.85,
+        "observed_value": 9.8333,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 118,
+        "full_scale_error_percent": 0.0556,
+        "small_value_relative_error_percent": 0.1692,
+        "bbox_xyxy_normalized": [
+          0.5305,
+          0.592334,
+          0.613,
+          0.695122
+        ],
+        "evidence_zh": "煤体包围框[1061,680,1226,798]，高118像素，折算9.8333%。",
+        "uncertainty_zh": "三个阈值下高度相同，不能据此证明亚像素精度。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Partner D",
+        "expected_value": 10.1,
+        "observed_value": 10.0833,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 121,
+        "full_scale_error_percent": 0.0556,
+        "small_value_relative_error_percent": 0.165,
+        "bbox_xyxy_normalized": [
+          0.622,
+          0.589721,
+          0.7045,
+          0.695122
+        ],
+        "evidence_zh": "煤体包围框[1244,677,1409,798]，高121像素，折算10.0833%。",
+        "uncertainty_zh": "三个阈值下高度相同，仍有栅格边缘定位不确定。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Partner E",
+        "expected_value": 5.9,
+        "observed_value": 5.8333,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 70,
+        "full_scale_error_percent": 0.2222,
+        "small_value_relative_error_percent": 1.1299,
+        "bbox_xyxy_normalized": [
+          0.7135,
+          0.634146,
+          0.786,
+          0.695122
+        ],
+        "evidence_zh": "最小正值煤体包围框[1427,728,1572,798]，高70像素，折算5.8333%。",
+        "uncertainty_zh": "三个阈值下均70像素；完整煤块关系仍可辨，亚像素精度无法恢复。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Partner F / subcategory 1",
+        "expected_value": 6.65,
+        "observed_value": 6.5833,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 79,
+        "full_scale_error_percent": 0.2222,
+        "small_value_relative_error_percent": 1.0025,
+        "bbox_xyxy_normalized": [
+          0.795,
+          0.626307,
+          0.8725,
+          0.695122
+        ],
+        "evidence_zh": "煤体包围框[1590,719,1745,798]，高79像素，折算6.5833%。",
+        "uncertainty_zh": "阈值170纳入顶部浅边后为80像素，说明边界约1像素不确定。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Partner F / subcategory 2",
+        "expected_value": 6.65,
+        "observed_value": 6.5833,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 79,
+        "full_scale_error_percent": 0.2222,
+        "small_value_relative_error_percent": 1.0025,
+        "bbox_xyxy_normalized": [
+          0.8815,
+          0.626307,
+          0.959,
+          0.695122
+        ],
+        "evidence_zh": "煤体包围框[1763,719,1918,798]，高79像素，折算6.5833%。",
+        "uncertainty_zh": "三个阈值下高度相同，仍有栅格边缘定位不确定。"
+      },
+      {
+        "series_id": "S1",
+        "category": "TOTAL ALLOCATION",
+        "expected_value": 100,
+        "observed_value": 100,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.8535,
+          0.112369,
+          0.9525,
+          0.162892
+        ],
+        "evidence_zh": "右上明确显示100%，输入九项之和为100%。",
+        "uncertainty_zh": "该项仅用文字编码总量，无定量形状可测；不依据字号或文字面积判断数值。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Partner A（最大项）",
+        "required_parts": [
+          "顶层煤块",
+          "中层及基底煤块",
+          "共同地面",
+          "独立软阴影"
+        ],
+        "relationship": "煤块相接叠置，底层接地，阴影位于煤体后下方；完整垂直轮廓承担高度编码。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.0685,
+          0.391986,
+          0.2615,
+          0.716028
+        ],
+        "evidence_zh": "尖顶、前部大块及堆脚可辨，接触缝清楚；煤体约y=455–798，较浅投影向两侧延伸。"
+      },
+      {
+        "category": "Partner C / subcategory 1（中间项）",
+        "required_parts": [
+          "上层煤块",
+          "前景及底层煤块",
+          "共同地面",
+          "独立软阴影"
+        ],
+        "relationship": "下层承托上层，前景遮挡后层，底部接共同地面，网格处于后方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.433,
+          0.586237,
+          0.5285,
+          0.713415
+        ],
+        "evidence_zh": "约y=680–798的堆体保留顶部与前景块面；背景网格在轮廓处被遮挡，阴影不延长数据高度。"
+      },
+      {
+        "category": "Partner E（最小正值）",
+        "required_parts": [
+          "顶部小煤块",
+          "前景及基底煤块",
+          "共同地面",
+          "独立软阴影"
+        ],
+        "relationship": "低矮煤堆仍由接触叠置的煤块构成，基底接地，软阴影位于下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.7075,
+          0.627178,
+          0.792,
+          0.712544
+        ],
+        "evidence_zh": "约y=728–798，中央上层、左右斜面与前排煤块可辨；淡投影与深色煤体可区分。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "合成伙伴及互斥子类替代旧真实国家和年份；允许按当前数值调整煤堆形状及非编码宽度。",
+      "output_added_or_lost_meaning_zh": "保留进口来源质量份额比较。新增100%总量与互斥说明有输入支持，未强加旧峰谷或趋势；旧统计背景缺席来自输入改编。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Solid fuel import shares；Share of total imported solid-fuel mass (%)；By synthetic partner and subcategory；Subcategories are mutually exclusive parts of their named partner。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实国家与年份替换为合成伙伴和六个子类，图面明确标示合成数据。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "最大28.6%与最小5.9%形成约343和70像素的煤堆；宽度、数量及阴影明确不编码。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "边缘阈值使个别高度变化1–2像素；小堆体关系仍可辨，但亚像素精度无法直接验证。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖单系列全部九项煤体高度及100%总量文字。所有数值、类别、六个子类和尺度刻度均已核对；部件关系选取最大A、中间C1和最小E。非编码宽度、煤块数量及阴影面积未作为定量通道。"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为共同地面上的六组写实煤块，主题是欧盟按伙伴划分的2014年固体燃料进口百分比。最终图六组煤堆依次标注Partner A–F及28.6%、22.4%、19.7%、10.1%、5.9%、13.3%，底部沿同一地面，下方有浅阴影。A最高、E最低、F高于D；最小E仍可见煤块堆叠。标题、进口质量份额指标、合成声明、0–30%刻度及总计均清楚，未见煤体截断或标签遮挡。",
+  "summary_zh": "六项数值、绑定和煤体高度准确，煤堆直接承载数据，共同地面及独立阴影关系保留。未发现实质缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "对2000×1148原图的煤体区域进行独立像素分割：RGB最大值小于140或160、通道差小于35时，A–F高度均为286、224、197、101、59、133像素；上缘y为537、599、626、722、764、690，下缘半开坐标均为823。阈值放宽到180时各高度增加1像素。源码规定10像素/百分点，据此实测与目标一致，阈值影响不超过0.1个百分点，约满量程0.33%。未运行渲染器。",
+  "uncertainties_zh": "抗锯齿及半透明边缘带来约1像素不确定性，对最小煤堆约为1.7%的相对高度范围，但堆叠结构清楚。已检查capture_render.py源码，未读取受禁的执行日志、自检或历史结果，因此未独立核实全部渲染的实际捕获历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六类别、单一份额系列、合成声明、指标、单位与总计完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "28.6%、22.4%、19.7%、10.1%、5.9%、13.3%逐项符合输入，Total 100.0%正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "百分比和短引线位于对应煤堆上方，Partner标签位于下方，顺序正确且无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实测煤体高度286、224、197、101、59、133像素符合共同线性尺度，阴影未计入高度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始生图素材和裁切煤体，其轮廓纹理对应最终主体；源码根据输入数据缩放完整RGBA煤体并绘制文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "完整煤体从最高点至地面接触处的高度承担编码，物体并非旁置装饰；图面明确块数、脚印和阴影不编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、指标、类别父类、六组标签、单位和编码说明清楚，无明显遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "煤块相互接触并向上堆叠，六组底部沿共同地面；浅阴影位于煤体后下方，与数据边界可区分。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题表达固体燃料进口份额，副标题明确占总进口固体燃料质量的百分比，BY IMPORT PARTNER说明类别角色。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留按伙伴比较进口质量份额及煤堆承载关系；EU、2014和真实国家改为合成伙伴，属于冻结输入允许的改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小E约174像素宽、59像素高，仍可辨认煤块重叠、连续堆体与地面接触；高度准确，未人为放大。"
+    }
+  },
+  "semantic_attribution_zh": "未观察到当前主题、指标或数据承载关系的输出丢失。真实地区、年份和国家身份的减少属于输入允许的合成改编，reference_meaning的partial不构成生成缺陷。约1像素边缘不确定性归于栅格分辨率。"
+}

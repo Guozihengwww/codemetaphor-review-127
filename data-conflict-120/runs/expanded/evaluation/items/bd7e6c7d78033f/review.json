@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：大型写实蓝鸟的腹部叠在白色数据板右上边缘，尾部伸出板外；五行账号有头像、名称、关注者数和重复的小鸟符号。\n成图：SYNTHETIC DATA、Social account followers、五个Account A–E及其数值均清楚可见，单位说明为million followers。大蓝鸟腹部覆盖数据板上缘，尾部斜向右下，未遮挡五行数据。五个圆形头像与各行标签对应。A行可见十只完整鸟与一个末尾裁片，B行可见两只完整鸟与一个裁片，C行仅一个较宽裁片，D行是几段细小蓝色碎片，E行仅近似微点并有2.148%说明引线。页脚显示总量136.145935及按数量和裁切宽度读取的说明。小值的实际边界仍需原始分辨率核对。",
+  "summary_zh": "数值、计数、裁切宽度及标签绑定符合冻结要求；关注者主题、大蓝鸟叠合数据板及头像关系保留。未见实质性缺陷。D、E的微小裁片仅部分可辨，单独记录为分辨率限制。",
+  "issues": [],
+  "measurement_notes_zh": "检查2160×1800原始图。直接像素检测：以白底红通道降幅>32且蓝、绿通道分别高于红通道>16定位符号，完整鸟占80列；A有10只完整鸟，末片x1790–1849占60列；B有2只完整鸟，末片x1038–1059占22列；C、D、E末片分别占39、9、2列。源码与冻结数值推导的目标裁宽依次为59.2、21.69868、38.424592、8.125808、1.7184像素，均与像素支持宽度相差不足1像素，远小于满量程3%（3.6百万）的容差。像素支持宽度包含抗锯齿，不能当作精确裁切边界。E局部降低检测阈值后，在x850–851、y1530–1532仅检出4个带色像素；不以文字或公式代替其可见性。五项相加为136.145935百万，与页脚一致。",
+  "uncertainties_zh": "E的目标裁宽不足2像素，无法从最终栅格独立恢复其精确分数或确认细小值的相对精度；D的断续裁片也不能独立辨认为完整鸟形。它们未被放大，图例和引线说明仍提供读取语境。仅核查capture_render.py实现，未核验历史调用记录；未执行重渲染。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Account A–E按输入顺序完整出现，五个头像、单一Followers系列、单位、合成数据标识和总量均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "五行分别显示107.4、22.712335、4.803074、1.015726、0.2148 M；总量136.145935 million followers，均与输入一致，正值未归零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "头像、Account标签、数值与同一水平行的鸟符号对应；行分隔清楚，没有跨行错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "直接数得A为10只完整鸟加裁片、B为2只加裁片，其余各一个裁片。末片像素支持宽度与按紧致宽度推导的目标相差不足1像素，未见超出满量程容差的偏差；E的精确相对精度受分辨率限制。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png蓝鸟与raw_02.png头像素材，羽毛、姿态及五个面孔与成图对应，素材构成可见主体。render.py读取冻结数据，以同一鸟形掩模控制完整数量与末片宽度；项目brief/data/core与供应文件内容一致。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "蓝鸟腹部覆盖白色数据板上缘，接触处有阴影；头、躯干、翅与向右下伸出的尾部连接连续。小鸟在板内承担数量，主体大鸟不编码，未遮住必需数据或文字。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、全部账号和值、每鸟10百万图例、M单位解释及裁宽规则在原始分辨率清楚可读。E的说明引线与数据微点区分可见。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "保留大型写实蓝鸟与数据板的叠合关系、板内逐行鸟符号计数及账号头像。数据承载边界为同尺寸小鸟的紧致横向裁切边界，并非大鸟体积或蓝色像素面积。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Social account followers及Followers by account明确表达社交账号关注者数量；Account A–E的类别角色、million followers单位及合成统计属性均明确，不依赖仅有物体名称的标题。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考描述Twitter真实头部账号，冻结输入改为五个合成社交账号。成图保留账号关注者比较与蓝鸟叠合关系，不再声称真实平台排名；这是输入允许的适配，不是输出语义丢失。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "D在约x850–858、y1317–1375仅呈断续窄片；E在x850–851、y1530–1532仅余少量浅蓝像素，无法独立辨认鸟体。末片裁切语境及E的2.148%说明仍保留，未发现人为加粗或设最小宽度。"
+    }
+  },
+  "semantic_attribution_zh": "未发现当前主题、单位或关键叠合关系的输出损失。真实Twitter头部账号改为合成社交账号来自冻结输入。D、E鸟形辨识减弱归于真实窄裁片与栅格分辨率，不据此认定数据映射错误。参考本身是叠合构图，不要求大鸟承担定量或与符号融合为同一身体。"
+}

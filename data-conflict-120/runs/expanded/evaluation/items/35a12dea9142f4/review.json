@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为橙色背景上的背面举球运动员，白色年度折线叠过球衣，标题与说明指向女子篮球观众数。待评图可见完整背面双手举球运动员，篮球、双臂、球衣、短裤和双脚相连；折线叠在人物下肢前方。2010—2024年15个点及数值均可见，最后一点标1,360；纵轴标0、500、1,000、1,500。女子篮球、每场平均观众数、千人单位和SYNTHETIC DATA均清晰呈现。",
+  "summary_zh": "数据、标签、线性刻度及运动员与折线的叠合关系符合冻结要求，未发现实质缺陷。参考统计范围的简化来自当前输入。",
+  "issues": [],
+  "measurement_notes_zh": "在1600×2000原图中按紫色连通区域提取15个圆形标记，均与年度刻度对应。以可见0与1500网格约y=1760、760标定，反推各点数值的最大偏差约0.75千人，低于45千人的满量程3%容差；抗锯齿及线宽带来约1–2像素定位不确定性。2017点中心约(799.5,1651.5)，对应162.75，目标163；2024点约(1449.5,853.5)，对应1359.75，目标1360。源码另证实全部点共用仿射变换，此为代码证据，不替代上述像素核查。",
+  "uncertainties_zh": "按要求未读取执行日志、自检或历史记录，因此未独立确认每次完整渲染均通过capture_render.py。像素定位存在抗锯齿误差，但不足以影响容差判断。参考图的具体赛事及转播平台范围比当前冻结主题更窄。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "2010—2024按顺序呈现15个年度刻度、15个点及一条连续折线，无缺失系列或年份。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图中246、260、170、221、234、197、217、163、228、241、202、303、366、432、1,360与输入逐项一致；轴值及千名观众/场单位正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各数值紧邻对应点，上下交错但不串位；1,360与2024终点直接对应。所有点横向对齐相应年份。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素核查支持统一0—1500线性纵轴及等距年度横轴；15点反推误差约不超过1千人，明显低于45千人容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其举球姿态、马尾、球衣褶皱及鞋部纹理在成图主体中可辨。prepare_assets.py处理该素材，render.py合成player_duotone.png并控制定量点位、折线与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "人物占据中央主体，折线从前景横穿脚踝区域，网格覆盖人物场景，保留参考的叠合关系；数据由线和点的位置承载，无需将身体轮廓作为数量边界。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、每场平均指标、千人单位、全部年份和数值均可读，无必要文字被截断或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "篮球位于头顶并与双手接触，双臂连接肩部，背面球衣、短裤、双腿及鞋完整可辨。折线在人物下肢前方叠合，未替换为旁置装饰物。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "WOMEN'S BASKETBALL VIEWERS与Average viewers per game、thousand viewers per game、YEAR共同明确女子篮球年度每场平均观众数；合成数据声明醒目，无累计或组成比例歧义。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留女子篮球平均观众数、年度序列及举球人物叠线关系。参考的WNBA常规赛/ESPN限定未延续，但当前冻结输入已使用更宽的女子篮球主题，属于输入范围改编，不构成输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值163的点距零线约109像素；低值点均可分辨，约16像素直径的常规标记未相互合并。图线穿过人物区域仍连续清晰，未见以最小高度夸大低值。"
+    }
+  },
+  "semantic_attribution_zh": "未发现当前主题、指标或关键物理关系的输出丢失。参考WNBA/ESPN及常规赛范围简化归于冻结输入的允许改编；不要求复现旧增长标题或真实统计。原设计的数据关系为场景叠合，成图保持该关系。原分辨率足以辨认全部点与人物连接关系，像素级误差不影响结论。"
+}

@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为木衣架悬挂的白领长袖拼接上衣，职业类别和百分比标在左侧。成图显示十二个类别及十二层彩色布料，22.4%的浅蓝区域明显最大；白领、挂钩、木衣架、门襟、袖口、下摆和袖身遮挡均可辨。主题、百分比单位、合成数据声明及面积编码说明齐全。",
+  "summary_zh": "未发现实质缺陷。数据、标签和可见布料面积符合要求，物体结构与职业构成语义得到保留。review.json已保存并通过schema.json校验。",
+  "issues": [],
+  "measurement_notes_zh": "以素材透明度和布料蒙版辅助定位支持区，对image.png实际像素按归一化RGB分类，未以源码分区阈值代替测量。十二类面积份额依次约为6.965、7.066、22.466、7.100、7.079、7.022、7.047、7.073、7.036、7.129、7.043、6.973%，最大目标偏差约0.123个百分点，低于3个百分点容差。",
+  "uncertainties_zh": "像素分类受高光、暗褶、引线和抗锯齿影响，约0.49%的支持区权重有较大颜色残差，面积结果属于蒙版辅助估计。未检查日志或历史记录，不能独立确认全部渲染均经capture_render.py留档。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "十二类、十二个布料区域及对应百分比齐全，父类名称和子类别编号保留。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "十项7.07%、一项22.4%、一项6.9%准确；总计100%及合成数据声明可读。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "引线和色签对应实际布料层；22.4%绑定大块浅蓝区域，6.9%绑定浅绿区域，末项绑定红色袖口区域。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图像素分类所得面积份额最大目标偏差约0.123个百分点；源码另证实按投影后的可见布料并集面积切分。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材中的衣架、领口、纽扣、袖褶和下摆在成图中可对应；render.py控制面积分区及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "色层直接覆盖衣身、袖子、门襟与袖口，保留布纹及明暗；白领、衣架与背景不承担数据。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下类别、子类别、数值、主题、单位及统计说明可读，无必要文字遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "挂钩连接木衣架，衣架位于白领后承托上衣；长袖连接肩部并垂下，袖褶与躯干保持遮挡层次，门襟、袖口及下摆清晰。布料区域本身承载数据。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "中英文标题与Share of total (%)明确表达职业及长期失业人口构成；说明子类别互斥、属于对应父类且不是实际调查。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "延续职业类别与拼接衣料的融合关系；合成份额和子类别拆分来自冻结输入，无须沿用参考旧比例。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小份额6.9%仍形成清晰可辨的布料带，其余7.07%层也保留材质和边界关系。"
+    }
+  },
+  "semantic_attribution_zh": "职业构成主题和职业／长期失业角色得到保留。子类别拆分与合成数值属于输入授权的改编，未见输出语义丢失；不推断参考图未明确给出的调查范围。边缘像素分类的不确定性不影响物体关系或统计含义判断。"
+}

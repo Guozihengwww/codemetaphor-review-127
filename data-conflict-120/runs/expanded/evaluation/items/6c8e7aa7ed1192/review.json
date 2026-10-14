@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以分层油桶替代人物面部，头巾在上后方，白须与肩部位于下方。成图显示合成声明、出口去向标题、百分比指标及100%总量；11个色层依次连接11行市场标签，子类别保留父市场名。桶沿、圆柱阴影及人物连接关系可见。右下肩部与辅助说明重叠，部分句首难辨，数据行未受影响。观察已在查看源码前保存。",
+  "summary_zh": "数据、绑定、桶脸融合结构及当前统计含义符合要求；右下辅助说明局部低对比，判为minor。review.json已保存并通过schema校验。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "读图说明中的层高定义和子类别关系应清楚可读。",
+      "observed_zh": "右下说明左端落在深色肩部上，部分深色字融入背景；类别和份额未受影响。",
+      "evidence_zh": "原图约x=1280–1428、y=1640–1788处，说明标题及Layer height、Subcategories、of their开头部分低对比。源码显示文字绘制在肩部之后，属于背景重叠。",
+      "bbox_xyxy_normalized": [
+        0.624,
+        0.82,
+        0.698,
+        0.894
+      ]
+    }
+  ],
+  "measurement_notes_zh": "原图2048×2000。在x≈810列，像素接缝约位于y=658、991、1048、1105、1159、1216、1273、1330、1387、1444、1501、1558，总高约900px。首层约333px、Market C约54px，其余约57px，符合37%、6%及约6.3333%的目标，低于3个百分点容差。接缝定位约有1–2px不确定性。其他两列亦显示相同层间距。源码核对确认H=900、界面为同一椭圆弧垂直平移，引线起点取所属层中点；未重渲染。",
+  "uncertainties_zh": "6.3333%与6.3336%的理论层高差仅0.0027px（源码推导），栅格图无法分辨，文本精度完整保留。未检查禁用执行记录，不能独立确认历史渲染均经capture_render.py保存；不作为成图缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11层和11行去向标签完整，顺序、父市场及子类别与输入一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "37%、6%、8项6.3333%及1项6.3336%均正确，总计100%，合成声明和单位可读。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各水平引线连接所属色层内部，颜色、顺序及数值一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素测得约333px、54px及57px的层高，符合900px总高下的目标份额；分界弧线一致平移。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的头巾、白须和双肩在成图中清晰匹配且构成主体；源码使用这些素材并控制桶身几何与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据层直接组成桶形面部，头巾围绕上后方，桶底连接白须及双肩，未退化为旁置图表。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必要标题、指标、单位、合成声明及全部类别数值清晰；辅助说明局部低对比另记minor。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "分层油桶占据人物面部，头巾、长白须、肩部及桶沿连接关系明确，圆柱阴影保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "石油出口去向、合成出口份额百分比及整桶代表全部出口的含义明确，类别保留父市场角色。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留出口去向份额和桶脸融合关系；原参考的伊朗、真实国家及1980年统计身份按冻结输入改为合成市场，属于允许改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最薄层约54px，其余小层约57px，均可辨为连续圆柱侧壁分层，边界及引线明确。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家及时期被合成市场替换来自冻结输入，不属于输出语义损失。输出保留桶脸融合及层高承载出口份额的关系；局部损失仅为辅助说明可读性。未推断参考人物的具体政治含义；末位份额差异不可见归于像素分辨率限制。"
+}

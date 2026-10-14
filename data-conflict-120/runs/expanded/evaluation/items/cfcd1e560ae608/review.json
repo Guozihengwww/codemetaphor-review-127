@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为具有明暗和壳纹的完整鸡蛋，营养分区在内部一点汇聚。最终图保留此关系：六个区域共用蛋形轮廓和内部汇聚点，外部标签显示1.0%、1.5%、3.1%、4.7%、13.0%、76.7%。最细绿区与邻接棕区可辨。主题、百分比口径、SYNTHETIC DATA及总计100.0%清楚。",
+  "summary_zh": "通过。面积份额、数值及标签绑定吻合，蛋体与数据融合关系完整。已保存review.json并通过schema校验；按追加要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析2000×1800的image.png，未重渲染。按连通蛋体轮廓及颜色方向分类，六区面积估计为0.9567%、1.4939%、3.0895%、4.6890%、12.9713%、76.7995%，最大绝对偏差约0.10个百分点。上述为最终图像的近似像素测量；源码另显示使用遮罩内累积面积分位数控制分区。",
+  "uncertainties_zh": "抗锯齿和边缘混色会带来少量分类误差。共同尖端附近的亚像素区域无法逐像素确认相对精度。未读取禁止访问的日志及自检，无法独立确认全部历史渲染的保存流程。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六类别及对应区域完整，主题、单位、合成数据声明和总计齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "六项百分比与data.json一致，总和100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各引线端点对应正确区域，沿轮廓顺序与输入一致；少量交叉仍可追踪。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终像素测量的最大份额偏差约0.10个百分点，低于3个百分点容差；分区共享轮廓与内部汇聚点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理素材；壳纹、斑点和明暗实际用于最终蛋体，源码控制分区几何及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区域直接共同组成唯一蛋体，纹理和光照沿表面连续。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必要文字清楚，无裁切或遮挡；引线交叉未造成误绑。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "近正面鸡蛋上窄下圆，有壳纹及明暗；六个闭合区域在约(1044,1076)汇聚，标签位于蛋外。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题和副标题明确鸡蛋营养构成及百分比口径，脂肪子类别保留父类语义，底部解释整蛋面积编码。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考的营养组成主题、类别角色及蛋体分区融合关系保留，数值按当前合成输入更新。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下最小两区清晰相邻并连接蛋体；y=430处分别约22和33像素宽，向共同尖端收窄。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出导致的结构或语义丢失。合成数值替换属于冻结输入允许的变化；尖端局部辨识限制来自像素分辨率。"
+}

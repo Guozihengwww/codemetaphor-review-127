@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以六束意面从青色纸套露出的高度表现各国产量，附国旗、国名和数值。成图保留六组意面与纸套的插入关系，套口前缘齐平，纸套侧面及底部折角可见；Italy、USA、Germany、France、Spain、UK顺序与数值清楚。SYNTHETIC DATA、PASTA PRODUCTION、公吨单位和露出高度编码说明均可读。UK套口上方仍可见一小排金色端部，其细小高度需进一步核查。",
+  "summary_zh": "六国数值、绑定、单位及合成数据说明准确。意面露出高度符合统一线性尺度，纸套插入关系、折角及国别标识保留；未发现实质缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "只测量指定image.png（2000×1484），未重渲染。像素检测到轴端刻度位于约y=230与1070，满量程840像素；六组前纸面上缘均约y=1070。金色像素最高行依次为283、576、1004、1011、1015、1062，露出高度约787、494、66、59、55、8像素。按冻结数据和该尺度计算的目标高度为787.20、494.40、66.72、59.04、54.96、8.16像素；最大差0.72像素，约满量程0.086%，低于3%容差。测量采用金色与青色像素阈值，边界约有±1像素不确定性。源码另确认h=value/maximum×840及同一前缘定位；这是代码证据，不替代像素核查。",
+  "uncertainties_zh": "UK目标仅8.16像素，每1像素约占其高度12%，无法据此精确验证亚像素或微小相对误差。已阅读capture_render.py，但依限制未查看执行日志或历史记录，不能独立确认所有完整渲染均经该入口保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个国家、六个意面标记及单一产量系列完整，顺序为Italy、USA、Germany、France、Spain、UK。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图面六值依次为3,280,000、2,060,000、278,000、246,000、229,000、34,000，与冻结数据一致；metric tonnes及0–3,500,000尺度可读。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个数值在对应意面上方，国旗与国家名在同一纸套下方，无交叉引导或类别错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实测露出高度约787、494、66、59、55、8像素；最大满量程偏差约0.086%。六个前缘共同作为零点，纸套高度不参与产量编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材raw_01.png中的金色意面纹理、青色纸面和底部折角在主体可见；prepare_assets.py提取部件，render.py实际加载并映射。项目三份输入与冻结输入一致。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据直接由意面尖端至纸套前缘的距离承载；开口位于意面后方，纸套前面遮住下段，侧面连续接合。素材构成整个数据主体。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA、PASTA PRODUCTION、系列及单位、全部国家与数值均清楚，未见文字被物体遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "六束意面竖直伸入六只纸套，前缘同高；纸套前面、右侧面、浅开口及底部折角可辨。最短意面仍从前缘上方露出，连接与包含关系保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题明确为六国合成意面产量，单位为公吨；文字解释露出高度代表产量及共同线性尺度，国家承担类别角色。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考图以纸套中的意面露出量比较各国产量的融合关系与统计主题；合成数据替换真实数值由冻结输入明确规定。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下，UK在约x=1739–1861、y=1062–1069仍有分开的金色短端部露出，并与纸套相接；约8像素高度未被遮没或人为抬高。其精细相对误差仍受分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或核心物体关系丢失。参考与当前输入均为各国产量比较；改用合成数值及合成来源说明属于输入规定，不应要求旧真实统计。UK微小端部的细节与相对精度限制归于像素分辨率。"
+}

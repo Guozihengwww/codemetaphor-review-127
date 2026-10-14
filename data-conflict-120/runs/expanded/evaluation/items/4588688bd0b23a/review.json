@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：六束黄色意面插入青绿色纸套，套身有侧面与折角；下方国旗和国名对应，上方有产量数字，主题为意面产量（吨）。\n成图：六项依次为Italy、USA、Germany、France、Spain、UK，数字依次为3,280,000、2,060,000、278,000、246,000、229,000、34,000。意面有可见纵向质感与圆形端部，纸套前缘处于共同零线；前两束很长，中间三束短，英国仅薄薄露出一排端部。青绿色套身保留侧面、底部折角与地面阴影，国旗和国家名称可读。PASTA PRODUCTION、SYNTHETIC DATA、metric tonnes及露出高度编码说明清楚可见，未见标签错绑或遮挡。",
+  "summary_zh": "六项数据、顺序、标签和单位正确，露出高度符合共同线性尺度。意面插入纸套的融合关系、纸质折角和国别标识保留；英国的微小端部仍可见。未发现明确违规缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1484原图上，以可见零线约y=1070、3.5M刻度约y=290确定780像素满量程。黄色像素筛选条件为R>150、R−B>65、G−B>25且R>G，每行至少5像素；六束可见主体顶端y约为339、611、1008、1016、1019、1063，露出高度约731、459、62、54、51、7像素。按冻结数值计算的目标分别为730.97、459.09、61.95、54.82、51.03、7.58像素；差异均不足1像素，低于23.4像素的满量程3%容差。render.py的height=value/maximum×780和前缘BASE=1070是源码证据，未代替像素核查。",
+  "uncertainties_zh": "抗锯齿及颜色阈值使边界定位约有1像素不确定性；英国仅约7–8像素高，1像素相当于其目标高度约13%，不能据此保证亚像素相对精度。其黄色端部及套口接触仍可辨。未重渲染，也未核验capture_render.py的历史执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Italy、USA、Germany、France、Spain、UK六类按输入顺序完整出现，单系列共有六个物体标记。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "六个可见数值依次为3,280,000、2,060,000、278,000、246,000、229,000、34,000，与输入一致；metric tonnes和0–3,500,000范围明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各数字位于对应意面束上方，国旗和国家名称位于同列下方；没有交叉绑定或类别重排。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同前缘约y=1070；六束像素高度与目标高度均相差不足1像素。纸套等高且位于零线下方，不承担产量编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及提取的意面、纸套前面和开口素材；其中纵向面条纹理和底部纸折角在成图六项主体中可辨。源码加载这些素材并用输入值控制顶端位置。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "意面下端在纸套前面之后消失，套口后缘位于意面之后；正面、右侧折面和底角连接一致。数据边界就是最高面条尖端至套口前缘，没有改成旁置普通柱形。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA、PASTA PRODUCTION、系列说明、吨单位、国家名及全部数值清楚可读，无必要标签被遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "六束有写实纹理的黄色意面向上伸出青绿色纸套；套口前缘同高，套身正面与侧面相接，底部折角可见。英国端部仍处于前缘上方，并与套内关系连续。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题和系列文字明确为合成意面产量，六国承担地区类别角色，单位为公吨；文字说明露出高度编码产量，统计含义没有被物体名称替代。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考与成图均以国家比较意面产量，并以纸套中露出的面条承载数值。旧真实数值替换为合成值来自冻结输入，未改变主题或类别角色。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "德国、法国、西班牙的短段仍能辨认纵向面条；英国约7–8像素的黄色端部在原分辨率下可见，未被套口完全遮没。其精细相对高度受像素分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "未见输出造成的主题或核心关系丢失。合成数值及合成声明属于冻结输入规定的数据改编，参考的意面产量主题与国家角色保留。英国小标记的精度不确定性来自分辨率与抗锯齿，不能归因为结构丢失。"
+}

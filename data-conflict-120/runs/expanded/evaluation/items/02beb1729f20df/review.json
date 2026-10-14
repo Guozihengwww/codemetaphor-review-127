@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以船坞内的船只图符按年份横向计数，1915行有红色条带。最终图保留11个等距年份行、同类图符及红色条带；年份与右栏数值对齐。1933行可见一枚完整图符和左半枚，标为67,500。主题、SYNTHETIC DATA、净吨单位与图例清晰。",
+  "summary_zh": "通过。已保存并校验review.json。图符数量、半枚裁切、年份绑定及主题结构均符合冻结要求。",
+  "issues": [],
+  "measurement_notes_zh": "对2000×1430成图直接检测蓝色像素，各行图符量依次为22、13、25、9、27、7、19、9、17、1.5、11，与输入完全一致。完整图符46×59像素，行距83像素。1933末枚宽23像素，且与完整图符左23列逐像素相同。按像素计数推导的数值误差为0。源码另外证实由数据控制计数和左侧裁切。",
+  "uncertainties_zh": "未测试缩小显示后的辨识效果。已查看capture_render.py源码，但按限制未检查历史运行记录，不能独立确认每次渲染均经该脚本。未追溯素材的生成调用历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "全部11个年份按输入顺序出现，系列、图例与合计完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部年度数值准确；整枚45,000、半枚22,500及合计7,222,500均正确，单位为net tons。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份、图符和右栏数值逐行对应；红色条带正确绑定1915。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素计数与数据一致；1933采用准确的23/46左半裁切，各行等距。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理后船坞素材，成图主体实质使用相同素材；render.py控制数量、裁切和文字，图面明确注明合成来源。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "船坞图符本身承担计量；红色条带位于图符后方，无破坏结构的遮挡、错位或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成标识、年份、数值、单位及脚注清晰完整，没有明显重叠或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "两侧立柱连接顶部横梁与底座，正面船首位于门架内，船底接触支撑；各行复用同一结构，1915重点条带保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、副标题和列名明确表达各观测年的造船净吨产量；年份、指标和单位可辨，合计标为TOTAL SHOWN。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留造船净吨主题、船在坞内的关系、逐年图符计数及重点条带；按冻结输入调整单位和数量。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "1933半枚仍能辨认左立柱、横梁片段和船体左半；邻近完整图符及裁切图例提供解释，未放大数据。"
+    }
+  },
+  "semantic_attribution_zh": "当前输入保留造船净吨主题，改变合成数值与每枚单位。原图英国历史来源及WAR文字不属于当前必需语义，最终图明确声明非历史统计；此输入范围变化不归为输出语义丢失。"
+}

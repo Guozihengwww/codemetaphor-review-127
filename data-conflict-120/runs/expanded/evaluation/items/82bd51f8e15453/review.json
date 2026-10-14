@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以军费时间曲线叠加三架朝右上飞行的战机及向左下延伸的尾迹。最终图保留三架完整战机，机翼、机身、尾翼相连，尾迹接续机尾，曲线叠于其前方；标题为DEFENCE SPENDING BY REGION，显示Annual expenditure、USD billion (synthetic)及SYNTHETIC DATA。年份2003–2023、纵轴0–1000可读；A标934→438，B标306→34，右侧列出其余系列2023值，底部提供八组首末值。低值曲线集中在零轴上方，局部交叉，细线辨识需结合原始像素核对。",
+  "summary_zh": "未发现违反冻结要求的重大可见缺陷。八组年度曲线、端点数值、单位及合成数据语义一致，完整战机与尾迹保持参考的背景叠合关系。局部同值重合限制了小标记的独立辨认。",
+  "issues": [],
+  "measurement_notes_zh": "对1600×2000的image.png进行原始像素检查。可见纵轴网格1000、800、600、400、200、0分别位于y≈493、732、972、1211、1450、1690；检测到从x=144至1188的21个年度刻度。结合这些边界，数据目标坐标为x=144+52.2×(年份−2003)、y=1690−1.197×数值，与源码一致。168个目标点附近有165处找到对应颜色笔画，匹配像素距目标点的纵向偏移最大1.54px；这是笔画支持检查，不是全部中心线误差测量。三处未独立匹配均有另一系列同值重合。C的2023端点对应色像素位于y=1667–1671，目标中心1669.65为映射推导，零轴实测y=1690。源码读取的数据与冻结data.json一致。",
+  "uncertainties_zh": "C在2017年、D在2013年、F在2008年的标记与其他系列同值重合，原始像素不足以分别确认被覆盖的笔画，不能据此判为漏数。未读取日志、自检或历史记录，也未重渲染，故无法独立确认所有历史渲染均经过capture_render.py；该限制不构成图像缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八个Region系列均有身份及首末值标签；图示2003–2023并标注每组21个年度点，原图可检测21个年度刻度。源码逐组连接冻结数据的全部21点，共168点。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "首末值依次为A 934→438、B 306→34、C 113→17、D 88→36、E 79→54、F 70→39、G 63→44、H 51→32，均与输入一致。A的−53.1%符合计算值−53.1049%；八组末值均低于首值。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "曲线颜色与底部系列键、右侧端点标签一致；右侧E54、G44、F39、D36、B34、H32、C17通过细引线连接对应末点。标签错位排布未改变实际端点高度。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见网格与年度刻度支持共享0–1000线性纵轴及等间隔真实年份轴；主要曲线、低值端点和165个可辨目标点的像素支持均与输入相符，未发现超过满量程3%的偏移。源码确认未平滑或设最小数值高度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的三架战机、相接尾迹及云层与最终图逐一对应，素材在主体区域显著可见。render.py负责素材合成、数据坐标、曲线及文字；capture_render.py提供完整渲染捕获入口，执行历史未作验证。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "战机与尾迹置于绘图区背景，曲线和网格叠于其前方；保留参考的叠合关系。机身轮廓和尾迹均不承担数值边界，无须让其随曲线改变形状。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、Annual expenditure、USD billion (synthetic)、SYNTHETIC DATA、年份与八组端点标签清楚完整。低值区局部交叉，但右侧引线及底部系列键仍可读，无重大遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "三架战机的机身、机翼、座舱、尾翼及发动机保持连通，机头朝右上，尾迹由机尾向左下延伸。完整物体与多条时间曲线处于同一叠合画面，实际数据由曲线纵向位置承载。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "DEFENCE SPENDING BY REGION配合Annual expenditure、YEAR及USD billion (synthetic)，明确表示各地区年度国防支出。Region A–H与冻结语义角色一致，底部说明其为示意地区而非真实国家预算；没有累计或组成份额误读。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "军事支出主题、年度比较及战机背景叠合保留；参考中的具体国家身份与真实统计改为冻结输入明确指定的合成地区数据。此处partial记录输入改编，不是输出丢失或对旧涨跌结论的要求。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最小值C17的末点距零轴约20px，正值没有消失或被人为放大。C/H在2017年同为53、D/H在2013年同为56、F/G在2008年同为49，局部笔画重合而不能分别辨认；其余低值走势及全部末值标签可见。"
+    }
+  },
+  "semantic_attribution_zh": "当前军事支出主题、年度指标、地区角色及单位未见输出损失。reference_meaning的partial归因于冻结输入将真实国别统计改为合成地区；small_mark_visibility的partial归因于同值重合及像素分辨率，不能据此推断数值错误。参考明确要求背景叠合，不应另加机体轮廓编码要求。"
+}

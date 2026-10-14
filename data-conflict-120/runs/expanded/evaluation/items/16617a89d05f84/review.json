@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为七本紧挨、近等高的旧式书，书脊宽度与外部宗教份额标签相连。成图保留红、黄、绿、褐、黑及末端棕红书脊、皮革纹理、金线、磨损和底部阴影；七组外部名称与12%、2%、24%、16%、42%、0.12%、3.88%均可读。Christian最宽；Jewish在Christian与Buddhist之间仅呈极细竖带，斜引线指向该处。顶部明确显示SYNTHETIC DATA、宗教归属主题、人口百分比及总计100%，底部说明书宽编码、等高及合成统计口径。",
+  "summary_zh": "七类份额、顺序、标签及人口百分比语义正确；旧式书脊本身承担连续宽度编码，生图材质实质可见。未发现重大或需单列的轻微缺陷。Jewish极细带可见，但独立书脊细节只能部分辨认。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1392原图中，可见数据带约从x=120延伸至1880，总宽约1760px；色带交界约为331、366、789、1070、1810、1812px，抗锯齿交界约有1–2px判读不确定性。按这些像素近似读数，七带份额约11.99%、1.99%、24.03%、15.97%、42.05%、0.11%、3.86%，均在3个百分点容差内。独立像素采样显示x=1810在y=470–969的RGB中位数为(25,40,56.5)，右侧x=1813为(92,38.5,16)，支持蓝灰细带未被棕红邻带完全覆盖。源码推导宽度为211.2、35.2、422.4、281.6、739.2、2.112、68.288px；这些是代码值，不是亚像素实测。",
+  "uncertainties_zh": "Jewish仅约2px宽：可验证非零色带及对应引线，不能凭像素可靠核实0.12%的精细相对误差，也不能辨认其完整金线和皮革部件。简报允许细书仅作外部标注，故此分辨率限制不构成失败。未重渲染或读取运行日志；capture_render.py源码存在，但其实际历史调用未作独立验证。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Hindu、Folk religions、Muslim、Unaffiliated、Christian、Jewish、Buddhist七类按输入顺序出现；外部名称、数值、主题、单位及合成数据提示完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可读为12%、2%、24%、16%、42%、0.12%、3.88%，与data.json一致；Total 100%与输入总和一致，正微小值未舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "交错引线分别落在各书脊下方中心。Jewish斜引线终点对应Christian右侧极细蓝灰带，Buddhist独立引线对应最右棕红带；未见交叉造成的错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "原图连续色带的近似宽度与12/2/24/16/42/0.12/3.88%一致，偏差远低于3个百分点。源码按累计份额分配宽度且未设置最小宽度；微小带的相对精度另保留不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及spine_jewish.png。原素材的绿色金框、褐色花饰和黑色横脊纹在成图主体中可直接对应；render.py读取七个spine素材并按数值控制几何与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区域就是书脊表面：皮纹、包边和金线随各自份额带延伸，相邻书脊连续接触，底部阴影不承担数值。没有普通图表与书本旁置替代融合的情况。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "全部外部类别及百分比清晰，无裁切或相互遮挡；SYNTHETIC DATA、宗教归属标题、Share of population (%)、总计及底部统计口径可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "等高书脊成排紧挨，上下边界齐平；红黄绿褐等书皮、包边、金线、磨损及底部接触阴影可见。实际数据边界为各书脊左右边界；极细书的部件辨识限制单列于small_mark_visibility。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确宗教归属份额，单位为人口百分比，七标签表达宗教与无归属类别；100%总和符合当前构成数据。合成数据与非人口估计声明清楚，未冒充真实统计。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图以宗教及无归属人口份额对应一排书脊，成图保留同一主题角色和宽度承载关系。新数值、类别内题和合成声明未改变冻结核心要求的统计含义。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "Folk religions的2%及Buddhist的3.88%仍可辨为窄书；Jewish的0.12%在原分辨率仅为约两像素蓝灰竖带，外部标签和引线可读，但其独立书脊的金线、包边和皮革细节不能可靠辨认。"
+    }
+  },
+  "semantic_attribution_zh": "宗教及无归属人口构成的主题、类别角色和书宽份额关系得到保留。用合成份额替换参考真实统计是冻结输入的明确要求，不属于输出语义损失；核心也未要求复刻原典籍书名。Jewish物体细节的部分可辨性归于真实比例下的像素限制，未见将其删除、放大或被邻书遮没的证据。"
+}

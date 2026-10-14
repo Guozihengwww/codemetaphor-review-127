@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以一个立式分层油桶承载石油产品份额，周围用途插画用引线连到桶壁。最终图可见金属桶盖、两个加注口、桶身加强筋、底圈和接触阴影；彩色数据层直接覆盖圆柱侧壁，界面呈相同方向的弧线。标题为Petroleum product use，上方显示SYNTHETIC DATA，副标题为Share of synthetic daily total (%)。17类标签及百分比可读，拆分类保留Diesel、Hydrocarbon Gas Liquids、Jet Fuel父类。加油机、运输机械、日用品、飞机等插画位于外围；底部五条小份额色带仍可区分，分别连接外部类别标签。底部说明排除了桶盖和底圈，并说明用途插画不增加数量。未见明显遮挡必需文字或丢失油桶身份。",
+  "summary_zh": "未发现违反冻结要求的可见缺陷。17类份额、父类标签、桶壁分层和用途引线一致；真实统计改为合成口径属于输入允许的改编。",
+  "issues": [],
+  "measurement_notes_zh": "对1700×2200原图在x=620、670、1030、1100取样，以归一化RGB识别色层并估计过渡区中点。x=670的彩色侧壁约从y=479延伸至1839，高约1360像素；汽油层约571像素，对应41.99%，目标42.0%。最下五层约26、20.5、18.5、18、12.5像素，对应1.91%、1.51%、1.36%、1.32%、0.92%，目标为1.9%、1.5%、1.4%、1.3%、0.9%。四列内部层高估计最大偏差约0.13个百分点。源码另定义H=1360及统一平移弧面，仅用于交叉核对，不替代像素证据。",
+  "uncertainties_zh": "抗锯齿、细分界线和金属反光造成约1—2像素的边界定位误差，不能据此宣称小值相对误差为零。按限制未重新渲染或核查历史执行日志，无法确认每次历史渲染均通过capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "17个输入类别全部出现，顺序一致；11组父类用途插画齐全，未增加数值系列。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "42.0%、四个5.2%、两个3.15%、6.3%、两个3.75%、6.0%、4.1%、1.9%、1.5%、1.4%、1.3%、0.9%均与输入一致；总计100.0%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各层颜色、引线起点与外部类别及数值相符；Diesel、Hydrocarbon Gas Liquids、Jet Fuel的每个子类均保留父类名称。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素取样检出全部17层，层高与份额一致，未见超过3个百分点的偏差；弧形界面保持统一平移，桶盖及底圈位于定量侧壁之外。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01中的桶盖、加注口、金属纹理和加强筋，以及raw_02中的11组用途物体均能在最终图对应找到；render.py实质映射素材并控制分层几何与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩色份额直接构成立式油桶侧壁，纹理随侧壁连续；金属盖与桶口连接，底圈位于最后色层下方，桶下及用途物体保留接触阴影。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、每日合成总量份额及百分比单位清晰；全部类别和值可读，小层使用外部标签，没有必要文字被主体遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "可见桶盖、两个加注口、圆柱侧壁、加强筋及底圈组成同一油桶；数据边界是侧壁上的连续弧形分层，用途插画通过对应引线与层建立联系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确为石油产品用途，副标题说明合成每日总量份额；百分比总计100%，脚注明确子类划分父类，用途插画不代表额外数量。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考图的石油产品份额与用途及油桶融合关系；原美国真实消费统计改为合成每日总量，地域、年份和真实总量未沿用，这是冻结输入允许的改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下底部五条色带连续可辨，外部标签及引线仍能对应；0.9%层总厚约12像素，取样列中有9—11像素连续纯色区域，未被底圈吞没。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出导致的主题或数据承载关系丢失。参考真实统计转为合成统计、父类拆为互斥子类均归因于冻结输入；reference_meaning的partial不属于生成失败。小层测量的不确定性来自像素分辨率与抗锯齿。"
+}

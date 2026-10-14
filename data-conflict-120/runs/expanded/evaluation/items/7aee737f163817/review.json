@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以树干横截面的彩色扇区表示国家森林份额，具有年轮、裂缝、树皮和投影。最终图主题、合成提示和单位清楚；17项均有数值及外围引线。扇区在髓心汇聚，木纹跨色界连续。左侧引线较密，右上及左下局部颜色覆盖粗糙树皮。",
+  "summary_zh": "数据、标签与当前主题保留，几何未见超容差错误。局部着色跨入树皮，属于轻微边界错位。已保存review.json并校验schema；未运行submit.py。",
+  "issues": [
+    {
+      "category": "texture_boundary",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "扇区融合于木质切面，木面与非数据树皮边界一致。",
+      "observed_zh": "右上Region A青色覆盖一段粗糙树皮，着色椭圆与木面交界局部错位。",
+      "evidence_zh": "最终图约x=1060–1280、y=580–730处可见青色粗糙外皮；原始及归一素材可对应该纹理。源码显示着色采用固定椭圆掩模。未测得份额超差。",
+      "bbox_xyxy_normalized": [
+        0.629,
+        0.29,
+        0.76,
+        0.365
+      ]
+    }
+  ],
+  "measurement_notes_zh": "检查1685×2000原始PNG。使用源码声明的中心(860,1040)、半轴525和504作为抽样坐标，并非独立像素拟合。椭圆内831272个最终像素按归一RGB分类，最大份额偏差约0.126个百分点。另在去投影半径300、400、480处检测实际色界，取中位角度，最大份额偏差约0.037个百分点；O、P约为1.005%和0.996%，目标均为1.0%。未采用自检报告。",
+  "uncertainties_zh": "像素测量受抗锯齿、裂缝和暗色材质影响，属于近似估计；树皮错位范围仅作视觉定位。未访问日志或历史记录，不能独立证明素材生成调用及每次完整渲染均经capture_render.py执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "A至P及Remaining共17项完整，主题、系列、单位、合成提示和统计口径均显示。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部百分数与输入一致，包括两个1.0%和Remaining 25.6%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从12点顺时针依次为A至P及Remaining，引线端点对应各自色带；未见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素份额及去投影色界均在3个百分点容差内，最小项实际角宽也与目标相符。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始及处理素材中的年轮、裂缝和树皮实质构成最终主体；源码读取素材并控制定量几何与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "扇区直接承载于木面，年轮和裂缝跨色界连续；树皮环绕切面，投影位于物体下方。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "全部类别及数值可读，标题、合成提示、百分比单位和底部口径说明完整。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "椭圆木面、髓心、年轮、裂缝、树皮、投影及引线均保留；右上和左下局部着色跨入树皮，包含边界不完全一致。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题与副标题明确表达按合成地区划分的森林面积份额，100%木面及树皮排除说明使整体与部分关系清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "森林份额主题及木面融合关系保留；真实国家统计改为合成地区由冻结输入规定，不归为输出语义丢失。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下小项保留独立色带、木纹与引线；O、P实际色界约对应1.005%和0.996%，并非仅保留数字。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、百分比单位及部分占整体的统计意义保留。国家真实统计改为合成地区属于输入允许的适配；输出瑕疵限于局部材质边界错位。像素精度存在限制，但最小扇区可辨。"
+}

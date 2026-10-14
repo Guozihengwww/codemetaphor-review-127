@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中，写实芝麻糖顶面沿纵向首尾排列形成五柱，蓝色台面上有碎屑和投影。最终图保留蓝色台面、碎屑及共同零线；前四柱可见1、2、4、3个横向浅条单元，第五柱由密集分隔的同类单元构成。WK1至WK5分别标注$18,000、$36,000、$72,000、$54,000、$900,000；图例、USD、SYNTHETIC DATA及每周收入标题清楚。第五柱顶端与$900,000网格线对齐；浅条仍可见芝麻颗粒和横向边界，需核对素材及50单元计数。",
+  "summary_zh": "五周数值、标签、完整糖块计数及线性柱高一致。芝麻糖顶面直接组成数据柱，台面、碎屑和共同零线保留，未发现实质性可见缺陷。参考主题的明确改编单独记为部分保留。",
+  "issues": [],
+  "measurement_notes_zh": "对2000×2005原图进行只读像素核验：零线约y=1765，上限网格线y=445，满量程1320像素。各柱暖色顶边位于y=1741、1717、1669、1693、565，对应柱高24、48、96、72、1200像素及$18,000、$36,000、$72,000、$54,000、$900,000。柱内横向亮度跃迁检出0、1、3、2、49道内部分界，均相隔24像素，支持1、2、4、3、50个完整单元。未见超过3%满量程（39.6像素）的偏差。源码另证实按value/18000计数、按1320/990000映射高度；此项是代码证据，不代替上述像素核验。",
+  "uncertainties_zh": "抗锯齿使顶面边缘存在约1–2像素判定余量，细小侧边厚度不作精确测量。参考图未明确写出收入主题，其原始业务含义不能仅凭画面确认。素材可见使用已核对，但生图调用及capture_render.py实际执行记录未独立核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "WK1至WK5依次呈现，单一收入系列完整；五柱共60个数据单元，另有明确分离的图例单元。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "五个金额、1/2/4/3/50块、总额$1,080,000、50 of 60 slabs及每块$18,000均与输入一致；量尺明确为$0–$990,000。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "金额置于对应柱顶，周次和糖块数量位于同柱正下方；未见错位、串列或遮挡。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "原图像素边界支持24、48、96、72、1200像素柱高和1、2、4、3、50块计数；全部从同一零线起算，影子未增加柱高。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA醒目可读。已查看raw_01.png和slab_01.png，芝麻糖纹理与成图主体对应；render.py加载这些素材并控制各单元位置、数量和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "糖块顶面本身构成五根数据柱，非旁置装饰；每个完整顶面的范围承担$18,000，碎屑和右向投影置于台面且明确不计值。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、收入指标、USD、周类别、金额、计数、量尺和图例均清晰完整，无关键文字重叠或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整横向长方形糖块顶面沿柱方向相接，横向接缝分隔各单元；五柱底部共线，右侧投影与蓝色台面接触，散落碎屑保留。姿态适配未破坏顶面计数关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Weekly revenue in sesame slabs及Synthetic weekly revenue · USD明确主题、指标和单位；WEEK与WK1至WK5明确类别角色，五周总额与单周收入区分清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考中的周序、美元刻度和糖块组成柱形的关系保留。core明确reference_semantic_scope为adapted_topic；当前合成收入主题及单位值的变化归因输入许可，不要求保留原金额或旧峰谷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小柱仍有约156×24像素的完整顶面，芝麻纹理与轮廓可辨；前四柱1、2、4、3块可分辨。WK5的49道内部分界在原分辨率中存在，未以夸大小值换取辨识度。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题、类别角色或数据承载关系丢失。reference_meaning的部分保留来自core明确允许的主题改编，并非生成失败；参考原始业务主题本身不完全可见。小单元仍保留顶面与相接关系，细微侧边观感的分辨率限制不构成结构缺失。"
+}

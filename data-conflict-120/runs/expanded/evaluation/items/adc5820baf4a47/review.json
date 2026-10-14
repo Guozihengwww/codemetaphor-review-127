@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以蓝色横条比较各国破冰船数量，第一行横条连接右向俯视船的船尾，船内有甲板，船周有浮冰。成图显示 Fleet A–H 八行及 63、20、11、8、6、6、3、3，总数 120；共同轴标 0–70。第一行蓝色航道接触船尾，完整船体朝右，船艏约在 63，甲板位于船内、浮冰位于船周。其余蓝条端点与数值大致对应，最短两条仍清楚可见。SYNTHETIC DATA、主题、船种统计口径、艘数单位及读图说明完整清晰。以上为查看源码前的图面观察，尚非精确像素测量。",
+  "summary_zh": "成图准确呈现八个舰队的合成船数，船艏承担第一行终点，船体计入总跨度。船尾与航道接触、甲板包含及浮冰层次均保留，未发现违反冻结要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×2000成图像素：共同轴0与70位于约x=430、1830，尺度为20像素/艘。船艏蓝色边界最右实色像素为x=1689，右边界约1690，起点至船艏约1260像素，对应63艘。B–H中心扫描的蓝色像素区间分别为430–829、430–649、430–589、430–549、430–549、430–489、430–489，长度400、220、160、120、120、60、60像素，分别对应20、11、8、6、6、3、3艘。抗锯齿边界估计误差约1–2像素，远低于满量程3%的42像素容差。第一行y=650的船尾接触区域未见背景断缝。另据源码核对，X(value)使用共同线性映射，船艏按素材透明度边界对齐；这是代码证据，不替代上述像素测量。",
+  "uncertainties_zh": "未运行渲染器、未查阅日志或自检，无法独立认证历史上所有完整渲染均经capture_render.py执行；该限制不改变已观察到的素材使用及几何对应。半透明和抗锯齿轮廓存在约1–2像素测量不确定性。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Fleet A–H八个类别按输入顺序完整出现，单一船数系列及0–70轴齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "八行文字为63、20、11、8、6、6、3、3，总数120，与data.json一致；单位为ships。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每行舰队标签、蓝色标记及右端数值水平对应；63位于第一行船艏右侧，没有跨行误绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素端点及长度对应共同20像素/艘尺度。第一行总跨度约1260像素，船体包含在63艘范围内；其余长度400、220、160、120、120、60、60像素。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png及ship.png中的象牙色甲板、橙色救生艇、船体轮廓和浮冰在成图中可辨，构成主体。render.py实际加载素材并按数据控制长度、船艏位置和文字；capture_render.py存在，历史执行链未独立核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "第一行航道从共同起点延伸并接触左侧船尾，船艏朝右且构成数据终点。浮冰位于船周并被船体局部遮挡，甲板在船体内部；未见破坏结构的接缝或透视错位。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA、Icebreaker fleet sizes、完整船种统计口径、FLEET、NUMBER OF SHIPS及全部数值清晰，无关键遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "八行蓝色航道横条保留。第一行完整俯视船含船尾、内部甲板和尖形船艏；船尾接航道，浮冰围绕船体。数据承载边界是共同起点至船艏，浮冰和甲板细节不另编码。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确舰队规模，副标题明确大型破冰船和具冰区航行能力巡逻船，列标题说明舰队类别及艘数。合成标记和页脚说明使Fleet A–H的合成类别角色清楚，统计含义为船只数量比较。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考的船数比较主题及船舶开辟航道的融合关系。参考中的真实国家类别和俄罗斯领先结论依冻结输入改为合成Fleet A–H，属于允许的输入改编，不是输出丢失要求。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值Fleet G、H均为约60×76像素的蓝色矩形，完整可见、彼此分离且保持3艘长度，没有膨胀或归零。参考的小值行也以蓝色横条表达，不要求每行附加船体。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、指标、单位及舰队类别角色均由成图明确表达，未见输出造成的语义缺失。参考国家排名转为合成舰队比较来自冻结输入，故reference_meaning记录部分保留而不计输出缺陷。船尾接触航道、船艏承担终点的核心关系有可见证据；像素分辨率仅限制半透明边缘的精确定位。"
+}

@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图的地球下缘连成积液，并从底座前缘滴落，黑红折线叠在地球上。最终图保留地球—积液—滴流的连接、暗背板和浅透视底座；黑红线共用百分比轴。标题、年度变化含义及SYNTHETIC DATA清楚可读。1975年红线低于零线，1982年两个预测端点可辨。",
+  "summary_zh": "数据路径、系列绑定、当前经济指标语义和融化地球的叠合结构符合要求。仅发现0.5%数值卡遮住部分辅助预测图例说明，属轻微可读性问题。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "右侧辅助说明Open endpoints应完整可见，避免与端点数值卡重叠。",
+      "observed_zh": "0.5%数值卡遮住Open endpoints左侧文字，仅露出右端几个字母；1982、PROJECTED和数值本身仍清楚。",
+      "evidence_zh": "原图右下预测图例处可见残留文字紧贴0.5%卡片右缘。源码佐证：说明起点为(1560,842)，随后绘制的数值卡覆盖x=1514–1634、y约836–884；这些坐标是源码推导，不是像素测量。",
+      "bbox_xyxy_normalized": [
+        0.778,
+        0.734,
+        0.844,
+        0.756
+      ]
+    }
+  ],
+  "measurement_notes_zh": "在2000×1140原图检查。可见15%、10%、5%刻度线约位于y=300、493、686，对应约38.6像素/百分点；16个百分点满量程的3%容差为0.48个百分点，约18.5像素。全部46个目标位置的局部像素窗口均检出相应黑色或红色笔画；笔画包络中点粗测与目标差不超过约0.13个百分点，但转折及遮挡处不把包络中点当作精确顶点。1982红色端点环中心约(1448,860)，高于约y=880的零线20像素，符合0.5%；1975红色谷底约(1170,895)，低于零线15像素，符合−0.4%。源码使用全部23个时间点及两系列值进行统一线性映射，仅对非数据地球素材作分段缩放；未执行渲染。",
+  "uncertainties_zh": "线宽、抗锯齿和交叠限制亚像素定位，尤其1965年0.1个百分点的间距不能仅凭线条精确辨读。允许查阅的源码与素材能确认可见合成路线，但不能独立证明全部历史渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "1960–1982共23年、两系列齐全；图上隔年年份标签及年度刻度可辨。源码使用全部46个数据值，像素检查在各目标位置均找到对应线迹。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可见重点数值5.9%、13.4%、12.7%、1965年的3.2/3.3%、−0.4%、9.6%和0.5%均与冻结数据一致；23 years、2 series及−1%至15%范围正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "价格通胀绑定黑线，产出增长绑定红线；年份、引线与关键点对应。1982预测身份通过虚线、空心端点及文字明确，不随数值改变。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见路径峰谷、负值与小正值符合统一线性轴；46处局部像素核对未发现超过0.48个百分点的偏移。源码按年份和值定位，不将球面经纬网或底座透视用于数据变换。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与globe_melt.png，其大陆纹理、经纬网、连续积液及三个滴流在最终图主体中可见；render.py确实合成该素材并另行绘制数据与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据承载区域是叠在球体及其底部积液上的黑红折线，纵坐标表示百分比，地球外轮廓不编码数值。该关系保留了参考图的叠合方式，没有变成旁置装饰物。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "强制主题、年度统计含义、系列名、百分比单位、年份、合成提示与预测身份均可读；仅辅助Open endpoints说明被数值卡局部遮挡，见轻微问题。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "球体下缘连续扩展成横向积液，积液接触浅透视底座顶面，三个滴流延伸并跨过前缘；暗背板在后，两条数据线叠于地球前。未见破坏这些连接或接触关系的断缝。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Price inflation and output growth标题、Annual change from the previous year说明，以及Price level、Real output和%共同交代当前指标与统计口径。Year和1960–1982明确表示年度时间序列，未将两系列误作组成份额或累计量。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考的价格通胀与实际产出年度变化角色及融化地球叠合关系。参考的24个OECD国家真实统计与Real G.N.P.口径被冻结输入明确适配为合成price level/real output序列；这部分差异归于输入适配，不是输出丢失，也不要求复现旧衰退叙述。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "−0.4%的红色谷底与0.5%的红色端点分别在零线下方、上方清楚可见，未被抬至最小长度。1965年两值只差0.1个百分点，源码推导中心距约3.9像素；原图仍见黑红线迹，但部分笔画相接，仅凭线条难精确分辨该差距，配对数值标注提供辅助。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题和统计角色在输出中保留。参考真实国家范围、具体G.N.P.口径及旧走势叙述的变化来自冻结合成输入的允许适配；不能归为生成器失败。输出自身的问题是辅助图例局部遮挡；1965年近邻线条的精确辨读受线宽与分辨率限制，未发现据此可判定的错误映射。"
+}

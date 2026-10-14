@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：头巾、白须和肩部围绕分层油桶，油桶替代人物面部；右侧标签表达伊朗石油出口去向。成图：七层彩色圆柱桶身位于黑色头巾下方、白色长须上方，并与下方肩部组成同一人物；桶口椭圆沿、弧形层界和左右阴影清楚。Market A–G从上至下分别连接37%、22%、6%、6%、12%、7%、10%；两条6%层均可分辨。标题为Oil export destinations，副标题说明Synthetic oil export share (%)，SYNTHETIC DATA醒目，另有7 markets / 100% total及层高编码说明。当前未见标签遮挡、错连或破坏人物与桶身融合的接缝。此记录写于源码检查前。",
+  "summary_zh": "七类数值、绑定和可见层高正确，桶身替代面部的融合关系完整，石油出口份额及合成数据语义清楚。未发现需扣分的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "对2048×2000原图直接取像素，在x=520、766、1000的三像素窄列识别深色接缝并取中心，排除非数据桶底唇沿。x=766的八条界面约为y=671、997.5、1191、1244、1297、1402.5、1464、1552；层高为326.5、193.5、53、53、105.5、61.5、88像素，对应37.06%、21.96%、6.02%、6.02%、11.98%、6.98%、9.99%。三个位置最大偏差约0.09个百分点，远低于3个百分点；接缝抗锯齿带来约1–2像素定位不确定性。源码核对另显示H=880、层界由累积份额计算并叠加同一椭圆弧；这是代码证据，不替代上述像素量测。项目与冻结brief、data、core内容一致。",
+  "uncertainties_zh": "未重渲染或读取运行日志；项目未提供input.json，capture_render.py的历史实际调用未独立确认，此为执行溯源限制，不作为图像缺陷。像素量测受描边和抗锯齿影响，但不足以改变几何结论。参考图的历史人物语境仅作可见关系判断，不推断作者意图。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Market A–G七类、七层及单一出口份额系列完整，顺序与输入一致。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "37%、22%、6%、6%、12%、7%、10%逐项准确；总计100%，百分比单位明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每条引线起点位于对应色层内部，右侧市场名、色块及百分比同行，未见错连。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "原图三列接缝量测的最大份额偏差约0.09个百分点；两条6%层均约53像素，平移弧界和共同总高成立。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及头巾、白须、肩部素材，其布褶和毛发纹理在主体中明显可见；render.py直接合成素材并控制定量几何与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据桶身处于人物面部位置；头巾在桶口上后方，白须沿桶底连接，肩部位于下后方。部件前后关系未遮蔽数据层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、副标题、SYNTHETIC DATA、七组标签和数值及层高说明清楚，无必需文字裁切或重叠。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "黑色头巾、白色长须、黑衣肩部与分层油桶组成同一人物；桶身替代面部，椭圆桶沿、柱面阴影和连续数据表面均保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Oil export destinations与Synthetic oil export share (%)说明主题、指标和单位；EXPORT DESTINATION明确Market A–G的去向角色，图注明确七层构成总出口的100%。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "石油出口去向及占总出口百分比的意义保留；参考中的伊朗、真实国家和1980年估计语境按冻结输入改为合成市场，属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小的Market C、D各6%，原图层高均约53像素；独立色面、上下弧界及引线连接均清楚，未仅靠数值标签证明可见性。"
+    }
+  },
+  "semantic_attribution_zh": "未见当前主题或数据承载关系的输出丢失。原历史国家与时期语境的减少归因于输入明确采用合成市场，不计为生成失败；人物政治寓意不作推断。最小层仍充分可辨，当前分辨率未造成关系丢失。"
+}

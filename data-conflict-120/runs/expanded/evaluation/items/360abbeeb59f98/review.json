@@ -1,0 +1,76 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以整支横向香烟表达城市每年间接吸烟等效支数，左侧滤嘴连接纸身，右侧有端面；顶部为城市图案打火机与香烟插画。最终图保留上述主体关系，显示SYNTHETIC DATA、年度等效暴露主题、每人每年单位及City A至City M共13行，数值标签清楚。前几行滤嘴、纸身与烟丝端面可见；后几行同时变短变细，City I至M的部件难以辨认。共同起点及0–150刻度可见，City A约136，City B约77；右侧标注两端值相差500倍。",
+  "summary_zh": "13行数据、标签、单位及统一线性长度映射通过核查，生成素材实质用于插画和数据香烟。最小几行的香烟部件难以辨认，属于局部可辨性不足；未发现重大可见违规。",
+  "issues": [
+    {
+      "category": "metaphor_identity",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "各行以滤嘴连接纸身、末端呈现烟丝断面的完整香烟承载数据，同时保持真实长度。",
+      "observed_zh": "City K至M仅剩极细短痕迹，无法可靠分辨滤嘴、纸身和烟丝端面的连接关系；上方较大行保留这些部件。",
+      "evidence_zh": "原尺寸查看时，标记位于x约270、y约1628/1708/1788。最终像素相对背景的RGB最大通道差阈值为3时，K/L/M分别占6/4/2列；M最大颜色差仅25/255。痕迹存在，但不能据此确认部件身份。",
+      "bbox_xyxy_normalized": [
+        0.202,
+        0.772,
+        0.211,
+        0.855
+      ]
+    }
+  ],
+  "measurement_notes_zh": "原图1328×2100；零点x=270，150刻度x=1250，满量程980像素，3%容差29.4像素。直接扫描image.png标记区域相对背景RGB(246,240,229)的颜色差：A右边界约1159，目标1158.533；B约775–776，目标775.025；D约433–434，目标433.152；I/J均约280，目标279.678；M约272，目标271.777。边界取像素区间右缘；低阈值可包含抗锯齿，D附近另有刻度线。13行均未发现超容差长度偏差。K/L/M目标长度5.501/3.127/1.777像素，源码推导高度为1.222/0.695/0.395像素，后者不是像素实测。136÷0.272=500。",
+  "uncertainties_zh": "最小行处于亚像素高度，颜色差可证明痕迹存在，不能证明滤嘴、纸身与端面的相对尺寸可被读者准确识别，也不能据满量程容差推定微小值相对精度。未重渲染或访问日志，无法独立确认所有历史渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "City A至City M共13行按输入顺序呈现，单系列、城市父类、年度指标、单位及SYNTHETIC DATA声明完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "13个数值逐项对应输入，包括City I/J均为1.481329、City M为0.272；没有正数归零，500×比值正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "城市名、香烟及数值位于同一行，无错绑或遮挡；I/J重复值对应等长标记。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素边界与0–150共享线性尺度一致，全部行在满量程3%容差内。源码将滤嘴、纸身和端面分配在value×980/150总跨度内，无额外最小长度。微小值的精细比例仍受分辨率限制。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及cigarette_01.png；相同城市打火机、斜置香烟、滤嘴斑点、纸身纹理和烟丝端面在最终图中实质可见。render.py读取这些素材并控制长度和文字；capture_render.py源码提供完整渲染保存流程，历史执行未核查。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界是香烟自左侧滤嘴起点至右侧烟丝端面的实体总跨度，材质与数据几何融合。顶部城市图案包含在打火机表面，斜置香烟遮于前方；未见破坏结构的穿插或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、城市名、13个精确数值、刻度、单位及合成说明均可读。右侧注释位于空白区，没有遮挡数据；微小物体的可辨性另行记录。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "较大行清楚呈现左滤嘴连接浅色纸身、右端烟丝截面的关系，顶部吸烟与城市插画保留。最小几行部件压缩至无法独立辨认，整体结构保留但并非每行均可识别。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual cigarette equivalent exposure、Indirect smoking in city air、城市行名及每位居民每年单位共同明确当前年度间接吸烟等效暴露含义；明确标为合成数据。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考图的城市空气与年度间接吸烟等效支数关系，以及香烟长度承载数量的方式。真实澳洲城市与旧数值改为City A–M及合成值是冻结输入允许的替换，主题和统计角色仍一致。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "A至H仍可见逐渐缩小的香烟，I/J呈约10像素细线，K/L/M为更弱痕迹。最小值未被人为放大，像素中仍有非背景信号，但末几行的纸身、滤嘴、烟丝关系无法可靠辨认。"
+    }
+  },
+  "semantic_attribution_zh": "主题及统计角色没有明显输出丢失；真实城市名称、旧统计数值和原排序结论的替换来自许可的合成输入。局部损失是最小标记的物体部件可辨性，与代码选用的递减厚度及最终像素分辨率有关；不据此认定数据缺失、重大比例错误或整体隐喻失败。"
+}

@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：单枚上窄下圆的鸡蛋，左上亮、右下暗；营养成分的扇状分区在蛋内汇聚，水占主体，外部引线标注其余成分。\n最终图：单枚完整蛋形，细密斑点与明暗连续覆盖六个分区。五个较小分区从蛋顶及右上轮廓汇聚到蛋内偏下的一点，水占左侧与下部大区；最窄绿色与棕色分区仍可辨认。六个外部标签分别显示1.0%、1.5%、3.1%、4.7%、13.0%、76.7%，引线可追踪到相应色区附近，未见文字遮挡。标题为Egg nutrient composition，另有醒目的SYNTHETIC DATA、Percent of total egg composition和TOTAL 100.0%。仅凭初看不能确认各区面积的精确比例。",
+  "summary_zh": "六类数值、标签绑定和蛋形面积比例符合要求；蛋壳材质、共同汇聚点及数据直接构成蛋体的关系得到保留。主题、单位和合成数据声明清楚，未发现必要要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "对2000×1800的image.png直接进行近似像素分色计数：在蛋体附近取色度阈值所得最大连通区域，以源码六种基色的归一化RGB方向识别分区。阈值12时依输入顺序估计为1.0878%、1.4911%、3.0837%、4.6802%、12.9468%、76.7105%；目标为1.0%、1.5%、3.1%、4.7%、13.0%、76.7%。阈值在10至20间变化，最大绝对偏差均小于0.12个百分点，远低于3个百分点容差。这是最终图像素估计，不是生成方自检或精确透明度加权面积。源码另显示按蛋形遮罩内累计面积确定分区，支持代码控制几何，但不替代像素证据。",
+  "uncertainties_zh": "抗锯齿和半透明外缘会影响分色，尤其可能把少量边缘像素归入最窄色区；汇聚点附近亚像素尖端的相对面积无法精确判断。未查阅被禁止的过程记录，因此不能独立确认capture_render.py的实际执行历史；这不构成可见输出缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个营养类别、六个分区及六个外部数值标签完整；总计100.0%并标明SYNTHETIC DATA。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依输入顺序为1.0%、1.5%、3.1%、4.7%、13.0%、76.7%，与data.json完全一致，正值未被舍为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "沿蛋顶向右顺时针依次为维生素矿物质及盐、多不饱和脂肪、饱和脂肪、单不饱和脂肪、蛋白质、水；对应引线端点与色区一致，水的引线指向左侧大区。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终图像素分区面积与目标的估计偏差均小于0.12个百分点；六区共同覆盖完整蛋体，未见实质空缺或重叠。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与egg_shell.png，蛋壳斑点、表面颗粒、受光和轮廓实质用于最终主体；render.py读取该素材，按输入值控制分区面积并绘制文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界直接切分蛋体，材质与光照贯穿各区；没有用旁置鸡蛋代替融合关系，阴影位于蛋体下方且不计入数据面积。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、百分比单位、六类标签、数值及面积编码说明均可读，未见文字裁切、遮挡或引线错绑。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "单枚近正面鸡蛋上窄下圆、轮廓闭合；五个较小区从蛋顶及右侧外轮廓汇向约(1044,1077)的共同内点，水区闭合包围其左下侧。分区共享边界并直接构成蛋体，标签全部在外。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Egg nutrient composition明确营养成分主题；Percent of total egg composition说明统计口径，脂肪子类保留fat父类词。六区总计100%，组成关系和百分比单位明确。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图的营养成分组成主题及以分区鸡蛋表达整体与部分的关系均保留；当前合成值替代参考数值，没有改换主题或强加旧数值。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下1.0%绿色区与1.5%棕色区均有可辨认的轮廓段、色区面积和蛋壳纹理，连向共同汇聚点。绿色区在y=450附近约22像素宽；越近尖端越窄，未因小值被扩大或独立改成符号。"
+    }
+  },
+  "semantic_attribution_zh": "未发现输出造成的主题或关键结构丢失。输入将参考百分比替换为明确声明的合成数据，但保留鸡蛋营养组成与类别语义，此变化不归为生成缺陷。小区共同尖端的细节受像素分辨率限制，不影响其可见蛋体分区关系。"
+}

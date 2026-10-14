@@ -1,0 +1,61 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为草地围绕的俯拍泥土地，六块彩绳网区由木桩固定，周边有人物及工具。待评图六块网区按Plot A–F排列，下边缘对齐，数值分别为15、17、29、38、55、86 kg。园艺产量标题、SYNTHETIC DATA、240 kg总量及0–90 kg刻度清晰。黄衣人物接触Plot C左上角，蓝衣人物接触Plot F右侧。最短两块仍能辨认边绳、交叉网线和桩。",
+  "summary_zh": "数据、标签绑定及网区长度正确，必要结构与当前主题完整。未发现实质缺陷。已保存review.json并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "只读检测2100×1295的image.png：A–F顶边色带分别位于y=922–924、906–909、810–813、738–740、602–605、354–357，共同底边位于y=1042–1045。由色带中心得到网长约120、136、232、304、440、688 px。90与0刻度亮线实测位于y=324与1044，满量程720 px；目标长度720×值/90与实测相符。边绳定位不确定性约±2 px，即满量程约0.28%，低于3%容差。源码另证实按value×8计算长度并裁切网线；此为代码证据，不替代像素测量。",
+  "uncertainties_zh": "参考图原统计主题不可读，不推断旧指标或作者意图。细绳结的具体绕法受分辨率限制，但网边、桩帽及手部接触可辨。按限定范围未查执行日志，无法独立确认全部渲染的capture_render.py保存历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Plot A–F依输入顺序完整出现，各有一块网区；Harvest yield及kg单位明确。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "15、17、29、38、55、86 kg及总量240 kg均正确，合成声明和0–90 kg范围完整。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值牌位于对应网区顶边上方并有短引线，类别牌位于同列下方，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实测网长符合统一线性尺度，共同底边对齐零线，误差远低于满量程3%。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张原始素材，泥土草地、人物、木桩及工具实质出现在最终图；render.py使用这些素材并控制定量边界和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "彩绳网区自身承担数据边界，木桩固定网边，人物手部与绳桩接触遮挡；俯视方向与地面一致。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、类别、数值、轴刻度、单位及编码说明均可读，无主要遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "泥土、草地、彩绳网区、固定木桩、作业人物及工具保留；共用底边至各顶边的地面屏幕长度承担数据。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题和副标题明确表达六个园艺试验地块的收获产量，Plot A–F为地块类别，kg为单位，240 kg为六地块总量。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考中的绳网、木桩及人物作业接触关系保留。core明确授权主题改编，原图无可读指标；当前园艺产量不构成输出语义丢失。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最短两块约120和136 px，边绳、网线、木桩与泥土关系清楚，约16 px长度差可辨，未见人为增大短网。"
+    }
+  },
+  "semantic_attribution_zh": "未见输出造成的主题或结构语义丢失。园艺产量属于冻结输入授权的主题改编，reference_meaning记partial不代表生成缺陷。分辨率限制仅涉及细绳结局部，不影响长度编码和接触关系判断。"
+}
