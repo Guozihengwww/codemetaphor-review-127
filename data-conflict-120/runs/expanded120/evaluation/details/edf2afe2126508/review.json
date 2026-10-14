@@ -1,0 +1,253 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以红色年度折线叠合完整水彩针叶林。待评图保留树冠、树干和连续林地，红线位于森林前方。标题、SYNTHETIC DATA、hectares、Year及61 annual observations清楚可读。峰值标注1989年7,360,000 ha和1995年7,080,000 ha；底部显示总量130,340,000 ha及最低1963年230,000 ha。小值仍高于零线，未见明显断线或关键文字遮挡。以上观察先于源码检查。",
+  "summary_zh": "通过。森林叠合结构、数据映射和语义标签完整，独立像素检查未超过3%满量程容差。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "分析原始2000×1600图像，未重渲染。像素扫描确认零线约y=1300、8M网格约y=360，满量程940 px；年份端点约x=225和1895。峰值以白环内红点质心测量，其他代表点以相邻红线像素中心拟合交点或端点外推。mark_extent_px表示顶点距零线的纵向距离。全部60段中点辅助检查最大差约15 px，即1.6%满量程。源码公式仅作佐证。",
+  "uncertainties_zh": "线宽和抗锯齿带来约1–2 px测量不确定性，最小值的相对精度不能由满量程通过保证。未查看历史日志、自检或复跑，因此不独立确认全部历史渲染是否均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "一个系列覆盖1959–2019共61年；源码使用全部61点，图面连续，像素辅助检查覆盖60个年度区间。13个主年份标签、9个纵轴刻度、两处峰值和三项汇总可见；M1允许密集年份使用选择性标签。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "1989年7,360,000、1995年7,080,000、最低1963年230,000及总量130,340,000 ha均与输入一致；61年和0–8M刻度正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "红色图例绑定Synthetic area burned；两条峰值引线分别连接1989和1995对应峰点，年份与汇总值无错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共用线性0–8M轴和等年间距。最小值测得约235,373 ha，目标230,000；最大值约7,365,957 ha，目标7,360,000。全部60段中点辅助检查最大差约1.6%满量程，低于3%。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理后森林素材，其树冠、树干和林地布局与成图对应。render.py实际加载素材并独立绘制数据路径及文字；capture_render.py包含完整图保存机制。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "森林与红线占据同一绘图区，红线覆盖树冠、树干和林地，符合要求的叠合关系。脚注明确仅红线编码面积。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、系列、单位、年份刻度、峰值和汇总均清楚可读，未见关键文字裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "树冠连接树干，树干进入连续林地；完整森林位于连续年度折线后方。峰点高于邻近树冠不破坏原有叠合结构。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题和副标题明确年度森林火灾烧毁面积及hectares单位；Year和61 annual observations说明年度观测。总量明确标为年度值之和，没有误作累计时间序列。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "森林与年度烧毁面积折线叠合含义保留；参考的加拿大真实统计及机构来源语境按冻结输入替换为合成研究数据，属于输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "1963年谷点距零线约27.7 px，红色转折及相邻线段清楚，后方林地仍可辨，没有并入零线。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、年度观测角色、指标及单位完整保留。真实加拿大统计语境转为合成数据属于输入适配，峰谷变化由当前数据驱动。未发现输出导致的结构或主题丢失；小值精度的不确定性来自像素分辨率和线宽。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "burned_area",
+        "category": "1963",
+        "expected_value": 230000,
+        "observed_value": 235373,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 27.66,
+        "full_scale_error_percent": 0.0672,
+        "small_value_relative_error_percent": 2.3361,
+        "bbox_xyxy_normalized": [
+          0.163,
+          0.791,
+          0.172,
+          0.801
+        ],
+        "evidence_zh": "最小值：相邻红线像素中心拟合交点约(336.1,1272.3)，距零线27.7 px；红色外缘可见至y=1276。",
+        "uncertainty_zh": "中心约±2 px，即约±17,000 ha，为目标值的7.4%；相对误差仅为点估计。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1989",
+        "expected_value": 7360000,
+        "observed_value": 7365957,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 865.5,
+        "full_scale_error_percent": 0.0745,
+        "small_value_relative_error_percent": 0.0809,
+        "bbox_xyxy_normalized": [
+          0.526,
+          0.266875,
+          0.534,
+          0.276875
+        ],
+        "evidence_zh": "最大值：白环内24个红色阈值像素的质心约(1059.5,434.5)，距零线865.5 px。",
+        "uncertainty_zh": "中心及基线约±1 px，约±8,500 ha。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1987",
+        "expected_value": 1090000,
+        "observed_value": 1088913,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 127.95,
+        "full_scale_error_percent": 0.0136,
+        "small_value_relative_error_percent": 0.0997,
+        "bbox_xyxy_normalized": [
+          0.499,
+          0.7275,
+          0.505,
+          0.73625
+        ],
+        "evidence_zh": "内部年份：相邻红线像素中心拟合交点约(1004.0,1172.1)，距零线127.95 px。",
+        "uncertainty_zh": "线宽及栅格化导致约±2 px不确定性；不是读取源码坐标作为测量。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1995",
+        "expected_value": 7080000,
+        "observed_value": 7085106,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 832.5,
+        "full_scale_error_percent": 0.0638,
+        "small_value_relative_error_percent": 0.0721,
+        "bbox_xyxy_normalized": [
+          0.6095,
+          0.2875,
+          0.6175,
+          0.2975
+        ],
+        "evidence_zh": "另一大值：白环内24个红色像素的质心约(1226.5,467.5)，距零线832.5 px。",
+        "uncertainty_zh": "中心约±1 px；与其他年份共用同一纵轴。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1959",
+        "expected_value": 420000,
+        "observed_value": 428428,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 50.34,
+        "full_scale_error_percent": 0.1054,
+        "small_value_relative_error_percent": 2.0067,
+        "bbox_xyxy_normalized": [
+          0.1095,
+          0.7775,
+          0.1165,
+          0.786875
+        ],
+        "evidence_zh": "第一段红线像素中心拟合至1959刻度x≈225，得到y≈1249.7，距零线50.34 px。",
+        "uncertainty_zh": "端点外推和线宽约±2 px。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "2019",
+        "expected_value": 1910000,
+        "observed_value": 1914011,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 224.9,
+        "full_scale_error_percent": 0.0501,
+        "small_value_relative_error_percent": 0.21,
+        "bbox_xyxy_normalized": [
+          0.9435,
+          0.666875,
+          0.951,
+          0.6775
+        ],
+        "evidence_zh": "末段红线像素中心拟合至2019刻度x≈1895，得到y≈1075.1，距零线224.90 px。",
+        "uncertainty_zh": "端点外推约±2 px。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "完整森林及大型树木",
+        "required_parts": [
+          "针叶树冠",
+          "连续树干",
+          "林下植被和地面",
+          "前景红线"
+        ],
+        "relationship": "树冠连接树干，树干下端进入连续林地；红线覆盖森林前方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.24,
+          0.26,
+          0.38,
+          0.816
+        ],
+        "evidence_zh": "左中部大型松树保留分层树冠、长树干和地面接触；红线穿过较低处树身及植被，森林未被裁成数据轮廓。"
+      },
+      {
+        "category": "1989年大值与森林叠合",
+        "required_parts": [
+          "峰点红环",
+          "两侧年度线段",
+          "峰值引线及文字",
+          "后方水彩树木"
+        ],
+        "relationship": "两侧线段连接同一峰点，标注指向该点；红线位于森林前景。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.505,
+          0.216,
+          0.548,
+          0.772
+        ],
+        "evidence_zh": "红环约位于(1060,435)，两侧陡线连续向下并覆盖中央森林；峰点伸出树冠，符合非树高编码的叠合要求。"
+      },
+      {
+        "category": "1963年最小值与林地",
+        "required_parts": [
+          "低位谷点",
+          "相邻年度线段",
+          "林下地面",
+          "零基线"
+        ],
+        "relationship": "谷点连接两侧线段，位于零线上方，红色边界覆盖林下植被。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.15,
+          0.725,
+          0.19,
+          0.816
+        ],
+        "evidence_zh": "约(336,1272)的谷点保留明显红色转折，与y≈1300零线相距约28 px；附近绿色林地连续可辨。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入保留年度森林火灾烧毁面积主题，以合成数值替换参考真实统计，不要求加拿大、机构品牌或旧峰谷结论。",
+      "output_added_or_lost_meaning_zh": "森林与年度面积变化的叠合关系保留。新增总量、最高和最低摘要均由当前数据支持；参考真实地域来源语境被允许的合成语境替代。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Annual forest fire area、Synthetic area burned, measured annually in hectares、Year、61 annual observations及Sum of the annual values。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考包含Canada及机构标识，当前冻结输入要求合成数据，成图明确标注该性质。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "1989最大值、1995次大值和1963最小值对应当前输入；森林保留为非数据场景。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小高度约27.7 px，足以辨识，但线宽及抗锯齿限制精确相对误差估计。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单系列、单一线性数量通道。详细记录6个代表点，并辅助检查全部60段中点；未将61个顶点宣称为独立精密重建。完整性同时参考源码及连续图面，所有必要文字另行核对；森林材质无第二定量通道。"
+  }
+}

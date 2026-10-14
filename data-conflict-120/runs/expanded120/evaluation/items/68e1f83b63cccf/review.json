@@ -1,0 +1,320 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以两个上下时期呈现红色正面、黑色朝右侧面、绿色正面工人人物，灰色轮廓群像置于后方。待评图保留这种关系；Period A可见红色8+7=15人、黑色2+1=3人、绿色6+6=12人，Period B可见红色1人、黑色5+4=9人、绿色2+1=3人。六组数值文字分别为15、3、12与1、9、3，时期总数为30和13。标题、SYNTHETIC DATA、每200名工人及每完整人物表示1例贫困的说明可读；底注明确灰色群像仅作装饰。最小值仍为完整人物，未见计数遮挡或标签错绑。",
+  "summary_zh": "六组人物计数、数值文字及标签绑定全部正确，必需人物结构和前后叠合关系保留，最小值1清楚可辨。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "检查2000×1471原图，先逐个目视计数，再以排除标签的颜色/亮度掩膜和行内分离区间复核。六组计数为15、3、12和1、9、3。满量程误差按绝对计数误差/16.5计算，相对误差按目标值计算，均为0。mark_extent_px记录组内人物的横向包络宽度，不代表长度编码；源码仅作旁证。",
+  "uncertainties_zh": "抗锯齿使包络边缘约有1像素不确定性，不影响完整人物计数。未查看生成日志、自检或历史归档；capture_render.py具备归档实现，但本次未独立确认每次历史渲染的执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两个时期、三个原因的六组均在，共43个完整数据人物；标题、合成标识、单位和人物计数说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "六组文字15、3、12和1、9、3全部正确；时期总数30、13正确。跨时期系列计数合计16、12、15，与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "Low pay对应红色正面人物，Work gaps对应黑色朝右侧面人物，Other causes对应绿色正面人物；上下时期及数值归属明确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "目视计数与像素分组复核均得到15/3/12、1/9/3，计数误差为0。无分数人物，同类型人物尺寸一致。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材、灰色群像和素材纸底展示图，其帽形、衣领、侧面姿态及群像实际用于主体。源码加载这些素材并按数据值循环放置人物。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "完整人物自身承载单位计数，灰色群像位于后层；未见破坏人物身份或计数的接缝、畸变、遮挡或透视问题。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成标识、时期、原因、全部数值、单位及底部解释均可读，无必需文字重叠或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "上下时期均保留正面红绿工人、朝右侧面黑色工人及后方灰色群像。大计数组和单人物组的头身、手臂、腿鞋关系均可辨。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确贫困来源的两时期比较；副题说明每200名工人的贫困案例及三种互斥原因。底注明确每完整人物表示1例，灰色群像不表示分母。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留贫困来源主题、三类原因角色及跨时期单位人物比较。历史年份与调查数据被允许的合成情境替代，未冒用旧调查身份或强加旧趋势。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值以一个约56×132像素的完整红色人物呈现；帽、衣领、手臂、双腿和鞋可辨，实际人物数量证实其值为1。"
+    }
+  },
+  "semantic_attribution_zh": "历史年份及实测语境替换为合成Period A/B，属于输入允许的情境适配；贫困来源主题和原因角色保持不变。队列数量变化由当前数据驱动，未发现输出语义遗漏或最小人物身份的分辨率损失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "low_pay",
+        "category": "Period A",
+        "expected_value": 15,
+        "observed_value": 15,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 476,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.181,
+          0.363698,
+          0.419,
+          0.559483
+        ],
+        "evidence_zh": "红色正面人物两行8+7=15；单个人物约56×132像素。单位为每200名工人的贫困案例，包络横宽476像素。",
+        "uncertainty_zh": "目视计数与像素分组一致；抗锯齿边缘约有1像素不确定性，不影响计数。"
+      },
+      {
+        "series_id": "work_gaps",
+        "category": "Period A",
+        "expected_value": 3,
+        "observed_value": 3,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 89,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.4575,
+          0.363698,
+          0.502,
+          0.559483
+        ],
+        "evidence_zh": "黑色侧面人物两行2+1=3；单个人物约29×132像素。单位为每200名工人的贫困案例，包络横宽89像素。",
+        "uncertainty_zh": "目视计数与像素分组一致；包络边缘约有1像素不确定性。"
+      },
+      {
+        "series_id": "other_causes",
+        "category": "Period A",
+        "expected_value": 12,
+        "observed_value": 12,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 356,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.721,
+          0.363698,
+          0.899,
+          0.559483
+        ],
+        "evidence_zh": "绿色正面人物两行6+6=12；单个人物约56×132像素。单位为每200名工人的贫困案例，包络横宽356像素。",
+        "uncertainty_zh": "目视计数与像素分组一致；包络边缘约有1像素不确定性。"
+      },
+      {
+        "series_id": "low_pay",
+        "category": "Period B",
+        "expected_value": 1,
+        "observed_value": 1,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 56,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.181,
+          0.656016,
+          0.209,
+          0.745751
+        ],
+        "evidence_zh": "最小正值由一个完整红色正面人物承载，约56×132像素；无额外人物或分数人物。单位为每200名工人的贫困案例。",
+        "uncertainty_zh": "完整人物清楚可辨，计数无歧义；包络边缘约有1像素不确定性。"
+      },
+      {
+        "series_id": "work_gaps",
+        "category": "Period B",
+        "expected_value": 9,
+        "observed_value": 9,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 269,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.4575,
+          0.656016,
+          0.592,
+          0.851801
+        ],
+        "evidence_zh": "黑色侧面人物两行5+4=9；单个人物约29×132像素。单位为每200名工人的贫困案例，包络横宽269像素。",
+        "uncertainty_zh": "目视计数与像素分组一致；包络边缘约有1像素不确定性。"
+      },
+      {
+        "series_id": "other_causes",
+        "category": "Period B",
+        "expected_value": 3,
+        "observed_value": 3,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 116,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.721,
+          0.656016,
+          0.779,
+          0.851801
+        ],
+        "evidence_zh": "绿色正面人物两行2+1=3；单个人物约56×132像素。单位为每200名工人的贫困案例，包络横宽116像素。",
+        "uncertainty_zh": "目视计数与像素分组一致；包络边缘约有1像素不确定性。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Period A / Low pay（大值15）",
+        "required_parts": [
+          "帽与头",
+          "衣领及躯干",
+          "双臂与手",
+          "双腿与鞋",
+          "后方灰色群像"
+        ],
+        "relationship": "正面身体部件保持上下及左右连接关系；完整人物重复，彩色实体位于灰色轮廓前方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.181,
+          0.363698,
+          0.419,
+          0.559483
+        ],
+        "evidence_zh": "15个人物均有帽、领、双臂、双腿和鞋，白色衣缝可辨；未见相邻人物粘连或群像遮断计数轮廓。"
+      },
+      {
+        "category": "Period B / Low pay（最小值1）",
+        "required_parts": [
+          "帽与头",
+          "衣领及躯干",
+          "双臂与手",
+          "双腿与鞋"
+        ],
+        "relationship": "一个完整正面人物承载最小值，保持与大计数组相同的身体结构和单位尺寸。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.181,
+          0.656016,
+          0.209,
+          0.745751
+        ],
+        "evidence_zh": "唯一红色人物头在领口上方，双手位于躯干两侧，双腿与鞋均可分辨，身体没有截断。"
+      },
+      {
+        "category": "Period B / Work gaps（9）",
+        "required_parts": [
+          "帽檐",
+          "朝右的头部轮廓",
+          "躯干及侧臂",
+          "腿与鞋"
+        ],
+        "relationship": "头部朝右，侧臂沿躯干向下，腿鞋位于身体下方；完整侧面轮廓重复9次。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4575,
+          0.656016,
+          0.592,
+          0.851801
+        ],
+        "evidence_zh": "5+4个人物帽檐和面部均朝右，手臂轮廓、裤腿与鞋可见，灰色群像未破坏前后层次。"
+      },
+      {
+        "category": "Period A / Work gaps（3）",
+        "required_parts": [
+          "帽及侧面头部",
+          "躯干及侧臂",
+          "腿与鞋"
+        ],
+        "relationship": "较小计数仍由完整朝右侧面人物组成，保持与下方时期相同的单位尺寸。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4575,
+          0.363698,
+          0.502,
+          0.559483
+        ],
+        "evidence_zh": "2+1个黑色人物保持完整头身、手臂与鞋轮廓，没有只以数字替代人物。"
+      },
+      {
+        "category": "Period A / Other causes（12）",
+        "required_parts": [
+          "帽与头",
+          "衣领及躯干",
+          "双臂",
+          "双腿与鞋"
+        ],
+        "relationship": "正面绿色工人保持头、躯干、双腿的上下关系，双臂沿身体两侧；完整轮廓作为计数单位。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.721,
+          0.363698,
+          0.899,
+          0.559483
+        ],
+        "evidence_zh": "6+6个完整绿色人物均位于浅灰群像前方，轮廓与衣缝可辨。"
+      },
+      {
+        "category": "Period B / Other causes（3）",
+        "required_parts": [
+          "帽与头",
+          "衣领及躯干",
+          "双臂",
+          "双腿与鞋"
+        ],
+        "relationship": "小计数组保留同尺寸完整身体及前景叠合关系。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.721,
+          0.656016,
+          0.779,
+          0.851801
+        ],
+        "evidence_zh": "2+1个绿色人物均有完整双腿和鞋；第二行人物没有裁切或遮挡。"
+      },
+      {
+        "category": "两个时期的群像与数据人物",
+        "required_parts": [
+          "上方时期队列",
+          "下方时期队列",
+          "浅灰多排群像"
+        ],
+        "relationship": "时期上下分隔，原因按列排列；灰色群像跨列处于数据人物后方，不构成计数分母。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1575,
+          0.363698,
+          0.9625,
+          0.851801
+        ],
+        "evidence_zh": "两期均可见后方多排浅灰工人，前景数据人物完整；底注明确群像仅作装饰。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "历史年份和真实调查值替换为合成Period A/B及当前计数；允许调整排布和非数据部件，不要求复现旧数值或涨跌。",
+      "output_added_or_lost_meaning_zh": "贫困来源、三类互斥原因、两时期及每200名工人的口径保留。新增时期总数和群像说明与输入一致，未将时期合计解释为累积，也未暗示各原因合计为100%。",
+      "visible_inscription_evidence_zh": "标题、SYNTHETIC DATA、Cases of poverty per 200 workers / Three mutually exclusive causes、三原因名称及每完整人物=1例的图例均清楚可读；底注明确灰色群像不代表200人基数。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成Period A/B替代历史调查情境，贫困来源主题和原因角色继续保留。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "六组分别由15、3、12和1、9、3个完整人物构成；小值通过减少完整人物数量实现。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖全部六组，包括最小值1、最大值15和内部值9；另核对全部组标签、数值、时期总数及单位说明。无未测数据组，灰色装饰群像按合同不计数。"
+  }
+}

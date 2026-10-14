@@ -1,0 +1,328 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：白底十个国别卷纸，椭圆彩色卷头连着下垂纸带，纸面有横向穿孔虚线和锯齿底边；标题说明每人每年卷纸用量。\n指定图 image.png：白底单排十个相同大小卷头，左侧彩色椭圆环和卷芯清楚，白色纹理纸带从同高零线连续下垂。Group A–J 各自上方标签与纸带对齐，底端依次显示94、89、83、61、58、54、48、47、32、25。左轴0–100向下增加；底部说明读至撕口中心。最大项A接近94，最小项J约25；尚未进行像素测量。各纸带的穿孔虚线、两侧边和锯齿底边可见，无明显遮挡。顶部SYNTHETIC DATA、Annual toilet paper use、Annual use · rolls/person/year及SYNTHETIC POPULATION GROUPS清楚，底部说明这些是示例人口组而非实测国家统计。",
+  "summary_zh": "十个类别、数值、单位与绑定完整；全部纸带的像素测量符合共同线性尺度。卷头与白色纸带连接、穿孔及锯齿撕口保留，生成素材实质可见。未发现违反冻结要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1978的image.png上测量。轴刻度短线的像素中心约为629.667、845.666、1061.666、1277.666、1493.666、1709.666px，满量程约1080px。逐条在目视确定的撕口窗口中提取109列深色描边中心并求平均；观测值=100×(撕口均值−零刻度)/(100刻度−零刻度)。不以最下齿尖或数字标签作为长度。十项计算偏差最大约0.035%满量程，均远小于3%容差；精度约±0.1单位。源码公式仅作旁证，未使用其诊断掩膜或自检结果。",
+  "uncertainties_zh": "描边与抗锯齿使亚像素均值存在约±1px不确定性，所列计算误差不能证明亚像素精确。已查看素材及capture_render.py源码；按限制未查看日志、运行记录或自检，不能独立确认生图调用及每次完整渲染的执行历史。原参考的具体国家与真实统计出处不属于当前合成数据的复现要求。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单排10个卷纸与Group A–J一一对应，唯一系列Annual use、单位及SYNTHETIC DATA齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "从左至右可读94、89、83、61、58、54、48、47、32、25，与data.json全部一致；轴为0–100。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别位于对应卷头正上方，数值位于同一纸带末端，十项顺序正确且无跨列歧义。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部10条纸带独立像素测量均在3%满量程容差内；最大A约1015.2px、中间D约659.2px、最小J约270.2px。卷头同高同尺寸，不计入数据长度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看assets/raw_01.png、roll_head.png及paper_texture.png；其椭圆卷芯、层叠彩环、压纹与阴影在成图主体可辨。prepare_assets.py提取素材，render.py加载并裁剪铺贴。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "每条数据区域就是从卷头下缘连接下垂的白色纸带，其平均撕口位置承载数值；生成材质位于数据主体和卷头，而非旁置装饰。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成标识、十个类别及数值、rolls/person/year、人口组说明和读数说明均清楚，无裁切或关键遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大小实例均保留彩色椭圆卷头包围卷芯、卷绕面衔接垂直纸带、纸面穿孔虚线及末端锯齿。卷头在纸带上方接触连续，无破坏结构的错层或接缝。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual toilet paper use与Annual use · rolls/person/year明确当前主题、指标和口径；SYNTHETIC POPULATION GROUPS及底部说明赋予Group A–J人口组角色。长纸表示每人每年用量更高。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "每人每年卷纸用量比较及长纸代表更多用量的关系保留。原图的具体国家与实测统计被输入允许的合成人口组取代；此部分改变归因输入适配，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小J=25的纸带约270px长，卷头连接、三条穿孔虚线、白色纸面及完整锯齿末端仍可辨；相对误差估计约0.066%，另有约±0.4%的像素测量不确定性。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、每人每年口径、单位和人口组角色均保留。参考国家名称、国旗纹样及真实统计出处的变化属于允许的合成输入适配；彩色环继续区分类别。纸带长度差异由当前数据驱动，未发现输出遗漏或分辨率造成的关键关系损失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_use",
+        "category": "Group A",
+        "expected_value": 94,
+        "observed_value": 93.998,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1015.2,
+        "full_scale_error_percent": 0.002,
+        "small_value_relative_error_percent": 0.002,
+        "bbox_xyxy_normalized": [
+          0.092,
+          0.3183,
+          0.148,
+          0.8341
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约1644.8px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group B",
+        "expected_value": 89,
+        "observed_value": 88.998,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 961.2,
+        "full_scale_error_percent": 0.002,
+        "small_value_relative_error_percent": 0.002,
+        "bbox_xyxy_normalized": [
+          0.181,
+          0.3183,
+          0.237,
+          0.8068
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约1590.8px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group C",
+        "expected_value": 83,
+        "observed_value": 83.022,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 896.6,
+        "full_scale_error_percent": 0.022,
+        "small_value_relative_error_percent": 0.027,
+        "bbox_xyxy_normalized": [
+          0.27,
+          0.3183,
+          0.326,
+          0.7742
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约1526.3px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group D",
+        "expected_value": 61,
+        "observed_value": 61.035,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 659.2,
+        "full_scale_error_percent": 0.035,
+        "small_value_relative_error_percent": 0.057,
+        "bbox_xyxy_normalized": [
+          0.359,
+          0.3183,
+          0.415,
+          0.6541
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约1288.8px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group E",
+        "expected_value": 58,
+        "observed_value": 58.022,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 626.6,
+        "full_scale_error_percent": 0.022,
+        "small_value_relative_error_percent": 0.038,
+        "bbox_xyxy_normalized": [
+          0.448,
+          0.3183,
+          0.504,
+          0.6377
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约1256.3px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group F",
+        "expected_value": 54,
+        "observed_value": 53.998,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 583.2,
+        "full_scale_error_percent": 0.002,
+        "small_value_relative_error_percent": 0.004,
+        "bbox_xyxy_normalized": [
+          0.537,
+          0.3183,
+          0.593,
+          0.6157
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约1212.8px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group G",
+        "expected_value": 48,
+        "observed_value": 48.022,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 518.6,
+        "full_scale_error_percent": 0.022,
+        "small_value_relative_error_percent": 0.046,
+        "bbox_xyxy_normalized": [
+          0.626,
+          0.3183,
+          0.682,
+          0.5831
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约1148.3px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group H",
+        "expected_value": 47,
+        "observed_value": 47.004,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 507.6,
+        "full_scale_error_percent": 0.004,
+        "small_value_relative_error_percent": 0.008,
+        "bbox_xyxy_normalized": [
+          0.715,
+          0.3183,
+          0.771,
+          0.5775
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约1137.3px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group I",
+        "expected_value": 32,
+        "observed_value": 32.004,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 345.6,
+        "full_scale_error_percent": 0.004,
+        "small_value_relative_error_percent": 0.012,
+        "bbox_xyxy_normalized": [
+          0.804,
+          0.3183,
+          0.86,
+          0.4956
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约975.3px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group J",
+        "expected_value": 25,
+        "observed_value": 25.016,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 270.2,
+        "full_scale_error_percent": 0.016,
+        "small_value_relative_error_percent": 0.066,
+        "bbox_xyxy_normalized": [
+          0.893,
+          0.3183,
+          0.949,
+          0.4575
+        ],
+        "evidence_zh": "原图纸带内侧109列撕口描边中心的平均纵坐标约899.8px；使用可见0与100刻度独立换算。",
+        "uncertainty_zh": "抗锯齿、描边宽度和取样约带来±1px端点不确定性；计算小数不代表同等测量精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Group A（最大值）",
+        "required_parts": [
+          "彩色椭圆卷头",
+          "卷芯与卷绕纸面",
+          "白色下垂纸带",
+          "穿孔虚线",
+          "锯齿撕口"
+        ],
+        "relationship": "卷头环绕卷芯，卷绕面下缘接触并连接纸带；纸带向下延伸至承载94的撕口平均线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.075,
+          0.274,
+          0.158,
+          0.835
+        ],
+        "evidence_zh": "左端卷头约y543–630，纸带约x184–296；侧边从零线连续下行，穿孔横贯纸面，撕口均值约y1644.8。"
+      },
+      {
+        "category": "Group D（中间值）",
+        "required_parts": [
+          "椭圆彩环及卷芯",
+          "卷绕面",
+          "连续白色纸带",
+          "穿孔虚线",
+          "锯齿撕口"
+        ],
+        "relationship": "同尺寸卷头衔接等宽纸带，虚线包含在纸面内，末端平均边界表示61。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3425,
+          0.274,
+          0.425,
+          0.655
+        ],
+        "evidence_zh": "第四个卷头与x718–830纸带衔接；上下边界未错位，数值61位于完整撕口上方；末端均值约y1288.8。"
+      },
+      {
+        "category": "Group J（最小正值）",
+        "required_parts": [
+          "椭圆卷头与卷芯",
+          "彩色类别环",
+          "白色短纸带",
+          "三条穿孔虚线",
+          "锯齿撕口"
+        ],
+        "relationship": "卷头下缘接触短纸带；穿孔位于纸面内部，锯齿构成末端数据边界，未靠放大卷头表达25。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.8765,
+          0.274,
+          0.959,
+          0.458
+        ],
+        "evidence_zh": "最右卷头下方x1786–1898纸带长约270.2px；可见y710、790、870附近三条穿孔，数值25与约y899.8的撕口均清楚。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入将参考中的真实国别统计改为Group A–J合成类别及当前数值，允许非数据卷头纹样适配；每人每年用量主题未变。",
+      "output_added_or_lost_meaning_zh": "输出补充示例人口组、非实测国家统计和读数规则，使类别角色清楚。原国家身份及真实来源的缺席来自输入适配；长度承载用量的原比较关系保留。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Annual toilet paper use、Annual use · rolls/person/year、SYNTHETIC POPULATION GROUPS，以及Groups A–J are illustrative population groups和These values are not observed country statistics。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "具体国家及真实统计改为明确标识的合成人口组，属于当前输入允许变化。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "十条纸带的下缘由当前94至25的数值决定，卷头不随数值缩放；不沿用原参考数字。"
+      },
+      {
+        "cause": "none",
+        "evidence_zh": "未观察到主体连接、语义标签或小标记关系的输出损失。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一线性长度通道的10/10项均作像素测量，覆盖最大A、多个中间值、近邻G/H及最小J；10/10类别和数值另作可见文字核对。部件关系详列A、D、J，整体检查全部十个对象；卷头尺寸、彩环和穿孔数量按冻结定义不作定量编码。"
+  }
+}

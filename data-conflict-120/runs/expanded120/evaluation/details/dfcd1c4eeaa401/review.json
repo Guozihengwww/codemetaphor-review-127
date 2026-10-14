@@ -1,0 +1,346 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "已先读取冻结要求与数据，并以view_image原始分辨率查看reference.png与image.png。参考图为十个带国别纹样的卷纸，白色纸带向下延伸，包含穿孔虚线及锯齿撕口。待评图包含十个等大卷头，Group A–J顺序完整，数值依次为94、52、27、12、5、2、1、0.5、0.2、0.1。长纸带直接连接卷头，穿孔与下缘清楚；H–J集中于卷头底缘，J的纸面与撕口难以分离辨认。主题、SYNTHETIC DATA、年度人均单位及合成人群父类清晰，无明显遮挡或串位。以上观察已在查看源码前保存。",
+  "summary_zh": "通过。数据、标签、单位及共同线性编码完整，可测纸带符合满量程3%容差。最小纸带约一像素，其部件关系仅部分可辨，不据此认定数值错误。review.json已保存并通过schema校验；按追加约束未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量2000×1978的image.png，未使用生成方掩膜或自检。网格峰位为y=606、830、1054、1278、1502、1726；灰度质心得零线约605.72、100线约1725.63，即11.199像素/单位。对各撕口避开侧边取96列，以暗轮廓逐列质心的平均值测量平均下缘，并检查阈值敏感性。通常定位不确定度约±0.5像素；小数位不代表实际精度。满量程为100，误差百分比等于数值绝对误差。",
+  "uncertainties_zh": "I、J的纸带与描边、卷绕阴影尺度相近，不能可靠恢复纸面平均下缘或小值相对误差。H的相对误差估计也低于定位不确定度。未读取禁读日志、自检或轮次记录；capture_render.py源码存在，但不能仅凭源码确认每次完整渲染均经该脚本保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "十个卷头及Group A–J均出现，顺序正确；Annual use系列和全部十个数值完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "94、52、27、12、5、2、1、0.5、0.2、0.1全部正确，正小数未取整为零，rolls/person/year单位明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别位于对应卷头上方，数值位于对应纸带下方；小值引线无跨列错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同零点和约224像素的20单位间距清楚。A–H实测误差远低于3单位容差；I、J痕迹局限于零线下数像素，无满量程超差证据，但小值相对精度仍不确定。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "查看了raw_01.png、roll_head_J.png及paper_texture.png；其纸芯、彩色环纹、圆柱阴影及纸纹在成图主体中实质可见。素材准备和渲染源码与这些可见特征相符。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "纸带垂落长度本身承载数据，并直接连接等大卷头。代码控制长度、撕口路径和纹理裁切，可见端点与独立像素测量相符。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成标识、类别父类、全部类别与数值、单位及尺度说明清晰，无主要遮挡。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "椭圆卷头、彩色纹样、卷绕连接、白纸面、长纸带穿孔及锯齿均保留；I、J纸面与撕口难以分别辨认，属于真实小值与分辨率造成的局部限制。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual toilet paper use及rolls/person/year明确年度人均用量，SYNTHETIC POPULATION GROUPS解释Group A–J的类别角色。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留展开纸带比较年度人均用量的关系；具名国家和真实统计来源改为合成人群与本地数据，属于冻结输入允许的改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "E–G仍有可辨短纸面和撕口；H约5.4像素，I约2像素，J约1像素。I、J文字清楚，但纸面、齿形和卷绕下缘不能稳定分离。"
+    }
+  },
+  "semantic_attribution_zh": "国家类别改为合成人群属于允许的输入改编。纸带缩短来自当前数据驱动，最小项部件关系的部分不可辨来自分辨率。未发现当前主题、单位或类别父类的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_use",
+        "category": "Group A",
+        "expected_value": 94,
+        "observed_value": 94.0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1052.7,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1158,
+          0.3062,
+          0.1739,
+          0.8405
+        ],
+        "evidence_zh": "平均暗轮廓y≈1658.44，长度约1052.7像素，折算约94.00。零误差为四舍五入后的估计。",
+        "uncertainty_zh": "约±0.5像素，不主张误差严格为零。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group B",
+        "expected_value": 52,
+        "observed_value": 51.993,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 582.3,
+        "full_scale_error_percent": 0.007,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2028,
+          0.3062,
+          0.2609,
+          0.603
+        ],
+        "evidence_zh": "平均暗轮廓y≈1188.00，长度约582.3像素。",
+        "uncertainty_zh": "约±0.5像素，小数位不代表实际分辨精度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group C",
+        "expected_value": 27,
+        "observed_value": 26.991,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 302.3,
+        "full_scale_error_percent": 0.009,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2898,
+          0.3062,
+          0.3479,
+          0.4616
+        ],
+        "evidence_zh": "平均暗轮廓y≈908.00，长度约302.3像素。",
+        "uncertainty_zh": "约±0.5像素，以撕口平均线计量。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group D",
+        "expected_value": 12,
+        "observed_value": 11.99,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 134.3,
+        "full_scale_error_percent": 0.01,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.3768,
+          0.3062,
+          0.4349,
+          0.3765
+        ],
+        "evidence_zh": "平均暗轮廓y≈740.00，长度约134.3像素。",
+        "uncertainty_zh": "约±0.5像素，未以齿尖作为端点。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group E",
+        "expected_value": 5,
+        "observed_value": 4.988,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 55.9,
+        "full_scale_error_percent": 0.012,
+        "small_value_relative_error_percent": 0.24,
+        "bbox_xyxy_normalized": [
+          0.4638,
+          0.3062,
+          0.5219,
+          0.337
+        ],
+        "evidence_zh": "平均暗轮廓y≈661.59，白纸面明确，长度约55.9像素。",
+        "uncertainty_zh": "约±0.5像素，相对误差仅为轮廓中心估计。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group F",
+        "expected_value": 2,
+        "observed_value": 1.988,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 22.3,
+        "full_scale_error_percent": 0.012,
+        "small_value_relative_error_percent": 0.58,
+        "bbox_xyxy_normalized": [
+          0.5508,
+          0.3062,
+          0.6089,
+          0.3197
+        ],
+        "evidence_zh": "平均暗轮廓y≈627.99，长度约22.3像素，锯齿与卷头仍分离可辨。",
+        "uncertainty_zh": "约±0.5像素，定位不确定度高于所列误差中心值。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group G",
+        "expected_value": 1,
+        "observed_value": 0.992,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 11.1,
+        "full_scale_error_percent": 0.008,
+        "small_value_relative_error_percent": 0.8,
+        "bbox_xyxy_normalized": [
+          0.6378,
+          0.3062,
+          0.6959,
+          0.3138
+        ],
+        "evidence_zh": "平均暗轮廓y≈616.83，长度约11.1像素，可见窄纸面和起伏下缘。",
+        "uncertainty_zh": "约±0.5像素，相当于约4.5%的小值相对定位不确定度。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group H",
+        "expected_value": 0.5,
+        "observed_value": 0.485,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 5.43,
+        "full_scale_error_percent": 0.015,
+        "small_value_relative_error_percent": 3.05,
+        "bbox_xyxy_normalized": [
+          0.7248,
+          0.3062,
+          0.7829,
+          0.3105
+        ],
+        "evidence_zh": "平均暗轮廓y≈611.15，长度约5.43像素，仍有极窄纸面。",
+        "uncertainty_zh": "约±0.5像素，即约9%的相对定位不确定度；3.05%不是已证实的真实误差。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group I",
+        "expected_value": 0.2,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": 2.1,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.8118,
+          0.306,
+          0.8699,
+          0.309
+        ],
+        "evidence_zh": "暗轮廓距零线约2.1像素，纸面与描边、阴影尺度相近，不能可靠反推真实用量。文字0.2正确。",
+        "uncertainty_zh": "2.1像素仅描述暗迹近似位置，不作为纸面长度精度结论。"
+      },
+      {
+        "series_id": "annual_use",
+        "category": "Group J",
+        "expected_value": 0.1,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": 1.0,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.8988,
+          0.306,
+          0.9569,
+          0.3085
+        ],
+        "evidence_zh": "y=606–607附近可见薄暗迹，距零线约1像素；白纸区域与齿形不能稳定分离。文字0.1正确。",
+        "uncertainty_zh": "小值相对误差不可可靠测定；源码的1.12像素目标仅作旁证。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Group A（大值）",
+        "required_parts": [
+          "彩色椭圆卷面",
+          "中心纸芯",
+          "圆柱卷头",
+          "白色纸带",
+          "穿孔虚线",
+          "锯齿撕口"
+        ],
+        "relationship": "卷面包围纸芯；圆柱下缘与垂落纸带连续接触，穿孔位于纸面内部，平均撕口下缘承载数据。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.105,
+          0.255,
+          0.181,
+          0.841
+        ],
+        "evidence_zh": "纸带由共同零线延伸至约y=1659，侧边、穿孔及末端齿边清楚。"
+      },
+      {
+        "category": "Group E–G（短纸带）",
+        "required_parts": [
+          "等大卷头",
+          "卷绕连接",
+          "窄白纸面",
+          "锯齿下缘"
+        ],
+        "relationship": "卷头尺寸不变，缩短的是与卷头相接的外露纸面至下缘的距离。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.453,
+          0.255,
+          0.704,
+          0.338
+        ],
+        "evidence_zh": "约56、22、11像素的纸带仍能区分卷头、纸面和撕口；未强行加入穿孔。"
+      },
+      {
+        "category": "Group H–I（微小值）",
+        "required_parts": [
+          "椭圆卷面及纸芯",
+          "圆柱下缘",
+          "外露纸带",
+          "撕口"
+        ],
+        "relationship": "卷头保留，外露纸带贴近其下缘；连接可定位，纸面与撕口的分离程度下降。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.714,
+          0.255,
+          0.877,
+          0.311
+        ],
+        "evidence_zh": "H还有约5像素窄面及轻微齿形；I约2像素，纸面与轮廓难独立辨认。"
+      },
+      {
+        "category": "Group J（最小正值）",
+        "required_parts": [
+          "彩色椭圆卷面",
+          "中心纸芯",
+          "卷绕下缘",
+          "白纸区域",
+          "锯齿撕口"
+        ],
+        "relationship": "卷头与薄边相接，纸面和齿形接近同一条像素边界。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.888,
+          0.255,
+          0.964,
+          0.309
+        ],
+        "evidence_zh": "完整卷头及下方薄边可见，但不能确认独立纸面和锯齿；0.1标签不作为部件关系证明。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入将国家改为合成人群，保留人均年度卷纸用量；允许纹样、非数据厚度及标签位置适配。",
+      "output_added_or_lost_meaning_zh": "保留纸带越长表示用量越大的比较关系，并明确合成人群父类。旧国家统计含义因输入改编而不再保留；最小纸带的展开关系受分辨率限制。",
+      "visible_inscription_evidence_zh": "Annual toilet paper use、SYNTHETIC DATA、Annual use · rolls/person/year、SYNTHETIC POPULATION GROUPS及no real population estimates均可见。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "国家及国旗改为合成人群和彩色环纹，符合冻结输入。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "等大卷头下纸带随94至0.1缩短，没有沿用参考旧长度。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小两项仅约2与1像素，纸面、阴影、描边及齿形难稳定分离。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一annual_use长度通道的全部十组。A–H提供最终图像轮廓实测；I、J记录可见痕迹尺度并保留反演不确定性。全部类别、数值、系列、单位、父类及合成标识另行逐项核对。"
+  }
+}
