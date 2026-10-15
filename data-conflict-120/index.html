@@ -23,7 +23,8 @@
 <p class="conclusion-scope">已完成 · 120组配对 · 三类各40组 · 115组有效配对纳入分析</p>
 <p class="conclusion-lead">本实验中，数值范围冲突下的结构完整性与微小标记可辨性下降最明显。数值支持和当前主题意义在两种数据条件下均通过评估。</p>
 <p class="conclusion-callout">最直接的发现是：数值范围组的结构完整通过数由 <strong>38/38 → 30/38</strong>，小值可辨通过数由 <strong>34/38 → 11/38</strong>。按逐部件核查的详细评估，结构完整通过数为 <strong>38/38 → 24/38</strong>。在当前预算与评估标准下，数值满足容差、主题可读，与微小隐喻部件完整可辨可以同时出现不同的结果。</p>
-<nav aria-label="结论目录"><a href="#conclusion-design">实验回答什么</a><a href="#conclusion-overall">总体结果</a><a href="#conclusion-types">三类冲突</a><a href="#conclusion-cases">典型案例</a><a href="#conclusion-detail">详细评估与复核</a><a href="#conclusion-cohorts">新旧批次</a><a href="#conclusion-statistics">统计证据</a><a href="#conclusion-implications">研究判断</a></nav>
+<p class="conclusion-note"><strong>跨批次一致性：</strong>两个批次的指标、阈值、模型和预算相同；全部238张可用最终图的详细评估已核验使用同一提示词和表结构。下方“新旧批次”表统一使用详细评估，原评估另行保留以追溯历史。</p>
+<nav aria-label="结论目录"><a href="#conclusion-design">实验回答什么</a><a href="#conclusion-consistency">评估一致性</a><a href="#conclusion-overall">总体结果</a><a href="#conclusion-types">三类冲突</a><a href="#conclusion-cases">典型案例</a><a href="#conclusion-detail">详细评估与复核</a><a href="#conclusion-cohorts">新旧批次</a><a href="#conclusion-statistics">统计证据</a><a href="#conclusion-implications">研究判断</a></nav>
 
 <h3 id="conclusion-design">实验比较与评价维度</h3>
 <p>每个参考设计生成“相近数据”和“冲突数据”两个条件；两者共用设计说明、结构语义约束和量尺。类别数组扩展类别，趋势组重排数据走势，数值范围组主要压缩尾部正值。总计120张不同参考、240个生成任务，三类各40组。生成和评审均沿用 GPT-6-Astra / max；每个生成条件最多3次生图、6次完整渲染、35分钟，独立评分不反馈给生成过程。</p>
@@ -34,6 +35,20 @@
 <li><strong>当前主题意义与参考原意：</strong>前者判断当前主题、指标、单位和类别角色，后者判断原参考的动作或论点是否完整延续。合成主题和身份替换可能保留前者、改变后者。</li>
 <li><strong>微小标记可辨：</strong>在原尺寸成图中检查小值的非零痕迹、形状与细部；数值标签正确不单独构成图形可辨的证据。</li>
 </ul>
+
+<h3 id="conclusion-consistency">两个批次的评估一致性核验</h3>
+<p>已核对两批冻结方案、评审程序和全部可用最终图的评审文件。原60组118张可用最终图的补充详细评估，与新增60组120张可用最终图的详细评估，使用完全相同的提示词和JSON表结构；比对提示词时仅归一化案例目录和Python解释器路径，未忽略任何判定规则。238份详细评估均记录并核验模型为GPT-6-Astra、推理强度为max。</p>
+<div class="table-wrap"><table><caption>两批共同遵循的评估口径</caption>
+<thead><tr><th scope="col">核验项目</th><th scope="col">一致性结论</th></tr></thead><tbody>
+<tr><th scope="row">指标与标签</th><td>同一11项基础检查与语义检查；7项汇总指标定义相同。基础检查采用pass/fail/uncertain，结构、意义、可辨性另允许partial；两批规则相同。</td></tr>
+<tr><th scope="row">数值与几何阈值</th><td>同为满量程3%／份额3个百分点；文字、计数和绑定按同一准确性要求。详细测量增加证据，不修改阈值。</td></tr>
+<tr><th scope="row">生成与评审预算</th><td>同为GPT-6-Astra / max；每条件最多3次生图、6次渲染、35分钟；每次评审15分钟，技术补评最多1次，共用最多3个并行会话。</td></tr>
+<tr><th scope="row">图像选择与盲评</th><td>同为最后一张有效完整图；评审先看参考与当前图，不查看配对条件、既有评分或生成自评；必要时才看源码与素材。</td></tr>
+<tr><th scope="row">汇总与排除</th><td>同一函数计算两批的配对结果；pass/partial/fail/uncertain处理、技术异常排除、精确McNemar检验、保守差值区间和±10个百分点界限一致。</td></tr>
+<tr><th scope="row">历史评审过程</th><td>原60组首次评审缺少结构化详细测量字段，之后补做；新增60组首次评审已有这些字段。原评审表结构去掉新增的detailed_evidence对象后完全一致，原提示词去掉详细证据追加说明后完全一致。历史过程差异保留披露。</td></tr>
+</tbody></table></div>
+<p><strong>比较规则：</strong>涉及评审过程一致性的跨批次比较，统一采用两批的详细评估，不以旧批原评估对比新批详细评估。原先约定的主统计及全部历史标签继续保留，并明确标注详细证据记录的过程差异；不通过覆盖旧评分制造表面一致。238张可用最终图包括少数技术失败任务留下的有效图，正式分析仍按同一规则排除技术失败，最终为58+57=115组有效配对。</p>
+<p class="conclusion-note"><a href="reports/expanded120/evaluation-consistency.json">查看一致性核验记录：配置、代码与评审协议指纹</a></p>
 
 <h3 id="conclusion-overall">总体结果：主要损失集中在结构与小值可辨性</h3>
 <p>在115组有效配对中，两条件的数值支持与当前主题意义均为115/115。原评估的结构完整通过率从99.1% → 92.2%，下降7.0个百分点；小值可辨通过率从91.3% → 68.7%，下降22.6个百分点。逐对看，结构有8组由相近条件通过转为冲突条件未完全通过，小值可辨有26组出现这种变化，两项均没有反向改善的配对。</p>
@@ -67,9 +82,9 @@
 <p>第二次匿名评价覆盖问题项与预先抽取的12个参考设计（两条件、10%参考抽查），两份记录并列保留。有效配对中共有190张最终图具备第二评价，其中相近条件91张、冲突条件99张；结构判定有2张冲突图出现pass→partial分歧，小值可辨有9张出现双向分歧。目录中保留更完整的复核与技术记录。该样本由问题触发加抽查构成，不能当作全体随机样本的一致率；顶部统计也没有择优采用第二评价去覆盖首评。</p>
 
 <h3 id="conclusion-cohorts">新旧批次：小值可辨性下降方向一致</h3>
-<div class="table-wrap"><table><caption>每格依次为“原评估 / 详细评估”，每项均按相近 → 冲突排列</caption>
-<thead><tr><th scope="col">批次</th><th scope="col">结构完整通过数</th><th scope="col">小值可辨通过数</th></tr></thead><tbody><tr><th scope="row">原60组（58组有效）</th><td>57/58 → 52/58 / 57/58 → 46/58</td><td>53/58 → 39/58 / 54/58 → 40/58</td></tr><tr><th scope="row">新增60组（57组有效）</th><td>57/57 → 54/57 / 57/57 → 54/57</td><td>52/57 → 40/57 / 52/57 → 40/57</td></tr></tbody></table></div>
-<p>原60组的小值可辨净下降24.1个百分点，新增60组下降21.1个百分点，方向与幅度接近；新增批次也出现3组结构由pass转为partial。参考原意的原评估通过数在原批次为31/58→27/58，在新增批次为5/57→2/57，差距较大。新增参考包含不同题材、编码与输入改编，且在观察前批结果后进行扩展，因此该批次差异不能解释为系统性能随时间下降，也不能把合并120组当作预先随机抽取的总体样本。</p>
+<div class="table-wrap"><table><caption>统一详细评估口径；全部按相近数据 → 冲突数据排列</caption>
+<thead><tr><th scope="col">批次</th><th scope="col">结构完整通过数</th><th scope="col">小值可辨通过数</th><th scope="col">参考原意完整保留通过数</th></tr></thead><tbody><tr><th scope="row">原60组（58组有效）</th><td>57/58 → 46/58</td><td>54/58 → 40/58</td><td>22/58 → 20/58</td></tr><tr><th scope="row">新增60组（57组有效）</th><td>57/57 → 54/57</td><td>52/57 → 40/57</td><td>5/57 → 2/57</td></tr></tbody></table></div>
+<p>按统一详细评估，原60组的小值可辨由54/58降至40/58，净下降24.1个百分点；新增60组由52/57降至40/57，下降21.1个百分点，方向与幅度接近。结构方面，原批由57/58降至46/58，新增批由57/57降至54/57。参考原意在原批次为22/58→20/58，在新增批次为5/57→2/57，差距较大。新增参考包含不同题材、编码与输入改编，且在观察前批结果后进行扩展，因此该批次差异不能解释为系统性能随时间下降，也不能把合并120组当作预先随机抽取的总体样本。</p>
 
 <h3 id="conclusion-statistics">统计证据与不确定性</h3>
 <div class="table-wrap"><table><caption>配对差值单位为百分点；区间为既定保守95%差值区间；p为未跨指标校正的双侧精确McNemar检验</caption>
