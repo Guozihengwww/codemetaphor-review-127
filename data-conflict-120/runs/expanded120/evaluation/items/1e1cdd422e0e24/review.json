@@ -1,0 +1,385 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为九个共用底线的摄影感酒瓶，配公司/类别、百分比圆章和三处报价。待评图可见九瓶按指定类别顺序排列，圆章依次为0.1%、0.2%、0.5%、1.1%、2.4%、5.3%、11.4%、24.9%、54.1%；三处报价为1,160、910、1,720 CU。合成提示、当前主题、单位、总计100%及平方根高度说明清晰。大瓶部件连接完整；最小瓶轮廓完整但细部像素有限。观察已先于源码检查保存。",
+  "summary_zh": "未发现违反冻结要求的可见缺陷。九类数据及三处报价完整、绑定正确；最终图像像素测量符合平方根整瓶高度映射。review.json已保存并通过schema.json校验；按后续限定未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量1440×2160的image.png：100%刻线y=490，0%刻线y=1790，满高1300像素。排除引线及底线后，九瓶高度约43、63、93、137、202、298、440、648、956像素，以100×(高度/1300)^2反算份额，最大点估计偏差约0.02261个百分点。源码仅作路线与映射佐证。",
+  "uncertainties_zh": "抗锯齿使边界约有1像素判定差异；最小瓶在不同对比阈值下为42–43像素，满量程通过不代表亚像素精度保证。小瓶精细纹理有限。未读取日志、自检或历史归档，故不独立确认capture_render.py的历史执行次数。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九瓶、九个类别、九个百分比齐全且顺序正确；仅B、G、H有报价，其余六项保持缺失。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "百分比按一位小数正确显示，无正值归零；报价为1,160、910、1,720 CU，单位与合计100%说明齐全。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别引线、瓶体和下方圆章对应一致，三处报价均绑定正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "九瓶最终像素高度按声明的平方根标尺反算，最大偏差约0.02261个百分点，低于3个百分点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张原始素材，最终瓶型、标签与纹理对应这些素材；源码逐瓶加载并按数据控制高度、数量和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界为瓶盖至瓶底的完整高度；标签贴于瓶身，颈肩连续，九瓶共用底线，未见破坏解读的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成提示、统计对象、单位、平方根公式、类别、数值及报价均可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "九瓶均保留盖、颈、肩、带标签瓶身和底部；最小瓶仍可辨基本部件及连接。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达虚构酒业群组的合成市场份额、百分比和合计100%，并解释Group A–H、Others及CU报价角色。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留酒瓶份额比较、圆章和报价关系；原印度真实公司语义按冻结输入适配为虚构群组，不属于输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小瓶约25×43像素，盖、窄颈、肩、浅色标签和底部仍可辨；精细纹理及亚像素高度不作保证。"
+    }
+  },
+  "semantic_attribution_zh": "真实印度公司改为虚构酒业群组、原货币报价改为CU，属于允许的输入适配。瓶高变化由当前数据驱动；最小瓶细纹理受分辨率限制。未发现当前主题、类别角色、单位或核心连接关系的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "share_pct",
+        "category": "Group A",
+        "expected_value": 0.10812679,
+        "observed_value": 0.109408,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 43,
+        "full_scale_error_percent": 0.001281,
+        "small_value_relative_error_percent": 1.1852,
+        "bbox_xyxy_normalized": [
+          0.095139,
+          0.808796,
+          0.1125,
+          0.828704
+        ],
+        "evidence_zh": "瓶盖约y=1747、底界y=1790；以实测满高1300反算。",
+        "uncertainty_zh": "较严阈值得42像素，反算约0.104379%；不保证亚像素精度。"
+      },
+      {
+        "series_id": "share_pct",
+        "category": "Group B",
+        "expected_value": 0.23512811,
+        "observed_value": 0.234852,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 63,
+        "full_scale_error_percent": 0.000276,
+        "small_value_relative_error_percent": 0.1174,
+        "bbox_xyxy_normalized": [
+          0.171528,
+          0.799537,
+          0.189583,
+          0.828704
+        ],
+        "evidence_zh": "瓶盖约y=1727、底界y=1790，高63像素。",
+        "uncertainty_zh": "边缘约1像素不确定性，误差为点估计。"
+      },
+      {
+        "series_id": "share_pct",
+        "category": "Group C",
+        "expected_value": 0.51130001,
+        "observed_value": 0.511775,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 93,
+        "full_scale_error_percent": 0.000475,
+        "small_value_relative_error_percent": 0.0929,
+        "bbox_xyxy_normalized": [
+          0.248611,
+          0.785648,
+          0.265278,
+          0.828704
+        ],
+        "evidence_zh": "瓶盖约y=1697、底界y=1790，高93像素。",
+        "uncertainty_zh": "边缘约1像素不确定性，误差为点估计。"
+      },
+      {
+        "series_id": "share_pct",
+        "category": "Group D",
+        "expected_value": 1.11185218,
+        "observed_value": 1.110592,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 137,
+        "full_scale_error_percent": 0.00126,
+        "small_value_relative_error_percent": 0.1134,
+        "bbox_xyxy_normalized": [
+          0.319444,
+          0.765278,
+          0.347917,
+          0.828704
+        ],
+        "evidence_zh": "瓶盖约y=1653、底界y=1790，高137像素。",
+        "uncertainty_zh": "边缘约1像素不确定性，误差为点估计。"
+      },
+      {
+        "series_id": "share_pct",
+        "category": "Group E",
+        "expected_value": 2.41778847,
+        "observed_value": 2.414438,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 202,
+        "full_scale_error_percent": 0.003351,
+        "small_value_relative_error_percent": 0.1386,
+        "bbox_xyxy_normalized": [
+          0.377778,
+          0.735185,
+          0.455556,
+          0.828704
+        ],
+        "evidence_zh": "瓶盖约y=1588、底界y=1790，高202像素。",
+        "uncertainty_zh": "边缘约1像素不确定性，误差为点估计。"
+      },
+      {
+        "series_id": "share_pct",
+        "category": "Group F",
+        "expected_value": 5.25762435,
+        "observed_value": 5.254675,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 298,
+        "full_scale_error_percent": 0.00295,
+        "small_value_relative_error_percent": 0.0561,
+        "bbox_xyxy_normalized": [
+          0.479167,
+          0.690741,
+          0.534028,
+          0.828704
+        ],
+        "evidence_zh": "瓶盖约y=1492、底界y=1790，高298像素。",
+        "uncertainty_zh": "边缘约1像素不确定性，误差为点估计。"
+      },
+      {
+        "series_id": "share_pct",
+        "category": "Group G",
+        "expected_value": 11.43301579,
+        "observed_value": 11.455621,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 440,
+        "full_scale_error_percent": 0.022606,
+        "small_value_relative_error_percent": 0.1977,
+        "bbox_xyxy_normalized": [
+          0.5625,
+          0.625,
+          0.653472,
+          0.828704
+        ],
+        "evidence_zh": "瓶盖约y=1350、底界y=1790，高440像素。",
+        "uncertainty_zh": "边缘约1像素不确定性，误差为点估计。"
+      },
+      {
+        "series_id": "share_pct",
+        "category": "Others",
+        "expected_value": 24.86177055,
+        "observed_value": 24.846391,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 648,
+        "full_scale_error_percent": 0.01538,
+        "small_value_relative_error_percent": 0.0619,
+        "bbox_xyxy_normalized": [
+          0.672917,
+          0.528704,
+          0.80625,
+          0.828704
+        ],
+        "evidence_zh": "瓶盖约y=1142、底界y=1790，高648像素。",
+        "uncertainty_zh": "透明玻璃以盖顶和可见底缘确定跨度，约1像素不确定性。"
+      },
+      {
+        "series_id": "share_pct",
+        "category": "Group H",
+        "expected_value": 54.06339376,
+        "observed_value": 54.079053,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 956,
+        "full_scale_error_percent": 0.015659,
+        "small_value_relative_error_percent": 0.029,
+        "bbox_xyxy_normalized": [
+          0.804167,
+          0.386111,
+          0.973611,
+          0.828704
+        ],
+        "evidence_zh": "瓶盖约y=834、底界y=1790，高956像素。",
+        "uncertainty_zh": "边缘约1像素不确定性，误差为点估计。"
+      },
+      {
+        "series_id": "quote_cu",
+        "category": "Group B",
+        "expected_value": 1160,
+        "observed_value": 1160,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.139,
+          0.745,
+          0.223,
+          0.758
+        ],
+        "evidence_zh": "Group B下方可读1,160 CU。",
+        "uncertainty_zh": "文字框为近似定位；此通道无几何编码或满量程。"
+      },
+      {
+        "series_id": "quote_cu",
+        "category": "Group G",
+        "expected_value": 910,
+        "observed_value": 910,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.575,
+          0.571,
+          0.642,
+          0.583
+        ],
+        "evidence_zh": "Group G下方可读910 CU。",
+        "uncertainty_zh": "文字框为近似定位；此通道无几何编码或满量程。"
+      },
+      {
+        "series_id": "quote_cu",
+        "category": "Group H",
+        "expected_value": 1720,
+        "observed_value": 1720,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.847,
+          0.331,
+          0.932,
+          0.344
+        ],
+        "evidence_zh": "Group H下方可读1,720 CU。",
+        "uncertainty_zh": "文字框为近似定位；此通道无几何编码或满量程。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Group A（最小值）",
+        "required_parts": [
+          "瓶盖",
+          "瓶颈",
+          "瓶肩",
+          "瓶身标签",
+          "瓶底"
+        ],
+        "relationship": "盖接窄颈，颈经肩扩展为瓶身，标签位于瓶身内部，瓶底接共同底线；整瓶高度承载份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.095139,
+          0.808796,
+          0.1125,
+          0.828704
+        ],
+        "evidence_zh": "约25×43像素轮廓中可辨暗顶、窄颈、肩、浅色标签和底部，精细装饰有限。"
+      },
+      {
+        "category": "Group E（中间类别）",
+        "required_parts": [
+          "紫色瓶盖",
+          "短颈",
+          "圆肩",
+          "琥珀色瓶身",
+          "黑金标签",
+          "玻璃瓶底"
+        ],
+        "relationship": "盖颈相接，圆肩连接宽瓶身，标签贴在正面且不越界，玻璃底接底线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.377778,
+          0.735185,
+          0.455556,
+          0.828704
+        ],
+        "evidence_zh": "202像素高完整瓶体结构连续；数据由外轮廓高度承载。"
+      },
+      {
+        "category": "Group H（最大值）",
+        "required_parts": [
+          "红色瓶盖",
+          "长颈",
+          "瓶肩",
+          "带水珠瓶身",
+          "鸟纹椭圆标签",
+          "瓶底"
+        ],
+        "relationship": "盖封闭颈顶，颈经肩连接瓶身，标签贴于前表面，瓶底落在共同底线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.804167,
+          0.386111,
+          0.973611,
+          0.828704
+        ],
+        "evidence_zh": "956像素高整瓶结构清楚，水珠与贴标随瓶面分布；类别引线未遮挡盖顶。"
+      },
+      {
+        "category": "Others",
+        "required_parts": [
+          "黑色瓶盖",
+          "颈部纸标",
+          "透明玻璃肩身",
+          "大面积纸标",
+          "厚玻璃底"
+        ],
+        "relationship": "盖颈相接，透明肩连接瓶身，纸标附于玻璃表面，厚底完整并接底线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.672917,
+          0.528704,
+          0.80625,
+          0.828704
+        ],
+        "evidence_zh": "高光、纸标和厚底可辨；与相邻瓶接近但未见破坏结构的遮挡。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确将印度真实酒业公司份额改为虚构群组合成份额，三处报价改为CU，不要求保留旧数值或旧极值。",
+      "output_added_or_lost_meaning_zh": "保留九类份额比较、整瓶高度数据角色、百分比圆章及报价注记；增加平方根量尺说明。未见当前统计含义缺失。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、虚构酒业群组份额、Synthetic market share (%)、合计100%、Group A–H与Others解释及CU报价仅作注记。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实印度公司与原货币单位明确适配为虚构群组及CU，reference_meaning为partial，不计输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "九瓶高度随当前数据按平方根变化，未要求保留参考瓶高。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小瓶约43像素高，细纹理和边缘定位有限，但轮廓及基本部件关系仍可辨。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖全部九瓶几何，包括最小、最大及中间值；三处报价逐项文字核验，六个缺失报价另查。全部类别、圆章、单位、合成提示和统计口径均核对。未对不编码数值的瓶宽、等大圆章面积或装饰纹理计算误差。"
+  }
+}

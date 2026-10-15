@@ -1,0 +1,273 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为腾跃人物与双系列年龄折线并置，黄色闪光对应Women，橙色星形对应Men。待评图显示SYNTHETIC DATA和当前中文标题，黄色衣裙人物悬于曲线上方。8个年龄组、两系列16个数值、0–8轴均可见；图例解释合成比较组A/B，指标注明每100名假设参与者的合成病例数。最小两个标记靠近零轴但可区分，未见主要文字被遮挡。",
+  "summary_zh": "通过。数值、标签、单位及几何映射正确，腾跃人物与双折线的并置关系保留。原主题替换属于允许的输入适配。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查1480×2000图像像素：零轴y≈1718，8刻度网格y≈924，满量程794像素。按8×(1718−标记中心y)/794换算数值。闪光取上下端中点，五角星依据可见外顶点的对称关系估计中心。全部16点的最大估计满量程误差约0.0693%。横轴刻度x≈246、402、559、715、872、1029、1185、1342，间隔156–157像素。mark_extent_px表示符号轮廓高度，数值由中心位置承载。",
+  "uncertainties_zh": "抗锯齿和轮廓定位约有1–2像素不确定性，足以核查3%满量程容差，但不能保证0.1的高相对精度。已查看归档脚本实现；遵照限制未检查执行日志或历史记录，不能证明每次渲染均已归档。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "8个年龄类别、两系列各8个标记与数值、图例、0–8轴、标题、合成声明和单位完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A：0.4、5.2、6.9、7.4、6.7、5.6、4.5、4.1；B：0.1、2.4、3.5、3.9、3.0、2.7、2.1、2.1，均正确。共同峰值提示35–44、7.4与3.9正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "黄色闪光、折线及标签绑定合成比较组A；橙色星形绑定合成比较组B。各年龄列两标记共用横坐标。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "16个标记的独立像素测量符合共同0–8线性轴；最大估计满量程误差约0.0693%，年龄类别等距。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png和dancer.png与图中主体可见对应；render.py加载人物素材并依据数据绘制曲线、标记和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "人物与图表保持参考的并置关系，数据由标记中心及连接线承载；未见遮挡破坏曲线或必需部件。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下16个数值、8个类别、图例解释、指标和底注可读，无必需文字截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "头颈、躯干、双臂、双腿和衣裙连接关系清楚；腾跃身份保留，两条折线分别连接闪光和星形中心。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "当前主题、合成比较组、合成病例数及每100名假设参与者明确；年龄段未误作年份，未把两系列解释为100%组成。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "原焦虑及Women/Men语境被合成主题替代，属于core明确允许的输入适配；腾跃动作和双系列年龄趋势并置仍保留。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小闪光约21×31像素，星形约26×24像素，中心距零轴约40与10.3像素；形状和连接线仍可区分，小值相对精度受分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "焦虑/男女语境改为合成设计任务及合成比较组，是输入明确允许的适配，不属于输出遗漏。曲线高度由当前数据决定；最小值测量的不确定性来自像素分辨率。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "group_a",
+        "category": "14 and younger",
+        "expected_value": 0.4,
+        "observed_value": 0.403,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 31,
+        "full_scale_error_percent": 0.0378,
+        "small_value_relative_error_percent": 0.756,
+        "bbox_xyxy_normalized": [
+          0.159459,
+          0.8315,
+          0.173649,
+          0.847
+        ],
+        "evidence_zh": "轮廓约21×31像素，中心y≈1678，距零轴40像素，换算约0.403。",
+        "uncertainty_zh": "中心约有1–2像素定位不确定性；估计误差不代表小值精度保证。"
+      },
+      {
+        "series_id": "group_a",
+        "category": "35-44",
+        "expected_value": 7.4,
+        "observed_value": 7.4055,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 31,
+        "full_scale_error_percent": 0.0693,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.477027,
+          0.484,
+          0.490541,
+          0.4995
+        ],
+        "evidence_zh": "轮廓约20×31像素，中心y≈983，距零轴735像素，换算约7.406。",
+        "uncertainty_zh": "上下端中点估计中心，约有1–2像素误差。"
+      },
+      {
+        "series_id": "group_a",
+        "category": "55-64",
+        "expected_value": 5.6,
+        "observed_value": 5.602,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 31,
+        "full_scale_error_percent": 0.0252,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.688514,
+          0.5735,
+          0.702703,
+          0.589
+        ],
+        "evidence_zh": "轮廓约21×31像素，中心y≈1162，距零轴556像素，换算约5.602。",
+        "uncertainty_zh": "边缘取整与抗锯齿约带来1–2像素不确定性。"
+      },
+      {
+        "series_id": "group_b",
+        "category": "14 and younger",
+        "expected_value": 0.1,
+        "observed_value": 0.1036,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 24,
+        "full_scale_error_percent": 0.0455,
+        "small_value_relative_error_percent": 3.636,
+        "bbox_xyxy_normalized": [
+          0.157432,
+          0.8475,
+          0.175,
+          0.8595
+        ],
+        "evidence_zh": "星形轮廓约26×24像素；可见顶底端位于y≈1695和1718，估计中心y≈1707.714，距零轴约10.286像素。",
+        "uncertainty_zh": "1–2像素对应约10–20%的小值相对分辨率。所列3.636%仅为点估计，不构成相对精度保证。"
+      },
+      {
+        "series_id": "group_b",
+        "category": "35-44",
+        "expected_value": 3.9,
+        "observed_value": 3.9021,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 24,
+        "full_scale_error_percent": 0.0266,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.475,
+          0.659,
+          0.492568,
+          0.671
+        ],
+        "evidence_zh": "轮廓约26×24像素，估计中心y≈1330.714，距零轴约387.286像素，换算约3.902。",
+        "uncertainty_zh": "依据可见星形外顶点估计中心，约有1–2像素不确定性。"
+      },
+      {
+        "series_id": "group_b",
+        "category": "55-64",
+        "expected_value": 2.7,
+        "observed_value": 2.7031,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 24,
+        "full_scale_error_percent": 0.0392,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.686486,
+          0.7185,
+          0.704054,
+          0.7305
+        ],
+        "evidence_zh": "轮廓约26×24像素，估计中心y≈1449.714，距零轴约268.286像素，换算约2.703。",
+        "uncertainty_zh": "轮廓抗锯齿使中心约有1–2像素定位不确定性。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "腾跃人物",
+        "required_parts": [
+          "头颈",
+          "躯干",
+          "双臂与手",
+          "衣裙",
+          "双腿与脚"
+        ],
+        "relationship": "头颈接躯干，手臂接肩，双腿从衣裙下分向两侧；人体悬于曲线上方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.294,
+          0.179,
+          0.714,
+          0.52
+        ],
+        "evidence_zh": "衣裙覆盖躯干与腿根，左臂横伸、右臂向右上伸展，两腿张开且各有脚，主体连接连贯。"
+      },
+      {
+        "category": "Group A大值35–44",
+        "required_parts": [
+          "黄色闪光",
+          "两侧黄色折线",
+          "年龄列",
+          "7.4标签"
+        ],
+        "relationship": "两侧折线汇入闪光中心，峰值与35–44年龄列对齐。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.37,
+          0.461,
+          0.598,
+          0.538
+        ],
+        "evidence_zh": "峰值闪光约在(715.5,983)，左右连接相邻年龄标记，7.4位于上方，无人体遮挡。"
+      },
+      {
+        "category": "Group B大值35–44",
+        "required_parts": [
+          "橙色五角星",
+          "两侧橙色折线",
+          "年龄列",
+          "3.9标签"
+        ],
+        "relationship": "折线连接星形中心，与A峰值共用年龄列和纵轴。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.367,
+          0.656,
+          0.6,
+          0.723
+        ],
+        "evidence_zh": "星形中心约在(715.5,1330.7)，左右连线连续，3.9置于下方，轮廓清楚。"
+      },
+      {
+        "category": "两系列最小值14 and younger",
+        "required_parts": [
+          "闪光0.4",
+          "星形0.1",
+          "同色上升线段",
+          "零轴",
+          "年龄标签"
+        ],
+        "relationship": "两标记在同一年龄列上下排列，各自连接向右上方的同色线段；中心均高于零轴。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.151,
+          0.827,
+          0.223,
+          0.908
+        ],
+        "evidence_zh": "两中心y≈1678与1707.7，接近但形状仍可辨。星形下缘贴近零轴，0.4在左、0.1在右，正值未合并为零。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core明确声明合成主题适配，允许当前比较组和合成数据替代原焦虑/男女统计。",
+      "output_added_or_lost_meaning_zh": "新增共同峰值提示准确。原临床主张未沿用属于允许的主题替换；腾跃动作和双系列年龄趋势并置保留。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、当前中文标题、合成病例数、每100名假设参与者、合成比较组A/B及年龄组；底注明确等距、非年龄中点、姿态不编码数值和非真实观察。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "焦虑及Women/Men语境改为合成设计主题和比较组，符合core明示范围。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "曲线按当前值在35–44共同达峰，7.4与3.9提示正确。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "0.1中心离零轴约10像素，相对测量精度有限；符号身份和正值位置仍可见。"
+      }
+    ],
+    "measurement_coverage_zh": "像素扫描覆盖16个标记和8个横轴刻度；详细记录两系列各最小值、峰值和内侧值，共6例。全部数值文字与类别另行核对。仅有一个共同线性坐标面板，无其他定量通道。"
+  }
+}

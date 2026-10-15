@@ -1,0 +1,273 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：顶视圆桌的六种材质扇区组成桌面，三位人物沿桌边分布，礼盒、食物和餐具位于桌面上；外围标签表达圣诞礼物最低预算与价格不重要的选项。\n待评图：标题为 Gift budget preferences，含“节日礼物预算偏好”、SYNTHETIC DATA、500 simulated responses、互斥单选说明。六类文字分别为 Budget A 153/30.6%、B 87/17.4%、C 45/9.0%、D 29/5.8%、E 3/0.6%、Price not a factor 183/36.6%。奶白、酒红、浅蓝、深蓝、细橙和金黄色扇区共用桌面中心与圆形外缘。人物围桌，手或手臂越过桌沿，礼盒、饼干盘和饮具覆盖桌面；橙色小扇区从中心方向延至下侧桌沿，肉眼可见。尚未读取源码，角宽准确性待像素核验。",
+  "summary_zh": "六类计数、百分比、绑定与像素角宽一致；材质扇区直接组成圆桌桌面，人物接触和礼盒、食物的上层关系保留。未发现达到失败标准的可见缺陷。review.json已保存并通过schema校验。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量2000×1412的image.png。以成图六处纯色样本的归一化RGB识别色界，在未遮挡区采样并拟合直线；共同交点约(1059.56,764.71)，不是直接采用渲染公式作为测量。像素列x=1060的桌面约从y=335延至1193，半径约430像素。按拟合角宽/360×500反推计数，满量程误差按500计算，数值亦等于份额百分点误差。除E记录直接横向纯色宽度外，extent为拟合角宽与实测半径推导的桌缘弧长。",
+  "uncertainties_zh": "抗锯齿、纹理和前景遮挡影响边界定位；角宽保守不确定性约0.06–0.1°，仍远小于3个百分点容差。最小扇区中心尖端的局部精度受分辨率限制。未查看运行日志、自检或历史记录，capture_render.py的实际执行历史未独立验证。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六类别、单一系列、总数500、全部计数与百分比均显示；合成声明、主题、单位和互斥单选口径完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次为153/30.6%、87/17.4%、45/9.0%、29/5.8%、3/0.6%、183/36.6%；计数合计500，百分比合计100.0%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "奶白A、酒红B、浅蓝C、深蓝D、橙E、金黄Price not a factor，色块及引导线与桌面区域相符；圆周顺序符合输入。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "六个像素拟合角宽约110.137°、62.639°、32.409°、20.876°、2.164°、131.776°；份额误差点估计均小于0.01个百分点，考虑定位不确定性仍低于容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_02.png及foreground_mask.png，人物、礼盒、食物、餐具和地毯在成图中实质可见。render.py按数据构造角区并绘制文字；capture_render.py提供保存机制，执行历史未核实。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区域与圆桌沿共面、共轮廓；人物手臂跨过桌沿，礼盒和食物覆盖材质扇区。未见破坏身份或读图的错层、透视错位或材质接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、六组标签、样本量和页脚均可辨；D/E字号较小但原分辨率可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "顶视圆桌、共同中心、连续桌沿、围桌人物、桌上礼盒与食物同时存在；接触、包含及覆盖关系明确，细橙色区域仍属于同一桌面。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确节日礼物预算偏好；simulated responses、互斥选项、One participant. One choice.及份额合计说明明确指标与口径。页脚解释Budget A–E为无指定货币范围的合成预算选项。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留节日礼物预算选择和聚会桌面融合。原参考的特定受访人群与求爱最低花费语境被冻结输入改为模拟预算选择，属于许可输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Budget E橙色扇区可见，近外缘纯色芯约15像素宽；与相邻材质及桌沿的关系可辨。3和0.6%标签正确，未见人为放大小值；中心尖端局部仍受分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "参考的真实人群、货币区间和求爱语境改为500次模拟互斥预算选择，归于冻结输入允许的改编。输出保留当前主题、单位、类别角色和桌面融合。橙色区收窄由3/500驱动；尖端局部可辨性受分辨率限制，未发现额外输出语义丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "preference",
+        "category": "Budget A",
+        "expected_value": 153,
+        "observed_value": 152.968,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 826.6,
+        "full_scale_error_percent": 0.0065,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.392,
+          0.237,
+          0.733,
+          0.542
+        ],
+        "evidence_zh": "色界拟合角宽约110.137°，对应30.5935%；文字153、30.6%。extent为推导的桌缘弧长。",
+        "uncertainty_zh": "部分边界被手部遮挡；使用可见线段拟合，角宽保守不确定性约0.1°。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget B",
+        "expected_value": 87,
+        "observed_value": 86.998,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 470.1,
+        "full_scale_error_percent": 0.0003,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.53,
+          0.438,
+          0.745,
+          0.749
+        ],
+        "evidence_zh": "酒红色界拟合角宽约62.639°，对应17.3997%；文字87、17.4%。extent为推导的桌缘弧长。",
+        "uncertainty_zh": "手臂和盘子遮挡部分边界；角宽保守不确定性约0.1°。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget C",
+        "expected_value": 45,
+        "observed_value": 45.012,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 243.2,
+        "full_scale_error_percent": 0.0025,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.53,
+          0.542,
+          0.688,
+          0.837
+        ],
+        "evidence_zh": "浅蓝色界拟合角宽约32.409°，对应9.0025%；文字45、9.0%。extent为推导的桌缘弧长。",
+        "uncertainty_zh": "盘子遮挡局部边界，可见线段足以拟合；角宽保守不确定性约0.1°。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget D",
+        "expected_value": 29,
+        "observed_value": 28.994,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 156.7,
+        "full_scale_error_percent": 0.0012,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.507,
+          0.542,
+          0.585,
+          0.847
+        ],
+        "evidence_zh": "深蓝色界拟合角宽约20.876°，对应5.7988%；文字29、5.8%。extent为推导的桌缘弧长。",
+        "uncertainty_zh": "抗锯齿影响边界定位，角宽保守不确定性约0.06°。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget E",
+        "expected_value": 3,
+        "observed_value": 3.006,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 15,
+        "full_scale_error_percent": 0.0011,
+        "small_value_relative_error_percent": 0.18,
+        "bbox_xyxy_normalized": [
+          0.499,
+          0.542,
+          0.53,
+          0.845
+        ],
+        "evidence_zh": "橙色色界拟合角宽约2.164°，目标2.160°，对应0.6011%。y=1180处纯橙色芯为x=1000至1014，共15像素；推导桌缘弧长约16.24像素。文字3、0.6%。",
+        "uncertainty_zh": "0.18%相对误差仅为拟合点估计；角宽保守不确定性约0.06°，约占小值2.8%。中心尖端为亚像素，不能保证局部精度。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Price not a factor",
+        "expected_value": 183,
+        "observed_value": 183.022,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 989,
+        "full_scale_error_percent": 0.0044,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.315,
+          0.308,
+          0.53,
+          0.844
+        ],
+        "evidence_zh": "金黄色界拟合角宽约131.776°，对应36.6044%；文字183、36.6%。extent为推导的桌缘弧长。",
+        "uncertainty_zh": "人物和物件遮挡不计作响应减少；以可见线段确定方向，角宽保守不确定性约0.1°。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体圆桌及人物接触",
+        "required_parts": [
+          "圆形木桌沿",
+          "材质扇区桌面",
+          "三位人物",
+          "手和手臂"
+        ],
+        "relationship": "各材质在共同中心相接，被同一圆桌沿包围；人物在桌外，手或手臂跨过桌沿。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2,
+          0.14,
+          0.89,
+          0.95
+        ],
+        "evidence_zh": "上左人物搭桌、右侧人物前臂越过桌沿、左下人物持杯；未见数据覆盖人体的错层。"
+      },
+      {
+        "category": "大值Price not a factor",
+        "required_parts": [
+          "金黄色数据扇区",
+          "共同中心",
+          "圆桌沿",
+          "礼盒",
+          "饼干盘",
+          "人物手部"
+        ],
+        "relationship": "金黄色材料形成最大桌面扇区；礼盒、食物和手部位于该表面上方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.315,
+          0.308,
+          0.535,
+          0.845
+        ],
+        "evidence_zh": "礼盒约在(760,900)、饼干盘约在(825,605)，物件轮廓与接触阴影保留；金黄外缘接统一木桌沿。"
+      },
+      {
+        "category": "中值Budget B/C及食物盘",
+        "required_parts": [
+          "酒红桌面",
+          "浅蓝桌面",
+          "白色点心盘",
+          "两颗点心"
+        ],
+        "relationship": "盘子覆盖两种桌面材料的分界，食物位于盘内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.607,
+          0.644,
+          0.675,
+          0.742
+        ],
+        "evidence_zh": "右下白盘轮廓完整，分界从盘子两侧延续，未穿到点心表面。"
+      },
+      {
+        "category": "最小值Budget E",
+        "required_parts": [
+          "橙色细扇区",
+          "深蓝与金黄相邻桌面",
+          "共同中心",
+          "木桌沿"
+        ],
+        "relationship": "橙色材料夹在深蓝和金黄之间，向共同中心收尖，外端接圆桌沿。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.496,
+          0.539,
+          0.533,
+          0.851
+        ],
+        "evidence_zh": "近外缘橙色芯15像素宽，可向内追踪逐渐收窄的两边；外端未脱离桌面，尖端局部受抗锯齿限制。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入采用500次模拟单选响应、Budget A–E及Price not a factor，不要求参考中的520人、真实金额区间或特定人口属性。",
+      "output_added_or_lost_meaning_zh": "输出未捏造真实区间或人群。求爱最低礼物花费语境依输入改为节日预算偏好；桌面融合及礼物聚会联系保留。",
+      "visible_inscription_evidence_zh": "可见节日礼物预算偏好、Gift budget preferences、SYNTHETIC DATA、500 simulated responses、Six mutually exclusive budget choices、One participant. One choice.及Shares sum to 100%；页脚解释合成预算选项未指定货币范围。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "特定真实人群与金额阈值被冻结输入替换为合成预算选项；reference_meaning的partial归于此。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "角宽随当前六个计数变化，最小橙色区约2.164°，符合3/500。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "橙色区近桌沿可辨，中心尖端达到亚像素尺度；这限制局部精度判断，不证明缺失或人为放大。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一角度编码通道的全部六类，包括最小值3、最大值183及四个中间值；必要标签逐项核对。每条边使用约56–176个可见采样点拟合，未把遮挡面积当成数量，未声称验证所有纹理或中心尖端。"
+  }
+}

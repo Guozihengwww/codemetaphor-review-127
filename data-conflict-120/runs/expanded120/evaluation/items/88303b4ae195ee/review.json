@@ -1,0 +1,220 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以美国地图轮廓构成带双眼孔和系带的面具，并叠加总体上升的红色折线。成图保留地图面具、眼孔、系带，并增加鼻嘴；红白折线横跨上部，十个圆点和Y01至Y10完整。数值依次为532、490、466、456、478、452、418、401、389、362，右轴为0至600。标题、合成提示、指标、单位及底部口径说明可读；总体下降，仅Y04至Y05回升。未见明显遮字或破坏面具身份的接缝。",
+  "summary_zh": "通过。十期数值、标签、单位及派生变化正确；最大像素测量偏差约为满量程的0.062%，地图面具与折线叠加结构保留。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在1920×2004原图读取像素。右轴七个刻度中心y约为574.5、753.5、931.5、1109.5、1288.5、1466.5、1644.5，对应600至0；拟合v=-0.5607848y+922.3509。通过红环内浅色连通域质心测量全部十点，最大绝对偏差约0.369事件/10万人，低于3%满量程容差。九段中点的红线中心与相邻实测点直线连线相差不超过0.80像素。代码仅作佐证。",
+  "uncertainties_zh": "抗锯齿和刻度中心定位约有±1像素、即±0.56事件/10万人不确定性。最小值362占满量程60.3%，不存在亚像素小值，不能据此推断极小值表现。按限制未查看运行记录，不能确认每次渲染均已归档。原图滴落造型的额外寓意无法仅凭图面确定。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列、十类别、十个圆点及全部数值齐全；七个轴刻度、标题、合成提示、指标和单位均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "十个值均与数据一致。首尾变化-170，比例-31.9549%显示为-32.0%；Y04至Y05为+22，均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值位于对应圆点上方，竖向投影分别对应Y01至Y10，无排序或绑定错位。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共用0–600线性轴，全部十点的像素测量偏差均小于3%满量程；九段中点符合直线连接，唯一回升位于Y04至Y05。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其轮廓、裂纹、五官及系带与成图主体对应。render.py读取该素材并按数据绘制折线、圆点和文字。capture_render.py存在，执行归档未核实。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "地图轮廓与五官构成同一面具，折线和投影线在前层叠加。地图明确不承担数值曲面编码，无需按鼻面进行三维投影。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "数值有浅色描边，类别及右轴位于面具外；所有必需文字可读，无实质遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "美国轮廓构成面具外缘；眼孔透出底色，鼻嘴连接于皮革，两侧系带穿过金属环。折线横跨上部并通过竖线联系时间轴。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "合成提示、Illustrative incident rate、每10万人单位和连续合成时期标注明确；底注说明并非观测美国统计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "警示标题、凶厉眼孔、地图身份及红线保留；真实犯罪总体上升的论点改为合成事件率下降，属于core明确允许的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值Y10圆点外径约20像素，距零线约646像素，末段连接可辨；右侧面具边缘、金属环与系带仍保持可见连接。"
+    }
+  },
+  "semantic_attribution_zh": "原犯罪主题及上升论点的变化归因于输入授权的合成主题适配；下降和唯一回升由当前数据决定。未发现当前主题、单位、类别角色或面具连接关系的输出遗漏。原图滴落造型的进一步含义保留解释不确定性。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y01",
+        "expected_value": 532,
+        "observed_value": 532.29,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 948.93,
+        "full_scale_error_percent": 0.048,
+        "small_value_relative_error_percent": 0.054,
+        "bbox_xyxy_normalized": [
+          0.12425,
+          0.3416,
+          0.13571,
+          0.35258
+        ],
+        "evidence_zh": "最大值圆点内孔质心约(249.57,695.57)，外径约20像素。按可见刻度校准得到532.29；mark_extent_px表示点心距零线的垂直距离，不是面具尺寸。",
+        "uncertainty_zh": "定位约±1像素，即±0.56事件/10万人；小数为估计值，不代表精度保证。"
+      },
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y05",
+        "expected_value": 478,
+        "observed_value": 477.97,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 852.07,
+        "full_scale_error_percent": 0.005,
+        "small_value_relative_error_percent": 0.007,
+        "bbox_xyxy_normalized": [
+          0.44821,
+          0.38994,
+          0.45967,
+          0.40091
+        ],
+        "evidence_zh": "内部回升拐点质心约(871.57,792.43)，外径约20像素。按可见刻度校准得到477.97；mark_extent_px表示点心距零线的垂直距离。",
+        "uncertainty_zh": "定位约±1像素，即±0.56事件/10万人；小数为估计值，不代表精度保证。"
+      },
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y10",
+        "expected_value": 362,
+        "observed_value": 362.37,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 645.93,
+        "full_scale_error_percent": 0.061,
+        "small_value_relative_error_percent": 0.102,
+        "bbox_xyxy_normalized": [
+          0.85342,
+          0.4928,
+          0.86488,
+          0.50378
+        ],
+        "evidence_zh": "最小正值圆点质心约(1649.57,998.57)，外径约20像素。按可见刻度校准得到362.37；点心距零线约645.93像素。",
+        "uncertainty_zh": "定位约±1像素，即±0.56事件/10万人；相对误差为像素估计，不是小值精度保证。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "共用美国地图面具",
+        "required_parts": [
+          "美国本土轮廓",
+          "双眼孔",
+          "鼻与嘴",
+          "两侧金属环",
+          "系带"
+        ],
+        "relationship": "地图外缘构成面具轮廓；眼孔包含于皮革内部，鼻嘴与皮革连接，系带穿过边缘金属环。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.047,
+          0.342,
+          0.922,
+          0.815
+        ],
+        "evidence_zh": "两眼孔内部透出底色；鼻嘴及左右穿绳连接清楚，纹理沿同一地图面具连续。"
+      },
+      {
+        "category": "Y01最大值端点",
+        "required_parts": [
+          "532标注",
+          "Y01圆点",
+          "相邻折线",
+          "竖向投影",
+          "面具左上缘"
+        ],
+        "relationship": "圆点沿面具左上缘叠加，向右下连接Y02，竖向投影对应Y01。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.116,
+          0.315,
+          0.222,
+          0.848
+        ],
+        "evidence_zh": "点心约(249.57,695.57)，红白线在面具前层延伸；数值不由地图面积决定。"
+      },
+      {
+        "category": "Y05内部拐点",
+        "required_parts": [
+          "478标注",
+          "Y05圆点",
+          "两侧折线段",
+          "面具额部"
+        ],
+        "relationship": "折线由Y04向右上连接Y05，再向右下连接Y06，叠加于额部前层。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.365,
+          0.36,
+          0.544,
+          0.428
+        ],
+        "evidence_zh": "局部上升和随后下降可见，面具纹理未遮断连接。"
+      },
+      {
+        "category": "Y10最小值端点",
+        "required_parts": [
+          "362标注",
+          "Y10圆点",
+          "末段折线",
+          "右侧面具边缘",
+          "金属环与系带"
+        ],
+        "relationship": "红线在面具右侧前层终止；金属环与向下弯曲的系带保持穿接关系。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.771,
+          0.44,
+          0.923,
+          0.613
+        ],
+        "evidence_zh": "端点及最后一段连续可辨；右侧系带从边缘环内延出，没有破坏身份的断裂。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core明确允许以十个连续合成时期的事件率替代原真实犯罪统计，并按当前值改变走势和适配非数据部件。",
+      "output_added_or_lost_meaning_zh": "警示题名、地图面具和红线保留；原真实犯罪上升论点不再沿用。新增-32.0%、+22及总体-170均有当前数据支持。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Illustrative incident rate、incidents per 100,000 people和Consecutive synthetic periods；底注说明非观测美国统计且地图形状不编码数值。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实犯罪率替换为合成事件率由core授权；参考含义部分保留不属于生成器失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "折线由532降至362，并在456至478间回升，像素测量支持当前走势。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "原图滴落造型可见，其超出警示主题的具体寓意未由冻结合同明确。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一面板的10/10个点和9/9段连线中点均已核验；详细记录最大值、内部拐点和最小正值。十个数值、十个类别、七个轴刻度及必需语义文字另行检查。面具非定量编码，未作面积推算。"
+  }
+}

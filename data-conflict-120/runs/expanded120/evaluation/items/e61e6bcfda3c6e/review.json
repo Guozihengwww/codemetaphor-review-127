@@ -1,0 +1,267 @@
+{
+  "verdict": "pass",
+  "confidence": 0.99,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以行业徽章对应红色正面工人和黑色侧身失业者，人物在中央分界两侧排列。待评图保留八个行业及上述结构，标题、SYNTHETIC DATA和16个百分数清楚。人物完整，底行黑色三人也可辨。图例明确每人5个百分点、每行20人合计100%，并说明面积不编码。以上观察在读取渲染代码前已保存。",
+  "summary_zh": "全部数值、人物数量及标签绑定正确，所需结构与统计含义完整。未发现实质性可见缺陷。已保存review.json并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析1480×2000的image.png，在各行人物带内按红色和深色像素分段计数，排除文字、徽章及图例。红/黑人数依次为11/9、9/11、13/7、7/13、15/5、14/6、12/8、17/3，共160人。按每人5个百分点换算，全部16组准确。人物实际高度均约99px。mark_extent_px记录整组横向占宽，不作为数量编码；满量程误差按声明的93.5计算，每行构成分母仍为100%。源码仅作佐证。",
+  "uncertainties_zh": "抗锯齿使极淡轮廓边界约有1px差异，不影响整数计数。按限制未查看日志、自检或归档记录，因此不独立认证每次capture_render.py执行及生图服务来源；素材使用依据原始图、处理源码和最终可见轮廓核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八个行业按指定顺序出现，八个徽章、两系列、16个百分数、单位、图例和合成数据标识完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行百分数为55/45、45/55、65/35、35/65、75/25、70/30、60/40、85/15，与数据全部一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "红色数值对应正面工人，黑色数值对应侧身人物；行业名称、徽章与队列逐行对应，无错行或系列互换。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部16组最终像素计数正确，每行20人，两种姿态均约99px高。最小15%有3个完整人物，最大85%有17个。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png人物及raw_02.png徽章，最终主体可见相同轮廓与部件。prepare_assets.py提取素材，render.py依据数据控制整人复制、位置、共同高度和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "完整人物直接承担计数单位，徽章承担同行类别识别，保留参考的并置及中央分列关系。未见影响结构的遮挡、接缝或投影问题。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下标题、行业名、全部数值、系列、单位、计数说明及底部合成来源说明均清楚，无截断或覆盖。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "行业徽章对应红色正面与黑色侧身队列，人物头颈、躯干、手臂及腿脚完整；大小值通过完整人物个数表达。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题与副标题明确行业内就业构成；SHARE OF WORKERS (%)、两列就业角色和每行100%明确指标、单位与分母，合成标识醒目。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留按行业比较就业/失业构成及每个人物代表5%的统计角色。参考1932年实测背景按输入改为合成示例，不要求旧年份或旧数值。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Distribution失业15%在x1032–1111、y1689–1788处呈三个分离的完整人物，帽、侧脸、屈臂和腿脚可辨，未扩大个体或仅以文字代替几何。"
+    }
+  },
+  "semantic_attribution_zh": "当前行业就业/失业主题及统计角色保持完整。历史实测语境改为合成数据、队列数量变化均由输入授权；未发现输出遗漏或影响身份识别的分辨率损失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "employed",
+        "category": "Coal Mining",
+        "expected_value": 55,
+        "observed_value": 55,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 458,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.359459,
+          0.274,
+          0.668919,
+          0.3235
+        ],
+        "evidence_zh": "最终图可分离11个完整红色人物，换算55%；每人约99px高，文字为55%。",
+        "uncertainty_zh": "轮廓边界约有1px阈值差异，不影响整数计数；占宽不编码数值。"
+      },
+      {
+        "series_id": "unemployed",
+        "category": "Coal Mining",
+        "expected_value": 45,
+        "observed_value": 45,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 247,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.697297,
+          0.274,
+          0.864189,
+          0.3235
+        ],
+        "evidence_zh": "最终图可分离9个完整黑色人物，换算45%；每人约99px高，文字为45%。",
+        "uncertainty_zh": "轮廓边界约有1px阈值差异，不影响整数计数；占宽不编码数值。"
+      },
+      {
+        "series_id": "employed",
+        "category": "Shipbuilding",
+        "expected_value": 35,
+        "observed_value": 35,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 290,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.472973,
+          0.5185,
+          0.668919,
+          0.568
+        ],
+        "evidence_zh": "就业系列最小值有7个完整红色人物，换算35%；每人约99px高，文字为35%。",
+        "uncertainty_zh": "轮廓边界约有1px阈值差异，不影响整数计数；占宽不编码数值。"
+      },
+      {
+        "series_id": "unemployed",
+        "category": "Shipbuilding",
+        "expected_value": 65,
+        "observed_value": 65,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 359,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.697297,
+          0.5185,
+          0.939865,
+          0.568
+        ],
+        "evidence_zh": "失业系列最大值有13个完整黑色人物，换算65%；每人约99px高，文字为65%。",
+        "uncertainty_zh": "轮廓边界约有1px阈值差异，不影响整数计数；占宽不编码数值。"
+      },
+      {
+        "series_id": "employed",
+        "category": "Distribution",
+        "expected_value": 85,
+        "observed_value": 85,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 710,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.189189,
+          0.8445,
+          0.668919,
+          0.894
+        ],
+        "evidence_zh": "就业系列最大值有17个完整红色人物，换算85%；每人约99px高，文字为85%。",
+        "uncertainty_zh": "轮廓边界约有1px阈值差异，不影响整数计数；占宽不编码数值。"
+      },
+      {
+        "series_id": "unemployed",
+        "category": "Distribution",
+        "expected_value": 15,
+        "observed_value": 15,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 79,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.697297,
+          0.8445,
+          0.750676,
+          0.894
+        ],
+        "evidence_zh": "全图最小值有3个完整黑色人物，换算15%；每人约99px高，文字为15%。",
+        "uncertainty_zh": "三个独立人物足以直接计数；边缘抗锯齿不影响小值数量准确性。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Distribution / Employed（大值）",
+        "required_parts": [
+          "17个红色正面人物",
+          "帽与头颈",
+          "躯干与双臂",
+          "双腿与脚"
+        ],
+        "relationship": "头颈位于躯干上方，双臂沿身体两侧，双腿下接脚；完整人物重复17次承担85%的数据。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.189189,
+          0.8445,
+          0.668919,
+          0.894
+        ],
+        "evidence_zh": "17个人物保持完整全高，双腿间负形可见，邻人不遮挡。"
+      },
+      {
+        "category": "Distribution / Unemployed（最小值）",
+        "required_parts": [
+          "3个黑色侧身人物",
+          "侧向帽檐与面部",
+          "屈臂及躯干",
+          "腿脚"
+        ],
+        "relationship": "人物均面向右侧，头颈、衣身、裤腿和脚形成完整身体，屈臂贴于身体侧方；三个完整单元表示15%。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.697297,
+          0.8445,
+          0.750676,
+          0.894
+        ],
+        "evidence_zh": "每人约23px宽、99px高，相邻人物有空隙，没有裁掉头脚或以局部身体表示分数。"
+      },
+      {
+        "category": "Shipbuilding / 行业徽章及两系列",
+        "required_parts": [
+          "框架内船体徽章",
+          "行业名称",
+          "7个红色人物",
+          "13个黑色人物"
+        ],
+        "relationship": "船体被两侧立架和上横梁围合；徽章与该行业两支队列同处一行，左红右黑，徽章不编码数量。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.051351,
+          0.4975,
+          0.948649,
+          0.5685
+        ],
+        "evidence_zh": "船体、支架和上梁可辨；两列合计20人且全高一致，未与相邻行或百分数重叠。"
+      },
+      {
+        "category": "Coal Mining / 中间值与对应关系",
+        "required_parts": [
+          "交叉矿镐徽章",
+          "Coal Mining标签",
+          "11个红色人物",
+          "9个黑色人物"
+        ],
+        "relationship": "徽章位于行业标签下方，与队列处于同一行；11和9个完整单位分别承载两系列数值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.051351,
+          0.2525,
+          0.948649,
+          0.325
+        ],
+        "evidence_zh": "红黑人物帽顶和脚底平齐，徽章不侵入计数区域，55%和45%位于正确系列上方。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "输入明确替换为合成行业就业构成数据，允许当前数量、姿态细节和布局适配，不要求保留1932年或旧统计值。",
+      "output_added_or_lost_meaning_zh": "增加行业内分母、整人计数及非面积编码说明，保留行业类别和就业状态角色，未添加未经提供的趋势或历史主张。",
+      "visible_inscription_evidence_zh": "Employment by Industry；Employment status within each industry；SHARE OF WORKERS (%)；Employed (%) / Unemployed (%)；1 figure = 5 percentage points；每行20人合计100%的说明；SYNTHETIC DATA及非观测统计的底注。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "1932年实测背景改为醒目标注的合成示例，遵循当前输入；行业就业/失业主题和统计角色保持。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "队列按当前百分数增减完整人物，全部16组计数正确，未照搬参考图旧数量。"
+      }
+    ],
+    "measurement_coverage_zh": "独立计数覆盖八个行业×两系列全部16组，另逐项核对16个百分数、8个名称和8个徽章。详细记录两系列各自最小、大值和中间值共6组，并检查最小三人组与最大17人组的身体部件。无其他定量面板。"
+  }
+}

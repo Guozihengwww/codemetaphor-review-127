@@ -1,0 +1,290 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：浅色纸纹背景上有七颗彩色混纹圆球、同心细圈、弯排情绪名称与黑底百分比牌；七条线向底部灰度手的捏握处汇集。标题描述疫情期间的感受。\n待评图：可见七组同心圈与中心颜料混纹圆球，橙色 Creative confidence 最大、蓝色 Gratitude 次之，其余明显较小。弯排名称依次对应黑牌 42%、18%、5%、2%、0.5%、0.5%、0.5%；三颗最小球仍呈现彩色旋纹和明暗。七条细线从牌下伸向底部灰度手的捏握区域。右下四分之一圆图例标出 0% 至 50%、固定零核及半径编码而非面积编码。顶部可读 SYNTHETIC DATA、Increases in positive feelings、Synthetic share reporting an increase (%)，并注明多选且份额不必合计为 100%。目前未见必需文字缺失或明显遮挡；细小径向增量尚未测量。",
+  "summary_zh": "七类数值、标签、共享径向编码及球—圈—标牌—线束—手的结构均保留，未发现达到失败阈值的可见缺陷。极小径向增量的相对精度仍有像素级不确定性。",
+  "issues": [],
+  "measurement_notes_zh": "先看图并保存观察，再读取源码。独立测量image.png的1800×2160像素：外圈对称位置核对圆心，球体以径向色差半高过渡估计边界，排除低色差方向。mark_extent_px为估计直径，Connection为色差包围盒最大边。用源码声明且经图例像素核对的r0=24、R=166反算v=50(r−24)/142；这是成图测量加声明尺度的逆变换，不是公式自证。满量程误差按|观测值−目标值|/50×100计算，均为近似估计。七组外圈暗像素跨度均约333px，含抗锯齿；图例0%、50%弧线暗峰半径约23.76、165.54px，与24、166px的外边界尺度相符。",
+  "uncertainties_zh": "0.5%只增加1.42px半径，白灰边缘及抗锯齿限制相对精度；Connection无法稳定反推份额。其余数值估计残差也不等同于确定的渲染误差。已阅读capture_render.py保存逻辑，未读取运行记录，因而未独立核实全部渲染的执行历史。未对手握线束附加不可见的作者意图。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七个类别、七颗球、七组同心圈、七块数值牌及七条起于标牌的细线齐全；单系列及百分比单位可读。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可读42%、18%、5%、2%、0.5%、0.5%、0.5%，与data.json一致；SYNTHETIC DATA和图例0–50%均显示。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "Creative confidence—42、Gratitude—18、Hope—5、Inspiration—2、Connection—0.5、Future excitement—0.5、Efficiency—0.5逐组对应；弯名在圈上、黑牌在圈下，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "六个可稳定测色边的球体反算满量程偏差估计均不足0.10%；七组外圈尺度一致，图例使用相同径向范围。Connection的51–52px外观与小球尺度相符，但精确小值边界不确定。未发现超过3%满量程的可见偏差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png七种旋纹与raw_02.png手部在成图中可对应，素材构成球体表面和手部主体。prepare_assets.py处理素材，render.py用数据驱动圆形遮罩、圈径和文字；capture_render.py包含完整图保存入口。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "球自身彩色轮廓承担半径编码，与圈共心并遮住内圈；同组黑牌引出细线汇入手的捏握区。手在末端前景遮住线端，未见破坏结构的穿透或贴图接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成数据提示、指标、单位、多选说明、七类名称和七个数值均清楚；图例明确固定零核、5个百分点步长和非面积编码。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "浅纸纹、七颗有混色旋纹与光泽阴影的球、同心细圈、弯排名称、黑牌及汇向灰度手的七条线均保留；大球与小球均维持这些关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题Increases in positive feelings、Synthetic share reporting an increase (%)及Multiple selections allowed · Shares need not sum to 100%共同明确正向情绪增加的多选比例，未误作100%组成。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考的七类正向情绪角色和手聚拢线束的可见关系；原图疫情语境、安慰性标题与真实报告来源被冻结输入指定的合成统计主题替代，属于输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "三颗0.5%球约51px直径，旋纹球身、同心圈、黑牌及通向手的线仍可见；固定零核获明确允许，未以最小数据尺寸夸大小值。1.42px数据增量的精度另保留不确定性。"
+    }
+  },
+  "semantic_attribution_zh": "参考的疫情与真实调查背景改为合成数据是冻结输入允许的改编，不是输出遗漏。球体大小变化由当前数值驱动；未见当前主题、指标、七类角色或多选口径丢失。极小增量的不确定性主要来自分辨率、抗锯齿及浅色纹理。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_response_share",
+        "category": "Creative confidence",
+        "expected_value": 42,
+        "observed_value": 41.981,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 286.45,
+        "full_scale_error_percent": 0.037,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.200556,
+          0.22963,
+          0.360556,
+          0.362963
+        ],
+        "evidence_zh": "成图色边径向半高估计半径143.23px；354条有效方向的10–90分位为143.11–143.39px。黑牌为42%。",
+        "uncertainty_zh": "色边受纹理与抗锯齿影响；分位范围是采样变化，不是统计置信区间。"
+      },
+      {
+        "series_id": "synthetic_response_share",
+        "category": "Gratitude",
+        "expected_value": 18,
+        "observed_value": 17.97,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 150.07,
+        "full_scale_error_percent": 0.061,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.663333,
+          0.275,
+          0.747222,
+          0.344907
+        ],
+        "evidence_zh": "成图估计半径75.03px，320条有效方向的10–90分位为74.79–75.28px；黑牌18%。",
+        "uncertainty_zh": "部分白色纹理边缘不适合色差定位，已排除低色差方向。"
+      },
+      {
+        "series_id": "synthetic_response_share",
+        "category": "Hope",
+        "expected_value": 5,
+        "observed_value": 5.012,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 76.47,
+        "full_scale_error_percent": 0.024,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.478333,
+          0.428704,
+          0.521667,
+          0.464815
+        ],
+        "evidence_zh": "成图估计半径38.23px，360条方向的10–90分位为38.02–38.46px；黑牌5%。",
+        "uncertainty_zh": "边界位置约有数十分之一像素变化，不能把估计残差视为确定的渲染误差。"
+      },
+      {
+        "series_id": "synthetic_response_share",
+        "category": "Inspiration",
+        "expected_value": 2,
+        "observed_value": 1.952,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 59.09,
+        "full_scale_error_percent": 0.096,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.169444,
+          0.560185,
+          0.202778,
+          0.587963
+        ],
+        "evidence_zh": "成图估计半径29.54px，262条有效方向的10–90分位为29.18–29.79px；黑牌2%。",
+        "uncertainty_zh": "紫白纹理使局部边界读数波动；未据此主张精确的小值相对误差。"
+      },
+      {
+        "series_id": "synthetic_response_share",
+        "category": "Connection",
+        "expected_value": 0.5,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 52,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.785556,
+          0.575926,
+          0.813889,
+          0.6
+        ],
+        "evidence_zh": "低色差阈值下彩色包围盒约51×52px；改变阈值后宽度约49–51px、高度51–52px。黑牌清楚显示0.5%。",
+        "uncertainty_zh": "白灰外缘与阴影、零圈接近，色边半高法不稳定，不能可靠反推精确份额；范围未提示满量程级偏差。"
+      },
+      {
+        "series_id": "synthetic_response_share",
+        "category": "Future excitement",
+        "expected_value": 0.5,
+        "observed_value": 0.477,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 50.71,
+        "full_scale_error_percent": 0.046,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.518889,
+          0.678704,
+          0.547778,
+          0.702778
+        ],
+        "evidence_zh": "成图估计半径25.35px，353条有效方向的10–90分位为25.18–25.63px；黑牌0.5%。",
+        "uncertainty_zh": "数据仅对应约1.42px的零核外增量；抗锯齿与零核定位误差足以显著改变相对误差，因此该项留空。"
+      },
+      {
+        "series_id": "synthetic_response_share",
+        "category": "Efficiency",
+        "expected_value": 0.5,
+        "observed_value": 0.466,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 50.65,
+        "full_scale_error_percent": 0.068,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.285556,
+          0.775,
+          0.314444,
+          0.799074
+        ],
+        "evidence_zh": "成图估计半径25.32px，358条有效方向的10–90分位为25.16–25.47px；黑牌0.5%。",
+        "uncertainty_zh": "可确认约51px的球体及满量程容差；不能据微小估计残差保证0.5%的相对精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Creative confidence（大值）",
+        "required_parts": [
+          "颜料球",
+          "同心圈",
+          "弯排名称",
+          "黑底数值牌"
+        ],
+        "relationship": "球与圈共心，球遮住内圈；名称在圈上方，数值牌在下方；球外轮廓承载径向量值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.188333,
+          0.196759,
+          0.372778,
+          0.40787
+        ],
+        "evidence_zh": "左上橙球中心约(505,640)，半径约143.23px，外围仍有两条细圈；混纹、高光和软阴影可见，42%牌独立可读。"
+      },
+      {
+        "category": "Connection（最小正值）",
+        "required_parts": [
+          "蓝白颜料球",
+          "同心圈",
+          "类别名",
+          "0.5%黑牌",
+          "标牌引线"
+        ],
+        "relationship": "小球位于圈中心并遮住零核内圈，牌位于本组下方，线从牌下指向手。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.707778,
+          0.486111,
+          0.892222,
+          0.701389
+        ],
+        "evidence_zh": "右侧约(1440,1270)处仍能辨认蓝白旋纹与球体明暗，外圈完整；0.5%牌和其下细线没有混入相邻类别。浅色外缘限制精确半径定位，但未丢失物体关系。"
+      },
+      {
+        "category": "线束与手",
+        "required_parts": [
+          "七条细线",
+          "拇指",
+          "食指",
+          "灰度写实手"
+        ],
+        "relationship": "各标牌引线向下汇拢，在捏握区域接触并被前景手遮住末端。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.677778,
+          0.793981,
+          0.744444,
+          0.856481
+        ],
+        "evidence_zh": "下方多条线在拇指与食指附近聚拢，进入手部轮廓后消失；未见线束越过手表面继续穿行。七条线的起点分别可在七块黑牌下辨认。"
+      },
+      {
+        "category": "共享径向图例",
+        "required_parts": [
+          "四分之一圆",
+          "灰色零核",
+          "同心刻度弧",
+          "百分比刻度"
+        ],
+        "relationship": "零核与各球同尺度，弧线按固定径向步长向外增加，最大范围为50%。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.772222,
+          0.787037,
+          0.941667,
+          0.951389
+        ],
+        "evidence_zh": "右下图例明确显示固定零核及0–50%，各相邻弧线约14px；Radius encodes share; area does not.消除面积编码歧义。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "当前冻结主题为合成的正向情绪变化多选比例；不要求保留疫情调查背景、旧统计值或旧大小排序。",
+      "output_added_or_lost_meaning_zh": "手聚拢七条线的动作保留。原图疫情安慰话语不再出现，转为明确的合成统计标题；未发现超出允许改编的当前语义损失。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Increases in positive feelings；Synthetic share reporting an increase (%)；Multiple selections allowed · Shares need not sum to 100%；七个类别名称；Illustrative values, not population estimates."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原参考的疫情语境与真实报告背景改为冻结brief明确要求的SYNTHETIC主题。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前42、18、5、2及三个0.5对应不同球径；固定非数据零核被明确声明，未要求复制参考旧尺寸。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "0.5%的径向增量仅1.42px，浅色边缘与抗锯齿使精确小值反算不稳定；球体本身及连接结构仍可辨。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一径向定量通道的全部七项：六项给出独立像素边界估计及逆变换，Connection给出包围盒并保留数值不确定性；另核对七组外圈与图例尺度。全部名称、数值、单位和必需计数分别核验。未测量非数据阴影面积，也未将数值标签当作几何证据。"
+  }
+}

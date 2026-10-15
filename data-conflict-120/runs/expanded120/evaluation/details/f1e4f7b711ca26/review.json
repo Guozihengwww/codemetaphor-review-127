@@ -1,0 +1,236 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "先查看了reference.png与image.png。参考为龙头滴水、杯内分层和用途引线；待评图保留这些关系，显示12个类别和对应百分比。父类、子类、合成数据声明及高度编码说明清晰。底部1.5%和2.5%层较薄但可区分，未见明显缺项或文字遮挡。",
+  "summary_zh": "12项数据、标签绑定及液层高度编码符合要求，物体结构与用水份额语义保留。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析1680×2000原图。右侧0—100刻度跨度1080px；中央颜色跃迁检出13个液层边界。12层高度约237、98、97、108、108、92、91、71、70、65、16、27px，换算后的最大绝对误差约0.074个百分点，低于3个百分点容差。像素测量独立于源码公式。",
+  "uncertainties_zh": "抗锯齿和杯底反光使单边界定位约有±1px不确定性；最小层高度保守不确定度约±2px，相当于目标高度的约12%，不能据满量程通过推定亚像素精度。已查看捕获脚本，按限制未核验其实际运行日志。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "12个类别、12条液层及12条引线完整，顺序符合输入；拆分类别均保留父类及subcategory 1/2。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "22%、9%、9%、10%、10%、8.5%、8.5%、6.5%、6.5%、6%、1.5%、2.5%逐项正确，单位和合成声明可读。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "逐条追踪引线均进入对应色层；12个端点的像素位置均在各自层内，底部标签外移未改变绑定。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部12层以1080px共同高度换算均在3个百分点容差内；杯宽、杯底及水滴数量未用于定量。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其龙头、杯壁高光、厚杯底和水滴与成图对应。prepare_assets.py裁取部件，render.py合成素材并按输入累计份额控制边界。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "色层位于杯壁之间、杯口下方及杯底上方，玻璃反光覆盖侧缘；龙头和水滴朝向杯内，数据与物体融合。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、指标、所有类别、数值及说明清晰完整，底部引线可分别追踪，无必要文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "龙头手柄连接阀体和向下出口，两滴水位于出口下方；杯口、杯壁和厚杯底围合液层，大小液层均有用途引线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题标题、Synthetic share of indoor household water use (%)及END USE/SHARE明确统计角色；页脚说明子类互斥、非调查和高度编码。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留家庭室内用水主题、用途组成比较及龙头滴水进入分层杯的关系。旧比例和8类别改为当前合成数及12类别属于允许调整。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Dishwasher浅绿层约16px、Other蓝灰层约27px，原分辨率下边界及引线端点可区分，均在杯底上方；相对精度仍有像素级不确定性。"
+    }
+  },
+  "semantic_attribution_zh": "主题保持家庭室内用水份额。合成标识、数值替换及父类拆分来自冻结输入；液层厚度变化由当前数据驱动。未见输出造成的必要语义或结构丢失，小层精度限制来自栅格分辨率。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Toilet",
+        "expected_value": 22,
+        "observed_value": 21.9444,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 237,
+        "full_scale_error_percent": 0.0556,
+        "small_value_relative_error_percent": 0.253,
+        "bbox_xyxy_normalized": [
+          0.484,
+          0.32475,
+          0.862,
+          0.44325
+        ],
+        "evidence_zh": "中央颜色跃迁边界约y649.5至886.5，跨度237px；刻度总高1080px。",
+        "uncertainty_zh": "边界各约±1px，点估计不表示该层被有意缩短。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Faucets / subcategory 1",
+        "expected_value": 8.5,
+        "observed_value": 8.5185,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 92,
+        "full_scale_error_percent": 0.0185,
+        "small_value_relative_error_percent": 0.218,
+        "bbox_xyxy_normalized": [
+          0.523,
+          0.64875,
+          0.824,
+          0.69475
+        ],
+        "evidence_zh": "中央蓝层边界约y1297.5至1389.5，跨度92px。",
+        "uncertainty_zh": "边界各约±1px；相邻浅蓝层独立可辨。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Dishwasher",
+        "expected_value": 1.5,
+        "observed_value": 1.4815,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 16,
+        "full_scale_error_percent": 0.0185,
+        "small_value_relative_error_percent": 1.235,
+        "bbox_xyxy_normalized": [
+          0.546,
+          0.84325,
+          0.803,
+          0.85125
+        ],
+        "evidence_zh": "浅绿层约y1686.5至1702.5，跨度16px，独立于数字标签测得。",
+        "uncertainty_zh": "保守高度不确定度±2px约为目标16.2px的12%；相对误差点估计不能代表更高精度。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Other",
+        "expected_value": 2.5,
+        "observed_value": 2.5,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 27,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.547,
+          0.85125,
+          0.8,
+          0.86475
+        ],
+        "evidence_zh": "蓝灰底层约y1702.5至1729.5，跨度27px，其下为透明厚杯底。",
+        "uncertainty_zh": "杯底反光使边界约有±1px不确定性；零误差点估计不等于无测量误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体供水场景",
+        "required_parts": [
+          "龙头手柄",
+          "阀体与出口",
+          "两滴水",
+          "杯口"
+        ],
+        "relationship": "手柄连接阀体，出口向下，水滴向杯口内部排列。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.445,
+          0.049,
+          0.939,
+          0.325
+        ],
+        "evidence_zh": "出口约在(1093,510)，水滴中心约在(1093,570)和(1093,630)，均处杯口横向范围内。"
+      },
+      {
+        "category": "Toilet大液层",
+        "required_parts": [
+          "绿色液层",
+          "左右杯壁",
+          "杯口",
+          "Toilet引线"
+        ],
+        "relationship": "液层包含在杯内，两侧贴合内壁，引线进入层内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.446,
+          0.285,
+          0.905,
+          0.444
+        ],
+        "evidence_zh": "绿色层约y650..887，上方有杯口和空隙；玻璃高光包围侧缘，端点约(856,769)位于绿色区域。"
+      },
+      {
+        "category": "Faucets / subcategory 1中部液层",
+        "required_parts": [
+          "蓝色液层",
+          "相邻液层",
+          "杯壁",
+          "用途引线"
+        ],
+        "relationship": "蓝层与上下层接触，在杯壁之间延伸，引线指入本层。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.472,
+          0.647,
+          0.867,
+          0.697
+        ],
+        "evidence_zh": "蓝层在粉红层下、浅蓝层上，端点约(913,1344)在本层内部；反光未切断该层。"
+      },
+      {
+        "category": "Dishwasher最小层及Other底层",
+        "required_parts": [
+          "Dishwasher浅绿层",
+          "Other蓝灰层",
+          "Bath橙层",
+          "杯壁与杯底",
+          "两条引线"
+        ],
+        "relationship": "浅绿层夹在Bath与Other之间，Other位于厚杯底之上，两层均被杯壁包含。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.495,
+          0.811,
+          0.851,
+          0.907
+        ],
+        "evidence_zh": "两层端点约(948,1695)、(951,1716)，厚玻璃位于其下；两层未合并或被完全遮住。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "当前合成份额替换原平均比例，四个用途父类分别拆为互斥子类，主题和用途角色保持。",
+      "output_added_or_lost_meaning_zh": "新增高度编码、非数据杯宽与硬件、非调查说明符合冻结口径；未发现必要意义省略。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Indoor household water use、Synthetic share of indoor household water use (%)、END USE、SHARE及全部用途名称；页脚说明高度编码、互斥子类和非调查。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成声明、12类别及新数值由冻结输入规定，旧比例不是当前目标。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "杯内呈12层，22%层最大、1.5%层最薄，层高对应当前份额。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小层约16px高，边界可辨，但单像素对其相对高度影响明显。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一量化通道为共同总高上的12个液层。全部13边界、12项数字、类别及引线均已检查；详细记录覆盖最大层、中部层、最小正值和最底层。其余8层的像素高度见测量说明；杯宽、硬件、水滴数和杯底不属于量化通道。"
+  }
+}

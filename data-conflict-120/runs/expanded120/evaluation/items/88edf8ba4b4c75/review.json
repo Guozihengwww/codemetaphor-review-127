@@ -1,0 +1,360 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为十行深蓝支出横条、红框未投保百分比，以及叠有医疗双蛇杖和深蓝圆的美国地图。成图保留这些关系，醒目标明SYNTHETIC DATA，十城名称、金额及百分比可读。Lexington和New York横条极细，地图小圆需原始像素核查。",
+  "summary_zh": "未发现违反冻结要求的可见缺陷。代表性几何测量在3%满量程容差内，全部数值文字正确。原主题变化属于允许的输入适配；最小标记的相对精度受分辨率限制。已保存并通过schema校验的review.json，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "以2000×1425原图测量。像素扫描确认零点约x=340、百万刻度x=1240，量程宽900px。横条避开文字扫描，以实色和底色估计边缘覆盖。地图圆取无遮挡直径，按声明参考半径47.12px反算面积；误差分母为1,000,000 USD。百分比仅核对文字，源码公式仅作佐证。",
+  "uncertainties_zh": "最小横条约1.3px、最小地图圆约4px宽，不能保证小值相对精度。未独立测量全部重叠圆面积。未读取日志、自检、结果或历史归档，不能确认capture_render.py的每次实际执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "十城依序出现，十个金额和十个百分比齐全；地图、面积图例、单位及合成数据提示存在。重叠地图小圆计数以源码辅助核对。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部20个数值与输入一致，包括完整小数及New York的$1,449.6。500×等于724800/1449.6。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "城市、金额与百分比逐行对应，无跨行错绑；代表性地图圆心与声明点位相符。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "十行扫描得到约652、327、164、82、41、21、10、5、3、1列深色支持。代表性条长及圆面积反算均在3%满量程内；最小标记不作高精度相对误差保证。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png的地图和双蛇杖轮廓、浮雕纹理在成图中实质可见。render.py依据数据控制条长、圆心、圆面积和文字。归档脚本存在，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据圆叠在地图上，双蛇杖前置叠合地图；保留参考的并置和叠合关系，未发生破坏结构的遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、十城名称、金额、百分比、轴刻度及地图说明可读，未见必需文字被覆盖或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "蓝条右边界承载USD，红框包含百分比且尾部指向对应条端；地图承载面积圆并与医疗图形叠合。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、副标题和图例明确城市医疗宣传支出、未投保比例、USD及%；页脚声明合成比较且未指定报告时期。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "城市广告支出、未投保比例及地图对照关系保留；原反ACA及2013年语境由输入明确适配为合成医疗宣传主题。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最小横条和地图圆均有非零像素，但微条接近零线，微圆的严格圆形与精确面积难以独立辨认。红框及文字仍清楚，未见人为放大小值。"
+    }
+  },
+  "semantic_attribution_zh": "政治主题和年份变化属于冻结输入允许的适配。微小标记来自当前数值缩小及栅格分辨率限制，未发现输出遗漏。参考为并置与叠合，不要求双蛇杖本体承担几何定量编码。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "ad_spending/bar",
+        "category": "Charlotte",
+        "expected_value": 724800,
+        "observed_value": 724804.17,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 652.324,
+        "full_scale_error_percent": 0.00042,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.17,
+          0.260351,
+          0.4965,
+          0.288421
+        ],
+        "evidence_zh": "y=376实色列为x=340至991，992为混色边缘；估算宽652.324px，对应900px百万量程。",
+        "uncertainty_zh": "采用边缘混色近似，不能解释为分币级精度验证。"
+      },
+      {
+        "series_id": "ad_spending/bar",
+        "category": "Little Rock",
+        "expected_value": 45780.01815,
+        "observed_value": 45798.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 41.219,
+        "full_scale_error_percent": 0.00184,
+        "small_value_relative_error_percent": 0.0402,
+        "bbox_xyxy_normalized": [
+          0.17,
+          0.484912,
+          0.191,
+          0.512982
+        ],
+        "evidence_zh": "y=696实色至x=380，381为部分覆盖，估算宽41.219px。",
+        "uncertainty_zh": "抗锯齿导致子像素估计误差，相对误差仅为近似值。"
+      },
+      {
+        "series_id": "ad_spending/bar",
+        "category": "New York",
+        "expected_value": 1449.6,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1.32,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1695,
+          0.765614,
+          0.1715,
+          0.793684
+        ],
+        "evidence_zh": "y=1096的x=340为深色，341为混色，等效覆盖约1.32px，确有非零横条。",
+        "uncertainty_zh": "条与零线及抗锯齿相邻，不能可靠反算相对金额精度；源码1.30464px仅作佐证。"
+      },
+      {
+        "series_id": "ad_spending/map_area",
+        "category": "Charlotte",
+        "expected_value": 724800,
+        "observed_value": 720625.16,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 80,
+        "full_scale_error_percent": 0.4175,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.9075,
+          0.635789,
+          0.948,
+          0.692632
+        ],
+        "evidence_zh": "y=946无遮挡横截面蓝色范围x=1815至1894，直径约80px，按参考半径47.12px反算。",
+        "uncertainty_zh": "直径约有1px边界不确定性，未测量全部重叠面积。"
+      },
+      {
+        "series_id": "ad_spending/map_area",
+        "category": "Cleveland",
+        "expected_value": 363356.24485213,
+        "observed_value": 365829.86,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 57,
+        "full_scale_error_percent": 0.2474,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.889,
+          0.572632,
+          0.9175,
+          0.612632
+        ],
+        "evidence_zh": "蓝色支持范围约57×57px，中心约(1806.5,844.5)，与声明位置相符。",
+        "uncertainty_zh": "阈值边界产生约1px直径不确定性。"
+      },
+      {
+        "series_id": "ad_spending/map_area",
+        "category": "Little Rock",
+        "expected_value": 45780.01815,
+        "observed_value": 45039.07,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 20,
+        "full_scale_error_percent": 0.0741,
+        "small_value_relative_error_percent": 1.6185,
+        "bbox_xyxy_normalized": [
+          0.838,
+          0.665965,
+          0.848,
+          0.68
+        ],
+        "evidence_zh": "独立圆支持范围约20×20px，中心约(1686,959)，由20px直径反算。",
+        "uncertainty_zh": "像素边界对小圆相对误差影响较大，不表示高精度面积测量。"
+      },
+      {
+        "series_id": "ad_spending/map_area",
+        "category": "New York",
+        "expected_value": 1449.6,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 4,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.9445,
+          0.588772,
+          0.9465,
+          0.590877
+        ],
+        "evidence_zh": "东北部存在约4×3px非灰色支持范围，中心约(1891,840.5)，与声明点位相符。",
+        "uncertainty_zh": "目标直径约3.59px，整数支持范围不能视为真实圆直径，故不反算金额或误差。"
+      },
+      {
+        "series_id": "uninsured_share",
+        "category": "Washington DC",
+        "expected_value": 15.8,
+        "observed_value": 15.8,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.262,
+          0.371228,
+          0.316,
+          0.402105
+        ],
+        "evidence_zh": "对应红框清楚显示该系列最小值15.8%。",
+        "uncertainty_zh": "仅文字编码，红框面积不代表比例。"
+      },
+      {
+        "series_id": "uninsured_share",
+        "category": "Little Rock",
+        "expected_value": 24.1,
+        "observed_value": 24.1,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2005,
+          0.483509,
+          0.255,
+          0.514386
+        ],
+        "evidence_zh": "对应红框清楚显示该系列最大值24.1%。",
+        "uncertainty_zh": "文字读取不构成几何比例证据。"
+      },
+      {
+        "series_id": "uninsured_share",
+        "category": "New York",
+        "expected_value": 17.9,
+        "observed_value": 17.9,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1805,
+          0.764211,
+          0.235,
+          0.795088
+        ],
+        "evidence_zh": "最小支出行清楚显示17.9%，与$1,449.6同排。",
+        "uncertainty_zh": "固定大小气泡保持可读性，其尺寸不编码比例。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Charlotte行",
+        "required_parts": [
+          "深蓝横条",
+          "红框百分比",
+          "左向气泡尾",
+          "城市与金额"
+        ],
+        "relationship": "横条起于共零点，气泡尾朝向条端，百分比包含于红框。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.035,
+          0.25614,
+          0.5625,
+          0.29193
+        ],
+        "evidence_zh": "条端约x=992.3，尾尖在其右约6px处朝左；22.8%完整位于红框内。"
+      },
+      {
+        "category": "New York行",
+        "required_parts": [
+          "非零微条",
+          "共零线",
+          "红框及尾",
+          "百分比与金额"
+        ],
+        "relationship": "微条仍起于零线，气泡指向对应条端，文字同排。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.165,
+          0.762807,
+          0.305,
+          0.797193
+        ],
+        "evidence_zh": "可见深蓝像素及邻列混色；红框清楚，但条与零线几乎重合。"
+      },
+      {
+        "category": "医疗地图主体",
+        "required_parts": [
+          "美国轮廓",
+          "双翼",
+          "竖杖",
+          "两条交缠蛇",
+          "数据圆"
+        ],
+        "relationship": "双翼连接杖顶，双蛇绕杖；医疗图形前置叠合地图，数据圆位于地图东部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.6625,
+          0.389474,
+          0.9725,
+          0.77193
+        ],
+        "evidence_zh": "羽翼、竖杆和交缠蛇身可辨，地图从两侧露出，深蓝圆位于灰色地图表面。"
+      },
+      {
+        "category": "Charlotte及重叠小圆",
+        "required_parts": [
+          "Charlotte大圆",
+          "地图底面",
+          "Knoxville小圆",
+          "Raleigh圆"
+        ],
+        "relationship": "圆叠在地图前层，小圆叠于大圆之上并保留浅色边缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.906,
+          0.636491,
+          0.9485,
+          0.694035
+        ],
+        "evidence_zh": "大圆下半边轮廓清楚，Knoxville的小圆边缘可见，Raleigh在右上方叠合；源码佐证绘制顺序。"
+      },
+      {
+        "category": "New York地图点",
+        "required_parts": [
+          "东北部地图",
+          "非零微圆"
+        ],
+        "relationship": "微圆保持声明点位并叠于地图前景。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.9425,
+          0.585263,
+          0.949,
+          0.595088
+        ],
+        "evidence_zh": "约(1891,840.5)处存在微小非灰色范围，能定位，但不足以独立确认精确圆形和面积。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确改为合成医疗宣传比较，允许移除反ACA语境、2013年份和旧真实数值。",
+      "output_added_or_lost_meaning_zh": "城市支出与未投保率的对照关系保留；地图面积说明及500×比值与输入一致，没有添加时间累计或百分比分区含义。",
+      "visible_inscription_evidence_zh": "可见City Health Outreach Spending、Ad spending (USD)、Uninsured share (%)、SYNTHETIC DATA、No reporting period specified及locations schematic。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原反ACA广告与2013年语境由冻结输入替换，参考含义部分保留不计输出错误。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "支出跨度500倍，小额条形与圆按当前数值缩小，未沿用旧极值。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小横条约1.3px、地图点约4px宽，限制相对精度及形状辨认。"
+      }
+    ],
+    "measurement_coverage_zh": "十行均进行了像素扫描，全部20个数值逐项核对；详列最大、内部和最小横条。地图详列四个代表圆，另定位Louisville、Lexington并检查重叠小圆区域；未声称精确测量全部圆面积。百分比列最小、最大及内部值，均为文字编码。"
+  }
+}

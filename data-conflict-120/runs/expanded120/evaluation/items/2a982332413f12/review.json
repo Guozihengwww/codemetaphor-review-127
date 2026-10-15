@@ -1,0 +1,560 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "先查看了两张原图。最终图保留房屋坐落掌指上、腕部隐入深绿非住房面积的叠合关系；主图为两层面积，下图为四条命名折线。合成标识、家庭债务主题、万亿美元单位及不跨季累计口径可读，未见明显遮挡、物体断裂或主要边界丢失。",
+  "summary_zh": "通过。完整评审已保存为 UTF-8 review.json，并通过 schema.json 校验。21项像素测量的满量程误差均低于0.13%。按后附要求未运行 submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1320×2060原图像素。主图0/16刻度中心约为y=1309.78/439.78；小图0/1.6网格中心约为y=1869.65/1539.65。以实际面积边界、终点圆心及彩线中心换算数值；源码仅作来源、点数和绘制顺序佐证。",
+  "uncertainties_zh": "未逐点量测全部季度。面积边界约±1.5px，折线中心约±1px；最小0.22对应约45.32px，±1px仍约为2.2%的相对测量不确定度。未读取历史运行记录，不能确认每次渲染均调用归档脚本。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两层主图、四线细分图及五个命名债务角色齐全。主图像素刻度计数76；源码使用各系列全部76值。期间、单位和合成标识完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "15.72、11.36、4.36、72.3%、+112.7%及四线终值均正确；2020Q3—2021Q4确为连续6季1.57。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "住房红层在上，非住房深绿层在下；四线颜色、图例、终值引线对应一致，非住房组成公式正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "主图0–16、小图0–1.6线性轴正确。21项独立像素测量最大满量程误差约0.123%，低于3%。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理后的托屋手素材；相同屋顶、窗棂、砖基和托手在最终图中实质可见。源码读取该素材并按住房多边形裁剪。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "地基接触掌指，掌部连接腕部，腕部被非住房面积遮挡；叠合关系与参考一致，未见破坏结构的透视错接或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成标识、统计口径、单位、类别和端值均可读，必需文字未被遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "屋顶接墙、门窗嵌墙、地基接掌指、掌部接腕部的结构完整；实际定量通道为面积边界及四条折线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确写出合成家庭债务、每季独立余额、不跨季累计、万亿美元及非住房四类组成。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留家庭债务构成、托屋动作和双面板关系；原美国真实统计叙述按冻结输入改为合成当季余额，属于许可适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小学生贷款0.22距零线约45.32px，起点和连续折线可辨；其他最小0.27约55.87px，未消失或被人为抬高。"
+    }
+  },
+  "semantic_attribution_zh": "真实美国消费债务改为合成家庭债务属于输入适配，当前数据决定新边界和走势。未见托屋动作、债务类别或叠合关系的输出遗漏；抗锯齿限制精确读值，但不影响本例小值识别。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "total",
+        "category": "2003Q1",
+        "expected_value": 7.32,
+        "observed_value": 7.33391,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 398.781,
+        "full_scale_error_percent": 0.0869,
+        "small_value_relative_error_percent": 0.19,
+        "bbox_xyxy_normalized": [
+          0.081,
+          0.442,
+          0.087,
+          0.636
+        ],
+        "evidence_zh": "x≈110，顶部y≈911，零线y≈1309.78。",
+        "uncertainty_zh": "边界约±1.5px。"
+      },
+      {
+        "series_id": "nonhousing",
+        "category": "2003Q1",
+        "expected_value": 2.05,
+        "observed_value": 2.0598,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 112.002,
+        "full_scale_error_percent": 0.0613,
+        "small_value_relative_error_percent": 0.478,
+        "bbox_xyxy_normalized": [
+          0.081,
+          0.581,
+          0.087,
+          0.636
+        ],
+        "evidence_zh": "内侧x≈112，分层边界y≈1197.78。",
+        "uncertainty_zh": "边界约±1.5px；避开左边缘抗锯齿取内侧约2px。"
+      },
+      {
+        "series_id": "housing",
+        "category": "2003Q1",
+        "expected_value": 5.27,
+        "observed_value": 5.27411,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 286.78,
+        "full_scale_error_percent": 0.0257,
+        "small_value_relative_error_percent": 0.078,
+        "bbox_xyxy_normalized": [
+          0.081,
+          0.442,
+          0.087,
+          0.582
+        ],
+        "evidence_zh": "住房厚度由y≈911至1197.78测得。",
+        "uncertainty_zh": "使用两条边界之差，各边界约±1.5px。"
+      },
+      {
+        "series_id": "total",
+        "category": "2013Q1",
+        "expected_value": 11.19,
+        "observed_value": 11.17759,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 607.781,
+        "full_scale_error_percent": 0.0776,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.503,
+          0.341,
+          0.508,
+          0.636
+        ],
+        "evidence_zh": "x≈667，总额边界y≈702。",
+        "uncertainty_zh": "边界约±1.5px；横坐标取最近像素。"
+      },
+      {
+        "series_id": "nonhousing",
+        "category": "2013Q1",
+        "expected_value": 2.81,
+        "observed_value": 2.81725,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 153.189,
+        "full_scale_error_percent": 0.0453,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.503,
+          0.561,
+          0.508,
+          0.636
+        ],
+        "evidence_zh": "x≈667，分层边界y≈1156.59。",
+        "uncertainty_zh": "边界约±1.5px。"
+      },
+      {
+        "series_id": "housing",
+        "category": "2013Q1",
+        "expected_value": 8.38,
+        "observed_value": 8.36034,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 454.593,
+        "full_scale_error_percent": 0.1229,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.503,
+          0.341,
+          0.508,
+          0.562
+        ],
+        "evidence_zh": "住房厚度由y≈702至1156.59测得。",
+        "uncertainty_zh": "使用两边界之差，各边界约±1.5px。"
+      },
+      {
+        "series_id": "total",
+        "category": "2021Q4",
+        "expected_value": 15.72,
+        "observed_value": 15.72302,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 854.939,
+        "full_scale_error_percent": 0.0189,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.871,
+          0.221,
+          0.877,
+          0.636
+        ],
+        "evidence_zh": "末端圆心y≈454.84，零线y≈1309.78。",
+        "uncertainty_zh": "圆心和边界估计约±1.5px。"
+      },
+      {
+        "series_id": "nonhousing",
+        "category": "2021Q4",
+        "expected_value": 4.36,
+        "observed_value": 4.34972,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 236.516,
+        "full_scale_error_percent": 0.0643,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.871,
+          0.521,
+          0.877,
+          0.636
+        ],
+        "evidence_zh": "内侧x≈1153，分层边界y≈1073.27。",
+        "uncertainty_zh": "边界约±1.5px；避开右边缘取内侧约2px。"
+      },
+      {
+        "series_id": "housing",
+        "category": "2021Q4",
+        "expected_value": 11.36,
+        "observed_value": 11.3733,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 618.424,
+        "full_scale_error_percent": 0.0831,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.871,
+          0.221,
+          0.877,
+          0.522
+        ],
+        "evidence_zh": "住房厚度由末端总额圆心至非住房边界测得。",
+        "uncertainty_zh": "两边界约±1.5px；下边界在内侧约2px取样。"
+      },
+      {
+        "series_id": "credit_card",
+        "category": "2012Q1",
+        "expected_value": 0.66,
+        "observed_value": 0.66009,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 136.144,
+        "full_scale_error_percent": 0.0056,
+        "small_value_relative_error_percent": 0.014,
+        "bbox_xyxy_normalized": [
+          0.46,
+          0.84,
+          0.466,
+          0.908
+        ],
+        "evidence_zh": "x≈611，线中心y≈1733.51。",
+        "uncertainty_zh": "线中心约±1px；高度指距零线偏移。"
+      },
+      {
+        "series_id": "credit_card",
+        "category": "2018Q4",
+        "expected_value": 0.96,
+        "observed_value": 0.9594,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 197.876,
+        "full_scale_error_percent": 0.0375,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.745,
+          0.81,
+          0.751,
+          0.908
+        ],
+        "evidence_zh": "x≈987，线中心y≈1671.77。",
+        "uncertainty_zh": "线中心约±1px。"
+      },
+      {
+        "series_id": "credit_card",
+        "category": "2013Q1",
+        "expected_value": 0.67,
+        "observed_value": 0.67088,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 138.37,
+        "full_scale_error_percent": 0.055,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.502,
+          0.839,
+          0.508,
+          0.908
+        ],
+        "evidence_zh": "x≈667，线中心y≈1731.28。",
+        "uncertainty_zh": "线中心约±1px。"
+      },
+      {
+        "series_id": "auto_loan",
+        "category": "2003Q1",
+        "expected_value": 0.64,
+        "observed_value": 0.63992,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 131.984,
+        "full_scale_error_percent": 0.005,
+        "small_value_relative_error_percent": 0.013,
+        "bbox_xyxy_normalized": [
+          0.08,
+          0.842,
+          0.086,
+          0.908
+        ],
+        "evidence_zh": "x≈110，线中心y≈1737.67。",
+        "uncertainty_zh": "线中心约±1px。"
+      },
+      {
+        "series_id": "auto_loan",
+        "category": "2021Q4",
+        "expected_value": 1.48,
+        "observed_value": 1.48033,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 305.317,
+        "full_scale_error_percent": 0.0206,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.872,
+          0.757,
+          0.878,
+          0.908
+        ],
+        "evidence_zh": "x≈1155，终点中心y≈1564.33。",
+        "uncertainty_zh": "线中心约±1px。"
+      },
+      {
+        "series_id": "auto_loan",
+        "category": "2013Q1",
+        "expected_value": 0.84,
+        "observed_value": 0.84077,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 173.409,
+        "full_scale_error_percent": 0.0481,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.502,
+          0.821,
+          0.508,
+          0.908
+        ],
+        "evidence_zh": "x≈667，线中心y≈1696.24。",
+        "uncertainty_zh": "线中心约±1px。"
+      },
+      {
+        "series_id": "other",
+        "category": "2012Q3",
+        "expected_value": 0.27,
+        "observed_value": 0.27087,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 55.867,
+        "full_scale_error_percent": 0.0544,
+        "small_value_relative_error_percent": 0.322,
+        "bbox_xyxy_normalized": [
+          0.481,
+          0.879,
+          0.487,
+          0.908
+        ],
+        "evidence_zh": "x≈639，线中心y≈1813.78。",
+        "uncertainty_zh": "线中心约±1px，小值相对误差不可由满量程通过替代。"
+      },
+      {
+        "series_id": "other",
+        "category": "2003Q2",
+        "expected_value": 0.46,
+        "observed_value": 0.46018,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 94.912,
+        "full_scale_error_percent": 0.0113,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.091,
+          0.86,
+          0.097,
+          0.908
+        ],
+        "evidence_zh": "x≈124，线中心y≈1774.74。",
+        "uncertainty_zh": "线中心约±1px。"
+      },
+      {
+        "series_id": "other",
+        "category": "2013Q1",
+        "expected_value": 0.29,
+        "observed_value": 0.28917,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 59.641,
+        "full_scale_error_percent": 0.0519,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.502,
+          0.877,
+          0.508,
+          0.908
+        ],
+        "evidence_zh": "x≈667，线中心y≈1810.01。",
+        "uncertainty_zh": "线中心约±1px。"
+      },
+      {
+        "series_id": "student_loan",
+        "category": "2003Q1",
+        "expected_value": 0.22,
+        "observed_value": 0.21974,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 45.322,
+        "full_scale_error_percent": 0.0163,
+        "small_value_relative_error_percent": 0.118,
+        "bbox_xyxy_normalized": [
+          0.08,
+          0.884,
+          0.086,
+          0.908
+        ],
+        "evidence_zh": "x≈110，起点中心y≈1824.33，距零线45.32px。",
+        "uncertainty_zh": "中心约±1px，对该最小值约为2.2%的相对测量不确定度。"
+      },
+      {
+        "series_id": "student_loan",
+        "category": "2020Q3",
+        "expected_value": 1.57,
+        "observed_value": 1.56915,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 323.636,
+        "full_scale_error_percent": 0.0531,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.819,
+          0.749,
+          0.825,
+          0.908
+        ],
+        "evidence_zh": "x≈1085，水平线中心y≈1546.01。",
+        "uncertainty_zh": "线中心约±1px。"
+      },
+      {
+        "series_id": "student_loan",
+        "category": "2013Q1",
+        "expected_value": 1.01,
+        "observed_value": 1.00943,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 208.196,
+        "full_scale_error_percent": 0.0356,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.502,
+          0.805,
+          0.508,
+          0.908
+        ],
+        "evidence_zh": "x≈667，线中心y≈1661.45。",
+        "uncertainty_zh": "线中心约±1px。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "主体托屋关系",
+        "required_parts": [
+          "屋顶与墙体",
+          "门窗和地基",
+          "掌指",
+          "腕部",
+          "住房面积",
+          "非住房面积"
+        ],
+        "relationship": "地基接触上托掌指，掌部连接腕部，腕部被前方非住房面积遮挡。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.201,
+          0.329,
+          0.554,
+          0.569
+        ],
+        "evidence_zh": "房屋部件完整，掌指贴住地基；腕部向右下延伸并在深绿边界处隐入。"
+      },
+      {
+        "category": "主图大值2021Q4",
+        "required_parts": [
+          "总额上边界",
+          "住房区域",
+          "非住房区域",
+          "零基线"
+        ],
+        "relationship": "两层垂直厚度相加形成总额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.848,
+          0.218,
+          0.879,
+          0.638
+        ],
+        "evidence_zh": "住房厚约618.42px，非住房厚约236.52px；总额圆心和公共分层边界均可见。"
+      },
+      {
+        "category": "主图期初较小值",
+        "required_parts": [
+          "住房区域",
+          "非住房区域",
+          "公共边界",
+          "零基线"
+        ],
+        "relationship": "两区域由实际层厚编码较小值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.08,
+          0.44,
+          0.101,
+          0.638
+        ],
+        "evidence_zh": "期初红层约286.78px，深绿层约112px；均连续可辨，不要求每季度重复房屋。"
+      },
+      {
+        "category": "最小学生贷款",
+        "required_parts": [
+          "青绿色起点",
+          "连续折线",
+          "学生贷款图例",
+          "零线"
+        ],
+        "relationship": "起点连接向右延伸的同色折线，纵向位置编码0.22。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.079,
+          0.877,
+          0.123,
+          0.911
+        ],
+        "evidence_zh": "起点距零线约45.32px，点和线均可辨。"
+      },
+      {
+        "category": "学生贷款大值与末端持平",
+        "required_parts": [
+          "水平折线",
+          "1.6网格线",
+          "终点及1.57标签"
+        ],
+        "relationship": "折线在1.6网格线下方保持水平并连接终点标签。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.817,
+          0.739,
+          0.935,
+          0.762
+        ],
+        "evidence_zh": "末六季度水平段、终点和1.57引线标签可见。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确允许真实统计改为合成家庭债务，不要求保留旧峰值和增长论断。",
+      "output_added_or_lost_meaning_zh": "托屋动作和债务构成保留；原真实统计叙述被许可的合成季度余额说明替换，未见新增因果误读。",
+      "visible_inscription_evidence_zh": "可读“合成家庭债务”“SYNTHETIC DATA”“每季独立余额·不跨季累计”“四类余额·同一季度”“万亿美元”及中英债务类别。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实美国债务转为合成家庭债务属于明确授权的主题适配。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前季度总额和细分类别决定新的面积边界与走势。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿和线宽限制亚像素精度，最小正值仍有约45px纵向偏移。"
+      }
+    ],
+    "measurement_coverage_zh": "21项：主图期初、内部及末期各测总额和两层厚度；四条细分线各测最小值、最大值和内部点。另核对76个主图季度刻度及全部必需标签；未声称逐点量测全部380个原始值。"
+  }
+}

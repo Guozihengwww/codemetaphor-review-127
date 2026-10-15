@@ -1,0 +1,274 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：礼帽舞台人物的屈腿带有网袜纹理，红色数据路径沿前景腿弯曲并进入鞋尖；可见两臂、两腿及高跟鞋。最终图：保留上述主要部件与路径融合关系，人物服装及姿态有所调整；红色路径有五个圆点，年份为1978至1982，数值文字依次为22,000、23,500、61,500、27,000、14,500。标题ONE CARAT DIAMOND PRICES、SYNTHETIC DATA、Fictional price、USD per one-carat diamond及YEAR均可读。1980圆点最高，1982圆点最低；网袜腿和鞋未遮挡圆点或标签。此记录写于读取渲染源码之前，尚未量测坐标。",
+  "summary_zh": "五个价格、年份、系列及单位完整且绑定正确，独立像素测量均在容差内。舞台人物的礼帽、两臂、两条网袜腿及高跟鞋保留，数据路径实际沿前景腿内缘并进入鞋尖；未发现需列为缺陷的可见问题。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量指定image.png（2000×1936）。以右侧短刻度的像素行中心确定65,000位于y≈599.5、10,000位于y≈1569.5，轴跨度970像素；用v=10000+(1569.5-y)/970×55000反算圆点中心。满量程分母为55,000 USD，相对误差分母为各点原值。五个年份刻度x=650、920、1190、1460、1730，间隔均270像素。四段中点的红线截面中心与端点直线插值相差不足1像素；主红色路径为一个连续像素组件。源码的线性映射及无插值折线仅作佐证，未代替像素测量。",
+  "uncertainties_zh": "圆点与轴刻度定位存在约1像素量级误差，因此报告的微小数值残差不应解释为有意义的数据失真。按照限制未查阅日志、自检、历史渲染或其他图像；可确认素材可见使用及源码控制几何，不能独立认证每次历史渲染是否经capture_render.py保存。参考图分辨率为405×392，仅对可辨主题和部件关系作判断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "一条Fictional price系列、五个圆点、1978—1982五个年份和五个价格均完整；SYNTHETIC DATA、主题、USD per one-carat diamond、YEAR及10,000—65,000线性范围可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "五个标签依次为$22,000、$23,500、$61,500、$27,000、$14,500，与data.json完全一致；七个纵轴刻度为10,000、20,000、30,000、40,000、50,000、60,000、65,000。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "五个圆点横坐标与各年份刻度逐一对齐，旁置价格标签明确对应邻近圆点；图例红线圆点与唯一价格系列一致。后腿没有第二组数据标记，不构成另一系列。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "五点独立反算约21,979、23,480、61,499、26,996、14,494 USD，最大满量程误差约0.039%，远低于3%。等距年份、连续直线连接及峰谷范围均符合要求，未见连线过冲。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_03.png及人物、网袜、鞋三个分离素材；其雕刻线、网结和鞋面纹理在成图主体中清楚可辨。render.py读取这些素材，以当前数据计算圆点及前景腿边界并绘制文字；capture_render.py含完整图像保存机制。未据此声称已认证执行历史。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "红线沿前景网袜腿的下侧/内侧边界从髋部经过膝部至踝部，再沿高跟鞋延伸到鞋尖。它与腿的形状共用边界，不是普通折线图旁置人物。前景腿遮挡后腿，鞋遮住腿末端，路径与圆点位于可见上层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、系列名、单位、五个价格及年份在原分辨率均可读，没有必要标签被身体、网纹或鞋覆盖；浅色网纹与红线可分辨。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "礼帽位于头部，一臂屈向帽沿，另一臂伸向左下；两条网袜腿接于外套下方，一条屈膝在前、一条向右上伸出在后，两端各接高跟鞋。大值膝部和小值鞋尖均保留实际路径融合。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "ONE CARAT DIAMOND PRICES说明主题，Fictional price与USD per one-carat diamond给出指标、系列和单位，YEAR明确年份角色；SYNTHETIC DATA及Illustrative synthetic values说明虚构性质。点高表示价格的说明可读。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "原图的一克拉钻石价格主题与红色价格路径融合舞台屈腿的关系均保留。当前输入明确采用虚构数据，未要求沿用原真实来源、D-flawless限定或原标题的旧修辞；人物装束变化未破坏冻结的舞台人物身份。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值1982的圆点中心距10,000刻度约79.26像素，红环中心列截面约35像素，位于可辨的前景高跟鞋鞋尖。1978至1979仅约26.48像素的上升也可见。数值以中心高度编码，并未靠放大标记面积改变小值。"
+    }
+  },
+  "semantic_attribution_zh": "虚构价格及合成声明属于输入明确允许的统计替换，主题仍为一克拉钻石价格。人物装束、非数据腿厚和姿态变化属于允许的身份适配；腿形随数据改变且保持与路径融合。未观察到当前语义或必需部件的输出遗漏。原标题修辞不作为当前结论要求，像素级残差归于分辨率与栅格化限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_price",
+        "category": "1978",
+        "expected_value": 22000,
+        "observed_value": 21978.59,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 34,
+        "full_scale_error_percent": 0.0389,
+        "small_value_relative_error_percent": 0.0973,
+        "bbox_xyxy_normalized": [
+          0.31538,
+          0.69176,
+          0.33438,
+          0.71138
+        ],
+        "evidence_zh": "原图红环内浅色连通区域的质心约为(649.76, 1358.24)像素，距可见10,000刻度向上211.26像素；按可见线性轴反算约21,978.59 USD。数值标签为$22,000，与1978年份刻度对齐。mark_extent_px记录中心列红色标记的可见竖向截面，标记尺寸不编码价格。",
+        "uncertainty_zh": "抗锯齿、阈值和刻度栅格化使中心及轴定位约有1像素量级不确定性（约57 USD）；小数为计算结果，不代表同等测量精度。截面可能包含邻接线条。"
+      },
+      {
+        "series_id": "synthetic_price",
+        "category": "1979",
+        "expected_value": 23500,
+        "observed_value": 23480.17,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 36,
+        "full_scale_error_percent": 0.0361,
+        "small_value_relative_error_percent": 0.0844,
+        "bbox_xyxy_normalized": [
+          0.45038,
+          0.67808,
+          0.46938,
+          0.69771
+        ],
+        "evidence_zh": "原图红环内浅色连通区域的质心约为(919.76, 1331.76)像素，距可见10,000刻度向上237.74像素；按可见线性轴反算约23,480.17 USD。数值标签为$23,500，与1979年份刻度对齐。mark_extent_px记录中心列红色标记的可见竖向截面，标记尺寸不编码价格。",
+        "uncertainty_zh": "抗锯齿、阈值和刻度栅格化使中心及轴定位约有1像素量级不确定性（约57 USD）；小数为计算结果，不代表同等测量精度。截面可能包含邻接线条。"
+      },
+      {
+        "series_id": "synthetic_price",
+        "category": "1980",
+        "expected_value": 61500,
+        "observed_value": 61499.21,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 36,
+        "full_scale_error_percent": 0.0014,
+        "small_value_relative_error_percent": 0.0013,
+        "bbox_xyxy_normalized": [
+          0.58538,
+          0.33174,
+          0.60438,
+          0.35136
+        ],
+        "evidence_zh": "原图红环内浅色连通区域的质心约为(1189.76, 661.24)像素，距可见10,000刻度向上908.26像素；按可见线性轴反算约61,499.21 USD。数值标签为$61,500，与1980年份刻度对齐。mark_extent_px记录中心列红色标记的可见竖向截面，标记尺寸不编码价格。",
+        "uncertainty_zh": "抗锯齿、阈值和刻度栅格化使中心及轴定位约有1像素量级不确定性（约57 USD）；小数为计算结果，不代表同等测量精度。截面可能包含邻接线条。"
+      },
+      {
+        "series_id": "synthetic_price",
+        "category": "1981",
+        "expected_value": 27000,
+        "observed_value": 26995.63,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 34,
+        "full_scale_error_percent": 0.0079,
+        "small_value_relative_error_percent": 0.0162,
+        "bbox_xyxy_normalized": [
+          0.72038,
+          0.64605,
+          0.73938,
+          0.66568
+        ],
+        "evidence_zh": "原图红环内浅色连通区域的质心约为(1459.76, 1269.76)像素，距可见10,000刻度向上299.74像素；按可见线性轴反算约26,995.63 USD。数值标签为$27,000，与1981年份刻度对齐。mark_extent_px记录中心列红色标记的可见竖向截面，标记尺寸不编码价格。",
+        "uncertainty_zh": "抗锯齿、阈值和刻度栅格化使中心及轴定位约有1像素量级不确定性（约57 USD）；小数为计算结果，不代表同等测量精度。截面可能包含邻接线条。"
+      },
+      {
+        "series_id": "synthetic_price",
+        "category": "1982",
+        "expected_value": 14500,
+        "observed_value": 14494.06,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 35,
+        "full_scale_error_percent": 0.0108,
+        "small_value_relative_error_percent": 0.041,
+        "bbox_xyxy_normalized": [
+          0.85538,
+          0.75994,
+          0.87438,
+          0.77957
+        ],
+        "evidence_zh": "原图红环内浅色连通区域的质心约为(1729.76, 1490.24)像素，距可见10,000刻度向上79.26像素；按可见线性轴反算约14,494.06 USD。数值标签为$14,500，与1982年份刻度对齐。mark_extent_px记录中心列红色标记的可见竖向截面，标记尺寸不编码价格。",
+        "uncertainty_zh": "抗锯齿、阈值和刻度栅格化使中心及轴定位约有1像素量级不确定性（约57 USD）；小数为计算结果，不代表同等测量精度。截面可能包含邻接线条。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体舞台人物及腿根",
+        "required_parts": [
+          "礼帽",
+          "头部",
+          "躯干",
+          "两臂",
+          "两条腿根"
+        ],
+        "relationship": "礼帽接触头部；两臂由肩部连续伸出；两腿根位于外套下缘后方并与躯干衔接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.02,
+          0.28,
+          0.47,
+          0.8
+        ],
+        "evidence_zh": "左下可见伸出的手臂及手掌，另一手在帽沿；外套覆盖两腿根的接合区，没有可见悬空缝隙。"
+      },
+      {
+        "category": "1980最大值膝部及前后腿交叠",
+        "required_parts": [
+          "前景网袜大腿",
+          "膝部",
+          "小腿",
+          "后腿",
+          "1980圆点及两段红线"
+        ],
+        "relationship": "前景腿在膝部连续折返并覆盖后腿；红线沿前景腿内缘经最高圆点转向下行。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.44,
+          0.29,
+          0.7,
+          0.6
+        ],
+        "evidence_zh": "网袜表面围绕约(1190,661)的红点形成屈膝轮廓；红点下方两段红线邻接网袜与灰背景的边界，交叉处后腿被前腿遮住。"
+      },
+      {
+        "category": "1982最小值鞋尖",
+        "required_parts": [
+          "网袜小腿末端",
+          "鞋口",
+          "鞋面",
+          "鞋跟",
+          "鞋尖",
+          "1981—1982路径及终点"
+        ],
+        "relationship": "小腿末端接入高跟鞋口，鞋跟向下，鞋面延伸至鞋尖；红线经过鞋面并在鞋尖终止。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.67,
+          0.59,
+          0.88,
+          0.79
+        ],
+        "evidence_zh": "约(1460,1270)的踝部圆点后，红线延伸到约(1730,1490)的鞋尖圆点；完整鞋面和独立细高跟仍可辨，最小值不是脱离物体的浮点。"
+      },
+      {
+        "category": "1978—1979起始及内点",
+        "required_parts": [
+          "髋部网袜",
+          "大腿下缘",
+          "两个圆点",
+          "相邻红线"
+        ],
+        "relationship": "网袜从外套下方伸出，起始两点及微升线段贴合大腿下缘，并转接上行至膝部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.28,
+          0.59,
+          0.49,
+          0.72
+        ],
+        "evidence_zh": "约(650,1358)与(920,1332)的两点之间有连续浅斜红线，上方为网袜、下方为背景；第一个圆点附近的腿部轮廓仍闭合。"
+      },
+      {
+        "category": "后腿与抬起的鞋",
+        "required_parts": [
+          "后景网袜腿",
+          "踝部",
+          "抬起的高跟鞋"
+        ],
+        "relationship": "后腿向右上伸展并接入鞋口，鞋尖朝上、鞋跟朝右；后腿在交叉处位于前腿后方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.62,
+          0.145,
+          0.93,
+          0.45
+        ],
+        "evidence_zh": "右上网袜轮廓与鞋口相接，鞋具有清楚的鞋面、开口和细跟；该腿没有额外价格圆点。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "当前明确改用一条虚构价格系列及五个给定年份，允许身体姿态、腿厚、标签位置适应新数据；不要求旧统计来源或旧涨跌论断。主题本身未改为其他对象。",
+      "output_added_or_lost_meaning_zh": "新增显著合成说明和点高编码说明；未丢失当前钻石价格、年份、计价单位或屈腿承载走势的关系。原图的真实市场出处及标题修辞未沿用，不构成冻结语义遗漏。",
+      "visible_inscription_evidence_zh": "可见ONE CARAT DIAMOND PRICES、SYNTHETIC DATA、Fictional price、USD per one-carat diamond、YEAR、A fictional series, performed as a bent leg.及Dot height shows price; years are equally spaced."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "data.json明确给出synthetic=true及Fictional price；最终图同步声明虚构，未冒充原参考的实际市场数据。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "前景腿内缘对应当前五点高低，膝部及鞋位置随当前价格路径配置；改变未切断腿、鞋与躯干的必要关系。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "像素质心及短刻度约1像素量级的不确定性足以解释微小反算差值；最小点仍有约79像素轴向位移，不属无法分辨的亚像素标记。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一价格通道的全部五个圆点，包括最小值1982、最大值1980及三个其余点；另核对全部五个年份刻度、七个纵轴刻度及四段连接线中点。所有必需标签逐项检查。部件关系覆盖整体、最大值膝部、最小值鞋尖、低位起始段及后腿；未将非数据腿厚、鞋面积或网孔数量解释为第二数量通道。"
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：青色背景，国家横条由浅青与黄色两段组成，右侧图例及坐在大问号上的青年，周围有小问号；人物与横条并置而非条形融合。指定成图：标题Youth at a crossroads，醒目SYNTHETIC DATA，说明非就业/教育/培训处境、15–29岁群体分母；36行合成比较群体含benchmark，浅青Inactive、黄色Seeking work，两段内标值、条末标总值；共用0–30%轴。右下青年坐在大问号上，手靠下巴，旁有小问号。可见各行顺序、数字与横条清楚，未见条形被插图遮住。以上记录于读取渲染源码之前。",
+  "summary_zh": "通过。36行、72个分段及标签完整；原图像素测得最大偏差约0.038个百分点，低于容差。青年坐在问号上的构图、当前统计角色与分母均保留。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析1600×2056的image.png。可见0与30刻度分别位于x=326、1430，标尺为36.8像素/百分点；逐行扫描靠下且避开文字的连续浅青/黄色区域，测量72个段宽及36个总长。最大满量程误差约0.127%，最大分段相对误差约0.895%。这些是像素测量，不是渲染公式推算。问号与人物为非数据插图，无需对其三维外形反投影。",
+  "uncertainties_zh": "像素边界受抗锯齿与取整影响，单段宽约有±2像素不确定性，不能据此保证亚像素精度。仅核对当前素材与源码；未审阅日志或历史归档，因此不确认每次capture_render.py的实际执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Group 01–35及Benchmark共36行，按给定顺序出现；两系列共72个分段、36个条尾总数、图例、0–30刻度和SYNTHETIC DATA均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行核对72个分段数值及36个条尾和数，均与data.json一致；例如首行23.2+6.2=29.4%，Benchmark为8.7+6.1=14.8%，末行3.9+2.6=6.5%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每行类别贴近对应横条；浅青段内为Inactive值，黄色段内为Seeking work值，总值在实际条尾右侧，图例颜色一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部108个段宽/总长测量的最大偏差约0.038个百分点，即30%满量程的0.127%；共同零点、线性刻度和堆叠接点正确，没有归一化为100%。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和youth_question.png，人物衣着、手靠下巴姿态及问号形体与成图右下大幅插图一致；render.py粘贴该位图并按数据绘制横条，prepare_assets.py仅裁除透明边缘。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "参考与成图均为横条和人物问号插图并置。成图人物坐在大问号曲面上，腿在其前方，问号圆点位于弯钩下方；图例及插图未遮住任何数据段或标签。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下36行类别、72个段内数字、36个总值及底部口径均可读。最窄黄色段约95像素宽，2.6标签完整容纳。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "双色横条从共同基线出发，两段共边相接；右下青年臀腿与大问号上部接触，手靠下巴，周围小问号保留疑问构图；数据承载边界仍是横条长度。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题与副标题说明青年处境和非就业/教育/培训；年龄15–29、各群体全体合成人口分母、百分比单位、两状态互斥及总和不归一化为100%均明确。Synthetic group与Synthetic benchmark说明合成比较类别身份。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "原参考的青年非就业/教育/培训处境、Inactive与求职状态比较及坐在问号上的思考姿态保留。国家、旧年份与真实量值按冻结输入改为合成比较，不要求复现原历史事实。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "末行浅青3.9%段约144像素、黄色2.6%段约95像素，均有可见面积、完整数字及共边连接，未靠抬高小值维持识别。小问号的弯钩和下方方点也可区分，但它们不编码数值。"
+    }
+  },
+  "semantic_attribution_zh": "国家及年份被合成群体替代属于冻结输入允许的改编；长度变化由当前数据决定。输出保留青年处境、两统计角色和疑问动作，未见必备语义遗漏。边界精度限制来自栅格分辨率。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "inactive",
+        "category": "Group 01",
+        "expected_value": 23.2,
+        "observed_value": 23.207,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 854,
+        "full_scale_error_percent": 0.022,
+        "small_value_relative_error_percent": 0.028,
+        "bbox_xyxy_normalized": [
+          0.20375,
+          0.208658,
+          0.7375,
+          0.223249
+        ],
+        "evidence_zh": "原图第1行，扫描y=456；连续色块像素边界x=326至1180，按可见0与30刻度间1104像素换算。",
+        "uncertainty_zh": "每个抗锯齿边界约±1像素，段宽约±2像素（±0.054个百分点）；小值相对误差仅为本次像素估计。"
+      },
+      {
+        "series_id": "total",
+        "category": "Group 01",
+        "expected_value": 29.4,
+        "observed_value": 29.402,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1082,
+        "full_scale_error_percent": 0.007,
+        "small_value_relative_error_percent": 0.007,
+        "bbox_xyxy_normalized": [
+          0.20375,
+          0.208658,
+          0.88,
+          0.223249
+        ],
+        "evidence_zh": "原图第1行，扫描y=456；连续色块像素边界x=326至1408，按可见0与30刻度间1104像素换算。",
+        "uncertainty_zh": "每个抗锯齿边界约±1像素，段宽约±2像素（±0.054个百分点）；小值相对误差仅为本次像素估计。"
+      },
+      {
+        "series_id": "seeking_work",
+        "category": "Group 03",
+        "expected_value": 18,
+        "observed_value": 17.962,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 661,
+        "full_scale_error_percent": 0.127,
+        "small_value_relative_error_percent": 0.211,
+        "bbox_xyxy_normalized": [
+          0.3675,
+          0.247082,
+          0.780625,
+          0.261673
+        ],
+        "evidence_zh": "原图第3行，扫描y=535；连续色块像素边界x=588至1249，按可见0与30刻度间1104像素换算。",
+        "uncertainty_zh": "每个抗锯齿边界约±1像素，段宽约±2像素（±0.054个百分点）；小值相对误差仅为本次像素估计。"
+      },
+      {
+        "series_id": "inactive",
+        "category": "Benchmark",
+        "expected_value": 8.7,
+        "observed_value": 8.696,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 320,
+        "full_scale_error_percent": 0.014,
+        "small_value_relative_error_percent": 0.05,
+        "bbox_xyxy_normalized": [
+          0.20375,
+          0.516051,
+          0.40375,
+          0.530642
+        ],
+        "evidence_zh": "原图第17行，扫描y=1088；连续色块像素边界x=326至646，按可见0与30刻度间1104像素换算。",
+        "uncertainty_zh": "每个抗锯齿边界约±1像素，段宽约±2像素（±0.054个百分点）；小值相对误差仅为本次像素估计。"
+      },
+      {
+        "series_id": "seeking_work",
+        "category": "Benchmark",
+        "expected_value": 6.1,
+        "observed_value": 6.087,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 224,
+        "full_scale_error_percent": 0.043,
+        "small_value_relative_error_percent": 0.214,
+        "bbox_xyxy_normalized": [
+          0.40375,
+          0.516051,
+          0.54375,
+          0.530642
+        ],
+        "evidence_zh": "原图第17行，扫描y=1088；连续色块像素边界x=646至870，按可见0与30刻度间1104像素换算。",
+        "uncertainty_zh": "每个抗锯齿边界约±1像素，段宽约±2像素（±0.054个百分点）；小值相对误差仅为本次像素估计。"
+      },
+      {
+        "series_id": "total",
+        "category": "Benchmark",
+        "expected_value": 14.8,
+        "observed_value": 14.783,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 544,
+        "full_scale_error_percent": 0.058,
+        "small_value_relative_error_percent": 0.118,
+        "bbox_xyxy_normalized": [
+          0.20375,
+          0.516051,
+          0.54375,
+          0.530642
+        ],
+        "evidence_zh": "原图第17行，扫描y=1088；连续色块像素边界x=326至870，按可见0与30刻度间1104像素换算。",
+        "uncertainty_zh": "每个抗锯齿边界约±1像素，段宽约±2像素（±0.054个百分点）；小值相对误差仅为本次像素估计。"
+      },
+      {
+        "series_id": "inactive",
+        "category": "Group 35",
+        "expected_value": 3.9,
+        "observed_value": 3.913,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 144,
+        "full_scale_error_percent": 0.043,
+        "small_value_relative_error_percent": 0.334,
+        "bbox_xyxy_normalized": [
+          0.20375,
+          0.881323,
+          0.29375,
+          0.895428
+        ],
+        "evidence_zh": "原图第36行，扫描y=1838；连续色块像素边界x=326至470，按可见0与30刻度间1104像素换算。",
+        "uncertainty_zh": "每个抗锯齿边界约±1像素，段宽约±2像素（±0.054个百分点）；小值相对误差仅为本次像素估计。"
+      },
+      {
+        "series_id": "seeking_work",
+        "category": "Group 35",
+        "expected_value": 2.6,
+        "observed_value": 2.582,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 95,
+        "full_scale_error_percent": 0.062,
+        "small_value_relative_error_percent": 0.711,
+        "bbox_xyxy_normalized": [
+          0.29375,
+          0.881323,
+          0.353125,
+          0.895428
+        ],
+        "evidence_zh": "原图第36行，扫描y=1838；连续色块像素边界x=470至565，按可见0与30刻度间1104像素换算。",
+        "uncertainty_zh": "每个抗锯齿边界约±1像素，段宽约±2像素（±0.054个百分点）；小值相对误差仅为本次像素估计。"
+      },
+      {
+        "series_id": "total",
+        "category": "Group 35",
+        "expected_value": 6.5,
+        "observed_value": 6.495,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 239,
+        "full_scale_error_percent": 0.018,
+        "small_value_relative_error_percent": 0.084,
+        "bbox_xyxy_normalized": [
+          0.20375,
+          0.881323,
+          0.353125,
+          0.895428
+        ],
+        "evidence_zh": "原图第36行，扫描y=1838；连续色块像素边界x=326至565，按可见0与30刻度间1104像素换算。",
+        "uncertainty_zh": "每个抗锯齿边界约±1像素，段宽约±2像素（±0.054个百分点）；小值相对误差仅为本次像素估计。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Group 01：大横条",
+        "required_parts": [
+          "共同零点",
+          "浅青Inactive段",
+          "黄色Seeking work段",
+          "段内值与条尾总值"
+        ],
+        "relationship": "浅青段从基线向右延伸，与黄色段共边；两段并集的右边界编码总值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.20375,
+          0.208658,
+          0.88,
+          0.223249
+        ],
+        "evidence_zh": "浅青约854像素，黄色紧接其后；总宽约1082像素。23.2、6.2分别位于各自分段内，29.4%位于右端之外。"
+      },
+      {
+        "category": "Benchmark：内部行",
+        "required_parts": [
+          "浅青段",
+          "黄色段",
+          "背景强调条",
+          "总值"
+        ],
+        "relationship": "深色背景强调不改变共同零点或两段连接，定量范围由浅青与黄色边界界定。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.038,
+          0.513,
+          0.619,
+          0.534
+        ],
+        "evidence_zh": "浅青x=326–646、黄色x=646–870；强调底板在其后方，数值8.7、6.1、14.8%均可读。"
+      },
+      {
+        "category": "Group 35：最小横条",
+        "required_parts": [
+          "浅青3.9%段",
+          "黄色2.6%段",
+          "两段接点",
+          "6.5%总值"
+        ],
+        "relationship": "两个短段保持相同高度并共边相接，黄色仍是实际可见区域而非仅文字。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.20375,
+          0.881323,
+          0.38,
+          0.895428
+        ],
+        "evidence_zh": "原图末行x=326–470为浅青，x=470–565为黄色，宽约144和95像素；两段内文字完整，外侧总值6.5%清晰。"
+      },
+      {
+        "category": "青年与大问号",
+        "required_parts": [
+          "青年头身四肢",
+          "大问号弯钩",
+          "下方方点",
+          "接触面"
+        ],
+        "relationship": "青年坐在问号上部，腿垂在问号前方，手接触下巴；问号弯钩与方点上下对应且分离。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.649,
+          0.508,
+          0.903,
+          0.928
+        ],
+        "evidence_zh": "白衣青年臀部与深青问号上曲面接触，裤腿和鞋遮在曲面前方；方点位于末端下方，三维侧面连续，未见破坏身份的接缝。"
+      },
+      {
+        "category": "左侧小问号",
+        "required_parts": [
+          "立体弯钩",
+          "独立方点"
+        ],
+        "relationship": "小弯钩朝下转向方点，二者留有可见间隙；作为疑问构图的非数据部件。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.63,
+          0.566,
+          0.698,
+          0.644
+        ],
+        "evidence_zh": "人物左侧小问号的钩体、侧面与下方方点均可辨；不把其尺寸或数量解读为统计值。"
+      },
+      {
+        "category": "图表与插图的整体关系",
+        "required_parts": [
+          "左侧数据横条",
+          "右侧图例",
+          "右下人物问号插图"
+        ],
+        "relationship": "保持参考的并置关系，插图不与数据条融合，也不覆盖条形边界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.038,
+          0.164,
+          0.955,
+          0.928
+        ],
+        "evidence_zh": "长条位于上部，较短条在下部左侧；图例和人物问号占用右侧空白。所有条端总值与插图之间保持可见间隔。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结输入以Synthetic group 01–35及Synthetic benchmark替换原国家/OECD比较，并使用新合成值；不要求原2015年或原排名数值。",
+      "output_added_or_lost_meaning_zh": "输出明确补充两状态互斥、群体年龄分母及非100%归一化解释；保留青年坐在问号上、手靠下巴的疑问/思考动作，未见必备意义丢失。",
+      "visible_inscription_evidence_zh": "Youth at a crossroads；Outside employment, education or training；Share of all synthetic people aged 15–29 within each group；Inactive (%)；Seeking work (%)；TWO MUTUALLY EXCLUSIVE STATUSES；Stacked totals are not normalised to 100%。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原国家和历史统计被指定的合成比较群体替代；主题及统计角色仍可辨，此变化不归因于输出遗漏。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "长短分段按当前36组数据变化；像素扫描支持共同线性标尺，不要求原条形长度。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "约95像素的最小段仍可辨；其测得2.582%与目标2.6%的小差异处于边界取整不确定性内。"
+      }
+    ],
+    "measurement_coverage_zh": "扫描覆盖单一面板的全部36行、72个分段及36个总长；此处记录两个系列各自最大值、Benchmark内部值及各自最小值，并附首行、Benchmark和末行总长，共9项。类别、系列、单位与全部数值文字另作完整目视核对；未将非数据人物或问号大小计作数值。"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以甲烷和二氧化碳的20年增温能力为主题，红头火柴密集排列，单根绿头火柴位于其间上方；未见昆虫。待评图明确呈现虚构样本的20年热影响指数、Synthetic heat-impact index、SYNTHETIC DATA及完整火柴计数图例。Sample A区域有四排红头火柴，Sample B区域有单根绿头火柴；分别标79和1，附synthetic unit，比例为79:1。火柴头、杆身和底端可见。",
+  "summary_zh": "实际计数为79根红头火柴和1根绿头火柴，数据、标签和单位绑定正确，完整火柴承担定量角色。未发现实质缺陷。已保存review.json并通过schema校验；依最新要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析2000×1350原图，在两组绘图区使用RGB通道极差阈值30、40、50及面积超过300像素的连通域计数，均得到79与1。A逐排为20、20、20、19。满量程100，计数误差为0。164像素指单根可见高度，不是长度编码；源码仅用于交叉核实。",
+  "uncertainties_zh": "抗锯齿和彩色阈值影响边缘范围，不影响整数计数，不据此保证亚像素轮廓精度。未读取被禁止的日志、自检或轮次记录，无法独立确认每次渲染均已归档。冻结文案提到“昆虫/样本”，参考图实际为气体；按明确的新题材及“样本”选项评估。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两类别、唯一系列、合成样本身份、SYNTHETIC DATA、20年口径、synthetic unit及0–100范围均齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "79、1、79:1、20+20+20+19=79根及共1根均准确；单位图例符合冻结定义。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A标题和79绑定红色阵列；B标题和1绑定分隔线右侧的绿色单根，顺序正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素计数为79和1，误差均为0/100；各根高约164像素，无分数火柴或额外图例火柴。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材及红、绿火柴资产，其木纹和药头形状实质用于成图；源码从素材裁切、变色并按数据循环铺设。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "火柴本身承载计数，头杆连续、底端完整、相互分离；未见破坏结构的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、类别、数值、单位、计数图例和底部口径均可读，无裁切或遮盖。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "两组样本与各自火柴集合并置；大小值均由完整药头—木杆单元构成，数量比较关系保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "当前合成主题、20年指标口径、单位和两组可比样本身份明确；79:1明确标为指数之比。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留红色多根与绿色单根火柴的20年影响比较；原气体身份及超过80倍论述被授权的合成题材替代。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "B=1对应一根约164像素高的完整火柴，绿色药头、木杆和底端可辨，未夸大计数。"
+    }
+  },
+  "semantic_attribution_zh": "原气体统计改为虚构样本、旧倍数改为79:1，属于冻结输入授权适配。四排及末排19根属于数据驱动变化。未发现当前语义遗漏；边缘像素不确定性不影响小值身份或计数。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Sample A",
+        "expected_value": 79,
+        "observed_value": 79,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 164,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4525,
+          0.382222,
+          0.81,
+          0.912593
+        ],
+        "evidence_zh": "原图逐排计数20、20、20、19，共79；联合范围x=905–1620、y=516–1232。单元阈值边界约21×164像素。",
+        "uncertainty_zh": "坐标为右端不含的像素区间，阴影不计入对象；阈值30至50计数稳定。164像素为单元高度。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Sample B",
+        "expected_value": 1,
+        "observed_value": 1,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 164,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.886,
+          0.382222,
+          0.896,
+          0.503704
+        ],
+        "evidence_zh": "独立计数为1；阈值40下边界x=1772–1792、y=516–680，约20×164像素。头杆相接且底端可见。",
+        "uncertainty_zh": "绿色边缘宽度随阈值变化，数目和高度稳定；相对误差0仅指整数计数。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Sample A／大值阵列",
+        "required_parts": [
+          "红色药头",
+          "木杆",
+          "完整杆底",
+          "Sample A标签"
+        ],
+        "relationship": "药头包覆木杆上端；完整单位在A标签下方按四排排列，共同承载79单位。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.445,
+          0.17,
+          0.814,
+          0.937
+        ],
+        "evidence_zh": "前三排各20根、末排19根；各排留空，头杆相接且底端独立可见。"
+      },
+      {
+        "category": "Sample A／内部单元（第二排第10根）",
+        "required_parts": [
+          "红色药头",
+          "木杆",
+          "杆底"
+        ],
+        "relationship": "上方药头连接向下木杆，整根在阵列内部独立可辨。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.6135,
+          0.518519,
+          0.624,
+          0.64
+        ],
+        "evidence_zh": "范围约x=1227–1248、y=700–864；头、杆、底均未被相邻对象或文字遮挡。"
+      },
+      {
+        "category": "Sample B／最小正值",
+        "required_parts": [
+          "绿色药头",
+          "木杆",
+          "完整杆底",
+          "Sample B标签"
+        ],
+        "relationship": "绿色药头连接木杆上端；单根位于B标题及数值1下方，与A阵列分区并置。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.844,
+          0.17,
+          0.964,
+          0.507
+        ],
+        "evidence_zh": "唯一绿色火柴从头至底完整可见，方向和高度与红色火柴相当，小值有实际图形承载。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结主题明确改为虚构样本的20年热影响指数，79与1覆盖旧值，不要求复述气体身份或旧倍数。",
+      "output_added_or_lost_meaning_zh": "保留同尺寸完整火柴的数量比较；原真实气体论述因授权适配不再出现。新增比例和排数求和准确。",
+      "visible_inscription_evidence_zh": "可见“虚构样本的”“20年”“热影响指数”、Synthetic heat-impact index、“合成样本”、synthetic unit、“1根完整火柴=1合成单位”和SYNTHETIC DATA。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成主题和样本类别由输入指定，reference_meaning的partial来自明确适配。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "红色集合分成20+20+20+19，绿色为1根；全部单位完整可见。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一计数通道的全部两类别，共80根对象，包含最大值79和最小正值1，并检查内部单元的部件关系。数据没有第三个中间值类别；全部必需标签已单独核对。"
+  }
+}

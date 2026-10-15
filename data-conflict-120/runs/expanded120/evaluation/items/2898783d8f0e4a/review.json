@@ -1,0 +1,310 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为黑底，金色立体地球后置，金币覆盖其下缘，国旗圆章及国家/百分比标签围绕地球。指定成图清楚显示合成数据声明、GDP增速指标和百分比单位；29个编号圆章环绕中央地球与金币。新增10项均有父经济体及合成可比项编号。Germany 0.32%的小圆章仍可辨认，底部有1%、3%、7%面积图例。未见明显标签遮挡。",
+  "summary_zh": "通过。29项类别、数值、单位与绑定完整，代表性像素测量符合面积比例要求，地球、金币与环绕圆章关系保留。review.json已写入并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量指定image.png原始1792×2200像素，以局部亮度阈值及连通区域取得轮廓宽度，并比较多个阈值。未使用渲染器诊断蒙版作为像素证据。以可见7%图例直径144 px校准，按v=7×(d/144)²反推数值。5个数据圆章的满量程误差点估计最大0.46%，另测图例最大0.67%，均低于3%容差。源码公式仅作控制机制佐证。",
+  "uncertainties_zh": "抗锯齿和阈值带来约1 px边界不确定性。Germany黑色上缘低对比，其相对误差点估计不是小值精度保证。仅独立抽测5/29个数据圆章。按限制未查日志、自检或历史归档，无法确认每次归档执行。brief的19类旧摘要由当前数据明确的29项及M1完整性要求消解。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "01–29完整：19个基础经济体、10个明确编号的合成可比项，单系列与面积图例均在。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "手工转录全部29项可见值，与data.json逐项比较一致，包括Germany 0.32%及新增项5.85%、4.75%、3.95%等。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "圆章紧邻对应国名和数值；新增项同时显示父经济体与comparable编号，顺时针顺序符合输入。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最大、最小、中间及两个新增项的实测直径相对7%图例符合完整圆面积比例，未见最小尺寸抬高。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "所供原始及处理素材的大陆纹理、币柱和散币可与成图中央匹配。render.py按数据控制圆半径、旗面裁切和文字；归档执行历史未审计。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "圆章环绕地球外围，旗面包含于完整数据圆；金币位于地球前下方。围绕及叠合关系保留，未见破坏结构的遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下标题、合成声明、指标单位、29项名称数值、10项可比身份及图例说明均可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "金色球体具有大陆和经纬线，前景币柱及散币覆盖球体下缘，国旗数据圆章和身份标签环绕外围。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Synthetic real GDP growth rate (%)及19 economies + 10 synthetic comparables明确当前角色；声明地球、金币和位置不编码，未将增长率解释为100%组成。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留全球经济比较与围绕地球的关系；原2025年真实预测、IMF归因及旧预测主张按冻结输入改为合成情境，属于允许适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Germany约31 px，黑红黄区域仍在，19和0.32%可读；黑色上缘对深底对比偏低，边界存在像素级不确定性。"
+    }
+  },
+  "semantic_attribution_zh": "原真实预测语境的移除属于明确的输入适配；类别增加及圆章大小变化由当前数据驱动。未发现当前主题、统计角色或关键部件关系的输出遗漏。最小圆章暗边的辨识限制不构成数值错误。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_growth",
+        "category": "India",
+        "expected_value": 6.7,
+        "observed_value": 6.7114,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 141,
+        "full_scale_error_percent": 0.16,
+        "small_value_relative_error_percent": 0.17,
+        "bbox_xyxy_normalized": [
+          0.578683,
+          0.159545,
+          0.657366,
+          0.223636
+        ],
+        "evidence_zh": "原图圆章约141×141 px，绑定India 6.7%；按实测直径与144 px图例之比反推。",
+        "uncertainty_zh": "圆章及图例抗锯齿边界各约±1 px。"
+      },
+      {
+        "series_id": "synthetic_growth",
+        "category": "Germany",
+        "expected_value": 0.32,
+        "observed_value": 0.3244,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 31,
+        "full_scale_error_percent": 0.06,
+        "small_value_relative_error_percent": 1.38,
+        "bbox_xyxy_normalized": [
+          0.294643,
+          0.719091,
+          0.311942,
+          0.733182
+        ],
+        "evidence_zh": "红黄区域最大横截宽31 px；中心列黑色顶部约y=1582，黄色下缘约y=1612。绑定Germany 0.32%。",
+        "uncertainty_zh": "黑色上缘低对比。考虑约±1 px采样及图例误差，反推值可约为0.30–0.35%；相对误差仅为点估计。"
+      },
+      {
+        "series_id": "synthetic_growth",
+        "category": "Nigeria",
+        "expected_value": 3.1,
+        "observed_value": 3.1111,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 96,
+        "full_scale_error_percent": 0.16,
+        "small_value_relative_error_percent": 0.36,
+        "bbox_xyxy_normalized": [
+          0.709263,
+          0.403182,
+          0.762835,
+          0.446818
+        ],
+        "evidence_zh": "绿色及白色圆章约96×96 px，绑定Nigeria 3.1%；以7%图例反推。",
+        "uncertainty_zh": "不同阈值下宽度95–96 px。"
+      },
+      {
+        "series_id": "synthetic_growth",
+        "category": "China / additional synthetic comparable 3",
+        "expected_value": 3.95,
+        "observed_value": 3.9375,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 108,
+        "full_scale_error_percent": 0.18,
+        "small_value_relative_error_percent": 0.32,
+        "bbox_xyxy_normalized": [
+          0.228237,
+          0.521818,
+          0.288504,
+          0.571364
+        ],
+        "evidence_zh": "左侧22圆章约108×109 px，邻接China、comparable 3及3.95%。",
+        "uncertainty_zh": "采用较高阈值分离轨道线；直径约±1 px。"
+      },
+      {
+        "series_id": "synthetic_growth",
+        "category": "India / additional synthetic comparable 1",
+        "expected_value": 5.85,
+        "observed_value": 5.8819,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 132,
+        "full_scale_error_percent": 0.46,
+        "small_value_relative_error_percent": 0.55,
+        "bbox_xyxy_normalized": [
+          0.244978,
+          0.640909,
+          0.318638,
+          0.700909
+        ],
+        "evidence_zh": "左侧20圆章约132×132 px，绑定India、comparable 1及5.85%。",
+        "uncertainty_zh": "纵向边界约131–132 px，采用水平直径132 px。"
+      },
+      {
+        "series_id": "area_scale",
+        "category": "1%图例",
+        "expected_value": 1,
+        "observed_value": 1.0212,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 55,
+        "full_scale_error_percent": 0.3,
+        "small_value_relative_error_percent": 2.12,
+        "bbox_xyxy_normalized": [
+          0.082031,
+          0.938636,
+          0.112723,
+          0.963636
+        ],
+        "evidence_zh": "1%图例填充轮廓约55×55 px，以7%图例144 px为参照。",
+        "uncertainty_zh": "填充及内描边有抗锯齿，直径约±1 px。"
+      },
+      {
+        "series_id": "area_scale",
+        "category": "3%图例",
+        "expected_value": 3,
+        "observed_value": 3.0466,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 95,
+        "full_scale_error_percent": 0.67,
+        "small_value_relative_error_percent": 1.55,
+        "bbox_xyxy_normalized": [
+          0.155692,
+          0.929545,
+          0.208705,
+          0.972727
+        ],
+        "evidence_zh": "3%图例轮廓约95×95 px，以7%图例144 px为参照。",
+        "uncertainty_zh": "不同阈值下轮廓约94–95 px。"
+      },
+      {
+        "series_id": "area_scale",
+        "category": "7%校准图例",
+        "expected_value": 7,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 144,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.256696,
+          0.918182,
+          0.337054,
+          0.983636
+        ],
+        "evidence_zh": "图例填充区域在多个阈值下均约144×144 px，下方可见7%。",
+        "uncertainty_zh": "该图例用作尺度锚点，不提供自身数值的独立几何检验。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "中央地球与金币",
+        "required_parts": [
+          "金色立体球体",
+          "大陆及经纬线",
+          "金币柱",
+          "前景散币"
+        ],
+        "relationship": "大陆和经纬线贴合球面；金币叠放于球体前下方并局部遮挡下缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.304,
+          0.352,
+          0.696,
+          0.704
+        ],
+        "evidence_zh": "弧面明暗与网格连续；币柱及散币具有接触和前后遮挡，未遮住外围数据圆章。"
+      },
+      {
+        "category": "India 6.7%大圆章",
+        "required_parts": [
+          "完整圆边界",
+          "橙白绿旗面",
+          "蓝色轮形标记",
+          "类别数值标签",
+          "中央地球"
+        ],
+        "relationship": "旗面包含于数据圆内，标签在右侧；圆章位于地球右上外围，完整圆面积承担数值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.571,
+          0.157,
+          0.738,
+          0.227
+        ],
+        "evidence_zh": "约141 px圆章完整，旗色及轮形可辨；01、India、6.7%绑定清楚。"
+      },
+      {
+        "category": "Germany 0.32%最小圆章",
+        "required_parts": [
+          "小圆边界",
+          "黑红黄区域",
+          "类别数值标签",
+          "顺序19",
+          "环绕轨道"
+        ],
+        "relationship": "旗色包含于小圆；标签在左、19在右，圆章覆盖轨道并处于地球左下外围。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.208,
+          0.709,
+          0.331,
+          0.743
+        ],
+        "evidence_zh": "最大彩色横截宽31 px，中心列仍有黑色上部。轨道从上下延伸，未覆盖旗面；标签未与相邻项混淆。"
+      },
+      {
+        "category": "China / additional synthetic comparable 3",
+        "required_parts": [
+          "红色圆形旗面",
+          "黄色星形",
+          "父经济体China",
+          "comparable 3",
+          "3.95%"
+        ],
+        "relationship": "合成可比项沿用父经济体旗面，父名、子类身份及数值绑定同一圆章。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.05,
+          0.519,
+          0.31,
+          0.573
+        ],
+        "evidence_zh": "星形位于圆内；左邻三行明确显示父经济体、合成可比编号及数值。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确要求改为合成GDP增速情境，增加10个带父经济体身份的可比项，并允许按新数据调整大小和布局。",
+      "output_added_or_lost_meaning_zh": "保留经济体增速比较及地球/圆章围绕关系。原年份、IMF归因及旧预测论断不再出现，属于许可适配；未添加累计、时间趋势或组成比例主张。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Synthetic GDP Growth Scenario、Synthetic real GDP growth rate (%)、19 economies + 10 synthetic comparables、FULL FLAG-DISC AREA ∝ GROWTH RATE及No historical year specified。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实预测改为合成情境由冻结输入指定，参考含义的部分保留不归为生成遗漏。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "类别扩为29项，新增项父类明确；大小差异由当前数值支持。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "Germany约31 px且黑色顶部接近深底，细边界和小值反推精度受采样及对比度限制，旗色与数值仍可辨。"
+      }
+    ],
+    "measurement_coverage_zh": "独立抽测最大India、最小Germany、中间Nigeria及新增China/India共5个数据圆章，余24项未逐个测几何。全部29项名称、序号、值及10项可比身份已目视核对。另测1%、3%图例和7%尺度锚点；地球及金币按声明不作定量测量。"
+  }
+}

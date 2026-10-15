@@ -1,0 +1,289 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：美国轮廓构成棕色面具，含两只眼孔及侧边绳线；红色折线和网格叠于面具前，右端带滴落形状，原文字指向美国犯罪率。\n待评图：可见美国皮革面具轮廓、两只向内收尖的眼孔及两侧金属孔环穿绳。红色折线含十个点，依次标362、389、401、418、452、478、456、466、490、532；Y01–Y10顺序完整，Y06至Y07下降。纵轴0–600，合成数据声明、事件率和每十万人单位可读。折线叠在面具前方，地图表面未见另设地理数值编码。底部显示首尾+170与唯一下降−22。以上为检查源码前的可见记录，尚未作像素定量核验。",
+  "summary_zh": "通过：十期数值、折线、标签与单位一致，美国面具与折线的叠合关系保留。参考主题合成化属于明确允许的输入适配。",
+  "issues": [],
+  "measurement_notes_zh": "在1920×2004原图分割红色像素，独立识别10个圆点及9段连线。可见轴线主像素行约为600刻度y=595、0刻度y=1565，按600×(1565−y)/970换算。十点满量程绝对误差为0.031%–0.062%，横向间距160.33–161px；九段逐列中心相对相邻实测点直线的最大偏离≤1.41px。源码与render_geometry.json仅作后续佐证。",
+  "uncertainties_zh": "像素中心受抗锯齿与线宽影响，误差数值为近似量。按限制未检查运行日志、历史归档或自检，故未独立确认capture_render.py的实际执行次数；素材生成来源依据随附清单。参考图血滴修辞未复用，但必需合同未要求血滴，其警示强弱不作失败依据。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Y01–Y10十个类别、十个数据点和九段连接齐全；单系列、0–600刻度、单位、合成声明与两项摘要均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次显示362、389、401、418、452、478、456、466、490、532，全部与数据一致；首尾+170、唯一下降−22也正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "十个数值贴近各自圆点，垂直投影线对应下方同列时期；Y01标签位于点下方，其短引线明确。未见错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实测十点符合共同0–600线性轴，最大满量程误差约0.062%，远低于3%；相邻点以九条近直线连接，Y06→Y07下降正确。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png与map_mask.png中的裂纹、眼孔、孔环及绳带在主体中可见；素材清单标注其生图来源。render.py读取该素材并依据数据绘制点线与文字，capture_render.py包含归档逻辑。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "美国轮廓本身构成面具，双眼孔包含于皮革主体，侧绳穿过孔环；折线和投影网格位于面具前方。保持参考的叠合关系，未将地图形状误作数值曲面。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下标题、合成声明、系列名、单位、时期、全部数值和来源脚注均清楚；浅底标签与白色线晕使红线在暗色皮革上可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "美国大陆轮廓、内部成对眼孔、相连鼻梁皮革和两侧孔环穿绳均保留；红点及折线中心承担数值，地图作为共有背景面具与其叠合。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA、Illustrative incident rate、incidents per 100,000 people及10 consecutive synthetic periods明确当前主题、指标、单位与时期角色；脚注排除真实美国统计和地理率曲面的解释。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留警示面具、红色趋势线和ALARM标题。原美国犯罪种类与真实历史年份被合成事件率、Y01–Y10替换，属于core明确的主题适配，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值362约占满量程60.3%，没有亚像素低值。Y01红点约12×12px，白色外圈、连线与投影均可辨；共有面具未随数值缩小，眼孔与穿绳关系清楚。"
+    }
+  },
+  "semantic_attribution_zh": "原犯罪统计改为合成事件率归因于明确输入适配；当前升降形状由新数据决定。未发现必需语义的输出遗漏。未复用的血滴属于参考修辞差异，其警示强弱不作主观失败依据。像素误差受栅格化限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y01",
+        "expected_value": 362,
+        "observed_value": 362.27,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 585.67,
+        "full_scale_error_percent": 0.045,
+        "small_value_relative_error_percent": 0.074,
+        "bbox_xyxy_normalized": [
+          0.124479,
+          0.486028,
+          0.130729,
+          0.492016
+        ],
+        "evidence_zh": "原图红点质心约(244.67, 979.33)px，红色圆点包围框12×12px。以可见0刻度y≈1565、600刻度y≈595反算事件率；extent为零线至圆点的垂直距离。",
+        "uncertainty_zh": "抗锯齿、色阈值及轴线厚度约带来1–2px定位不确定性（约0.6–1.2事件/十万人）；小数用于记录近似结果，不代表亚像素精度。"
+      },
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y04",
+        "expected_value": 418,
+        "observed_value": 418.35,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 676.33,
+        "full_scale_error_percent": 0.058,
+        "small_value_relative_error_percent": 0.084,
+        "bbox_xyxy_normalized": [
+          0.375521,
+          0.440619,
+          0.381771,
+          0.446607
+        ],
+        "evidence_zh": "原图红点质心约(726.33, 888.67)px，红色圆点包围框12×12px。以可见0刻度y≈1565、600刻度y≈595反算事件率；extent为零线至圆点的垂直距离。",
+        "uncertainty_zh": "抗锯齿、色阈值及轴线厚度约带来1–2px定位不确定性（约0.6–1.2事件/十万人）；小数用于记录近似结果，不代表亚像素精度。"
+      },
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y06",
+        "expected_value": 478,
+        "observed_value": 478.35,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 773.33,
+        "full_scale_error_percent": 0.058,
+        "small_value_relative_error_percent": 0.073,
+        "bbox_xyxy_normalized": [
+          0.542708,
+          0.392216,
+          0.548958,
+          0.398204
+        ],
+        "evidence_zh": "原图红点质心约(1047.33, 791.67)px，红色圆点包围框12×12px。以可见0刻度y≈1565、600刻度y≈595反算事件率；extent为零线至圆点的垂直距离。",
+        "uncertainty_zh": "抗锯齿、色阈值及轴线厚度约带来1–2px定位不确定性（约0.6–1.2事件/十万人）；小数用于记录近似结果，不代表亚像素精度。"
+      },
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y07",
+        "expected_value": 456,
+        "observed_value": 456.29,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 737.67,
+        "full_scale_error_percent": 0.048,
+        "small_value_relative_error_percent": 0.063,
+        "bbox_xyxy_normalized": [
+          0.626042,
+          0.41018,
+          0.632292,
+          0.416168
+        ],
+        "evidence_zh": "原图红点质心约(1207.67, 827.33)px，红色圆点包围框12×12px。以可见0刻度y≈1565、600刻度y≈595反算事件率；extent为零线至圆点的垂直距离。",
+        "uncertainty_zh": "抗锯齿、色阈值及轴线厚度约带来1–2px定位不确定性（约0.6–1.2事件/十万人）；小数用于记录近似结果，不代表亚像素精度。"
+      },
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y10",
+        "expected_value": 532,
+        "observed_value": 532.37,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 860.67,
+        "full_scale_error_percent": 0.062,
+        "small_value_relative_error_percent": 0.07,
+        "bbox_xyxy_normalized": [
+          0.877083,
+          0.348802,
+          0.883333,
+          0.35479
+        ],
+        "evidence_zh": "原图红点质心约(1689.67, 704.33)px，红色圆点包围框12×12px。以可见0刻度y≈1565、600刻度y≈595反算事件率；extent为零线至圆点的垂直距离。",
+        "uncertainty_zh": "抗锯齿、色阈值及轴线厚度约带来1–2px定位不确定性（约0.6–1.2事件/十万人）；小数用于记录近似结果，不代表亚像素精度。"
+      },
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y01→Y10差值",
+        "expected_value": 170,
+        "observed_value": 170,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.06,
+          0.878,
+          0.45,
+          0.96
+        ],
+        "evidence_zh": "底部左侧可读362→532及+170 incidents per 100,000 people；532−362=170。",
+        "uncertainty_zh": "这是文字摘要，箭头长度不编码差值；不据此判定几何精度。"
+      },
+      {
+        "series_id": "illustrative_rate",
+        "category": "Y06→Y07差值",
+        "expected_value": -22,
+        "observed_value": -22,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.49,
+          0.878,
+          0.94,
+          0.96
+        ],
+        "evidence_zh": "底部右侧可读478→456及−22 incidents per 100,000 people；仅此相邻时期间下降。",
+        "uncertainty_zh": "这是文字摘要，箭头长度不编码差值；不据此判定几何精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "共有美国面具",
+        "required_parts": [
+          "美国大陆轮廓",
+          "双眼孔",
+          "鼻梁皮革",
+          "两侧孔环与绳带"
+        ],
+        "relationship": "轮廓同时作为面具外边界；眼孔包含于皮革主体，眼孔之间皮革相连；左右绳带穿过边缘孔环向外延伸。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.077,
+          0.332,
+          0.963,
+          0.778
+        ],
+        "evidence_zh": "整体美国轮廓、佛罗里达突出部和两个浅色镂空眼孔可辨；绳带与孔环有可见接触。纹理与阴影未切断主体或遮住数据线。"
+      },
+      {
+        "category": "最小值Y01",
+        "required_parts": [
+          "红点与白色外圈",
+          "Y01标签",
+          "连接Y02的折线",
+          "垂直投影",
+          "面具西侧边缘"
+        ],
+        "relationship": "红点叠于面具西缘附近，向右连接Y02；垂直投影向下对齐Y01。数值由点中心高度承担，面具外轮廓不承载362的大小。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.12,
+          0.46,
+          0.216,
+          0.81
+        ],
+        "evidence_zh": "圆点中心约(244.67,979.33)px；红点、白圈和下方362标签分离可读，左侧孔环及绳带仍可辨。"
+      },
+      {
+        "category": "最大值Y10",
+        "required_parts": [
+          "最高红点",
+          "Y09→Y10连线",
+          "Y10投影线",
+          "面具东北轮廓"
+        ],
+        "relationship": "最高红点处于面具东北边缘旁的浅色背景区；连线向右上抵达该点，投影向下跨过面具区域并对齐Y10，保持共有图层叠合。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.79,
+          0.315,
+          0.946,
+          0.81
+        ],
+        "evidence_zh": "点中心约(1689.67,704.33)px，532标签在上方。无需把点贴合地图表面；原参考也包含地图上方的折线。"
+      },
+      {
+        "category": "内部下降Y06→Y07",
+        "required_parts": [
+          "478与456圆点",
+          "下降线段",
+          "皮革上缘与眼孔"
+        ],
+        "relationship": "红线从478点向右下连接456点，白色边晕覆盖皮革；眼孔与地图轮廓在其后方保留。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.53,
+          0.36,
+          0.66,
+          0.62
+        ],
+        "evidence_zh": "两点中心y约791.67与827.33px，方向符合降低22；纹理未造成线段断裂或错误拐点。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core将原真实犯罪率主题明确适配为十个连续合成时期的示意事件率，允许按新数据改变趋势及非数据部件。",
+      "output_added_or_lost_meaning_zh": "保留警示面具与红线叠合，新增准确的首尾差值及唯一下降摘要；未沿用真实犯罪种类、历史年份或血滴。前两项由输入适配解释，血滴未被列为必需部件。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Illustrative incident rate；incidents per 100,000 people；10 consecutive synthetic periods；Synthetic period；脚注明确Not observed U.S. statistics及not a geographic rate surface。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "当前合成事件率替换原真实犯罪统计已在core中声明，图面也清楚标明合成口径。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "新数据形成整体上升及Y06→Y07一次下降；实测折线保留该走势，不要求沿用旧极值。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "约12px红点和1–2px轴线带来小于约1.2事件/十万人的定位不确定性，不影响3%满量程判断。"
+      }
+    ],
+    "measurement_coverage_zh": "完成全部10点、9段连线及横向间距的像素核验；逐项记录最小Y01、内部Y04、下降两端Y06/Y07、最大Y10五个代表。其余五点未逐项展开，全部满量程误差亦≤0.062%。两个底部摘要按numeric_text_only核对，十期标签与所有原始数值另行完整核对。"
+  }
+}

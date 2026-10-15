@@ -1,0 +1,308 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图呈现木衣架及金属挂钩承托的白领长袖拼接上衣，八种布料横层与左侧类别、百分比相连。待评图有Occupational composition标题、SYNTHETIC DATA声明及人口份额单位；八类数值依次为11.1%、22.4%、9.8%、6.9%、10.1%、12.6%、9.9%、17.2%。白领、衣架、挂钩、门襟纽扣、双袖袖口及弧形下摆可见。最窄深蓝条纹层仍覆盖衣身与双袖。底部说明按可见布料面积表达份额，排除白领与衣架。",
+  "summary_zh": "通过。八类数值、标签绑定和必需结构完整；独立像素面积估计最大偏差约0.11个百分点。review.json已保存并通过schema.json校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析1460×2000的image.png，未使用生成器区域掩膜或目标份额确定边界。以RGB阈值、顶部蓝色判别和连通域处理识别布料，并在目视确定的接缝窗口内检测平滑RGB梯度。分母为最终投影下可见布料并集，重叠区域只计一次。中心阈值195时分母约789981像素；阈值185至205时，各份额变化不超过0.02个百分点。mark_extent_px表示x=900处该层可见纵向像素数，仅描述可辨性，份额由面积计算。",
+  "uncertainties_zh": "像素分割不是亚像素真值；局部接缝、花纹、阴影和抗锯齿存在归属歧义，阈值敏感性不涵盖全部系统误差。最小层的相对误差也是近似测量。已读取capture_render.py包装逻辑，但按要求未访问执行日志，不能独立核实每次历史渲染是否经过包装器。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列八类标签、八个百分比完整，顺序符合data.json；08 CATEGORIES及100%整体口径可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "11.1%、22.4%、9.8%、6.9%、10.1%、12.6%、9.9%、17.2%逐项正确，合成声明醒目。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "八条外置引线分别指向对应色层左缘，无交叉或错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立面积估计依次约11.06%、22.34%、9.77%、6.95%、10.08%、12.49%、9.99%、17.31%；最大偏差约0.11个百分点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材中的木纹、挂钩、白领、纽扣、褶皱和袖口与成图对应，实质构成主体。源码以投影布料掩膜的面积加权分位点控制色层，并保留素材明暗、代码排字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数量直接由衬衣可见布料区域承担，同类覆盖躯干、袖部及门襟；白领、衣架和背景不承担份额。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、八类名称、百分比、合成声明及底部口径均清楚，无截断或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "挂钩连接木衣架，白领围绕其下部；双袖连接肩部，门襟延伸至下摆，袖口及袖身遮挡关系保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题和副标题明确职业组及长期失业主题；Share of the synthetic population (%)明确指标、总体及单位。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的职业分组及拼接衣物表达整体构成的关系。主题未改变；合成比例替换属于许可的数据改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小6.9%深蓝细纹层在x=900处约69像素厚，仍显示衣身及双袖布料关系，未仅靠数字表达。"
+    }
+  },
+  "semantic_attribution_zh": "真实统计与当前合成值的区别来自冻结输入允许的改编，职业构成主题保持。色层随可见面积份额适配，不构成语义损失。未观察到输出遗漏；像素边界的不确定性未使最小层失去布料关系。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Higher managerial and professional",
+        "expected_value": 11.1,
+        "observed_value": 11.0568,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 146,
+        "full_scale_error_percent": 0.0432,
+        "small_value_relative_error_percent": 0.3888,
+        "bbox_xyxy_normalized": [
+          0.397945,
+          0.282,
+          0.863699,
+          0.3955
+        ],
+        "evidence_zh": "直接分割约87347像素，占识别布料并集的11.06%。",
+        "uncertainty_zh": "分割近似；x=900截线被白领分隔，146像素为可见段合计，不用于换算份额。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Lower managerial and professional",
+        "expected_value": 22.4,
+        "observed_value": 22.3422,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 246,
+        "full_scale_error_percent": 0.0578,
+        "small_value_relative_error_percent": 0.2581,
+        "bbox_xyxy_normalized": [
+          0.371918,
+          0.377,
+          0.892466,
+          0.515
+        ],
+        "evidence_zh": "最大层直接分割约176499像素，占22.34%；x=900处约246像素厚。",
+        "uncertainty_zh": "面积与边界为像素分割近似，条纹及抗锯齿影响局部归属。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Intermediate occupations",
+        "expected_value": 9.8,
+        "observed_value": 9.7693,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 100,
+        "full_scale_error_percent": 0.0307,
+        "small_value_relative_error_percent": 0.3128,
+        "bbox_xyxy_normalized": [
+          0.364384,
+          0.499,
+          0.90137,
+          0.564
+        ],
+        "evidence_zh": "橙色条纹层直接分割约77176像素，占9.77%。",
+        "uncertainty_zh": "条纹和柔化接缝使局部边界存在像素级歧义。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Small employers and own account",
+        "expected_value": 6.9,
+        "observed_value": 6.9512,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 69,
+        "full_scale_error_percent": 0.0512,
+        "small_value_relative_error_percent": 0.7417,
+        "bbox_xyxy_normalized": [
+          0.358904,
+          0.5485,
+          0.910959,
+          0.603
+        ],
+        "evidence_zh": "最小层直接分割约54913像素，占6.95%；x=900处上下边界约y=1127、1196。",
+        "uncertainty_zh": "约0.74%的相对偏差是分割估计，不代表亚像素精度保证。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Lower supervisory and technical",
+        "expected_value": 10.1,
+        "observed_value": 10.0847,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 98,
+        "full_scale_error_percent": 0.0153,
+        "small_value_relative_error_percent": 0.1518,
+        "bbox_xyxy_normalized": [
+          0.35137,
+          0.584,
+          0.915068,
+          0.648
+        ],
+        "evidence_zh": "灰绿内部层直接分割约79667像素，占10.08%。",
+        "uncertainty_zh": "袖身阴影及轮廓柔化影响局部边缘归属。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Semi routine occupations",
+        "expected_value": 12.6,
+        "observed_value": 12.4931,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 122,
+        "full_scale_error_percent": 0.1069,
+        "small_value_relative_error_percent": 0.8485,
+        "bbox_xyxy_normalized": [
+          0.355479,
+          0.6315,
+          0.922603,
+          0.7085
+        ],
+        "evidence_zh": "暗格纹层直接分割约98693像素，占12.49%。",
+        "uncertainty_zh": "格纹内部亮线可能扰动梯度边界，结果为近似面积。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Routine occupations",
+        "expected_value": 9.9,
+        "observed_value": 9.9945,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 99,
+        "full_scale_error_percent": 0.0945,
+        "small_value_relative_error_percent": 0.955,
+        "bbox_xyxy_normalized": [
+          0.365068,
+          0.693,
+          0.923288,
+          0.7575
+        ],
+        "evidence_zh": "灰粉层直接分割约78955像素，占9.99%。",
+        "uncertainty_zh": "内部横纹及接缝过渡存在局部分割歧义。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Long term unemployed",
+        "expected_value": 17.2,
+        "observed_value": 17.3081,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 211,
+        "full_scale_error_percent": 0.1081,
+        "small_value_relative_error_percent": 0.6287,
+        "bbox_xyxy_normalized": [
+          0.373288,
+          0.737,
+          0.932877,
+          0.863
+        ],
+        "evidence_zh": "底部红层直接分割约136731像素，占17.31%，包含可见袖口和下摆。",
+        "uncertainty_zh": "下摆柔化轮廓及阴影使面积边界存在近似误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整件悬挂衬衣",
+        "required_parts": [
+          "金属挂钩",
+          "木衣架",
+          "白领",
+          "衣身",
+          "双袖",
+          "门襟",
+          "袖口",
+          "下摆"
+        ],
+        "relationship": "挂钩连接衣架，领口包围其下部；双袖连接肩部，门襟沿中心下垂至下摆。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.355,
+          0.168,
+          0.934,
+          0.864
+        ],
+        "evidence_zh": "顶部承托关系连续可辨，白领保持白色；肩缝、纽扣、袖口和弧形下摆保留，右袖与躯干之间仍有背景间隙。"
+      },
+      {
+        "category": "最大层22.4%",
+        "required_parts": [
+          "浅蓝条纹布料",
+          "左右袖",
+          "躯干",
+          "门襟纽扣"
+        ],
+        "relationship": "同一条纹层覆盖可见袖部及躯干，门襟位于同一数据区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.372,
+          0.377,
+          0.893,
+          0.515
+        ],
+        "evidence_zh": "条纹保留褶皱明暗，袖身接缝及纽扣仍可辨，上接蓝色肩部、下接橙色条纹。"
+      },
+      {
+        "category": "最小层6.9%",
+        "required_parts": [
+          "深蓝细纹层",
+          "左右袖布料",
+          "躯干布料",
+          "上下相邻色层"
+        ],
+        "relationship": "窄层上接橙条纹、下接灰绿，横贯可见双袖和衣身。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.359,
+          0.5485,
+          0.911,
+          0.603
+        ],
+        "evidence_zh": "深蓝与金色细纹清晰，中心厚约69像素，未丢失袖部和躯干部的布料联系。"
+      },
+      {
+        "category": "底部17.2%",
+        "required_parts": [
+          "红色布料",
+          "双袖袖口",
+          "中心门襟",
+          "弧形下摆",
+          "袖身间隙"
+        ],
+        "relationship": "红层占据衣身下摆及袖口，实际轮廓和遮挡限定可见面积。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.373,
+          0.737,
+          0.933,
+          0.863
+        ],
+        "evidence_zh": "左袖口位于衣身前方，右袖与躯干间隙保留；下摆和门襟连续，红层未填入背景。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许冻结合成百分比替换旧数值，并调整衣物姿态、下摆及标签布局；职业组与长期失业人口构成主题保持。",
+      "output_added_or_lost_meaning_zh": "增加合成声明、百分比口径和可见布料面积说明；八类构成及拼接衣物表达整体的关系保留。",
+      "visible_inscription_evidence_zh": "可见Occupational composition、Occupational groups and long-term unemployment、Share of the synthetic population (%)、SYNTHETIC DATA及八类名称；底部说明布料面积代表份额，合计100%，排除白领和衣架。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "明确采用合成示例而非真实人口统计来自冻结输入要求，主题及分类角色未改变。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "色层随当前份额及衣物投影调整；带高差异不是面积编码错误，独立像素测量支持当前份额。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一系列全部八类面积，包含最小、最大及内部层；全部类别标签、数值、单位和计数另行核对。部件关系覆盖整体、最大层、最小层及下摆；未逐像素核查全部纤维和纽扣。"
+  }
+}

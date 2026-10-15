@@ -1,0 +1,361 @@
+{
+  "verdict": "minor",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以双期同心数据环叠合夜间看手机场景，手机位于环内。待评图保留人物、手持手机及双环叠合；内环Wave A显示26%、54%、13%、7%，外环Wave B显示43%、48%、5%、4%。四类图例、合成数据提示、独立100%口径和+17个百分点清楚。最小4%扇区可见；左侧及底部五处数值间出现方框状字符。以上观察在源码检查前已保存。",
+  "summary_zh": "数据、角宽、标签绑定及双环叠合符合要求；五处比较箭头缺字，属轻微问题。已保存并通过schema校验的review.json；未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "比较连接符正常显示，使A到B的方向标记完整可读。",
+      "observed_zh": "底部四组A/B数值之间及左侧26%、43%之间显示缺字方框；数值和期间标识仍清楚。",
+      "evidence_zh": "底部约x=250、714、1178、1642，y=1859处及左侧约x=175、y=1585处可见方框。源码对应位置指定“→”，仅作为缺字来源佐证。",
+      "bbox_xyxy_normalized": [
+        0.085,
+        0.79,
+        0.831,
+        0.941
+      ]
+    }
+  ],
+  "measurement_notes_zh": "测量2000×2000原图像素。由环填色拟合圆心约(1275.01,1001.99)，径向截线测得内外环中线半径约449.13/583.25像素。沿每环五条半径取色识别角界，以角宽/360°换算份额。mark_extent_px是像素测量推得的中线弧长。八项满量程偏差均约0.02个百分点以内；源码公式未代替可见几何验证。",
+  "uncertainties_zh": "抗锯齿、像素量化和颜色阈值带来约±0.05个百分点的不确定性；对4%约为±1.25%的相对不确定性。采样小数不代表同等物理精度。依要求未查看调用日志、自检或历史归档，不独立确认每次执行历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两期、四类、八个数值、标题、百分比单位、合成提示和独立100%说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A为26/54/13/7%，B为43/48/5/4%；各合计100%，+17个百分点正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A明确对应内环，B对应外环；四色类别及环上、图例数值对应一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素测量覆盖全部八个扇区，最大测得偏差约0.0111个百分点，未混合两期分母。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其中人物、枕头、手和手机在成图中实质可见；render.py加载该素材并按数据生成八个SVG扇区及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "同心双环叠合照片，手机和主要手部位于中央空区，保持参考的叠合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需文字均可读。五处箭头缺字未阻断期间绑定或变化量理解，另列轻微问题。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "两环同心、等宽约109–110像素，间隙连续；手指接触手机。数据承载于环形扇区角宽。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、四类上网频率、合成双期、百分比及每期独立分母明确；注明环尺寸不表示人数。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留手机使用场景、双期频率比较及持续在线变化提示；原人群、年份和22个百分点改为合成双期及+17，属于冻结输入允许的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "外环4%的径向边及内外圆弧均可见，中线弧长约147像素；5%约183像素，内环7%约198像素。"
+    }
+  },
+  "semantic_attribution_zh": "真实调查改为合成Wave A/B属于输入适配；扇区角宽及+17来自当前数据。参考是圆环与照片叠合，成图保留该关系。输出损失仅为比较箭头缺字，没有把手机识别本身当作量化融合证据。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "habit_0",
+        "category": "Wave A",
+        "expected_value": 26,
+        "observed_value": 25.9972,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 733.6,
+        "full_scale_error_percent": 0.0028,
+        "small_value_relative_error_percent": 0.0107,
+        "bbox_xyxy_normalized": [
+          0.386,
+          0.486,
+          0.636,
+          0.752
+        ],
+        "evidence_zh": "像素色界角宽约93.59°；环上标26%。",
+        "uncertainty_zh": "约±0.05个百分点；弧长由像素测得半径和角宽计算。"
+      },
+      {
+        "series_id": "habit_1",
+        "category": "Wave A",
+        "expected_value": 54,
+        "observed_value": 54,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1523.8,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.387,
+          0.2495,
+          0.8885,
+          0.5775
+        ],
+        "evidence_zh": "像素色界角宽约194.40°；环上标54%。",
+        "uncertainty_zh": "约±0.05个百分点；零误差是采样结果，不保证数学精确。"
+      },
+      {
+        "series_id": "habit_2",
+        "category": "Wave A",
+        "expected_value": 13,
+        "observed_value": 12.9972,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 366.8,
+        "full_scale_error_percent": 0.0028,
+        "small_value_relative_error_percent": 0.0214,
+        "bbox_xyxy_normalized": [
+          0.7225,
+          0.563,
+          0.8755,
+          0.728
+        ],
+        "evidence_zh": "像素色界角宽约46.79°；环上标13%。",
+        "uncertainty_zh": "约±0.05个百分点；受抗锯齿和颜色阈值影响。"
+      },
+      {
+        "series_id": "habit_3",
+        "category": "Wave A",
+        "expected_value": 7,
+        "observed_value": 7.0056,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 197.7,
+        "full_scale_error_percent": 0.0056,
+        "small_value_relative_error_percent": 0.0794,
+        "bbox_xyxy_normalized": [
+          0.639,
+          0.681,
+          0.7435,
+          0.7525
+        ],
+        "evidence_zh": "像素色界角宽约25.22°；环上标7%。",
+        "uncertainty_zh": "约±0.05个百分点；没有据此保证亚像素精度。"
+      },
+      {
+        "series_id": "habit_0",
+        "category": "Wave B",
+        "expected_value": 43,
+        "observed_value": 42.9889,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1575.4,
+        "full_scale_error_percent": 0.0111,
+        "small_value_relative_error_percent": 0.0258,
+        "bbox_xyxy_normalized": [
+          0.3195,
+          0.214,
+          0.636,
+          0.819
+        ],
+        "evidence_zh": "像素色界角宽约154.76°；环上标43%。",
+        "uncertainty_zh": "约±0.05个百分点；弧长是像素测量派生量。"
+      },
+      {
+        "series_id": "habit_1",
+        "category": "Wave B",
+        "expected_value": 48,
+        "observed_value": 48.0083,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1759.3,
+        "full_scale_error_percent": 0.0083,
+        "small_value_relative_error_percent": 0.0174,
+        "bbox_xyxy_normalized": [
+          0.5025,
+          0.183,
+          0.9555,
+          0.769
+        ],
+        "evidence_zh": "像素色界角宽约172.83°；环上标48%。",
+        "uncertainty_zh": "约±0.05个百分点；受像素量化和颜色阈值影响。"
+      },
+      {
+        "series_id": "habit_2",
+        "category": "Wave B",
+        "expected_value": 5,
+        "observed_value": 4.9972,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 183.1,
+        "full_scale_error_percent": 0.0028,
+        "small_value_relative_error_percent": 0.0556,
+        "bbox_xyxy_normalized": [
+          0.7045,
+          0.725,
+          0.807,
+          0.809
+        ],
+        "evidence_zh": "像素色界角宽约17.99°；环上标5%。",
+        "uncertainty_zh": "约±0.05个百分点；小值相对精度不能由满量程通过直接保证。"
+      },
+      {
+        "series_id": "habit_3",
+        "category": "Wave B",
+        "expected_value": 4,
+        "observed_value": 4.0056,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 146.8,
+        "full_scale_error_percent": 0.0056,
+        "small_value_relative_error_percent": 0.1389,
+        "bbox_xyxy_normalized": [
+          0.639,
+          0.758,
+          0.716,
+          0.8195
+        ],
+        "evidence_zh": "像素色界角宽约14.42°；环上标4%，两条径向边及内外圆弧可见。",
+        "uncertainty_zh": "约±0.05个百分点，对4%约为±1.25%的相对不确定性。"
+      },
+      {
+        "series_id": "habit_0_difference",
+        "category": "Wave B − Wave A",
+        "expected_value": 17,
+        "observed_value": 17,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.044,
+          0.675,
+          0.218,
+          0.808
+        ],
+        "evidence_zh": "可见+17个百分点及26%、43%，符合43−26。",
+        "uncertainty_zh": "这里只核对文字，没有将字号或文字面积当作数量几何。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "两环与手机场景",
+        "required_parts": [
+          "内环",
+          "外环",
+          "环间隙",
+          "手机",
+          "手",
+          "人物"
+        ],
+        "relationship": "双环覆盖照片，中央空区包含手机和主要手部；手指接触屏幕，人物面向手机。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0,
+          0.182,
+          0.957,
+          0.821
+        ],
+        "evidence_zh": "照片透过中央空区和环间隙可见；数据边界为平面环形扇区，保留参考叠合方式。"
+      },
+      {
+        "category": "Wave A大值54%",
+        "required_parts": [
+          "浅蓝扇区",
+          "内外圆弧",
+          "径向边",
+          "54%标签"
+        ],
+        "relationship": "内环大扇区沿上方和右侧展开，两端接26%和13%，内圆弧围出中央场景。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.386,
+          0.249,
+          0.89,
+          0.579
+        ],
+        "evidence_zh": "区域超过半圈，角宽约194.40°；标签在该区域内，边界完整。"
+      },
+      {
+        "category": "Wave B大值48%",
+        "required_parts": [
+          "浅蓝外环扇区",
+          "内外圆弧",
+          "48%标签",
+          "外环标记"
+        ],
+        "relationship": "外环浅蓝扇区两端接43%与5%，通过连续间隙与内环分开。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.502,
+          0.182,
+          0.957,
+          0.771
+        ],
+        "evidence_zh": "角宽约172.83°，48%及Wave B标记归属明确，未与内环54%合并。"
+      },
+      {
+        "category": "Wave A小值7%",
+        "required_parts": [
+          "深蓝扇区",
+          "7%标签",
+          "径向边",
+          "内外圆弧"
+        ],
+        "relationship": "内环底部小扇区两侧接13%和26%，保留完整环带厚度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.637,
+          0.679,
+          0.745,
+          0.754
+        ],
+        "evidence_zh": "中线弧长约198像素；标签与圆弧边界清楚，未被手机场景遮掉。"
+      },
+      {
+        "category": "Wave B最小值4%",
+        "required_parts": [
+          "深蓝扇区",
+          "4%标签",
+          "径向边",
+          "内外圆弧",
+          "相邻5%与43%扇区"
+        ],
+        "relationship": "外环底部小扇区左接43%、右接5%，与内环由连续间隙分开。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.637,
+          0.756,
+          0.718,
+          0.821
+        ],
+        "evidence_zh": "角宽约14.42°、中线弧长约147像素；完整小环带可见，没有人为放大至7%的角宽。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入允许将原真实人群、年份和统计替换为合成Wave A/B，不要求原增幅。",
+      "output_added_or_lost_meaning_zh": "保留手机使用动作和双期上网频率比较，变化提示更新为+17个百分点。旧调查特定含义因输入适配而不再声称；箭头缺字是轻微输出损失。",
+      "visible_inscription_evidence_zh": "标题、SYNTHETIC DATA、上网频率占比、每期独立100%、四类频率名称、Wave A/内环、Wave B/外环及环尺寸不表示人数均可读。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实年份和美国青少年统计改为合成Wave A/B，成图明确标注非真实调查。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "角宽对应当前八个份额，持续在线差为+17，未沿用参考旧角宽或+22。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "五个指定箭头在实际图中缺字；必需类别、数值及核心结构未见遗漏。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖两环全部八个角度份额，包括各期最小、大值和中间值；另核对+17的文字编码。全部必需标签单独检查。未将人物尺寸视作量化通道，未检查被禁止的历史记录。"
+  }
+}

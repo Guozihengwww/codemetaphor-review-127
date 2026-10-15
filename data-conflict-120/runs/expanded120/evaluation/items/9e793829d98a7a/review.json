@@ -1,0 +1,285 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为15个国家的红色笔触横条，右下并置黑板钱袋粉笔画及粉笔。指定成图保留15类及对应数值，明确显示小学教师合成年薪、SYNTHETIC DATA与美元/年；黑板内的钱袋轮廓与手持粉笔接触。顶部100,000刻度与单位文字重叠；最后几条窄至数像素。",
+  "summary_zh": "已保存并校验review.json。数值、绑定和长度比例符合要求；仅发现最右刻度与单位局部重叠。最小条仍可见，但笔触细节受分辨率限制。按后续要求未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "100,000刻度和USD/year · 美元/年单位分别清楚可读。",
+      "observed_zh": "最右刻度与单位的部分字形相互覆盖。",
+      "evidence_zh": "原图约x=1810–1910、y=321–334处可见叠印；黑板与脚注另有清晰单位，因此没有造成整体单位缺失。",
+      "bbox_xyxy_normalized": [
+        0.859,
+        0.195,
+        0.965,
+        0.221
+      ]
+    }
+  ],
+  "measurement_notes_zh": "在2000×1577原图独立测量。可见零点约x=430，100,000刻度约x=1860，满量程跨度1430 px。提取与共同零点相连的红色主体，排除右侧木框。15条表观长度误差最大约0.03486%满量程，低于3%容差；源码公式仅作佐证。",
+  "uncertainties_zh": "抗锯齿边缘约有±1 px测量不确定性。最小条约3 px，不能保证亚像素精度或小值相对精度。未读取执行日志或归档记录，无法确认每次渲染均实际调用capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "15个国家/地区、15条标记和15个数值完整，次序正确；系列、单位及合成声明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项数值与输入一致，保留提供的小数位；首项$91,400，末项$182.8，没有正值归零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每行国家名、红色标记与右侧数值明确对应，小值行也无错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部15条共享零点；独立像素测量最大表观误差约0.03486%满量程。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及裁切素材；颜料纹理、黑板、钱袋和持粉笔手实质出现在成图中。render.py依据数据控制长度、数量和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "颜料主体承载长度编码；黑板与图表保持参考的并置关系，粉笔尖接触板内钱袋轮廓。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、类别、数值和合成声明清晰。刻度与单位局部重叠属轻微问题，单位在其他位置仍清楚显示。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "红色笔触主体及端点、木框包围板面、钱袋包含美元符号、手握粉笔并接触线条等关系均保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "小学教师、合成年薪、15个国家/地区、Synthetic annual pay及USD/year均有明确文字。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留教师工资跨国家比较和黑板钱袋语境；原年份、经验年数及PPP真实统计口径按冻结输入改为合成统计，不归为输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "France约6 px、Turkey约4 px、Israel约3 px，非零标记可见，但最后几条的笔触纹理和毛边难以辨认。"
+    }
+  },
+  "semantic_attribution_zh": "真实统计改为合成年度工资属于允许的输入适配；后段条形缩短由当前数据驱动。最小条的笔触细节损失归于分辨率限制。明确的输出问题仅为刻度和单位局部重叠。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_pay",
+        "category": "Luxembourg",
+        "expected_value": 91400,
+        "observed_value": 91398.6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1307,
+        "full_scale_error_percent": 0.0014,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.237793,
+          0.8685,
+          0.258085
+        ],
+        "evidence_zh": "红色主体覆盖x=430–1736，约1307 px；按1430 px满量程换算。",
+        "uncertainty_zh": "整数像素边界约±1 px，不代表亚像素精度。"
+      },
+      {
+        "series_id": "annual_pay",
+        "category": "Canada",
+        "expected_value": 58635.76883234,
+        "observed_value": 58601.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 838,
+        "full_scale_error_percent": 0.03437,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.279645,
+          0.634,
+          0.299937
+        ],
+        "evidence_zh": "红色主体覆盖x=430–1267，约838 px。",
+        "uncertainty_zh": "整数像素边界约±1 px。"
+      },
+      {
+        "series_id": "annual_pay",
+        "category": "Netherlands",
+        "expected_value": 4087.53226287,
+        "observed_value": 4055.94,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 58,
+        "full_scale_error_percent": 0.03159,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.530755,
+          0.244,
+          0.551046
+        ],
+        "evidence_zh": "红色主体覆盖x=430–487，约58 px。",
+        "uncertainty_zh": "整数像素边界约±1 px。"
+      },
+      {
+        "series_id": "annual_pay",
+        "category": "Japan",
+        "expected_value": 1079.22122587,
+        "observed_value": 1048.95,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 15,
+        "full_scale_error_percent": 0.03027,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.656944,
+          0.2225,
+          0.675967
+        ],
+        "evidence_zh": "红色主体覆盖x=430–444，约15 px。",
+        "uncertainty_zh": "整数像素边界约±1 px，不能保证小值相对精度。"
+      },
+      {
+        "series_id": "annual_pay",
+        "category": "France",
+        "expected_value": 444.16397883,
+        "observed_value": 419.58,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 6,
+        "full_scale_error_percent": 0.02458,
+        "small_value_relative_error_percent": 5.53,
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.740647,
+          0.218,
+          0.75967
+        ],
+        "evidence_zh": "红色主体覆盖x=430–435，约6 px。",
+        "uncertainty_zh": "边缘约±1 px；相对误差仅描述整数像素估计，不证明真实编码偏差。"
+      },
+      {
+        "series_id": "annual_pay",
+        "category": "Israel",
+        "expected_value": 182.8,
+        "observed_value": 209.79,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": 0.02699,
+        "small_value_relative_error_percent": 14.76,
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.82435,
+          0.2165,
+          0.843374
+        ],
+        "evidence_zh": "红色主体覆盖x=430–432，约3 px，非零存在明确。",
+        "uncertainty_zh": "边缘约±1 px，一像素约等于目标值的38.3%；表观相对误差不能视为精确编码误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Luxembourg（大标记）",
+        "required_parts": [
+          "共同零线",
+          "红色颜料主体",
+          "右端点"
+        ],
+        "relationship": "主体左端接共同零线，向右延伸，其右端界定数值长度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.237793,
+          0.8685,
+          0.258085
+        ],
+        "evidence_zh": "约1307 px连续红色主体可见横向颜料纹理，数值位于端点右侧。"
+      },
+      {
+        "category": "Netherlands（内部标记）",
+        "required_parts": [
+          "共同零线",
+          "红色笔触主体",
+          "对应数值"
+        ],
+        "relationship": "短笔触从零点右伸，数值位于末端右侧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.530755,
+          0.244,
+          0.551047
+        ],
+        "evidence_zh": "约58 px宽的红段仍有可辨主体及粗糙边缘，与该国数值同排。"
+      },
+      {
+        "category": "Israel（最小标记）",
+        "required_parts": [
+          "共同零线",
+          "非零红色主体",
+          "笔触纹理和端点"
+        ],
+        "relationship": "非零主体紧接零线，极近的右边界承载长度。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.82435,
+          0.2165,
+          0.843374
+        ],
+        "evidence_zh": "约3 px红痕与$182.8同排；主体仍在，横向笔触纹理及毛边不能可靠分辨。"
+      },
+      {
+        "category": "黑板、钱袋与持粉笔手",
+        "required_parts": [
+          "木框",
+          "板面",
+          "粉笔钱袋",
+          "美元符号",
+          "手",
+          "粉笔"
+        ],
+        "relationship": "木框包围板面，钱袋画在板内；前景手握粉笔，粉笔尖接触钱袋右下轮廓。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.535,
+          0.520609,
+          0.961,
+          0.86
+        ],
+        "evidence_zh": "袋口、系带、袋身及内部美元符号完整；约x=1570、y=1180处粉笔与袋边接触，未遮挡数据。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入明确要求合成年薪及SYNTHETIC DATA，当前数值取代参考真实统计。",
+      "output_added_or_lost_meaning_zh": "保留教师工资跨国家比较及黑板钱袋语境；旧真实统计口径的变化属于输入适配，微小笔触细节损失属于分辨率限制。",
+      "visible_inscription_evidence_zh": "可见“小学教师合成年薪”“15个国家/地区”“合成统计，非实际薪资”“Synthetic annual pay”“SYNTHETIC DATA”和“USD / YEAR”。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实参考统计改为明确标识的合成年度工资。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前值由91,400降至182.8，条形按同一尺度缩短。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小标记仅约3 px，非零存在可见，精细笔触及亚像素端点不可可靠辨认。"
+      }
+    ],
+    "measurement_coverage_zh": "全部15条完成像素跨度检查，详细记录六个代表，包括最大值、内部值和最小正值；全部类别及数值另作完整性核对。无辅助定量面板，黑板为语义插画。"
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图与成图均可见红桌面、乡村面包、黄油、奶酪和绿色细茎。成图六个年份及十二个数值完整可读；A在2002年达到39.2，B同年为18.2，两路径在1990—1994年间交叉。右侧明确说明读取细茎中心线和奶酪下缘；主题、百分比单位及合成提示清楚。",
+  "summary_zh": "通过。数据、标签绑定、食材融合及当前语义均符合要求。十二节点独立像素测量最大偏差约0.03个百分点。完整结果已保存为review.json并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量2000×1320的image.png，未使用生成者掩模或自检。42%与15%刻度分别位于y=315、1038，跨度723像素；按v=15+(1038-y)×27/723换算。A拟合绿色轮廓中点，B拟合奶酪真实下缘。mark_extent_px表示相对15%基线的垂直坐标差，不是茎长或奶酪厚度。满量程误差分母为27个百分点，相对误差分母为对应原值。",
+  "uncertainties_zh": "抗锯齿、材质与接触阴影造成约1–2像素定位不确定性，测量结果不代表亚像素精度保证。交叉处少量奶酪边界被细茎正常遮挡，位置由两侧可见边界拟合。未检查受限日志或历史记录，不能独立证明每次完整渲染均经capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个年份、两条六节点路径、十二个数值、系列名称、百分比单位、Year及SYNTHETIC DATA完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A依次为24.3、32.8、36.9、39.2、34.7、30.1；B为29.7、22.9、21.4、18.2、20.8、22.6，均与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "绿色标签绑定细茎节点，浅色标签绑定奶酪下缘；右侧名称、引线和读取说明明确区分两系列。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共用15–42%线性轴，年份按真实间距排列。十二节点最大测量偏差约0.03个百分点；交点约为1991.40年、27.30%，符合当前数据直线连接。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其面包、黄油、奶酪和细茎材质在成图主体中可见。源码提取素材并以数据控制中心线、下缘和文字；未核查执行历史。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "A由细茎本体中心线承载，B由奶酪实体下轮廓承载；奶酪覆盖黄油面包，细茎处于前景，保持食材融合。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下必需标题、数值、年份、系列及单位均清晰；标签未遮挡关键折点。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "面包孔隙和粗糙外皮、附着黄油、覆盖奶酪及前景细茎均保留；折点连接和交叉遮挡合理。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题与系列文字明确政党选票份额和未投票人口比例，Year及SHARE (%)明确时间和单位；未误表为100%组成或累计。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的两类份额对照及食材融合关系。未复刻旧“未投票者超过”结论，符合按当前合成数据改变走势的要求。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "A最小值24.3的细茎仍可辨；B最小值18.2的下缘距15%基线约86像素，奶酪面、边界及接触阴影清楚。"
+    }
+  },
+  "semantic_attribution_zh": "未发现当前主题或系列角色遗漏。合成数值及中性标题来自输入许可；峰值移至2002年和交叉方向改变来自当前数据，不属于输出语义损失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "A",
+        "category": "1990",
+        "expected_value": 24.3,
+        "observed_value": 24.329,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 249.8,
+        "full_scale_error_percent": 0.106,
+        "small_value_relative_error_percent": 0.118,
+        "bbox_xyxy_normalized": [
+          0.1425,
+          0.5858,
+          0.1575,
+          0.6085
+        ],
+        "evidence_zh": "可见细茎轮廓中点拟合至x=300，中心线y约788.2。",
+        "uncertainty_zh": "轮廓纹理、抗锯齿及端部形状带来约1–2像素定位不确定性。"
+      },
+      {
+        "series_id": "A",
+        "category": "2002",
+        "expected_value": 39.2,
+        "observed_value": 39.203,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 648.1,
+        "full_scale_error_percent": 0.013,
+        "small_value_relative_error_percent": 0.009,
+        "bbox_xyxy_normalized": [
+          0.5215,
+          0.284,
+          0.5365,
+          0.3067
+        ],
+        "evidence_zh": "相邻可见细茎直段拟合至x=1058，中心线y约389.9。",
+        "uncertainty_zh": "折点及抗锯齿约有1–2像素定位不确定性。"
+      },
+      {
+        "series_id": "A",
+        "category": "1998",
+        "expected_value": 36.9,
+        "observed_value": 36.909,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 586.7,
+        "full_scale_error_percent": 0.033,
+        "small_value_relative_error_percent": 0.024,
+        "bbox_xyxy_normalized": [
+          0.3953,
+          0.3306,
+          0.4103,
+          0.3533
+        ],
+        "evidence_zh": "可见绿色轮廓中点拟合至年份刻度x约805.5，中心线y约451.3。",
+        "uncertainty_zh": "材质及轮廓定位约有1–2像素不确定性。"
+      },
+      {
+        "series_id": "B",
+        "category": "2002",
+        "expected_value": 18.2,
+        "observed_value": 18.212,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 86.0,
+        "full_scale_error_percent": 0.046,
+        "small_value_relative_error_percent": 0.068,
+        "bbox_xyxy_normalized": [
+          0.5215,
+          0.7098,
+          0.5365,
+          0.7326
+        ],
+        "evidence_zh": "奶酪面到下方面包的可见边界拟合至x=1058，下缘y约952.0。",
+        "uncertainty_zh": "倒角、接触阴影及抗锯齿约有1–2像素定位不确定性。"
+      },
+      {
+        "series_id": "B",
+        "category": "1990",
+        "expected_value": 29.7,
+        "observed_value": 29.709,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 393.9,
+        "full_scale_error_percent": 0.032,
+        "small_value_relative_error_percent": 0.029,
+        "bbox_xyxy_normalized": [
+          0.1425,
+          0.4766,
+          0.1575,
+          0.4993
+        ],
+        "evidence_zh": "奶酪与红桌面之间的实体边界拟合至x=300，下缘y约644.1。",
+        "uncertainty_zh": "取左端无遮挡短段外推；边缘定位约有1–2像素不确定性。"
+      },
+      {
+        "series_id": "B",
+        "category": "1998",
+        "expected_value": 21.4,
+        "observed_value": 21.411,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 171.7,
+        "full_scale_error_percent": 0.041,
+        "small_value_relative_error_percent": 0.052,
+        "bbox_xyxy_normalized": [
+          0.3953,
+          0.6449,
+          0.4103,
+          0.6677
+        ],
+        "evidence_zh": "奶酪真实下缘明暗转折拟合至x约805.5，下缘y约866.3。",
+        "uncertainty_zh": "接触阴影与抗锯齿约有1–2像素定位不确定性。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体食材叠层",
+        "required_parts": [
+          "红色桌面",
+          "乡村面包",
+          "黄油",
+          "奶酪",
+          "绿色细茎"
+        ],
+        "relationship": "面包在桌面上，黄油附着面包，奶酪覆盖黄油面包，细茎处于前景。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.106,
+          0.28,
+          0.802,
+          0.812
+        ],
+        "evidence_zh": "各层材质与接触阴影可见；细茎在交叉处连续遮住奶酪边界。"
+      },
+      {
+        "category": "A最小值1990",
+        "required_parts": [
+          "24.3节点",
+          "细茎",
+          "面包",
+          "奶酪下缘"
+        ],
+        "relationship": "细茎从面包上的最小节点向右上延伸，跨越奶酪下缘后位于奶酪前方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.14,
+          0.47,
+          0.29,
+          0.615
+        ],
+        "evidence_zh": "细茎两侧轮廓和纵向材质清楚，约(389,709)处的交叉没有使茎断裂。"
+      },
+      {
+        "category": "A最大值2002",
+        "required_parts": [
+          "39.2节点",
+          "两段细茎",
+          "下方面包"
+        ],
+        "relationship": "两段细茎在高点连续连接，峰部位于面包上方红色区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.49,
+          0.278,
+          0.57,
+          0.377
+        ],
+        "evidence_zh": "约(1058,390)处的折点保留绿色材质及连续实体轮廓。"
+      },
+      {
+        "category": "B最大值1990",
+        "required_parts": [
+          "29.7节点",
+          "奶酪上缘",
+          "奶酪下缘",
+          "红桌面"
+        ],
+        "relationship": "非数据上缘位于数据下缘之上，保持正厚度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.142,
+          0.416,
+          0.19,
+          0.522
+        ],
+        "evidence_zh": "上缘约y=564，下缘约y=644，奶酪面厚约80像素；下缘与红桌面清楚分开。"
+      },
+      {
+        "category": "B最小值2002",
+        "required_parts": [
+          "18.2节点",
+          "奶酪面",
+          "奶酪下缘",
+          "黄油面包"
+        ],
+        "relationship": "奶酪面连续到最低下缘，下缘的接触阴影落在黄油面包上。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.49,
+          0.43,
+          0.57,
+          0.79
+        ],
+        "evidence_zh": "约(1058,952)处形成清楚的实体折点，下面仍可见黄油、面包及接触阴影。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许随当前数据改变峰谷、交叉、姿态和非数据厚度，不要求保留旧真实数值或旧超过结论。",
+      "output_added_or_lost_meaning_zh": "未发现必需语义遗漏。合成提示、非历史结果说明及读取边界的提示均与输入一致。",
+      "visible_inscription_evidence_zh": "Voting and non voting shares；SPD and Greens vote share；Non voters share；SHARE (%)；Year；SYNTHETIC DATA；Read the centreline；Read the lower edge。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "采用冻结合成数值及中性主题标题，属于允许调整。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "峰值、最低下缘及1990—1994年间的交叉均对应当前数据。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿、纹理及倒角限制边缘定位精度，但未造成最小值物体关系丢失。"
+      }
+    ],
+    "measurement_coverage_zh": "实际测量覆盖两系列全部十二节点，并核对所有必需标签。本响应列出每系列最小、最大及内部点六项代表测量；review.json保存全部十二项。未逐像素遍历全轮廓，交叉遮挡处由可见边界拟合。"
+  }
+}

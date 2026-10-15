@@ -1,0 +1,253 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图包含五个盛装不同作物的透明圆柱容器，可见顶部椭圆、杯壁反光和厚底座。待评图的年度收获主题、合成声明、五类名称、数值和单位清晰完整；饲草最高，豆类和蔬菜呈薄盘状。右侧共同刻度及底部中心距、底座排除、视角说明可见。",
+  "summary_zh": "通过。数据、标签及容器高度编码未见实质错误；最小豆类的数据边界仅部分可辨。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1663原图读取0与72,000刻度约位于y=1345、350，跨度995 px。四项通过与杯口切点同高的尺寸线端点读取中心距，并核对容器轮廓。端点约有±1–2 px不确定性。32 px底座不计入高度，不再次进行投影缩短。",
+  "uncertainties_zh": "豆类两端点合并在y=1343–1345像素带，无法独立确认约1.38 px的数据高度及相对精度。报告小数不代表亚像素准确度。按限制未检查日志、自检或其他成图，未独立核实capture_render.py的执行历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五个容器和五类名称按输入顺序完整呈现，系列、总量、单位及合成声明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "100、1,000、6,000、15,220、49,680及总量72,000准确；显示份额0.14%、1.39%、8.33%、21.14%、69.00%均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值、单位及份额位于对应容器上方，类别在正下方；五种作物材质与类别一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "四项中心距约13.5、83、210、686.5 px，换算后满量程误差均小于0.04%。豆类端点近乎重合，可排除3%满量程级偏差，但不能确认小值相对精度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png作物素材，成图实质使用对应纹理。render.py读取纹理并控制遮罩、高度及文字；capture_render.py包含完整渲染保存流程，未执行。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "作物包含在具有杯口、侧壁和底座的容器内，容器本身承担高度编码。玻璃高光覆盖内容物，底座承接内容物，未改为旁置装饰。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、全部数值、类别、单位、刻度及编码说明可读，无必需文本遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "大中容器的顶部椭圆、杯壁、作物和底座连接完整；最小豆类仍保留装豆杯口和相接底座，但数据侧壁边界无法独立分辨。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual crop harvest与Synthetic harvest明确主题和系列，metric tonnes per year明确指标单位；五类是作物组，份额明确标为of total。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的年度作物总收获量及五类比较关系。替换原统计数值是输入明确允许的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "豆粒、杯口和底座可辨，但约1–2 px的数据段与描边、抗锯齿混合；蔬菜约14 px的橙色侧面仍可见。"
+    }
+  },
+  "semantic_attribution_zh": "年度收获主题和作物分类未丢失。合成数值替换属于允许的输入适配；豆类浅盘形态由比例驱动。其最小侧壁边界难辨主要属于分辨率及描边限制，没有证据显示输出删除容器或改变统计含义。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_harvest",
+        "category": "Legumes",
+        "expected_value": 100,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.0725,
+          0.785,
+          0.213,
+          0.852
+        ],
+        "evidence_zh": "100及0.14%文字正确；尺寸端点合并在y=1343–1345。源码计算约1.38 px仅作佐证，未当作像素测量。",
+        "uncertainty_zh": "无法独立分离数据段上下边界，因此长度、量值和误差留空。"
+      },
+      {
+        "series_id": "annual_harvest",
+        "category": "Vegetables",
+        "expected_value": 1000,
+        "observed_value": 976.88,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 13.5,
+        "full_scale_error_percent": 0.0321,
+        "small_value_relative_error_percent": 2.3116,
+        "bbox_xyxy_normalized": [
+          0.235,
+          0.777,
+          0.376,
+          0.852
+        ],
+        "evidence_zh": "x≈746尺寸线上端位于y≈1331，下端描边中心约1344.5；可见橙色侧面位于杯口前缘与底座之间。",
+        "uncertainty_zh": "端点约±1–2 px；相对偏差为近似读数，不保证小值精度。"
+      },
+      {
+        "series_id": "annual_harvest",
+        "category": "Potatoes",
+        "expected_value": 6000,
+        "observed_value": 6006.03,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 83,
+        "full_scale_error_percent": 0.00838,
+        "small_value_relative_error_percent": 0.1005,
+        "bbox_xyxy_normalized": [
+          0.3975,
+          0.735,
+          0.538,
+          0.852
+        ],
+        "evidence_zh": "x≈1071尺寸端点位于y=1261–1262与1344–1345，中心差约83 px，与容器轮廓相符。",
+        "uncertainty_zh": "描边端点约±1–2 px；数值来自图面换算。"
+      },
+      {
+        "series_id": "annual_harvest",
+        "category": "Cereals",
+        "expected_value": 15220,
+        "observed_value": 15195.98,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 210,
+        "full_scale_error_percent": 0.03336,
+        "small_value_relative_error_percent": 0.1578,
+        "bbox_xyxy_normalized": [
+          0.56,
+          0.659,
+          0.701,
+          0.852
+        ],
+        "evidence_zh": "x≈1396尺寸端点位于y=1134–1135与1344–1345，中心差约210 px；顶部椭圆及侧壁与端点相符。",
+        "uncertainty_zh": "描边端点约±1–2 px；报告误差不代表亚像素精度。"
+      },
+      {
+        "series_id": "annual_harvest",
+        "category": "Forage",
+        "expected_value": 49680,
+        "observed_value": 49676.38,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 686.5,
+        "full_scale_error_percent": 0.00503,
+        "small_value_relative_error_percent": 0.0073,
+        "bbox_xyxy_normalized": [
+          0.7225,
+          0.373,
+          0.863,
+          0.852
+        ],
+        "evidence_zh": "x≈1721上端位于y≈658，下端描边中心约1344.5，中心距约686.5 px；杯口中心及共同底部与其对齐。",
+        "uncertainty_zh": "描边端点约±1–2 px；未将叶片纹理起伏当作数据边界。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Forage（大值）",
+        "required_parts": [
+          "椭圆杯口",
+          "透明侧壁",
+          "绿叶内容物",
+          "玻璃底座"
+        ],
+        "relationship": "杯口连接侧壁，叶片被包围并由底座承接；中心距承担量值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.7225,
+          0.373,
+          0.853,
+          0.852
+        ],
+        "evidence_zh": "椭圆口、连续玻璃反光、延伸到底部的叶片和相接底座均可见，没有悬空或外溢。"
+      },
+      {
+        "category": "Cereals、Potatoes（中间值）",
+        "required_parts": [
+          "椭圆顶面",
+          "杯壁",
+          "作物内容物",
+          "玻璃底座"
+        ],
+        "relationship": "作物顶面位于杯口内，侧面填充圆柱区域，底部由玻璃基座承接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3975,
+          0.659,
+          0.691,
+          0.852
+        ],
+        "evidence_zh": "顶部与侧面均可辨，玻璃边缘覆盖材质边界，底部没有错位或脱离。"
+      },
+      {
+        "category": "Vegetables（小值）",
+        "required_parts": [
+          "杯口",
+          "胡萝卜顶面和侧面",
+          "杯壁",
+          "底座"
+        ],
+        "relationship": "橙色数据侧面位于杯口前缘下方、非数据底座上方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.235,
+          0.777,
+          0.366,
+          0.852
+        ],
+        "evidence_zh": "局部原像素查看可辨橙色窄带与独立玻璃底座，包含关系保留。"
+      },
+      {
+        "category": "Legumes（最小正值）",
+        "required_parts": [
+          "椭圆杯口",
+          "豆粒顶面",
+          "数据侧壁",
+          "玻璃底座"
+        ],
+        "relationship": "豆粒顶面包含于杯口并与底座相接，数据侧壁极薄。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.0725,
+          0.785,
+          0.203,
+          0.852
+        ],
+        "evidence_zh": "豆粒椭圆、杯口及厚底可见且相接，但数据侧壁与描边混合，不能独立追踪上下边界。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许当前合成值替换原统计值，并按比例调整容器高度；年度作物收获主题未改变。",
+      "output_added_or_lost_meaning_zh": "补充共同尺度、底座排除和合成说明，保留年度总量比较；最小项仅损失独立辨认数据侧壁的能力。",
+      "visible_inscription_evidence_zh": "Annual crop harvest；Synthetic harvest · metric tonnes per year (t/year)；TOTAL ANNUAL HARVEST；五类名称；of total；SYNTHETIC DATA。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成数值替换得到冻结输入授权，并在图面明确声明。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "豆类和蔬菜的小值导致浅盘形态，非数据底座仍独立保留。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小数据段与杯口描边混合，端点无法独立分离；未据此认定零值或失败。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单一线性高度通道：测得四项尺寸端点并核对容器轮廓，最小正值单列为无法精确测量。五类标签、全部数值、份额、单位及总量均逐项检查。未用源码公式或生成遮罩替代成图测量。"
+  }
+}

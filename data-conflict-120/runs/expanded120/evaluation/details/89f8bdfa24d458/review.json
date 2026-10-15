@@ -1,0 +1,275 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图呈现戴礼帽的全身舞台人物、两臂、两条网袜腿及高跟鞋，红色价格路径融合前景屈腿。最终图保留这些部件，红线由髋部经膝部进入右侧鞋。五个年份、五个价格、SYNTHETIC DATA、钻石价格主题及美元／一克拉单位均可读。",
+  "summary_zh": "通过。五点数值、绑定和几何均符合要求，人物及腿鞋融合关系保留。原真实平均价格口径改为虚构价格属于冻结输入改编。review.json已保存并通过schema校验。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1936原图分割五个红色圆芯，横向间隔均为270像素。独立检测65000格线y=600、10000格线y=1600，按V=10000+(1600-y)×55反算价格；满量程分母为55000。最大估算偏差约25 USD，即0.046%满量程。固定圆芯尺寸不承担数量编码，源码仅作佐证。",
+  "uncertainties_zh": "抗锯齿及格线定位带来约±1像素、约±55 USD的不确定性，不能据此保证亚像素精度。参考图分辨率有限，未推断额外作者意图。未检查历史捕获记录，不能确认全部历史渲染的实际调用；未重渲染或运行submit.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五个年份、五个圆点和五个价格完整；主题、系列、单位及合成声明均出现。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次显示14500、27000、61500、23500、22000，与数据一致；轴域10000—65000正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "圆点与对应年份垂直对齐，价格邻近或通过引线绑定；1980 / PEAK对应61500。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "五点独立像素测量全部通过3%满量程容差，最大偏差约0.046%；折线逐点连接且无可见过冲。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始人物、网袜和鞋素材与最终图可见内容吻合。render.py实质使用素材，并由数据控制圆点、路径、前腿及鞋映射。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "红线由髋部经前景网袜腿、屈膝及小腿进入鞋面，承载部件连续；未退化为旁置图表。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "全部必要文字在原图可读，价格标签与纹理分离，右侧刻度完整。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "帽在头上、双臂接肩、双腿接髋、鞋接脚踝；后腿抬起，前腿屈膝，数据路径融合前腿及鞋。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "钻石价格标题、Fictional price、USD per one-carat diamond及YEAR明确主题、指标、单位和年度角色；图例解释圆点高度编码。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "钻石价格与舞台人物屈腿融合保留。参考中的真实平均D-flawless价格口径改为冻结输入规定的虚构价格，属于输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值圆芯约21像素，距下界约82像素；腿根接续清楚。末两点分离，约28像素高度差及鞋面承载关系可辨。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、年度角色、价格指标及单位完整。参考真实平均价格改为虚构价格属于允许的输入改编；人物姿态及鞋形随数据适配，核心关系仍在。未发现输出遗漏造成的语义丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_price",
+        "category": "1978",
+        "expected_value": 14500,
+        "observed_value": 14520,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 21,
+        "full_scale_error_percent": 0.0363,
+        "small_value_relative_error_percent": 0.1378,
+        "bbox_xyxy_normalized": [
+          0.3475,
+          0.778926,
+          0.358,
+          0.789773
+        ],
+        "evidence_zh": "红芯质心约(704.82,1517.82)，距10000格线约82.18像素；文字为$14,500。",
+        "uncertainty_zh": "位置约±1像素，对应约±55 USD；百分数为近似测量值。"
+      },
+      {
+        "series_id": "synthetic_price",
+        "category": "1979",
+        "expected_value": 27000,
+        "observed_value": 27005,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 21,
+        "full_scale_error_percent": 0.0091,
+        "small_value_relative_error_percent": 0.0185,
+        "bbox_xyxy_normalized": [
+          0.4825,
+          0.661674,
+          0.493,
+          0.672521
+        ],
+        "evidence_zh": "红芯质心约(974.82,1290.82)，距下界约309.18像素；文字为$27,000。",
+        "uncertainty_zh": "位置约±1像素，对应约±55 USD。"
+      },
+      {
+        "series_id": "synthetic_price",
+        "category": "1980",
+        "expected_value": 61500,
+        "observed_value": 61525,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 21,
+        "full_scale_error_percent": 0.0455,
+        "small_value_relative_error_percent": 0.0407,
+        "bbox_xyxy_normalized": [
+          0.6175,
+          0.337293,
+          0.628,
+          0.34814
+        ],
+        "evidence_zh": "红芯质心约(1244.82,663.18)，距下界约936.82像素；文字为$61,500。",
+        "uncertainty_zh": "位置约±1像素，对应约±55 USD。"
+      },
+      {
+        "series_id": "synthetic_price",
+        "category": "1981",
+        "expected_value": 23500,
+        "observed_value": 23520,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 21,
+        "full_scale_error_percent": 0.0364,
+        "small_value_relative_error_percent": 0.0852,
+        "bbox_xyxy_normalized": [
+          0.7525,
+          0.694215,
+          0.763,
+          0.705062
+        ],
+        "evidence_zh": "红芯质心约(1514.82,1354.18)，距下界约245.82像素；文字为$23,500。",
+        "uncertainty_zh": "位置约±1像素，对应约±55 USD。"
+      },
+      {
+        "series_id": "synthetic_price",
+        "category": "1982",
+        "expected_value": 22000,
+        "observed_value": 22000,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 21,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0.0001,
+        "bbox_xyxy_normalized": [
+          0.8875,
+          0.708678,
+          0.898,
+          0.719525
+        ],
+        "evidence_zh": "红芯质心约(1784.82,1381.82)，距下界约218.18像素；文字为$22,000。",
+        "uncertainty_zh": "位置约±1像素，对应约±55 USD；接近零的估算误差不表示精确无误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "完整人物",
+        "required_parts": [
+          "礼帽",
+          "躯干",
+          "两臂",
+          "两条网袜腿",
+          "两只高跟鞋"
+        ],
+        "relationship": "帽在头上，双臂接肩，双腿接髋，鞋接脚踝。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.07,
+          0.18,
+          0.93,
+          0.86
+        ],
+        "evidence_zh": "一手靠帽沿，另一手伸向左下；后腿抬起、前腿屈膝，两鞋均有鞋身和细跟。"
+      },
+      {
+        "category": "1978最小值",
+        "required_parts": [
+          "髋部",
+          "前景腿根",
+          "网袜",
+          "圆点与红线"
+        ],
+        "relationship": "圆点位于髋部，红线由腿根朝右上进入连续前景腿。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3,
+          0.74,
+          0.46,
+          0.83
+        ],
+        "evidence_zh": "髋部遮住部分近端网袜，下方仍可见连续腿根轮廓，最小值标记未脱离人物。"
+      },
+      {
+        "category": "1979内部点",
+        "required_parts": [
+          "前景大腿",
+          "网袜",
+          "圆点",
+          "相邻红线"
+        ],
+        "relationship": "圆点与红线位于大腿区域，连续通往膝部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.42,
+          0.59,
+          0.55,
+          0.72
+        ],
+        "evidence_zh": "两腿交叠附近的27000圆点仍清楚，右上红线沿前景大腿上行。"
+      },
+      {
+        "category": "1980最大值",
+        "required_parts": [
+          "大腿",
+          "膝部",
+          "小腿",
+          "网袜",
+          "最高圆点"
+        ],
+        "relationship": "大腿与小腿在膝部连接，最高圆点包含在膝部区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.565,
+          0.3,
+          0.69,
+          0.5
+        ],
+        "evidence_zh": "外轮廓圆转、内侧形成弯膝角；红线沿两侧腿部汇合于最高圆点。"
+      },
+      {
+        "category": "1981—1982鞋面段",
+        "required_parts": [
+          "小腿末端",
+          "鞋口",
+          "鞋身",
+          "鞋跟",
+          "鞋尖",
+          "两个圆点"
+        ],
+        "relationship": "小腿接鞋口，红线从后部鞋身延伸至鞋尖。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.73,
+          0.64,
+          0.93,
+          0.79
+        ],
+        "evidence_zh": "鞋身与细跟可辨，两圆点分别附着鞋面不同位置，未因较小差值合并。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入将真实平均价格改为虚构价格，允许姿态与非数据厚度适配，不要求复制旧价格或D-flawless限定。",
+      "output_added_or_lost_meaning_zh": "钻石价格与屈腿融合保留；1980峰值注释有当前数据支持。原真实统计限定未出现，与输入改编一致。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、One carat diamond prices、Fictional price、USD per one-carat diamond、YEAR、Dot height = fictional price及Not historical market prices。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原真实平均D-flawless价格口径改为冻结输入中的Fictional price，故参考意义记partial，不计输出缺陷。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "前腿和鞋随五点形成上升、屈膝下降及低斜率鞋面段，必需连接关系仍可见。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "仅确认参考可见题文及人物融合关系，不推断标题双关背后的额外论点。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板单系列，已测全部五点，覆盖最小值、最大值及内部点；全部年份、价格和必需语义标签另行逐项检查。腿面积、鞋长及圆芯直径不作为数量通道。"
+  }
+}

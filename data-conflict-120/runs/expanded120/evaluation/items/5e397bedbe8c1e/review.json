@@ -1,0 +1,424 @@
+{
+  "verdict": "minor",
+  "confidence": 0.94,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：浅青背景上有11条同心彩虹弧带，左侧弧根被前景白云遮挡，右侧弧端由细线连接年度与金额；上方写给母亲的金钱关爱逐年增加，下方写支出达历史新高。\n待评图：标题为年度合成礼物支出，SYNTHETIC DATA醒目，标注按年度汇总及十亿美元。11条彩色弧带由内圈2005至外圈2015，右侧逐条连线列出2015至2005与11.8、13.1、14.6、14.9、13.3、13.6、16.2、18.4、20.6、20.2、21.6。左侧弧根在同一水平高度与云层相交；右下有大片纸纹云层，部分标签叠在云上仍可读。底部列出21.6、11.8、-45.4%和净减少9.8，附扫角公式与半圆26十亿美元说明。弧端为平直切口，带间分离清楚；待测扫角及云端遮挡。",
+  "summary_zh": "11年数值、标签绑定和扫角映射均通过；像素反算误差约为满量程的0.09%—0.36%。云层与彩虹弧带主体保留。存在弧长说明不够准确、弧根水平截缝两项轻微问题，未见主要缺陷。",
+  "issues": [
+    {
+      "category": "other",
+      "severity": "minor",
+      "requirement_id": "M2/M5",
+      "expected_zh": "明确以扫角表达支出，避免把不同半径上的实体弧长直接用于跨年度比较。",
+      "observed_zh": "中心提示写“弧越长，年度支出越高”；实体弧长受年度半径影响，与支出大小并不一致。底部扫角公式则正确。",
+      "evidence_zh": "2005的21.6对应可见中线弧长约914px，2015的11.8反而约1221px。提示位于主图内下方；几何本身符合扫角映射，因此仅判文字说明轻微问题。",
+      "bbox_xyxy_normalized": [
+        0.43,
+        0.648,
+        0.585,
+        0.674
+      ]
+    },
+    {
+      "category": "texture_boundary",
+      "severity": "minor",
+      "requirement_id": "M3/M6",
+      "expected_zh": "云层与弧根交叠处保持自然的云体遮挡边界。",
+      "observed_zh": "11条弧根在圆润云团内部齐平终止，形成局部水平截缝；云与彩虹仍可辨，遮挡关系未整体丢失。",
+      "evidence_zh": "原图约x=165—715、y=1383处，色带底缘排成同一水平线。render.py将前景云透明度在y=1383硬切，属源码佐证；该接缝也可直接在图中看见。",
+      "bbox_xyxy_normalized": [
+        0.079,
+        0.732,
+        0.361,
+        0.76
+      ]
+    }
+  ],
+  "measurement_notes_zh": "对2000×1844原图按色面分割11个连通弧带，分别拟合圆心和半径，再以端点相对公共向左起始方向的角度反算USD billion。所有满量程误差均小于3%；未以源码公式替代像素测量。mark_extent_px记录可见填色中线弧长，不含被云覆盖的根部；边界框为填色像素范围。底部摘要仅核对文字及算术。",
+  "uncertainties_zh": "高光、细描边、抗锯齿和根部遮挡使像素反算略偏保守，所报小数不是亚像素精度保证。未运行渲染、未查看其他成图、日志或自检；capture_render.py的存在不能证明所有历史渲染均已归档，本次不对此作执行史断言。参考原母亲语境及增长论述的变化按冻结输入适配处理。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "2005—2015共11条年度弧带及11组金额齐全；合成标识、主题、年度口径、单位和映射说明均在图上。没有要求的辅助面板遗漏。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐一读得2005—2015为21.6、20.2、20.6、18.4、16.2、13.6、13.3、14.9、14.6、13.1、11.8；净减少9.8及−45.4%正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每条弧带端点连线对应同色年度行；内圈2005至外圈2015顺序明确。右侧反向排列用于对应外圈到内圈，没有把数值换绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "11条弧带像素反算满量程误差约0.086%—0.356%；最大值2005约21.507、最小值2015约11.773，中间2010约13.562。均在26满量程的3%容差内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看cloud_bank.png，纸纹、蓝色轮廓及右侧大云团与成图对应，素材构成大面积云层。render.py从数据生成环扇形、连线及文字；已读取归档脚本但不宣称核实其执行史。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "同心彩色环扇形本身承载年度扫角数据；云层同时在后方成景并在弧根前方遮挡，属于实际叠合。局部齐平截缝未破坏主体关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、11组年度金额、十亿美元及SYNTHETIC DATA均清晰。右下标签压在浅色云上仍能辨读，连线可追踪。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "11条嵌套弧带、共享起始方向、云层及弧根前后遮挡关系可见。数据边界为弧带的端部径向切口及扫角，未被云团替换或遮没。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确年度合成礼物支出，副标题保留Synthetic gift spending、按年度汇总及USD billion；年度行不是泛称组别。弧长提示仅有轻微措辞问题。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考图的母亲金钱关爱、逐年增加及历史新高论述未原样保留；冻结输入明确改为合成礼物支出。成图按新数据呈现首尾下降，属于允许的输入适配，不判生成失败。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值2015=11.8仍有约1221px可见中线弧长、约32px可辨填色宽度；弧体、切口、引线与云根关系清楚。该数据没有亚像素小值，未见人为放大。"
+    }
+  },
+  "semantic_attribution_zh": "母亲语境及旧增长/新高结论转为合成礼物支出与首尾下降，归于冻结输入允许的主题和数据适配。外圈扫角缩短归于当前数值。当前主题、单位和年度角色没有遗漏；弧长提示不够准确与弧根截缝属于输出的轻微问题，不归因于分辨率不足。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "gift_spending",
+        "category": "2005",
+        "expected_value": 21.6,
+        "observed_value": 21.507,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 913.8,
+        "full_scale_error_percent": 0.356,
+        "small_value_relative_error_percent": 0.429,
+        "bbox_xyxy_normalized": [
+          0.3395,
+          0.5531,
+          0.684,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1049.844, 1391.91)，中径约355.387px；端点扫角约148.898°，按26×角度/180反算。可见中线弧长约913.8px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2006",
+        "expected_value": 20.2,
+        "observed_value": 20.13,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 977.7,
+        "full_scale_error_percent": 0.271,
+        "small_value_relative_error_percent": 0.348,
+        "bbox_xyxy_normalized": [
+          0.314,
+          0.5255,
+          0.685,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1049.742, 1391.166)，中径约405.702px；端点扫角约139.359°，按26×角度/180反算。可见中线弧长约977.7px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2007",
+        "expected_value": 20.6,
+        "observed_value": 20.517,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1124.1,
+        "full_scale_error_percent": 0.319,
+        "small_value_relative_error_percent": 0.403,
+        "bbox_xyxy_normalized": [
+          0.2885,
+          0.4978,
+          0.7115,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1049.804, 1392.667)，中径约457.736px；端点扫角约142.04°，按26×角度/180反算。可见中线弧长约1124.1px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2008",
+        "expected_value": 18.4,
+        "observed_value": 18.335,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1116.1,
+        "full_scale_error_percent": 0.251,
+        "small_value_relative_error_percent": 0.355,
+        "bbox_xyxy_normalized": [
+          0.263,
+          0.4702,
+          0.6825,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1049.705, 1392.469)，中径约508.485px；端点扫角约126.933°，按26×角度/180反算。可见中线弧长约1116.1px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2009",
+        "expected_value": 16.2,
+        "observed_value": 16.165,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1082.2,
+        "full_scale_error_percent": 0.136,
+        "small_value_relative_error_percent": 0.219,
+        "bbox_xyxy_normalized": [
+          0.2375,
+          0.4425,
+          0.632,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1049.738, 1390.839)，中径约558.581px；端点扫角约111.909°，按26×角度/180反算。可见中线弧长约1082.2px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2010",
+        "expected_value": 13.6,
+        "observed_value": 13.562,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 989.8,
+        "full_scale_error_percent": 0.147,
+        "small_value_relative_error_percent": 0.281,
+        "bbox_xyxy_normalized": [
+          0.212,
+          0.4149,
+          0.546,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1049.499, 1391.481)，中径约609.84px；端点扫角约93.889°，按26×角度/180反算。可见中线弧长约989.8px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2011",
+        "expected_value": 13.3,
+        "observed_value": 13.258,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1049.3,
+        "full_scale_error_percent": 0.163,
+        "small_value_relative_error_percent": 0.318,
+        "bbox_xyxy_normalized": [
+          0.1865,
+          0.3872,
+          0.536,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1049.557, 1392.276)，中径约661.384px；端点扫角约91.784°，按26×角度/180反算。可见中线弧长约1049.3px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2012",
+        "expected_value": 14.9,
+        "observed_value": 14.876,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1269,
+        "full_scale_error_percent": 0.094,
+        "small_value_relative_error_percent": 0.164,
+        "bbox_xyxy_normalized": [
+          0.161,
+          0.3595,
+          0.6065,
+          0.7489
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1049.346, 1391.405)，中径约711.744px；端点扫角约102.984°，按26×角度/180反算。可见中线弧长约1269.0px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2013",
+        "expected_value": 14.6,
+        "observed_value": 14.578,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1334.2,
+        "full_scale_error_percent": 0.086,
+        "small_value_relative_error_percent": 0.153,
+        "bbox_xyxy_normalized": [
+          0.1355,
+          0.3319,
+          0.598,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1049.335, 1391.652)，中径约762.905px；端点扫角约100.922°，按26×角度/180反算。可见中线弧长约1334.2px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2014",
+        "expected_value": 13.1,
+        "observed_value": 13.069,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1275.5,
+        "full_scale_error_percent": 0.118,
+        "small_value_relative_error_percent": 0.235,
+        "bbox_xyxy_normalized": [
+          0.11,
+          0.3048,
+          0.5285,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1050.167, 1392.864)，中径约815.158px；端点扫角约90.479°，按26×角度/180反算。可见中线弧长约1275.5px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2015",
+        "expected_value": 11.8,
+        "observed_value": 11.773,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1221.2,
+        "full_scale_error_percent": 0.103,
+        "small_value_relative_error_percent": 0.227,
+        "bbox_xyxy_normalized": [
+          0.0845,
+          0.282,
+          0.4625,
+          0.7495
+        ],
+        "evidence_zh": "原图色面像素拟合中心约(1051.199, 1393.502)，中径约867.187px；端点扫角约81.507°，按26×角度/180反算。可见中线弧长约1221.2px。",
+        "uncertainty_zh": "色面分割排除细描边、高光及云层覆盖的弧根；使用公共向左零方向，未把遮挡计为增量。数像素边界选择会影响估值；相对误差为近似测量结果。"
+      },
+      {
+        "series_id": "gift_spending_summary",
+        "category": "起止变化百分比",
+        "expected_value": -45.3703703704,
+        "observed_value": -45.4,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.658,
+          0.85,
+          0.827,
+          0.911
+        ],
+        "evidence_zh": "图上为−45.4%；(11.8−21.6)/21.6×100约为−45.3704%，一位小数正确。",
+        "uncertainty_zh": "该摘要仅用文字编码，未进行几何测量。"
+      },
+      {
+        "series_id": "gift_spending_summary",
+        "category": "净减少金额",
+        "expected_value": 9.8,
+        "observed_value": 9.8,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.658,
+          0.916,
+          0.78,
+          0.94
+        ],
+        "evidence_zh": "图上写净减少9.8十亿美元，与21.6−11.8一致。",
+        "uncertainty_zh": "该摘要仅用文字编码；原始首尾值也在摘要及年度行中正确列出。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "2005／最大值21.6",
+        "required_parts": [
+          "紫色内圈弧带",
+          "云层",
+          "端点引线",
+          "2005与21.6标签"
+        ],
+        "relationship": "弧体从左下云根向上再向右延伸；根部被前景云覆盖，端点与后方云团相邻并接出引线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.335,
+          0.549,
+          0.69,
+          0.756
+        ],
+        "evidence_zh": "紫色带约从(695,1383)延至(1354,1208)，位于所有年度带内侧；右端径向切口可辨，引线通向最下年度行。"
+      },
+      {
+        "category": "2015／最小正值11.8",
+        "required_parts": [
+          "红色外圈弧带",
+          "云层",
+          "端点引线",
+          "2015与11.8标签"
+        ],
+        "relationship": "红带包围其余年度带，左根与前景云交叠；顶端在天空中平直结束并连到2015行。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.08,
+          0.278,
+          0.468,
+          0.756
+        ],
+        "evidence_zh": "红带端点约(923,536)，未越过顶部方向，符合小于13的半满量程值；约(185,1383)处被云覆盖。带体和数据端面均清楚。"
+      },
+      {
+        "category": "2010／内部年度13.6",
+        "required_parts": [
+          "黄绿色弧带",
+          "相邻年度带",
+          "端点引线"
+        ],
+        "relationship": "弧带夹在2009与2011之间，保持空隙和同心结构；端点引线连接13.6。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.209,
+          0.412,
+          0.55,
+          0.755
+        ],
+        "evidence_zh": "端点位于顶部方向稍右侧，像素反算扫角约93.889°；邻带没有遮掉其端面或使标签混绑。"
+      },
+      {
+        "category": "云层与全体彩虹弧根",
+        "required_parts": [
+          "后景纸纹云团",
+          "前景云层",
+          "11条弧根"
+        ],
+        "relationship": "云团位于下方及右侧，弧体叠在后景云前，弧根末端由前景云盖住。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0,
+          0.553,
+          1,
+          0.814
+        ],
+        "evidence_zh": "素材中的大云团轮廓和蓝色阴影清晰保留；左根遮挡有齐平接缝，但前后关系和云体身份仍可辨。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入允许用合成年度礼物支出替换原统计，不要求旧峰值、固定增长或母亲语境。",
+      "output_added_or_lost_meaning_zh": "增加首尾减少9.8、−45.4%的正确摘要，没有声称逐年下降。旧母亲关爱及新高论述未保留属于输入适配；中心弧长提示对扫角编码的表述稍显含混。",
+      "visible_inscription_evidence_zh": "可读“云端彩虹：年度的合成礼物支出”“Synthetic gift spending”“按年度汇总”“十亿美元（USD billion）”“内圈2005→外圈2015”及底部扫角公式。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考母亲关爱及历史新高转为合成年度礼物支出，冻结brief/core已明确当前主题和数据口径。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "外圈2015仅11.8、内圈2005为21.6，因此外圈在顶部前结束、内圈跨过顶部更远；不能要求原图的外圈最长扫角。"
+      },
+      {
+        "cause": "none",
+        "evidence_zh": "没有亚像素标记或必需语义缺失；局部截缝与措辞已作为轻微问题单列。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一几何定量通道共11条年度弧带全部做像素拟合，包含最小值、最大值及内部年度。11组标签全部目读核对；两项底部变化摘要按文字及算术核对。没有使用其它成图或渲染结果。"
+  }
+}

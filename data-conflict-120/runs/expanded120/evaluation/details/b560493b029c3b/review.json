@@ -1,0 +1,325 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为六束金色意面插入青绿色纸套，带国旗、国名及意面产量（吨）标题。指定成图有九束，顺序为 Italy、四个 USA 子类、Germany、France、Spain、UK；Italy 最高，四个 USA 等高，UK 仅露少量金色尖端。纸套有开口、前面和右侧折面，前缘看起来同高。全部九个数值、总量 6,127,000、SYNTHETIC DATA、产量主题、metric tonnes 和线性尺度说明均可读。此观察在读取渲染源码前已记录。",
+  "summary_zh": "通过。九个数据标记、标签与产量语义完整；实测露出高度符合统一线性尺度。生成的面条和纸套实质承载数据，开口及遮挡关系保留。UK 约 7–8 像素高，仍可见，但不足以保证精细相对准确度。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查 2000×1484 原图。轴刻度中心实测 y=240、360、600、840、1080，满量程跨 840 px。逐束在文字下方、前唇上方筛选金色像素（R−G>15、G−B>40、R>135、G>105），并以更严格阈值复核；以前唇 y≈1080 减最高可辨尖端位置得到露出高度，再换算吨位。误差是像素包络的近似点估计，非源码尺寸或生成掩模的测量。源码只佐证线性映射、纹理来源与叠放次序。",
+  "uncertainties_zh": "抗锯齿和阈值选择使尖端定位约有 1 px 不确定性。UK 在不同阈值下为 7–8 px；1 px 约合 4,167 吨，是其目标值的 12.3%，故满量程通过不等于小值精度保证。仅阅读 capture_render.py 的保存逻辑，未核验执行历史，也未重渲染。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个纸套、九束可见面条、九组国别标签齐全；四个 USA 子类编号 1–4 全部出现，顺序与输入相同。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次为 3,280,000；四次 515,000；278,000；246,000；229,000；34,000，均正确；总量 6,127,000 与输入之和一致，单位 metric tonnes 明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个数值位于对应面条上方，纸套下方有对应国旗和国名；四个 USA 标签分别带 subcategory 1–4，括号标示共同父类。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "九束直接像素测得高度依次约 787、124、124、124、124、67、59、55、8 px。按可见轴的 840 px 满量程换算，点估计误差均小于 0.05% 满量程，远低于 3% 容差；边界不确定性另列。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看 raw_01.png、pasta.png、sleeve.png；其金色纵纹、参差尖端、青色纸纹、开口及右侧折面在九个主体中可辨。render.py 实际加载这些素材并按数据设置高度及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "产量直接由面条最高尖端到套口前缘的露出高度承载。面条位于后缘之前、纸套前面之后；纸套本身不编码数值，未变成旁置装饰。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成提示、单位、轴刻度、九个数值及类别均清晰；底部解释 USA 子类互斥且属于 USA，无必要文字被遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大束与短束均伸入开口，前唇在 y≈1080 同高；纸套前面、右侧折面与国别标识可见。UK 金色短端位于开口内并在前唇处被截断，未完全遮没。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Synthetic pasta production by region、metric tonnes、线性 0–3,500,000 明确说明地区产量；USA 子类保留父类及互斥关系，未被解释为观测年份或百分比组成。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考的国别意面产量比较与意面露出高度融合关系得到保留。真实旧数值被合成数值替代、USA 拆为四类均属输入许可，主题没有被换成单纯物体名称。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率及套口局部可见 UK 数个金色短端，最高端约高于前唇 7–8 px；开口与前面遮挡关系仍可辨。其精细相对精度受像素边界限制。"
+    }
+  },
+  "semantic_attribution_zh": "输入许可的变化是合成数值及 USA 互斥子类，意面产量主题未改变。UK 的极短外露由当前数据驱动，尖端精度限制来自像素分辨率；未发现输出遗漏或改变核心比较关系。未推断参考作者的额外意图。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_production",
+        "category": "Italy",
+        "expected_value": 3280000,
+        "observed_value": 3279166.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 787,
+        "full_scale_error_percent": 0.02381,
+        "small_value_relative_error_percent": 0.025,
+        "bbox_xyxy_normalized": [
+          0.1175,
+          0.197439,
+          0.1685,
+          0.727763
+        ],
+        "evidence_zh": "原图金色像素包络最高端约 y=293；至前唇 y≈1080 的露出高度约 787 px，按实测 840 px 满量程换算。",
+        "uncertainty_zh": "抗锯齿及阈值使边界约有 1 px 不确定性；数值为近似像素测量。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "USA / subcategory 1",
+        "expected_value": 515000,
+        "observed_value": 516666.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 124,
+        "full_scale_error_percent": 0.04762,
+        "small_value_relative_error_percent": 0.324,
+        "bbox_xyxy_normalized": [
+          0.2165,
+          0.644205,
+          0.2675,
+          0.727763
+        ],
+        "evidence_zh": "原图金色像素包络最高端约 y=956；至前唇 y≈1080 的露出高度约 124 px，按实测 840 px 满量程换算。",
+        "uncertainty_zh": "抗锯齿及阈值使边界约有 1 px 不确定性；数值为近似像素测量。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "USA / subcategory 2",
+        "expected_value": 515000,
+        "observed_value": 516666.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 124,
+        "full_scale_error_percent": 0.04762,
+        "small_value_relative_error_percent": 0.324,
+        "bbox_xyxy_normalized": [
+          0.3155,
+          0.644205,
+          0.3665,
+          0.727763
+        ],
+        "evidence_zh": "原图金色像素包络最高端约 y=956；至前唇 y≈1080 的露出高度约 124 px，按实测 840 px 满量程换算。",
+        "uncertainty_zh": "抗锯齿及阈值使边界约有 1 px 不确定性；数值为近似像素测量。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "USA / subcategory 3",
+        "expected_value": 515000,
+        "observed_value": 516666.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 124,
+        "full_scale_error_percent": 0.04762,
+        "small_value_relative_error_percent": 0.324,
+        "bbox_xyxy_normalized": [
+          0.4145,
+          0.644205,
+          0.4655,
+          0.727763
+        ],
+        "evidence_zh": "原图金色像素包络最高端约 y=956；至前唇 y≈1080 的露出高度约 124 px，按实测 840 px 满量程换算。",
+        "uncertainty_zh": "抗锯齿及阈值使边界约有 1 px 不确定性；数值为近似像素测量。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "USA / subcategory 4",
+        "expected_value": 515000,
+        "observed_value": 516666.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 124,
+        "full_scale_error_percent": 0.04762,
+        "small_value_relative_error_percent": 0.324,
+        "bbox_xyxy_normalized": [
+          0.5135,
+          0.644205,
+          0.5645,
+          0.727763
+        ],
+        "evidence_zh": "原图金色像素包络最高端约 y=956；至前唇 y≈1080 的露出高度约 124 px，按实测 840 px 满量程换算。",
+        "uncertainty_zh": "抗锯齿及阈值使边界约有 1 px 不确定性；数值为近似像素测量。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "Germany",
+        "expected_value": 278000,
+        "observed_value": 279166.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 67,
+        "full_scale_error_percent": 0.03333,
+        "small_value_relative_error_percent": 0.42,
+        "bbox_xyxy_normalized": [
+          0.6125,
+          0.682615,
+          0.6635,
+          0.727763
+        ],
+        "evidence_zh": "原图金色像素包络最高端约 y=1013；至前唇 y≈1080 的露出高度约 67 px，按实测 840 px 满量程换算。",
+        "uncertainty_zh": "抗锯齿及阈值使边界约有 1 px 不确定性；数值为近似像素测量。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "France",
+        "expected_value": 246000,
+        "observed_value": 245833.3,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 59,
+        "full_scale_error_percent": 0.00476,
+        "small_value_relative_error_percent": 0.068,
+        "bbox_xyxy_normalized": [
+          0.7115,
+          0.688005,
+          0.7625,
+          0.727763
+        ],
+        "evidence_zh": "原图金色像素包络最高端约 y=1021；至前唇 y≈1080 的露出高度约 59 px，按实测 840 px 满量程换算。",
+        "uncertainty_zh": "抗锯齿及阈值使边界约有 1 px 不确定性；数值为近似像素测量。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "Spain",
+        "expected_value": 229000,
+        "observed_value": 229166.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 55,
+        "full_scale_error_percent": 0.00476,
+        "small_value_relative_error_percent": 0.073,
+        "bbox_xyxy_normalized": [
+          0.8105,
+          0.690701,
+          0.8615,
+          0.727763
+        ],
+        "evidence_zh": "原图金色像素包络最高端约 y=1025；至前唇 y≈1080 的露出高度约 55 px，按实测 840 px 满量程换算。",
+        "uncertainty_zh": "抗锯齿及阈值使边界约有 1 px 不确定性；数值为近似像素测量。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "UK",
+        "expected_value": 34000,
+        "observed_value": 33333.3,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 8,
+        "full_scale_error_percent": 0.01905,
+        "small_value_relative_error_percent": 1.961,
+        "bbox_xyxy_normalized": [
+          0.9125,
+          0.722372,
+          0.96,
+          0.727763
+        ],
+        "evidence_zh": "原图金色像素包络最高端约 y=1072；至前唇 y≈1080 的露出高度约 8 px，按实测 840 px 满量程换算。",
+        "uncertainty_zh": "严格阈值测得 7 px，较宽阈值为 8 px；点估计相对误差不代表精细精度，1 px 约为目标的 12.3%。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "TOTAL PRODUCTION",
+        "expected_value": 6127000,
+        "observed_value": 6127000,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.731,
+          0.178,
+          0.877,
+          0.214
+        ],
+        "evidence_zh": "右上总量文字清晰显示 6,127,000，下方为 metric tonnes，与九项之和一致。",
+        "uncertainty_zh": "总量没有独立几何标记，未赋予高度或满量程误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Italy（最大值）",
+        "required_parts": [
+          "意面尖端与纵向面条",
+          "纸套开口及后缘",
+          "纸套前面与右侧折面",
+          "Italy 国旗和名称"
+        ],
+        "relationship": "面条穿入纸套；后缘在面条后，前面遮住下部；尖端至前唇的外露高度承载产量。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.113,
+          0.192,
+          0.182,
+          0.929
+        ],
+        "evidence_zh": "最高端约 y=293，面条连续向下到 y≈1080 前唇；下方纸套有前面和右折面，再下方绑定 Italy。"
+      },
+      {
+        "category": "USA / subcategory 1（内部值）",
+        "required_parts": [
+          "短意面束",
+          "开口与前唇",
+          "折叠纸套",
+          "USA 及子类标签"
+        ],
+        "relationship": "短束位于纸套开口内，向上露出；前面遮住束底，各子类同一零线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.212,
+          0.64,
+          0.28,
+          0.95
+        ],
+        "evidence_zh": "面条尖端约 y=956–957，前唇约 y=1080；纵纹可见并在套口处终止，纸套下方明确标示 USA / subcategory 1。"
+      },
+      {
+        "category": "UK（最小正值）",
+        "required_parts": [
+          "金色短尖端",
+          "纸套开口后缘",
+          "纸套前唇与前面",
+          "UK 国旗和名称"
+        ],
+        "relationship": "少量短端在开口内向上露出，底部被前唇遮住；以最高尖端到前唇的距离读值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.9055,
+          0.721,
+          0.973,
+          0.929
+        ],
+        "evidence_zh": "原图局部 x=1800–1948、y=1065–1090 可见金色短端落在青色开口内；最高可辨金色约 y=1072–1073，前唇约 y=1080，没有完全被纸套遮没。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "使用合成产量替代旧统计；USA 拆为四个互斥合成子类，保留父类。没有发生主题转换。",
+      "output_added_or_lost_meaning_zh": "增加总量、共同零线及读图说明，未改变产量的统计含义；参考可见的国别长短比较仍成立，不要求复现旧数值。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Pasta production；Synthetic pasta production by region；metric tonnes / linear scale: 0–3,500,000；USA / 4 synthetic subcategories；USA subcategories are mutually exclusive parts of USA."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成标识、USA 四个子类及新数值均来自冻结输入；国别产量主题保持。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "UK 34,000 吨只应占满量程高度的约 0.97%，短端露出是当前值的比例结果。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "UK 尖端阈值测得 7–8 px；约 1 px 不确定性会显著影响小值相对误差，但不妨碍辨认开口内的短端关系。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一几何通道为统一尺度的外露高度；九个标记全部测量，涵盖最大值、内部值和最小正值。全部九组标签、数值及总量另行逐项核对。总量仅为文字编码，未当作几何融合。"
+  }
+}

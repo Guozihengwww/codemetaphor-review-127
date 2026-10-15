@@ -1,0 +1,273 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以等宽积木柱表示年度营收，保留砖缝、凸点及末柱顶玩偶。待评图可见2003–2023共21根柱、逐年数值及0–10 USD billion轴；2004标0.9且最矮，2023标9.75且最高。标题、虚构公司年度营收说明及SYNTHETIC DATA清楚，两项里程碑注明合成性质。未见明显遮挡，薄层比例待像素核查。",
+  "summary_zh": "通过。数值、标签、几何与积木结构一致，未发现实质可见缺陷。review.json已保存并通过schema校验；依追加指令未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1536×2000成图像素。右轴0与10刻度约位于y=1690、510，满量程1180 px，即118 px/USD billion。排除凸点、侧面与阴影，以正面顶边至基线测高。21柱正面均宽52 px，逐柱高度抽样最大中心估计误差约0.043%满量程。未使用诊断掩膜或渲染几何记录代替像素测量。",
+  "uncertainties_zh": "抗锯齿导致边界约±1 px定位不确定性。0.05B薄层约6 px，单像素约占其高度17%，不能据中心估计保证小值相对精度。依任务限制未检查生成日志和历次归档记录，不能独立认证每次渲染的归档执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "21个年份、21个数值、两项合成里程碑、单位及合成声明完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "21个值逐项符合data.json；图例为1 layer = $0.25B，无正值舍零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份与对应柱对齐，数值绑定柱顶；9.75有短引线，两个里程碑分别指向2005和2014。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "21柱高度抽样均在3%满量程容差内；最高柱可分出39层。色带跨柱按数值高度对齐。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材及砖面、凸点、玩偶裁片，与成图对应；源码引用这些素材覆盖数据柱及玩偶，使用具有实质性。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "砖面自身承担柱高编码，接缝划分数值层；凸点、浅侧面与柱体连接，玩偶脚底接触末柱顶。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、主题说明、合成声明、年份、数值、单位及里程碑均可读，无明显裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大小柱均保留等宽正面、砖层接缝、双凸点及浅侧面；玩偶位于末柱顶，数据由净正面高度承载。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "虚构积木公司、年度营收、年份角色、USD billion及合成统计口径均明确。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "积木堆高比较年度营收及末柱顶玩偶关系保留；真实LEGO身份与事件按冻结输入改为合成案例，非输出失败。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小整柱约106 px，砖层与凸点可辨；0.05B余量约6 px，仍可见且未扩大成完整层。"
+    }
+  },
+  "semantic_attribution_zh": "真实公司统计改为BRICKWORKS合成年度营收属于明确输入适配。柱高及余量变化来自当前数据；未发现当前主题、单位或年度角色丢失。薄层相对测量精度受分辨率限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "revenue",
+        "category": "2004：最小年度柱（USD billion）",
+        "expected_value": 0.9,
+        "observed_value": 0.898305,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 106,
+        "full_scale_error_percent": 0.016949,
+        "small_value_relative_error_percent": 0.188324,
+        "bbox_xyxy_normalized": [
+          0.093099,
+          0.792,
+          0.126953,
+          0.845
+        ],
+        "evidence_zh": "正面顶边约y=1584，基线约1690；106/118≈0.898。",
+        "uncertainty_zh": "边界约±1 px；误差为整数像素中心估计。"
+      },
+      {
+        "series_id": "revenue",
+        "category": "2005：年度柱（USD billion）",
+        "expected_value": 1.05,
+        "observed_value": 1.050847,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 124,
+        "full_scale_error_percent": 0.008475,
+        "small_value_relative_error_percent": 0.08071,
+        "bbox_xyxy_normalized": [
+          0.132812,
+          0.783,
+          0.166667,
+          0.845
+        ],
+        "evidence_zh": "正面顶边约y=1566；124/118≈1.051。",
+        "uncertainty_zh": "边界约±1 px；小余量另列。"
+      },
+      {
+        "series_id": "revenue",
+        "category": "2014：内部年度柱（USD billion）",
+        "expected_value": 4.25,
+        "observed_value": 4.245763,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 501,
+        "full_scale_error_percent": 0.042373,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.490234,
+          0.5945,
+          0.524089,
+          0.845
+        ],
+        "evidence_zh": "顶边暗线集中在y=1188–1189，取1189测得501 px；剖面可分出17层。",
+        "uncertainty_zh": "顶边跨两行，约±1 px；非小值，相对误差项不适用。"
+      },
+      {
+        "series_id": "revenue",
+        "category": "2023：最大年度柱（USD billion）",
+        "expected_value": 9.75,
+        "observed_value": 9.745763,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1150,
+        "full_scale_error_percent": 0.042373,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.847656,
+          0.27,
+          0.88151,
+          0.845
+        ],
+        "evidence_zh": "正面顶边约y=540，基线约1690；排除玩偶及凸点。",
+        "uncertainty_zh": "顶边跨y=539–540，约±1 px；非小值，相对误差项不适用。"
+      },
+      {
+        "series_id": "revenue",
+        "category": "2005：最小正余量薄层（USD billion）",
+        "expected_value": 0.05,
+        "observed_value": 0.050847,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 6,
+        "full_scale_error_percent": 0.008475,
+        "small_value_relative_error_percent": 1.694915,
+        "bbox_xyxy_normalized": [
+          0.132812,
+          0.783,
+          0.166667,
+          0.786
+        ],
+        "evidence_zh": "黄色正面从约y=1566延至灰白过渡y=1572，约6 px，与上方凸点分开。",
+        "uncertainty_zh": "颜色过渡与描边约有1 px不确定性；中心估计相对误差不能代表小值精度保证。"
+      },
+      {
+        "series_id": "revenue",
+        "category": "2023：完整砖层数（层）",
+        "expected_value": 39,
+        "observed_value": 39,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 1150,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.847656,
+          0.27,
+          0.88151,
+          0.845
+        ],
+        "evidence_zh": "像素剖面接缝合并后得到39个层区间，通常间隔29–30 px；39×0.25B=9.75B，计数满量程40层。",
+        "uncertainty_zh": "跨两行的抗锯齿接缝按一条合并；计数并非抄录代码。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "2023：大型积木柱",
+        "required_parts": [
+          "等宽正面",
+          "39个砖层",
+          "横向接缝",
+          "浅侧面",
+          "双凸点"
+        ],
+        "relationship": "砖层垂直相接，侧面贴合右缘，凸点连接顶面并位于数据正面之外。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.847656,
+          0.266,
+          0.883464,
+          0.845
+        ],
+        "evidence_zh": "正面宽52 px、浅侧面约3 px；数据区域约y=540至1690，不含凸点和玩偶。"
+      },
+      {
+        "category": "2004：最小整柱",
+        "required_parts": [
+          "灰白正面",
+          "三个完整层",
+          "顶部比例余量",
+          "双凸点"
+        ],
+        "relationship": "完整层和余量上下接触，凸点连接最上方顶面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.093099,
+          0.788,
+          0.128906,
+          0.845
+        ],
+        "evidence_zh": "106 px正面内可辨接缝、完整层和顶部不足整层区间；凸点有独立轮廓。"
+      },
+      {
+        "category": "2005：微小余量与柱顶",
+        "required_parts": [
+          "灰白完整层",
+          "黄色薄层",
+          "顶面",
+          "双凸点"
+        ],
+        "relationship": "黄色薄层位于灰白层与带凸点顶面之间，承担0.05B余量。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.132812,
+          0.779,
+          0.16862,
+          0.801
+        ],
+        "evidence_zh": "薄层约6 px，上下接触关系可见，没有扩大成约29.5 px的完整层。"
+      },
+      {
+        "category": "玩偶与末柱",
+        "required_parts": [
+          "头部",
+          "躯干",
+          "双臂",
+          "双腿及脚",
+          "末柱顶端凸点"
+        ],
+        "relationship": "身体部件相连，一臂举起，双脚接触末柱顶，身体位于数据正面之外。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.833984,
+          0.1965,
+          0.894531,
+          0.2725
+        ],
+        "evidence_zh": "头、手、躯干和双腿可辨；脚底约y=533处与凸点区域接触，未遮挡9.75标签。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结要求明确以虚构公司的合成营收及里程碑替换真实统计，允许非数据姿态和厚度适配。",
+      "output_added_or_lost_meaning_zh": "年度营收比较、积木堆高及末柱玩偶动作保留。真实LEGO身份未复用属于输入适配，未见额外语义丢失。",
+      "visible_inscription_evidence_zh": "可见BRICKWORKS Revenue、虚构积木公司年度营收说明、ANNUAL SERIES、USD billion、SYNTHETIC DATA、21 annual observations及两处Synthetic milestone。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考真实统计明确改为BRICKWORKS合成案例，reference_meaning的partial来自此适配。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "2004低于2003、2017低于2016、2023最高，均符合当前数据。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "0.05B余量约6 px，结构可辨，但相对精度受单像素定位误差限制。"
+      }
+    ],
+    "measurement_coverage_zh": "核对全部21个年份与数值、两项里程碑；抽样全部柱顶边并测量21柱正面宽度。详细记录最小柱、内部柱、最高柱、最小余量及最高柱层数；十个色带均做颜色抽样。未逐条测量每根柱的全部接缝或余量。图中仅一个定量面板，左侧积木为单位图例。"
+  }
+}

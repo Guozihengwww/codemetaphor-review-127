@@ -1,0 +1,256 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以城市与玻璃阳台为背景，金币竖堆对应球队名称，标题表达职业运动员回馈社会。待评图显著标注 SYNTHETIC DATA；虚构球队公益捐赠、系列名、USD 与单币 10,000 USD 均可读。Team A–L 共 12 堆，金额及币数标签完整；B 最高、J 次高、L 为一枚。金币具有椭圆顶面与分层币沿，落在阳台石台面并有接触阴影；L 的顶面及薄币沿仍可见。",
+  "summary_zh": "通过。金额、币数、顺序和绑定符合冻结数据，代表性高度误差低于容差；阳台、金币接触关系及公益捐赠语义保留。review.json 已保存并通过 schema 校验，未运行 submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量指定 image.png 的原始 2000×2000 像素。可见零值与满量程轴线约为 y=1484、494，990 px 对应 1,100,000 USD。内部币沿层缝间距约 9 px，层缝数加一得到整币数。B、C、L 另以可见轮廓拟合上下椭圆中心，每例使用 74 列，残差约 0.3 px。mark_extent_px 记录含椭圆外伸的可见轮廓高度；金额换算使用币面中心距离。",
+  "uncertainties_zh": "连续高度保守不确定性约 ±1 px，即约 ±1,111 USD；对最小值约为 ±11%，不能把拟合点估计当作精度保证。整币身份与数量仍独立可辨。未检查禁止访问的日志、历史渲染和自检，不能独立确认每次渲染的归档过程，也不声称观察到生图工具调用。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "12 类、一个系列完整；各类均有金币堆、金额、名称和币数。合计、单位、图例、合成声明及读图说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "金额依次为 130000、1040000、450000、290000、30000、20000、190000、50000、80000、680000、40000、10000 USD；币数依次为 13、104、45、29、3、2、19、5、8、68、4、1。合计 3,010,000 USD，均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "金额标签与短引线对应各堆；类别与币数置于相应堆下方，Team A–L 保持输入顺序，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部 12 堆的独立层缝计数符合所需整币数。B、C、L 的币面中心距离约为 935.2、405.2、8.85 px；满量程误差约 0.082%、0.019%、0.016%，低于 3%。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两个原始素材及标准金币部件。城市河景、阳台和心形金币纹理在成图中实质可见；素材处理及渲染源码按输入逐枚堆叠并生成标签。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "金币数量与堆高实际承载金额。底币与石台接触并有阴影，上币遮盖下币顶面而保留分层币沿，无破坏结构的穿插或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、系列、单位、合成声明、全部类别及数值可读，无强制文字裁切或覆盖；底部明确解释整币及币面中心计高。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大堆与小堆均保留椭圆币面、金属币沿、堆叠连接、台面接触和阴影；城市阳台身份完整。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "虚构球队公益捐赠、12 支虚构球队、Synthetic community contribution、USD 和单币等值明确主题、类别父类、指标及口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "公益回馈及金币表示金额的关系保留；原真实球队改为虚构球队，属于冻结输入要求的适配，不是输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "L 的单枚金币约 82×21 px，顶面、薄币沿和台面阴影可辨；F、E 可辨 2、3 层。没有人为增加币数，椭圆外伸已明确不计金额。"
+    }
+  },
+  "semantic_attribution_zh": "真实球队与真实统计被替换为虚构球队及合成捐赠额，属于明确的输入适配。高低次序由当前数据决定。未发现当前主题、指标、单位或球队角色遗漏；最小值的连续高度精度受分辨率限制，但单币及接触关系保留。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "community_contribution",
+        "category": "Team B",
+        "expected_value": 1040000,
+        "observed_value": 1039100,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 948,
+        "full_scale_error_percent": 0.0818,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1745,
+          0.271,
+          0.2155,
+          0.745
+        ],
+        "evidence_zh": "轮廓 y≈542–1490；拟合币面中心约 548.42、1483.61，差 935.19 px。另检出 103 条内部层缝，对应 104 枚。",
+        "uncertainty_zh": "高度约 ±1 px；金额为独立像素估计，非标签或代码读数。"
+      },
+      {
+        "series_id": "community_contribution",
+        "category": "Team C",
+        "expected_value": 450000,
+        "observed_value": 450210,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 417,
+        "full_scale_error_percent": 0.0191,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2485,
+          0.5365,
+          0.2895,
+          0.745
+        ],
+        "evidence_zh": "轮廓 y≈1073–1490；币面中心约 1078.78、1483.97，差 405.19 px。44 条内部层缝对应 45 枚。",
+        "uncertainty_zh": "高度约 ±1 px；离散计数与高度测量一致。"
+      },
+      {
+        "series_id": "community_contribution",
+        "category": "Team E",
+        "expected_value": 30000,
+        "observed_value": 30000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 39,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.3965,
+          0.7255,
+          0.4375,
+          0.745
+        ],
+        "evidence_zh": "轮廓 y≈1451–1490；两条内部层缝约在 y=1471、1480，连同顶枚构成 3 枚金币。",
+        "uncertainty_zh": "零误差指整币数量一致，不表示亚像素高度无误差。"
+      },
+      {
+        "series_id": "community_contribution",
+        "category": "Team F",
+        "expected_value": 20000,
+        "observed_value": 20000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 30,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.4705,
+          0.73,
+          0.5115,
+          0.745
+        ],
+        "evidence_zh": "轮廓 y≈1460–1490；一条内部层缝约在 y=1480，连同顶枚构成 2 枚金币。",
+        "uncertainty_zh": "币面和币沿可辨；计数准确不等于连续高度零误差。"
+      },
+      {
+        "series_id": "community_contribution",
+        "category": "Team L",
+        "expected_value": 10000,
+        "observed_value": 9830,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 21,
+        "full_scale_error_percent": 0.0155,
+        "small_value_relative_error_percent": 1.7,
+        "bbox_xyxy_normalized": [
+          0.9145,
+          0.7345,
+          0.9555,
+          0.745
+        ],
+        "evidence_zh": "轮廓 y≈1469–1490；币面中心约 1474.95、1483.80，差 8.85 px。可见单一顶面与连续币沿，无内部层缝，独立计数为 1 枚。",
+        "uncertainty_zh": "1.7% 为点估计偏差；保守 ±1 px 对该值约为 ±11%，不能保证小值连续几何的相对精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Team B（大值）",
+        "required_parts": [
+          "椭圆顶面",
+          "重复币沿",
+          "底币",
+          "石台面",
+          "接触阴影"
+        ],
+        "relationship": "金币同轴堆叠，上币遮盖下币顶面，底币接触石台。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.17,
+          0.268,
+          0.22,
+          0.752
+        ],
+        "evidence_zh": "顶部心形浮雕、连续等距币沿及底部接触阴影可见；金额边界为上下币面中心。"
+      },
+      {
+        "category": "Team E、F（小值）",
+        "required_parts": [
+          "顶币面",
+          "下层币沿",
+          "石台面",
+          "接触阴影"
+        ],
+        "relationship": "3 枚和 2 枚金币分别接触堆叠，底币落在同一台面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.393,
+          0.723,
+          0.515,
+          0.752
+        ],
+        "evidence_zh": "E 可辨两条内部层缝，F 可辨一条；顶面、底缘及紧贴台面的阴影保留。"
+      },
+      {
+        "category": "Team L（最小正值）",
+        "required_parts": [
+          "单枚顶面",
+          "金属侧沿",
+          "底面",
+          "石台面",
+          "接触阴影"
+        ],
+        "relationship": "顶面与侧沿连续连接，底面接触台面，阴影紧邻底部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.91,
+          0.732,
+          0.96,
+          0.752
+        ],
+        "evidence_zh": "约 82×21 px 的单币仍显示顶面及金属薄沿，无悬浮间隙；数据厚度约 9 px，其余为椭圆投影。"
+      },
+      {
+        "category": "城市阳台整体",
+        "required_parts": [
+          "城市天际线",
+          "河面",
+          "石质栏台",
+          "玻璃栏板",
+          "金币堆"
+        ],
+        "relationship": "城市及河面在后，金币位于前景栏台顶面，玻璃栏板在栏台下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0,
+          0.52,
+          1,
+          0.88
+        ],
+        "evidence_zh": "后景被金币与石台遮挡，各堆共用台面接触线；玻璃与支柱可见。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确采用虚构球队和合成捐赠额，允许数据驱动的高低变化，无需保留真实球队及旧极值。",
+      "output_added_or_lost_meaning_zh": "球队公益金额与金币数量对应的含义保留；旧真实球队身份的替换属于许可改编，未发现当前语义遗漏。",
+      "visible_inscription_evidence_zh": "可见“虚构球队公益捐赠”“12 支虚构球队”“Synthetic community contribution · USD”“1 枚金币 = 10,000 USD”及不代表真实球队或真实捐赠的声明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实球队替换为明确标注的虚构球队 Team A–L，符合冻结主题。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "B 的 104 枚最高、J 的 68 枚次高、L 为 1 枚，均由当前数据决定。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小币的数据厚度约 9 px；可辨单枚与接触关系，但约 1 px 的测量不确定性具有较大相对影响。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一面板和整币计数通道。全部 12 类标签、金额及币数已检查；内部层缝计数依次为 12、103、44、28、2、1、18、4、7、67、3、0。详细记录 B、C、E、F、L，连续轮廓拟合抽测 B、C、L；未声称对其余九堆逐一完成亚像素高度测量。"
+  }
+}

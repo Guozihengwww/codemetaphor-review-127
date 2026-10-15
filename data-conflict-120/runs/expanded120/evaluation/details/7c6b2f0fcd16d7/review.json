@@ -1,0 +1,311 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以账表上的写实放大镜容纳审计费用份额环图。指定成图保留镜框、右下连接手柄及投影；八个彩色扇区位于镜框内，中心孔可见浅色账表线。全部类别、金额、百分比、总额、单位和合成声明可读。Other是顶部细紫色扇区，有外置引线标注20、0.4%。初看未见关键遮挡或部件脱接。",
+  "summary_zh": "八类数值、绑定和环带比例通过，放大镜与账表的融合关系完整，未发现明确输出缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量1600×2000的image.png，未运行渲染。像素边界拟合中心约(779.7,1004.6)，内外半径比约0.45，轮廓纵横半径比约0.978–0.982。沿半径310、520、535的轨迹定位相邻颜色边界，逆除声明纵缩0.98，以角宽/360×5000反算金额。mark_extent_px为半径520像素采样椭圆上的扇区弧长；包围框来自主要纯色连通区域。测量不依赖源码公式回读。",
+  "uncertainties_zh": "Other仅约6–14像素宽，其细小测量偏差不能与栅格化误差分离，满量程通过不保证小值相对精度。已查看capture_render.py源码，但按限制未查运行历史，不能确认每次完整渲染的保存路径。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八个类别、一组费用系列、USD million、总额及SYNTHETIC DATA均完整可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "八项金额1780、347.5、347.5、695、560、560、690、20及对应百分比全部正确，总额5000。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从顶部顺时针按输入顺序排列；七项标签位于对应色区内，子类保留父类名；Other引线接顶部紫色窄区。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "八项份额的像素测量点估计误差均小于0.01个百分点；半径比约0.45、纵缩约0.98，金额由角宽承担。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png的镜框、接头、手柄、账表和投影在成图中实质可见；render.py加载素材并控制扇区及文字。保存脚本存在，执行历史未核查。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "环带共心地置于镜框内，中心孔露出账表线；镜框、接头、手柄层次连贯，未见破坏结构的接缝或遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、八类标签与数值、单位、总额和互斥口径说明在原分辨率下均可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "镜框包围镜面环带和中心孔，右下金属接头连接手柄，账表在其下方并承接投影。大小扇区均属于同一镜面。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "审计费用份额标题、Synthetic audit fees及USD million明确主题与指标；Firm父子类别及互斥说明明确费用池分解口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留审计费用份额主题及镜头包围账表上环图的关系；原图真实机构、S&P 500和FY2022范围按输入替换为合成机构及子类，属于许可适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Other紫色窄区连续连接环带内外边界，内端约6像素、顶部约14像素，引线绑定清楚；相对精度仍受像素分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、指标、单位和父子类别含义保留。真实统计范围改为合成范围属于输入许可适配；八分区和窄Other由当前数据驱动。最小标记的精度限制来自分辨率，未发现当前语义的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Firm A",
+        "expected_value": 1780,
+        "observed_value": 1779.873,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1148.93,
+        "full_scale_error_percent": 0.00254,
+        "small_value_relative_error_percent": 0.0071,
+        "bbox_xyxy_normalized": [
+          0.488125,
+          0.2285,
+          0.8375,
+          0.672
+        ],
+        "evidence_zh": "像素边界逆变换所得角宽约128.151°，反算1779.873 USD million。",
+        "uncertainty_zh": "抗锯齿及拟合中心存在约1像素级不确定性，小数为测量点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Firm B / subcategory 1",
+        "expected_value": 347.5,
+        "observed_value": 347.378,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 225.17,
+        "full_scale_error_percent": 0.00244,
+        "small_value_relative_error_percent": 0.0351,
+        "bbox_xyxy_normalized": [
+          0.55875,
+          0.579,
+          0.7625,
+          0.747
+        ],
+        "evidence_zh": "像素边界逆变换所得角宽约25.011°，反算347.378 USD million。",
+        "uncertainty_zh": "抗锯齿及拟合中心存在约1像素级不确定性。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Firm B / subcategory 2",
+        "expected_value": 347.5,
+        "observed_value": 347.355,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 226.64,
+        "full_scale_error_percent": 0.0029,
+        "small_value_relative_error_percent": 0.0417,
+        "bbox_xyxy_normalized": [
+          0.493125,
+          0.6135,
+          0.645,
+          0.7765
+        ],
+        "evidence_zh": "像素边界逆变换所得角宽约25.010°，反算347.355 USD million。",
+        "uncertainty_zh": "抗锯齿及拟合中心存在约1像素级不确定性。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Firm B / subcategory 3",
+        "expected_value": 695,
+        "observed_value": 694.856,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 452.27,
+        "full_scale_error_percent": 0.00288,
+        "small_value_relative_error_percent": 0.0207,
+        "bbox_xyxy_normalized": [
+          0.2275,
+          0.5855,
+          0.49875,
+          0.777
+        ],
+        "evidence_zh": "像素边界逆变换所得角宽约50.030°，反算694.856 USD million。",
+        "uncertainty_zh": "抗锯齿及拟合中心存在约1像素级不确定性。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Firm C / subcategory 1",
+        "expected_value": 560,
+        "observed_value": 560.226,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 359.98,
+        "full_scale_error_percent": 0.00452,
+        "small_value_relative_error_percent": 0.0404,
+        "bbox_xyxy_normalized": [
+          0.138125,
+          0.506,
+          0.37,
+          0.6845
+        ],
+        "evidence_zh": "像素边界逆变换所得角宽约40.336°，反算560.226 USD million。",
+        "uncertainty_zh": "抗锯齿及拟合中心存在约1像素级不确定性。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Firm C / subcategory 2",
+        "expected_value": 560,
+        "observed_value": 559.655,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 359.39,
+        "full_scale_error_percent": 0.0069,
+        "small_value_relative_error_percent": 0.0616,
+        "bbox_xyxy_normalized": [
+          0.138125,
+          0.331,
+          0.36375,
+          0.509
+        ],
+        "evidence_zh": "像素边界逆变换所得角宽约40.295°，反算559.655 USD million。",
+        "uncertainty_zh": "抗锯齿及拟合中心存在约1像素级不确定性。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Firm D",
+        "expected_value": 690,
+        "observed_value": 690.348,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 449.02,
+        "full_scale_error_percent": 0.00696,
+        "small_value_relative_error_percent": 0.0504,
+        "bbox_xyxy_normalized": [
+          0.21625,
+          0.2285,
+          0.483125,
+          0.4245
+        ],
+        "evidence_zh": "像素边界逆变换所得角宽约49.705°，反算690.348 USD million。",
+        "uncertainty_zh": "抗锯齿及拟合中心存在约1像素级不确定性。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Other",
+        "expected_value": 20,
+        "observed_value": 20.309,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 13.27,
+        "full_scale_error_percent": 0.00618,
+        "small_value_relative_error_percent": 1.545,
+        "bbox_xyxy_normalized": [
+          0.47875,
+          0.2285,
+          0.4875,
+          0.3785
+        ],
+        "evidence_zh": "像素边界逆变换所得角宽约1.462°，反算20.309 USD million；原图条宽约6–14像素。",
+        "uncertainty_zh": "不同半径所得角宽1.450–1.479°。约1像素的边界不确定性可造成约8%–15%的相对宽度变化，不能据点估计保证小值精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体放大镜与账表",
+        "required_parts": [
+          "镜框",
+          "镜面",
+          "金属接头",
+          "手柄",
+          "账表",
+          "投影"
+        ],
+        "relationship": "镜框包围镜面，右下接头连接手柄；物体位于账表上方并投下阴影。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.105,
+          0.201,
+          1,
+          1
+        ],
+        "evidence_zh": "完整深色镜框环绕数据区，约(1220,1430)处连接金属部件，手柄向右下延伸；账表网格及下方、右侧阴影可见。"
+      },
+      {
+        "category": "Firm A最大扇区",
+        "required_parts": [
+          "桃色扇区",
+          "中心孔",
+          "镜面外缘",
+          "镜框"
+        ],
+        "relationship": "扇区位于中心孔外、镜框内，共心内外弧间的角区承担金额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.488125,
+          0.2285,
+          0.8375,
+          0.672
+        ],
+        "evidence_zh": "右侧桃色区从顶部延伸至右下，内弧围绕中心孔，外弧贴合镜框内缘；数值标签位于色区内。"
+      },
+      {
+        "category": "Firm B / subcategory 2",
+        "required_parts": [
+          "橙黄色扇区",
+          "径向边界",
+          "中心孔",
+          "镜框",
+          "父子标签"
+        ],
+        "relationship": "相邻径向边界分隔子类，各扇区共用内外环边界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.493125,
+          0.6135,
+          0.645,
+          0.7765
+        ],
+        "evidence_zh": "下方橙黄色区位于B子类1和3之间，连接中心孔外缘与镜面外缘；父子类别及数值均位于其内部。"
+      },
+      {
+        "category": "Other最小扇区",
+        "required_parts": [
+          "紫色细扇区",
+          "中心孔边缘",
+          "镜面外缘",
+          "引线",
+          "外置标签"
+        ],
+        "relationship": "细扇区连续连接内外环边界，引线从外端连接标签。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.478,
+          0.175,
+          0.752,
+          0.38
+        ],
+        "evidence_zh": "约x766–780、y457–758可见窄紫色带，下端邻中心孔，上端接镜框内侧；引线向上再右折至Other 20 · 0.4%。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "按冻结输入将原真实机构、年度总体及金额替换为合成费用池，B和C拆成互斥子类，无须保留原数值或排名。",
+      "output_added_or_lost_meaning_zh": "增加5000总额及互斥说明，与输入一致；未发现当前统计含义丢失。原S&P 500/FY2022范围不被作为当前合成数据的真实主张。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA、Audit fee market shares、Synthetic audit fees · USD million、TOTAL AUDIT FEES 5,000、100% of the fee pool，以及子类互斥和非统计调查说明均可见。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实机构及S&P 500/FY2022范围按输入替换为合成机构费用池，费用份额主题保留。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "八个角区、B/C细分及0.4%的Other来自当前数据，环厚未用作金额编码。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "Other仍可辨，但6–14像素宽度限制其相对几何精度。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖S1全部八个扇区，包括最小、最大和中间值，另检查半径比与纵缩；所有强制标签、金额、单位和计数逐项核对。未测非数据部件尺寸，未核查受限运行记录。"
+  }
+}

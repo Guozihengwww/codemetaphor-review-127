@@ -1,0 +1,253 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：账表背景上有深色放大镜，手柄朝右下；镜内环带展示审计费用份额，中心透出账表。标题含Who Audits the S&P 500?及FY2022，使用真实机构名。\n成图：SYNTHETIC DATA醒目；主题Audit fee market shares，指标Synthetic audit fees / USD million。镜内顺时针可见Firm A 1,780 / 35.6%、Firm B 1,390 / 27.8%、Firm C 1,120 / 22.4%、Firm D 690 / 13.8%、顶部深色窄片Other 20 / 0.4%；中心TOTAL AUDIT FEES 5,000 USD million。\n深色写实镜框包围共心环带，右下金属接头连接黑色手柄，镜框与手柄在账表上有投影。中心孔露出淡色账表；Other由中心标签引线指向顶部窄片。当前未见遮挡关键数值或明显分离的环带与镜框。小片角宽与内外半径比例尚需像素核对。",
+  "summary_zh": "五类金额、份额、顺序和标签正确，独立像素测量支持规定的角宽、内外半径比及纵缩。写实放大镜与镜内环带保持融合，小值扇区可辨。参考图的真实机构、S&P 500及FY2022范围被输入允许的合成设定替代，不作为输出缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "仅测指定image.png原始1600×2000像素。以彩色环带连通域独立拟合外椭圆：中心约(769.33,1079.43)，半轴594.56、582.38 px；内椭圆中心约(769.64,1079.58)，半轴268.31、263.15 px。纵横比0.9795，内外半径比约0.4513/0.4518，符合0.98/0.45。分别在27个半径测五条颜色边界，逆纵缩后计算角宽、份额及金额；金额均以5000 USD million为分母。外弧长度及归一化框为这些像素拟合的近似结果。render.py及chart_geometry.svg只用于佐证路线，没有把源码参数当像素测量。",
+  "uncertainties_zh": "像素阈值、抗锯齿及细边界拟合限制小值相对精度；Other虽清楚可见，不能据拟合中心估计的约0.2%相对偏差宣称精确到该水平。按限制未读取日志、自检或其他输出，capture_render.py的实际执行过程未独立核验；所供素材与成图的可见对应明确。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "唯一系列S1的五类Firm A、Firm B、Firm C、Firm D、Other全部出现；顺时针顺序与输入一致。合成标识、主题、系列名、单位及总额完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图面依次为1,780/35.6%、1,390/27.8%、1,120/22.4%、690/13.8%、20/0.4%；总额5,000 USD million，均与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "四个主类别的名称、金额及份额位于各自色片内；Other标签在中心透视区，通过细线连接顶部深蓝小扇区内端。未见错绑或跨片误导。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素反投影测得五类份额约35.599%、27.801%、22.399%、13.801%、0.399%；最大中心估计偏差约0.0015个百分点，保守测量不确定度约0.03个百分点，均远低于3个百分点。共心环带半径比和0.98纵缩也吻合。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及magnifier_normalized.png；其深蓝纹理镜框、银色接头和纵槽握柄在成图主体中可见。render.py读取该素材，并以当前数据生成SVG扇区和文字；提供了capture_render.py源码，未核查执行记录。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "环带被写实镜框包围，与镜面共心并共享纵向投影；中心透出放大的账表。镜框与手柄位于账表上方并有投影，右下接头连续连接镜框与握柄。没有旁置图表替代镜内数据关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、Synthetic audit fees / USD million、全部类别数值、中心总额及页脚说明均可读；背景账表为淡色，不妨碍必要标签。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "镜框包含共心数据环带，环带包含中心透视区；银色连接件接触镜框并连接右下握柄，物体在账表上投影。大扇区和Other小扇区均从同一内边界延伸至外边界。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Audit fee market shares与AUDIT FIRMS明确主题及机构类别角色，Synthetic audit fees / USD million明确指标与单位；中心TOTAL AUDIT FEES 5,000和Each arc shows its share of total audit fees明确共同分母及份额解释。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留审计费用份额主题和账表上放大镜承载环带的关系。参考的S&P 500、FY2022和真实机构名未延续，改为冻结输入允许的合成机构与数据；原具体统计范围仅部分保留，归因于输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Other约0.4%的深蓝楔片从外缘连续伸至中心透视区，外弧约14.9 px、近内缘约6–7 px宽；其窄化方向、内外边界及引线可辨。小值相对精度仍受像素限制。"
+    }
+  },
+  "semantic_attribution_zh": "参考图真实机构及S&P 500/FY2022范围改为合成审计机构，是冻结输入允许的事实范围改编；机构类别、费用指标、USD million单位和总费用份额角色均未丢失。扇区角宽变化由当前数值驱动。Other的细小形态是0.4%份额的结果，可见关系仍保留；其精度限制属于像素分辨率，不构成输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Firm A",
+        "expected_value": 1780,
+        "observed_value": 1779.96,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1313.3,
+        "full_scale_error_percent": 0.0009,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.48125,
+          0.2485,
+          0.85313,
+          0.72
+        ],
+        "evidence_zh": "在1600×2000成图中跨27个半径取颜色边界并拟合直线，按声明的0.98纵缩逆变换；实测角宽约128.157°，份额约35.599%，乘总费用5000得到金额估计。mark_extent为像素拟合外椭圆上的投影外弧长度。",
+        "uncertainty_zh": "边缘抗锯齿与颜色阈值影响亚像素定位；保守角宽不确定度约±0.1°，对应约±1.4 USD million。误差字段为拟合中心估计，非精度保证。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Firm B",
+        "expected_value": 1390,
+        "observed_value": 1390.07,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1034,
+        "full_scale_error_percent": 0.0015,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.20438,
+          0.6215,
+          0.77312,
+          0.8315
+        ],
+        "evidence_zh": "在1600×2000成图中跨27个半径取颜色边界并拟合直线，按声明的0.98纵缩逆变换；实测角宽约100.085°，份额约27.801%，乘总费用5000得到金额估计。mark_extent为像素拟合外椭圆上的投影外弧长度。",
+        "uncertainty_zh": "边缘抗锯齿与颜色阈值影响亚像素定位；保守角宽不确定度约±0.1°，对应约±1.4 USD million。误差字段为拟合中心估计，非精度保证。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Firm C",
+        "expected_value": 1120,
+        "observed_value": 1119.96,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 822.2,
+        "full_scale_error_percent": 0.0008,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.10938,
+          0.3575,
+          0.35563,
+          0.734
+        ],
+        "evidence_zh": "在1600×2000成图中跨27个半径取颜色边界并拟合直线，按声明的0.98纵缩逆变换；实测角宽约80.637°，份额约22.399%，乘总费用5000得到金额估计。mark_extent为像素拟合外椭圆上的投影外弧长度。",
+        "uncertainty_zh": "边缘抗锯齿与颜色阈值影响亚像素定位；保守角宽不确定度约±0.1°，对应约±1.4 USD million。误差字段为拟合中心估计，非精度保证。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Firm D",
+        "expected_value": 690,
+        "observed_value": 690.05,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 513.1,
+        "full_scale_error_percent": 0.001,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.19187,
+          0.249,
+          0.47687,
+          0.457
+        ],
+        "evidence_zh": "在1600×2000成图中跨27个半径取颜色边界并拟合直线，按声明的0.98纵缩逆变换；实测角宽约49.684°，份额约13.801%，乘总费用5000得到金额估计。mark_extent为像素拟合外椭圆上的投影外弧长度。",
+        "uncertainty_zh": "边缘抗锯齿与颜色阈值影响亚像素定位；保守角宽不确定度约±0.1°，对应约±1.4 USD million。误差字段为拟合中心估计，非精度保证。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Other",
+        "expected_value": 20,
+        "observed_value": 19.96,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 14.9,
+        "full_scale_error_percent": 0.0008,
+        "small_value_relative_error_percent": 0.19,
+        "bbox_xyxy_normalized": [
+          0.47187,
+          0.2485,
+          0.48125,
+          0.4085
+        ],
+        "evidence_zh": "在1600×2000成图中跨27个半径取颜色边界并拟合直线，按声明的0.98纵缩逆变换；实测角宽约1.437°，份额约0.399%，乘总费用5000得到金额估计。mark_extent为像素拟合外椭圆上的投影外弧长度。原图y=505行深色连续像素14个，y=800行7个、y=810行6个；小扇区没有消失或被最小尺寸放大。",
+        "uncertainty_zh": "边缘抗锯齿与颜色阈值影响亚像素定位；保守角宽不确定度约±0.1°，对应约±1.4 USD million。误差字段为拟合中心估计，非精度保证。对20的小值，相对不确定度约±7%，不能以极小满量程误差宣称同等相对精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体放大镜与账表",
+        "required_parts": [
+          "账表",
+          "镜框",
+          "镜内环带",
+          "中心透视区",
+          "接触投影"
+        ],
+        "relationship": "镜框包围数据环带，环带内侧围出中心透视区；物体及其投影覆盖账表。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.069,
+          0.221,
+          0.9,
+          0.871
+        ],
+        "evidence_zh": "镜框从顶部约y=445包围环带至底部约y=1720；中心仍能看到放大、淡化的账表行与数字。外缘右下方的投影与物体相接。"
+      },
+      {
+        "category": "Firm A大扇区",
+        "required_parts": [
+          "桃色数据扇区",
+          "镜框内缘",
+          "中心透视区边界",
+          "类别及数值标签"
+        ],
+        "relationship": "桃色扇区处于镜面环带内，从共同内边界延伸至共同外边界，角宽承载份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.481,
+          0.248,
+          0.854,
+          0.721
+        ],
+        "evidence_zh": "右侧桃色区域贴合镜框内缘，在左内侧围绕中心透视区；Firm A、1,780和35.6%位于该区域内。外弧约1313 px，实测角宽约128.157°。"
+      },
+      {
+        "category": "Other最小扇区",
+        "required_parts": [
+          "深蓝小扇区",
+          "共同内外环边界",
+          "标签引线"
+        ],
+        "relationship": "小扇区在顶部两条近邻径向边界间，从外缘延伸至内缘；细引线从内端进入中心透视区。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.47,
+          0.248,
+          0.483,
+          0.439
+        ],
+        "evidence_zh": "深蓝楔片约位于x=755–770、y=497–817，外宽约15 px，近内缘宽6–7 px。其内端向下的引线连接中心Other及20 / 0.4%说明，可辨为环带一部分。"
+      },
+      {
+        "category": "镜框与手柄连接",
+        "required_parts": [
+          "镜框",
+          "银色连接件",
+          "深色握柄",
+          "投影"
+        ],
+        "relationship": "银色连接件在镜框右下方接触框体并连接斜向右下的握柄，投影位于其下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.709,
+          0.731,
+          0.967,
+          0.939
+        ],
+        "evidence_zh": "约x=1150–1340、y=1470–1660的银色接头与框体及握柄连续相接；纵槽握柄延伸至约(1500,1820)，与素材具有明确可见对应。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "输入明确要求合成审计费用和Firm A–D/Other类别，允许不沿用参考真实机构、年份、数值及旧结论。",
+      "output_added_or_lost_meaning_zh": "保留放大镜在账表上承载审计费用份额的可见关系；中心总额和页脚补充了共同分母解释。参考真实样本范围与年份未出现，但属于输入允许的合成改编，未发现当前语义遗漏。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；AUDIT FIRMS；Audit fee market shares；Synthetic audit fees / USD million；TOTAL AUDIT FEES 5,000；Each arc shows its share of total audit fees.；Firm labels are illustrative."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实机构、S&P 500与FY2022范围替换为当前合成费用及示意机构，来自冻结输入，不归因于输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "五段实测角宽随1780、1390、1120、690、20变化；Other保持真实小比例，未为可辨性设置最小面积。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "Other近内缘只有6–7个连续像素；可辨性通过，但抗锯齿和边界定位仍限制其相对精度。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一系列、唯一角宽通道的全部五个扇区，含最大项、内部项和最小正值；另测内外椭圆、纵缩及小片多个横截面。全部必要标签、数值和单位逐项核对。没有其他数值面板；装饰账表行与非数据镜框、手柄不计入份额。"
+  }
+}

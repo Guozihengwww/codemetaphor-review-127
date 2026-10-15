@@ -1,0 +1,214 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": false,
+  "visual_observations_before_code_zh": "参考图为蓝色桌面俯拍餐盘，左侧西兰花、右侧火鸡肉，盘外叉和刀；125 g／37 kcal与250 g／260 kcal分别以虚线关联食物。待评图仍为同盘两种食物：西兰花花球与茎可辨，火鸡胸肉切片相互叠放；两条虚线端点分别落在对应食物上。下方两组标注明确显示西兰花0.48 g、36 kcal，火鸡胸肉240.0 g、252 kcal。中文主题、每种食物各对应一份的统计口径、Serving mass／Serving energy、SYNTHETIC DATA及照片不编码量值的脚注均可读。未见明显遮挡、错绑或物体拼接破损。以上为查看源码前的图像观察。",
+  "summary_zh": "四个数值、单位及食物绑定均正确。同盘食物与引线关系完整，合成主题和统计口径清楚；本例明确仅用文字编码量值，照片大小无需与0.48 g成比例。未发现实质缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接查看2100×1946原图并逐项读数。以独立图像阈值分割测得四组数值字形高度约97 px；mark_extent_px记录字形高度，不是数据几何长度。数值编码方法均为numeric_text_only，几何满量程误差与小值相对误差不适用，记null。code_controls_data_geometry=false表示不存在数据驱动几何；源码控制数据文字及固定引线布局，符合M2。",
+  "uncertainties_zh": "素材清单、原图与源码支持主体素材的实际使用，但未检查生成调用日志或历史归档，无法独立确认内置工具来源及每次capture_render归档。未执行渲染。字形边界受抗锯齿阈值影响约1–2 px，不影响读数。本例不能用于判断微小几何的精度或可辨性。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两类别Broccoli、Turkey breast及各自Serving mass、Serving energy齐全；四值、g/kcal、完整中文主题、每种食物各一份的口径和SYNTHETIC DATA均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图面分别为西兰花0.48 g、36 kcal；火鸡胸肉240.0 g、252 kcal，与data.json一致，未将小正数舍为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "左侧西兰花标注组的虚线圆点落在西兰花上，右侧火鸡胸肉标注组的圆点落在肉片上；两组各含明确质量和热量列，无交叉错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "M2指定仅文字编码。图面脚注明确食物面积、块数和引线长度均不编码量值；源码对照片采用固定等比放置，数据仅进入数值文字。没有应按0–300比例测量的图形边界。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看assets/raw_01.png，其西兰花茎形、叠放肉片、餐盘与餐具均在成图主体可见；render.py读取该素材并添加数据文字及引线。生成调用与历史归档未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "两种食物位于同一盘面，西兰花花球连接茎部，火鸡肉片前后叠放；盘缘围住两者，食物接触阴影和俯视方向一致。引线为盘面上方的标注层，未破坏主体结构。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、双语类别、两种指标、四个数值及单位均可读且未裁切；引线不覆盖数字，小数点清楚。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "保留同盘西兰花与火鸡肉的并置关系，且各自引线连接到对应标注组。实际数据承载区域是盘下文字，而不是食物轮廓或盘面份额。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确同盘食物的质量与热量及合成数据属性；口径说明每种食物各一份，Serving mass/g与Serving energy/kcal解释指标，具名类别没有变为泛化组别。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考的同盘食物与质量/热量说明关系得到保留；原营养数值改为明确声明的合成数据，属于core规定的主题适配，非输出遗漏或错误。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值0.48 g完整清楚，数字字形约97 px高；对应西兰花部件和引线仍可辨。本合同没有微小比例图形，不能据此宣称小几何精度通过。"
+    }
+  },
+  "semantic_attribution_zh": "原营养量值改为合成示例属于输入允许的适配；同盘、类别和各份质量/热量关系未丢失。照片保持可辨大小符合纯文字编码，不属于抬高小值几何；未发现输出遗漏或分辨率导致的语义损失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "serving_mass",
+        "category": "Broccoli",
+        "expected_value": 0.48,
+        "observed_value": 0.48,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": 97,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.06476,
+          0.86742,
+          0.18667,
+          0.91727
+        ],
+        "evidence_zh": "原图可读0.48，右侧单位g。独立像素分割数值字形包围盒为[136,1688,392,1785]，宽256、高97 px；该尺寸不是质量编码。",
+        "uncertainty_zh": "字形边缘约1–2 px阈值差异；无数据几何可计算相对误差。"
+      },
+      {
+        "series_id": "serving_mass",
+        "category": "Turkey breast",
+        "expected_value": 240.0,
+        "observed_value": 240.0,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": 97,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.55571,
+          0.86742,
+          0.71381,
+          0.91727
+        ],
+        "evidence_zh": "原图可读240.0，右侧单位g。独立像素分割数值字形包围盒为[1167,1688,1499,1785]，宽332、高97 px；保留了输入的小数位。",
+        "uncertainty_zh": "仅文字编码，字宽不代表质量；几何误差不适用。"
+      },
+      {
+        "series_id": "serving_energy",
+        "category": "Broccoli",
+        "expected_value": 36,
+        "observed_value": 36,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": 97,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.28381,
+          0.86742,
+          0.35095,
+          0.91727
+        ],
+        "evidence_zh": "原图可读36，右侧单位kcal，位于西兰花热量列。独立像素分割数值字形包围盒为[596,1688,737,1785]，宽141、高97 px。",
+        "uncertainty_zh": "仅文字编码，没有热量面积或长度供比例测量。"
+      },
+      {
+        "series_id": "serving_energy",
+        "category": "Turkey breast",
+        "expected_value": 252,
+        "observed_value": 252,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": 97,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.77476,
+          0.86742,
+          0.87762,
+          0.91727
+        ],
+        "evidence_zh": "原图可读252，右侧单位kcal，位于火鸡胸肉热量列。独立像素分割数值字形包围盒为[1627,1688,1843,1785]，宽216、高97 px。",
+        "uncertainty_zh": "仅文字编码，没有热量面积或长度供比例测量。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Broccoli（含最小质量值0.48 g）",
+        "required_parts": [
+          "西兰花花球",
+          "分枝与茎",
+          "共同餐盘",
+          "引线圆点",
+          "质量/热量标注组"
+        ],
+        "relationship": "花球连接茎部，食物置于盘内；圆点接触食物图像，虚线向左下延伸至对应标签组。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.06,
+          0.255,
+          0.53,
+          0.923
+        ],
+        "evidence_zh": "左半盘可见多个花球与浅绿茎相接，底部花球上的圆点连接盘外西兰花标签；0.48 g与36 kcal在该组下方。食物大小不承载最小质量值。"
+      },
+      {
+        "category": "Turkey breast（较大数值实例）",
+        "required_parts": [
+          "火鸡胸肉切片",
+          "肉片表面与边缘",
+          "共同餐盘",
+          "引线圆点",
+          "质量/热量标注组"
+        ],
+        "relationship": "肉片相互叠放并落在盘内；圆点接触下方肉片图像，虚线向右下延伸至对应标签组。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.5,
+          0.267,
+          0.93,
+          0.923
+        ],
+        "evidence_zh": "右半盘肉片形成连续叠放序列，肉纹与切面边缘可辨，盘缘包围食物；下部肉片圆点对应火鸡胸肉240.0 g和252 kcal，未连向西兰花。"
+      },
+      {
+        "category": "同盘整体关系",
+        "required_parts": [
+          "白色盘缘与盘面",
+          "左侧西兰花",
+          "右侧火鸡胸肉"
+        ],
+        "relationship": "两类食物共同包含于同一盘面，横向并置且接触承托表面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.223,
+          0.183,
+          0.767,
+          0.753
+        ],
+        "evidence_zh": "连续白色盘缘环绕两类食物，底部接触阴影与近俯视视角一致；没有把原本并置食物强行变成量化融合图形。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core明确declared_synthetic_topic_adaptation；允许替换原真实营养数值并调整非数据部件与排版，不要求食物外观按新质量缩放。",
+      "output_added_or_lost_meaning_zh": "输出保留食物类别、每份质量/热量及同盘标注关系，并增加醒目的合成与照片示意说明；原真实营养量值不再沿用属于输入适配。未观察到额外营养论断。",
+      "visible_inscription_evidence_zh": "可见完整中文主题、SERVING MASS & ENERGY、SYNTHETIC DATA、每种食物各对应一份、Broccoli、Turkey breast、Serving mass、Serving energy、g、kcal及照片不编码量值的脚注。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考真实营养量值已按冻结数据替换为合成值，图面明确披露，reference_meaning记partial而非输出失败。"
+      },
+      {
+        "cause": "none",
+        "evidence_zh": "当前类别、指标、单位、最小正值及食物连接/包含关系均保留；没有应被量值压缩的微小几何。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖全部2类别×2指标共4个数值及单位，包括最小正值0.48与最大值252；两个系列各仅2项，不存在可另取的第三个内部项。全部必需标签单独核对；部件关系覆盖最小值对应西兰花、较大值对应火鸡肉及共同盘面。未以照片面积、块数或引线长度估算量值。"
+  }
+}

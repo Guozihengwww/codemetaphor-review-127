@@ -1,0 +1,362 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：黑色油桶的前侧剖口露出七层产品色层，右侧油滴图例与类别对应，桶沿、横向加强筋、切边及立体明暗可见。待评图：黑色金属桶剖口内有11层连续色带；上方四层青色均标2.4，中间绿色1.35、黄色4.05、两层橙色各3.6、橙红1.8、红色1.65，下方最大紫色层18.35。右侧11行图例按同序列出产品、子类别与数值；标题说明原油桶产品体积，SYNTHETIC DATA、Synthetic output volume (US gal)、TOTAL OUTPUT 44 US gal均可读。金属外壳、桶沿、加强筋和切口细边包围色层，底部投影可见；各层边界呈相似曲线，最薄绿色层仍是有面积的连续带。上述为查看源码前的可见观察，尚未测量比例。",
+  "summary_zh": "11类产品的数值、顺序、父类名称及单位完整。原图三条竖向测线支持层厚比例正确；最小层与最大层均保留桶内色层关系。生成金属素材实质用于主体，当前主题及参考图的剖桶表达得到保留，未发现需要报告的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1800×2048原图，在x=550、760、840避开文字和切边测量。由相邻稳定色值的中点定位内部边界，外侧上下界按像素过渡定位；各列总层高约1210像素。表内采用x=760，按44×层厚/实测总高换算。三列全部11层的满量程绝对误差点估计均小于0.033%，低于3%容差。不同列对应界面的位移约11或22像素，偏差小于0.6像素，支持曲线竖向平移。源码中的H=1210及累计体积公式仅作独立佐证，未代替像素测量。",
+  "uncertainties_zh": "抗锯齿及边界定位约有±1像素不确定性，最小层约37像素，其相对精度只能判断到数个百分点，不能将点估计误差视为精确上界。未对所有横坐标逐像素测量，也未检查被禁止的运行日志或自检，故不能独立证明历史上每次渲染均经过capture_render.py；这不构成可见输出缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "桶内11层与右侧11行产品一一对应，四个Diesel子类别、两个Other Products子类别及其余五类齐全；图面也注明11 CATEGORIES。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "层内及图例均依次为2.4、2.4、2.4、2.4、1.35、4.05、3.6、3.6、1.8、1.65、18.35；合计44，单位US gal，无正值被舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "同序色层、同色油滴及图例形成对应，图面明确Listed order: top to bottom；数值位于所属层内，子类别显示语义父类。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "三条可见竖通道贯穿11层，实测比例均在3%满量程容差内。x=760处最小层约37.5像素、Jet Fuel约111.0像素、Gasoline约504.5像素；对应约1.363、4.036、18.345 US gal。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与barrel_cutaway.png，最终主体可识别相同的金属纹理、桶沿、加强筋和阴影。render.py读取原素材并以代码生成剖口、色层及文字，capture_render.py提供完整渲染保存流程；未以日志验证执行历史。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据色层占据金属桶的剖开内部，左右切边贴合层面，外壳和加强筋止于剖口；没有遮断贯穿各层的竖通道。定量边界就是桶内各产品层之间的曲线。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题标题、SYNTHETIC DATA、系列名称、US gal、全部类别与数值均可读，无明显裁切或重叠；1.35和1.65的细层内数字仍清晰。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "黑色金属桶、椭圆桶沿、两道横向加强筋、左右剖口金属细边、桶内产品层、油滴图例及底部立体投影齐全。最小绿色层与最大紫色层均连接邻层并接触剖口边缘。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Products from a barrel of crude oil说明主题；Synthetic output volume (US gal)说明指标和单位；TOTAL OUTPUT 44及底部层厚公式说明总量与部分关系。子类别父类及互斥定义保留。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图以剖开的油桶内部色层表达一桶原油对应的产品体积，待评图保留相同主题和融合关系。当前合成值及11类拆分替代旧年份和旧值属于输入允许变化，无需保留原7类或2009统计。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Other Distillates绿色层约37–37.5像素厚，连续横跨剖口且上下邻层明确；LPG约45.5像素厚。二者均非仅靠数字存在，未见人为设定最小高度的膨胀。"
+    }
+  },
+  "semantic_attribution_zh": "合成数值、子类别拆分及不显示旧2009统计来自允许的输入适配；层厚变化来自当前数据。主题、体积单位、父类角色及剖桶内部承载数据的关系未见输出遗漏。原参考的具体工业过程意图无需额外推断；剩余不确定性主要是像素边界定位与未核验的执行历史。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_volume",
+        "category": "Diesel / subcategory 1",
+        "expected_value": 2.4,
+        "observed_value": 2.399,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 66.0,
+        "full_scale_error_percent": 0.002,
+        "small_value_relative_error_percent": 0.03,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.250244,
+          0.422778,
+          0.28246
+        ],
+        "evidence_zh": "原图x=760处，第1层的上下颜色过渡约在y=512.5、578.5；以实测总层高1210像素和44 US gal换算。层内及对应图例均标2.4。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Diesel / subcategory 2",
+        "expected_value": 2.4,
+        "observed_value": 2.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 66.0,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": 0.01,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.28246,
+          0.422778,
+          0.314683
+        ],
+        "evidence_zh": "原图x=760处，第2层的上下颜色过渡约在y=578.5、644.5；以实测总层高1210像素和44 US gal换算。层内及对应图例均标2.4。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Diesel / subcategory 3",
+        "expected_value": 2.4,
+        "observed_value": 2.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 66.0,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": 0.0,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.314683,
+          0.422778,
+          0.346911
+        ],
+        "evidence_zh": "原图x=760处，第3层的上下颜色过渡约在y=644.5、710.5；以实测总层高1210像素和44 US gal换算。层内及对应图例均标2.4。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Diesel / subcategory 4",
+        "expected_value": 2.4,
+        "observed_value": 2.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 66.0,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": 0.01,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.346911,
+          0.422778,
+          0.37914
+        ],
+        "evidence_zh": "原图x=760处，第4层的上下颜色过渡约在y=710.5、776.5；以实测总层高1210像素和44 US gal换算。层内及对应图例均标2.4。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Other Distillates",
+        "expected_value": 1.35,
+        "observed_value": 1.363,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 37.5,
+        "full_scale_error_percent": 0.029,
+        "small_value_relative_error_percent": 0.95,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.37914,
+          0.422778,
+          0.39744
+        ],
+        "evidence_zh": "原图x=760处，第5层的上下颜色过渡约在y=776.5、814.0；以实测总层高1210像素和44 US gal换算。层内及对应图例均标1.35。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Jet Fuel",
+        "expected_value": 4.05,
+        "observed_value": 4.036,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 111.0,
+        "full_scale_error_percent": 0.032,
+        "small_value_relative_error_percent": 0.35,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.39744,
+          0.422778,
+          0.451632
+        ],
+        "evidence_zh": "原图x=760处，第6层的上下颜色过渡约在y=814.0、924.9；以实测总层高1210像素和44 US gal换算。层内及对应图例均标4.05。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Other Products / subcategory 1",
+        "expected_value": 3.6,
+        "observed_value": 3.6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 99.0,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": 0.0,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.451632,
+          0.422778,
+          0.499973
+        ],
+        "evidence_zh": "原图x=760处，第7层的上下颜色过渡约在y=924.9、1023.9；以实测总层高1210像素和44 US gal换算。层内及对应图例均标3.6。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Other Products / subcategory 2",
+        "expected_value": 3.6,
+        "observed_value": 3.6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 99.0,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": 0.0,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.499973,
+          0.422778,
+          0.548313
+        ],
+        "evidence_zh": "原图x=760处，第8层的上下颜色过渡约在y=1023.9、1122.9；以实测总层高1210像素和44 US gal换算。层内及对应图例均标3.6。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Heavy Fuel Oil (Residual)",
+        "expected_value": 1.8,
+        "observed_value": 1.801,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 49.5,
+        "full_scale_error_percent": 0.003,
+        "small_value_relative_error_percent": 0.06,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.548313,
+          0.422778,
+          0.572498
+        ],
+        "evidence_zh": "原图x=760处，第9层的上下颜色过渡约在y=1122.9、1172.5；以实测总层高1210像素和44 US gal换算。层内及对应图例均标1.8。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Liquefied Petroleum Gases (LPG)",
+        "expected_value": 1.65,
+        "observed_value": 1.656,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 45.5,
+        "full_scale_error_percent": 0.013,
+        "small_value_relative_error_percent": 0.34,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.572498,
+          0.422778,
+          0.594729
+        ],
+        "evidence_zh": "原图x=760处，第10层的上下颜色过渡约在y=1172.5、1218.0；以实测总层高1210像素和44 US gal换算。层内及对应图例均标1.65。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      },
+      {
+        "series_id": "synthetic_volume",
+        "category": "Gasoline",
+        "expected_value": 18.35,
+        "observed_value": 18.345,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 504.5,
+        "full_scale_error_percent": 0.011,
+        "small_value_relative_error_percent": 0.03,
+        "bbox_xyxy_normalized": [
+          0.421667,
+          0.594729,
+          0.422778,
+          0.841064
+        ],
+        "evidence_zh": "原图x=760处，第11层的上下颜色过渡约在y=1218.0、1722.5；以实测总层高1210像素和44 US gal换算。层内及对应图例均标18.35。",
+        "uncertainty_zh": "边界约±1像素；数值及误差为抗锯齿过渡的点估计，不代表同等测量精度。bbox仅标示测线截段。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体油桶",
+        "required_parts": [
+          "黑色金属外壳",
+          "椭圆桶沿",
+          "两道加强筋",
+          "左右切口金属边",
+          "桶内产品色层",
+          "底部阴影"
+        ],
+        "relationship": "桶沿与外壳相连；加强筋绕外壳延伸并在剖口处终止；色层包含于剖口，切边贴合层面，底部阴影位于桶下。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.05,
+          0.225,
+          0.56,
+          0.905
+        ],
+        "evidence_zh": "上沿约y=463–590，两道加强筋约y=930及1330，剖口左右边围住色层，金属桶底位于色层下方；横向金属部件未覆盖中央数据通道。"
+      },
+      {
+        "category": "Gasoline（最大层）",
+        "required_parts": [
+          "紫色层面",
+          "上方LPG红层",
+          "两侧金属切边",
+          "下方桶壳与底沿"
+        ],
+        "relationship": "紫层上界直接连接红层，下界止于底部黑色壳体，两侧接触切边；紫层厚度承担18.35 US gal。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.204,
+          0.588,
+          0.513,
+          0.852
+        ],
+        "evidence_zh": "紫色区域占据剖口下部，x=760处从约y=1218到1722.5；上下及左右没有脱离桶体的空白裂缝。"
+      },
+      {
+        "category": "Other Distillates（最小正值层）",
+        "required_parts": [
+          "绿色细层",
+          "上方Diesel子类别4浅青层",
+          "下方Jet Fuel黄层",
+          "左右金属切边"
+        ],
+        "relationship": "绿色层夹在浅青与黄色层之间，连续跨越剖口并接触两侧切边；两条相似弧线之间的厚度承担1.35 US gal。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.191,
+          0.374,
+          0.51,
+          0.41
+        ],
+        "evidence_zh": "x=760处绿色区域上下界约y=776.5及814.0，仍有可见面积；邻接关系完整，1.35文字位于绿色层内。"
+      },
+      {
+        "category": "油滴图例",
+        "required_parts": [
+          "11个油滴符号",
+          "产品与父类名称",
+          "体积文字"
+        ],
+        "relationship": "每个油滴与同一行类别、数值并列，以颜色和顺序关联桶内色层；油滴大小不承担体积。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.599,
+          0.27,
+          0.947,
+          0.846
+        ],
+        "evidence_zh": "右侧11个油滴与产品行一一对应，同色深浅区分四个Diesel和两个Other Products子类别，图例没有遗漏小值项。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许以当前合成值取代参考真实统计，将Diesel拆为四个互斥子类别、Other Products拆为两个互斥子类别；当前主题仍是一桶原油对应的不同产品体积。",
+      "output_added_or_lost_meaning_zh": "增加44 US gal总量、层厚公式和子类别互斥说明，均与输入一致；未见将独立选择误作分区、将年份误作队列或改变体积指标等语义损失。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Products from a barrel of crude oil、Synthetic output volume (US gal)、TOTAL OUTPUT 44，以及Subcategories are mutually exclusive parts of their named parent。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成声明、11类父子分类及当前数值由冻结输入明确要求；参考旧年份与旧数值未沿用不算输出遗漏。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "四个相等青色层及最大紫色层与当前体积对应，形状变化保留油桶内部层厚编码。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿仅使边界定位存在约像素级不确定性；最小层仍约37像素，物体内部关系可见。"
+      }
+    ],
+    "measurement_coverage_zh": "单一线性厚度通道：11/11类别在三条竖测线核对，逐项记录x=760的11个测量值，覆盖最小正值、最大值与全部中间层。另独立目视核对11行类别、11个油滴、层内及图例22个数值与总量。未穷举整个曲面各横坐标；油滴、外壳和桶沿按要求不作定量标记。"
+  }
+}

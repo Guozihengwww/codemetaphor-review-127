@@ -1,0 +1,238 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：青苹果主体右侧缺一扇形，灰色扇块向右分离，蓝衣儿童坐于灰块上；文字为校园停课与食物不安全。成图：绿色苹果分为上下两个区域，中间白色径向线连接左缘与果柄附近；右侧灰色扇块分离，儿童臀部及鞋部接触其表面。风险标注15.5%、3,100,000名学生；其他学生合成子类1与2各42.25%，底部各8,450,000名学生；样本总数20,000,000。标题、SYNTHETIC DATA、系列名及角宽计算说明可读。尚未由像素测量确认角宽与半径。",
+  "summary_zh": "三类人数、份额、单位与标签完整准确。独立像素测量支持规定角宽、同半径平移及儿童坐于灰色风险块的关系，未发现实质缺陷。参考真实统计被明确适配为合成学生样本。",
+  "issues": [],
+  "measurement_notes_zh": "测量对象仅为2000×2000的image.png。按可见颜色边缘拟合径向直线：绿色切边取x=900—1200，灰块切边取x=1140—1300；绿色子类共同分界为可见水平线。角差÷360×20,000,000反推人数，满量程误差以20,000,000为分母。绿色外轮廓与灰块右弧另行拟合半径约535.35、534.42像素；切边交点约(760.09,949.56)、(1104.65,949.51)，支持水平平移约344.56像素。mark_extent_px记录可见数据面的纵向跨度，不把儿童和阴影计入。以上为成图像素测量；源码公式仅作旁证。",
+  "uncertainties_zh": "颜色阈值与抗锯齿限制边缘精度：风险份额在不同阈值下约15.4885%—15.5008%，绿色份额变化小于0.02个百分点。反推人数为边缘拟合估计，不代表人数级精度。儿童遮住部分灰面，但其左侧两条切边与右侧外弧可测。按限制未读取日志、自检或归档历史，不能独立确认每次渲染均经capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "三类均出现，底部按At risk、Other students / synthetic subcategory 1、Other students / synthetic subcategory 2排列；单系列名、20,000,000总数、学生单位及合成声明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "3,100,000及15.5%，两组8,450,000及42.25%均正确；人数合计20,000,000，份额合计100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "风险标签引线端点落在灰块内；下方绿色面直接标合成子类1，上方标合成子类2，底部名称、数值、单位对应准确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素拟合风险角55.7806°，子类1为152.1179°，子类2为152.1038°；目标分别55.8°、152.1°、152.1°，误差远小于3个百分点。灰块与主体拟合半径相差约0.93像素。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png苹果及raw_02.png儿童，纹理、果柄与衣服褶皱均在成图主体中可辨。prepare_assets.py处理这些素材，render.py用同半径角度掩膜控制数据几何与文字；未执行源码。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "苹果表皮本身承载绿色扇区，灰色风险块与缺口保持对应切边及半径，向右分离。儿童在灰块前层，臀部及鞋部接触灰面，阴影位于下方；未见影响身份或读图的拼接破坏。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下标题、三类名称、人数、份额、单位、样本口径、SYNTHETIC DATA及底部角度说明均可读，无必需文字截断或相互遮盖。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "青苹果及果柄保留；两绿色面共用苹果轮廓，灰色扇块由对应缺口向右抽离，儿童坐在该数据面上。不是仅靠物体名称或旁置图表表达关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "校园供餐风险标题、Synthetic student cohort、名学生/students及占全部20,000,000名学生的比例共同明确当前主题、指标、分母和单位；其他学生的两个合成子类保留父类。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留食品苹果、分离风险份额及儿童处于该份额上的关系。原参考疫情停课、2018年家庭食物不安全统计被当前合成学生口径取代；这是冻结输入允许的适配，不计为输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值为风险组15.5%，灰面纵向约501像素，尖端、两条切边、外弧及儿童接触均可辨；未靠扩大扇区换取辨识度，也未仅凭数值文字认定几何正确。"
+    }
+  },
+  "semantic_attribution_zh": "当前供餐风险、学生人数和合成子类角色完整。参考疫情停课及家庭历史统计的变化归于输入明确改为合成学生样本；风险扇块角宽变化归于当前数据。没有可见的必要语义遗漏；像素精度限制仅影响细小误差估计。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "At risk",
+        "expected_value": 3100000,
+        "observed_value": 3098921.2,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 501,
+        "full_scale_error_percent": 0.005394,
+        "small_value_relative_error_percent": 0.0348,
+        "bbox_xyxy_normalized": [
+          0.5525,
+          0.3495,
+          0.82,
+          0.6005
+        ],
+        "evidence_zh": "最小正值。灰色数据面切边拟合斜率约-0.52938、0.52913，角差55.7806°，反推份额15.4946%；可见纵向跨度约501像素。",
+        "uncertainty_zh": "边缘阈值测试给出约15.4885%—15.5008%；小值相对误差是当前拟合估计，不是人数级精度保证。儿童遮挡区域未纳入切边拟合。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Other students / synthetic subcategory 1",
+        "expected_value": 8450000,
+        "observed_value": 8450993.6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 536,
+        "full_scale_error_percent": 0.004968,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1125,
+          0.4745,
+          0.6165,
+          0.7425
+        ],
+        "evidence_zh": "下方绿色大扇区。可见水平分界与下切边夹角约152.1179°，反推42.2550%；区内标合成子类1，底部对应8,450,000名学生。",
+        "uncertainty_zh": "下切边存在抗锯齿与局部表皮色差；阈值测试份额约42.2505%—42.2550%。纵向跨度包含分界线边缘的像素取整。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Other students / synthetic subcategory 2",
+        "expected_value": 8450000,
+        "observed_value": 8450210.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 536,
+        "full_scale_error_percent": 0.001052,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1125,
+          0.2075,
+          0.6165,
+          0.4755
+        ],
+        "evidence_zh": "上方绿色大扇区。上切边与可见水平分界夹角约152.1038°，反推42.2511%；区内标合成子类2，底部对应8,450,000名学生。",
+        "uncertainty_zh": "阈值测试份额约42.2382%—42.2511%，仍远低于容差。此为像素轮廓估计，非使用源码角度回填。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Synthetic student cohort / total",
+        "expected_value": 20000000,
+        "observed_value": 20000000,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.63,
+          0.105,
+          0.836,
+          0.173
+        ],
+        "evidence_zh": "右上样本口径区直接显示Synthetic student cohort、20,000,000、名学生·students；底部再次说明份额分母。",
+        "uncertainty_zh": "这里仅核对直接文字编码，不将其当成几何测量或额外的量化物体。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Other students / synthetic subcategory 1",
+        "required_parts": [
+          "绿色苹果表皮",
+          "下半部外弧",
+          "水平分界",
+          "右下径向切边",
+          "区内标签"
+        ],
+        "relationship": "下方绿色数据面由苹果外弧和两条径向边界围合，标签包含于该面内，与上方区域共同形成苹果主体。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1125,
+          0.4745,
+          0.6165,
+          0.7425
+        ],
+        "evidence_zh": "下半部皮孔和反光随苹果表面连续分布；水平细分界从左缘伸向果柄附近，下切边朝右下延伸至外弧。"
+      },
+      {
+        "category": "Other students / synthetic subcategory 2",
+        "required_parts": [
+          "绿色苹果表皮",
+          "上半部外弧",
+          "中央果柄",
+          "水平分界",
+          "右上径向切边"
+        ],
+        "relationship": "上方绿色数据面与下方区域共用母圆及中心，果柄保持在苹果中心附近，右上切边构成抽离缺口的一侧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1125,
+          0.2075,
+          0.6165,
+          0.4755
+        ],
+        "evidence_zh": "可见果柄从中心凹陷处伸出，周围为苹果皮纹；上部42.25%位于本区内，未落入灰块或背景。"
+      },
+      {
+        "category": "At risk / detached sector",
+        "required_parts": [
+          "苹果右侧缺口",
+          "灰色扇块尖端",
+          "两条径向切边",
+          "灰块外弧"
+        ],
+        "relationship": "灰块与苹果缺口保持同角宽、近同半径和方向，整体向右平移形成可见空隙；灰色区域本身承载风险份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3795,
+          0.3495,
+          0.82,
+          0.6005
+        ],
+        "evidence_zh": "缺口角约55.7783°，灰块约55.7806°；两交点水平相距约344.56像素、纵向相差约0.05像素，独立外弧拟合半径相差约0.93像素。"
+      },
+      {
+        "category": "At risk / seated child",
+        "required_parts": [
+          "蓝衣儿童身体",
+          "臀部下缘",
+          "鞋部",
+          "灰色扇面",
+          "接触阴影"
+        ],
+        "relationship": "儿童在灰块前层，臀部与鞋部接触灰面，灰面支承坐姿；儿童及阴影不形成定量扇区边界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.659,
+          0.3155,
+          0.7965,
+          0.495
+        ],
+        "evidence_zh": "儿童背向观看者，臀部位于灰块中右部，鞋部位于其左侧灰面，底部有接触暗影。未见身体悬空缝隙或错误置于灰块后层。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结标题与数据明确采用校园供餐风险合成学生样本，并拆分其他学生为两个合成子类；不要求沿用参考13.9%、2018年家庭口径或旧人数。",
+      "output_added_or_lost_meaning_zh": "保留食品、风险份额抽离及儿童承受该风险的可见联系。原疫情停课情境与家庭历史统计不再表达，属于已允许的样本及语境适配；没有把合成数据冒充真实统计。",
+      "visible_inscription_evidence_zh": "校园供餐风险、SCHOOL MEALS / STUDENT COHORT、Synthetic student cohort、SYNTHETIC DATA、名学生·students、其他学生·合成子类1/2，以及不代表真实校园供餐统计均可见。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原参考疫情与家庭真实统计改为当前合成学生人数，依据冻结brief/data/core，而非输出遗漏。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前风险角55.8°及两个152.1°绿色区对应15.5%、42.25%、42.25%，不沿用参考13.9%角宽。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿和纹理造成不足0.02个百分点的阈值敏感性；最小扇区物体关系仍清楚，未见分辨率导致的结构丢失。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一角宽通道的全部三个类别，包括最小正值及两个并列最大值；数据仅两个不同数值，无独立中间数值档。另核对总数文字，逐项检查全部名称、人数、百分比、单位和声明。儿童遮挡内部未作面积推断，半径检验使用未遮挡外弧；未读取自检、日志或其他成图。"
+  }
+}

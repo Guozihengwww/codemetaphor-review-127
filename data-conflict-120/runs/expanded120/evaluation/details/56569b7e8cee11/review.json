@@ -1,0 +1,271 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图将十根资产柱嵌入正面银行立面，保留圆徽、屋顶、横梁、基座和后方金库门。待评图显示SYNTHETIC DATA、Central bank assets及Illustrative assets / trillion USD。A至J圆徽、银行名称及十项数值按序排列。浅色满高支柱连接横梁与基座，蓝色数据区从共同底线向上递减。Bank I/J为紧贴基座的极薄蓝线，单看薄线难辨纵向柱身纹理。",
+  "summary_zh": "通过。十类数据、标签、单位及银行立面的融合关系符合要求，未发现主要可见缺陷。最小柱的精确相对误差受像素分辨率限制。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查2160×1876原图。刻度线位于y≈680、895、1110、1325、1540，0–7.60跨度860px。按柱内横向中位RGB筛选深蓝区域，阈值R<100、G<140、B<170，A至J整数跨度为860、431、216、108、54、27、14、7、3、2px。整数跨度换算的最大满量程偏差约0.051%；±1px边界不确定度约为满量程0.116%。这些是栅格测量，不是连续边界的精确恢复；源码公式仅作佐证。",
+  "uncertainties_zh": "Bank I/J含抗锯齿混合像素，不能由3/2行深色像素可靠恢复连续净高及小值相对误差。未读取执行历史或日志，不能独立证明所有完整渲染均经capture_render.py保存。浅色非数据支柱维持建筑结构，微小数据无需撑满屋顶，未见任务内在不可行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "十根数据区、A至J圆徽及Bank A至Bank J标签按输入顺序齐全；系列、单位和合成数据提示完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "十项可见数值逐项等于输入；总值15.224932与独立十项求和一致，没有正值被写成零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "圆徽、柱中心、银行标签及数值纵向对齐；最右细线对应Bank J与0.0152。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "十根蓝区的直接像素测量符合共同零点的线性高度编码；测量偏差及边界不确定度远低于3%满量程。极小值相对精度另保留不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的屋顶、沟槽柱身、基座和金库门实质用于成图主体；素材处理及渲染源码与可见部件对应，代码按数据控制蓝区掩膜和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "蓝区与浅色支柱共享边界和沟槽方向，从基座向上填充；图例明确区分数据高度与建筑支撑。金库门位于立面后方。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成提示、指标、单位、全部银行名称及精确数值在原分辨率可读，无遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "屋顶、带圆徽的横梁、十根浅色支柱和基座连续相接；资产区嵌在柱内，后方金库门被立面局部遮挡。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Central bank assets、10 FICTITIOUS CENTRAL BANKS、Illustrative assets / trillion USD及合成提示共同明确虚构中央银行资产比较。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留银行立柱承载资产比较的融合关系；真实银行和十大最大统计身份被冻结输入明确改编为虚构银行，属于输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "Bank I/J仍有约3/2行深蓝像素，位于浅柱底部并接触基座；独立蓝区的纵向柱纹难辨，数字正确不能证明其精确连续高度。"
+    }
+  },
+  "semantic_attribution_zh": "真实机构改为虚构银行属于允许的输入改编；蓝柱缩短由当前数据决定。Bank I/J柱身细节减少主要来自1.72–3.43px目标高度及栅格分辨率。未发现当前主题、指标、单位或类别角色的输出性丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "assets",
+        "category": "Bank A",
+        "expected_value": 7.6,
+        "observed_value": 7.6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 860,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.115278,
+          0.362473,
+          0.164352,
+          0.820896
+        ],
+        "evidence_zh": "蓝区从y=680延至1539，整数跨度860px，与0–7.60轴距一致。",
+        "uncertainty_zh": "边界约±1px；零偏差仅指整数跨度估计。"
+      },
+      {
+        "series_id": "assets",
+        "category": "Bank B",
+        "expected_value": 3.810027,
+        "observed_value": 3.808837,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 431,
+        "full_scale_error_percent": 0.015655,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.19537,
+          0.591151,
+          0.244444,
+          0.820896
+        ],
+        "evidence_zh": "深蓝连续行1109–1539，约431px，按可见轴距折算约3.808837万亿美元。",
+        "uncertainty_zh": "约±1px，即±0.00884万亿美元；换算小数不代表测量精度。"
+      },
+      {
+        "series_id": "assets",
+        "category": "Bank E",
+        "expected_value": 0.480033,
+        "observed_value": 0.477209,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 54,
+        "full_scale_error_percent": 0.037154,
+        "small_value_relative_error_percent": 0.58823,
+        "bbox_xyxy_normalized": [
+          0.435648,
+          0.792111,
+          0.484722,
+          0.820896
+        ],
+        "evidence_zh": "深蓝连续行1486–1539，约54px，整数跨度折算约0.477209万亿美元。",
+        "uncertainty_zh": "相对偏差为整数跨度估计；±1px约占目标高度1.84%。"
+      },
+      {
+        "series_id": "assets",
+        "category": "Bank G",
+        "expected_value": 0.120642,
+        "observed_value": 0.123721,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 14,
+        "full_scale_error_percent": 0.040512,
+        "small_value_relative_error_percent": 2.552121,
+        "bbox_xyxy_normalized": [
+          0.595833,
+          0.813433,
+          0.644444,
+          0.820896
+        ],
+        "evidence_zh": "深蓝连续行1526–1539，约14px；与浅柱同宽并接触基座。",
+        "uncertainty_zh": "相对偏差为整数跨度估计；±1px约占目标高度7.33%，不足以证明高相对精度。"
+      },
+      {
+        "series_id": "assets",
+        "category": "Bank I",
+        "expected_value": 0.03032,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.755556,
+          0.818763,
+          0.80463,
+          0.820896
+        ],
+        "evidence_zh": "深蓝核心在y=1537–1539，y=1536另有混合边缘；目标连续高度约3.43px。",
+        "uncertainty_zh": "三行核心不等于完整连续净高；±1px约为目标29%，无法可靠恢复量值及相对误差。"
+      },
+      {
+        "series_id": "assets",
+        "category": "Bank J",
+        "expected_value": 0.0152,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.835648,
+          0.819296,
+          0.884722,
+          0.820896
+        ],
+        "evidence_zh": "y=1538–1539可见深蓝薄线，内部中位RGB约为[78,121,141]和[25,81,107]；目标高度约1.72px。",
+        "uncertainty_zh": "抗锯齿及基座邻接使两行像素不能直接当作2px连续净高；1px占目标58%，观测量值与误差留空。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体银行立面与后方金库",
+        "required_parts": [
+          "三角屋顶",
+          "圆徽横梁",
+          "浅色支柱",
+          "蓝色资产区",
+          "阶梯基座",
+          "金库门"
+        ],
+        "relationship": "屋顶位于横梁之上，圆徽附于横梁；支柱连接横梁与基座，蓝区嵌入柱内；金库处于后方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.037,
+          0.1295,
+          1,
+          0.9323
+        ],
+        "evidence_zh": "屋顶与横梁连续，柱顶和柱底分别接触横梁与基座；金库轮廓及把手从柱间可见，没有盖在柱身前方。"
+      },
+      {
+        "category": "Bank A大值实例",
+        "required_parts": [
+          "A圆徽",
+          "蓝色沟槽柱身",
+          "横梁",
+          "基座"
+        ],
+        "relationship": "圆徽与蓝柱同轴，满高蓝区上下接触建筑部件。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1153,
+          0.3209,
+          0.1644,
+          0.8785
+        ],
+        "evidence_zh": "蓝柱具有连续竖向沟槽，从y≈680抵达1540；银行名称与7.6位于其正下方。"
+      },
+      {
+        "category": "Bank E内部值实例",
+        "required_parts": [
+          "浅色柱身",
+          "蓝色数据段",
+          "基座"
+        ],
+        "relationship": "约54px蓝段包含于同宽浅柱下部，沟槽方向一致，底部接触基座。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4356,
+          0.765,
+          0.4847,
+          0.836
+        ],
+        "evidence_zh": "y≈1486处由浅转蓝，左右柱边无跳变；浅色部分继续向上支撑横梁。"
+      },
+      {
+        "category": "Bank J最小值实例",
+        "required_parts": [
+          "浅色柱身末端",
+          "极薄蓝色数据区",
+          "基座顶面"
+        ],
+        "relationship": "蓝线位于浅柱底端，包含与接触关系仍可辨，独立蓝柱纹理仅部分保留。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.8356,
+          0.8022,
+          0.8847,
+          0.8358
+        ],
+        "evidence_zh": "约两行深蓝像素没有脱离浅柱或悬浮，但无法单独辨认纵向柱身纹理。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确将真实中央银行统计改为十家虚构银行资产，允许使用A至J及当前值，不要求旧排名、国旗或原数值。",
+      "output_added_or_lost_meaning_zh": "资产高度比较与建筑融合保留，主题及类别角色没有丢失；新增总额与输入一致，最小数据区的柱纹受分辨率限制。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Central bank assets；Illustrative assets / trillion USD；10 FICTITIOUS CENTRAL BANKS；Bank A至J；Solid blue height = assets；Pale shaft = structural support；LINEAR SCALE 0–7.60。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实银行、国旗及十大最大统计身份替换为虚构银行和字母圆徽，符合冻结输入。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "蓝区按当前7.6至0.0152逐级缩短，浅色支柱维持全高建筑。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小目标高度约1.72px，仍有蓝色像素但柱纹难辨；不能视为遗漏，也不能仅凭文字或公式证明相对精度。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单高度通道。全部十根蓝区均做像素扫描，全部十组名称、数值和圆徽均核对；明细列出A/B/E/G/I/J六项，C/D/F/H跨度包含于测量摘要。未声称恢复抗锯齿边界的精确亚像素几何。"
+  }
+}

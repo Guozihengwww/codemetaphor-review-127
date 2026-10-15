@@ -1,0 +1,231 @@
+{
+  "verdict": "minor",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中面包与可辨识纸钞左右并置，中间有白缝，下方有阴影或反射。待评图完整面包占据几乎全部主体宽度，右端纸钞仅呈细线，无法辨认内部纹样；箭头指向该细线。两个完整金额、占比、总额、合成标识和GBP每户每年口径均清楚可读。以上观察记录于源码检查之前。",
+  "summary_zh": "数值、绑定和宽度比例符合要求；微小纸钞的物象身份仅部分保留，未发现重大缺陷。review.json已保存并通过schema校验；按后续要求未执行submit.py。",
+  "issues": [
+    {
+      "category": "metaphor_identity",
+      "severity": "minor",
+      "requirement_id": "M3",
+      "expected_zh": "保留面包与纸钞相接结构；不人为放大小值，分别评价数值与纸钞部件可辨性。",
+      "observed_zh": "纸钞保留为竖直色带，但无法独立辨识纸面花纹或钞票构图，需要文字确认身份。",
+      "evidence_zh": "原图中纸钞约在x=1338–1341、y=883–1296，仅有约3列明显着色像素。原始素材的花饰边框和中央图案在最终窄带中不可辨。这是极小份额下的分辨率限制，不据此认定比例错误。",
+      "bbox_xyxy_normalized": [
+        0.929167,
+        0.432843,
+        0.93125,
+        0.635294
+      ]
+    }
+  ],
+  "measurement_notes_zh": "独立检查1440×2040原图，未使用自检结果或遮罩。面包明显颜色包络约为x=[99,1336)，宽1237px；右侧色带在y=920–1249平均RGB对背景的距离阈值25、35、50下均占1338–1340三列。排除白缝后，整像素支持宽度约1237:3，份额与目标各差约0.0423个百分点。此为粗测，不等于透明度积分。源码的1240×金额/1500映射及另计3px白缝仅作佐证。",
+  "uncertainties_zh": "微小色带包含抗锯齿混合像素，约±1px足以显著改变小值相对误差。2–4px粗测区间对应约0.161%–0.323%，支持满量程容差通过，但不保证小值相对精度。未访问归档记录，无法确认每次渲染实际归档；未重渲染。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "唯一系列、Used/Wasted两类、完整金额、总额、占比、年度家庭口径及SYNTHETIC DATA均出现。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "£1,497.00598802、£2.99401198及总额£1,500正确；约99.8004%与0.1996%正确，小正值未舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "说明明确面包代表已使用、右端纸钞代表损耗；箭头指向细带，两金额分别位于对应类别下。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素粗测份额偏差约0.0423个百分点，远小于3个百分点；约1px边界不确定性不改变满量程结论。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始生成素材及纸钞资产；最终大面积面包纹理与素材对应。源码读取两种资产并按数据控制宽度。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "面包与窄纸钞左右相邻，白缝分隔，共同底边约y=1296；内缘暗边及底部阴影存在，无明显错层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、类别、金额、占比、统计口径及阅读说明清晰，无明显裁切或覆盖。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "完整面包、右端色带、白缝和共底关系保留；纸钞内部部件无法辨识，不能仅凭细带认定完整纸钞身份。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "当前主题、GBP/户/年单位及预算已使用和损耗两部分的统计含义明确。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "食品与金钱损耗的联系保留；原1/3、£400及真实宣传口径由输入明确替换为合成预算，不属于生成遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最小正值约3列着色像素、高约413px，并未消失；金额和箭头清楚，但内部纸钞纹样不可辨，小值相对精度不确定。"
+    }
+  },
+  "semantic_attribution_zh": "合成主题和旧统计替换属于允许的输入适配。纸钞极窄属于数据驱动形变，内部纹样不可辨主要属于分辨率限制；未发现当前主题、类别或单位遗漏。原参考的左右并置关系保留。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_food_budget",
+        "category": "Used",
+        "expected_value": 1497.00598802,
+        "observed_value": 1496.37,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1237,
+        "full_scale_error_percent": 0.0423,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.06875,
+          0.404902,
+          0.927778,
+          0.635294
+        ],
+        "evidence_zh": "明显颜色水平包络约1237px，与右侧3px色带组成净宽约1240px，粗估1500×1237/1240≈1496.37。",
+        "uncertainty_zh": "颜色阈值下的整像素粗估，非精确透明度积分；圆角及抗锯齿产生约1px边界不确定性。"
+      },
+      {
+        "series_id": "annual_food_budget",
+        "category": "Wasted",
+        "expected_value": 2.99401198,
+        "observed_value": 3.63,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": 0.0423,
+        "small_value_relative_error_percent": 21.2,
+        "bbox_xyxy_normalized": [
+          0.929167,
+          0.432843,
+          0.93125,
+          0.635294
+        ],
+        "evidence_zh": "x=1338、1339、1340三列明显着色。整像素支持粗估1500×3/1240≈3.63，份额约0.2419%；目标约0.1996008%。",
+        "uncertainty_zh": "部分像素仅部分覆盖，21.2%是整像素粗估的相对差，不证明真实几何存在此偏差。±1px对应约£2.42–£4.84；源码目标约2.475px仅作佐证。"
+      },
+      {
+        "series_id": "annual_food_budget",
+        "category": "Used（金额文字）",
+        "expected_value": 1497.00598802,
+        "observed_value": 1497.00598802,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.065,
+          0.737,
+          0.32,
+          0.76
+        ],
+        "evidence_zh": "Used下可读£1,497.00598802，与输入一致。",
+        "uncertainty_zh": "文字正确不证明几何正确。"
+      },
+      {
+        "series_id": "annual_food_budget",
+        "category": "Wasted（金额文字）",
+        "expected_value": 2.99401198,
+        "observed_value": 2.99401198,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.555,
+          0.737,
+          0.75,
+          0.76
+        ],
+        "evidence_zh": "Wasted下可读£2.99401198，非零金额完整。",
+        "uncertainty_zh": "文字准确不消除微小纸钞几何和身份辨识的不确定性。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Used：大标记",
+        "required_parts": [
+          "完整面包主体",
+          "上部表皮",
+          "连续切片前表面",
+          "右端接界"
+        ],
+        "relationship": "表皮覆盖上方，连续切片构成面包；水平包络承担Used金额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.06875,
+          0.404902,
+          0.927778,
+          0.635294
+        ],
+        "evidence_zh": "棕色上壳、多孔前表面和切片边界清楚，底部平直，右端面对纸钞细带。"
+      },
+      {
+        "category": "Wasted：最小正标记",
+        "required_parts": [
+          "纸钞主体",
+          "纸面边界",
+          "内部印刷纹样"
+        ],
+        "relationship": "位于面包右侧，以自身水平净宽承担Wasted金额。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.929167,
+          0.432843,
+          0.93125,
+          0.635294
+        ],
+        "evidence_zh": "非零色带及上下端存在，但约3px宽度无法呈现纸面边框或内部图案。"
+      },
+      {
+        "category": "面包—纸钞接界",
+        "required_parts": [
+          "面包右缘",
+          "微小白缝",
+          "纸钞细带",
+          "内缘暗边和底部阴影"
+        ],
+        "relationship": "左右并置、窄缝分隔、共用底边；阴影不承担数据宽度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.92,
+          0.429,
+          0.937,
+          0.649
+        ],
+        "evidence_zh": "x≈1336–1338可见白缝，右侧为色带；底端约y=1296对齐，下方有柔和阴影。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确改为合成年度家庭食品预算，允许按当前金额改变宽度，不保留原1/3或£400。",
+      "output_added_or_lost_meaning_zh": "已使用与损耗的统计含义完整；纸钞视觉身份减弱。原宣传具体统计与号召不再呈现，属于允许的主题适配。",
+      "visible_inscription_evidence_zh": "可见合成年度食品预算损耗、SYNTHETIC DATA、Current measure、GBP per household per year、Used/已使用、Wasted/损耗及净宽映射说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实食品浪费宣传被明确替换为合成年度家庭预算。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "Wasted仅约0.1996%，纸钞必须成为极窄部分，未为辨识而显著放大。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "约3列着色像素保留非零值和邻接位置，但无法显示纸钞纹样，也限制相对精度测量。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一宽度通道的全部两类，包括最大值和最小正值；不存在第三个内部类别。另核对全部标签、金额、总额、占比与单位。未检查其他图像、自检或日志，未重渲染。"
+  }
+}

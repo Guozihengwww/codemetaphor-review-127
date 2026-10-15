@@ -1,0 +1,308 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为五根红色竖柱与手枪、两枚弹药及圆框并置。成图有八根共零基线红柱，依次标注156、36、5、2、15、96、20、4；纵轴为0至200。合成提示、标题、事件单位、八个类别及总数334可见。最小值仍有红色短柱；右侧枪械插画未遮挡柱顶或数值。",
+  "summary_zh": "通过。数值、标签、单位及并置结构完整，全部柱高在容差内。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "原图2000×1425。可见200至0刻度分别位于y≈370至1070，满量程700像素，即3.5像素/事件。按红色阈值测量八柱连续像素行，高度为546、126、17、7、52、336、70、14像素；最大换算偏差约0.0714%满量程。源码公式仅作旁证。",
+  "uncertainties_zh": "抗锯齿带来约±1像素边界不确定性，不能由满量程通过保证小值的亚像素精度。按范围限制未读取日志、自检或渲染历史，未核验生图调用及逐次归档执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八类、唯一系列、单位、标题、合成提示及总数334齐全，顺序符合输入。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "156、36、5、2、15、96、20、4及8 categories、334 events均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "整数和类别沿各自柱中心上下绑定；新增类别保留父类及comparable编号。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部柱底位于y≈1070，采用统一线性量尺；独立像素测量均低于3%满量程容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始与处理素材的枪体纹理、握把、扳机和两枚弹药均出现在成图；render.py读取素材并控制柱高与文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "插画叠于圆形底衬，与红柱并置；仅遮盖部分网格，没有遮挡数据。枪体不编码数量。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下所有必需文字可读；后三组附注较紧，但父类、描述及编号完整清楚。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "枪管、枪身和握把相连，扳机位于护圈内，弹药分离；红柱顶边承担计数编码，底边接共同基线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Synthetic incidents (events)、合成提示与Scope说明共同明确当前主题、指标、单位及合成口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "枪械情境及类别比较保留；原政治类别、真实时期和原标题论断由输入明确改为合成计数，属于允许适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "2、4、5事件柱分别约7、14、17像素高，均可辨红色区域、上边界及共同基线，标签清楚。"
+    }
+  },
+  "semantic_attribution_zh": "原真实政治统计论题的变化属于输入适配；柱高变化由当前数据决定；微小边缘差异属于栅格限制。未发现输出丢失当前主题、单位或类别角色。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_incidents",
+        "category": "Category A",
+        "expected_value": 156,
+        "observed_value": 156,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 546,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.115,
+          0.367719,
+          0.1725,
+          0.750877
+        ],
+        "evidence_zh": "柱中心红色像素y=524至1069，共546行；按可见量尺换算156事件。",
+        "uncertainty_zh": "抗锯齿边界约±1像素。"
+      },
+      {
+        "series_id": "synthetic_incidents",
+        "category": "Category B",
+        "expected_value": 36,
+        "observed_value": 36,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 126,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.223,
+          0.662456,
+          0.2805,
+          0.750877
+        ],
+        "evidence_zh": "柱中心红色像素y=944至1069，共126行，换算36事件。",
+        "uncertainty_zh": "抗锯齿边界约±1像素。"
+      },
+      {
+        "series_id": "synthetic_incidents",
+        "category": "Category C",
+        "expected_value": 5,
+        "observed_value": 4.8571,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 17,
+        "full_scale_error_percent": 0.0714,
+        "small_value_relative_error_percent": 2.8571,
+        "bbox_xyxy_normalized": [
+          0.3305,
+          0.738947,
+          0.388,
+          0.750877
+        ],
+        "evidence_zh": "柱中心阈值红色像素y=1053至1069，共17行，换算约4.8571事件；文字为5。",
+        "uncertainty_zh": "阈值未完整计入抗锯齿边缘；约±1像素，误差字段仅为栅格估计差。"
+      },
+      {
+        "series_id": "synthetic_incidents",
+        "category": "Category D",
+        "expected_value": 2,
+        "observed_value": 2,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 7,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.4385,
+          0.745965,
+          0.496,
+          0.750877
+        ],
+        "evidence_zh": "柱中心红色像素y=1063至1069，共7行，换算2事件。",
+        "uncertainty_zh": "约±1像素相当于此小值的14.3%，不据此声称亚像素精度。"
+      },
+      {
+        "series_id": "synthetic_incidents",
+        "category": "Category E",
+        "expected_value": 15,
+        "observed_value": 14.8571,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 52,
+        "full_scale_error_percent": 0.0714,
+        "small_value_relative_error_percent": 0.9524,
+        "bbox_xyxy_normalized": [
+          0.546,
+          0.714386,
+          0.6035,
+          0.750877
+        ],
+        "evidence_zh": "柱中心阈值红色像素y=1018至1069，共52行，换算约14.8571事件；文字为15。",
+        "uncertainty_zh": "阈值未完整计入抗锯齿边缘；约±1像素，误差字段仅为栅格估计差。"
+      },
+      {
+        "series_id": "synthetic_incidents",
+        "category": "Category A / additional synthetic comparable 1",
+        "expected_value": 96,
+        "observed_value": 96,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 336,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.654,
+          0.515088,
+          0.7115,
+          0.750877
+        ],
+        "evidence_zh": "柱中心红色像素y=734至1069，共336行，换算96事件。",
+        "uncertainty_zh": "抗锯齿边界约±1像素。"
+      },
+      {
+        "series_id": "synthetic_incidents",
+        "category": "Category B / additional synthetic comparable 2",
+        "expected_value": 20,
+        "observed_value": 20,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 70,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.7615,
+          0.701754,
+          0.819,
+          0.750877
+        ],
+        "evidence_zh": "柱中心红色像素y=1000至1069，共70行，换算20事件。",
+        "uncertainty_zh": "抗锯齿边界约±1像素。"
+      },
+      {
+        "series_id": "synthetic_incidents",
+        "category": "Category C / additional synthetic comparable 3",
+        "expected_value": 4,
+        "observed_value": 4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 14,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.8695,
+          0.741053,
+          0.927,
+          0.750877
+        ],
+        "evidence_zh": "柱中心红色像素y=1056至1069，共14行，换算4事件。",
+        "uncertainty_zh": "抗锯齿边界约±1像素，相当于该值约7.1%。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "枪械情境插画",
+        "required_parts": [
+          "枪管/套筒",
+          "枪身与握把",
+          "扳机护圈及扳机",
+          "两枚弹药",
+          "圆形底衬"
+        ],
+        "relationship": "枪体朝右上，握把连接枪身并向左下延伸；扳机位于护圈内，两枚弹药在右下分离，整体叠于圆形底衬。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.714,
+          0.2526,
+          0.954,
+          0.5825
+        ],
+        "evidence_zh": "连接部件、护圈内空隙和两枚弹药均可见；插画无定量刻度。"
+      },
+      {
+        "category": "Category A（最大值）",
+        "required_parts": [
+          "平面红柱",
+          "零基线",
+          "156标签",
+          "Category A标签"
+        ],
+        "relationship": "柱底接共同零基线，顶边高度编码156事件，数值与类别沿柱中心绑定。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.104,
+          0.338,
+          0.184,
+          0.792
+        ],
+        "evidence_zh": "柱高约546像素，两侧和顶边完整，无插画遮挡。"
+      },
+      {
+        "category": "Category D（最小正值）",
+        "required_parts": [
+          "红色短矩形",
+          "零基线",
+          "2标签",
+          "Category D标签"
+        ],
+        "relationship": "短柱底边接相同基线，上边界保留高度；数值2与Category D对应。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.426,
+          0.716,
+          0.507,
+          0.792
+        ],
+        "evidence_zh": "约7行红色像素与背景、灰色基线可区分；不要求短柱承担枪械部件缩放。"
+      },
+      {
+        "category": "柱图与插画层次",
+        "required_parts": [
+          "红色柱图",
+          "圆形底衬",
+          "枪械插画",
+          "网格线"
+        ],
+        "relationship": "插画位于右上空区；圆衬在插画下方、部分网格上方，不遮挡数据区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.65,
+          0.2526,
+          0.954,
+          0.751
+        ],
+        "evidence_zh": "96柱在插画左侧，20及4柱在其下方，柱顶和数值完整；装饰透视不影响柱高。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确将原真实统计改为合成枪械事件计数，不要求延续原极值或政治类别排序论断。",
+      "output_added_or_lost_meaning_zh": "保留类别事件计数比较及枪械情境；未增加时间累计、份额构成或枪体长度编码。原论题变化属于输入适配。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Synthetic Firearm Incident Counts、Synthetic incidents (events)、合成类别计数Scope说明及additional synthetic comparable 1/2/3。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原政治类别及真实时期统计由输入明确替换，因此参考含义记partial，不归为输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "八柱随当前数值改变高度，共用700像素满量程。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "5和15事件柱边缘含抗锯齿像素，阈值计数约17及52行，不表示人为改变数值。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一量化通道为单面板线性柱高，已测量全部八柱，包括最大值、最小正值和内部值；另核对全部类别、整数、系列、单位、刻度及总数。"
+  }
+}

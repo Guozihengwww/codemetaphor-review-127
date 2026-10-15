@@ -1,0 +1,292 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：白底横向比较图，15 个国家及旗帜、蓝色粉笔笔触横条、金额；右侧手持独立短粉笔，与数据横条分置。成图：深绿黑板背景，标题为小学教师起薪，醒目标注 SYNTHETIC DATA；副标题说明 Annual starting pay、USD/year 和 15 synthetic comparable regions。Region A–O 及圆形字母徽章共 15 行，金额列逐行对应；蓝色纹理条共用左侧零线，长度递减。右上手部可见并接触最长横条右端，未挡住右侧金额。底部最短数条仅为细竖条，粉笔体积与材质不易辨认；数字仍可读。图中另有 Region A ÷ Region O = 500× 和合成数据、线性尺度、短条不放大说明。以上记录于查看源码之前。",
+  "summary_zh": "数据、标签和当前主题符合冻结要求，生成粉笔纹理实际承担条形编码，手与最长条的接触清楚。微小条的物体身份仅部分可辨；未发现违反可行核心要求的重大可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1556原图上测量，未使用生成遮罩或自检结果。可见零线约x=410；y=897–900处网格列为610、810、1010、1210、1410，配合$15,000递增刻度确定满量程1000像素。用B−R>35、B−G>10且B>110识别每条中央16像素带的蓝色区域；A–O测得宽度约925、593、381、244、157、101、65、41、27、17、11、7、5、3、2像素。测宽有约±1像素阈值不确定性。源码的共同零点、统一裁切与无最小宽度仅作佐证。",
+  "uncertainties_zh": "N、O的亚像素边界及小值相对精度不能可靠确定。参考图的独立持粉笔手没有显示实际落笔动作，不能据姿态变化断言其原有论点丢失。已检查素材和归档脚本源码，但未核验生图调用历史或capture_render.py实际执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A–O共15行，15枚字母徽章、15个非零蓝色标记及15项金额均存在，顺序与输入一致；无要求的辅助面板缺失。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行目视核对全部15项金额，与data.json一致，保留给定小数且最小值为138.68；69,340.00和500×派生说明均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每行的地区名、字母徽章、蓝条和精确金额水平对应；统一金额列未发生跨行或类别错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "15条共享零点和线性尺度；像素范围检查未见超过3%满量程的偏差。代表A、E、H的估计满量程差均低于0.05%；最短条可见但亚像素精度未作保证。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的手指、袖口与蓝色矿物纹理在成图中可辨；chalk_material.png、hand_cutout.png与render.py的引用相符。实际生图调用及归档执行历史未独立核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "粉笔纹理覆盖全部数据条的编码区域；手指在A条右端前后围握并局部遮住下缘，未遮金额。黑板、徽章、条和手的层次协调，无破坏读数的接缝或透视错误。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、年度指标与USD/year、地区名、15项精确金额、坐标和合成口径说明均可读。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "较长条保有蓝色粉笔颗粒表面，A条与手的接触、黑板承载和地区徽章关系清楚。N、O仅约3与2像素宽，不能分别辨认粉笔端面或体积；主体结构仍保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Starting Pay for Primary School Teachers明确当前主题；Annual starting pay、USD/year、15 synthetic comparable regions说明指标、单位及类别角色，未冒称真实观测工资。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留教师起薪比较及粉笔教学意象。原国家、2014年和PPP真实统计按输入改为合成地区，属允许改编。参考手持独立短粉笔，成图改握A条端；并置形式有变化，但持粉笔关系未丢失，未据此推定原有书写论点。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "L–O约7、5、3、2像素宽，均有非零蓝色痕迹及对应金额；最小几条的粉笔材质和体积不足以独立识别，属于量程与栅格分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "国家与历史真实统计替换为明确标注的合成地区，归因于允许的输入改编。短条退化为窄色线来自当前500倍范围及像素限制，并非标签遗漏或人为抬高。手从独立持短粉笔改为握A条端是可见姿态和非数据部件适配；原图未显示实际书写，不能推定其动作论点。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_starting_pay",
+        "category": "Region A",
+        "expected_value": 69340,
+        "observed_value": 69375,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 925,
+        "full_scale_error_percent": 0.0467,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.205,
+          0.2905,
+          0.6675,
+          0.3111
+        ],
+        "evidence_zh": "原图蓝色区域横向覆盖 x=410–1334，约925像素；可见刻度的满量程跨度约1000像素，对应约69,375 USD/year。手指覆盖下缘，但上部终点仍可辨。",
+        "uncertainty_zh": "颜色阈值测宽约有±1像素误差；换算值和误差是栅格估计，不能视为真实编码偏差。"
+      },
+      {
+        "series_id": "annual_starting_pay",
+        "category": "Region E",
+        "expected_value": 11744.90613799,
+        "observed_value": 11775,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 157,
+        "full_scale_error_percent": 0.0401,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.205,
+          0.4473,
+          0.2835,
+          0.4679
+        ],
+        "evidence_zh": "原图中央扫描带蓝色区域覆盖 x=410–566，约157像素，按可见共同尺度换算约11,775 USD/year。",
+        "uncertainty_zh": "端点受颗粒和抗锯齿影响，约±1像素；远小于满量程3%容差。"
+      },
+      {
+        "series_id": "annual_starting_pay",
+        "category": "Region H",
+        "expected_value": 3100.9790712,
+        "observed_value": 3075,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 41,
+        "full_scale_error_percent": 0.0346,
+        "small_value_relative_error_percent": 0.8378,
+        "bbox_xyxy_normalized": [
+          0.205,
+          0.5649,
+          0.226,
+          0.5855
+        ],
+        "evidence_zh": "中央扫描带蓝色区域覆盖 x=410–450，约41像素；上部少量边缘延至451。中央测宽对应约3,075 USD/year。",
+        "uncertainty_zh": "约±1像素对应±75 USD/year；所列相对差仅为整数像素估计，不是小值精度保证。"
+      },
+      {
+        "series_id": "annual_starting_pay",
+        "category": "Region N",
+        "expected_value": 216.17098662,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.205,
+          0.8001,
+          0.2065,
+          0.8207
+        ],
+        "evidence_zh": "原图 x=410–412 可检出蓝色窄条，约3像素宽，仍与N行绑定；金额文字为216.17098662。",
+        "uncertainty_zh": "抗锯齿和零线混合使亚像素端点不可可靠量出，因此不把3个着色像素当作精确数值，也不报告相对误差。"
+      },
+      {
+        "series_id": "annual_starting_pay",
+        "category": "Region O",
+        "expected_value": 138.68,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.205,
+          0.8393,
+          0.206,
+          0.8599
+        ],
+        "evidence_zh": "最小正值在原图 x=410–411 形成约2像素宽蓝条，高约32像素；与背景有色差，金额138.68清晰。",
+        "uncertainty_zh": "能确认非零标记，不能从两列抗锯齿像素可靠反推其亚像素净长或小值相对精度；粉笔立体形态也不可辨。"
+      },
+      {
+        "series_id": "derived_max_min_ratio",
+        "category": "Region A / Region O",
+        "expected_value": 500,
+        "observed_value": 500,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.504,
+          0.638,
+          0.76,
+          0.776
+        ],
+        "evidence_zh": "可见500×、Region A ÷ Region O及Largest / smallest synthetic pay；69,340÷138.68确为500。",
+        "uncertainty_zh": "这是派生数字说明，不是额外的几何编码或物体融合。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Region A：大值与持粉笔手",
+        "required_parts": [
+          "蓝色粉笔数据条",
+          "拇指与食指",
+          "手掌和袖口",
+          "黑板",
+          "A徽章"
+        ],
+        "relationship": "条从共同零点向右延伸；手指在右端上下接触，拇指位于条的前层，手掌连至袖口。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.04,
+          0.263,
+          0.793,
+          0.454
+        ],
+        "evidence_zh": "长条表面可见蓝白颗粒，右端仍有可见蓝色边界；手未悬空，也未将额外蓝色部分延伸到正确端点之外。A徽章与该条同一行。"
+      },
+      {
+        "category": "Region E：中间值",
+        "required_parts": [
+          "粉笔纹理条",
+          "共同零线",
+          "E徽章",
+          "黑板"
+        ],
+        "relationship": "蓝色区域贴合黑板平面，从共同零线延伸至本行终点，与E徽章横向对应。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.04,
+          0.444,
+          0.287,
+          0.471
+        ],
+        "evidence_zh": "约157像素长的条具有连续蓝白颗粒表面，上下边缘清楚，条面未与徽章或相邻行粘连；参考也未要求每行配手。"
+      },
+      {
+        "category": "Region H：较小值",
+        "required_parts": [
+          "蓝色纹理区域",
+          "零线",
+          "H徽章"
+        ],
+        "relationship": "区域仍从同一零点开始，纹理保留在约41×32像素矩形内，与H行标签对应。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.04,
+          0.562,
+          0.23,
+          0.589
+        ],
+        "evidence_zh": "可见颗粒表面和独立边界，但轮廓接近方块，长条粉笔的外形特征减弱；未见数值被人为加长。"
+      },
+      {
+        "category": "Region N、O：最小实例",
+        "required_parts": [
+          "非零蓝色标记",
+          "零线",
+          "N与O徽章",
+          "对应金额"
+        ],
+        "relationship": "约3与2像素宽标记紧邻零线并各自位于对应行，金额与徽章仍分离可读。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.04,
+          0.798,
+          0.96,
+          0.863
+        ],
+        "evidence_zh": "两条均可检出蓝色痕迹，未被手或文字遮住；不能从窄条辨认独立粉笔端面、厚度或颗粒结构。"
+      },
+      {
+        "category": "参考图与成图的持粉笔关系",
+        "required_parts": [
+          "持粉笔手",
+          "独立短粉笔或数据条",
+          "数据笔触"
+        ],
+        "relationship": "参考手持独立斜置短粉笔，与数据笔触并置；成图手直接握住A数据条末端。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.635,
+          0.262,
+          0.793,
+          0.454
+        ],
+        "evidence_zh": "两图均有手指接触粉笔的关系，成图加强了手与数据条的直接联系。原图没有可见落笔接触点，不将其解释成必须保留的书写动作。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入明确以合成小学教师年度起薪和Region A–O替代参考的真实国家、年份及PPP统计；允许适配姿态和非数据部件，不要求旧值或旧极值。",
+      "output_added_or_lost_meaning_zh": "成图增加正确的最大/最小500×说明；手部从独立短粉笔改为接触最大条。短值物体形态减弱，但当前主题、比较角色与单位未丢失。",
+      "visible_inscription_evidence_zh": "Starting Pay for Primary School Teachers；Annual starting pay · USD/year · 15 synthetic comparable regions；SYNTHETIC DATA；Synthetic research data · not observed salary statistics.；Common zero; linear $0–$75,000 scale."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成地区和当前工资值来自冻结输入，原国家、2014年及PPP口径不再适用；成图明确披露合成性质。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "横条按当前500倍数值范围缩短，H之后不再保持细长粉笔轮廓；这是定量长度变化。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "N、O仅约3与2像素宽，非零几何可见但粉笔体积和亚像素边界无法可靠辨认。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "参考为独立持粉笔插画，未显示实际书写接触；不能据成图手部位置改变断定丢失某个书写论点。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单一长度通道；扫描全部15条蓝色像素范围，详细记录A、E、H、N、O，覆盖最大、中间和最小正值。15个类别、徽章与金额全部目视核对；派生500×另作直接文字核对。未以渲染公式、遮罩或自检替代成图测量，未尝试将最小条的着色像素数当作精确亚像素净长。"
+  }
+}

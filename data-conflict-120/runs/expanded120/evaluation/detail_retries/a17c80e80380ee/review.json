@@ -1,0 +1,378 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以水彩针叶林叠合年度橙红折线，树冠不充当定量边界。待评图可见完整森林、年度面积标题、SYNTHETIC DATA、hectares单位和61 annual observations；三个高点、最低值及总量文字清晰。2015低点仍高于零线。未见明显遮挡、森林结构断裂或图层错置。",
+  "summary_zh": "通过。数据、标签和森林叠合关系保留；11个代表点的像素测量偏差均小于满量程0.1%。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1600原图检测到9条等距网格线，零线y=1240、8,000,000线y=408；检测到61个年度刻度，x=235至1875。圆点取像素质心，其他代表点取相邻红线中心线交点或端点外推。mark_extent_px为点中心至零线的纵向距离，不是点径或树高。源码仅作为连接完整性及路线佐证。",
+  "uncertainties_zh": "约±1像素纵向定位不确定性相当于±9,615 hectares，对最小值约为±4.2%，不能据满量程合格保证小值精密相对准确。独立反算11个年度点，其余50点未逐一报告误差。未读取日志、历史渲染或自检，未核验capture_render.py实际调用历史；归档未提供input.json。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "1系列、61年度；图面注明61 annual observations，像素检测到61个年度刻度，源码连接全部61值。13个主年份标签、9个纵轴刻度、图例、单位、3处高点标注及3项汇总齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "1983/7,080,000、1989/7,360,000、1997/6,420,000、最低2015/230,000正确；130,340,000期间总量与独立求和一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "高点标签通过引线绑定相应圆点；最低点对应2015刻度。Year、AREA BURNED (hectares)及系列图例明确类别、指标与单位。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "纵轴满高832像素，每百万104像素；年度刻度间隔27或28像素。11个代表点均低于满量程0.1%偏差，无截断或最低值抬高迹象。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始和透明森林素材的RGB逐像素一致；成图中的高松、杉树及地面岩石与素材对应并占主体区域。render.py使用素材并控制折线和文字；保存入口可见，调用历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "橙线直接叠在完整林景前方，树冠、树干和林地关系保持；浅色描边使数据不被纹理遮挡。符合参考叠合关系，无须树冠编码面积。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下主题、合成标识、单位、年份、图例、峰值及底部统计清晰，底注明确只有折线编码面积。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "针叶林的树冠—树干—林地连接完整，折线横跨森林前方；实际数据由折线中心位置承载。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题与年度hectares说明明确森林火灾烧毁面积，Year明确年度角色。期间合计没有将逐年折线误表述为累计曲线。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留年度森林火灾面积比较与森林叠合；参考的加拿大历史资料身份未沿用，属于冻结输入允许的合成数据改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "2015最小圆点约9×8像素，中心距零线约24.5像素；2000和2013低点亦可辨，森林地表叠合关系保持。"
+    }
+  },
+  "semantic_attribution_zh": "历史统计身份的变化属于输入许可的合成数据改编，新峰谷由当前数值决定。未见当前主题、指标、单位或年度角色的输出遗漏。小值相对精度受像素定位限制，但未失去结构关系。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "burned_area",
+        "category": "1959",
+        "expected_value": 1910000,
+        "observed_value": 1911360,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 198.78,
+        "full_scale_error_percent": 0.017,
+        "small_value_relative_error_percent": 0.071,
+        "bbox_xyxy_normalized": [
+          0.1155,
+          0.64625,
+          0.1215,
+          0.654375
+        ],
+        "evidence_zh": "邻接红线像素中心线外推得到端点约(235.00,1041.22)。",
+        "uncertainty_zh": "约±1像素纵向定位不确定性。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1964",
+        "expected_value": 4510000,
+        "observed_value": 4510739,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 469.12,
+        "full_scale_error_percent": 0.0092,
+        "small_value_relative_error_percent": 0.016,
+        "bbox_xyxy_normalized": [
+          0.182,
+          0.476875,
+          0.1895,
+          0.486875
+        ],
+        "evidence_zh": "相邻红线像素中心线交点约(371.14,770.88)。",
+        "uncertainty_zh": "约±1像素纵向定位不确定性。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1974",
+        "expected_value": 3230000,
+        "observed_value": 3233388,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 336.27,
+        "full_scale_error_percent": 0.0424,
+        "small_value_relative_error_percent": 0.105,
+        "bbox_xyxy_normalized": [
+          0.3185,
+          0.56,
+          0.3265,
+          0.57
+        ],
+        "evidence_zh": "相邻红线像素中心线交点约(644.74,903.73)。",
+        "uncertainty_zh": "约±1像素纵向定位不确定性。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1980",
+        "expected_value": 4790000,
+        "observed_value": 4794691,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 498.65,
+        "full_scale_error_percent": 0.0586,
+        "small_value_relative_error_percent": 0.098,
+        "bbox_xyxy_normalized": [
+          0.4005,
+          0.45875,
+          0.4085,
+          0.46875
+        ],
+        "evidence_zh": "相邻红线像素中心线交点约(808.72,741.35)。",
+        "uncertainty_zh": "约±1像素纵向定位不确定性。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1983",
+        "expected_value": 7080000,
+        "observed_value": 7083791,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 736.71,
+        "full_scale_error_percent": 0.0474,
+        "small_value_relative_error_percent": 0.054,
+        "bbox_xyxy_normalized": [
+          0.443,
+          0.311875,
+          0.448,
+          0.318125
+        ],
+        "evidence_zh": "独立橙色圆点像素质心约(890.71,503.29)。",
+        "uncertainty_zh": "约±1像素纵向定位不确定性。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1989",
+        "expected_value": 7360000,
+        "observed_value": 7362637,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 765.71,
+        "full_scale_error_percent": 0.033,
+        "small_value_relative_error_percent": 0.036,
+        "bbox_xyxy_normalized": [
+          0.525,
+          0.29375,
+          0.53,
+          0.3
+        ],
+        "evidence_zh": "最大值圆点像素质心约(1054.71,474.29)。",
+        "uncertainty_zh": "约±1像素纵向定位不确定性。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1997",
+        "expected_value": 6420000,
+        "observed_value": 6425824,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 668.29,
+        "full_scale_error_percent": 0.0728,
+        "small_value_relative_error_percent": 0.091,
+        "bbox_xyxy_normalized": [
+          0.6345,
+          0.354375,
+          0.6395,
+          0.360625
+        ],
+        "evidence_zh": "独立橙色圆点像素质心约(1273.29,571.71)。",
+        "uncertainty_zh": "约±1像素纵向定位不确定性。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "2000",
+        "expected_value": 340000,
+        "observed_value": 343356,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 35.71,
+        "full_scale_error_percent": 0.042,
+        "small_value_relative_error_percent": 0.987,
+        "bbox_xyxy_normalized": [
+          0.6735,
+          0.748125,
+          0.6815,
+          0.758125
+        ],
+        "evidence_zh": "相邻红线像素中心线交点约(1355.24,1204.29)。",
+        "uncertainty_zh": "约±1像素定位不确定性，小值相对误差不作高精度保证。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "2013",
+        "expected_value": 310000,
+        "observed_value": 303328,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 31.55,
+        "full_scale_error_percent": 0.0834,
+        "small_value_relative_error_percent": 2.152,
+        "bbox_xyxy_normalized": [
+          0.8515,
+          0.750625,
+          0.8595,
+          0.760625
+        ],
+        "evidence_zh": "相邻红线像素中心线交点约(1710.85,1208.45)。",
+        "uncertainty_zh": "约±1像素定位不确定性，小值相对误差不作高精度保证。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "2015",
+        "expected_value": 230000,
+        "observed_value": 235577,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 24.5,
+        "full_scale_error_percent": 0.0697,
+        "small_value_relative_error_percent": 2.425,
+        "bbox_xyxy_normalized": [
+          0.8805,
+          0.7575,
+          0.885,
+          0.7625
+        ],
+        "evidence_zh": "最小圆点像素质心约(1765.00,1215.50)，与零线可见分离。",
+        "uncertainty_zh": "约±1像素相当于最小值的±4.2%，不能视为精确相对误差保证。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "2019",
+        "expected_value": 420000,
+        "observed_value": 415725,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 43.24,
+        "full_scale_error_percent": 0.0534,
+        "small_value_relative_error_percent": 1.018,
+        "bbox_xyxy_normalized": [
+          0.9335,
+          0.743125,
+          0.9405,
+          0.753125
+        ],
+        "evidence_zh": "邻接红线像素中心线外推得到端点约(1875.00,1196.76)。",
+        "uncertainty_zh": "约±1像素定位不确定性，小值相对误差不作高精度保证。"
+      },
+      {
+        "series_id": "burned_area",
+        "category": "1959–2019期间总量",
+        "expected_value": 130340000,
+        "observed_value": 130340000,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.665,
+          0.865,
+          0.86,
+          0.925
+        ],
+        "evidence_zh": "底栏显示130,340,000 hectares，与独立相加61个输入值一致。",
+        "uncertainty_zh": "仅文字编码，没有独立几何尺度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "完整森林与图层",
+        "required_parts": [
+          "针叶树冠",
+          "树干",
+          "林地与岩石",
+          "年度折线"
+        ],
+        "relationship": "树冠连接树干，树干接触连续林地；折线覆盖于森林前方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.09,
+          0.275,
+          0.966,
+          0.791
+        ],
+        "evidence_zh": "高松及杉树从冠部延伸至地面，近远树层和地面岩石连续；橙线横穿林景，无影响识别的断裂或图层错误。"
+      },
+      {
+        "category": "1989最大值",
+        "required_parts": [
+          "左右相邻折线",
+          "高点圆点",
+          "引线与标签",
+          "后方森林"
+        ],
+        "relationship": "两侧年度线段在高点汇合，引线绑定标签，森林位于后方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.508,
+          0.24,
+          0.676,
+          0.689
+        ],
+        "evidence_zh": "高点中心约(1054.71,474.29)，与PEAK · 1989标签有可见引线；定量位置由折线中心承担，树冠不冒充峰值轮廓。"
+      },
+      {
+        "category": "2015最小值",
+        "required_parts": [
+          "左右邻接线段",
+          "最低值圆点",
+          "零基线",
+          "森林地表"
+        ],
+        "relationship": "2014下降至2015，再向2016上升；低点与零线分离并叠于林地前方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.862,
+          0.699,
+          0.904,
+          0.783
+        ],
+        "evidence_zh": "低点距零线约24.5像素，描边使其与植被分离；邻接线段保持连接，森林关系未因低值而消失。"
+      },
+      {
+        "category": "1974中间值",
+        "required_parts": [
+          "相邻年度折线",
+          "林中树冠与树干",
+          "年度位置"
+        ],
+        "relationship": "相邻年度线段在同一林景前连续连接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.304,
+          0.552,
+          0.344,
+          0.669
+        ],
+        "evidence_zh": "中心线交点约(644.74,903.73)，在林中清楚可辨；线条与自然树形相互独立。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入指定合成年度森林火灾面积，不要求原历史数值、品牌或旧峰谷。",
+      "output_added_or_lost_meaning_zh": "当前年度面积主题、单位和统计含义保持；最高、最低及合计均正确。原参考的加拿大历史资料身份未保留，属于输入改编范围。",
+      "visible_inscription_evidence_zh": "Annual forest fire area；Synthetic area burned, recorded annually in hectares；Year；1959–2019；61 annual observations；SYNTHETIC DATA；Not historical estimates；only the line encodes area。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原历史资料身份被任务指定的合成数据替代，图面明确说明。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前最高1989/7,360,000及最低2015/230,000与输入对应，不能要求复制参考旧峰谷。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小点仍可见；像素定位限制其相对精度推断，没有造成结构关系丢失。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一年度折线通道：61个年度刻度、9条纵轴网格、60段线内部的像素中心线，以及11个代表年度点的数值反算。代表点包含最小、最大、中间值、三个标注高点及两端。其余50点未逐一报告误差；全部61点使用另有源码佐证。期间合计单列为文字编码，必要标签与数量另行检查。"
+  }
+}

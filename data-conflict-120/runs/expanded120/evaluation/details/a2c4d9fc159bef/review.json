@@ -1,0 +1,302 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以方格纸上的前臂—腕部—握拳长度表示女性国家元首任期年数。待评图显示七行类别及22.6、20.8、19.4、15.6、12.7、11.8、0.0；六条有皮肤纹理和红指甲的手臂连接完整、左端对齐零线，零值行无手臂。主题、合成提示、年份单位和分组不求和说明清晰，未见断裂、错行或必要文字遮挡。",
+  "summary_zh": "通过。全部类别、数值及绑定正确，实体长度的最大实测满量程偏差约0.11%。前臂—腕部—握拳关系与数据融合保留。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在1620×2004原图中，主刻度像素位于x=470、674、878、1082、1286、1490，得到40.8px/年。以R−G>12且R−B>20提取各行最大暖色连通域，用排他右界减共同零点计算长度。改变阈值时端点最多变化1px，保守报告±2px不确定性。源码映射仅作交叉佐证。",
+  "uncertainties_zh": "抗锯齿及实体边界判断约有±2px不确定性，对应约±0.049年。未检查日志、历史渲染或自检记录，因此未核验所有渲染是否实际经capture_render.py保存。未推断握拳姿态的额外象征意图。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七个类别按输入顺序齐全，含两个分组行，共涉及十个虚构国家；六个正值与一个零值完整呈现。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行数值22.6、20.8、19.4、15.6、12.7、11.8、0.0全部匹配；横轴为0–25 YEARS。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、手臂和端点数值逐行对齐；底注明确分组内各国同值、年数不求和。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "六个正值实测约22.574、20.809、19.412、15.613、12.696、11.814年，最大满量程偏差约0.106%，低于3%；零值无实体长度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材的六种肤色、红指甲及纹理在成图主体可对应；render.py加载六张切片并按数据控制总宽度。capture_render.py存在，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "生成手臂本身承担长度编码，共同零点至拳头端点决定数值；方格位于主体后方，未见破坏结构的断裂或错层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、全部类别和数值、轴刻度及统计口径说明清晰，无裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "最大值和最小正值均保留前臂、收窄腕部及向右握拳的连续连接；方格、共同零点、年份轴和类别分组完整。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "女性国家元首主题、Synthetic leadership years、years单位及虚构国家角色明确；底注解释全臂长度和组内同值口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "原主题及握拳长度比较保留；真实国家和原统计被输入明确改为虚构国家与合成值。此部分变化归于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值11.8年的标记约482px长、132px高，前臂—腕—拳关系清楚；实测相对偏差约0.116%。零值未添加最小拳头。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家及原数值改为虚构国家和合成值属于冻结输入授权；当前主题、单位、类别和分组统计口径未丢失。长度变化由数据驱动，参考握拳的其他象征意图不确定。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "leadership_years",
+        "category": "Country A",
+        "expected_value": 22.6,
+        "observed_value": 22.5735,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 921,
+        "full_scale_error_percent": 0.10588,
+        "small_value_relative_error_percent": 0.11713,
+        "bbox_xyxy_normalized": [
+          0.290123,
+          0.263972,
+          0.858642,
+          0.328842
+        ],
+        "evidence_zh": "暖色实体左界x=470，排他右界x=1391；按实测40.8px/年换算。数字标签22.6正确。",
+        "uncertainty_zh": "实体边界约±2px；阈值变化可使右界移动1px。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Countries B / C",
+        "expected_value": 20.8,
+        "observed_value": 20.8088,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 849,
+        "full_scale_error_percent": 0.03529,
+        "small_value_relative_error_percent": 0.04242,
+        "bbox_xyxy_normalized": [
+          0.290123,
+          0.346307,
+          0.814198,
+          0.411677
+        ],
+        "evidence_zh": "暖色实体从x=470至排他右界1319，长度约849px；数字标签20.8正确。",
+        "uncertainty_zh": "实体边界约±2px。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Country D",
+        "expected_value": 19.4,
+        "observed_value": 19.4118,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 792,
+        "full_scale_error_percent": 0.04706,
+        "small_value_relative_error_percent": 0.06064,
+        "bbox_xyxy_normalized": [
+          0.290123,
+          0.429142,
+          0.779012,
+          0.49501
+        ],
+        "evidence_zh": "暖色实体从x=470至排他右界1262，长度约792px；数字标签19.4正确。",
+        "uncertainty_zh": "实体边界约±2px。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Country E",
+        "expected_value": 15.6,
+        "observed_value": 15.6127,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 637,
+        "full_scale_error_percent": 0.05098,
+        "small_value_relative_error_percent": 0.0817,
+        "bbox_xyxy_normalized": [
+          0.290123,
+          0.511976,
+          0.683333,
+          0.577844
+        ],
+        "evidence_zh": "暖色实体从x=470至排他右界1107，长度约637px；数字标签15.6正确。",
+        "uncertainty_zh": "实体边界约±2px。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Country F",
+        "expected_value": 12.7,
+        "observed_value": 12.6961,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 518,
+        "full_scale_error_percent": 0.01569,
+        "small_value_relative_error_percent": 0.03088,
+        "bbox_xyxy_normalized": [
+          0.290123,
+          0.59481,
+          0.609877,
+          0.660679
+        ],
+        "evidence_zh": "暖色实体从x=470至排他右界988，长度约518px；数字标签12.7正确。",
+        "uncertainty_zh": "实体边界约±2px。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Countries G / H / I",
+        "expected_value": 11.8,
+        "observed_value": 11.8137,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 482,
+        "full_scale_error_percent": 0.0549,
+        "small_value_relative_error_percent": 0.11632,
+        "bbox_xyxy_normalized": [
+          0.290123,
+          0.677645,
+          0.587654,
+          0.743513
+        ],
+        "evidence_zh": "最小正值实体从x=470至排他右界952，长度约482px；数字标签11.8正确。",
+        "uncertainty_zh": "实体边界约±2px，不构成亚像素精度保证。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Country J",
+        "expected_value": 0,
+        "observed_value": 0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 0,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": null,
+        "evidence_zh": "第七行显示0.0；x=460–1510、y=1516–1666未发现暖色实体，目视亦无手臂。",
+        "uncertainty_zh": "无实体故无实体边界框；零值相对误差无定义。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Country A（最大值）",
+        "required_parts": [
+          "前臂",
+          "腕部",
+          "握拳",
+          "共同零线"
+        ],
+        "relationship": "前臂左端接零线，经腕部连续连接向右握拳；总跨度承载年数。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.290123,
+          0.263972,
+          0.858642,
+          0.328842
+        ],
+        "evidence_zh": "长前臂收窄后接有红指甲及折叠手指的拳头，右端约x=1391–1392；未见断开。"
+      },
+      {
+        "category": "Country E（中间值）",
+        "required_parts": [
+          "前臂",
+          "腕部",
+          "握拳",
+          "方格背景"
+        ],
+        "relationship": "前臂与腕拳连续相接，实体覆盖背景方格。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.290123,
+          0.511976,
+          0.683333,
+          0.577844
+        ],
+        "evidence_zh": "金色前臂由零线向右伸展，腕部过渡清楚，拳头端点约x=1107；背景线未穿透主体。"
+      },
+      {
+        "category": "Countries G / H / I（最小正值）",
+        "required_parts": [
+          "前臂",
+          "腕部",
+          "握拳",
+          "组内同值标签"
+        ],
+        "relationship": "同一完整臂拳标记对应组内各国同值；缩短前臂后腕拳仍连接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.290123,
+          0.677645,
+          0.587654,
+          0.743513
+        ],
+        "evidence_zh": "约482px跨度内前臂、收窄腕部和握拳均可辨；G / H / I与11.8同一行，底注排除求和。"
+      },
+      {
+        "category": "Country J（零值）",
+        "required_parts": [
+          "类别标签",
+          "0.0标签",
+          "零线",
+          "无手臂区域"
+        ],
+        "relationship": "零值保留标签和基线，不添加最小长度实体。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.283951,
+          0.756487,
+          0.932099,
+          0.831337
+        ],
+        "evidence_zh": "0.0位于零线右侧，其余绘图区为空白方格。"
+      },
+      {
+        "category": "坐标与背景",
+        "required_parts": [
+          "方格纸",
+          "年份横轴",
+          "共同零线",
+          "七行类别"
+        ],
+        "relationship": "横轴与方格共面；实体共用左端零点，类别按行对齐。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.058025,
+          0.256487,
+          0.935802,
+          0.901697
+        ],
+        "evidence_zh": "主刻度等距；六个正值对象左端均在x≈470，方格位于皮肤实体后方。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "输入明确以虚构国家及合成年数替换原真实国家统计，无需复现旧数值或排名。",
+      "output_added_or_lost_meaning_zh": "向右握拳及前臂长度的比较关系延续，当前主题与口径未丢失；新增说明明确合成性质和组内同值。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、FICTIONAL COUNTRIES、Years with a female head of state、Synthetic leadership years / years、YEARS及组内同值不求和说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实国家统计明确改为虚构国家及合成值，reference_meaning的partial源于允许改编。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "前臂随数值改变长度、腕拳保持连接，零值移除整条手臂，符合冻结编码。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "参考可确认主题与握拳长度比较，无法仅凭图像确认其他象征意图。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一长度通道的全部六个正值及零值，包含最大、内部和最小正值；全部类别、数值、分组及单位另行逐项核对。未检查其他图像或历史输出。"
+  }
+}

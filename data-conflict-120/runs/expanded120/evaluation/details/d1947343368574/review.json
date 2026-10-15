@@ -1,0 +1,326 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以五只彩色热气球比较CEO与员工薪酬。成图保留五只完整热气球，Company A–E从左至右排列；十个薪酬数值与输入一致。A气囊最大、E最小，C吊篮略高于A、E最低。可见圆鼓收尖气囊、连接细绳、编织吊篮和共同绿色地面；主题、合成声明、单位与双通道图例清楚，无必要文字截断。",
+  "summary_zh": "通过。数据、标签绑定、双通道几何及热气球结构符合要求，未发现需列报的可见缺陷。review.json已保存并通过schema.json校验；按后续要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量指定1980×2000的image.png，未使用生成方几何报告或保存掩膜。气囊按色相分割并填补文字孔洞，以饱和度50/70/90检验边界稳定性；全部测量的满量程误差小于0.26%。面积换算使用源码声明的参考宽度和素材alpha面积，最终轮廓面积来自独立像素测量。无需绝对校准的E/A面积比为0.59641，目标0.59615。篮体分割排除悬绳，从可见轴刻度反推工资。",
+  "uncertainties_zh": "抗锯齿边界存在约像素级不确定性。成图没有实体参考气囊，绝对面积换算依赖声明的校准；独立面积比例仍符合数据。篮中心约±1像素对应±111美元/年，表列零误差不表示亚像素精度。查看了capture_render.py源码，但未检查运行历史，不能独立证明所有渲染均经过该入口。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五家公司、两项系列、十个数值、五只完整热气球、单位、图例和工资轴齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "CEO数值依次为20,800,000、17,400,000、16,900,000、15,200,000、12,400,000；员工数值为78,000、61,000、79,000、47,000、29,000，均准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "公司名位于对应气囊上方，CEO数值位于气囊内，员工数值位于对应吊篮下方，无错绑或交叉引线。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "五个气囊面积测量均在容差内；篮中心y为1038、1191、1029、1317、1479，在可见720像素工资轴上准确对应输入值。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材及裁切模板中的织物缝线、收口和藤编纹理在成图主体中可辨；源码实际读取模板并控制缩放、位置和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "气囊实体面积承载CEO薪酬，悬挂吊篮中心高度承载员工工资，物体直接承担数据编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、公司名、数值、统计指标、USD/year及底部编码说明均可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "五只彩色气囊圆鼓收尖，细绳下接固定篮体，共处同一天空与零地面；最大和最小实例均保持连接关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确高管与员工薪酬比较；CEO compensation、Median worker salary和USD/year保留指标、统计口径与单位，Company A–E明确公司角色。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图的薪酬比较主题及气囊大小/吊篮高度关系延续；真实公司和旧数值替换为合成数据属于输入允许的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小E气囊约251×302像素，收口和悬绳可辨；篮体约44×38像素，中心离零地面261像素，无最小值膨胀或结构消失。"
+    }
+  },
+  "semantic_attribution_zh": "真实公司和旧年度数据改为合成公司薪酬属于冻结输入允许的替换，当前主题和统计角色未变。C吊篮最高、A气囊最大由当前数据决定。未发现输出遗漏造成的意义损失；边缘抗锯齿仅限制精细测量。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "ceo_pay",
+        "category": "Company A",
+        "expected_value": 20800000,
+        "observed_value": 20815584,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 326,
+        "full_scale_error_percent": 0.0708,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.112121,
+          0.2825,
+          0.276768,
+          0.478
+        ],
+        "evidence_zh": "最终轮廓面积约88,907平方像素，宽326像素；按声明的参考面积93,965.85平方像素对应22,000,000美元/年换算。",
+        "uncertainty_zh": "面积校准来自模板与源码声明，轮廓来自最终像素；三种阈值的估值范围约20,790,766–20,849,532美元/年。"
+      },
+      {
+        "series_id": "ceo_pay",
+        "category": "Company B",
+        "expected_value": 17400000,
+        "observed_value": 17426352,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 298,
+        "full_scale_error_percent": 0.1198,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.297475,
+          0.376,
+          0.44798,
+          0.5545
+        ],
+        "evidence_zh": "最终轮廓面积约74,431平方像素，宽298像素；使用同一声明面积校准。",
+        "uncertainty_zh": "三种阈值的估值范围约17,400,364–17,453,980美元/年，存在抗锯齿边界误差。"
+      },
+      {
+        "series_id": "ceo_pay",
+        "category": "Company C",
+        "expected_value": 16900000,
+        "observed_value": 16895585,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 292,
+        "full_scale_error_percent": 0.0201,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.477273,
+          0.2975,
+          0.624747,
+          0.4735
+        ],
+        "evidence_zh": "最终轮廓面积约72,164平方像素，宽292像素；使用同一声明面积校准。",
+        "uncertainty_zh": "三种阈值的估值范围约16,872,406–16,923,680美元/年。"
+      },
+      {
+        "series_id": "ceo_pay",
+        "category": "Company D",
+        "expected_value": 15200000,
+        "observed_value": 15173811,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 278,
+        "full_scale_error_percent": 0.119,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.659091,
+          0.4505,
+          0.799495,
+          0.6175
+        ],
+        "evidence_zh": "最终轮廓面积约64,810平方像素，宽278像素；使用同一声明面积校准。",
+        "uncertainty_zh": "三种阈值的估值范围约15,144,545–15,203,311美元/年。"
+      },
+      {
+        "series_id": "ceo_pay",
+        "category": "Company E",
+        "expected_value": 12400000,
+        "observed_value": 12414617,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 251,
+        "full_scale_error_percent": 0.0664,
+        "small_value_relative_error_percent": 0.1179,
+        "bbox_xyxy_normalized": [
+          0.844444,
+          0.5475,
+          0.971212,
+          0.6985
+        ],
+        "evidence_zh": "最小气囊最终轮廓面积约53,025平方像素，宽251像素；E/A实测面积比0.59641，目标0.59615。",
+        "uncertainty_zh": "三种阈值的估值范围约12,396,355–12,441,073美元/年；不能由满量程合格推断无限精细的相对准确度。"
+      },
+      {
+        "series_id": "worker_median_pay",
+        "category": "Company A",
+        "expected_value": 78000,
+        "observed_value": 78000,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 702,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.183333,
+          0.5095,
+          0.205556,
+          0.5285
+        ],
+        "evidence_zh": "篮体44×38像素，中心y=1038；零点y=1740，80,000刻度y=1020，中心高度702像素。",
+        "uncertainty_zh": "边界定位约±1像素，折合约±111美元/年；零误差不表示亚像素精度。"
+      },
+      {
+        "series_id": "worker_median_pay",
+        "category": "Company B",
+        "expected_value": 61000,
+        "observed_value": 61000,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 549,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.361616,
+          0.586,
+          0.383838,
+          0.605
+        ],
+        "evidence_zh": "篮体44×38像素，中心y=1191，距共同零点549像素；720像素对应80,000美元/年。",
+        "uncertainty_zh": "边界定位约±1像素，折合约±111美元/年。"
+      },
+      {
+        "series_id": "worker_median_pay",
+        "category": "Company C",
+        "expected_value": 79000,
+        "observed_value": 79000,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 711,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.539899,
+          0.505,
+          0.562121,
+          0.524
+        ],
+        "evidence_zh": "篮体44×38像素，中心y=1029，距共同零点711像素，比A高9像素，对应多1,000美元。",
+        "uncertainty_zh": "边界定位约±1像素，折合约±111美元/年。"
+      },
+      {
+        "series_id": "worker_median_pay",
+        "category": "Company D",
+        "expected_value": 47000,
+        "observed_value": 47000,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 423,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.718182,
+          0.649,
+          0.740404,
+          0.668
+        ],
+        "evidence_zh": "篮体44×38像素，中心y=1317，距共同零点423像素；按可见轴换算为47,000美元/年。",
+        "uncertainty_zh": "边界定位约±1像素，折合约±111美元/年。"
+      },
+      {
+        "series_id": "worker_median_pay",
+        "category": "Company E",
+        "expected_value": 29000,
+        "observed_value": 29000,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 261,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.896465,
+          0.73,
+          0.918687,
+          0.749
+        ],
+        "evidence_zh": "篮体44×38像素，中心y=1479，距共同零点261像素；最低工资位置仍清楚可辨。",
+        "uncertainty_zh": "边界定位约±1像素，折合约±111美元/年；表列零误差不保证亚像素准确。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Company A（最大气囊）",
+        "required_parts": [
+          "红色圆鼓收尖气囊",
+          "悬绳",
+          "固定藤编吊篮",
+          "共同零地面"
+        ],
+        "relationship": "气囊下部收口，细绳向下连接篮口，篮体悬在气囊下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.112121,
+          0.2825,
+          0.276768,
+          0.5285
+        ],
+        "evidence_zh": "气囊约y565–956，绳连接至y1019的篮口，篮体至y1057。实体气囊面积承载CEO值，绳篮不计面积。"
+      },
+      {
+        "category": "Company C（最高员工工资）",
+        "required_parts": [
+          "蓝色气囊",
+          "悬绳",
+          "藤编吊篮",
+          "工资刻度"
+        ],
+        "relationship": "气囊经细绳悬挂篮体，篮中心位于80,000刻度稍下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.477273,
+          0.2975,
+          0.625253,
+          0.524
+        ],
+        "evidence_zh": "气囊顶部约y595，收口至y947，绳接y1010的篮口；中心y1029，高于A中心9像素。"
+      },
+      {
+        "category": "Company E（最小气囊及最低工资）",
+        "required_parts": [
+          "橙色圆顶气囊",
+          "收尖开口",
+          "细悬绳",
+          "固定藤编吊篮",
+          "共同零地面"
+        ],
+        "relationship": "气囊圆顶与收尖开口连续，悬绳连接下方篮口，导线继续连接共同零地面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.844444,
+          0.5475,
+          0.971212,
+          0.87
+        ],
+        "evidence_zh": "气囊约y1095–1397，篮体y1460–1498，绳跨越间隙并与两端相接；篮中心y1479，地面y1740，最小实例结构完整。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许将真实公司、旧年份和数值替换为五个合成公司的当前薪酬，无需保留旧排名。",
+      "output_added_or_lost_meaning_zh": "保留CEO年度薪酬与员工年度工资中位数比较及同一热气球内的双重数据载体；增加轴和编码说明，没有添加旧趋势结论。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Executive and worker pay、Five synthetic companies、CEO compensation、Median worker salary、Balloon envelope area、Basket-center height、USD/year及Company A–E。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实公司及旧统计数据替换为合成公司和薪酬，图面明确标注synthetic及illustrative。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "A气囊最大、C吊篮最高，分别由当前两系列数据决定。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿影响边界测量，但最小气囊和篮体仍有充分像素保留连接结构。"
+      }
+    ],
+    "measurement_coverage_zh": "全部测量五个CEO面积和五个工资高度，覆盖两通道最大、内部和最小正值；全部十个数值及五个类别另行核对。部件关系详细记录A、C、E，B与D亦在原图确认完整。未测量非数据装饰。"
+  }
+}

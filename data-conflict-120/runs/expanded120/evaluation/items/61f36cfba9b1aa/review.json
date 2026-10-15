@@ -1,0 +1,464 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以五类食材照片组成地区蛋白质来源分段条。待评图有九行，五类食材顺序一致，标题、单位、合成声明和新增组父类均可见。45个百分比可辨；新增组长标签靠近上一行数值。最窄蛋类呈黄色窄片，未见重大遮挡或透视冲突。",
+  "summary_zh": "已保存 review.json，并通过 schema 校验，未运行 submit.py。数据和食材拼接结构符合要求；三处文字轻微接触，仍可辨读。最窄蛋类形态仅部分保留，未发现重大缺陷。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "百分比与下一行新增组说明之间保留足够空白。",
+      "observed_zh": "36.5%、70.0%和53.15%的下缘与下一行说明字形相接，局部拥挤但仍可读。",
+      "evidence_zh": "三处分别位于约(267–358,1369–1407)、(489–580,1519–1557)、(370–480,1669–1707)。原图红灰字形最近距离均为1 px，例如红字像素(529,1534)紧邻灰字像素(529,1535)。",
+      "bbox_xyxy_normalized": [
+        0.178,
+        0.6845,
+        0.386667,
+        0.8535
+      ]
+    }
+  ],
+  "measurement_notes_zh": "独立扫描1500×2000原图全部45段。中央五扫描线取背景色差中位数，阈值20；合并不超过4 px的食材内部细缝，保留7–8 px系列间隙。逐行按实测净宽归一化为100%。最大误差0.1994个百分点；阈值改为10时最大误差0.4821个百分点，均低于3。包围盒纵向为稳定主体带。",
+  "uncertainties_zh": "最小段约18 px，1–2 px边界差异会显著影响小值相对误差。完整蛋卷身份需图例辅助。未检查日志或历史归档，无法独立证实每次渲染均执行capture_render.py。brief旧概述写六行，当前数据及M1明确要求九组，按九组评估。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个类别、五个系列、45段及其数值完整，顺序正确；新增组保留父类。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "45个百分比逐项符合data.json，包括1.3%、53.15%、10.05%和34.15%；每行100%的说明正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "纹理顺序与图例一致，引线连接对应段及数值；未发现错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部45段独立测量最大误差约0.20个百分点；阈值敏感性检验最大约0.48个百分点。最小段未明显增宽。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始食材素材和裁切素材，其具体纹理与最终数据条对应；render.py读取五种素材并按数据控制段宽。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "照片自身边界承担长度编码，五类食材在共同水平带内依序拼接；未见破坏结构的遮挡、错位或纹理溢出。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需文字均可读；三处局部字形接触属于轻微问题。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "豆腐块、卷折肉片、含孔奶酪、鱼皮和蛋类共同组成数据条，保持参考中带窄间隙的相邻拼接关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "当前主题、地区日均蛋白质摄入来源份额、百分比单位、每地区100%及新增组父类均明确。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留原统计角色与食材拼接表达；真实地区统计按冻结输入改为合成九组，属于获准改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "1.3%蛋类段约18 px，纹理和边界可见，但完整蛋卷截面被裁成窄片；3.1%海鲜段约42 px，仍可见鱼鳞。"
+    }
+  },
+  "semantic_attribution_zh": "真实统计身份改变由输入明确允许；段宽改变来自当前数据。最窄蛋类形态局部化属于数据驱动裁切，并受像素尺度限制。输出未观察到主题、单位或统计角色省略。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "food_0",
+        "category": "Region A",
+        "expected_value": 75.8,
+        "observed_value": 75.6006,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1007,
+        "full_scale_error_percent": 0.1994,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.046667,
+          0.2605,
+          0.718,
+          0.2965
+        ],
+        "evidence_zh": "实测x=70–1077；该行净宽1332 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定。"
+      },
+      {
+        "series_id": "food_0",
+        "category": "Region F",
+        "expected_value": 36.5,
+        "observed_value": 36.4388,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 485,
+        "full_scale_error_percent": 0.0612,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.046667,
+          0.635,
+          0.37,
+          0.671
+        ],
+        "evidence_zh": "实测x=70–555；该行净宽1331 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定。"
+      },
+      {
+        "series_id": "food_0",
+        "category": "Region B / additional synthetic comparable 2",
+        "expected_value": 53.15,
+        "observed_value": 53.1226,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 706,
+        "full_scale_error_percent": 0.0274,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.046667,
+          0.7855,
+          0.517333,
+          0.8215
+        ],
+        "evidence_zh": "实测x=70–776；该行净宽1329 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定。"
+      },
+      {
+        "series_id": "food_1",
+        "category": "Region A",
+        "expected_value": 13,
+        "observed_value": 13.0631,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 174,
+        "full_scale_error_percent": 0.0631,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.722667,
+          0.2605,
+          0.838667,
+          0.2965
+        ],
+        "evidence_zh": "实测x=1084–1258；该行净宽1332 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定。"
+      },
+      {
+        "series_id": "food_1",
+        "category": "Region F",
+        "expected_value": 39,
+        "observed_value": 38.9932,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 519,
+        "full_scale_error_percent": 0.0068,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.374667,
+          0.635,
+          0.720667,
+          0.671
+        ],
+        "evidence_zh": "实测x=562–1081；该行净宽1331 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定。"
+      },
+      {
+        "series_id": "food_1",
+        "category": "Region B / additional synthetic comparable 2",
+        "expected_value": 27.3,
+        "observed_value": 27.3138,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 363,
+        "full_scale_error_percent": 0.0138,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.522667,
+          0.7855,
+          0.764667,
+          0.8215
+        ],
+        "evidence_zh": "实测x=784–1147；该行净宽1329 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定。"
+      },
+      {
+        "series_id": "food_2",
+        "category": "Region A",
+        "expected_value": 5.9,
+        "observed_value": 5.9309,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 79,
+        "full_scale_error_percent": 0.0309,
+        "small_value_relative_error_percent": 0.5243,
+        "bbox_xyxy_normalized": [
+          0.843333,
+          0.2605,
+          0.896,
+          0.2965
+        ],
+        "evidence_zh": "实测x=1265–1344；该行净宽1332 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定，小值相对误差对阈值敏感。"
+      },
+      {
+        "series_id": "food_2",
+        "category": "Region D",
+        "expected_value": 21.4,
+        "observed_value": 21.4447,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 285,
+        "full_scale_error_percent": 0.0447,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.674,
+          0.4855,
+          0.864,
+          0.5215
+        ],
+        "evidence_zh": "实测x=1011–1296；该行净宽1329 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定。"
+      },
+      {
+        "series_id": "food_2",
+        "category": "Region B / additional synthetic comparable 2",
+        "expected_value": 10.05,
+        "observed_value": 10.0828,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 134,
+        "full_scale_error_percent": 0.0328,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.769333,
+          0.7855,
+          0.858667,
+          0.8215
+        ],
+        "evidence_zh": "实测x=1154–1288；该行净宽1329 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定。"
+      },
+      {
+        "series_id": "food_3",
+        "category": "Region C",
+        "expected_value": 3.1,
+        "observed_value": 3.1579,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 42,
+        "full_scale_error_percent": 0.0579,
+        "small_value_relative_error_percent": 1.8676,
+        "bbox_xyxy_normalized": [
+          0.879333,
+          0.4105,
+          0.907333,
+          0.4465
+        ],
+        "evidence_zh": "实测x=1319–1361；该行净宽1330 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定，小值相对误差对阈值敏感。"
+      },
+      {
+        "series_id": "food_3",
+        "category": "Region B",
+        "expected_value": 7,
+        "observed_value": 6.9925,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 93,
+        "full_scale_error_percent": 0.0075,
+        "small_value_relative_error_percent": 0.1074,
+        "bbox_xyxy_normalized": [
+          0.848,
+          0.3355,
+          0.91,
+          0.3715
+        ],
+        "evidence_zh": "实测x=1272–1365；该行净宽1330 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定。"
+      },
+      {
+        "series_id": "food_3",
+        "category": "Region B / additional synthetic comparable 2",
+        "expected_value": 5.05,
+        "observed_value": 5.0414,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 67,
+        "full_scale_error_percent": 0.0086,
+        "small_value_relative_error_percent": 0.1706,
+        "bbox_xyxy_normalized": [
+          0.864,
+          0.7855,
+          0.908667,
+          0.8215
+        ],
+        "evidence_zh": "实测x=1296–1363；该行净宽1329 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定，小值相对误差对阈值敏感。"
+      },
+      {
+        "series_id": "food_4",
+        "category": "Region A",
+        "expected_value": 1.3,
+        "observed_value": 1.3514,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 18,
+        "full_scale_error_percent": 0.0514,
+        "small_value_relative_error_percent": 3.9501,
+        "bbox_xyxy_normalized": [
+          0.941333,
+          0.2605,
+          0.953333,
+          0.2965
+        ],
+        "evidence_zh": "实测x=1412–1430；该行净宽1332 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定，不能据此保证小值精细相对精度。"
+      },
+      {
+        "series_id": "food_4",
+        "category": "Region C",
+        "expected_value": 4.6,
+        "observed_value": 4.5865,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 61,
+        "full_scale_error_percent": 0.0135,
+        "small_value_relative_error_percent": 0.2942,
+        "bbox_xyxy_normalized": [
+          0.912667,
+          0.4105,
+          0.953333,
+          0.4465
+        ],
+        "evidence_zh": "实测x=1369–1430；该行净宽1330 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定，小值相对误差对阈值敏感。"
+      },
+      {
+        "series_id": "food_4",
+        "category": "Region B / additional synthetic comparable 2",
+        "expected_value": 4.45,
+        "observed_value": 4.4394,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 59,
+        "full_scale_error_percent": 0.0106,
+        "small_value_relative_error_percent": 0.2376,
+        "bbox_xyxy_normalized": [
+          0.914,
+          0.7855,
+          0.953333,
+          0.8215
+        ],
+        "evidence_zh": "实测x=1371–1430；该行净宽1329 px。",
+        "uncertainty_zh": "边界约有1–2 px不确定，小值相对误差对阈值敏感。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Region A / Plant protein与Meat",
+        "required_parts": [
+          "相邻豆腐切块",
+          "肉片",
+          "水平条带",
+          "系列空隙"
+        ],
+        "relationship": "豆腐块组成长段，右侧通过窄空隙接续肉片；段边界承载份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.046667,
+          0.259,
+          0.838667,
+          0.297
+        ],
+        "evidence_zh": "豆腐段x=70–1077，肉段x=1084–1258，间隙约7 px；接缝及肉片卷折可见。"
+      },
+      {
+        "category": "Region D / Dairy",
+        "required_parts": [
+          "奶酪体",
+          "孔洞",
+          "左侧肉片",
+          "右侧鱼皮"
+        ],
+        "relationship": "孔洞包含于奶酪体内；奶酪在共同水平带内接续两侧食材。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.402667,
+          0.4855,
+          0.915333,
+          0.5215
+        ],
+        "evidence_zh": "约285 px宽的黄色奶酪段保留完整孔洞，边界未被文字或其他纹理覆盖。"
+      },
+      {
+        "category": "Region F / Meat",
+        "required_parts": [
+          "红色肌理",
+          "白色脂肪纹",
+          "重叠卷折"
+        ],
+        "relationship": "肉片叠靠构成连续肉类段，由段端边界编码。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.374667,
+          0.635,
+          0.720667,
+          0.671
+        ],
+        "evidence_zh": "约519 px肉类段保留脂肪纹和多处卷折，位于豆腐与奶酪之间。"
+      },
+      {
+        "category": "Region C / Seafood小段",
+        "required_parts": [
+          "鱼皮片",
+          "鱼鳞",
+          "两侧食材"
+        ],
+        "relationship": "鱼鳞包含于窄鱼皮片内，该片位于奶酪与蛋类之间。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.879333,
+          0.4105,
+          0.907333,
+          0.4465
+        ],
+        "evidence_zh": "42 px宽片段仍可见鳞片纹理，与两侧食材边界分离。"
+      },
+      {
+        "category": "Region A / Egg最小段",
+        "required_parts": [
+          "蛋类切片",
+          "卷层纹理",
+          "右端边界",
+          "左侧鱼皮"
+        ],
+        "relationship": "蛋类窄片位于鱼皮右侧及整条末端，片宽承担1.3%。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.941333,
+          0.2605,
+          0.953333,
+          0.2965
+        ],
+        "evidence_zh": "18 px窄片具有黄色纹理和清晰边界，但完整蛋卷轮廓不可见；身份需结合相同纹理图例。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "参考真实地区统计按冻结输入改为九个合成组，新增组保留父类。",
+      "output_added_or_lost_meaning_zh": "保留地区日均蛋白质来源百分比和食材长度编码；无新增趋势或因果论断。最小蛋类仅降低局部形态辨识。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、当前中文标题、平均每日蛋白质摄入量份额（%）、每地区总份额100%、五系列双语图例及完整新增组标签。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实地理统计身份及样本数由冻结输入改为合成九组。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "小蛋类按真实窄宽裁切，完整切片轮廓部分消失，未为辨识而增宽。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小段约18 px，抗锯齿边界对相对误差影响显著。"
+      }
+    ],
+    "measurement_coverage_zh": "独立扫描全部45段，记录保存在pixel_measurements.json；报告15项，覆盖五系列各自最小、最大和中间值。全部数值与类别标签另行核对；未逐像素检查所有纹理细节。"
+  }
+}

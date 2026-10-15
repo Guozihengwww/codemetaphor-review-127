@@ -1,0 +1,286 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：绿色、橙色和红色积木纵向拼接成柱，顶部有两个凸点，底部红色部件形成两只脚状底座；右侧26%、14%、60%分别连接荷兰、其他、美国标签，主题为网络色情网站托管份额。\n待评图：标题为“拼插积木柱中的合成份额”，显著显示SYNTHETIC DATA、合成总量占比（%）和总量100%。五个彩色区段从上到下标注28%、15%、14.25%、14.25%、28.5%，对应Group A、Other Groups和Group B的三个合成子类；另列Group B合计57%。\n可见结构：顶部绿色区段有两个完整凸点，各段以前面和左侧面拼接，底部深红段连接带凸点的两块脚状底座。前表面的类别分界接近水平，两处14.25%高度相近。0刻度位于底座下沿，100刻度接近绿色主体前表面上沿；最下段实际计量高度需核对是否含底座。文字完整清晰，未见明显遮挡。\n以上为查看reference.png与image.png后、读取渲染源码前的可见观察。",
+  "summary_zh": "五项数值、类别顺序、父类和单位完整准确；独立像素测量符合3个百分点容差。积木的凸点、侧面、拼缝及双足底座清楚，主体直接承载高度编码。原真实统计主题按冻结输入改为合成主题，参考含义部分保留，不构成输出缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量指定image.png（1540×2000）。从图中刻度线独立检出y=480、780、1080、1380、1680，得到12像素/百分点。在前表面x=410–599采样色相，类别变化位于815/816、995/996、1166/1167、1337/1338行之间，按整数边界816、996、1167、1338估计；上端前面高光棱约y=482，下端底座着色边缘约y=1679。五段估计高度334、180、171、171、341像素。凸点顶部和地面投影不计入；最下段按深红主体与同色底座的纵向包络读取，不按体积或积木数量。源码仅用于佐证映射与素材使用，未用公式代替像素测量。M2明确只要求当前主份额，因此未将旧九项明细描述当作需补造的数据。",
+  "uncertainties_zh": "圆角、高光和抗锯齿使外边界约有1–3像素不确定性，内部接缝约有1像素不确定性；表中零误差是取整测量结果，不代表无限精度。最小份额14.25%仍有约171像素高度，本结论不外推到亚像素标记。未读取运行日志或历史归档，不能独立确认每次渲染均执行归档，也未核验生图工具调用记录；可确认所供位图素材在最终主体中实质可见。参考图除可读文字与物体关系以外的作者意图不作推断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五项类别各出现一次，依数据顺序自上而下排列；系列名称、百分比单位、总量100%、合成声明及B父类合计均可见。未提供的旧二级明细未被制造。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图中文字为28%、15%、14.25%、14.25%、28.5%，逐项与data.json一致；B合计57%=14.25+14.25+28.5，总量100%正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "五条水平引线分别位于绿色、橙色、浅红、红色、深红区域中段，连接对应数值与类别。两个14.25%行分别明确写出B子类1和子类2，未混淆；第三子类28.5%绑定底部深红区域。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素测量依次约27.83%、15.00%、14.25%、14.25%、28.42%；相对目标最大绝对差约0.17个百分点，计入边缘不确定性仍明显低于3个百分点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png、tower_material.png和tower_bound.png；其双凸点、五层拼接、双足底座及高光在最终主体中同形出现。render.py读取tower_material.png并共同映射纹理与类别色，代码实际控制数据几何和文字。capture_render.py存在，历史执行情况未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区域就是积木物体的彩色实体前面及连接底座，类别色界与积木拼缝相接；顶部凸点、浅顶面及侧面保持物体关系，数据没有退化为旁置普通柱图。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、合成声明、五项数值、中英文类别、百分比单位、父类合计及底部口径均可读；未见遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "顶部两个完整凸点接在绿色顶面上；五个彩色区段通过前面及左侧面的拼缝连续上下接触；深红主体接到带凸点的双足底座。大段和两个最短段的部件连接均清晰，前面净高是实际数据边界。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确当前合成份额主题；“合成总量占比（%）”“Share of synthetic total”和“所有值均为合成总量的百分比”说明指标、分母及单位。合成组A、其他合成组、B的三个子类保留可解释的合成角色与父类。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考的积木与份额高度融合、上下拼接和双足底座。参考的网站托管国家份额主题已按输入明确替换为合成组份额，故原统计主题只作部分保留，归因于允许的输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "两个最小正值均为14.25%，各约171像素高；前面、左侧面、上下拼缝和各自文字均可分辨。内部段的凸点被相邻上层遮住，未见为增强识别而抬高小值。"
+    }
+  },
+  "semantic_attribution_zh": "原参考的真实网站托管国家统计被冻结brief/core明确改为合成份额；这一主题替换属于input_adaptation，不归责输出。图中保留当前指标、统一分母、单位、五项类别及B父类角色，未发现输出语义遗漏。新份额引起各段高度变化属于数据驱动形状适配；原参考未明说的象征意图保持不确定。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Group A",
+        "expected_value": 28.0,
+        "observed_value": 27.83333,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 334,
+        "full_scale_error_percent": 0.16667,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.244,
+          0.241,
+          0.404,
+          0.408
+        ],
+        "evidence_zh": "前表面高光棱约y482，绿色/橙色转换约y816；采样带x410–599。 图中轴跨度独立测得1200像素，对应100个百分点。",
+        "uncertainty_zh": "顶端高光与圆角使边界约有±3像素不确定性；与接缝误差合计仍远小于3个百分点容差。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Other Groups",
+        "expected_value": 15.0,
+        "observed_value": 15.0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 180,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.244,
+          0.408,
+          0.404,
+          0.498
+        ],
+        "evidence_zh": "橙色前面边界约y816与y996；采样带x410–599。 图中轴跨度独立测得1200像素，对应100个百分点。",
+        "uncertainty_zh": "内部边界各约±1像素；高度误差约±2像素。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Group B / synthetic subcategory 1",
+        "expected_value": 14.25,
+        "observed_value": 14.25,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 171,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": 0.0,
+        "bbox_xyxy_normalized": [
+          0.244,
+          0.498,
+          0.404,
+          0.5835
+        ],
+        "evidence_zh": "浅红前面边界约y996与y1167；为并列最小正值。 图中轴跨度独立测得1200像素，对应100个百分点。",
+        "uncertainty_zh": "内部边界各约±1像素；高度误差约±2像素。相对误差估计0%仅反映像素取整，±2像素约对应±1.2%的小值相对不确定性。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Group B / synthetic subcategory 2",
+        "expected_value": 14.25,
+        "observed_value": 14.25,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 171,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": 0.0,
+        "bbox_xyxy_normalized": [
+          0.244,
+          0.5835,
+          0.404,
+          0.669
+        ],
+        "evidence_zh": "红色前面边界约y1167与y1338；与另一14.25%段等高。 图中轴跨度独立测得1200像素，对应100个百分点。",
+        "uncertainty_zh": "内部边界各约±1像素；高度误差约±2像素。相对误差估计0%仅反映像素取整，±2像素约对应±1.2%的小值相对不确定性。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Group B / synthetic subcategory 3",
+        "expected_value": 28.5,
+        "observed_value": 28.41667,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 341,
+        "full_scale_error_percent": 0.08333,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.185,
+          0.669,
+          0.448,
+          0.8395
+        ],
+        "evidence_zh": "深红上界约y1338，足状底座下沿着色边缘约y1679；按同色区域纵向包络测量。 图中轴跨度独立测得1200像素，对应100个百分点。",
+        "uncertainty_zh": "底座圆角、抗锯齿及阴影交界使下沿约有±2像素不确定性；侧面投影未当作额外份额。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Group B subtotal",
+        "expected_value": 57.0,
+        "observed_value": 57.0,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.878,
+          0.836,
+          0.933,
+          0.857
+        ],
+        "evidence_zh": "底部“合成组 B 合计”右侧清晰显示57%，与三个B子类之和一致。",
+        "uncertainty_zh": "该项为直接文字编码，无独立量值几何，不以文字正确推断几何融合。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Grand total",
+        "expected_value": 100.0,
+        "observed_value": 100.0,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.789,
+          0.085,
+          0.934,
+          0.116
+        ],
+        "evidence_zh": "右上“总量 / TOTAL”下清晰显示100%。",
+        "uncertainty_zh": "该项为直接文字编码，无独立量值几何，不以文字正确推断几何融合。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Group A（大段）",
+        "required_parts": [
+          "两个顶部凸点",
+          "浅顶面",
+          "绿色前面",
+          "左侧面",
+          "与橙色段的接缝"
+        ],
+        "relationship": "凸点接在顶面上，前面与左侧面连成实体，下沿接触橙色积木；前面纵向跨度承载28%份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.225,
+          0.208,
+          0.405,
+          0.409
+        ],
+        "evidence_zh": "x约348–624、y约418–818可见完整双凸点、顶面与侧面；绿色前面约y482–816，接缝连贯。凸点位于100刻度以上，没有加入净高测量。"
+      },
+      {
+        "category": "Group B / synthetic subcategory 1（最小段）",
+        "required_parts": [
+          "浅红前面",
+          "左侧面",
+          "上下接缝",
+          "相邻橙色及红色积木"
+        ],
+        "relationship": "最小段夹在相邻积木之间，上下接触，前面与侧面沿同一透视方向连接；其净高承载14.25%。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.225,
+          0.488,
+          0.405,
+          0.585
+        ],
+        "evidence_zh": "前面约y996–1167，高约171像素，两条接缝完整可辨；左侧接缝较前面提前约16–18像素，符合侧面投影。内部连接面未露凸点，隐藏部分无法直接观察。"
+      },
+      {
+        "category": "Group B / synthetic subcategory 2（并列最小段）",
+        "required_parts": [
+          "红色前面",
+          "左侧面",
+          "上下接缝"
+        ],
+        "relationship": "红色段上下分别连接浅红段与深红段，其前面净高与另一个14.25%段相等。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.225,
+          0.573,
+          0.405,
+          0.67
+        ],
+        "evidence_zh": "前面约y1167–1338，高约171像素；颜色及上下接缝清晰，没有被文字或其他物件覆盖。"
+      },
+      {
+        "category": "Group B / synthetic subcategory 3（最大段及底座）",
+        "required_parts": [
+          "深红柱体",
+          "两个足状积木",
+          "底座凸点",
+          "接触面",
+          "下沿"
+        ],
+        "relationship": "深红主体下端与同色双足底座接触，前方凸点遮挡局部连接处；整个同色区域的纵向包络延伸到零刻度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.185,
+          0.659,
+          0.448,
+          0.84
+        ],
+        "evidence_zh": "深红区从前面y约1338延伸至底座下沿约1679，约341像素；底座凸点与前方足块清楚，未悬空。阴影位于底部之外，未作为额外数值高度。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确以“拼插积木柱中的合成份额”替换原真实统计，并指定五项合成类别与B父类；允许依新数据调整高度及非数据部件，不要求保留旧26/14/60或旧排行。",
+      "output_added_or_lost_meaning_zh": "输出保留统一合成总量、各项份额比较和B父类57%的关系；原网站托管国家排行不再表达，属于授权主题替换，未见额外输出损失。",
+      "visible_inscription_evidence_zh": "可见“SYNTHETIC DATA”“拼插积木柱中的合成份额”“合成总量占比（%）”“Share of synthetic total”、五项中英文类别、“合成组 B 合计 57%”及“按高度读取，不按积木数量或体积”。原参考可见荷兰、其他、美国及网站托管主题。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "从参考真实国家统计转为合成组统计由brief/core明确规定；参考含义partial不计作输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前五项份额形成长短不同的拼插积木段；实际像素高度与新值一致，仍保留凸点、拼缝和底座关系。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一线性高度通道的全部5/5类别，包括两项最小正值、内侧15%段以及28%和28.5%大段；另单列总量100%和父类57%的直接文字编码。全部必需类别、数值、单位及合成声明已检查，无额外辅助面板。"
+  }
+}

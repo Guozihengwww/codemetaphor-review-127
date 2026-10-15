@@ -1,0 +1,270 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：黑底，金色立体地球与前景金币居中，19个国旗圆章环绕，配国家名与GDP增速百分数；原题为2025年真实GDP增长预测。\n待评图：标题Synthetic GDP Growth Scenario及SYNTHETIC DATA醒目，指标写明Synthetic real GDP growth rate (%)，说明19 economies及Illustrative scenario, not an observed forecast。金色地球与前景金币保留，国旗圆章顺时针环绕，19个国家和值均可见。印度6.7%最大、德国0.32%最小，德国仍有黑红黄三色完整圆章；底部0.5%和1%面积图例及面积正比说明可读。初看圆章无相互遮挡，文字未被地球或金币遮盖。",
+  "summary_zh": "通过。19项国家、数值和单位绑定完整，圆章面积符合容差，金色地球、前景金币及外围国旗圆章关系保留。原真实预测改为合成情景属于冻结输入允许的适配。",
+  "issues": [],
+  "measurement_notes_zh": "在1792×2200原图上按可见位置选取圆章区域，以RGB最大通道>85提取边缘，取最大连通域并填充内部孔洞，测量完整圆盘面积；以实测1%图例9578像素²校准，观测增速=圆盘面积/9578。满量程误差=|观测值−目标值|/7×100%。代表样本另用65和105阈值检查边界敏感性。此为最终图像像素测量，未使用源码半径或自检面积替代。源码r=55√v仅作旁证。",
+  "uncertainties_zh": "抗锯齿、细描边及亮度阈值使外缘约有1像素不确定性；德国换算值随阈值约为0.3151%至0.3165%，不能据此保证亚像素精度。按范围限制未检查运行日志、历史归档或自检，故不确认每次渲染均实际执行归档；生成来源依据所供素材清单及可见素材对应。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "19个国家圆章、19组国家名及数值均可见；单系列、合成声明、指标单位与0.5%/1%面积图例齐全，无额外面板要求。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项核对为India 6.7、Indonesia 5、China 4.5、Saudi Arabia 3.4、Nigeria 3.1、United States 2.6、Spain 2.4、Brazil 2.3、Australia 2.2、South Korea 1.9、Canada 1.9、United Kingdom 1.7、South Africa 1.6、Mexico 1.3、Russia 1.3、Japan 1、France 0.9、Italy 0.6、Germany 0.32，均带%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从上方印度起顺时针顺序与输入一致；每组国家名、百分数邻接对应国旗圆章。德国位于左上，短引导线辅助定位；未见标签跨接或交换。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "19个完整圆盘的外接边界均作像素检查。详细记录最大、内部及最小值和面积图例；代表国家换算值与目标的满量程误差最大约0.53%，低于3%。0.5%图例实测面积约为1%图例的0.5003倍。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "素材清单将raw_01.png列为生成原图；已查看原图及globe_coins.png，其地球、两侧金币堆与倾斜前景金币在成图中央清晰可辨。render.py读取该素材，并按data中的19项值控制圆盘数量、半径和标签。归档执行履历未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "完整国旗圆盘承担面积编码，环绕非编码地球；金币位于地球底部前景。参考本来是中心物体与外围圆章的并置关系，无需把数据贴到球面。未见遮挡数据圆盘或破坏主体连接的接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、Synthetic real GDP growth rate (%)、19 economies、全部国家名和数值均清晰；底部面积及非编码位置说明完整，未见必需文字裁切或相互遮盖。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "中央金色球体含大陆轮廓及贴合曲面的经纬线；金币堆和散落金币在球体下方前景重叠。19个独立国旗圆章从上方沿外围顺时针环绕，最大与最小实例均保留完整圆盘边界。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题明确为Synthetic GDP Growth Scenario，指标为合成实际GDP增长率，单位为%；国家承担经济体类别角色，Illustrative scenario, not an observed forecast明确合成口径。面积正比说明排除了把旗内色块误读为组成份额。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留各国GDP增长比较与地球/金币的经济主题；原图2025年IMF预测及印度最快增长断言未沿用，改为明确合成情景。该变化来自冻结输入的语境适配，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小德国圆章约63×62像素，完整金色边界包含可分辨的黑、红、黄横带，0.32%未舍入为零；次小意大利约85×86像素，绿白红竖带完整。未发现为了识别而抬高小值面积的证据。"
+    }
+  },
+  "semantic_attribution_zh": "原真实年份、预测来源与旧论断的变化归于允许的输入适配；圆章尺寸变化归于当前数据驱动。最终图未见当前主题、单位或国家角色丢失。细边缘测量保留分辨率不确定性，不将允许的语境变化或并置关系判为融合失败。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_growth",
+        "category": "India",
+        "expected_value": 6.7,
+        "observed_value": 6.668616,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 285.5,
+        "full_scale_error_percent": 0.448349,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.388951,
+          0.220455,
+          0.547991,
+          0.350455
+        ],
+        "evidence_zh": "圆盘像素边界为[697,485,982,771)，宽285、高286；填充面积63872像素²。相对可见1%图例换算为约6.6686%。",
+        "uncertainty_zh": "阈值65至105所得换算值约6.6415%至6.6733%；差异主要来自细描边与抗锯齿。"
+      },
+      {
+        "series_id": "synthetic_growth",
+        "category": "Saudi Arabia",
+        "expected_value": 3.4,
+        "observed_value": 3.362915,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 203,
+        "full_scale_error_percent": 0.529786,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.736607,
+          0.448636,
+          0.849888,
+          0.540909
+        ],
+        "evidence_zh": "完整绿底圆盘边界[1320,987,1523,1190)，直径约203像素；面积32210像素²，换算约3.3629%。",
+        "uncertainty_zh": "阈值敏感性区间约3.3580%至3.3658%；旗内文字和剑不作为面积边界。"
+      },
+      {
+        "series_id": "synthetic_growth",
+        "category": "United States",
+        "expected_value": 2.6,
+        "observed_value": 2.586135,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 178,
+        "full_scale_error_percent": 0.198073,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.71317,
+          0.649545,
+          0.8125,
+          0.730455
+        ],
+        "evidence_zh": "圆盘边界[1278,1429,1456,1607)，宽高均约178像素；面积24770像素²，换算约2.5861%。",
+        "uncertainty_zh": "阈值敏感性区间约2.5812%至2.5876%；按完整外缘计量，不按条纹面积计量。"
+      },
+      {
+        "series_id": "synthetic_growth",
+        "category": "Italy",
+        "expected_value": 0.6,
+        "observed_value": 0.598977,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 85.5,
+        "full_scale_error_percent": 0.014617,
+        "small_value_relative_error_percent": 0.17053,
+        "bbox_xyxy_normalized": [
+          0.291853,
+          0.321364,
+          0.339286,
+          0.360455
+        ],
+        "evidence_zh": "圆盘边界[523,707,608,793)，宽85、高86像素；面积5737像素²，换算约0.5990%。",
+        "uncertainty_zh": "阈值敏感性区间约0.5981%至0.5990%；不主张小于一个边缘像素的精确度。"
+      },
+      {
+        "series_id": "synthetic_growth",
+        "category": "Germany",
+        "expected_value": 0.32,
+        "observed_value": 0.31635,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 62.5,
+        "full_scale_error_percent": 0.052143,
+        "small_value_relative_error_percent": 1.140635,
+        "bbox_xyxy_normalized": [
+          0.344308,
+          0.300455,
+          0.379464,
+          0.328636
+        ],
+        "evidence_zh": "最小圆盘边界[617,661,680,723)，宽63、高62像素；面积3030像素²，换算约0.31635%，相对目标误差约1.14%。黑色上部以完整圆周包围关系纳入计量。",
+        "uncertainty_zh": "阈值敏感性区间约0.3151%至0.3165%，对应小值相对差异约1.1%至1.5%；不将标签准确等同于亚像素几何准确。"
+      },
+      {
+        "series_id": "area_key",
+        "category": "0.5% legend",
+        "expected_value": 0.5,
+        "observed_value": 0.500313,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 78,
+        "full_scale_error_percent": 0.004475,
+        "small_value_relative_error_percent": 0.062644,
+        "bbox_xyxy_normalized": [
+          0.114397,
+          0.949091,
+          0.157924,
+          0.984545
+        ],
+        "evidence_zh": "0.5%图例宽高约78像素，面积4792像素²；1%图例宽高约110像素、面积9578像素²，面积比约0.5003。",
+        "uncertainty_zh": "1%图例是校准基准，不把其名义值当作独立零误差检验；面积比随阈值约0.5002至0.5009。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体地球—金币—圆章",
+        "required_parts": [
+          "金色立体地球",
+          "大陆与经纬线",
+          "前景金币堆及散币",
+          "外围19个国旗圆盘"
+        ],
+        "relationship": "金币在地球底部前方遮挡并接触基部；国旗圆盘位于主体外围，完整圆面积承担数据编码。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.164,
+          0.22,
+          0.852,
+          0.868
+        ],
+        "evidence_zh": "中心球面有连续弯曲经纬线及大陆纹理；左右金币堆、下方平放金币与倾斜金币形成前后层次。圆章沿外围环绕，未要求接触或贴附球面。"
+      },
+      {
+        "category": "India：最大实例",
+        "required_parts": [
+          "完整圆盘",
+          "橙白绿三色带",
+          "白带中的蓝色轮形图案",
+          "India及6.7%标签"
+        ],
+        "relationship": "旗面图案包含于完整圆周内，标签位于右上邻侧，圆盘处于地球上方外围。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.389,
+          0.215,
+          0.64,
+          0.351
+        ],
+        "evidence_zh": "约285×286像素的完整圆盘未被其他物体遮挡；橙、白、绿横带以及中心蓝轮均可见，承担数值的是完整圆盘而非单独色带。"
+      },
+      {
+        "category": "Germany：最小实例",
+        "required_parts": [
+          "完整圆形边界",
+          "黑红黄三色带",
+          "Germany及0.32%标签",
+          "短引导线"
+        ],
+        "relationship": "三色横带被小圆边界包含；标签位于左上，引导线朝圆章方向，圆章保持外围位置。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.25,
+          0.38,
+          0.33
+        ],
+        "evidence_zh": "约63×62像素的小圆具有闭合金边，黑色顶部、红色中部及黄色底部可分辨；标签未盖住数据圆盘。"
+      },
+      {
+        "category": "Italy：次小实例",
+        "required_parts": [
+          "完整圆盘",
+          "绿白红竖带",
+          "Italy及0.6%标签"
+        ],
+        "relationship": "三色竖带包含于圆周中，标签在圆盘左上侧，与法国和德国实例分离。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.304,
+          0.34,
+          0.361
+        ],
+        "evidence_zh": "约85×86像素圆盘保留全部竖带，边缘未被相邻圆章或文字遮挡。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确采用合成GDP增长情景，当前值替代旧统计；不要求2025年预测口径、IMF来源或旧极值断言。",
+      "output_added_or_lost_meaning_zh": "各国增长比较、金色地球与经济财富联想保留；旧真实预测语境被明示的合成情景替代。补充面积图例及位置不编码说明与当前合同一致。",
+      "visible_inscription_evidence_zh": "图面可读SYNTHETIC DATA、Synthetic GDP Growth Scenario、Synthetic real GDP growth rate (%)、19 economies / Illustrative scenario, not an observed forecast、Circle area is proportional to growth，以及Globe size and positions do not encode values。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实GDP预测与旧年份、来源被合成情景替代，符合冻结输入；reference_meaning记partial，不列输出缺陷。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "圆章按当前非负增长值改变面积，最小德国仍为可辨圆盘，未要求保持参考原半径或极值注释。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "圆周细描边及抗锯齿导致像素阈值面积略有变化；最小值的相对精度已单独记录，未发现身份或完整圆盘关系因此丢失。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一的圆面积定量通道：全部19个圆盘作外接边界与面积初查，详细报告最大印度、内部沙特和美国、次小意大利、最小德国及0.5%图例；1%图例作可见校准。全部19组国家名、数值、单位及顺序另行逐项核对。地球、金币和圆章位置按要求不作数值测量。"
+  }
+}

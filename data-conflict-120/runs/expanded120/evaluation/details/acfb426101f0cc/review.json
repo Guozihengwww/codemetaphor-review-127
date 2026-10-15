@@ -1,0 +1,379 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：成人在街头共同涂绘，前景有人跪地持刷，刷子与路面接触；绿黄折线叠在街景上方，主题文字为黑人生命议题的净支持增长。\n成图：六名写实成人在街头涂绘，前景两人持短刷触及地面，左侧与中部滚筒落在路面，人与工具存在自然前后遮挡。折线叠在建筑街景上，由负值绿色在零附近换为正值黄色；起点−4.0、低点−4.9、内部+6.5、+10.2和末点+28.4可读。显示−6至+30、年份刻度、60 OBSERVATIONS、SYNTHETIC DATA、社区街头艺术净支持主题、百分点与赞成比例减反对比例定义。此时尚未查看渲染源码或素材；尚未完成像素定量核验。",
+  "summary_zh": "成图保留街头共绘、刷头接触路面及街景上叠合折线的结构。主题、净支持定义、单位、正负配色及代表点几何均符合冻结要求，未见重大或需单列的轻微缺陷。原议题改编单独记为参考意义的部分保留。",
+  "issues": [],
+  "measurement_notes_zh": "只测指定2000×2000 image.png，未重渲染。用横向像素亮度差定位+30、+20、+10、0、−6规则线，分别约为y=280、437、594–595、751–752、846；用端点规则线建立36百分点标尺。彩色线芯/圆标的像素边界独立测中心，八个纵向样本最大估计误差约0.172%满量程。纵向mark_extent_px为可见彩色线芯/圆标厚度，数值由中心位置编码；日期通道该字段为水平位移。底部局部亮度检测得到61个峰，其中x=368为低点标签斜引线；其余60个日期位置均与输入匹配，最大偏差约0.75 px。跨零换色在x≈613，真实日期插值目标x≈613.15。源码仅作映射与全部点参与的佐证。",
+  "uncertainties_zh": "近零−0.4仅有约5.3 px中心位移，线宽和抗锯齿限制其相对精度；不得由满量程通过推断小值精确。后景右侧工具末端被前景人物遮住，无法直接核实该工具是否触地；前景多处刷头接地清楚。按限制未查看运行日志、自检或历史记录，capture_render.py的实际历史执行情况未独立核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "一条Net support系列，输入60日期/60数值；图面两处注明60观测。底部60个日期位置匹配，源码遍历全部60点连接。五个日期主刻度及五个关键数值标签齐全，符合允许密集时间只标刻度与关键点的要求。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "可读关键数值−4.0、−4.9、+6.5、+10.2、+28.4均与对应输入一致；−6、0、+10、+20、+30刻度、2017年5月至2020年6月范围及60观测准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "绿线绑定负净支持/More opposition，黄线绑定正净支持/More support；低点及内部标注以引线连接圆标，末点标有1 JUN 2020。零点说明位于12 Feb与3 Mar 2018之间。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素测得八个代表值均远低于3%满量程误差；真实日期刻度及观测位置匹配。零附近换色符合插值，末端+28.4尖升来自当前数据。近零相对精度另列不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看素材清单指定的raw_02.png；六名成人、建筑、刷具及路面在最终图中实质可见。render.py读取数据并控制日期映射、纵坐标、跨零分段及文字；capture_render.py存在但未据源码推断历史执行成功。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "折线直接叠在同一街景建筑区域，人物及涂绘路面延续到下方；符合参考的叠合关系。数据由折线中心纵坐标承担，不误要求由刷子或涂料面积编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA、社区街头艺术净支持标题、percentage points、日期/数值刻度及页脚赞成比例减反对比例定义均可读；关键标注未受人物遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "六名成人共同作业；前景中部和右侧短刷接地，左侧及中部滚筒与路面接触。手、柄、刷头关系连续，后景右侧工具被前景成人遮挡，形成合理前后层次；折线保持街景叠合。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确Net support for community street art；单位为percentage points/pp，定义为share in favour (%) − share opposed (%)；日期是观测时间，60 dated observations与Not a real-world survey明示合成性质。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "原图黑人生命议题及其净支持增长文字已按core的adapted_topic改为社区街头艺术；街头共同涂绘和净支持时间线关系保留。议题改变归因于允许的输入改编，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "两处最小正值0.9的黄色线芯中心高于零线约14.2 px，折点仍可辨；−0.4绿色中心低于零线约5.3 px。该叠合设计不要求小值生成微型人物，数值精度仍受像素限制。"
+    }
+  },
+  "semantic_attribution_zh": "原议题替换是冻结输入明确许可的input_adaptation；末端陡升是当前28.4带来的数据形状变化。未见当前主题、指标、单位或类别角色的输出丢失。小值相对误差的不确定性来自像素分辨率与线宽，不能解释为数据被人为放大或归零。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "net_support",
+        "category": "2017-05-01",
+        "expected_value": -4,
+        "observed_value": -3.9965,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 12,
+        "full_scale_error_percent": 0.0098,
+        "small_value_relative_error_percent": 0.088,
+        "bbox_xyxy_normalized": [
+          0.097,
+          0.4045,
+          0.103,
+          0.4105
+        ],
+        "evidence_zh": "原图像素测量：彩色标记中心约y=814.5；用可见+30线y=280、−6线y=846线性换算，单位为百分点。起点圆标彩色区域纵向约12 px；旁注−4.0。",
+        "uncertainty_zh": "彩色边缘及抗锯齿使中心估计约有±1 px（±0.064百分点）不确定性；所列误差为测量估计。"
+      },
+      {
+        "series_id": "net_support",
+        "category": "2017-08-24",
+        "expected_value": -4.9,
+        "observed_value": -4.8869,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 12,
+        "full_scale_error_percent": 0.0363,
+        "small_value_relative_error_percent": 0.267,
+        "bbox_xyxy_normalized": [
+          0.178,
+          0.4115,
+          0.184,
+          0.4175
+        ],
+        "evidence_zh": "原图像素测量：彩色标记中心约y=828.5；用可见+30线y=280、−6线y=846线性换算，单位为百分点。绿色最低圆标旁注−4.9，中心约在x=362。",
+        "uncertainty_zh": "彩色边缘及抗锯齿使中心估计约有±1 px（±0.064百分点）不确定性；所列误差为测量估计。"
+      },
+      {
+        "series_id": "net_support",
+        "category": "2018-02-12",
+        "expected_value": -0.4,
+        "observed_value": -0.3392,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 11,
+        "full_scale_error_percent": 0.1688,
+        "small_value_relative_error_percent": 15.194,
+        "bbox_xyxy_normalized": [
+          0.299,
+          0.375,
+          0.306,
+          0.3825
+        ],
+        "evidence_zh": "原图像素测量：彩色标记中心约y=757；用可见+30线y=280、−6线y=846线性换算。x=605处绿色线芯范围y=752–762，中心低于零线约5.33 px；该值以位置编码，无数值旁注。",
+        "uncertainty_zh": "约±1 px足以改变此小值约16%的相对估计；15.194%的相对偏差不能据此确认为真实绘制误差。线宽不是数值长度。"
+      },
+      {
+        "series_id": "net_support",
+        "category": "2018-03-03",
+        "expected_value": 0.9,
+        "observed_value": 0.9011,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.0029,
+        "small_value_relative_error_percent": 0.118,
+        "bbox_xyxy_normalized": [
+          0.3125,
+          0.365,
+          0.3195,
+          0.373
+        ],
+        "evidence_zh": "原图像素测量：彩色标记中心约y=737.5；用可见+30线y=280、−6线y=846线性换算。最小正值之一：x=632处黄色线芯y=733–742，中心高于零线约14.17 px，可与零区分。",
+        "uncertainty_zh": "约±1 px对应此值约7.1%的相对不确定性；点估计接近0.9不保证亚像素精度。"
+      },
+      {
+        "series_id": "net_support",
+        "category": "2018-04-10",
+        "expected_value": 0.9,
+        "observed_value": 0.9011,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.0029,
+        "small_value_relative_error_percent": 0.118,
+        "bbox_xyxy_normalized": [
+          0.339,
+          0.365,
+          0.346,
+          0.373
+        ],
+        "evidence_zh": "原图像素测量：彩色标记中心约y=737.5；用可见+30线y=280、−6线y=846线性换算。另一最小正值：x≈685处黄色折线低谷线芯y=733–742，仍高于零线。",
+        "uncertainty_zh": "约±1 px对应此值约7.1%的相对不确定性；未用数值文字替代几何测量。"
+      },
+      {
+        "series_id": "net_support",
+        "category": "2019-01-01",
+        "expected_value": 6.5,
+        "observed_value": 6.5618,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 12,
+        "full_scale_error_percent": 0.1718,
+        "small_value_relative_error_percent": 0.951,
+        "bbox_xyxy_normalized": [
+          0.5275,
+          0.3215,
+          0.5335,
+          0.3275
+        ],
+        "evidence_zh": "原图像素测量：彩色标记中心约y=648.5；用可见+30线y=280、−6线y=846线性换算。内部圆标彩色区域y=643–654；上方+6.5通过短引线绑定。",
+        "uncertainty_zh": "彩色边缘及抗锯齿使中心估计约有±1 px（±0.064百分点）不确定性；所列误差为测量估计。"
+      },
+      {
+        "series_id": "net_support",
+        "category": "2020-01-01",
+        "expected_value": 10.2,
+        "observed_value": 10.2509,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 12,
+        "full_scale_error_percent": 0.1413,
+        "small_value_relative_error_percent": 0.499,
+        "bbox_xyxy_normalized": [
+          0.785,
+          0.2925,
+          0.791,
+          0.2985
+        ],
+        "evidence_zh": "原图像素测量：彩色标记中心约y=590.5；用可见+30线y=280、−6线y=846线性换算。内部圆标彩色区域y=585–596；上方+10.2通过短引线绑定。",
+        "uncertainty_zh": "彩色边缘及抗锯齿使中心估计约有±1 px（±0.064百分点）不确定性；所列误差为测量估计。"
+      },
+      {
+        "series_id": "net_support",
+        "category": "2020-06-01",
+        "expected_value": 28.4,
+        "observed_value": 28.4417,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 12,
+        "full_scale_error_percent": 0.1158,
+        "small_value_relative_error_percent": 0.147,
+        "bbox_xyxy_normalized": [
+          0.892,
+          0.1495,
+          0.898,
+          0.1555
+        ],
+        "evidence_zh": "原图像素测量：彩色标记中心约y=304.5；用可见+30线y=280、−6线y=846线性换算。最大值圆标独立彩色区域y=299–310；排除圆标下方相邻上升线段，旁注+28.4及1 JUN 2020。",
+        "uncertainty_zh": "彩色边缘及抗锯齿使中心估计约有±1 px（±0.064百分点）不确定性；所列误差为测量估计。"
+      },
+      {
+        "series_id": "net_support_date_axis",
+        "category": "2018-01-01",
+        "expected_value": 245,
+        "observed_value": 244.5377,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 345,
+        "full_scale_error_percent": 0.041,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2715,
+          0.423,
+          0.274,
+          0.432
+        ],
+        "evidence_zh": "日期通道单位为距2017-05-01的天数。可见两端刻度x=200、1790跨1127天；本刻度像素亮度峰x=545，水平位移345 px，反算日期间隔与输入相符。",
+        "uncertainty_zh": "刻度定位约±1 px（±0.71天）；此处mark_extent_px表示自起始刻度的水平位移。"
+      },
+      {
+        "series_id": "net_support_date_axis",
+        "category": "2019-01-01",
+        "expected_value": 610,
+        "observed_value": 609.5723,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 860,
+        "full_scale_error_percent": 0.0379,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.529,
+          0.423,
+          0.5315,
+          0.432
+        ],
+        "evidence_zh": "日期通道单位为距2017-05-01的天数。可见两端刻度x=200、1790跨1127天；本刻度像素亮度峰x=1060，水平位移860 px，反算日期间隔与输入相符。",
+        "uncertainty_zh": "刻度定位约±1 px（±0.71天）；此处mark_extent_px表示自起始刻度的水平位移。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "前景大实例：右侧持刷成人",
+        "required_parts": [
+          "成人手臂与手",
+          "短刷柄",
+          "刷头",
+          "路面涂绘区域"
+        ],
+        "relationship": "手握刷柄，柄连接刷头，刷头向下接触路面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.78,
+          0.56,
+          0.958,
+          0.783
+        ],
+        "evidence_zh": "右侧跪姿成人手向下伸至短柄，刷头下缘贴在浅黄色路面图形上；刷子与人体没有断裂或悬空。"
+      },
+      {
+        "category": "左侧滚筒与路面",
+        "required_parts": [
+          "成人手",
+          "长柄",
+          "弯曲支架",
+          "滚筒",
+          "路面"
+        ],
+        "relationship": "手持长柄，经支架连接滚筒；滚筒落在路面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.022,
+          0.448,
+          0.235,
+          0.763
+        ],
+        "evidence_zh": "左侧成人持斜向左下的长柄，支架连接黄色筒体，筒体下缘与地面及其接触阴影相连。"
+      },
+      {
+        "category": "较小后景实例及层次",
+        "required_parts": [
+          "后景成人",
+          "手与工具柄",
+          "漆桶",
+          "前景成人",
+          "路面"
+        ],
+        "relationship": "后景人持工具向漆桶操作；前景人与工具遮挡构成深度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.226,
+          0.503,
+          0.531,
+          0.758
+        ],
+        "evidence_zh": "左后方弯腰成人手中的细柄指向漆桶口，漆桶落在路面；前景中部成人及其短刷位于更前方，短刷接地。未把后方伸入桶附近的工具误当成可见触地刷头。"
+      },
+      {
+        "category": "右侧前后遮挡",
+        "required_parts": [
+          "后景黑衣成人",
+          "长工具柄",
+          "前景白衣成人"
+        ],
+        "relationship": "后景工具沿右下方向延伸后被前景成人遮住。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.723,
+          0.468,
+          0.95,
+          0.748
+        ],
+        "evidence_zh": "黑衣成人握持的长柄在白衣成人身体处消失，前后遮挡自然；隐藏端部的触地状态不作推断。"
+      },
+      {
+        "category": "大值的数据承载关系",
+        "required_parts": [
+          "街景",
+          "黄色折线",
+          "末端圆标",
+          "数值与日期标签"
+        ],
+        "relationship": "折线叠合街景；末端中心纵坐标承载28.4，标签通过引线绑定。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.756,
+          0.122,
+          0.908,
+          0.3
+        ],
+        "evidence_zh": "黄色折线在建筑背景前上升至圆标，+28.4及1 JUN 2020在旁；无需令建筑或刷具尺寸随数值变化。"
+      },
+      {
+        "category": "小值的数据承载关系",
+        "required_parts": [
+          "零基准线",
+          "绿黄连续折线",
+          "街景背景"
+        ],
+        "relationship": "绿色负段在零点换黄，正值小折点位于零线上方，整体仍叠合街景。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.296,
+          0.36,
+          0.351,
+          0.387
+        ],
+        "evidence_zh": "2018年跨零附近可见绿色中心在零线下、黄色0.9折点在零线上；实际编码区域是彩色折线中心位置，不是工具接地面积。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core明确reference_semantic_scope=adapted_topic；社区街头共绘净支持替代原黑人生命议题，允许按当前数值改变走势及人物姿态。",
+      "output_added_or_lost_meaning_zh": "当前主题、净支持差值定义、观测时间及合成身份均保留。原具体议题不再表达属于授权改编；未发现额外的累计、份额分割或因果含义。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Net support for community street art；percentage points；Net support = share in favour (%) − share opposed (%)；60 dated observations；Not a real-world survey。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原黑人生命议题改成社区街头艺术，冻结core明确允许，故reference_meaning记partial而不列为缺陷。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前最后数值28.4对应图中末端尖升；此形态有当前数据依据，不能仅因参考也有尖升而认定复制旧走势。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小绝对值−0.4的中心位移只有约5.3 px，单像素定位误差对相对值影响较大；数值文字不能消除该不确定性。"
+      }
+    ],
+    "measurement_coverage_zh": "单一时间折线面板：记录8/60个纵向代表点，含两处最小正值、最小绝对值、负极值、起点、两个内部标注和最大值；另记录两个内部日期刻度的水平测量。独立核对60个日期位置和全部可见关键文字；未逐点反算其余52个纵坐标，也未声称逐点几何精度已穷尽验证。"
+  }
+}

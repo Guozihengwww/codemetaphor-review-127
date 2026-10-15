@@ -1,0 +1,271 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：六个独立白色散页纸堆按1913至2014排列，共用底面；纸层及顶面可见，页数置于各堆上方，主题为联邦税法页数。待评图：六堆依次标为420、560、17,200、27,800、61,800、76,800，年份对应且等距；均有白色纸层正面、斜向顶面和右侧面，共用零线。前两堆正面很薄，仍能看到顶面和纸边。图面可读Tax code pages、Yearly page counts in tax-law documents、Page count (pages)、SYNTHETIC DATA与0–80,000 / linear scale；脚注明示正面高度编码、透视顶面仅示意。尚未查看源码。",
+  "summary_zh": "六组年份、页数和单位完整且绑定正确；实测纸堆正面高度均在满量程3%容差内。大小纸堆均保留纸层、顶面、侧面与共用地面，当前税法文档页数主题及合成数据声明清楚。未发现明确违规缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "在1395×2000原图上读取像素行：80,000、60,000、40,000、20,000、0网格分别位于y≈410、730、1050、1370、1690，满量程1280像素。由各正面顶边至共同零线测高，再以80000/1280换算页数；上方约14像素的透视顶面不计入。顶边位置由正面内部横向条带的亮度突变及可见接缝判读，未使用源码计算高度代替测量。所有结果为约整数像素估计，边界误差约±1像素。",
+  "uncertainties_zh": "抗锯齿、细接缝与接触阴影限制了亚像素定位。±1像素约等于±62.5页，对420和560分别约为±14.9%和±11.2%；小值的点估计误差不能视为精度保证。已检查静态源码及素材，但遵守限制未查看执行日志、自检或历史渲染，不能独立确认所有渲染均经capture_render.py执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个独立纸堆完整覆盖1913、1939、1969、1984、2004、2014；单一Page count系列与pages单位均显示。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项读到420、560、17,200、27,800、61,800、76,800，与冻结数据一致；刻度0至80,000，无正值被写为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个数值置于对应纸堆上方，年份位于其正下方；从左到右顺序与输入一致，无交叉引线或错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "六个正面实测约7、9、275、445、989、1229像素，对应约437.5、562.5、17,187.5、27,812.5、61,812.5、76,812.5页；最大点估计偏差约0.022%满量程，计入±1像素仍远低于3%。纸堆等距，共同起于零线。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及三张纸面素材；原始图的起伏纸层纹理实质覆盖成图纸堆主体。prepare_assets.py记录裁取来源，render.py加载这些素材并按数据裁切正面、变换侧面和顶面。capture_render.py提供保存机制；未核验执行历史。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "纸堆正面自身承担数值高度，纸层纹理位于该数据区域内。顶面覆盖正面上沿，右侧面与前沿连接，底部接触共用地面；未发现破坏物体或读数的遮挡、接缝或投影错位。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、六组年份及数值、Page count (pages)、线性量程和阅读说明均清楚可读，无裁切或相互覆盖。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大小实例均呈独立白色散页纸堆：横向纸层构成正面，空白顶面与右侧纸边相接，六堆落在同一地面。1913和1939正面虽薄，仍有可见纸边与层次。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Tax code pages及Yearly page counts in tax-law documents明确当前主题；Page count (pages)明确指标和单位，YEAR / equally spaced categories明确年份角色，脚注说明各堆从零起算。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考用纸堆高度比较各年份税法页数，成图保留同一主题与承载关系。原历史数值被明确标记的合成输入替换，未把新数据声称为真实历史统计。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "420与560的正面约7和9像素，均非消失或被顶面替代；原尺寸可见顶面、薄纸层正面、右侧边及落地关系。相对高度精度受像素分辨率限制，不能由文字或满量程合格推定。"
+    }
+  },
+  "semantic_attribution_zh": "真实统计替换为合成数值属于冻结输入允许的改编，税法页数主题和年份角色未丢失。前两堆变薄源于数据驱动的高度变化，微小高度的精度不确定性属于分辨率限制；未见需要归因于输出遗漏的语义损失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "page_count",
+        "category": "1913",
+        "expected_value": 420,
+        "observed_value": 437.5,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 7,
+        "full_scale_error_percent": 0.021875,
+        "small_value_relative_error_percent": 4.1667,
+        "bbox_xyxy_normalized": [
+          0.1312,
+          0.8415,
+          0.2287,
+          0.845
+        ],
+        "evidence_zh": "原图正面顶边约y=1683，共同底边约y=1690，正面高约7像素；以可见1280像素量程换算约437.5页。上方透视顶面不计入。",
+        "uncertainty_zh": "整数像素定位约±1像素，即约±62.5页；所列误差为近似点估计。微小高度的相对精度无法据此确认。"
+      },
+      {
+        "series_id": "page_count",
+        "category": "1939",
+        "expected_value": 560,
+        "observed_value": 562.5,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 9,
+        "full_scale_error_percent": 0.003125,
+        "small_value_relative_error_percent": 0.4464,
+        "bbox_xyxy_normalized": [
+          0.2703,
+          0.8405,
+          0.3677,
+          0.845
+        ],
+        "evidence_zh": "原图正面顶边约y=1681，共同底边约y=1690，正面高约9像素；以可见1280像素量程换算约562.5页。上方透视顶面不计入。",
+        "uncertainty_zh": "整数像素定位约±1像素，即约±62.5页；所列误差为近似点估计。微小高度的相对精度无法据此确认。"
+      },
+      {
+        "series_id": "page_count",
+        "category": "1969",
+        "expected_value": 17200,
+        "observed_value": 17187.5,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 275,
+        "full_scale_error_percent": 0.015625,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4093,
+          0.7075,
+          0.5068,
+          0.845
+        ],
+        "evidence_zh": "原图正面顶边约y=1415，共同底边约y=1690，正面高约275像素；以可见1280像素量程换算约17187.5页。上方透视顶面不计入。",
+        "uncertainty_zh": "整数像素定位约±1像素，即约±62.5页；所列误差为近似点估计。不包含纸层纹理条数或投影深度。"
+      },
+      {
+        "series_id": "page_count",
+        "category": "1984",
+        "expected_value": 27800,
+        "observed_value": 27812.5,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 445,
+        "full_scale_error_percent": 0.015625,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5484,
+          0.6225,
+          0.6459,
+          0.845
+        ],
+        "evidence_zh": "原图正面顶边约y=1245，共同底边约y=1690，正面高约445像素；以可见1280像素量程换算约27812.5页。上方透视顶面不计入。",
+        "uncertainty_zh": "整数像素定位约±1像素，即约±62.5页；所列误差为近似点估计。不包含纸层纹理条数或投影深度。"
+      },
+      {
+        "series_id": "page_count",
+        "category": "2004",
+        "expected_value": 61800,
+        "observed_value": 61812.5,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 989,
+        "full_scale_error_percent": 0.015625,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.6875,
+          0.3505,
+          0.7849,
+          0.845
+        ],
+        "evidence_zh": "原图正面顶边约y=701，共同底边约y=1690，正面高约989像素；以可见1280像素量程换算约61812.5页。上方透视顶面不计入。",
+        "uncertainty_zh": "整数像素定位约±1像素，即约±62.5页；所列误差为近似点估计。不包含纸层纹理条数或投影深度。"
+      },
+      {
+        "series_id": "page_count",
+        "category": "2014",
+        "expected_value": 76800,
+        "observed_value": 76812.5,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1229,
+        "full_scale_error_percent": 0.015625,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.8265,
+          0.2305,
+          0.924,
+          0.845
+        ],
+        "evidence_zh": "原图正面顶边约y=461，共同底边约y=1690，正面高约1229像素；以可见1280像素量程换算约76812.5页。上方透视顶面不计入。",
+        "uncertainty_zh": "整数像素定位约±1像素，即约±62.5页；所列误差为近似点估计。不包含纸层纹理条数或投影深度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "1913（最小正值）",
+        "required_parts": [
+          "白色散页顶面",
+          "薄纸层正面",
+          "右侧纸边",
+          "共用地面"
+        ],
+        "relationship": "顶面前沿接正面上沿；正面与右侧面接合，底边接地；正面高度承载页数。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1312,
+          0.8345,
+          0.2416,
+          0.845
+        ],
+        "evidence_zh": "约x183–337、y1669–1690处，斜向顶面下方有约7像素薄正面及横向纸边；右侧斜边与其连续接合，底部落在零线。"
+      },
+      {
+        "category": "1939（小值）",
+        "required_parts": [
+          "白色散页顶面",
+          "薄纸层正面",
+          "右侧面",
+          "共用地面"
+        ],
+        "relationship": "顶面封接纸层正面上沿，右侧面连接前后边，正面底边与其他堆共线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2703,
+          0.8335,
+          0.3806,
+          0.845
+        ],
+        "evidence_zh": "约x377–531、y1667–1690处，顶面下方约9像素正面可辨，与1913独立分隔，未为可辨性增加明显数据厚度。"
+      },
+      {
+        "category": "1984（内部值）",
+        "required_parts": [
+          "纸层正面",
+          "空白顶面",
+          "右侧纸边",
+          "共用地面"
+        ],
+        "relationship": "顶面、正面和侧面形成连续纸堆，层纹沿正面水平排列，底边接地。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.5484,
+          0.6155,
+          0.6588,
+          0.845
+        ],
+        "evidence_zh": "约x765–919、y1231–1690处，顶面位于数据正面上方，正面纸层连续向下延伸约445像素至零线，侧面与其高度一致。"
+      },
+      {
+        "category": "2014（最大值）",
+        "required_parts": [
+          "高纸层正面",
+          "空白顶面",
+          "右侧纸边",
+          "共用地面"
+        ],
+        "relationship": "高正面直接编码页数；顶面与右侧面在上角相接，右侧向后上方投影，底部与地面接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.8265,
+          0.2235,
+          0.9369,
+          0.845
+        ],
+        "evidence_zh": "约x1153–1307、y447–1690处，纸层覆盖完整高正面；正面顶边约y461、底边约y1690，顶面投影止于y447，未混入正面高度。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结输入允许以合成值替代原历史统计，并适配纸堆姿态与非数据透视；不要求复述原数值或旧统计结论。当前仍为税法文档年度页数。",
+      "output_added_or_lost_meaning_zh": "保留以纸堆高度比较不同年份页数的关系；增加了明确的线性尺度、等距分类和透视说明，未见指标、单位或年份角色丢失。",
+      "visible_inscription_evidence_zh": "Tax code pages；Yearly page counts in tax-law documents；Page count (pages)；SYNTHETIC DATA；Front height encodes page count; each stack starts at zero.；Synthetic values · not historical tax statistics；YEAR / equally spaced categories。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考历史页数替换为冻结合成页数；成图醒目标明SYNTHETIC DATA，并注明不是历史税务统计。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "420和560仅占80,000量程的0.525%与0.7%，因此两堆正面很薄；顶面与侧边仍保留。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "两个小正面仅约7和9像素，单像素定位对其相对误差影响明显；没有据正确文字或源码公式宣称亚像素精度。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一面板、唯一页数高度通道的全部六堆，包含最小正值、内部值和最大值；另逐项核查全部年份、数值、系列及单位。纸层条数和透视深度为明示非计量部分，未按页数计数。"
+  }
+}

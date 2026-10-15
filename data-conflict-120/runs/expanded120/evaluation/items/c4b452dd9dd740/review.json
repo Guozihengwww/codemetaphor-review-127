@@ -1,0 +1,360 @@
+{
+  "verdict": "minor",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以复古电脑屏幕承载五类情绪的两轮分组柱，机壳下方有键盘及操作双手，机器人位于电脑周围。待评图保留机壳、屏幕内五组黄绿双柱、下方键盘与橙色双手，机器人倚在左上边框。标题明确AI工作情绪及两轮合成比例；SYNTHETIC DATA、Wave A/B、0–70刻度、百分比单位、五类中英文情绪名和十个数值均可读。柱上数值依次为28/19、54/36、64/62、15/23、31/42；底部说明独立多选、不合计为100%及非真实调查。最小15%柱可见完整矩形，所有柱立于同一基线并位于屏幕内部，未见遮住数值或标签的部件。",
+  "summary_zh": "数据、标签绑定、屏幕内分组柱结构和当前统计语义均通过。仅右下辅助尺度注记缺字，属轻微显示问题；真实年份改为合成两轮是冻结输入允许的适配。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "附加的尺度注记应完整可读，范围连接符及说明文字不应缺失。",
+      "observed_zh": "右下辅助注记仅显示分离的“0 70%”，未形成完整范围说明；主图0–70刻度和百分比单位完整。",
+      "evidence_zh": "原图约x1461–1543、y1997–2014可见数字与百分号，其右侧为空。render.py中的注记字符串为“0–70% 共同线性尺度”，仅作为缺字来源的源码佐证。该局部问题不影响数据阅读。",
+      "bbox_xyxy_normalized": [
+        0.8056,
+        0.9732,
+        0.9417,
+        0.9878
+      ]
+    }
+  ],
+  "measurement_notes_zh": "在1800×2049原图中按黄绿像素连通区定位十根柱，再读取深色顶边。三个柱间空隙的网格均位于y=700、778、856、934、1012、1090、1168、1246；0–70跨546 px，即7.8 px/百分点。以共同零线减柱顶得高度，未采用渲染记录中的几何值。十柱可见宽度均约66 px；最大中心估计误差约0.077个百分点，即0.110%满量程，低于3%满量程容差。",
+  "uncertainties_zh": "抗锯齿和描边使边界取点约有±2 px不确定性，约±0.26个百分点；最小柱的中心估计准确不等于无相对误差。按限制未查渲染日志或历史归档，capture_render.py源码不能证明每次渲染确已归档。素材生成来源由本案清单佐证，其实际可见使用已与原始及处理素材核对。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五类情绪各两柱，共十柱；Wave A/B、全部十个值、八个轴刻度、百分比单位、当前标题、合成数据告示及独立多选说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "按Confidence至Concern顺序，图上为28/19、54/36、64/62、15/23、31/42%，与data.json一致；轴为0至70、步长10。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每组左黄柱对应Wave A、右绿柱对应Wave B，数值位于对应柱顶，五个英文情绪名及中文译名位于对应组下方，顺序准确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素测量覆盖十柱，共同零线y=1246、等宽约66 px；15%约117 px，64%约499 px，36%约281 px。全部中心估计误差不超过0.110%满量程。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png和computer_frame.png中的机壳、机器人、键盘及双手在最终图中明显对应，构成主体。render.py加载处理素材，按data.json绘制柱、轴及文字；不以代码公式代替像素验证。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "全部柱、网格、图例和类别名均被屏幕内缘包含；数据由柱高承载。机壳、底座和前方键盘关系清楚，双手覆盖按键，机器人倚靠机壳，未遮住图表。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "所有必需标题、分类、图例、数值、单位及口径说明可读；右下辅助尺度注记有局部缺字，另列minor，不影响主图尺度。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "复古机壳包围屏幕，屏幕内保留五组双柱，机壳下部可见支撑底座，键盘位于前下方。最大及最小柱均完整位于屏幕内并接触同一零线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确AI工作情绪和两轮合成比例；指标为情绪选择比例（%），图例为Wave A/B，类别是五种具名情绪。页脚明确独立多选、分别计算、不合计100%、非真实调查。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "AI工作情绪及屏幕显示比较、双手操作键盘的场景保留。原参考2018/2023真实历史比较改为Wave A/B合成对照，是冻结输入明确适配，不属于输出语义丢失。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Indifference/Wave A为15%，柱高约117 px、宽约66 px，顶边、两侧、填色及零线接触均可辨；未靠数字标签代替几何，也未人为抬高。"
+    }
+  },
+  "semantic_attribution_zh": "原参考真实2018/2023及五年变化语境被输入改为合成Wave A/B，故原历史论述仅部分保留，不归因于生成失败。当前主题、情绪角色、比例单位和独立多选语义完整；柱高变化来自当前数据。辅助尺度注记的可见缺字属于输出局部遗漏；小柱不存在明显分辨率丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "Confidence",
+        "category": "Wave A",
+        "expected_value": 28,
+        "observed_value": 27.9487,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 218,
+        "full_scale_error_percent": 0.0733,
+        "small_value_relative_error_percent": 0.1832,
+        "bbox_xyxy_normalized": [
+          0.258333,
+          0.501708,
+          0.295,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=1028，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px；换算值为近似像素读数。"
+      },
+      {
+        "series_id": "Confidence",
+        "category": "Wave B",
+        "expected_value": 19,
+        "observed_value": 18.9744,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 148,
+        "full_scale_error_percent": 0.0366,
+        "small_value_relative_error_percent": 0.135,
+        "bbox_xyxy_normalized": [
+          0.303889,
+          0.535871,
+          0.340556,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=1098，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px；换算值为近似像素读数。"
+      },
+      {
+        "series_id": "Optimism",
+        "category": "Wave A",
+        "expected_value": 54,
+        "observed_value": 53.9744,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 421,
+        "full_scale_error_percent": 0.0366,
+        "small_value_relative_error_percent": 0.0475,
+        "bbox_xyxy_normalized": [
+          0.375,
+          0.402635,
+          0.411667,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=825，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px；换算值为近似像素读数。"
+      },
+      {
+        "series_id": "Optimism",
+        "category": "Wave B",
+        "expected_value": 36,
+        "observed_value": 36.0256,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 281,
+        "full_scale_error_percent": 0.0366,
+        "small_value_relative_error_percent": 0.0712,
+        "bbox_xyxy_normalized": [
+          0.420556,
+          0.470961,
+          0.457222,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=965，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px；换算值为近似像素读数。"
+      },
+      {
+        "series_id": "Curiosity",
+        "category": "Wave A",
+        "expected_value": 64,
+        "observed_value": 63.9744,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 499,
+        "full_scale_error_percent": 0.0366,
+        "small_value_relative_error_percent": 0.0401,
+        "bbox_xyxy_normalized": [
+          0.491667,
+          0.364568,
+          0.528333,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=747，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px；换算值为近似像素读数。"
+      },
+      {
+        "series_id": "Curiosity",
+        "category": "Wave B",
+        "expected_value": 62,
+        "observed_value": 61.9231,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 483,
+        "full_scale_error_percent": 0.1099,
+        "small_value_relative_error_percent": 0.1241,
+        "bbox_xyxy_normalized": [
+          0.537222,
+          0.372377,
+          0.573889,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=763，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px；换算值为近似像素读数。"
+      },
+      {
+        "series_id": "Indifference",
+        "category": "Wave A",
+        "expected_value": 15,
+        "observed_value": 15,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 117,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.608333,
+          0.551,
+          0.645,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=1129，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px，对应约±1.71%相对误差；中心估计为零误差不代表像素级精确。"
+      },
+      {
+        "series_id": "Indifference",
+        "category": "Wave B",
+        "expected_value": 23,
+        "observed_value": 22.9487,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 179,
+        "full_scale_error_percent": 0.0733,
+        "small_value_relative_error_percent": 0.223,
+        "bbox_xyxy_normalized": [
+          0.653889,
+          0.520742,
+          0.690556,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=1067，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px；换算值为近似像素读数。"
+      },
+      {
+        "series_id": "Concern",
+        "category": "Wave A",
+        "expected_value": 31,
+        "observed_value": 31.0256,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 242,
+        "full_scale_error_percent": 0.0366,
+        "small_value_relative_error_percent": 0.0827,
+        "bbox_xyxy_normalized": [
+          0.725,
+          0.489995,
+          0.761667,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=1004，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px；换算值为近似像素读数。"
+      },
+      {
+        "series_id": "Concern",
+        "category": "Wave B",
+        "expected_value": 42,
+        "observed_value": 41.9231,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 327,
+        "full_scale_error_percent": 0.1099,
+        "small_value_relative_error_percent": 0.1832,
+        "bbox_xyxy_normalized": [
+          0.770556,
+          0.448511,
+          0.807222,
+          0.608102
+        ],
+        "evidence_zh": "原图柱顶深色边缘约y=919，共同零线y=1246；按像素测得的546 px满量程换算。",
+        "uncertainty_zh": "描边及抗锯齿取边约±2 px；换算值为近似像素读数。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "电脑整体",
+        "required_parts": [
+          "复古机壳",
+          "屏幕内缘",
+          "底座",
+          "键盘"
+        ],
+        "relationship": "包含、支撑连接与前后位置",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.028,
+          0.242,
+          0.971,
+          0.922
+        ],
+        "evidence_zh": "米色机壳及黑色内框包围屏幕，底座接在显示器下方，键盘位于底座前方；图表没有越过屏幕边缘。"
+      },
+      {
+        "category": "最大值Curiosity/Wave A及相邻Wave B",
+        "required_parts": [
+          "黄柱64%",
+          "绿柱62%",
+          "共同零线",
+          "屏幕",
+          "组标签"
+        ],
+        "relationship": "并列、共同基线接触及屏幕包含",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.489,
+          0.343,
+          0.576,
+          0.656
+        ],
+        "evidence_zh": "两柱在Curiosity标签正上方并列，黄柱略高；各柱底边落在y=1246零线，顶部及全宽均在屏幕内。数据边界是柱顶到零线的垂直距离。"
+      },
+      {
+        "category": "最小值Indifference/Wave A及相邻Wave B",
+        "required_parts": [
+          "黄柱15%",
+          "绿柱23%",
+          "共同零线",
+          "屏幕",
+          "组标签"
+        ],
+        "relationship": "完整矩形、并列与共同基线接触",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.6,
+          0.5,
+          0.698,
+          0.657
+        ],
+        "evidence_zh": "15%黄柱从约y=1129延伸至1246，23%绿柱位于右侧且更高；两柱的顶边、侧边、填色和底边均可辨，未脱离屏幕容器。"
+      },
+      {
+        "category": "操作场景及遮挡层次",
+        "required_parts": [
+          "橙色双手",
+          "键盘按键",
+          "机器人",
+          "机壳上沿"
+        ],
+        "relationship": "手部接触按键、机器人倚靠上沿，非数据部件不遮图",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.073,
+          0.168,
+          0.848,
+          0.923
+        ],
+        "evidence_zh": "双手位于键盘前方并覆盖部分按键；左上机器人的手搭在机壳边缘、腿悬于外侧。机壳前向屏幕与键盘透视相容，没有改变柱的二维坐标关系。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入要求本地合成两轮比例，允许调整非数据部件姿态和排版，不要求原真实年份、原峰值或原涨跌。",
+      "output_added_or_lost_meaning_zh": "保留AI工作情绪主题、五类角色及电脑操作场景；真实历史变化论述由合成对照替代，符合输入。输出未把多选比例误作100%组成；仅辅助尺度注记缺字。",
+      "visible_inscription_evidence_zh": "“复古电脑中的 AI 工作情绪：两轮合成比例”“SYNTHETIC DATA”“情绪选择比例（%）”“Wave A”“Wave B”及五种情绪名清楚可见；页脚写明独立多选、不合计为100%、非真实调查结果。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "2018/2023真实比较替换为Wave A/B合成两轮，冻结标题、数据告示及当前口径均要求此适配。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "五组柱高和相对变化随当前28/19、54/36、64/62、15/23、31/42%改变，像素测量与数据吻合。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "右下辅助尺度注记只剩“0 70%”；主图轴与必需单位仍完整，影响局限于该处文字。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一面板、共同线性柱高通道的十根柱全部测量，包含最小15%、最大64%及内部值，并覆盖两轮。全部分类、图例、数值和必需说明另行核对。未把非数据机壳、键盘或机器人尺寸当作定量编码。"
+  }
+}

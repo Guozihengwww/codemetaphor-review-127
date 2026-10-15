@@ -1,0 +1,271 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：纸面上为完整尖顶圆腹水滴，六个彩色用途区域共用腹部汇聚点；标题询问用水量，含Toilet、Clothes Washer、Shower、Faucet、Leaks、Other及百分比，Other有外置引线。指定成图：完整水滴中六个彩色区域在同一点相接，主体和背景均有可见纸面颗粒；各用途均配外置引线。可读标签为Toilet 28.1%、Clothes Washer 22.4%、Shower 17.3%、Faucet 14.8%、Leaks 12.0%、Other 5.4%。顶部显示SYNTHETIC DATA、HOUSEHOLD WATER USE COMPOSITION及% of synthetic total，底部说明按区域面积表达份额并标注100.0%总量。最小的Other为左上深蓝楔形，仍能看见外弧、两条边及与共同汇聚点的连接。初看未见明显缺口、重叠、错绑或文字遮挡；面积比例尚待像素核查。",
+  "summary_zh": "通过。六项数值、标签绑定和水滴面积份额符合冻结输入；主题、单位、完整水滴及共用汇聚点均保留。任务可行，未发现实质性可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "在1500×2007原图上独立测量：从六个色区内部取色相样本，在主体范围以HSV饱和度>0.12分离纸底，用3×3开运算去除细引线，逐色保留最大连通区并计数。面积分母为六区有效像素之和613666，不以圆心角计算份额。六区估计为28.132%、22.352%、17.311%、14.826%、12.011%、5.369%，最大绝对误差约0.048个百分点。将饱和度阈值改为0.10、0.15、0.18复核，全部误差仍小于0.12个百分点。几何源码仅作旁证，未运行渲染器或读取自检结果。",
+  "uncertainties_zh": "像素分色不精确恢复抗锯齿覆盖率，纸纹浅色像素及节点会带来小幅测量误差；最小区约0.57%的相对误差是分色估计，不是小值精度保证。已检查素材、处理及渲染源码；按限制未检查生成日志、渲染历史或自检，故不能独立证明每次完整渲染均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个用途、六个彩色区域和六组数值齐全；顺时针为Toilet、Clothes Washer、Shower、Faucet、Leaks、Other。SYNTHETIC DATA、主题、单位、100.0%总量及面积说明均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项读得28.1%、22.4%、17.3%、14.8%、12.0%、5.4%，均与输入一致，合计100.0%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "六条外置引线分别触及对应色区外缘：青色Toilet、绿色Clothes Washer、粉色Shower、橙色Faucet、黄色Leaks、深蓝Other；未见交叉错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素面积估计全部在3个百分点容差内，最大约0.048个百分点。成图连续填满水滴，无可见数据缺口或区域重叠；源码按实际遮罩内累计面积求边界，与像素结果相符。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及印刷密度素材；原素材的水滴轮廓、颗粒和纸底在成图中有实质对应。prepare_assets.py提取这些素材，render.py使用它们构成主体，geometry.py控制六区面积；capture_render.py具有保存机制，但历史执行未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "水滴本身就是六用途的整体面积容器，分区直接占据其内部并共用汇聚点。纸面颗粒跨分区一致，未见旁置物体替代数据融合、表面错位或遮挡破坏。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题和合成数据告示醒目，六项名称、百分比及单位清晰，Clothes Washer分行仍完整。底部面积定义与非真实统计说明可读，无裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "尖顶约在(750,556)，圆腹延伸至y≈1688；六色在(749,1251)附近的5×5像素邻域同时出现。最大和最小区域都连接共同汇聚点并接触水滴外缘，外置引线及印刷材质保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "HOUSEHOLD WATER USE COMPOSITION、% of synthetic total和六个用途名称明确当前主题、指标、单位及分类角色；面积说明与100.0%总量明确整体构成关系。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考以一整滴代表总用水、内部区域代表终端用途份额；成图保留同一家庭用水构成主题和整体—部分关系。旧真实统计替换为明确标注的合成数据属于输入允许的改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Other区域仍有约32949个有效像素，包围盒约385×244像素；两条边、外弧、与共同汇聚点的连接及外置引线均可辨，并非仅靠5.4%文字证明。"
+    }
+  },
+  "semantic_attribution_zh": "参考的真实居民用水统计被冻结输入替换为合成家庭用水组成，主题和用途角色未改变；旧数值与来源不属于当前必须保留内容。输出明确标注合成性质，未见主题、单位或数据承载关系丢失。微小测量差异受像素边界及纹理分色限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Toilet",
+        "expected_value": 28.1,
+        "observed_value": 28.132,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 696,
+        "full_scale_error_percent": 0.032,
+        "small_value_relative_error_percent": 0.112,
+        "bbox_xyxy_normalized": [
+          0.304667,
+          0.27703,
+          0.662,
+          0.623817
+        ],
+        "evidence_zh": "直接对成图分色：该区约172634像素，六区有效像素总数613666；面积占比约28.132%。extent为该区像素包围盒的最长边。",
+        "uncertainty_zh": "纹理、抗锯齿和引线节点影响边缘分色；这是像素分割估计，不是渲染公式或亚像素真值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Clothes Washer",
+        "expected_value": 22.4,
+        "observed_value": 22.352,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 586,
+        "full_scale_error_percent": 0.048,
+        "small_value_relative_error_percent": 0.216,
+        "bbox_xyxy_normalized": [
+          0.500667,
+          0.470852,
+          0.793333,
+          0.76283
+        ],
+        "evidence_zh": "直接对成图分色：该区约137164像素，六区有效像素总数613666；面积占比约22.352%。extent为该区像素包围盒的最长边。",
+        "uncertainty_zh": "纹理、抗锯齿和引线节点影响边缘分色；这是像素分割估计，不是渲染公式或亚像素真值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Shower",
+        "expected_value": 17.3,
+        "observed_value": 17.311,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 435,
+        "full_scale_error_percent": 0.011,
+        "small_value_relative_error_percent": 0.061,
+        "bbox_xyxy_normalized": [
+          0.452667,
+          0.624315,
+          0.741333,
+          0.841056
+        ],
+        "evidence_zh": "直接对成图分色：该区约106229像素，六区有效像素总数613666；面积占比约17.311%。extent为该区像素包围盒的最长边。",
+        "uncertainty_zh": "纹理、抗锯齿和引线节点影响边缘分色；这是像素分割估计，不是渲染公式或亚像素真值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Faucet",
+        "expected_value": 14.8,
+        "observed_value": 14.826,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 431,
+        "full_scale_error_percent": 0.026,
+        "small_value_relative_error_percent": 0.174,
+        "bbox_xyxy_normalized": [
+          0.232667,
+          0.623817,
+          0.500667,
+          0.838565
+        ],
+        "evidence_zh": "直接对成图分色：该区约90981像素，六区有效像素总数613666；面积占比约14.826%。extent为该区像素包围盒的最长边。",
+        "uncertainty_zh": "纹理、抗锯齿和引线节点影响边缘分色；这是像素分割估计，不是渲染公式或亚像素真值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Leaks",
+        "expected_value": 12.0,
+        "observed_value": 12.011,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 439,
+        "full_scale_error_percent": 0.011,
+        "small_value_relative_error_percent": 0.094,
+        "bbox_xyxy_normalized": [
+          0.206667,
+          0.572496,
+          0.499333,
+          0.734928
+        ],
+        "evidence_zh": "直接对成图分色：该区约73709像素，六区有效像素总数613666；面积占比约12.011%。extent为该区像素包围盒的最长边。",
+        "uncertainty_zh": "纹理、抗锯齿和引线节点影响边缘分色；这是像素分割估计，不是渲染公式或亚像素真值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Other",
+        "expected_value": 5.4,
+        "observed_value": 5.369,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 385,
+        "full_scale_error_percent": 0.031,
+        "small_value_relative_error_percent": 0.57,
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.501744,
+          0.498667,
+          0.623318
+        ],
+        "evidence_zh": "直接对成图分色：该区约32949像素，六区有效像素总数613666；面积占比约5.369%。extent为该区像素包围盒的最长边。",
+        "uncertainty_zh": "纹理、抗锯齿和引线节点影响边缘分色；这是像素分割估计，不是渲染公式或亚像素真值。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体水滴",
+        "required_parts": [
+          "尖顶",
+          "圆腹",
+          "六个彩色区域",
+          "内部共同汇聚点",
+          "纸面印刷颗粒"
+        ],
+        "relationship": "六个区域共同包含于完整水滴中，相邻区域接触，共用内部汇聚点；水滴外轮廓界定总面积。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.206,
+          0.277,
+          0.794,
+          0.842
+        ],
+        "evidence_zh": "尖顶连续接入两侧轮廓，底部圆弧闭合；六种色相在约(749,1251)附近共同相接，没有明显留白、错层或透视错位。"
+      },
+      {
+        "category": "Toilet（最大区）",
+        "required_parts": [
+          "青色用途区",
+          "水滴尖顶",
+          "两条分界边",
+          "共同汇聚点",
+          "外置引线"
+        ],
+        "relationship": "青色区包含尖顶，两条内部分界边收束到汇聚点，右侧外缘与Toilet引线接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.304667,
+          0.27703,
+          0.662,
+          0.623817
+        ],
+        "evidence_zh": "青色大区从水滴尖顶延伸到腹部共同点，右侧引线连向28.1%标签；区域实际面积承载其份额。"
+      },
+      {
+        "category": "Faucet（中间值）",
+        "required_parts": [
+          "橙色用途区",
+          "两条分界边",
+          "下左外弧",
+          "共同汇聚点",
+          "外置引线"
+        ],
+        "relationship": "橙色区夹在Leaks和Shower之间，从共同点延伸至下左圆弧，并与Faucet引线接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.232667,
+          0.623817,
+          0.500667,
+          0.838565
+        ],
+        "evidence_zh": "橙色区域两条内边与邻区无缝相接，保留圆腹外缘，左下14.8%标签的引线明确触及其外弧。"
+      },
+      {
+        "category": "Other（最小区）",
+        "required_parts": [
+          "深蓝用途区",
+          "两条分界边",
+          "左上外弧",
+          "共同汇聚点",
+          "外置引线"
+        ],
+        "relationship": "深蓝楔形夹在Leaks与Toilet之间，两边在共同点收束，外侧弧与Other引线相接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.501744,
+          0.499333,
+          0.624315
+        ],
+        "evidence_zh": "原分辨率下仍可辨完整深蓝楔形及其外弧；左侧5.4%标签与该区绑定，面积没有被人为放大到其他用途尺度。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许以当前六项合成百分比替换参考真实统计，调整水滴姿态、分界及标签位置；无需沿用参考旧数值或真实来源。当前主题仍为家庭用水构成。",
+      "output_added_or_lost_meaning_zh": "成图保留整滴对应总量、内部面积对应用途份额的关系；增加明确的面积编码说明，未见必需语义丢失。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、HOUSEHOLD WATER USE COMPOSITION、% of synthetic total、六用途名称、100.0% TOTAL、Area of each coloured region = share of the synthetic total.及Illustrative composition; not observed household statistics."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实统计改为合成数据由冻结输入要求，成图明示其非观测统计性质；这不构成输出语义缺失。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前六区面积随给定份额调整，保留水滴外轮廓、共同汇聚点及用途绑定；变化符合当前数据要求。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一量化通道为水滴内部区域面积；六区全部直接分色测量，覆盖最大Toilet、最小Other和中间Faucet等。六组类别与数值、总量、单位及主题另行全部核读。未将数值文字或源码公式当作几何测量，也未检查禁止访问的历史材料。"
+  }
+}

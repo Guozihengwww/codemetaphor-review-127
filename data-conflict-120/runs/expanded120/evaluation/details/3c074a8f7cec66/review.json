@@ -1,0 +1,276 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：六束金黄色意面分别插入青绿色纸套，纸套有侧面与折角，国旗和国名在下方，数值在面条上方；标题与副标题表达意面产量。\n待评图：六组依次为Italy、USA、Germany、France、Spain、UK；数值依次为3,280,000、2,060,000、278,000、246,000、229,000、34,000。青绿色纸套前缘同高，金黄色意面从前缘后方向上露出。意大利和美国高，德国、法国和西班牙较短，英国只有薄薄一排尖端。左轴为0至3.5M，标题PASTA PRODUCTION、SYNTHETIC DATA、公吨单位及露出高度说明可读。纸套有纹理、暗侧面和下角折痕。尚未量测像素或读取渲染代码。",
+  "summary_zh": "六国数值、标签、单位与意面露出高度对应正确，全部实测偏差小于满量程0.1%。纸套包含意面、前缘遮挡面条下部的关系保留，主题与合成数据声明清楚。英国短标记可见，但其相对精度受像素边缘限制。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量指定image.png（2000×1484）。可见轴刻度行为230、350、470、590、710、830、950、1070，满量程跨度840像素；六个中央区域的青色前面均从y≈1070开始。各束区域以R>140、G>80、R−G>6、G−B>15提取黄色，取最高候选像素；提高阈值或排除孤立边缘像素会产生约1像素差异。高度按3500000/840吨每像素换算；误差为该近似测量与输入的差，不是代码公式推定。",
+  "uncertainties_zh": "尖端和纸套边缘存在约1像素的抗锯齿判定不确定性，英国8像素标记尤其敏感。可见短尖端及其与纸套的前后关系，但无法从这几行像素精细判断每根面条的端面形状。按限制未读取执行日志或历史结果，未独立认证所有历史渲染是否均经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Italy、USA、Germany、France、Spain、UK六组依冻结顺序出现，各有一束意面、一只纸套、国旗、国名及数值；单系列完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "六个可见数值依次为3,280,000、2,060,000、278,000、246,000、229,000、34,000，与输入逐项相同；公吨单位及0–3,500,000线性范围可读。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个数值位于对应意面束上方，国旗和国名在同一组下方，六组间没有交叉连线或错位绑定。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实际露出高度约788、495、66–67、59、55、8像素，共用y≈1070前缘及840像素满量程；各组与输入的偏差均小于满量程0.1%，低于3%容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png、pasta_bundle.png和sleeve_front.png，金黄色圆柱面条、青色纸纹及折角在成图主体中对应可见。render.py实际载入这些素材；capture_render.py提供完整渲染保存流程，但历史执行未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "意面本体露出纸套的高度直接承载产量；前面遮住面条下段，开口在其后，右侧面与前面相接。纸套高度统一且不承担数量编码，没有以旁置插图替代数据物体。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、SYNTHETIC DATA、系列名称、公吨单位、六国标签、数值及编码说明均清晰，没有必要文字被面条或纸套遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "六只纸套前缘同高，均有前面、暗色右侧和下部折角；面条从开口后方向上露出，纸套前面遮挡下段。英国仍有约8像素金黄色尖端，未被套口全部吞没。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "PASTA PRODUCTION、Synthetic pasta production · metric tonnes、六个国家名及统一线性刻度共同明确各地区意面产量的比较；并非只有物体名，也未暗示百分比分区或时间累计。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考图以纸套中的意面露出高度比较各国产量的关系与主题。原真实数值换为明确声明的合成数据是冻结输入允许的变化，未见额外改变统计含义。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下英国套口上方仍有约8像素的金黄色短尖端，颜色和竖向纹理可与青色前缘区分；纸套下部遮挡关系可读。细端面及小值相对精度仍有像素级不确定性。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题仍为各地区意面产量。真实统计被合成数值替换来自输入允许的适配；长短变化由当前数据驱动。英国端头细节减少主要受真实短高度和像素分辨率限制，未发现输出遗漏主题、指标、国家角色或必要部件关系。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_production",
+        "category": "Italy",
+        "expected_value": 3280000,
+        "observed_value": 3283333.33,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 788,
+        "full_scale_error_percent": 0.09524,
+        "small_value_relative_error_percent": 0.1016,
+        "bbox_xyxy_normalized": [
+          0.1195,
+          0.190027,
+          0.181,
+          0.721024
+        ],
+        "evidence_zh": "原图黄色尖端候选首行y=282，纸套前缘y≈1070，露出约788像素；可见轴0至3.5M跨840像素，按此独立反算。目标露出高度为787.20像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使尖端边界约有1像素不确定性；数值为像素尺度反算近似值。若要求首行至少有3个合格像素，高度会减少1像素。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "USA",
+        "expected_value": 2060000,
+        "observed_value": 2062500,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 495,
+        "full_scale_error_percent": 0.07143,
+        "small_value_relative_error_percent": 0.1214,
+        "bbox_xyxy_normalized": [
+          0.2695,
+          0.387466,
+          0.331,
+          0.721024
+        ],
+        "evidence_zh": "原图黄色尖端候选首行y=575，纸套前缘y≈1070，露出约495像素；可见轴0至3.5M跨840像素，按此独立反算。目标露出高度为494.40像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使尖端边界约有1像素不确定性；数值为像素尺度反算近似值。若要求首行至少有3个合格像素，高度会减少1像素。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "Germany",
+        "expected_value": 278000,
+        "observed_value": 279166.67,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 67,
+        "full_scale_error_percent": 0.03333,
+        "small_value_relative_error_percent": 0.4197,
+        "bbox_xyxy_normalized": [
+          0.4195,
+          0.675876,
+          0.481,
+          0.721024
+        ],
+        "evidence_zh": "原图黄色尖端候选首行y=1003，纸套前缘y≈1070，露出约67像素；可见轴0至3.5M跨840像素，按此独立反算。目标露出高度为66.72像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使尖端边界约有1像素不确定性；数值为像素尺度反算近似值。提高黄色阈值后首行下移1像素，故可辨高度约66–67像素。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "France",
+        "expected_value": 246000,
+        "observed_value": 245833.33,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 59,
+        "full_scale_error_percent": 0.00476,
+        "small_value_relative_error_percent": 0.0678,
+        "bbox_xyxy_normalized": [
+          0.5695,
+          0.681267,
+          0.631,
+          0.721024
+        ],
+        "evidence_zh": "原图黄色尖端候选首行y=1011，纸套前缘y≈1070，露出约59像素；可见轴0至3.5M跨840像素，按此独立反算。目标露出高度为59.04像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使尖端边界约有1像素不确定性；数值为像素尺度反算近似值。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "Spain",
+        "expected_value": 229000,
+        "observed_value": 229166.67,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 55,
+        "full_scale_error_percent": 0.00476,
+        "small_value_relative_error_percent": 0.0728,
+        "bbox_xyxy_normalized": [
+          0.7195,
+          0.683962,
+          0.781,
+          0.721024
+        ],
+        "evidence_zh": "原图黄色尖端候选首行y=1015，纸套前缘y≈1070，露出约55像素；可见轴0至3.5M跨840像素，按此独立反算。目标露出高度为54.96像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使尖端边界约有1像素不确定性；数值为像素尺度反算近似值。"
+      },
+      {
+        "series_id": "synthetic_production",
+        "category": "UK",
+        "expected_value": 34000,
+        "observed_value": 33333.33,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 8,
+        "full_scale_error_percent": 0.01905,
+        "small_value_relative_error_percent": 1.9608,
+        "bbox_xyxy_normalized": [
+          0.8695,
+          0.715633,
+          0.931,
+          0.721024
+        ],
+        "evidence_zh": "原图黄色尖端候选首行y=1062，纸套前缘y≈1070，露出约8像素；可见轴0至3.5M跨840像素，按此独立反算。目标露出高度为8.16像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使尖端边界约有1像素不确定性；数值为像素尺度反算近似值。1像素相当于目标高度的约12.3%；名义相对差不能证明小值具有同等精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Italy（大值）",
+        "required_parts": [
+          "金黄色意面束",
+          "纸套前面",
+          "开口后缘",
+          "右侧面",
+          "下部纸质折角",
+          "国旗及国名"
+        ],
+        "relationship": "面条向上露出，向下进入纸套；纸套前面位于面条下段之前，侧面连接前面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.115,
+          0.189,
+          0.198,
+          0.961
+        ],
+        "evidence_zh": "高面条束延伸至y≈1070并被青色前面覆盖，右上方可见浅开口及暗侧面；底角折痕、Italy和意大利旗同组可见。"
+      },
+      {
+        "category": "USA（较大值）",
+        "required_parts": [
+          "意面束",
+          "同高纸套前缘",
+          "纸套侧面与折角",
+          "美国旗及国名"
+        ],
+        "relationship": "面条与纸套相接并被前面包含，露出边界采用与Italy相同的前缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.265,
+          0.386,
+          0.348,
+          0.961
+        ],
+        "evidence_zh": "面条从约y575延伸到前缘y1070，纸套在前遮住其下段；侧面、折角与USA标识完整。"
+      },
+      {
+        "category": "Germany、France、Spain（中小值）",
+        "required_parts": [
+          "短意面束",
+          "纸套开口及前面",
+          "暗侧面",
+          "纸质折角",
+          "国别标识"
+        ],
+        "relationship": "短面条在相同前缘之后露出，前面和侧面相接，国别标识分别位于各组下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.415,
+          0.675,
+          0.798,
+          0.961
+        ],
+        "evidence_zh": "三束分别约66–67、59、55像素高，均有可辨的竖向面条和端头；末端在套口上方，未与纸套前面分离或被全部遮住。"
+      },
+      {
+        "category": "UK（最小正值）",
+        "required_parts": [
+          "短金黄色尖端",
+          "纸套前缘",
+          "开口后缘",
+          "右侧面",
+          "纸质折角",
+          "英国旗及国名"
+        ],
+        "relationship": "尖端在前缘后方伸出，前面覆盖其下部；非数据纸套结构保留。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.865,
+          0.714,
+          0.948,
+          0.961
+        ],
+        "evidence_zh": "y≈1062–1069可见短金黄色端头，y≈1070起是青色前面，右侧开口及暗侧面相接；底部折角和UK标识可见。端面精细形状受8像素高度限制。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "输入明确采用合成产量及六个国家类别，可适配姿态、纸套厚度和标签位置；不要求复制参考图的旧数值或真实统计来源。当前主题未改为其他主题。",
+      "output_added_or_lost_meaning_zh": "新增统一刻度和露出高度说明有助于解释编码。保留国家间产量比较及意面插入纸套的融合关系，未发现必要语义丢失。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、PASTA PRODUCTION、Synthetic pasta production · metric tonnes、Exposed spaghetti height represents production.、Shared linear scale: 0–3,500,000 tonnes.及六国名称。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考真实统计数值替换为冻结合成数据，并用醒目的SYNTHETIC DATA声明；主题与国家角色保留。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "六束高度随当前产量变化，纸套保持统一非数据高度；短束并未被设置为与大束近似的最小尺寸。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "英国目标露出8.16像素，实测约8像素；1像素约占其目标高度12.3%，限制相对精度与端头细节判断。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一线性高度通道的全部六个标记，包含最大值、多个内部值和最小正值；逐项核对全部六个数值、国家名、国旗及系列/单位文字。部件关系覆盖大值、中小值和最小值。未把代码公式或数字标签当作几何实测。"
+  }
+}

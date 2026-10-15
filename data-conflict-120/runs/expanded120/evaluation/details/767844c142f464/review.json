@@ -1,0 +1,277 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "已先读取冻结要求和数据，并查看reference.png与image.png。参考图有两个黄色网纹甜瓜面，左完整、右含主体和四片分离扇形。成图主题、合成声明、单位和互斥回答说明清晰，六项依序显示50%、49%、0.2%、0.1%、0.3%、0.4%。左瓜面完整，右瓜面有狭窄缺口；下方四片逐行配引线，呈极窄黄色纹理条。以上观察已在读取源码前保存。",
+  "summary_zh": "通过，已保存review.json并通过schema校验。数值、绑定和统计口径完整，像素测量未发现超过3个百分点的几何偏差。最小切片的部件辨识及精细相对精度存在分辨率限制。未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量对象仅为1486×2100的image.png。主瓜面上缘由像素分割拟合椭圆；径向边界斜率撤销声明的0.96纵向缩放后，以角度/360×50换算全图百分比。小片采样x=1060–1230，缺口采样x=1190–1380，并改变颜色阈值检查敏感性。误差为像素估计与目标的差，不代表无不确定性的真实误差；侧壁、阴影和空隙不计份额。",
+  "uncertainties_zh": "最小片顶面仅数像素宽，抗锯齿和薄侧壁影响边界判断，不能可靠给出其单一几何值及相对误差。其他小片也存在约0.01–0.02个百分点的测量不确定性。未读取日志、自检或历史记录，因此不独立证明capture_render.py的实际调用历史。参考图未明确说明互斥回答口径。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两大瓜面和四个小片共六项；类别、数值、主题、单位、合成声明及回答口径均完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "50%、49%、0.2%、0.1%、0.3%、0.4%全部正确；完整瓜面各50%、合计100%、小片合计1%的说明一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "两大类别位于对应瓜面上方；四个小类别按输入顺序逐行连接对应切片，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "两瓜面基准椭圆相同，横向直径约588像素。右面缺角约7.19°，主体约49.001%；小片测量均在目标附近，远小于3个百分点容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始生成素材及果肉素材；其网纹、蒂痕在成图中清楚复现。源码将素材映射至数据控制的扇区，生成材质构成主体。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "有瓜皮纹理的实际顶面边界承载份额。源码按value/50决定扇角并仅平移切片，成图像素测量提供独立佐证。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下，全部必要文字清楚，无遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "两个等基准网纹瓜面、蒂痕、右侧主体与四个分离切片、薄侧壁和软影保留；最小片的局部细节仅部分可辨。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题明确为女性论坛成员不足的原因；单位为模拟回答百分比，类别为原因，明确每人一个互斥回答及非真实调查。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "原因主题及瓜面切分表示份额的关系保留。原调查语境改为合成互斥分布来自冻结输入，不属于输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "四片均非零且可见；最小片长约291像素，近外端顶面仅约3–4像素宽，尖端部分覆盖像素，顶面与果肉薄壁难以稳定区分。"
+    }
+  },
+  "semantic_attribution_zh": "合成数据及互斥回答口径是冻结输入允许的改编。切片变细由当前小份额驱动，最小片细部辨识受分辨率限制。未发现当前主题、指标、类别角色或数据承载关系被遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "allocation",
+        "category": "Equal share objection",
+        "expected_value": 50,
+        "observed_value": 50,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 588,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.059219,
+          0.350952,
+          0.454913,
+          0.621905
+        ],
+        "evidence_zh": "左右上缘拟合半轴均约294.34、283.09像素，纵横比约0.9618；左面完整，在等面积双基准下约占50%。",
+        "uncertainty_zh": "上缘拟合残差约0.33像素；零差不代表边缘没有抗锯齿，薄壁未计入数据面积。"
+      },
+      {
+        "series_id": "allocation",
+        "category": "Male chauvinism",
+        "expected_value": 49,
+        "observed_value": 49.001,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 588,
+        "full_scale_error_percent": 0.001,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.545087,
+          0.350952,
+          0.940781,
+          0.621905
+        ],
+        "evidence_zh": "缺口径向边像素拟合斜率约0.08405和0.20745，逆变换缺角约7.1901°，主体约49.001%。",
+        "uncertainty_zh": "改变颜色阈值后估计约48.998%–49.008%。"
+      },
+      {
+        "series_id": "allocation",
+        "category": "Lack of suitable occasions",
+        "expected_value": 0.2,
+        "observed_value": 0.205,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 6.5,
+        "full_scale_error_percent": 0.005,
+        "small_value_relative_error_percent": 2.5,
+        "bbox_xyxy_normalized": [
+          0.639973,
+          0.672857,
+          0.836474,
+          0.689524
+        ],
+        "evidence_zh": "径向边拟合逆变换夹角约1.4779°，对应约0.205%；近外端边像素中心距约6.5像素。",
+        "uncertainty_zh": "阈值和纹理匹配估计约0.198%–0.219%；相对误差只是点估计。"
+      },
+      {
+        "series_id": "allocation",
+        "category": "Comparison fatigue",
+        "expected_value": 0.1,
+        "observed_value": null,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.639973,
+          0.721905,
+          0.835801,
+          0.74
+        ],
+        "evidence_zh": "切片长约291像素，近外端顶面约3–4像素宽。颜色边界估计约0.102%–0.111%，仅取纹理一致内部像素则约0.086%；这些估计支持满量程容差，但不足以确定单值。",
+        "uncertainty_zh": "抗锯齿像素比例较大，内部全覆盖像素和可见边缘的结果不同，因此观察值及精确误差留空。"
+      },
+      {
+        "series_id": "allocation",
+        "category": "More urgent priorities",
+        "expected_value": 0.3,
+        "observed_value": 0.298,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.002,
+        "small_value_relative_error_percent": 0.667,
+        "bbox_xyxy_normalized": [
+          0.6393,
+          0.77,
+          0.835801,
+          0.793333
+        ],
+        "evidence_zh": "径向边拟合逆变换夹角约2.1468°，对应约0.298%；近外端边像素中心距约10像素。",
+        "uncertainty_zh": "颜色阈值估计约0.298%–0.310%，纹理一致内部像素估计约0.301%。"
+      },
+      {
+        "series_id": "allocation",
+        "category": "Advertising is a men world",
+        "expected_value": 0.4,
+        "observed_value": 0.405,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 13.7,
+        "full_scale_error_percent": 0.005,
+        "small_value_relative_error_percent": 1.25,
+        "bbox_xyxy_normalized": [
+          0.6393,
+          0.816667,
+          0.834455,
+          0.846667
+        ],
+        "evidence_zh": "径向边拟合逆变换夹角约2.9140°，对应约0.405%；近外端边像素中心距约13.7像素。",
+        "uncertainty_zh": "颜色阈值估计约0.393%–0.405%，纹理一致内部像素估计约0.399%。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Equal share objection（大实例）",
+        "required_parts": [
+          "完整网纹瓜面",
+          "中央蒂痕",
+          "薄侧壁",
+          "软投影"
+        ],
+        "relationship": "蒂痕包含于顶面；外缘连接薄壁，阴影位于物体下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.059219,
+          0.350952,
+          0.454913,
+          0.621905
+        ],
+        "evidence_zh": "左面连续完整，中央蒂痕、底部薄浅色边及下方灰影可见；顶面承载50%份额。"
+      },
+      {
+        "category": "Male chauvinism（大实例）",
+        "required_parts": [
+          "网纹瓜面",
+          "蒂痕",
+          "径向切边",
+          "浅色切口",
+          "外圆弧"
+        ],
+        "relationship": "缺口从蒂痕附近通至右侧外缘，剩余顶面构成主体。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.545087,
+          0.350952,
+          0.940781,
+          0.621905
+        ],
+        "evidence_zh": "狭窄楔形空隙及薄浅色切边可见，剩余网纹顶面连续。"
+      },
+      {
+        "category": "0.2%、0.3%、0.4%分离实例",
+        "required_parts": [
+          "窄扇区顶面",
+          "尖端",
+          "短弧边",
+          "果肉薄壁",
+          "软投影"
+        ],
+        "relationship": "顶面向右逐渐变宽，与下缘浅色薄壁相接；切片互不遮挡。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.638,
+          0.672,
+          0.838,
+          0.848
+        ],
+        "evidence_zh": "纹理顶面、浅绿薄边及下方软影可区分；FROM THE RIGHT FACE和逐行引线明确来源。"
+      },
+      {
+        "category": "Comparison fatigue（最小实例）",
+        "required_parts": [
+          "微窄顶面",
+          "尖端",
+          "果肉薄壁",
+          "投影"
+        ],
+        "relationship": "平移后的窄扇区保有顶面与薄壁接触关系。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.639973,
+          0.721905,
+          0.835801,
+          0.74
+        ],
+        "evidence_zh": "金色细片、下方浅色边和灰影仍可见；尖端及数像素宽的顶面不足以清楚显示整段果肉细部。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入明确改为合成原因分布，提供互斥回答口径、新数值及类别措辞，不要求保留旧统计。",
+      "output_added_or_lost_meaning_zh": "当前主题和原因分布完整；小值导致切片细化并削弱局部果肉辨识。原调查真实性不延续属于输入改编。",
+      "visible_inscription_evidence_zh": "Reasons for fewer women on panels；SYNTHETIC DATA；Percent of simulated responses；Each complete face = 50%. Together = 100%.；One mutually exclusive reason per participant；not a real survey。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成数据及互斥回答口径由冻结输入规定，图面明确显示。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "49%主体留下占单瓜面2%的缺口，0.1%–0.4%份额形成狭窄扇区。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小片近外端顶面仅数像素，尖端部分覆盖像素，限制细部辨识及相对误差测量。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "参考图未明确说明每人是否仅选一个原因，不推断其调查口径。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖单系列顶面面积通道的全部六项，包括完整大标记、49%主体、最小0.1%及中间小份额。全部标签与数量另行检查；最小片仅给出测量范围，未用源码公式替代成图证据。"
+  }
+}

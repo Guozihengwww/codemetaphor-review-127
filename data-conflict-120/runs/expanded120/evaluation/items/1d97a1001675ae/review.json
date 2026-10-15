@@ -1,0 +1,239 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图有15行红色毛边横条、国家名称与旗帜、美元工资数值，右下黑板内为钱袋粉笔画，与图表并置。指定成图可见15行对应类别和数值、共同零点、0至100,000刻度及醒目的SYNTHETIC DATA。标题明确小学教师合成年薪及USD/year。黑板内有钱袋与美元符号，手持粉笔接触袋身右缘；插画未遮住数据或标签。最短条仍可辨红色笔触纹理。",
+  "summary_zh": "全部15个类别、数值、单位及绑定正确。独立像素核查最大满量程误差约0.054%，主题及关键部件关系符合要求。review.json已保存并通过schema.json校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "仅测指定image.png原始2000×1577像素。可见刻度约位于x=405、671、937、1203、1469、1735，满量程100,000对应1330像素。每行取中心上下14像素，测量与零线相连、每列至少15个红色像素的连续主体，排除分离的木框、手部、旗帜和文字。观测值=长度/1330×100,000；改用6和24像素列阈值，长度变化不超过1像素。源码公式仅作佐证。",
+  "uncertainties_zh": "零线抗锯齿中心约x=404.7，按405标定。端点读边约有1像素不确定性，相当于满量程0.075个百分点、最小值约0.30%的相对量级，不能把表中小误差解释为亚像素精度保证。按限制未核验历史渲染归档或生成工具调用记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "15个国家／教育体系、15条笔触、15个数值和1项年薪指标完整，顺序符合data.json；无必需辅助面板。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项核对91,400、64,800、61,900、58,700、55,600、53,100、51,800、46,200、44,500、43,700、42,600、40,100、33,400、28,600、25,100，全部正确；单位和合成声明清晰。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "全部国家名称、旗帜、笔触与右端金额逐行对应，未见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立测量全部15条，起点均约x=405；最大满量程绝对误差为Australia约0.05338%，低于3%容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png、brush_01.png及chalkboard_hand.png，其颜料纹理和黑板手部在成图中实质可见。prepare_assets.py提取素材，render.py依据数据控制长度及文字；成图像素另行验证映射。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "生成颜料本身构成数据横条，主体右端承载数值；黑板钱袋与图表并置，符合参考关系。粉笔接触袋身，手在黑板前方，无破坏身份的接缝或遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、类别、金额、单位、刻度、合成声明及读图说明清晰完整，无明显重叠或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大小笔触均从共同零点向右延伸。木框包围黑板，袋口通过系带连接袋身，美元符号位于袋内，手指夹持粉笔且笔尖接触袋身右缘。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "可见文字明确小学教师、Synthetic annual pay、USD/year及国家／教育体系角色，并明确说明为合成比较、非真实统计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "教师工资比较和黑板钱袋的教育／收入关联保留；参考中的2014年、10年经验及PPP真实口径由冻结输入适配为合成年薪，属于允许的输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值Israel 25,100对应约334像素笔触，颜料纹理、共同零点和右端均可辨，无需只凭数字判断。"
+    }
+  },
+  "semantic_attribution_zh": "真实历史统计改为合成年薪由冻结输入明确规定。各条长度变化由当前数据驱动；参考和成图均为横条与主题黑板并置，不要求工资与钱袋面积融合。持粉笔手符合M3，未见主题、类别或单位的输出损失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_pay",
+        "category": "Luxembourg",
+        "expected_value": 91400,
+        "observed_value": 91353.383,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1215,
+        "full_scale_error_percent": 0.04662,
+        "small_value_relative_error_percent": 0.051,
+        "bbox_xyxy_normalized": [
+          0.2025,
+          0.250476,
+          0.81,
+          0.274572
+        ],
+        "evidence_zh": "最大值；y≈414，主体外边界区间[405,1620)，长度1215像素；标签91,400正确。",
+        "uncertainty_zh": "宽松阈值纳入末端抗锯齿列后为1216像素，存在约1像素读边差异。"
+      },
+      {
+        "series_id": "annual_pay",
+        "category": "Australia",
+        "expected_value": 58700,
+        "observed_value": 58646.617,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 780,
+        "full_scale_error_percent": 0.05338,
+        "small_value_relative_error_percent": 0.09094,
+        "bbox_xyxy_normalized": [
+          0.2025,
+          0.370323,
+          0.5925,
+          0.39442
+        ],
+        "evidence_zh": "测得误差最大的一行；y≈603，主体外边界区间[405,1185)，长度780像素；标签58,700正确。",
+        "uncertainty_zh": "宽松阈值长度为781像素，误差处于约1像素边界不确定性内。"
+      },
+      {
+        "series_id": "annual_pay",
+        "category": "Netherlands",
+        "expected_value": 46200,
+        "observed_value": 46165.414,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 614,
+        "full_scale_error_percent": 0.03459,
+        "small_value_relative_error_percent": 0.07486,
+        "bbox_xyxy_normalized": [
+          0.2025,
+          0.53012,
+          0.5095,
+          0.554217
+        ],
+        "evidence_zh": "内部代表值；y≈855，主体外边界区间[405,1019)，长度614像素；标签46,200正确。",
+        "uncertainty_zh": "宽松阈值长度615像素，端点约有1像素不确定性。"
+      },
+      {
+        "series_id": "annual_pay",
+        "category": "Israel",
+        "expected_value": 25100,
+        "observed_value": 25112.782,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 334,
+        "full_scale_error_percent": 0.01278,
+        "small_value_relative_error_percent": 0.05092,
+        "bbox_xyxy_normalized": [
+          0.2025,
+          0.809765,
+          0.3695,
+          0.833862
+        ],
+        "evidence_zh": "最小正值；y≈1296，主体外边界区间[405,739)，三个阈值均得334像素；标签25,100正确。",
+        "uncertainty_zh": "仍保留约1像素读边不确定性，对该值约为0.30%的相对量级。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Luxembourg最大笔触",
+        "required_parts": [
+          "共同零线",
+          "红色颜料主体",
+          "笔触纹理",
+          "右端数值"
+        ],
+        "relationship": "主体由共同零线向右水平延伸，主体右端为数量边界，金额位于右侧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.195,
+          0.245,
+          0.885,
+          0.281
+        ],
+        "evidence_zh": "最长条保持连续颜料及横向纹理，91,400紧邻本行右端，无插画遮挡。"
+      },
+      {
+        "category": "Israel最小笔触",
+        "required_parts": [
+          "共同零线",
+          "短红色主体",
+          "纹理边界",
+          "右端数值"
+        ],
+        "relationship": "最短条与大条共用起点和方向，长度承载数值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.195,
+          0.804,
+          0.445,
+          0.84
+        ],
+        "evidence_zh": "334像素主体保留红色颜料和明确右端，25,100位于同一行，结构不依赖文字替代。"
+      },
+      {
+        "category": "黑板与钱袋",
+        "required_parts": [
+          "木框",
+          "黑板平面",
+          "袋口",
+          "系带",
+          "袋身",
+          "美元符号",
+          "底框粉笔"
+        ],
+        "relationship": "木框包围黑板；袋口经系带连接袋身，美元符号位于袋内，粉笔接触底框。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.624,
+          0.586,
+          0.909,
+          0.802
+        ],
+        "evidence_zh": "白色钱袋画完整包含于黑板平面，袋颈系带及袋内美元符号可辨，底框托着两段粉笔。"
+      },
+      {
+        "category": "持粉笔手及并置关系",
+        "required_parts": [
+          "手指",
+          "白色粉笔",
+          "钱袋右缘",
+          "前景手腕",
+          "数据横条"
+        ],
+        "relationship": "手指夹持粉笔，笔尖接触袋身，手腕位于黑板前方；插画与数据横条并置。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.61,
+          0.57,
+          0.96,
+          0.846
+        ],
+        "evidence_zh": "笔尖约在(1635,1168)接触白色袋轮廓，手和袖口覆盖黑板右下前景，未遮住左侧短条和金额。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确采用小学教师合成年薪，不要求沿用原2014年、10年经验、PPP口径或旧真实数值。",
+      "output_added_or_lost_meaning_zh": "教师工资比较和黑板钱袋关联保留；新增持粉笔手符合M3。真实历史统计含义因输入适配而不再沿用，并非输出遗漏。",
+      "visible_inscription_evidence_zh": "可见“小学教师合成年薪”、Primary school teachers、Synthetic annual pay (USD/year)、“15个国家／教育体系”、“非真实统计”及SYNTHETIC DATA。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "冻结输入规定合成年薪，成图明确合成性质，没有冒充参考历史真实统计。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "15条笔触长度随当前数值改变，独立像素测量均满足容差；非数据黑板关系保留。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "端点存在约1像素抗锯齿差异；最小条仍有334像素，未发生身份丢失。"
+      }
+    ],
+    "measurement_coverage_zh": "测量覆盖唯一线性长度通道的全部15条，另完整核对15个类别和数值。详细列出最大值、内部值、最小正值及最大误差行4例；其余11行满量程误差均小于0.054%。黑板为非定量并置插画，不另作面积或体积测量。"
+  }
+}

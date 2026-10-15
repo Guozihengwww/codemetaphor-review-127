@@ -1,0 +1,254 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以立式油桶色层表示产品消费份额，外围用途插画通过引线接入对应层。指定成图可见银色桶盖、金属侧壁、底圈及接触阴影；17类标签和百分比完整，显示SYNTHETIC DATA、Petroleum product use及Share of synthetic daily total (%)。底部小份额仍有独立细色带，标签外置；用途插画及连接线可见。",
+  "summary_zh": "评审已保存为review.json并通过schema校验。17类数值、顺序、绑定和层高编码符合要求，油桶及用途关系完整，未发现必要要求的可见缺陷。未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量指定image.png（1700×2200）。在x=649–651像素窄条中定位色变及白色界线；侧壁起止约y=476、1836，总高1360像素。17层高度约为571、71、71、70、71、43、43、85、51、51、1603与1685间的82、55、27、20、19、17、13像素，最大差约0.085个百分点。另以x≈600、1050、1100的色变交叉核对。源码仅作佐证。",
+  "uncertainties_zh": "边界定位各约±1像素，细层高度约有±2像素不确定性；满量程通过不保证最小层的高相对精度。未读取运行日志或历史成图，无法独立确认capture_render.py的实际调用历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "17类及11组用途插画齐全，包含规定的两架飞机和两个润滑剂包装。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "42.0%；四个5.2%；3.15%、3.15%、6.3%；两个3.75%；6.0%、4.1%、1.9%、1.5%、1.4%、1.3%、0.9%，均与输入一致，总计100.0%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "17行标签与对应色层连接，子类别均保留父类名称；底部折线可分别追到正确细层，未见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "17层单列像素测量最大差约0.085个百分点，低于3个百分点容差；桶盖和底圈未计入侧壁高度。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和raw_02.png，其金属桶部件、纹理及用途物件实质出现在成图；render.py按数据控制色层和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "色层连续构成同一金属桶身，弧形界面贴合桶面，外围用途图注连接对应层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下类别、子类编号、百分比、合成声明和指标均可辨，必要标签没有明显遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "椭圆桶盖、盖口、金属侧壁、底圈及阴影可见；大小数据层都属于侧壁，最小层仍连接用途图注。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题、合成性质、每日总量份额和百分比单位明确；页脚说明子类别分割父类，用途插画不增加数量。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "消费构成与用途的关系保留；参考的美国真实统计语境按输入改为合成数据，属于允许改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "底部五个细层均可分辨；0.9%形成约12–13像素高的连续绿色带，具有独立引线和标签，未被底圈吞没。"
+    }
+  },
+  "semantic_attribution_zh": "原真实统计改为合成数据及父类拆分均来自冻结输入。当前主题、指标、父类角色和用途关系保留，未见输出语义遗漏；最小层的精度不确定性来自像素和抗锯齿。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "product_volume_share",
+        "category": "Gasoline",
+        "expected_value": 42.0,
+        "observed_value": 41.985,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 571,
+        "full_scale_error_percent": 0.015,
+        "small_value_relative_error_percent": 0.035,
+        "bbox_xyxy_normalized": [
+          0.381765,
+          0.216364,
+          0.383529,
+          0.475909
+        ],
+        "evidence_zh": "x=649–651像素处上下界约y=476、1047，以可见侧壁总高1360像素换算。",
+        "uncertainty_zh": "上下界各约±1像素，测量值为近似值。"
+      },
+      {
+        "series_id": "product_volume_share",
+        "category": "Diesel / subcategory 1",
+        "expected_value": 5.2,
+        "observed_value": 5.221,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 71,
+        "full_scale_error_percent": 0.021,
+        "small_value_relative_error_percent": 0.396,
+        "bbox_xyxy_normalized": [
+          0.381765,
+          0.475909,
+          0.383529,
+          0.508182
+        ],
+        "evidence_zh": "同列上下界约y=1047、1118，高约71像素。",
+        "uncertainty_zh": "抗锯齿及白色界线使上下界各约±1像素。"
+      },
+      {
+        "series_id": "product_volume_share",
+        "category": "Hydrocarbon Gas Liquids / subcategory 1",
+        "expected_value": 3.15,
+        "observed_value": 3.162,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 43,
+        "full_scale_error_percent": 0.012,
+        "small_value_relative_error_percent": 0.373,
+        "bbox_xyxy_normalized": [
+          0.381765,
+          0.604545,
+          0.383529,
+          0.624091
+        ],
+        "evidence_zh": "同列上下界约y=1330、1373，高约43像素。",
+        "uncertainty_zh": "上下界各约±1像素。"
+      },
+      {
+        "series_id": "product_volume_share",
+        "category": "Hydrocarbon Gas Liquids / subcategory 3",
+        "expected_value": 6.3,
+        "observed_value": 6.25,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 85,
+        "full_scale_error_percent": 0.05,
+        "small_value_relative_error_percent": 0.794,
+        "bbox_xyxy_normalized": [
+          0.381765,
+          0.643636,
+          0.383529,
+          0.682273
+        ],
+        "evidence_zh": "同列上下界约y=1416、1501，高约85像素。",
+        "uncertainty_zh": "上下界各约±1像素。"
+      },
+      {
+        "series_id": "product_volume_share",
+        "category": "Jet Fuel / subcategory 1",
+        "expected_value": 3.75,
+        "observed_value": 3.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 51,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.381765,
+          0.682273,
+          0.383529,
+          0.705455
+        ],
+        "evidence_zh": "同列上下界约y=1501、1552，高约51像素。",
+        "uncertainty_zh": "上下界各约±1像素；零差为粗测点估计。"
+      },
+      {
+        "series_id": "product_volume_share",
+        "category": "Lubricants",
+        "expected_value": 0.9,
+        "observed_value": 0.956,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 13,
+        "full_scale_error_percent": 0.056,
+        "small_value_relative_error_percent": 6.209,
+        "bbox_xyxy_normalized": [
+          0.381765,
+          0.828636,
+          0.383529,
+          0.834545
+        ],
+        "evidence_zh": "同列上下界约y=1823、1836，高约13像素，绿色层与底圈可区分。",
+        "uncertainty_zh": "高度约±2像素；相对差6.209%仅为粗测点估计，不能认定为确定的几何偏差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Gasoline（大层）",
+        "required_parts": [
+          "桶盖与盖口",
+          "紫色侧壁层",
+          "加油机、软管和油枪",
+          "左侧引线"
+        ],
+        "relationship": "桶盖连接侧壁上端，紫色份额区域属于桶身并连接加油用途图注。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.044,
+          0.148,
+          0.688,
+          0.484
+        ],
+        "evidence_zh": "42.0%位于紫色桶壁内部；该层从盖下延伸至第一条蓝色层，左侧引线接入紫色区域。"
+      },
+      {
+        "category": "Diesel / subcategories 1–4",
+        "required_parts": [
+          "四条侧壁层",
+          "四行子类别标签",
+          "四条引线",
+          "四种车辆用途物件"
+        ],
+        "relationship": "四个互斥子层相邻堆叠，分别连接标签，共享父类用途插画。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.317,
+          0.26,
+          0.956,
+          0.612
+        ],
+        "evidence_zh": "四层各有5.2%及独立引线，车辆插画位于四行Diesel标签上方。"
+      },
+      {
+        "category": "Lubricants（最小层）",
+        "required_parts": [
+          "绿色细层",
+          "上方灰蓝层",
+          "下方银色底圈",
+          "右侧折线",
+          "两个润滑剂包装"
+        ],
+        "relationship": "绿色层夹在Petroleum Coke层与底圈之间，折线连接0.9%用途图注。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.317,
+          0.807,
+          0.95,
+          0.978
+        ],
+        "evidence_zh": "绿色带沿弧面跨越桶宽，银圈位于其下；折线可追到Lubricants及黄色、蓝色包装。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "美国2022年实际消费改为合成每日总量份额，并允许新增互斥子类别及调整层高。",
+      "output_added_or_lost_meaning_zh": "当前消费份额与用途关系保留；原真实地区、年份和绝对日用量的移除来自输入改编。",
+      "visible_inscription_evidence_zh": "Petroleum product use、SYNTHETIC DATA、Share of synthetic daily total (%)、TOTAL 100.0%及子类别分割父类的说明均可见。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "冻结输入明确指定合成每日总量及互斥子类别。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "新份额及子类别改变层高和层数，油桶部件及用途联系仍保留。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小层约12–13像素，边界定位差造成相对测量波动，但未使该层或连接消失。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一量化通道的17层单列高度扫描，报告最大、最小及四个内部代表层；另用三列色变交叉核对。标签17/17及用途插画11/11完整检查，未进行全画幅逐像素反演。"
+  }
+}

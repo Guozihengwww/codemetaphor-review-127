@@ -1,0 +1,287 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图可见两根烟囱、上升烟柱及大小圆盘，行业说明置于圆内或相邻处。待评图保留两根烟囱、两股烟柱和11个完整圆盘；Utilities最大，Health Care的8最小。合成标识、直接排放强度、Scope 1、收入分母单位及面积编码说明均可读。",
+  "summary_zh": "通过。11个行业及数值、统一圆面积编码和烟囱—烟柱—圆盘叠合均保留，代表圆面积比在容差内。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "读取1400×2000原图的横、纵截面外缘，计入可见抗锯齿，排除阴影；直径估计约有±2px不确定度。以Utilities约680px及其2700标签校准，其他圆按v=2700×(d/680)²反演，满量程误差分母为2970。Utilities本身不提供独立反演值或误差。源码公式仅作旁证。",
+  "uncertainties_zh": "最小圆约38px，反演8.43受像素端点影响，目标8在测量范围内，不能由满量程通过推定小值相对精度。未执行渲染或核实历史归档；快照未提供project/input.json，不能证明完整复现执行。这些限制不计作输出缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "可见01—11的11个行业圆盘及行业说明，单系列完整，无遗漏或重复。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项读到2700、960、600、210、96、36、32、25、20、10、8，与数据一致；合成标识、Scope 1和单位可读。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "四个较大圆的行业名与数值位于圆内，其余七个圆通过邻近标签和短引线绑定；全部对应正确，编号维持输入顺序。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "抽测6个圆，除校准圆外，面积反演的最大满量程偏差约0.183%，低于3%；完整圆边界未裁切。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理后素材，烟囱、烟柱和云纹明确用于成图主体。源码载入素材并依据数据控制圆半径及文字；项目brief/data/core与冻结文件一致。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "圆盘沿两股烟柱排列，烟柱连接烟囱口；云团在圆后延续，大圆局部内缘有淡烟纹。未发现破坏结构的遮挡、接缝或透视错位。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下全部行业名、数值、单位、统计口径和合成声明可读；小圆数值未归零，标签外置。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "烟囱口与向上扩展的烟柱接触，完整圆盘叠置于烟云中，行业说明在圆内或由引线相连；大小实例均保留前后关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "明确表达合成行业直接排放强度，定义Scope 1，并注明tonnes CO₂ per US$1 million revenue；行业角色清楚，没有百分比分割或跨期累计暗示。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "行业排放强度比较和烟囱排放情境保留；原历史实测背景及附带行业论述未沿用，属于冻结输入授权的合成数据改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小两个圆约38px和42px，完整圆形、数值、烟柱背景及标签引线均可辨；栅格化限制精确测量，但未消除物体关系。"
+    }
+  },
+  "semantic_attribution_zh": "历史实测统计被合成数据替代是允许的输入改编，圆大小变化是数据驱动适配。小圆测量不确定度来自有限分辨率与抗锯齿。未发现额外主题、统计角色或必需结构遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "scope_1_intensity",
+        "category": "Utilities",
+        "expected_value": 2700,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 680,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.478571,
+          0.08,
+          0.964286,
+          0.42
+        ],
+        "evidence_zh": "外缘约x670—1350、y160—840，直径约680px；2700标签用于面积比校准。",
+        "uncertainty_zh": "直径约±2px；无独立单位坐标可检验校准圆自身的数值。"
+      },
+      {
+        "series_id": "scope_1_intensity",
+        "category": "Materials",
+        "expected_value": 960,
+        "observed_value": 962.494,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 406,
+        "full_scale_error_percent": 0.084,
+        "small_value_relative_error_percent": 0.26,
+        "bbox_xyxy_normalized": [
+          0.287143,
+          0.4235,
+          0.577143,
+          0.6265
+        ],
+        "evidence_zh": "外缘约x402—808、y847—1253；直径406px，面积比反演约962.49。",
+        "uncertainty_zh": "直径约±2px，另受校准圆读数影响；不是源码半径读数。"
+      },
+      {
+        "series_id": "scope_1_intensity",
+        "category": "Energy",
+        "expected_value": 600,
+        "observed_value": 605.421,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 322,
+        "full_scale_error_percent": 0.1825,
+        "small_value_relative_error_percent": 0.9,
+        "bbox_xyxy_normalized": [
+          0.679286,
+          0.4525,
+          0.909286,
+          0.6135
+        ],
+        "evidence_zh": "外缘约x951—1273、y905—1227；直径322px，面积比反演约605.42。",
+        "uncertainty_zh": "直径约±2px，另受校准圆读数影响；不是源码半径读数。"
+      },
+      {
+        "series_id": "scope_1_intensity",
+        "category": "Industrials",
+        "expected_value": 210,
+        "observed_value": 210.792,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 190,
+        "full_scale_error_percent": 0.0267,
+        "small_value_relative_error_percent": 0.38,
+        "bbox_xyxy_normalized": [
+          0.660714,
+          0.622,
+          0.796429,
+          0.717
+        ],
+        "evidence_zh": "外缘约x925—1115、y1244—1434；直径190px，面积比反演约210.79。",
+        "uncertainty_zh": "直径约±2px，另受校准圆读数影响；不是源码半径读数。"
+      },
+      {
+        "series_id": "scope_1_intensity",
+        "category": "Communication Services",
+        "expected_value": 10,
+        "observed_value": 10.3,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 42,
+        "full_scale_error_percent": 0.0101,
+        "small_value_relative_error_percent": 3,
+        "bbox_xyxy_normalized": [
+          0.704286,
+          0.855,
+          0.734286,
+          0.876
+        ],
+        "evidence_zh": "外缘约x986—1028、y1710—1752；直径42px，面积比反演约10.30。",
+        "uncertainty_zh": "直径约±2px；抗锯齿使小值相对误差敏感，目标值在测量范围内。"
+      },
+      {
+        "series_id": "scope_1_intensity",
+        "category": "Health Care",
+        "expected_value": 8,
+        "observed_value": 8.432,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 38,
+        "full_scale_error_percent": 0.0145,
+        "small_value_relative_error_percent": 5.4,
+        "bbox_xyxy_normalized": [
+          0.445,
+          0.8905,
+          0.472143,
+          0.9095
+        ],
+        "evidence_zh": "外缘约x623—661、y1781—1819；直径38px，面积比反演约8.43。",
+        "uncertainty_zh": "直径约±2px；目标8在测量范围内，点估计偏差不能视为确定的编码错误。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "两股烟柱与烟囱",
+        "required_parts": [
+          "左烟囱口",
+          "左烟柱",
+          "右烟囱口",
+          "右烟柱"
+        ],
+        "relationship": "烟柱分别接触各自烟囱口并向上扩展。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.39,
+          0.67,
+          0.81,
+          0.962
+        ],
+        "evidence_zh": "两侧烟流由烟囱口连续向上，没有明显断开；烟柱宽度未被宣称为编码。"
+      },
+      {
+        "category": "Utilities（大圆）",
+        "required_parts": [
+          "完整圆盘",
+          "上部烟云",
+          "行业及数值文字"
+        ],
+        "relationship": "圆面积承载2700，烟云位于圆后，局部淡烟纹覆于内缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.43,
+          0.055,
+          1,
+          0.445
+        ],
+        "evidence_zh": "大圆外圈闭合，烟云环绕；右下内缘有淡烟纹，边界未被遮断。"
+      },
+      {
+        "category": "Materials及Energy",
+        "required_parts": [
+          "Materials圆",
+          "Energy圆",
+          "左右烟柱",
+          "行业说明"
+        ],
+        "relationship": "两个完整圆分别叠合在左右烟柱上，圆内文字绑定960和600。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.26,
+          0.415,
+          0.96,
+          0.645
+        ],
+        "evidence_zh": "圆周外及两圆之间可见云团延续；Energy内缘有轻薄烟纹，完整面积边界保留。"
+      },
+      {
+        "category": "Health Care（最小圆）",
+        "required_parts": [
+          "标8的圆盘",
+          "左烟柱细段",
+          "左烟囱口",
+          "标签引线"
+        ],
+        "relationship": "小圆叠在连续烟流前，左侧引线绑定行业标签。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.385,
+          0.88,
+          0.5,
+          0.962
+        ],
+        "evidence_zh": "圆面、轮廓和8可辨；烟流在两侧及下方延续至烟囱口。"
+      },
+      {
+        "category": "Communication Services（小圆）",
+        "required_parts": [
+          "标10的圆盘",
+          "右烟柱",
+          "标签引线"
+        ],
+        "relationship": "小圆位于右烟柱前，短横线绑定右侧标签。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.69,
+          0.84,
+          0.94,
+          0.895
+        ],
+        "evidence_zh": "完整圆形和10可辨，背后烟纹连续，标签及烟云未截断圆盘。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入将原真实统计改为合成排放强度，允许当前数值及非数据布局适配，不要求旧年份、旧数值和附带真实统计论述。",
+      "output_added_or_lost_meaning_zh": "排放情境、行业比较和Scope 1口径保留；新增合成声明及面积读法。历史实测背景的移除属于许可改编。",
+      "visible_inscription_evidence_zh": "可读到Emission Giants、SYNTHETIC DATA、Synthetic direct-emissions intensity by sector、SCOPE 1、tonnes CO₂ per US$1 million revenue及Illustrative values, not observed sector statistics。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原历史实测统计背景改为明确标注的合成示例，由冻结输入授权。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "圆大小反映当前2700至8的行业值，两股烟柱布局保留。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小圆约38px，边缘混色限制面积反演精度，但物体及叠合关系仍清楚。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单系列、单一面积通道测量6/11个圆，覆盖最大、中大型、内部值210及最小两值10和8。其余96、36、32、25、20未逐一反演面积；全部11项标签、数值、数量和绑定均已目视核对。"
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图有11个年份的蓝色船坞图符，船体位于立柱和横梁内，1915行有红色底带及WAR字样。成图清楚显示合成数据标题、年度造船净吨指标、11行年份和数值；1915红带保留。1933行可见一枚完整图符及一枚左半图符。底部显示45000净吨/枚、22500净吨/半枚、等距年份说明和7222500净吨总量。未见明显遮挡或错层。以上观察记录于源码检查前。",
+  "summary_zh": "全部年份的数值、图符计数、标签绑定和总量正确，半枚裁切符合要求，未发现必要要求的可见缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析2000×1430原图蓝色像素，三种颜色阈值均得到相同计数和边界。完整图符46×59像素，半枚23×59像素，行距83像素。按图符数×45000换算，未将含间隙的行跨度当作连续条长。满量程误差分母为1300000净吨，源码仅作控制方式佐证。",
+  "uncertainties_zh": "未检查生成日志、历史渲染记录或自检，因此未独立认证素材上游生成过程及capture_render.py的实际执行历史。半枚测量为像素级；一像素约对应978净吨，为半枚的4.35%，本次三种阈值下边界未变。未推断参考WAR标注的因果含义。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11个年份依次完整显示，单一output系列、净吨单位、合成提示及完整和半枚图例齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行数值990000、585000、1125000、405000、1215000、315000、855000、405000、765000、67500、495000全部正确；总量7222500及图例45000、22500正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份、图符和右侧数值逐行对应；1915红带绑定正确，1933的67500对应一整枚加半枚。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素计数为22、13、25、9、27、7、19、9、17、1.5、11，全部匹配。完整宽46像素，半枚宽23像素；半枚1357个RGB像素与同排整枚左半完全一致。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理后船坞素材。首枚图符对应素材的447个不透明像素全部RGB一致。render.py直接使用该素材并控制复制、裁切及文字；capture_render.py具备保存渲染的实现，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "船在船坞中的复合图符直接承担数量编码，末枚保留宽度承担余量编码。船体位于框架内并由底部支点支承；未见破坏含义的透视、遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成提示、年份、数值、净吨单位、图例及等距说明均可读，没有裁断或相互遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "各行使用相同船坞图符，横梁连接双柱、船体包含于框架内、下方支承接到底座。年份行及1915红带保留；最小行仍有完整结构，末枚遵循规定裁切。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题和Annual shipbuilding output · net tons明确主题、指标及单位，11 OBSERVED YEARS与YEAR明确观测年角色，没有累计序列或百分比组成误读。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "逐年造船净吨比较及1915强调关系保留。英国真实统计背景按输入改为合成数据；WAR字样未显示，因此历史战争语境仅部分保留，该字样不是当前必需标签。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "1933行的完整图符和23×59像素左半图符均可辨；半枚仍显示左立柱、横梁片段、左侧船体及底部支承，裁切清楚，没有放大数值。"
+    }
+  },
+  "semantic_attribution_zh": "当前造船主题、年度类别、净吨指标及数量承载关系均保留。真实英国数据与50000净吨/枚改为合成数据和45000净吨/枚属于冻结输入适配。WAR文字省略只影响非必需历史语境；半枚结构不完整来自规定裁切，不是隐喻或数值丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "output",
+        "category": "1933",
+        "expected_value": 67500,
+        "observed_value": 67500,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 75,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.118,
+          0.747552,
+          0.1555,
+          0.788811
+        ],
+        "evidence_zh": "蓝色区段为x=[236,282)和[288,311)，高59像素；46像素整枚加23/46枚得到67500净吨。75像素为含间隙的行跨度。",
+        "uncertainty_zh": "三种阈值下边界一致；零误差指像素级计数与宽度比，不代表亚像素精度。"
+      },
+      {
+        "series_id": "output",
+        "category": "1920",
+        "expected_value": 1215000,
+        "observed_value": 1215000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 1398,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.118,
+          0.457343,
+          0.817,
+          0.498601
+        ],
+        "evidence_zh": "独立分离出27个宽46像素的完整图符；27×45000=1215000净吨。",
+        "uncertainty_zh": "整枚计数清楚；1398像素包含26个间隙。"
+      },
+      {
+        "series_id": "output",
+        "category": "1924",
+        "expected_value": 855000,
+        "observed_value": 855000,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 982,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.118,
+          0.573427,
+          0.609,
+          0.614685
+        ],
+        "evidence_zh": "独立分离出19个完整图符；19×45000=855000净吨。",
+        "uncertainty_zh": "整枚计数清楚；982像素包含18个间隙。"
+      },
+      {
+        "series_id": "output",
+        "category": "1933（末枚余量）",
+        "expected_value": 22500,
+        "observed_value": 22500,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 23,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.144,
+          0.747552,
+          0.1555,
+          0.788811
+        ],
+        "evidence_zh": "最小正值部件宽23像素，完整紧致宽46像素；45000×23/46=22500净吨。其1357个RGB像素与整枚左半一致，右邻列没有蓝色标记。",
+        "uncertainty_zh": "三种阈值下宽度一致；仅证明当前栅格中的左半裁切，不声称亚像素精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "1920（最大行首枚）",
+        "required_parts": [
+          "顶部桁架",
+          "两侧立柱",
+          "正面船体",
+          "底部支点与底座"
+        ],
+        "relationship": "横梁连接双柱；船体包含于框架内，底部支点支承船体并接到底座。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.118,
+          0.457343,
+          0.141,
+          0.498601
+        ],
+        "evidence_zh": "完整框架、中央船艏及底部支承均可见；该复合图符重复27枚承载产量。"
+      },
+      {
+        "category": "1933（完整图符）",
+        "required_parts": [
+          "完整船坞框架",
+          "船体",
+          "底部支承"
+        ],
+        "relationship": "最小行仍保留一枚完整的船体包含及底部支承结构。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.118,
+          0.747552,
+          0.141,
+          0.788811
+        ],
+        "evidence_zh": "46×59像素图符中，顶部及两侧框架包围船体，船艏下方支点接到底座。"
+      },
+      {
+        "category": "1933（末枚左半）",
+        "required_parts": [
+          "左立柱",
+          "横梁左段",
+          "左侧船体",
+          "底座与支承",
+          "裁切边界"
+        ],
+        "relationship": "从左保留整枚紧致宽度的一半，右侧结构按定量规则截去。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.144,
+          0.747552,
+          0.1555,
+          0.788811
+        ],
+        "evidence_zh": "左框架包含左半船体并接到底座，x=311处截断；与整枚左半像素一致，没有缩放。"
+      },
+      {
+        "category": "1915重点条带",
+        "required_parts": [
+          "红色底带",
+          "年份1915",
+          "蓝色船坞图符",
+          "数值405000"
+        ],
+        "relationship": "红带位于该行文字和数据标记后方，前景保持可读。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.036,
+          0.393007,
+          0.964,
+          0.446853
+        ],
+        "evidence_zh": "9枚蓝色图符位于红带上，条带没有遮挡标记或跨入相邻行。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "保留逐年造船净吨主题，将历史数值替换为合成数据，完整图符单位改为45000净吨，允许各行长度及峰值位置随数据变化。",
+      "output_added_or_lost_meaning_zh": "数量比较关系保留，新增明确数值、总量及裁切说明。WAR文字未沿用但1915红带保留，不能认定全部战争语境得到保留，也不推断原图具有战争因果结论。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC Net tonnage built、SYNTHETIC DATA、Annual shipbuilding output · net tons、11 OBSERVED YEARS、YEAR、NET TONS、45000净吨整枚图例、22500净吨半枚图例及Not historical statistics。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成数据及45000净吨/枚来自冻结输入，不是对参考统计的错误复制。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "各行数量及1933末枚裁切由当前数值决定，符合规定编码。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "WAR字样未显示，但当前要求的1915年份及红带保留，仅省略非必需历史注释。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "WAR与红带可见，但是否表达具体因果主张无法仅由参考图确定。"
+      }
+    ],
+    "measurement_coverage_zh": "像素计数覆盖全部11行，所有年份、数值及图例分别核对。详细记录给出最小行、最大行、内部行和最小半枚，覆盖唯一的净吨计数通道；其余计数见geometry检查。"
+  }
+}

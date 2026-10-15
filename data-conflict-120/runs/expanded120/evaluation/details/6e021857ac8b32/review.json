@@ -1,0 +1,322 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为纸面上的尖顶圆腹水滴，六个色区在内部一点汇聚。最终图保留完整水滴与纸面印墨纹理，九个色区共同汇聚，九组类别、百分比和外置引线清晰可辨。可读数值为28.1%、11.2%、11.2%、8.65%、8.65%、7.4%、7.4%、12.0%、5.4%。标题、SYNTHETIC DATA、百分比口径及互斥子类别说明齐全。未见明显断裂、重叠或文字遮挡；此时尚未测量面积。",
+  "summary_zh": "通过。九类数值、顺序和引线绑定准确；独立像素测量的最大面积偏差约0.049个百分点。水滴结构、材质与家庭用水构成语义均保留。review.json已保存并通过schema.json校验。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量1500×2007的image.png，未采用生成方遮罩或几何诊断。ROI为[350,540,1150,1650]；以RGB最大通道差>28提取最大连通主体，使用各区15×15像素色样和纸面中位色进行颜色方向分类，分母503874像素。阈值22、35复核时各项占比变化不足0.01个百分点。包围盒取各色区主连通部分，mark_extent_px为其较长边。满量程100%，满量程误差数值等于百分点差。",
+  "uncertainties_zh": "抗锯齿、纹理及边缘混色限制测量精度，相对误差不是小值精度保证。未执行渲染代码或读取日志、自检、历史结果；capture_render.py的保存逻辑已检查，历史执行情况未独立验证。未推断参考图可见内容以外的作者意图。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个色区及九组类别数值齐全；拆分类别均显示父类和subcategory 1/2，单位与合成提示完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "九项百分比分别为28.1、11.2、11.2、8.65、8.65、7.4、7.4、12.0、5.4，逐项符合输入，总和100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从Toilet顺时针的色区顺序符合输入；九条引线分别接触对应区域外缘，同父类子类别没有互换。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "九区像素面积占比约28.109、11.221、11.151、8.666、8.638、7.424、7.407、12.004、5.381%；最大偏差0.049个百分点，低于3个百分点容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材及提取素材，轮廓与印墨颗粒在成图主体上可见。源码使用素材遮罩与纹理，并按当前数据控制面积分区及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区域直接构成水滴印墨表面，面积承载份额；外轮廓、共点分界及引线接触关系一致，没有破坏结构的透视或层序问题。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下标题、提示、单位、九组标签和页脚说明均可读，无裁切、互盖或跨区引线混淆。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "尖顶约(750,560)，圆腹底端约y=1627；九区在约(750,1244)汇聚并包含于同一轮廓，纸面材质与外置引线保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "HOUSEHOLD WATER USE与Composition / % of synthetic total明确主题、指标和分母；父类名称及子类别互斥说明齐全。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "家庭各用途用水占比及水滴分区关系保留。替换旧调查数值并拆分类别属于冻结输入规定，没有引入旧数据结论。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Other区约27113像素，主色块约305×307像素；两条分界、左肩外缘、共同汇聚点和独立引线均可辨。"
+    }
+  },
+  "semantic_attribution_zh": "合成数值和互斥子类别属于允许的输入改编；九区边界变化由当前数据驱动。未见主题、指标、父类角色或水滴构成关系的输出遗漏。最小区仍保留可见部件关系，仅像素边缘测量存在精度限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Toilet",
+        "expected_value": 28.1,
+        "observed_value": 28.109,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 683,
+        "full_scale_error_percent": 0.009,
+        "small_value_relative_error_percent": 0.031,
+        "bbox_xyxy_normalized": [
+          0.353333,
+          0.279023,
+          0.647333,
+          0.619332
+        ],
+        "evidence_zh": "独立分色计数141632/503874像素；主色块约441×683像素。",
+        "uncertainty_zh": "边缘混色与纹理使结果为近似值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Clothes Washer / subcategory 1",
+        "expected_value": 11.2,
+        "observed_value": 11.221,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 369,
+        "full_scale_error_percent": 0.021,
+        "small_value_relative_error_percent": 0.186,
+        "bbox_xyxy_normalized": [
+          0.500667,
+          0.466368,
+          0.746667,
+          0.619831
+        ],
+        "evidence_zh": "独立分色计数56539/503874像素；包围盒取主连通色块。",
+        "uncertainty_zh": "边缘混色与纹理使结果为近似值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Clothes Washer / subcategory 2",
+        "expected_value": 11.2,
+        "observed_value": 11.151,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 378,
+        "full_scale_error_percent": 0.049,
+        "small_value_relative_error_percent": 0.439,
+        "bbox_xyxy_normalized": [
+          0.501333,
+          0.60289,
+          0.753333,
+          0.73991
+        ],
+        "evidence_zh": "独立分色计数56186/503874像素；包围盒取主连通色块。",
+        "uncertainty_zh": "边缘混色与纹理使结果为近似值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Shower / subcategory 1",
+        "expected_value": 8.65,
+        "observed_value": 8.666,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 364,
+        "full_scale_error_percent": 0.016,
+        "small_value_relative_error_percent": 0.183,
+        "bbox_xyxy_normalized": [
+          0.500667,
+          0.620329,
+          0.706,
+          0.801694
+        ],
+        "evidence_zh": "独立分色计数43665/503874像素；包围盒取主连通色块。",
+        "uncertainty_zh": "边缘混色与纹理使结果为近似值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Shower / subcategory 2",
+        "expected_value": 8.65,
+        "observed_value": 8.638,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 383,
+        "full_scale_error_percent": 0.012,
+        "small_value_relative_error_percent": 0.133,
+        "bbox_xyxy_normalized": [
+          0.435333,
+          0.620329,
+          0.584667,
+          0.811161
+        ],
+        "evidence_zh": "独立分色计数43527/503874像素；主色块约224×383像素。",
+        "uncertainty_zh": "边缘混色与纹理使结果为近似值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Faucet / subcategory 1",
+        "expected_value": 7.4,
+        "observed_value": 7.424,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 374,
+        "full_scale_error_percent": 0.024,
+        "small_value_relative_error_percent": 0.32,
+        "bbox_xyxy_normalized": [
+          0.322667,
+          0.619332,
+          0.5,
+          0.80568
+        ],
+        "evidence_zh": "独立分色计数37406/503874像素；包围盒取主连通色块。",
+        "uncertainty_zh": "边缘混色与纹理使结果为近似值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Faucet / subcategory 2",
+        "expected_value": 7.4,
+        "observed_value": 7.407,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 367,
+        "full_scale_error_percent": 0.007,
+        "small_value_relative_error_percent": 0.089,
+        "bbox_xyxy_normalized": [
+          0.254667,
+          0.619831,
+          0.499333,
+          0.762332
+        ],
+        "evidence_zh": "独立分色计数37320/503874像素；包围盒取主连通色块。",
+        "uncertainty_zh": "边缘混色与纹理使结果为近似值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Leaks",
+        "expected_value": 12,
+        "observed_value": 12.004,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 379,
+        "full_scale_error_percent": 0.004,
+        "small_value_relative_error_percent": 0.035,
+        "bbox_xyxy_normalized": [
+          0.246667,
+          0.529148,
+          0.499333,
+          0.684106
+        ],
+        "evidence_zh": "独立分色计数60486/503874像素；包围盒取主连通色块。",
+        "uncertainty_zh": "边缘混色与纹理使结果为近似值。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Other",
+        "expected_value": 5.4,
+        "observed_value": 5.381,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 307,
+        "full_scale_error_percent": 0.019,
+        "small_value_relative_error_percent": 0.354,
+        "bbox_xyxy_normalized": [
+          0.296,
+          0.466368,
+          0.499333,
+          0.619332
+        ],
+        "evidence_zh": "独立分色计数27113/503874像素；主色块约305×307像素。",
+        "uncertainty_zh": "相对偏差约0.354%是本次分色测量结果，不是小值精度保证。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体水滴与九分区",
+        "required_parts": [
+          "尖顶",
+          "圆腹外轮廓",
+          "九个色区",
+          "内部共同汇聚点",
+          "纸面印墨"
+        ],
+        "relationship": "九区包含于同一水滴轮廓，各分界共同汇聚并相互接触，区域面积承载份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.246667,
+          0.279023,
+          0.753333,
+          0.811161
+        ],
+        "evidence_zh": "尖顶至圆腹轮廓连续，分界汇于约(750,1244)，印墨纹理覆盖着色表面。"
+      },
+      {
+        "category": "Toilet（最大区）",
+        "required_parts": [
+          "青蓝色区",
+          "尖顶与肩部",
+          "内部汇聚点",
+          "右侧引线"
+        ],
+        "relationship": "青蓝区连接尖顶与汇聚点，右侧引线接触其外肩。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.353333,
+          0.279023,
+          0.94,
+          0.62
+        ],
+        "evidence_zh": "主区约441×683像素；28.1%引线连接青蓝外缘，没有跨接绿色区。"
+      },
+      {
+        "category": "Other（最小区）",
+        "required_parts": [
+          "深蓝色区",
+          "左肩外缘",
+          "内部汇聚点",
+          "Other引线"
+        ],
+        "relationship": "深蓝区连接左肩外缘与共同点，上接青蓝区、下接黄绿色区，引线接触其外缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.063333,
+          0.444,
+          0.5,
+          0.62
+        ],
+        "evidence_zh": "色块约位于[444,936,749,1243]；分界、外缘接合和左侧引线均可辨。"
+      },
+      {
+        "category": "Shower / subcategory 2",
+        "required_parts": [
+          "粉色区",
+          "共点分界",
+          "弧形底缘",
+          "下方折线标签"
+        ],
+        "relationship": "粉色区由两条共点分界及水滴下缘包围，引线从底缘连接子类标签。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.435333,
+          0.620329,
+          0.584667,
+          0.902
+        ],
+        "evidence_zh": "主区约224×383像素；底缘未被标签遮挡，折线明确连接subcategory 2及8.65%。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "家庭用水主题不变；合成数值及三个父类各拆为两个互斥子类，属于冻结输入规定。",
+      "output_added_or_lost_meaning_zh": "增加面积读法及合成范围说明；未见主题、单位、父类角色或构成关系丢失。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；HOUSEHOLD WATER USE；Composition / % of synthetic total；Coloured area = share of the total；Subcategories are mutually exclusive parts of their named parent. Synthetic values; not a survey."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成百分比及互斥子类别由冻结输入规定，并在图面明确说明。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "参考六区变为当前九区，边界随份额改变，完整水滴与共点关系仍保留。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一面积通道的全部九个色区，包括最小、最大及内部序位类别；另逐项核对全部标签、数值、顺序和单位。无遗漏面板或量化通道。"
+  }
+}

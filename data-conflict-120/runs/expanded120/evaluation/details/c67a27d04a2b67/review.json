@@ -1,0 +1,253 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以分层油桶替代人物面部，黑色头巾与肩部围绕桶身，白色长须从桶下延伸。待评图显示出口去向标题、SYNTHETIC DATA、百分比单位与100%总计；11个色层各有对应市场标签和水平引线。最大层标37%，Market C标6%，Market G标6.3336%，其他8个子类别均标6.3333%。桶沿、弧形层界、圆柱阴影及人物连接关系可见，未见明显漏项或文字遮挡。观察已在读取源码前保存。",
+  "summary_zh": "通过。数据、标签与层高编码一致，油桶替代面部的融合关系完整。review.json已保存并通过schema.json验证；按后续指令未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2048×2000原图独立读取中央x=808—812取样带的像素变化。层界约为y=658、991、1048、1105、1159、1216、1273、1330、1387、1444、1501、1558；总高900px，层厚依次为333、57、57、54、57、57、57、57、57、57、57px。头巾、桶盖与滚边不计入数据高度。左右抽查列的内部弧界较中央约上移16px，层间距一致。源码公式仅作佐证。",
+  "uncertainties_zh": "抗锯齿使单边定位约有±1px误差，份额估计保守约±0.3个百分点。误差点估计接近零不证明四位小数几何精度。6.3333%与6.3336%的差仅约0.0027px，位图无法区分，文字完整保留。已读capture_render.py保存逻辑，但未检查历史记录或运行日志。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11个数据层和11行类别完整，顺序符合输入；单系列、单位、合成数据提示与100%总计齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A为37%，C为6%，G为6.3336%，B/D/E/F的8个子类别均为6.3333%，与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各水平引线从对应色层内部连接同色圆点与类别行，无交叉错接；子类别保留父类名称。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素测得H约900px，最大层333px、最小层54px、其余约57px，均符合3个百分点容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其头巾、白须和肩部纹理在成图中明显可见。素材提取及渲染源码显示代码控制层界、引线和文字；未执行渲染。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据层构成桶形面部，头巾位于桶后，白须从桶底后方露出并连接肩部；桶沿和圆柱阴影清楚。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、单位、市场及子类别名称、全部百分比均清楚，编码说明可读，无重要文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "头巾围绕桶顶和左侧，油桶占据面部，长白须接在桶底下；大小数据层均为同一连续桶壁。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "出口去向标题、Synthetic oil export share (%)、DESTINATION/SHARE及父类拆分说明明确主题、指标、单位和类别角色。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留石油出口去向主题及油桶替代面部的关系。参考的特定国家、时期和真实目的地改为合成市场，属于冻结输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小层约54px，其他小层约57px，均能辨认上下弧界、连续桶壁和独立引线。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家与历史时期改为合成Market类别属于允许的输入适配；层厚变化由当前数据决定。未见输出遗漏当前主题或类别语义。四位小数差异的几何不可辨属于分辨率限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Market A",
+        "expected_value": 37,
+        "observed_value": 37,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 333,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.394531,
+          0.329,
+          0.396973,
+          0.4955
+        ],
+        "evidence_zh": "中央取样带上下层界约为y=658与991，厚333px；除以同列900px数据总高得到37%。",
+        "uncertainty_zh": "单边约±1px；零误差为像素定位后的点估计，非精确零。bbox为取样带。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Market C",
+        "expected_value": 6,
+        "observed_value": 6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 54,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.394531,
+          0.5525,
+          0.396973,
+          0.5795
+        ],
+        "evidence_zh": "中央层界约为y=1105与1159，厚54px，对应6%。",
+        "uncertainty_zh": "层厚约±2px，小值相对精度不能由零误差点估计保证。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Market E / subcategory 1",
+        "expected_value": 6.3333,
+        "observed_value": 6.33333333,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 57,
+        "full_scale_error_percent": 3.333e-05,
+        "small_value_relative_error_percent": 0.00052632,
+        "bbox_xyxy_normalized": [
+          0.394531,
+          0.6365,
+          0.396973,
+          0.665
+        ],
+        "evidence_zh": "中央层界约为y=1273与1330，厚57px；按900px总高换算约6.3333%。",
+        "uncertainty_zh": "误差为整数像素定位后的算术点估计，不证明所列小数位的几何精度。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Market G",
+        "expected_value": 6.3336,
+        "observed_value": 6.33333333,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 57,
+        "full_scale_error_percent": 0.00026667,
+        "small_value_relative_error_percent": 0.00421035,
+        "bbox_xyxy_normalized": [
+          0.394531,
+          0.7505,
+          0.396973,
+          0.779
+        ],
+        "evidence_zh": "中央层界约为y=1501与1558，厚57px；6.3336%的文字清楚。",
+        "uncertainty_zh": "目标与像素点估计的差远小于边界定位误差，不能据此判断亚像素偏差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体人物与桶形面部",
+        "required_parts": [
+          "黑色头巾",
+          "分层油桶",
+          "桶沿",
+          "白色长须",
+          "肩部"
+        ],
+        "relationship": "头巾在桶后上方，桶占据脸部中心，白须从桶底后方露出并垂至肩部中央。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.08,
+          0.174,
+          0.695,
+          0.937
+        ],
+        "evidence_zh": "人物部件与桶身连接明确，数据桶没有成为旁置图表。"
+      },
+      {
+        "category": "Market A（最大层）",
+        "required_parts": [
+          "上桶沿",
+          "红色桶壁",
+          "下弧界",
+          "引线"
+        ],
+        "relationship": "红色层接上桶沿，下方与下一数据层共用弧形界面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.275,
+          0.612,
+          0.497
+        ],
+        "evidence_zh": "333px高的红色桶壁连续，37%引线端点位于层内。"
+      },
+      {
+        "category": "Market C（最小层）",
+        "required_parts": [
+          "青绿色桶壁",
+          "上下弧界",
+          "相邻层",
+          "引线"
+        ],
+        "relationship": "窄层夹在B第二子类与D第一子类之间，共享桶壁及连续弧界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.525,
+          0.612,
+          0.581
+        ],
+        "evidence_zh": "54px青绿色区域及两条边界清楚，引线连接Market C 6%。"
+      },
+      {
+        "category": "Market E / subcategory 1",
+        "required_parts": [
+          "金色桶壁",
+          "上下弧界",
+          "子类别引线"
+        ],
+        "relationship": "金色层嵌在同一圆柱桶壁，轴向厚度承载份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.609,
+          0.612,
+          0.666
+        ],
+        "evidence_zh": "中央厚约57px，侧向阴影连续，父类及子类别标签绑定正确。"
+      },
+      {
+        "category": "Market G（底层）",
+        "required_parts": [
+          "红褐色桶壁",
+          "下滚边",
+          "白须根部",
+          "引线"
+        ],
+        "relationship": "数据层位于下滚边之上，白须从滚边后下方延伸。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.25,
+          0.722,
+          0.612,
+          0.821
+        ],
+        "evidence_zh": "底层约57px，边界未被白须遮挡，6.3336%引线落在层内。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入采用合成出口市场及互斥子类别，允许数据改变层厚和非数据部件尺寸，不要求旧国家、年份、份额或政治评论。",
+      "output_added_or_lost_meaning_zh": "当前出口去向、总量百分比和父类拆分含义保留；参考特定国家与时期指涉的变化归因于输入适配。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Oil export destinations、Synthetic oil export share (%)、11 destinations、TOTAL SHARE 100%及层高、父类拆分说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考真实国家及历史时期改为冻结输入中的合成市场。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前分布形成一个较厚层和十个较窄层，符合当前数据。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "0.0003个百分点在900px量程仅约0.0027px；其精确差异通过文字保留。"
+      }
+    ],
+    "measurement_coverage_zh": "单系列、单定量通道。扫描中央全部12条边界，记录最大、最小、内部及底部4项代表性测量，并抽查左右弧界。全部11个类别、数值、父类名及引线已核对；未逐像素拟合完整椭圆，不主张亚像素精度。"
+  }
+}

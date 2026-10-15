@@ -1,0 +1,274 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：蓝底、白色机场数量横条，左列为25个国家；右侧朝上的俯视客机叠在黄色纵带上，机身、主翼和尾翼可辨，右翼部分出画。飞机与横条为叠合插画关系，非按翼展计量。\n指定成图：蓝底，标题为Airports across 25 fictional regions，左上SYNTHETIC DATA醒目；指标、facilities单位、可从空中识别且含关闭或废弃场地的口径清楚。Region A至Y共25行，最大值13,280、最小值225；H为875且条长略大于G的820。横轴明确0–14,000。数值列紧邻各条右端，均可读。右侧大型客机朝上，白色机身与红色主翼、发动机、尾翼连接清楚；黄色纵带从机鼻上方及尾部露出，最长横条跨过纵带但不遮挡机身。底部显示32,238 total facilities及Aircraft illustration does not encode quantity。未见明显缺失条形、标签错位或遮挡；几何比例尚待像素测量。",
+  "summary_zh": "25项数值、顺序、单位和标签绑定正确，横条比例在容差内。俯视客机的机身、主翼、尾翼及叠合关系完整，生成素材实质可见。原真实国家统计改为虚构区域是输入允许的适配，未发现需列为问题的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1600×2000成图像素。轴上0与14,000刻线像素中心相距1080像素；在x=405识别到25段白色条形。全部条形检查实心区宽度，另对7项以背景/条形红通道中点135定位抗锯齿边缘，按宽度÷1080×14000换算。测量独立于源码公式；源码仅佐证数据驱动。",
+  "uncertainties_zh": "边缘插值估计约有±0.5像素不确定性，相当于±6.5设施；对225的小值约为±2.9%，不能将列出的微小点估计误差理解为同等精度保证。按限制未查运行日志、历史归档或自检；capture_render.py实际是否用于每次渲染未独立核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A–Y共25行、25根横条和25个数值均可见；标题、合成提示、口径、单位、轴端点及总数齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐行可见数值与data.json一致，包括A=13,280、G=820、H=875、X=255、Y=225；底部32,238等于全部25值之和。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每行类别、横条及右端数值水平对应，无跨行错配；G后接H，且H条稍长，保留输入顺序。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "25条共享零起点及0–14,000轴。全部实心区宽度换算偏差小于满量程0.08%；7项边缘插值偏差小于0.02%，均远低于3%容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与aircraft.png，红白客机的部件和纹理在成图右侧大幅呈现；render.py明确载入该素材并按数据绘制横条与文字。归档脚本存在，历史执行未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "客机叠在黄色纵带与图场背景上，白色机身覆盖纵带，主翼和尾翼相连；横条独立计量，未被飞机遮断，符合参考的插画叠合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、25个区域名及数值、轴刻度、口径与底部单位说明均可读，无关键文字裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "全局俯视客机朝上，左右主翼连接机身中段，尾翼连接后段，双发动机可辨；横条保留共享零点和明确右边界。飞机不承担数值尺度。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确25个虚构区域，指标为Number of airports and airfields，单位facilities；文字交代可从空中识别、铺装或未铺装及关闭/废弃场地纳入，合成性质明确。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "机场数量跨区域比较、统计口径及俯视客机叠合保留；参考中的真实国家、2021年份与最高数量排名改为输入指定的虚构区域合成统计，属允许适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Y条仍约17.35×28像素，白色矩形及右边界清楚，225标签分离可读；X条约19.82像素。没有为识别飞机而放大小条，飞机是独立全局插画。"
+    }
+  },
+  "semantic_attribution_zh": "原真实国家与年份语义的变化归于冻结输入适配，不是输出遗漏。当前机场/机场场地设施计数、虚构区域角色与统计口径均保留。飞机只作插画，不能声称机翼与数量几何融合；小值的有限测量精度归于像素与抗锯齿边界。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "airport_count",
+        "category": "Region A",
+        "expected_value": 13280,
+        "observed_value": 13278.55,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1024.35,
+        "full_scale_error_percent": 0.0103,
+        "small_value_relative_error_percent": 0.0109,
+        "bbox_xyxy_normalized": [
+          0.249631,
+          0.337,
+          0.889847,
+          0.351
+        ],
+        "evidence_zh": "最大条：y=687扫描，半对比边缘约x=399.409至1423.755；按可见1080像素轴跨度换算。",
+        "uncertainty_zh": "边缘插值为近似量，宽度约±0.5像素。"
+      },
+      {
+        "series_id": "airport_count",
+        "category": "Region B",
+        "expected_value": 3980,
+        "observed_value": 3980.74,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 307.09,
+        "full_scale_error_percent": 0.0053,
+        "small_value_relative_error_percent": 0.0187,
+        "bbox_xyxy_normalized": [
+          0.249631,
+          0.36,
+          0.441559,
+          0.374
+        ],
+        "evidence_zh": "y=733扫描，半对比边缘约x=399.409至706.495，右侧数值为3,980。",
+        "uncertainty_zh": "宽度约±0.5像素；小数为换算点估计。"
+      },
+      {
+        "series_id": "airport_count",
+        "category": "Region G",
+        "expected_value": 820,
+        "observed_value": 821.14,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 63.35,
+        "full_scale_error_percent": 0.0082,
+        "small_value_relative_error_percent": 0.1395,
+        "bbox_xyxy_normalized": [
+          0.249631,
+          0.475,
+          0.289222,
+          0.489
+        ],
+        "evidence_zh": "y=963扫描，半对比边缘约x=399.409至462.755，短于下一行H。",
+        "uncertainty_zh": "宽度约±0.5像素。"
+      },
+      {
+        "series_id": "airport_count",
+        "category": "Region H",
+        "expected_value": 875,
+        "observed_value": 873,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 67.35,
+        "full_scale_error_percent": 0.0143,
+        "small_value_relative_error_percent": 0.2291,
+        "bbox_xyxy_normalized": [
+          0.249631,
+          0.498,
+          0.291722,
+          0.512
+        ],
+        "evidence_zh": "y=1009扫描，半对比边缘约x=399.409至466.755；比G长约4像素，局部非递减顺序正确。",
+        "uncertainty_zh": "宽度约±0.5像素。"
+      },
+      {
+        "series_id": "airport_count",
+        "category": "Region M",
+        "expected_value": 515,
+        "observed_value": 516.17,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 39.82,
+        "full_scale_error_percent": 0.0083,
+        "small_value_relative_error_percent": 0.227,
+        "bbox_xyxy_normalized": [
+          0.249631,
+          0.613,
+          0.274518,
+          0.627
+        ],
+        "evidence_zh": "中间行：y=1239扫描，半对比边缘约x=399.409至439.228，右侧数值515。",
+        "uncertainty_zh": "宽度约±0.5像素。"
+      },
+      {
+        "series_id": "airport_count",
+        "category": "Region X",
+        "expected_value": 255,
+        "observed_value": 256.91,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 19.82,
+        "full_scale_error_percent": 0.0136,
+        "small_value_relative_error_percent": 0.7489,
+        "bbox_xyxy_normalized": [
+          0.249631,
+          0.866,
+          0.262018,
+          0.88
+        ],
+        "evidence_zh": "y=1745扫描，半对比边缘约x=399.409至419.228，正值矩形清楚可见。",
+        "uncertainty_zh": "宽度约±0.5像素，相当于约±2.5%的本项值；不能保证亚百分比精度。"
+      },
+      {
+        "series_id": "airport_count",
+        "category": "Region Y",
+        "expected_value": 225,
+        "observed_value": 224.85,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 17.35,
+        "full_scale_error_percent": 0.0011,
+        "small_value_relative_error_percent": 0.0677,
+        "bbox_xyxy_normalized": [
+          0.249631,
+          0.889,
+          0.260472,
+          0.903
+        ],
+        "evidence_zh": "最小正值：y=1791扫描，半对比边缘约x=399.409至416.755；实心区17像素，条高28像素，非仅文字表示。",
+        "uncertainty_zh": "宽度约±0.5像素，约±6.5设施或本项±2.9%；点估计接近225不代表具备0.0677%的测量精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "全局俯视客机",
+        "required_parts": [
+          "机身",
+          "左右主翼",
+          "双发动机",
+          "尾翼",
+          "黄色纵带"
+        ],
+        "relationship": "主翼连接机身中段，尾翼连接后段，发动机位于左右主翼前侧；机鼻朝上，机身叠在黄色纵带前方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.491,
+          0.325,
+          0.983,
+          0.925
+        ],
+        "evidence_zh": "客机约位于x=787–1571、y=733–1827；机翼根部、尾翼根部连续，纵带从机鼻上方和尾端露出，未见影响身份的断裂或遮挡。"
+      },
+      {
+        "category": "Region A最大条",
+        "required_parts": [
+          "零起点",
+          "白色矩形数量区域",
+          "右边界",
+          "数值标签",
+          "背景纵带"
+        ],
+        "relationship": "矩形从共同零点向右延伸，数值放在右边界之外；横条在黄色纵带前方穿过，客机机鼻位于下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.249,
+          0.333,
+          0.958,
+          0.354
+        ],
+        "evidence_zh": "条形约x=400–1424、y=674–702，完整可测；13,280紧随右端，飞机未遮断该数据区域。"
+      },
+      {
+        "category": "Region Y最小条",
+        "required_parts": [
+          "零起点",
+          "短白色矩形数量区域",
+          "右边界",
+          "225标签",
+          "Region Y标签"
+        ],
+        "relationship": "小矩形仍从共同零点向右延伸，类别与数值同排；与右侧全局客机分离，无逐条飞机融合要求。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.055,
+          0.885,
+          0.303,
+          0.906
+        ],
+        "evidence_zh": "条形约x=400–417、y=1778–1806；白色实心区和右边界可辨，225标签位于条外，远离右侧尾翼，无遮挡。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入要求以25个虚构区域的合成机场设施计数替代参考真实国家统计；不要求沿用2021、旧极值或旧排名论断。飞机尺寸与位置可适配且不编码数量。",
+      "output_added_or_lost_meaning_zh": "当前主题、计量角色及口径没有可见丢失；原真实国家/年份含义未保留，属于输入适配。新增总数32,238由当前数据相加，飞机不编码数量的说明与图形关系一致。",
+      "visible_inscription_evidence_zh": "Airports across 25 fictional regions；SYNTHETIC DATA；Number of airports and airfields；Fictional region；Number of facilities；Linear scale · 0–14,000；Aircraft illustration does not encode quantity。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实国家及2021的参考语义被指定的虚构区域合成数据替代，故参考含义记partial，不列为输出缺陷。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "条长按当前数据变化，H略长于G，小值保留短条；飞机为不承载数量的全局物体，允许调整占幅。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小条约17.35像素宽，足以辨识，但边缘抗锯齿限制其亚像素测量精度。"
+      }
+    ],
+    "measurement_coverage_zh": "仅有一个定量面板和一个横向长度通道。对全部25行核查数值、类别、顺序及实心区宽度；详细记录7项半对比边缘测量，覆盖最大值、次大值、中间行、G/H局部逆序及最小两项。未把飞机尺寸、跑道或装饰圆环作为数据通道。"
+  }
+}

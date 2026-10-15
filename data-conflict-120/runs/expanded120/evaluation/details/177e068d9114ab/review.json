@@ -1,0 +1,306 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图在方格纸上以左侧共同零点伸向右侧的前臂、腕部和握拳承载年数，包含七个国家或国家组。成图显示SYNTHETIC DATA、女性国家元首任期主题、七行虚构国家及0–25年轴；22.6、6.521004、1.88157、0.542908、0.156651、0.0452、0均可读，两组标注years each。前三行可见前臂连接腕部和右向握拳；后续正值标记迅速变小，最小两行的部件关系在原尺寸难辨；零值行未见拳头。",
+  "summary_zh": "数值、类别绑定、线性长度及主题表达符合简报，未见重大缺陷。最小标记保留着色痕迹，但腕部和握拳关系受像素分辨率限制，仅部分保留可辨性。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1620×2004成图像素。0与25刻度中心约为x=444、1476，跨度1032像素；按此可见标尺换算年数。以皮肤色差定位边界，并变更阈值核对：A至D采用R−G>8且R−B>18，E采用较强阈值15、25排除基线与振铃。边界约有±1像素不确定性。误差是像素估长的结果，不是源码公式的验证值。",
+  "uncertainties_zh": "Country F和Countries G / H / I的着色区仅数像素，不能可靠反推精确年数、相对误差或解剖连接细节。已核对capture_render.py保存逻辑，但未验证其运行履历。素材可见使用明确，生成调用本身未另行核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七行类别按输入顺序齐全，覆盖十个虚构国家；单系列、六个正值和一个零值均有对应行。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次显示22.6、6.521004、1.88157、0.542908、0.156651、0.0452、0，未把正值舍入为零；years及两组years each正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、数值与同一水平行的标记对应；B / C和G / H / I各使用一个共享值，页脚明确组内各国同值且不相加。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见25年跨度约1032像素，A、B / C、D、E着色长度约933、269、78、22像素；对应满量程误差均低于0.05%，远低于3%阈值。最小两项与预期像素量级一致，但不据此保证相对精度；零值无拳头。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及forearm_fist.png，成图主体可见相同皮肤、腕褶、指节和指甲纹理。render.py读取该素材并按输入值映射实体长度及文字；capture_render.py包含完整图保存逻辑。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "前臂经腕部连接拳头，其实体右端就是读数边界，左端接共同零线。物体本身承载长度；方格纸在物体后方，说明框未遮挡数据，未见破坏读数的接缝或层序错误。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA、女性国家元首主题、虚构国家说明、系列名称、七行标签、全部数值、0–25刻度与YEARS单位均可读，无关键文字重叠。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "较大实例清楚保留前臂—腕部—握拳连续连接、共同零线、方格纸和分组。E仅能辨认细段接右端膨大；F及最小组不能可靠分辨腕拳部件，属于微小尺度的局部可辨性限制。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题与Years in office across fictional countries明确女性国家元首任期年数；Synthetic leadership years及years给出系列与单位，分组共享值口径有明文说明。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留原图女性国家元首年数主题及拳臂长度比较关系；真实国家及原统计被输入明确改为合成虚构国家，原事实层意义不沿用，此部分变化归于输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "E约22像素，仍见细段与右端小膨大；F约6–7像素，最小组约2像素，只能确认着色痕迹。数值标签清楚，但不能证明这些微小实例具有可辨的腕部和握拳。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家改为虚构国家及合成数值是允许的输入改编；任期年数、单位和组内同值口径均保留。臂长和非数据厚度随数据变化。最小实例部件关系不可辨归于固定尺度下的像素限制，未见额外主题遗漏或行动关系改变。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "leadership_years",
+        "category": "Country A",
+        "expected_value": 22.6,
+        "observed_value": 22.601744,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 933,
+        "full_scale_error_percent": 0.006977,
+        "small_value_relative_error_percent": 0.007718,
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.24501,
+          0.85,
+          0.317365
+        ],
+        "evidence_zh": "着色区约x=444至1377，沿共同零点至最右拳体边界估长933像素；由可见轴换算约22.602年。",
+        "uncertainty_zh": "较强色差阈值给出932像素；约±1像素，所列误差仅为该边界估计。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Countries B / C",
+        "expected_value": 6.521004,
+        "observed_value": 6.516473,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 269,
+        "full_scale_error_percent": 0.018125,
+        "small_value_relative_error_percent": 0.069485,
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.328842,
+          0.440123,
+          0.401198
+        ],
+        "evidence_zh": "着色区约x=444至713，长度269像素，按可见标尺约6.516年；旁注6.521004 years each。",
+        "uncertainty_zh": "阈值变化约268–269像素，不把反锯齿边缘视为精确连续端点。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Country D",
+        "expected_value": 1.88157,
+        "observed_value": 1.889535,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 78,
+        "full_scale_error_percent": 0.03186,
+        "small_value_relative_error_percent": 0.423311,
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.442116,
+          0.322222,
+          0.46507
+        ],
+        "evidence_zh": "小臂拳着色区约x=444至522，估长78像素，对应约1.890年。",
+        "uncertainty_zh": "较强阈值为77像素；±1像素约等于0.024年。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Country E",
+        "expected_value": 0.542908,
+        "observed_value": 0.532946,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 22,
+        "full_scale_error_percent": 0.039849,
+        "small_value_relative_error_percent": 1.834982,
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.535429,
+          0.287654,
+          0.542415
+        ],
+        "evidence_zh": "主着色区约x=444至466，长度22像素，对应约0.533年；可见标签为0.542908。",
+        "uncertainty_zh": "低阈值边缘可延至x=467；1像素约占该目标长度4.46%，不能将估计误差当作精确映射偏差。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Country F",
+        "expected_value": 0.156651,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 7,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.621756,
+          0.278395,
+          0.624251
+        ],
+        "evidence_zh": "原图在x约444–451、y约1246–1251有小着色区；不同阈值给出6–7像素宽。可见标尺下目标长度约6.47像素，标签准确。",
+        "uncertainty_zh": "边缘反锯齿和基线接触使精确实体长度不可可靠反推，故不报告观测年数或相对误差。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Countries G / H / I",
+        "expected_value": 0.0452,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.706587,
+          0.275309,
+          0.707585
+        ],
+        "evidence_zh": "x=444–445、y=1416–1417存在比邻近基线更暖的着色像素，主色区约2×2像素。目标长度按可见轴约1.87像素，文字0.0452 years each清楚。",
+        "uncertainty_zh": "标记与零线及反锯齿混合；只能确认微小正值痕迹，不能精确测年数、相对误差或腕拳部件。"
+      },
+      {
+        "series_id": "leadership_years",
+        "category": "Country J",
+        "expected_value": 0,
+        "observed_value": 0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 0,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.786427,
+          0.283951,
+          0.795908
+        ],
+        "evidence_zh": "零值行的基线右侧未检出同类皮肤着色实体，画面显示0 years；未添加最小拳头。",
+        "uncertainty_zh": "相对误差对零值无定义。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Country A",
+        "required_parts": [
+          "前臂",
+          "腕部",
+          "握拳",
+          "共同零线",
+          "方格纸"
+        ],
+        "relationship": "前臂左端接零线，向右连续经过腕部连接握拳，拳体最右边界承载年数。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.24501,
+          0.85,
+          0.317365
+        ],
+        "evidence_zh": "皮肤纹理由长前臂延至腕褶和右端握拳；指节及指甲可辨，网格被实体覆盖，未见腕部断裂或独立旁置图标。"
+      },
+      {
+        "category": "Country D",
+        "required_parts": [
+          "短前臂",
+          "腕部",
+          "握拳",
+          "共同零线"
+        ],
+        "relationship": "短前臂从共同零点伸出，经较窄腕部连接右侧握拳。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.442116,
+          0.322222,
+          0.46507
+        ],
+        "evidence_zh": "约78像素宽的实例仍能分辨左侧臂段、收窄连接和右端屈指轮廓，实体端点承担长度读数。"
+      },
+      {
+        "category": "Country E",
+        "required_parts": [
+          "前臂",
+          "腕部",
+          "握拳"
+        ],
+        "relationship": "微小连续实体应保留臂段连接腕部和拳头的关系。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.535429,
+          0.287654,
+          0.542415
+        ],
+        "evidence_zh": "约22像素的棕色轮廓呈左侧细段连接右端膨大，完整腕褶和屈指细节已不能可靠辨认。"
+      },
+      {
+        "category": "Countries G / H / I",
+        "required_parts": [
+          "前臂",
+          "腕部",
+          "握拳",
+          "共同零线"
+        ],
+        "relationship": "最小正值应贴共同零点保留真实长度，不设置最小拳头。",
+        "status": "uncertain",
+        "bbox_xyxy_normalized": [
+          0.274074,
+          0.706587,
+          0.275309,
+          0.707585
+        ],
+        "evidence_zh": "约2像素宽着色痕迹贴近零线，未见人为放大；无法从这些像素独立判别前臂、腕部与握拳的连接。"
+      },
+      {
+        "category": "Country J",
+        "required_parts": [
+          "零线",
+          "零值文字",
+          "空白数据区"
+        ],
+        "relationship": "零值行不添加拳头实体。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.27037,
+          0.77994,
+          0.339506,
+          0.812375
+        ],
+        "evidence_zh": "0 years文字可见，基线右侧没有臂拳实体。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "原真实国家和旧数值明确替换为虚构国家及合成任期年数，类别顺序依当前数据；姿态和非数据厚度允许适配。",
+      "output_added_or_lost_meaning_zh": "保留女性国家元首年数的国家间比较、组内各国同值及拳臂实体长度编码；仅微小实例的解剖关系不再清楚可辨。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Years with a female head of state；Years in office across fictional countries；Synthetic leadership years；years each；Length encodes years; thickness is illustrative. 页脚说明组内同值且年数不相加。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "虚构国家与合成数值由冻结输入指定，成图明确告知，不属于输出丢失原真实统计。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "实体从约933像素递减至约2像素，非数据厚度同时收缩，零值省略实体。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "F及最小组只有数像素着色支持，不能辨认全部解剖部件或可靠核验小值相对精度。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单线性长度通道；检查全部七行，直接测量四个可分辨长度、两项微小着色范围及零值无实体。最大值、内部值和最小正值均覆盖；所有必需类别、数值、单位和分组说明另行逐项核对。未用源码或诊断掩模代替成图测量。"
+  }
+}

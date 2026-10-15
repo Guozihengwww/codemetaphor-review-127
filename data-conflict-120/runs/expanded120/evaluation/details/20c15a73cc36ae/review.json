@@ -1,0 +1,248 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：方格纸上以橙色鼻侧轮廓承载数据，上方眼睛覆盖于色块内；YEAR纵轴自1995向上至2015，横轴为MILLION PROCEDURES。\n指定成图：SYNTHETIC DATA、Nose procedures、Annual counts, in millions及Million procedures per indicated year清晰可见。五个年份由下至上为1995、2000、2005、2010、2015，轮廓节点分别标注1.42、3.83、3.13、2.43、1.94；横轴刻度0至4。肤色纹理填满左侧零线至鼻形右边界，眼睛位于上部，鼻梁阴影连接下部鼻翼与深色鼻孔。2000年节点附近为右向突出角，最低节点为1995年。底部说明明确以零线至鼻边读取数量，面积不编码。下缘斜面纹理方向较横向，是否影响结构需结合素材核实。",
+  "summary_zh": "五个观测值、标签和年度尺度正确，鼻形右轮廓实际承载数据，生成素材构成主体。最小值清晰可辨，未发现超出容差或破坏必要结构的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "在1600×2000原图中以颜色连通域测量五个节点环中心，并从长直轴线及整数刻度确定零线x≈350、0–4百万跨度约960像素，即240像素/百万。观察值=(节点x−350)/240，满量程误差分母为4百万。额外抽取8个邻近行的棕色外轮廓，确认节点对应实际填色边界。年份节点y≈1525、1285、1045、805、565，相邻5年均相隔240像素。源码公式仅作佐证，未以公式或自检替代像素证据。",
+  "uncertainties_zh": "像素定位约有±1–2像素不确定性，不能保证小数末位几何精度。参考图未明示独立的因果或恶化论断，不推断作者意图。已查看capture_render.py入口代码，但依限制未查看执行日志，实际完整渲染历史未独立核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五个年份1995、2000、2005、2010、2015及五个轮廓节点全部可见，单系列完整；主题、合成提示、年份轴及单位齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可读为1995=1.42、2000=3.83、2005=3.13、2010=2.43、2015=1.94，全部与输入一致；横轴0至4。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个年份刻度与对应轮廓节点处于同一水平线，数值紧邻节点或由短引线连接；1.42单独置于最低节点下方，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "五个横向宽度约340.5、919、751、583、465像素，换算约1.41875、3.82917、3.12917、2.42917、1.93750百万；最大测得满量程偏差约0.063%，低于3%。相邻5年均为240像素。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的肤色彩铅纹理、眼睛和鼻翼/鼻孔在成图主体中可直接对应。render.py读取这些素材，按数据多边形裁切并叠加部件；capture_render.py提供完整渲染保存入口，执行历史未作确认。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "皮肤纹理从共同零线连续填充到五节点组成的鼻形右边界；眼睛和鼻孔位于同一数据主体内。图下注明读取零线至鼻边的距离、面积不编码，物体与图表不是旁置关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC DATA、Nose procedures、年度口径、百万单位、五个年份及全部数值均清楚，无明显重叠、截断或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "方格纸近正视；上部眼睛覆盖肤色区域，鼻梁明暗向下连接鼻翼和深色鼻孔，右侧轮廓在2000节点形成鼻尖突出部。下缘保持连续连接，部件未脱离数据主体。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Nose procedures与Annual counts, in millions明确年度鼻部手术数量；YEAR及1995–2015说明观察年份，Million procedures per indicated year明确单位与口径，SYNTHETIC DATA说明合成性质。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "鼻部手术数量、年份与鼻形轮廓融合的关系得到保留。原参考American地域限定未沿用，冻结输入改为无地域的合成年度数据；此范围适配归因于输入，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值1.42在1995截面约341像素宽，节点环约18×17像素，鼻底填色、零线和斜向边界均可辨。它是同一鼻形中的观测截面，不需要另造一个微型鼻子。"
+    }
+  },
+  "semantic_attribution_zh": "原图American地域限定及原统计语境被冻结输入的合成年度鼻部手术数据适配，故参考统计范围记为部分保留，不归因于生成器失败。轮廓随当前五个数值改变属于允许的数据驱动形变；当前主题、单位、年份角色、非面积编码及鼻形融合关系均未丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "nose_procedures",
+        "category": "1995",
+        "expected_value": 1.42,
+        "observed_value": 1.41875,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 340.5,
+        "full_scale_error_percent": 0.03125,
+        "small_value_relative_error_percent": 0.088028,
+        "bbox_xyxy_normalized": [
+          0.21875,
+          0.758,
+          0.4375,
+          0.767
+        ],
+        "evidence_zh": "原图绿色节点环中心约(690.5, 1525)像素；从可见零线x≈350至节点的横向距离约340.5像素，以240像素/百万换算。节点与鼻形右轮廓相接，文字为1.42。",
+        "uncertainty_zh": "像素阈值、线宽及抗锯齿使定位约有±1–2像素不确定性；列出的微小误差是近似测量值，不代表小数末位已获精确验证。"
+      },
+      {
+        "series_id": "nose_procedures",
+        "category": "2000",
+        "expected_value": 3.83,
+        "observed_value": 3.829167,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 919,
+        "full_scale_error_percent": 0.020833,
+        "small_value_relative_error_percent": 0.021758,
+        "bbox_xyxy_normalized": [
+          0.21875,
+          0.6385,
+          0.79875,
+          0.647
+        ],
+        "evidence_zh": "原图绿色节点环中心约(1269, 1285)像素；从可见零线x≈350至节点的横向距离约919像素，以240像素/百万换算。节点与鼻形右轮廓相接，文字为3.83。",
+        "uncertainty_zh": "像素阈值、线宽及抗锯齿使定位约有±1–2像素不确定性；列出的微小误差是近似测量值，不代表小数末位已获精确验证。"
+      },
+      {
+        "series_id": "nose_procedures",
+        "category": "2005",
+        "expected_value": 3.13,
+        "observed_value": 3.129167,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 751,
+        "full_scale_error_percent": 0.020833,
+        "small_value_relative_error_percent": 0.026624,
+        "bbox_xyxy_normalized": [
+          0.21875,
+          0.5185,
+          0.69375,
+          0.527
+        ],
+        "evidence_zh": "原图绿色节点环中心约(1101, 1045)像素；从可见零线x≈350至节点的横向距离约751像素，以240像素/百万换算。节点与鼻形右轮廓相接，文字为3.13。",
+        "uncertainty_zh": "像素阈值、线宽及抗锯齿使定位约有±1–2像素不确定性；列出的微小误差是近似测量值，不代表小数末位已获精确验证。"
+      },
+      {
+        "series_id": "nose_procedures",
+        "category": "2010",
+        "expected_value": 2.43,
+        "observed_value": 2.429167,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 583,
+        "full_scale_error_percent": 0.020833,
+        "small_value_relative_error_percent": 0.034294,
+        "bbox_xyxy_normalized": [
+          0.21875,
+          0.3985,
+          0.58875,
+          0.407
+        ],
+        "evidence_zh": "原图绿色节点环中心约(933, 805)像素；从可见零线x≈350至节点的横向距离约583像素，以240像素/百万换算。节点与鼻形右轮廓相接，文字为2.43。",
+        "uncertainty_zh": "像素阈值、线宽及抗锯齿使定位约有±1–2像素不确定性；列出的微小误差是近似测量值，不代表小数末位已获精确验证。"
+      },
+      {
+        "series_id": "nose_procedures",
+        "category": "2015",
+        "expected_value": 1.94,
+        "observed_value": 1.9375,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 465,
+        "full_scale_error_percent": 0.0625,
+        "small_value_relative_error_percent": 0.128866,
+        "bbox_xyxy_normalized": [
+          0.21875,
+          0.2785,
+          0.515,
+          0.287
+        ],
+        "evidence_zh": "原图绿色节点环中心约(815, 565)像素；从可见零线x≈350至节点的横向距离约465像素，以240像素/百万换算。节点与鼻形右轮廓相接，文字为1.94。",
+        "uncertainty_zh": "像素阈值、线宽及抗锯齿使定位约有±1–2像素不确定性；列出的微小误差是近似测量值，不代表小数末位已获精确验证。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "2000最大观测与鼻尖区域",
+        "required_parts": [
+          "鼻梁肤色区域",
+          "右侧鼻尖轮廓",
+          "鼻翼与鼻孔",
+          "3.83数据节点"
+        ],
+        "relationship": "鼻梁连接向右突出的鼻尖；鼻翼和鼻孔包含于同一肤色主体，数据节点位于外轮廓突出端。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.51,
+          0.52,
+          0.805,
+          0.705
+        ],
+        "evidence_zh": "鼻梁明暗连续向下，鼻翼和深色鼻孔位于约x=850–1145、y=1130–1380区域内；外轮廓突出端与约(1269,1285)的数据节点相接。"
+      },
+      {
+        "category": "1995最小观测截面",
+        "required_parts": [
+          "共同零线",
+          "连续肤色鼻底",
+          "斜向外轮廓",
+          "1.42节点"
+        ],
+        "relationship": "鼻底从零线延伸至最小值节点，斜向外轮廓由此连续连接2000鼻尖；这是同一物体的截面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.21,
+          0.72,
+          0.52,
+          0.775
+        ],
+        "evidence_zh": "在y≈1525处，x≈350至690.5的约341像素范围仍有连续肤色与基线；右端节点接合上行斜边，没有断开、缩为孤立数字或被装饰遮住。"
+      },
+      {
+        "category": "上部眼睛与鼻梁",
+        "required_parts": [
+          "眼睛覆盖层",
+          "鼻梁",
+          "肤色数据填充"
+        ],
+        "relationship": "眼睛覆盖在鼻形主体上部，位于数据外轮廓以内；鼻梁向下连续延伸。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.218,
+          0.282,
+          0.59,
+          0.43
+        ],
+        "evidence_zh": "眼睛及眉毛约位于x=408–708、y=606–846，与原素材对应；周围肤色与鼻梁相接，未挖空或改变右侧数据轮廓。"
+      },
+      {
+        "category": "纸面与数据外轮廓",
+        "required_parts": [
+          "方格纸",
+          "零线",
+          "肤色数据区域",
+          "五节点轮廓"
+        ],
+        "relationship": "方格与轴线共面；肤色区域被共同零线和数据轮廓包围，内部装饰不替代定量边界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.21,
+          0.275,
+          0.825,
+          0.775
+        ],
+        "evidence_zh": "方格保持近正视直角排列，并在肤色区域中延续；五个节点均落在棕色外轮廓上。下缘纹理方向发生变化，但填色连续，未破坏鼻形身份或读数边界。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结输入明确使用合成年度鼻部手术数量，允许轮廓随当前数值变化，不要求沿用原美国真实统计范围或旧峰谷结论。",
+      "output_added_or_lost_meaning_zh": "当前年度计数、百万单位和年份角色完整；图面额外明确面积不编码，符合输入。相对参考的地域范围变化来自输入适配，鼻形轮廓承载手术数量的核心关系保留。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Nose procedures、Annual counts, in millions、YEAR、Million procedures per indicated year；说明文字要求从zero line读取至nose’s edge，并注明total illustrated area does not encode a value。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考标题含American，冻结输入及成图使用无地域限定的SYNTHETIC鼻部手术年度数据；原统计范围仅部分沿用。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "五个节点及鼻形宽度由当前1.42、3.83、3.13、2.43、1.94控制；轮廓变化和下缘纹理伸缩未改变必要部件关系。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一系列全部5个观测，包含最小值、最大值和3个其余节点；检查全部数值文字、年份、单位、合成提示以及4段年份间距，并抽取8行验证实际外轮廓。没有未覆盖的数据面板；未测总面积，因为冻结定义明确面积不编码。"
+  }
+}

@@ -1,0 +1,379 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为三期等宽三色堆叠条，禁止小麦图标位于首条后方，右侧另列总体比例。成图保留该叠合关系；九个组内百分比及右侧三个比例可读。标题与SYNTHETIC DATA清晰，图例说明合成子群、互斥关系及两种分母。最小黄色段仍有清楚边界与6%标签。",
+  "summary_zh": "三期九段比例、类别顺序及独立总体比例均符合冻结数据。禁止小麦素材清楚可见，首条遮挡图标下部的关系得到保留。当前统计语义完整，未发现需要记录的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1425原图像素，在每条多个无文字扫描行核对色段边界。三条共同外缘约为x=320、1620，满量程1300像素；内部浅色分隔线中心分别约为866/1542、1074/1490、1282/1425。按取整边界计算段长与份额，未把纯色内部宽度误当完整段宽。记录的零误差是像素级近似结果，不代表无限精度。右侧比例只核对文字，不作几何测量。",
+  "uncertainties_zh": "抗锯齿及细分隔线使每个边界定位约有±1像素不确定性；段宽保守约±2像素，相当于0.154个百分点，最小78像素段约2.6%的相对范围。未读取执行日志或自检，因此不能独立确认全部历史渲染是否实际经过归档脚本；素材与源码仅支持可见使用及实现路径。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "三期标签、Group A/B/C图例、九个堆叠段、三个总体比例、百分比单位及SYNTHETIC DATA均完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项读到42/52/6%、58/32/10%、74/11/15%；右列为1.2%、1.7%、2.3%，均与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "绿/橙/黄始终对应A/B/C，数值位于各自段内；期别左对齐对应行，右列比例也逐行对应。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素测得三期段宽约546/676/78、754/416/130、962/143/195，均以1300像素为100%；九项均在3个百分点容差内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及no_wheat_emblem.png；成图中的纹理麦穗、圆环和斜杠与素材一致。render.py引用处理后素材并按数据计算分段，capture_render.py包含归档逻辑；历史调用未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "图标下部在首条后方被遮挡，麦穗位于环内、斜杠位于麦穗前方。数据由堆叠条横向边界承载；图标不编码数量，符合参考的局部叠合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、图例、期别、所有数值、坐标及两分母解释均可读；6%标签完整留在黄色段中，无关键遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "禁止标识的圆环、内部麦穗与跨越麦穗的斜杠可辨，首条盖住标识下部；三期三段等宽堆叠结构和独立数值栏均保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "图面说明每条为无麸质饮食样本内部100%构成，A/B/C为互斥合成子群且未赋临床定义；右列表示该饮食人群占总人口比例。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "无麸质饮食主题与禁止小麦图标叠合保留。参考的临床分组和真实调查含义改为明确的合成子群，属于冻结输入允许的语义适配，不构成输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值6%段约78×124像素，左侧分界、100%右缘及段内标签均清楚。右列1.2%是规定的文字编码，不要求额外微小几何。"
+    }
+  },
+  "semantic_attribution_zh": "参考的具体临床组名与真实统计身份由输入改为合成Group A/B/C，成图明确交代父类与非临床性质，因此参考含义仅部分延续归因于许可的输入适配。条段形状变化由当前数据驱动。未见额外输出遗漏；抗锯齿只限制边界测量精度。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "group_a",
+        "category": "2009–2010",
+        "expected_value": 42,
+        "observed_value": 42,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 546,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.16,
+          0.45614,
+          0.433,
+          0.543158
+        ],
+        "evidence_zh": "原图y=680及同行其他扫描线显示边界约x=320至866；段宽546/1300≈42%，段内标签为42%。",
+        "uncertainty_zh": "边界取整约±1像素，段宽保守约±2像素；零误差为近似点估计，不保证小值的亚像素相对精度。"
+      },
+      {
+        "series_id": "group_b",
+        "category": "2009–2010",
+        "expected_value": 52,
+        "observed_value": 52,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 676,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.433,
+          0.45614,
+          0.771,
+          0.543158
+        ],
+        "evidence_zh": "原图y=680及同行其他扫描线显示边界约x=866至1542；段宽676/1300≈52%，段内标签为52%。",
+        "uncertainty_zh": "边界取整约±1像素，段宽保守约±2像素；零误差为近似点估计，不保证小值的亚像素相对精度。"
+      },
+      {
+        "series_id": "group_c",
+        "category": "2009–2010",
+        "expected_value": 6,
+        "observed_value": 6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 78,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.771,
+          0.45614,
+          0.81,
+          0.543158
+        ],
+        "evidence_zh": "原图y=680及同行其他扫描线显示边界约x=1542至1620；段宽78/1300≈6%，段内标签为6%。",
+        "uncertainty_zh": "边界取整约±1像素，段宽保守约±2像素；零误差为近似点估计，不保证小值的亚像素相对精度。"
+      },
+      {
+        "series_id": "group_a",
+        "category": "2011–2012",
+        "expected_value": 58,
+        "observed_value": 58,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 754,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.16,
+          0.596491,
+          0.537,
+          0.683509
+        ],
+        "evidence_zh": "原图y=880及同行其他扫描线显示边界约x=320至1074；段宽754/1300≈58%，段内标签为58%。",
+        "uncertainty_zh": "边界取整约±1像素，段宽保守约±2像素；零误差为近似点估计，不保证小值的亚像素相对精度。"
+      },
+      {
+        "series_id": "group_b",
+        "category": "2011–2012",
+        "expected_value": 32,
+        "observed_value": 32,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 416,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.537,
+          0.596491,
+          0.745,
+          0.683509
+        ],
+        "evidence_zh": "原图y=880及同行其他扫描线显示边界约x=1074至1490；段宽416/1300≈32%，段内标签为32%。",
+        "uncertainty_zh": "边界取整约±1像素，段宽保守约±2像素；零误差为近似点估计，不保证小值的亚像素相对精度。"
+      },
+      {
+        "series_id": "group_c",
+        "category": "2011–2012",
+        "expected_value": 10,
+        "observed_value": 10,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 130,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.745,
+          0.596491,
+          0.81,
+          0.683509
+        ],
+        "evidence_zh": "原图y=880及同行其他扫描线显示边界约x=1490至1620；段宽130/1300≈10%，段内标签为10%。",
+        "uncertainty_zh": "边界取整约±1像素，段宽保守约±2像素；零误差为近似点估计，不保证小值的亚像素相对精度。"
+      },
+      {
+        "series_id": "group_a",
+        "category": "2013–2014",
+        "expected_value": 74,
+        "observed_value": 74,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 962,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.16,
+          0.736842,
+          0.641,
+          0.82386
+        ],
+        "evidence_zh": "原图y=1080及同行其他扫描线显示边界约x=320至1282；段宽962/1300≈74%，段内标签为74%。",
+        "uncertainty_zh": "边界取整约±1像素，段宽保守约±2像素；零误差为近似点估计，不保证小值的亚像素相对精度。"
+      },
+      {
+        "series_id": "group_b",
+        "category": "2013–2014",
+        "expected_value": 11,
+        "observed_value": 11,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 143,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.641,
+          0.736842,
+          0.7125,
+          0.82386
+        ],
+        "evidence_zh": "原图y=1080及同行其他扫描线显示边界约x=1282至1425；段宽143/1300≈11%，段内标签为11%。",
+        "uncertainty_zh": "边界取整约±1像素，段宽保守约±2像素；零误差为近似点估计，不保证小值的亚像素相对精度。"
+      },
+      {
+        "series_id": "group_c",
+        "category": "2013–2014",
+        "expected_value": 15,
+        "observed_value": 15,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 195,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.7125,
+          0.736842,
+          0.81,
+          0.82386
+        ],
+        "evidence_zh": "原图y=1080及同行其他扫描线显示边界约x=1425至1620；段宽195/1300≈15%，段内标签为15%。",
+        "uncertainty_zh": "边界取整约±1像素，段宽保守约±2像素；零误差为近似点估计，不保证小值的亚像素相对精度。"
+      },
+      {
+        "series_id": "population_share_pct",
+        "category": "2009–2010",
+        "expected_value": 1.2,
+        "observed_value": 1.2,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.855,
+          0.477193,
+          0.9275,
+          0.522105
+        ],
+        "evidence_zh": "右侧独立数值栏对应期别清晰显示1.2%；仅为文字编码。",
+        "uncertainty_zh": "不适用段长或面积测量，不能据此声称几何融合。"
+      },
+      {
+        "series_id": "population_share_pct",
+        "category": "2011–2012",
+        "expected_value": 1.7,
+        "observed_value": 1.7,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.855,
+          0.617544,
+          0.9275,
+          0.662456
+        ],
+        "evidence_zh": "右侧独立数值栏对应期别清晰显示1.7%；仅为文字编码。",
+        "uncertainty_zh": "不适用段长或面积测量，不能据此声称几何融合。"
+      },
+      {
+        "series_id": "population_share_pct",
+        "category": "2013–2014",
+        "expected_value": 2.3,
+        "observed_value": 2.3,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.855,
+          0.757895,
+          0.9275,
+          0.802807
+        ],
+        "evidence_zh": "右侧独立数值栏对应期别清晰显示2.3%；仅为文字编码。",
+        "uncertainty_zh": "不适用段长或面积测量，不能据此声称几何融合。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "禁止小麦图标与首条叠合",
+        "required_parts": [
+          "圆环",
+          "麦穗",
+          "斜杠",
+          "首期堆叠条"
+        ],
+        "relationship": "麦穗位于圆环内；斜杠由左下向右上跨过麦穗并连接环边；首条在前方遮住图标下部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.552,
+          0.245,
+          0.747,
+          0.544
+        ],
+        "evidence_zh": "成图约x=1106–1492、y=351–650可见上部环、麦穗及斜杠；它们在y≈650处被连续橙色条顶边遮挡。该接触不改变条形数据边界。"
+      },
+      {
+        "category": "大值实例：2013–2014的Group A",
+        "required_parts": [
+          "绿色74%段",
+          "橙色11%段",
+          "黄色15%段",
+          "共同基线与终点"
+        ],
+        "relationship": "三段沿同一水平条相接，74%绿色段从0%起点延伸至橙色段；三段合为100%。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.16,
+          0.736842,
+          0.81,
+          0.82386
+        ],
+        "evidence_zh": "绿色长段约962像素，右端浅分隔线后接橙色段；三段上下缘齐平，没有图标侵入或遮挡其比例。"
+      },
+      {
+        "category": "小值实例：2009–2010的Group C",
+        "required_parts": [
+          "黄色6%段",
+          "左侧橙色52%段",
+          "浅色分隔线",
+          "100%右缘",
+          "6%标签"
+        ],
+        "relationship": "黄色小段紧接橙色段，包含其标签并终止于共同100%右缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.771,
+          0.45614,
+          0.81,
+          0.543158
+        ],
+        "evidence_zh": "约x=1542–1620、y=650–774的黄色区域宽78像素；左右边界和文字均能分辨，未见人为扩宽。"
+      },
+      {
+        "category": "独立总体比例栏",
+        "required_parts": [
+          "固定宽度浅底栏",
+          "总体人口标题",
+          "三行比例文字"
+        ],
+        "relationship": "数值栏与堆叠条分离，各比例文字逐行对应期别；栏宽不编码总体比例。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.8335,
+          0.376842,
+          0.95,
+          0.82386
+        ],
+        "evidence_zh": "右栏标题为Total population / on this diet，三行分别为1.2%、1.7%、2.3%；没有第二轴或随数值变化的填充。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确要求合成数据、当前九个组内比例及三个总体比例，并允许用有父类说明的合成组替代参考真实临床分组；不要求沿用旧数值或原有涨势表述。",
+      "output_added_or_lost_meaning_zh": "成图补充两种分母与互斥子群解释；未发现超出许可适配范围的语义丢失。它没有将合成组冒充原临床组，也没有把总体比例作为条宽。",
+      "visible_inscription_evidence_zh": "可见Gluten-Free Diet: A Synthetic Example、SYNTHETIC DATA、SYNTHETIC SUBGROUPS OF THE DIET SAMPLE、Mutually exclusive groups; no clinical definitions assigned.、Each bar = 100% of the diet sample及底部Two denominators说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考临床角色被冻结输入的合成A/B/C替代，图面明确解释该变化；参考含义的部分保留不归因于生成失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "三期分段按42/52/6、58/32/10、74/11/15改变，各期总宽保持100%。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "下采样产生约像素级的边界过渡，限制亚像素精度；最小段仍有清楚的可见区域与标签。"
+      }
+    ],
+    "measurement_coverage_zh": "直接像素测量覆盖全部九个堆叠段，含最小6%、最大74%及中间32%；右侧三个辅助比例全部按文字核对。另逐项检查三期、三系列、单位、合成提示及分母解释。图标不是定量通道，未为其虚构数值测量。"
+  }
+}

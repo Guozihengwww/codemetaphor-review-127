@@ -1,0 +1,219 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为十行水平市值条形图与右下方流线型列车并置。成图中Company A–J、十个数值、SYNTHETIC DATA、市值指标和billion USD均清楚。列车机头、轮组与向左后方延伸的车厢连贯。J条右下角初看似与地面斜边重叠，顶部及主要右端仍可见，待核对。",
+  "summary_zh": "通过。数据、标签绑定及线性条长正确，列车结构和并置关系保留。原真实统计改为合成设定属于输入适配。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "原图为1600×2000。0、40、80、120、160刻线位于x=460、710、960、1210、1460。独立像素测量得到十条宽度约926、521、485、400、324、150、142、124、103、65像素，高度均约60像素；最大满量程偏差约0.0625%。J条右下角仍保有条形填色，源码也确认横条绘于地面之后，未发现实际遮挡。",
+  "uncertainties_zh": "抗锯齿使端点读数约有±1像素误差，不能据满量程通过保证最小值的亚像素精度。按限制未读取生成日志、归档记录或自检，无法独立确认每次渲染均执行归档；已确认素材匹配、合成源码及归档封装。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "十类、一个系列、十个数值、标题、合成声明、单位及0–160刻度齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "148.2、83.4、77.6、63.9、51.8、24.1、22.7、19.8、16.4、10.3逐项正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "公司名、字母徽栏、横条及数值逐行对应，A–J顺序正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "图内尺度为6.25像素/billion USD；十条实测偏差均远低于3%满量程容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始及裁切列车素材的前窗、头灯、红色腰线和轮组与成图吻合；render.py加载素材并控制数据条长和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "保留条形排行与右下列车的并置关系；条长编码市值，列车和徽栏不承担定量编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "全部必需公司名、数值、指标、单位及合成口径说明可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "机头接入连续车体，车厢向左后方延伸；车窗包含于车体，轮组在下方，地面和阴影位于车下。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、合成排行说明、SYNTHETIC MARKET VALUE和billion USD明确当前主题、统计角色及单位。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "铁路企业市值排序及主题列车保留；真实公司、2024时点和现实来源按输入改为合成设定，非输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小J条约65×60像素，起点及主要端点可辨；右下角近色接触未消除长度，10.3绑定清楚。"
+    }
+  },
+  "semantic_attribution_zh": "真实公司及2024观测被合成Company A–J替换属于允许的输入适配。输出保留市值指标、十亿美元单位、排行角色及主题列车，未发现额外语义丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_market_value",
+        "category": "Company A",
+        "expected_value": 148.2,
+        "observed_value": 148.16,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 926,
+        "full_scale_error_percent": 0.025,
+        "small_value_relative_error_percent": 0.027,
+        "bbox_xyxy_normalized": [
+          0.2875,
+          0.3525,
+          0.86625,
+          0.3825
+        ],
+        "evidence_zh": "原图y=735扫描线覆盖x=460–1385，约926像素；按图内1000像素对应160换算。文字为148.2。",
+        "uncertainty_zh": "约50%混色阈值计整数像素，边界约±1像素；误差为该读数估计。"
+      },
+      {
+        "series_id": "synthetic_market_value",
+        "category": "Company E",
+        "expected_value": 51.8,
+        "observed_value": 51.84,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 324,
+        "full_scale_error_percent": 0.025,
+        "small_value_relative_error_percent": 0.077,
+        "bbox_xyxy_normalized": [
+          0.2875,
+          0.5445,
+          0.49,
+          0.5745
+        ],
+        "evidence_zh": "原图y=1119扫描线覆盖x=460–783，约324像素；按图内尺度换算。文字为51.8。",
+        "uncertainty_zh": "边界约±1像素，即±0.16 billion USD。"
+      },
+      {
+        "series_id": "synthetic_market_value",
+        "category": "Company J",
+        "expected_value": 10.3,
+        "observed_value": 10.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 65,
+        "full_scale_error_percent": 0.0625,
+        "small_value_relative_error_percent": 0.971,
+        "bbox_xyxy_normalized": [
+          0.2875,
+          0.7845,
+          0.328125,
+          0.8145
+        ],
+        "evidence_zh": "原图y=1599扫描线覆盖x=460–524，约65像素；按图内尺度换算。文字为10.3。",
+        "uncertainty_zh": "边界约±1像素；0.971%是整数像素读数的相对偏差，不是小值精度保证。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "最大值Company A",
+        "required_parts": [
+          "公司名与A徽栏",
+          "横条",
+          "148.2数值",
+          "共同零线"
+        ],
+        "relationship": "各部分同排，横条由共同零线起始，右端边界承担市值长度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.05875,
+          0.3485,
+          0.94375,
+          0.392
+        ],
+        "evidence_zh": "A条约926像素，148.2紧邻右端，没有列车遮挡。"
+      },
+      {
+        "category": "最小值Company J",
+        "required_parts": [
+          "公司名与J徽栏",
+          "短横条",
+          "10.3数值",
+          "共同零线"
+        ],
+        "relationship": "短条由共同零线起始，数值在右侧，地面斜边在其后方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.05875,
+          0.7845,
+          0.39375,
+          0.8285
+        ],
+        "evidence_zh": "约65×60像素的条形仍可辨；右下角近色但未被覆盖。"
+      },
+      {
+        "category": "列车主体（非数据部件）",
+        "required_parts": [
+          "流线机头",
+          "驾驶窗",
+          "红色腰线",
+          "车体",
+          "轮组",
+          "地面与阴影"
+        ],
+        "relationship": "机头朝右前方，车体向左后方延伸；窗位于机头内，腰线贯穿车身，轮组连接车体下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4375,
+          0.639,
+          0.9625,
+          0.8435
+        ],
+        "evidence_zh": "机头、车体及车厢连续；地面和阴影位于下方，未见破坏主体的接缝。"
+      },
+      {
+        "category": "透视缩小的后部车厢",
+        "required_parts": [
+          "后部车厢",
+          "窗列",
+          "连接处",
+          "下方轮组"
+        ],
+        "relationship": "后部向左远处缩小，与前部连续连接；窗列及腰线延续。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4375,
+          0.726,
+          0.56875,
+          0.791
+        ],
+        "evidence_zh": "小车厢仍可辨窗格、腰线和连接处；此缩小属于透视，不编码市值。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入以合成Company A–J及当前值替代真实企业和旧统计，保留铁路企业市值排行与主题列车。",
+      "output_added_or_lost_meaning_zh": "明确声明合成研究数据，保留十家铁路企业按市值排列的含义；原2024真实排行不再主张，属于输入适配。",
+      "visible_inscription_evidence_zh": "可读RAILWAY COMPANIES、SYNTHETIC DATA、SYNTHETIC MARKET VALUE、billion USD、BAR LENGTH = MARKET VALUE及Train illustration is thematic。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实企业及2024统计改为合成类别与数据，符合冻结输入。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "条长随当前数据变化，共同零点和尺度保留，未人为抬高最小值。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿限制端点读数精度，未见最小条消失。"
+      }
+    ],
+    "measurement_coverage_zh": "已量取唯一面板全部十条宽度和高度；明细记录最大A、内部E及最小正值J。其他宽度为B521、C485、D400、F150、G142、H124、I103像素。全部类别及数值另行逐项核对；列车与地面不是定量通道。"
+  }
+}

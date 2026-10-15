@@ -1,0 +1,220 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以红色屋顶上边缘连接年度价格点，带门窗的住宅向右抬升，右下家庭仰望。指定 image.png 中，SYNTHETIC House prices、Illustrative new-home price (USD) 和 SYNTHETIC DATA 清楚可见。11 个年份及价格标签齐全，圆点落在瓦片屋顶上边界。屋顶连接正墙、侧墙与门窗；房体悬空，下方家庭站在绿色地面上。目视未见必需标签缺漏或明显遮挡。",
+  "summary_zh": "通过。11 个年度价格、标签及屋顶几何一致，实测最大偏差约为满量程的 0.086%。住宅结构及其与下方家庭的关系完整，生成素材实质构成主体。review.json 已保存并通过 schema.json 校验；未运行 submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量指定的 1760×2000 图像。网格位于 y=500、747–748、995、1242–1243、1490；结合可见刻度，以 v=(1490−y)/990×80000 换算。11 个浅色圆心的横坐标从 399.5 至 1509.5，相邻间距均为 111 px。全部点的满量程误差估计不超过 0.08586%。抽查 x=455、899、1454 的屋顶实际上缘，均与相邻圆心插值吻合，其下直接连接红瓦像素。源码仅用于确认控制方式。",
+  "uncertainties_zh": "抗锯齿及圆心分割约有 ±1 px（约 ±81 USD）定位不确定性；最小值的相对定位不确定性约 ±0.31%，表中误差不是亚像素精度保证。已查看捕获封装源码，但未检查历史日志或自检，不能证明历次渲染均经该封装。纹理仅作可见结构检查，未逐像素穷举。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11 个年份、11 个价格标签及 11 个屋顶标记齐全；主题、系列、USD 单位及合成声明完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "11 个金额依次为 26,400、28,900、33,100、36,800、40,600、45,300、49,900、56,400、63,400、65,200、68,100，均正确；首尾差值 +$41,700 正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份和金额成对位于对应圆点上方，由短引线连接，顺序准确，无交叉错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部圆心的独立像素测量均在 3% 满量程容差内；横向间距均为 111 px。抽查的真实屋顶边界与数据连线一致。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材及 roof_tiles.png、facade.png 中的瓦片、门窗和家庭可与成图对应。render.py 将素材映射进数据定义的表面多边形，并控制点位及文字。历史捕获调用未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "屋顶真实上边界承载年度价格；瓦片位于该边界以内，檐下接墙，门窗包含于墙面。房体悬空，家庭立于下方地面。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、指标、单位、全部年份金额、五个纵轴刻度及读图说明均可辨，未被纹理或物体遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "斜视住宅具有屋顶、正墙、侧墙、门窗；较低左端和较高右端均保持屋顶与墙体连接。房底离地，家庭在下方仰望。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Illustrative new-home price (USD)、ANNUAL OBSERVATIONS 及年份标签明确表达年度示意新房价格；未混入累计或组成份额解释。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "住宅价格、屋顶走势及悬空房体与家庭仰望关系保留。参考真实成交中位价和噩梦论述改为合成示意价格，属于冻结输入允许的改编，不计为输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值占满量程 33%，编码高度约 326.75 px；圆点、相接屋顶边界、檐口及带窗墙面清楚，无亚像素数据长度问题。"
+    }
+  },
+  "semantic_attribution_zh": "当前年度住宅价格主题、指标及单位完整。参考的真实统计口径和负担性措辞未沿用，归因于输入明确改为合成示意数据；上升屋顶由当前数值决定。未发现输出遗漏造成的核心语义损失，不推断作者意图。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "home_price",
+        "category": "Year 01",
+        "expected_value": 26400,
+        "observed_value": 26404.04,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 326.75,
+        "full_scale_error_percent": 0.00505,
+        "small_value_relative_error_percent": 0.0153,
+        "bbox_xyxy_normalized": [
+          0.222159,
+          0.5775,
+          0.231818,
+          0.586
+        ],
+        "evidence_zh": "最小正值圆心约为 (399.5,1163.25)，位于瓦片屋顶上缘；从零刻度到圆心的纵向编码距离为 326.75 px。",
+        "uncertainty_zh": "圆心定位约 ±1 px；extent 为纵向编码距离，不是房屋或圆点尺寸。误差为像素估计。"
+      },
+      {
+        "series_id": "home_price",
+        "category": "Year 04",
+        "expected_value": 36800,
+        "observed_value": 36868.69,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 456.25,
+        "full_scale_error_percent": 0.08586,
+        "small_value_relative_error_percent": 0.18665,
+        "bbox_xyxy_normalized": [
+          0.411364,
+          0.5125,
+          0.421023,
+          0.521
+        ],
+        "evidence_zh": "圆心约为 (732.5,1033.75)，是全系列像素估算偏差最大点，偏离目标位置约 0.85 px。",
+        "uncertainty_zh": "圆心定位约 ±1 px；extent 为纵向编码距离，不能据此声称亚像素价格精度。"
+      },
+      {
+        "series_id": "home_price",
+        "category": "Year 06",
+        "expected_value": 45300,
+        "observed_value": 45333.33,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 561,
+        "full_scale_error_percent": 0.04167,
+        "small_value_relative_error_percent": 0.07358,
+        "bbox_xyxy_normalized": [
+          0.5375,
+          0.4605,
+          0.547159,
+          0.469
+        ],
+        "evidence_zh": "内部圆心约为 (954.5,929.0)，位于连续屋顶边界，纵向编码距离为 561 px。",
+        "uncertainty_zh": "圆心定位约 ±1 px；extent 为纵向编码距离，误差为像素估计。"
+      },
+      {
+        "series_id": "home_price",
+        "category": "Year 11",
+        "expected_value": 68100,
+        "observed_value": 68101.01,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 842.75,
+        "full_scale_error_percent": 0.00126,
+        "small_value_relative_error_percent": 0.00148,
+        "bbox_xyxy_normalized": [
+          0.852841,
+          0.3195,
+          0.8625,
+          0.328
+        ],
+        "evidence_zh": "最大值圆心约为 (1509.5,647.25)，位于屋顶最高数据顶点，纵向编码距离为 842.75 px。",
+        "uncertainty_zh": "圆心定位约 ±1 px；extent 为纵向编码距离，小误差不代表同等精度保证。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "较小值端：Year 01",
+        "required_parts": [
+          "数据顶点",
+          "瓦片屋顶",
+          "檐口",
+          "带窗正墙",
+          "地面"
+        ],
+        "relationship": "顶点属于屋顶边界；屋顶接檐口，檐下墙面包含窗，房底与地面分离。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.15,
+          0.575,
+          0.355,
+          0.87
+        ],
+        "evidence_zh": "左端圆点贴合瓦片上缘；左下屋面连接白色檐线和完整四格窗，墙底与绿色地面之间可见空隙。"
+      },
+      {
+        "category": "较大值端：Year 11",
+        "required_parts": [
+          "最高数据顶点",
+          "瓦片屋顶",
+          "正墙",
+          "侧墙",
+          "窗"
+        ],
+        "relationship": "最高顶点位于真实屋顶边界；屋顶与两面墙接合，窗包含于各自墙面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.655,
+          0.315,
+          0.875,
+          0.605
+        ],
+        "evidence_zh": "右端最高点连接最后一段红瓦上缘；屋面下接正墙和灰色侧墙，侧窗随侧面倾斜，无额外装饰峰。"
+      },
+      {
+        "category": "悬空住宅与家庭",
+        "required_parts": [
+          "房底",
+          "地面",
+          "两名成人",
+          "儿童",
+          "狗"
+        ],
+        "relationship": "房体位于地面上方；家庭接触地面并朝上看向住宅。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.735,
+          0.44,
+          0.91,
+          0.905
+        ],
+        "evidence_zh": "右侧房底下方有明显净空；人物及狗站在绿色地带，头部朝左上，未遮挡价格轮廓。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入明确为合成年度示意新房价格，允许新数值改变屋顶走势及非数据姿态，不要求原真实价格、旧年份或噩梦结论。",
+      "output_added_or_lost_meaning_zh": "悬空住宅、家庭仰望及价格屋顶融合保留；新增首尾差值正确。原成交中位数口径与负担性论述未沿用，属于输入允许改编。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；SYNTHETIC House prices；Illustrative new-home price (USD)；ANNUAL OBSERVATIONS / LINEAR SCALE；Year 01–Year 11；Each vertex is an annual price。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考真实成交中位价改为输入指定的示意新房价格，合成声明明确；原噩梦论述非当前必需结论。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "屋顶依当前 11 个递增数值形成上升轮廓，不以旧峰谷或常规房形判错。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿造成约 1 px 定位不确定性；最小数据区域仍清晰，未造成结构丢失。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一通道为线性年度价格对应屋顶纵坐标。已测全部 11 个圆心并核对全部标签，详列最小值、最大值、内部点及估算偏差最大点，另抽查三段屋顶边界。未逐像素检查全部纹理，非数据透视深度未计作价格。"
+  }
+}

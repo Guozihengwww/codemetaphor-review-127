@@ -1,0 +1,364 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：左右分别为消费支出三层堆叠柱和实体销量两层堆叠柱，各四期；中间并置光盘、朝右箭头和手机。待评图：双屏游戏设备构成主体，两面板位于黑色屏幕内，外壳、控制部件和中央光盘相连。20个分段数值、各期合计、首末变化、两套单位及合成数据声明可读。0.4青色薄层仍可见，并有引线。原光盘→手机图示未出现，页下以其他形式份额31.7%→51.4%表达变化。以上观察在读取源码前保存。",
+  "summary_zh": "通过。20个分段及计算注释正确，独立像素扫描最大满量程误差约0.15%；设备与屏内图表关系清楚。原参考具体方向图示仅部分保留。review.json已保存并通过schema.json校验。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1425原图的柱内无字窄条扫描连续色区。满量程网格y≈575、零线y≈1035，量尺高约460px；支出按18h/460、销量按300h/460换算。全部20段均测量，最大满量程误差0.1449%，以下列出10条代表。八柱宽约82px，同面板中心间距136px。未读取geometry.json或使用自检代替像素证据。百分比注释仅按文字和数据计算核验。",
+  "uncertainties_zh": "抗锯齿使分段厚度约有1–2px不确定性；最小0.4分段约10px，满量程通过不保证很高的小值相对精度。冻结核心未逐项要求保留原光盘→手机图示，因此其缺席单列为参考含义部分保留。未查看运行日志、历史轮次或自检，不能独立确认capture_render.py的历次执行。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两面板各含Year 1–Year 4，支出12段、销量8段；三项图例、两套单位、8个合计及SYNTHETIC DATA齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "20个分段数字符合data.json。支出合计16.4/17.2/16.7/14.8，销量288/268/245/188；首末差−1.6和−100、降幅−9.8%和−34.7%、其他形式份额31.7%→51.4%均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "灰蓝、青、黄绿分别对应主机实体、PC实体和其他形式；青色引线指向对应小段，时期位于对应柱下，两面板堆叠顺序正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部20段像素测量均在3%满量程容差内，最大约0.15%；两面板分别使用0–18和0–300，柱宽和期间距一致，未见小段人为增高。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始及处理素材中的外壳、摇杆、方向键、按键和中央光盘与成图对应，实质构成主体。render.py载入素材并依据data.json计算堆叠边界、标签和注释；归档脚本存在，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "两图完整位于对应屏幕内，边框嵌入连续外壳，中央桥部连接两侧并包含光盘。图表与近正面屏幕方向一致，未见越界、部件遮挡或影响解释的接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸可读标题、双语图例、指标、单位、全部分段值、合计及时期；小值外置引线清楚，关键文字无明显遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "设备外壳连接双屏及控制部件，堆叠柱位于屏幕内部。大小分段均保留上下接触关系；数据边界是屏内矩形色段，不是外壳或光盘尺寸。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "当前主题、消费支出/实体销量、十亿美元/百万份及三个统计角色均明确。读图说明区分支出三形式与仅实体销量，并注明柱顶为当期合计，没有跨期累计或100%组成的误导。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "游戏销售形式变化及两项统计角色得到保留。原真实年份和地区按输入改为合成四期；光盘→手机的具体图示未复现，现图通过其他形式份额上升表达变化。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "支出Year 4的0.4青色层约10px，夹于6.8底层与7.6顶层之间；销量Year 4的13青色顶层约20px，与175底层接触。两者均可见且引线明确。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、单位、系列角色和当期堆叠含义没有可见丢失。真实年份、地区及原数字化论断改为合成四期比较，属于输入适配。输出新增双屏设备承载图表，未复现原光盘→手机图示，故参考动作仅部分保留；冻结核心未将该图示列为独立硬性部件。最细色段的相对精度受像素边界限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "consumer_spend_console_physical",
+        "category": "Year 1",
+        "expected_value": 10.4,
+        "observed_value": 10.4087,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 266,
+        "full_scale_error_percent": 0.0483,
+        "small_value_relative_error_percent": 0.084,
+        "bbox_xyxy_normalized": [
+          0.1895,
+          0.539649,
+          0.2305,
+          0.726316
+        ],
+        "evidence_zh": "x=382–385扫描，色段y=[769,1035)，厚266px；按18/460换算为十亿美元。",
+        "uncertainty_zh": "抗锯齿使厚度约有1–2px不确定性；误差为点估计。"
+      },
+      {
+        "series_id": "consumer_spend_console_physical",
+        "category": "Year 2",
+        "expected_value": 9.6,
+        "observed_value": 9.587,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 245,
+        "full_scale_error_percent": 0.0725,
+        "small_value_relative_error_percent": 0.136,
+        "bbox_xyxy_normalized": [
+          0.2575,
+          0.554386,
+          0.2985,
+          0.726316
+        ],
+        "evidence_zh": "x=518–521扫描，色段y=[790,1035)，厚245px；按18/460换算为十亿美元。",
+        "uncertainty_zh": "抗锯齿使厚度约有1–2px不确定性；误差为点估计。"
+      },
+      {
+        "series_id": "consumer_spend_pc_physical",
+        "category": "Year 2",
+        "expected_value": 0.7,
+        "observed_value": 0.7043,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 18,
+        "full_scale_error_percent": 0.0242,
+        "small_value_relative_error_percent": 0.621,
+        "bbox_xyxy_normalized": [
+          0.2575,
+          0.541754,
+          0.2985,
+          0.554386
+        ],
+        "evidence_zh": "x=518–521扫描，青色段y=[772,790)，厚18px；按18/460换算为十亿美元。",
+        "uncertainty_zh": "厚度约有1–2px不确定性；点估计不代表小值具有亚像素精度。"
+      },
+      {
+        "series_id": "consumer_spend_other_formats",
+        "category": "Year 2",
+        "expected_value": 6.9,
+        "observed_value": 6.887,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 176,
+        "full_scale_error_percent": 0.0725,
+        "small_value_relative_error_percent": 0.189,
+        "bbox_xyxy_normalized": [
+          0.2575,
+          0.418246,
+          0.2985,
+          0.541754
+        ],
+        "evidence_zh": "x=518–521扫描，黄绿色段y=[596,772)，厚176px；按18/460换算为十亿美元。",
+        "uncertainty_zh": "抗锯齿使厚度约有1–2px不确定性；误差为点估计。"
+      },
+      {
+        "series_id": "consumer_spend_pc_physical",
+        "category": "Year 4",
+        "expected_value": 0.4,
+        "observed_value": 0.3913,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 10,
+        "full_scale_error_percent": 0.0483,
+        "small_value_relative_error_percent": 2.174,
+        "bbox_xyxy_normalized": [
+          0.3935,
+          0.597193,
+          0.4345,
+          0.604211
+        ],
+        "evidence_zh": "x=790–793扫描，青色段y=[851,861)，厚10px；按18/460换算为十亿美元。",
+        "uncertainty_zh": "厚度约有1–2px不确定性，对此最小值的相对误差影响较大；不能据点估计保证高相对精度。"
+      },
+      {
+        "series_id": "consumer_spend_other_formats",
+        "category": "Year 4",
+        "expected_value": 7.6,
+        "observed_value": 7.5913,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 194,
+        "full_scale_error_percent": 0.0483,
+        "small_value_relative_error_percent": 0.114,
+        "bbox_xyxy_normalized": [
+          0.3935,
+          0.461053,
+          0.4345,
+          0.597193
+        ],
+        "evidence_zh": "x=790–793扫描，黄绿色段y=[657,851)，厚194px；按18/460换算为十亿美元。",
+        "uncertainty_zh": "抗锯齿使厚度约有1–2px不确定性；误差为点估计。"
+      },
+      {
+        "series_id": "physical_unit_sales_console_physical",
+        "category": "Year 1",
+        "expected_value": 260,
+        "observed_value": 259.5652,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 398,
+        "full_scale_error_percent": 0.1449,
+        "small_value_relative_error_percent": 0.167,
+        "bbox_xyxy_normalized": [
+          0.572,
+          0.447018,
+          0.613,
+          0.726316
+        ],
+        "evidence_zh": "x=1147–1150扫描，灰蓝段y=[637,1035)，厚398px；按300/460换算为百万份。",
+        "uncertainty_zh": "抗锯齿使厚度约有1–2px不确定性；误差为点估计。"
+      },
+      {
+        "series_id": "physical_unit_sales_pc_physical",
+        "category": "Year 2",
+        "expected_value": 24,
+        "observed_value": 24.1304,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 37,
+        "full_scale_error_percent": 0.0435,
+        "small_value_relative_error_percent": 0.543,
+        "bbox_xyxy_normalized": [
+          0.64,
+          0.437895,
+          0.681,
+          0.46386
+        ],
+        "evidence_zh": "x=1283–1286扫描，青色段y=[624,661)，厚37px；按300/460换算为百万份。",
+        "uncertainty_zh": "厚度约有1–2px不确定性；点估计不代表小值具有亚像素精度。"
+      },
+      {
+        "series_id": "physical_unit_sales_console_physical",
+        "category": "Year 3",
+        "expected_value": 227,
+        "observed_value": 226.9565,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 348,
+        "full_scale_error_percent": 0.0145,
+        "small_value_relative_error_percent": 0.019,
+        "bbox_xyxy_normalized": [
+          0.708,
+          0.482105,
+          0.749,
+          0.726316
+        ],
+        "evidence_zh": "x=1419–1422扫描，灰蓝段y=[687,1035)，厚348px；按300/460换算为百万份。",
+        "uncertainty_zh": "抗锯齿使厚度约有1–2px不确定性；误差为点估计。"
+      },
+      {
+        "series_id": "physical_unit_sales_pc_physical",
+        "category": "Year 4",
+        "expected_value": 13,
+        "observed_value": 13.0435,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 20,
+        "full_scale_error_percent": 0.0145,
+        "small_value_relative_error_percent": 0.334,
+        "bbox_xyxy_normalized": [
+          0.776,
+          0.524211,
+          0.817,
+          0.538246
+        ],
+        "evidence_zh": "x=1555–1558扫描，青色段y=[747,767)，厚20px；按300/460换算为百万份。",
+        "uncertainty_zh": "厚度约有1–2px不确定性；点估计不代表小值具有亚像素精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体设备与双面板",
+        "required_parts": [
+          "左右屏幕及边框",
+          "连续外壳与中央桥部",
+          "控制部件",
+          "中央光盘",
+          "两组堆叠柱"
+        ],
+        "relationship": "外壳连接两屏和控制部件；桥部包含光盘；每组柱形位于对应屏幕内部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.02,
+          0.22,
+          0.98,
+          0.82
+        ],
+        "evidence_zh": "两块黑色屏幕被金属色边框包围，左右控制器接于同一外壳，光盘嵌于中央连接部。图表未跨出屏框。"
+      },
+      {
+        "category": "消费支出Year 1大值",
+        "required_parts": [
+          "10.4灰蓝底层",
+          "0.8青色中层",
+          "5.2黄绿顶层",
+          "左屏幕和零线"
+        ],
+        "relationship": "三层上下接触，底层落在零线，整柱包含于左屏幕。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1895,
+          0.432281,
+          0.2305,
+          0.726316
+        ],
+        "evidence_zh": "灰蓝约266px、青色约20px、黄绿约133px连续堆叠，保持同期组成关系。"
+      },
+      {
+        "category": "消费支出Year 4最小正值",
+        "required_parts": [
+          "6.8灰蓝底层",
+          "0.4青色薄层",
+          "7.6黄绿顶层",
+          "0.4引线"
+        ],
+        "relationship": "青色薄层上下分别接触黄绿与灰蓝，引线指向该薄层。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3935,
+          0.461053,
+          0.458,
+          0.726316
+        ],
+        "evidence_zh": "青色层y≈851–861，约10px高，横向带状区域仍完整；右侧文字没有替代几何薄层。"
+      },
+      {
+        "category": "实体销量Year 1大值",
+        "required_parts": [
+          "260灰蓝底层",
+          "28青色顶层",
+          "右屏幕和零线"
+        ],
+        "relationship": "青色层位于灰蓝层上方并与其接触，整柱位于右屏幕内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.572,
+          0.416842,
+          0.613,
+          0.726316
+        ],
+        "evidence_zh": "灰蓝约398px、青色约43px，上下连续；该面板未混入其他形式的黄绿色段。"
+      },
+      {
+        "category": "实体销量Year 4小值",
+        "required_parts": [
+          "175灰蓝底层",
+          "13青色顶层",
+          "13引线"
+        ],
+        "relationship": "青色顶层接触灰蓝层，右侧引线绑定顶层。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.776,
+          0.512,
+          0.836,
+          0.726316
+        ],
+        "evidence_zh": "青色层y≈747–767，约20px高，两层清晰分开且相接，没有被外壳或文字覆盖。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "使用冻结输入的四期合成数据，替换原真实国家、年份、旧数值与变化率；允许调整非数据设备姿态和排版。",
+      "output_added_or_lost_meaning_zh": "新增双屏设备承载两图，保留销售形式、消费支出与实体销量比较。原光盘到手机的具体图示缺席，但标题及份额箭头仍表达结构变化，没有把其他形式强行等同全部数字下载。",
+      "visible_inscription_evidence_zh": "可见当前中文标题、SYNTHETIC DATA、Consumer spend、Physical unit sales、billion USD、million copies；页下注明“柱顶为当期合计”和“销量仅含实体游戏”。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "四期合成对照及非真实市场声明来自当前输入；原真实年份、地区和旧涨跌无需保留。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前总额和分段决定柱形，首末变化为−9.8%与−34.7%，未照搬参考的−9%与−35%。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "原光盘→手机的具体图示未出现；当前形式变化仍由标题和份额箭头表达，此项记为参考含义部分保留。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小支出层约10px，1–2px边界不确定性对其相对误差影响较大；几何满量程通过与小值高精度分开判断。"
+      }
+    ],
+    "measurement_coverage_zh": "像素扫描覆盖两面板全部8柱、20分段，列出10条代表，涵盖5个系列、两面板最小正值、大值及中间期值。全部分段标签、8个合计、8个时期标签和主要注释另行核验；未复核历史渲染归档。"
+  }
+}

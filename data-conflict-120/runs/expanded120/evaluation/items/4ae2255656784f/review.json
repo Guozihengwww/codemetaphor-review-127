@@ -1,0 +1,428 @@
+{
+  "verdict": "minor",
+  "confidence": 0.99,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图包含厂商出货量和份额双柱图及三只小型智能手表。指定成图为两只正视智能手表，屏幕分别包含出货量和份额分组柱图；表壳、上下表带、表冠和按钮可辨且相接。三类厂商、两期图例、全部数值、固定轴、总量及合成声明可见，零值未见柱体。左屏英文单位仅见devices × 10，底部分数说明疑有缺字。已在读取源码前保存上述观察。",
+  "summary_zh": "数据、绑定、尺度及手表结构符合要求；存在两处次要说明缺字，判为minor。review.json已保存并通过schema校验；按追加要求未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "出货量单位完整显示“百万台 · devices × 10⁶”。",
+      "observed_zh": "英文部分缺少上标6；同一行中文“百万台”正确可读。",
+      "evidence_zh": "左屏单位行约x156–415、y518–542只见devices × 10。源码字符串包含⁶，但所用NotoSansSC-Regular字体字符映射没有该字形。",
+      "bbox_xyxy_normalized": [
+        0.075,
+        0.357895,
+        0.2125,
+        0.384561
+      ]
+    },
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M5",
+      "expected_zh": "底部说明完整显示“⅓、⅔ 为精确分数”。",
+      "observed_zh": "脚注中的两个分数字符缺失；柱顶8⅓%、16⅔%仍完整。",
+      "evidence_zh": "右下脚注约x1490–1920、y1378–1400只余顿号和后续文字。脚注字体缺少⅓、⅔；柱顶使用的字体包含相应字形。",
+      "bbox_xyxy_normalized": [
+        0.74,
+        0.962807,
+        0.9625,
+        0.985965
+      ]
+    }
+  ],
+  "measurement_notes_zh": "在2000×1425原图采样蓝、绿填色并识别柱体矩形。空白轴段实测顶网格y620、基线y1000，轴高380px。出货量按高度/380×4.5百万台换算，份额按高度/380×80%换算。全部10根正柱的满量程误差最大约0.211%，份额最大偏差约0.123个百分点。测量独立于源码坐标和归档几何。",
+  "uncertainties_zh": "填色阈值排除部分抗锯齿边缘，边界约±1px；最小出货量柱的这一不确定性约为目标值的4.2%，不能由满量程合格推断小值高精度。未读取运行日志、自检或归档结果，无法独立核实每次capture_render归档；素材来源以随案清单为依据。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两面板、三厂商、两期图例及12个数值标签齐全；每面板5根正柱和1个零值标注，总量及统计说明均在。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "出货量0/4.32、0.72/0.48、0.28/0.96百万台；份额0/75%、72/8⅓%、28/16⅔%；总量1,000,000和5,760,000台均正确。重复英文单位缺字另列minor。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "蓝色Period 1、绿色Period 2在两屏一致；厂商顺序一致，数值位于对应柱顶或零值槽。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "两个固定轴分别为0–4.5百万台、0–80%。10根正柱均通过像素测量容差，两个零槽无可见柱体；份额采用各期独立总量。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理后素材，其表壳、表带、表冠与成图匹配并构成主体。render.py由数据计算柱高、网格及文字；未执行或重渲染，归档执行历史未核实。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "柱图叠置在正视玻璃屏幕内，未越过边框；表带连接表耳，表冠及按钮附于壳体。数据由屏幕内柱高承载，表壳不承担定量尺度。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需标题、数值、厂商、时期、中文单位及统计口径清楚；两处辅助文字缺字为局部minor。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "两只完整智能手表分别包含出货量和份额柱图，外壳包围屏幕，上下表带相接，侧冠可辨；大小柱均位于屏幕内。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确智能手表市场两期变化；出货量、份额、厂商与时期角色、百万台和期内百分比，以及分母公式均可辨。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留两期厂商出货量及份额比较。原Apple占优、真实品牌和日期按冻结输入替换为合成厂商及Period 1/2，属于输入适配，不是输出失败。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小出货量柱约23px、最小份额柱约39px，柱顶、侧边、基线接触及屏幕包含关系清楚；未见最小高度抬升。"
+    }
+  },
+  "semantic_attribution_zh": "真实品牌、日期及Apple占优主张的变化来自允许的合成输入适配；当前主题和统计角色未丢失。柱高变化由新数据决定。参考为物体与双柱图组合，不能额外要求表壳尺寸编码数据。缺失上标和脚注分数属于输出文字遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "Vendor A",
+        "category": "出货量 / Period 1（百万台）",
+        "expected_value": 0,
+        "observed_value": 0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 0,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1225,
+          0.691228,
+          0.1425,
+          0.701754
+        ],
+        "evidence_zh": "零槽近基线区域无蓝绿填色，整体只见0标签；边界框表示检查区域。",
+        "uncertainty_zh": "不能排除不可见的亚像素残留。"
+      },
+      {
+        "series_id": "Vendor A",
+        "category": "出货量 / Period 2（百万台）",
+        "expected_value": 4.32,
+        "observed_value": 4.310526316,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 364,
+        "full_scale_error_percent": 0.210526,
+        "small_value_relative_error_percent": 0.219298,
+        "bbox_xyxy_normalized": [
+          0.1545,
+          0.446316,
+          0.185,
+          0.701754
+        ],
+        "evidence_zh": "强填色从y636至999，高364px；按380px固定轴换算。",
+        "uncertainty_zh": "抗锯齿边界约±1px，数值为像素近似。"
+      },
+      {
+        "series_id": "Vendor B",
+        "category": "出货量 / Period 1（百万台）",
+        "expected_value": 0.72,
+        "observed_value": 0.710526316,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 60,
+        "full_scale_error_percent": 0.210526,
+        "small_value_relative_error_percent": 1.315789,
+        "bbox_xyxy_normalized": [
+          0.215,
+          0.659649,
+          0.2455,
+          0.701754
+        ],
+        "evidence_zh": "强填色从y940至999，高60px。",
+        "uncertainty_zh": "边界约±1px。"
+      },
+      {
+        "series_id": "Vendor B",
+        "category": "出货量 / Period 2（百万台）",
+        "expected_value": 0.48,
+        "observed_value": 0.473684211,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 40,
+        "full_scale_error_percent": 0.140351,
+        "small_value_relative_error_percent": 1.315789,
+        "bbox_xyxy_normalized": [
+          0.252,
+          0.673684,
+          0.2825,
+          0.701754
+        ],
+        "evidence_zh": "强填色从y960至999，高40px。",
+        "uncertainty_zh": "边界约±1px。"
+      },
+      {
+        "series_id": "Other Vendors",
+        "category": "出货量 / Period 1（百万台）",
+        "expected_value": 0.28,
+        "observed_value": 0.272368421,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 23,
+        "full_scale_error_percent": 0.169591,
+        "small_value_relative_error_percent": 2.725564,
+        "bbox_xyxy_normalized": [
+          0.3125,
+          0.685614,
+          0.343,
+          0.701754
+        ],
+        "evidence_zh": "最小正值柱强填色从y977至999，高23px。",
+        "uncertainty_zh": "边界约±1px；相对误差估计不能作为小值精度保证。"
+      },
+      {
+        "series_id": "Other Vendors",
+        "category": "出货量 / Period 2（百万台）",
+        "expected_value": 0.96,
+        "observed_value": 0.959210526,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 81,
+        "full_scale_error_percent": 0.017544,
+        "small_value_relative_error_percent": 0.082237,
+        "bbox_xyxy_normalized": [
+          0.3495,
+          0.644912,
+          0.38,
+          0.701754
+        ],
+        "evidence_zh": "强填色从y919至999，高81px。",
+        "uncertainty_zh": "边界约±1px。"
+      },
+      {
+        "series_id": "Vendor A",
+        "category": "市场份额 / Period 1（%）",
+        "expected_value": 0,
+        "observed_value": 0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 0,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.63,
+          0.691228,
+          0.65,
+          0.701754
+        ],
+        "evidence_zh": "零槽近基线区域无蓝绿填色，整体只见0%标签。",
+        "uncertainty_zh": "不能排除不可见的亚像素残留。"
+      },
+      {
+        "series_id": "Vendor A",
+        "category": "市场份额 / Period 2（%）",
+        "expected_value": 75,
+        "observed_value": 74.947368421,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 356,
+        "full_scale_error_percent": 0.065789,
+        "small_value_relative_error_percent": 0.070175,
+        "bbox_xyxy_normalized": [
+          0.662,
+          0.45193,
+          0.6925,
+          0.701754
+        ],
+        "evidence_zh": "强填色高356px，换算与目标差约0.052632个百分点。",
+        "uncertainty_zh": "边界约±1px。"
+      },
+      {
+        "series_id": "Vendor B",
+        "category": "市场份额 / Period 1（%）",
+        "expected_value": 72,
+        "observed_value": 72,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 342,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.7225,
+          0.461754,
+          0.753,
+          0.701754
+        ],
+        "evidence_zh": "强填色从y658至999，高342px，换算为72%。",
+        "uncertainty_zh": "整数像素恰好对应目标不代表无限精度；边界约±1px。"
+      },
+      {
+        "series_id": "Vendor B",
+        "category": "市场份额 / Period 2（%）",
+        "expected_value": 8.333333333333334,
+        "observed_value": 8.210526316,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 39,
+        "full_scale_error_percent": 0.153509,
+        "small_value_relative_error_percent": 1.473684,
+        "bbox_xyxy_normalized": [
+          0.7595,
+          0.674386,
+          0.79,
+          0.701754
+        ],
+        "evidence_zh": "最小正份额柱高39px，与目标差约0.122807个百分点。",
+        "uncertainty_zh": "边界约±1px，不作小值高精度保证。"
+      },
+      {
+        "series_id": "Other Vendors",
+        "category": "市场份额 / Period 1（%）",
+        "expected_value": 28,
+        "observed_value": 28,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 133,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.82,
+          0.608421,
+          0.8505,
+          0.701754
+        ],
+        "evidence_zh": "强填色从y867至999，高133px，换算为28%。",
+        "uncertainty_zh": "边界约±1px。"
+      },
+      {
+        "series_id": "Other Vendors",
+        "category": "市场份额 / Period 2（%）",
+        "expected_value": 16.666666666666668,
+        "observed_value": 16.631578947,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 79,
+        "full_scale_error_percent": 0.04386,
+        "small_value_relative_error_percent": 0.210526,
+        "bbox_xyxy_normalized": [
+          0.857,
+          0.646316,
+          0.8875,
+          0.701754
+        ],
+        "evidence_zh": "强填色高79px，与目标差约0.035088个百分点。",
+        "uncertainty_zh": "边界约±1px。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "手表主体与双面板",
+        "required_parts": [
+          "表壳",
+          "玻璃屏幕",
+          "上下表带",
+          "表耳",
+          "表冠及按钮",
+          "双柱图"
+        ],
+        "relationship": "表带通过表耳连接壳体，壳体包围屏幕，侧冠附于右侧，两图分别包含于两块屏幕。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.0275,
+          0.182456,
+          0.974,
+          0.901053
+        ],
+        "evidence_zh": "左右主体部件连续可辨，柱图未跨越边框或落在表带上。"
+      },
+      {
+        "category": "大柱：Vendor A / Period 2 / 出货量",
+        "required_parts": [
+          "绿色柱",
+          "基线",
+          "4.32标签",
+          "屏幕"
+        ],
+        "relationship": "柱底接触基线，标签位于柱顶上方，柱体包含于屏幕。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1025,
+          0.418246,
+          0.2,
+          0.708772
+        ],
+        "evidence_zh": "约364px高柱体延至y1000基线，顶端和标签无遮挡。"
+      },
+      {
+        "category": "小柱：Other Vendors / Period 1 / 出货量",
+        "required_parts": [
+          "蓝色小柱",
+          "基线",
+          "0.28标签",
+          "屏幕"
+        ],
+        "relationship": "小柱从共同基线向上延伸，标签绑定柱顶，整体位于玻璃内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.301,
+          0.658246,
+          0.35,
+          0.708772
+        ],
+        "evidence_zh": "约23px高实体矩形及顶边清楚，并非只剩数字。"
+      },
+      {
+        "category": "大柱：Vendor A / Period 2 / 份额",
+        "required_parts": [
+          "绿色柱",
+          "75%标签",
+          "基线",
+          "份额屏幕"
+        ],
+        "relationship": "柱高从基线计量，顶部低于80%网格，柱与标签均包含于右屏。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.6525,
+          0.422456,
+          0.7025,
+          0.708772
+        ],
+        "evidence_zh": "约356px高矩形与正视屏幕对齐，无明显透视或层次冲突。"
+      },
+      {
+        "category": "小柱：Vendor B / Period 2 / 份额",
+        "required_parts": [
+          "绿色小柱",
+          "8⅓%标签",
+          "基线",
+          "份额屏幕"
+        ],
+        "relationship": "小柱接触基线，精确分数标签对应Period 2，位于屏幕内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.7525,
+          0.644912,
+          0.799,
+          0.708772
+        ],
+        "evidence_zh": "约39px高填色及顶边可辨，8⅓%文字完整。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入允许合成厂商与Period 1/2替代真实品牌、日期及旧主张。",
+      "output_added_or_lost_meaning_zh": "保留两期厂商比较及期内份额关系；新增总量和分母公式有数据依据。局部缺字未改变可读中文单位和统计口径。",
+      "visible_inscription_evidence_zh": "主题标题、出货量与份额（合成数据）、SYNTHETIC DATA、百万台、占该期总量（%）、两期图例、三厂商及份额公式均可见。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实品牌、日期和Apple主导主张替换为冻结的合成主题及角色，reference_meaning为partial，不归为生成失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "Vendor A首期零值、次期4.32百万台及75%，其他厂商的变化均对应当前数据。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "英文单位上标及脚注分数缺字；源码字符串存在，所用字体不含对应字形。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖两通道全部12槽：10根正柱逐一测高，2个零槽检查填色，包含各面板最大、最小正值和内部值。全部数值、厂商、时期、轴端点、总量、单位和合成声明另经可见核对。非数据表壳及表带不作定量比例要求。"
+  }
+}

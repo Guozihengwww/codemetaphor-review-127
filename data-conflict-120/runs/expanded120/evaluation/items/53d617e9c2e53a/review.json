@@ -1,0 +1,559 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图将沙丘行旅人物与黄色99%、橙红色90%区间及中心线叠合，文字涉及气候变化与庇护申请增幅。待评图明确标注SYNTHETIC DATA和Synthetic Warming Scenarios，六个温升节点、嵌套区间、中心折线及五行数值表可见；中心在1°C达到182%，随后下降。全部30个表格数值肉眼核对一致。右端区间缩小，近零边界需原分辨率测量。人物数量明确不编码数据。",
+  "summary_zh": "已保存review.json并通过schema校验，未运行submit.py。数据与核心叠合关系总体符合要求；4°C的23%标签局部遮挡90%上界，属轻微问题。独立像素抽测未发现超容差映射。",
+  "issues": [
+    {
+      "category": "occlusion_layering",
+      "severity": "minor",
+      "requirement_id": "M2",
+      "expected_zh": "六个节点的区间边界应可追踪，4°C的90%上界对应41%。",
+      "observed_zh": "23%标签底板遮住橙红上界转折附近；两侧边界及表格41仍可见。",
+      "evidence_zh": "约x=1497–1582、y=1174–1216为标签；x≈1539、y≈1203处为深色底板。源码先画边界后画标签，仅作遮挡顺序旁证，未据此推断数值错误。",
+      "bbox_xyxy_normalized": [
+        0.748,
+        0.587,
+        0.791,
+        0.608
+      ]
+    }
+  ],
+  "measurement_notes_zh": "测量image.png原始2000×2000像素。由500至100的五条可见网格独立拟合y≈1271.3013−1.658281v；满量程510个百分点。mark_extent_px为节点或边界距零轴的垂直距离。18处可测位置的满量程误差均小于0.1%；通常定位不确定度约±1像素，尖顶约±2像素。源码只作交叉核查。",
+  "uncertainties_zh": "2%下界距零轴约3.8像素，−1%约1.7像素，不能保证小值相对精度。4°C橙色上界节点被标签遮挡，无法独立读取其实际位置。素材使用已核实；生图服务身份及逐次capture_render.py归档执行记录未独立核实。未查看自检、日志或其他评审。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六类别、五系列、两层区间、中心线和30个表格数值完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部30个数值正确，包括−2、−1、−7、−4；中心值及峰值标注正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "黄色对应99%、橙红对应90%，中心线及表格上下界角色明确；23%标签绑定中心点。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "18处可测位置覆盖五系列及近零值，满量程误差均小于0.1%；区间嵌套而非堆叠。另列一处局部遮挡。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始沙丘图、沙纹和人物前景素材，与成图对应；render.py按数据控制折线、区间多边形和文字。归档脚本存在，执行记录未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "沙丘构成主体，沙纹填入区间；人物位于填充前方，定量线叠在人物上，保留参考的场景叠合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、合成声明、轴单位、图例、全部行列名及数值可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "外带包含内带，内带包住中心；人物头身、行囊、落地脚部和沙面连续。数据由区间边界及中心节点承载。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "合成温升主题、Scenario value (%)、Temperature rise (°C)、上下界角色及名义覆盖率均明确。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留沙丘行旅叠合；原庇护申请主题被输入许可的合成情景替代，不归为输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "5°C的两层区域和中心点仍可分辨；2%及−1%边界距零轴仅约4和2像素，相对精度证据有限。"
+    }
+  },
+  "semantic_attribution_zh": "真实庇护申请主题改为合成情景属于许可输入改编；峰后下降和区间收窄来自当前数据。近零边界的精细辨识受分辨率限制。确认的输出问题仅为标签局部遮挡，没有发现核心身份或统计含义丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "central",
+        "category": "1°C",
+        "expected_value": 182,
+        "observed_value": 182.3,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 302.3,
+        "full_scale_error_percent": 0.058,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.276,
+          0.482,
+          0.285,
+          0.487
+        ],
+        "evidence_zh": "中心圆点约x=561、y=969。",
+        "uncertainty_zh": "定位约±1像素，约±0.60个百分点。"
+      },
+      {
+        "series_id": "central",
+        "category": "2°C",
+        "expected_value": 96,
+        "observed_value": 96.06,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 159.3,
+        "full_scale_error_percent": 0.013,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.439,
+          0.5535,
+          0.448,
+          0.5585
+        ],
+        "evidence_zh": "中心圆点约x=887、y=1112。",
+        "uncertainty_zh": "定位约±1像素。"
+      },
+      {
+        "series_id": "central",
+        "category": "5°C",
+        "expected_value": 9,
+        "observed_value": 9.23,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 15.3,
+        "full_scale_error_percent": 0.045,
+        "small_value_relative_error_percent": 2.5,
+        "bbox_xyxy_normalized": [
+          0.928,
+          0.6255,
+          0.937,
+          0.6305
+        ],
+        "evidence_zh": "中心圆点约x=1865、y=1256。",
+        "uncertainty_zh": "定位约±1像素，相对精度有限。"
+      },
+      {
+        "series_id": "upper99",
+        "category": "1°C",
+        "expected_value": 492,
+        "observed_value": 491.96,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 815.8,
+        "full_scale_error_percent": 0.009,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.276,
+          0.2253,
+          0.285,
+          0.2303
+        ],
+        "evidence_zh": "黄色尖顶约x=561、y=455.5。",
+        "uncertainty_zh": "尖顶描边和抗锯齿使定位约±2像素。"
+      },
+      {
+        "series_id": "upper99",
+        "category": "2°C",
+        "expected_value": 241,
+        "observed_value": 241.09,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 399.8,
+        "full_scale_error_percent": 0.018,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.439,
+          0.4333,
+          0.448,
+          0.4383
+        ],
+        "evidence_zh": "黄色上界约x=887、y=871.5。",
+        "uncertainty_zh": "定位约±1像素。"
+      },
+      {
+        "series_id": "upper99",
+        "category": "5°C",
+        "expected_value": 32,
+        "observed_value": 32.14,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 53.3,
+        "full_scale_error_percent": 0.028,
+        "small_value_relative_error_percent": 0.4,
+        "bbox_xyxy_normalized": [
+          0.927,
+          0.6065,
+          0.936,
+          0.6115
+        ],
+        "evidence_zh": "右端黄色上界约x=1863、y=1218。",
+        "uncertainty_zh": "定位约±1像素；取节点左侧2像素避开端点抗锯齿。"
+      },
+      {
+        "series_id": "lower99",
+        "category": "1°C",
+        "expected_value": 26,
+        "observed_value": 25.81,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 42.8,
+        "full_scale_error_percent": 0.037,
+        "small_value_relative_error_percent": 0.7,
+        "bbox_xyxy_normalized": [
+          0.276,
+          0.6118,
+          0.285,
+          0.6168
+        ],
+        "evidence_zh": "黄色下界约x=561、y=1228.5。",
+        "uncertainty_zh": "定位约±1像素。"
+      },
+      {
+        "series_id": "lower99",
+        "category": "2°C",
+        "expected_value": 14,
+        "observed_value": 14.35,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 23.8,
+        "full_scale_error_percent": 0.069,
+        "small_value_relative_error_percent": 2.5,
+        "bbox_xyxy_normalized": [
+          0.439,
+          0.6213,
+          0.448,
+          0.6263
+        ],
+        "evidence_zh": "黄色下界约x=887、y=1247.5。",
+        "uncertainty_zh": "定位约±1像素。"
+      },
+      {
+        "series_id": "lower99",
+        "category": "3°C",
+        "expected_value": 2,
+        "observed_value": 2.29,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 3.8,
+        "full_scale_error_percent": 0.057,
+        "small_value_relative_error_percent": 14.6,
+        "bbox_xyxy_normalized": [
+          0.602,
+          0.6313,
+          0.611,
+          0.6363
+        ],
+        "evidence_zh": "黄色下界约x=1213、y=1267.5，距标定零轴约3.8像素。",
+        "uncertainty_zh": "±1像素对应约±30%相对不确定度；14.6%仅为中心估计，不能断言真实相对误差。"
+      },
+      {
+        "series_id": "lower99",
+        "category": "4°C",
+        "expected_value": -7,
+        "observed_value": -6.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 11.2,
+        "full_scale_error_percent": 0.048,
+        "small_value_relative_error_percent": 3.5,
+        "bbox_xyxy_normalized": [
+          0.765,
+          0.6388,
+          0.774,
+          0.6438
+        ],
+        "evidence_zh": "黄色下界约x=1539、y=1282.5，位于零轴下方。",
+        "uncertainty_zh": "定位约±1像素。"
+      },
+      {
+        "series_id": "lower90",
+        "category": "1°C",
+        "expected_value": 43,
+        "observed_value": 43,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 71.3,
+        "full_scale_error_percent": 0.001,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.276,
+          0.5975,
+          0.285,
+          0.6025
+        ],
+        "evidence_zh": "橙红下界约x=561、y=1200。",
+        "uncertainty_zh": "定位约±1像素。"
+      },
+      {
+        "series_id": "lower90",
+        "category": "2°C",
+        "expected_value": 24,
+        "observed_value": 23.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 39.3,
+        "full_scale_error_percent": 0.059,
+        "small_value_relative_error_percent": 1.3,
+        "bbox_xyxy_normalized": [
+          0.439,
+          0.6135,
+          0.448,
+          0.6185
+        ],
+        "evidence_zh": "橙红下界约x=887、y=1232。",
+        "uncertainty_zh": "定位约±1像素。"
+      },
+      {
+        "series_id": "lower90",
+        "category": "3°C",
+        "expected_value": 7,
+        "observed_value": 6.82,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 11.3,
+        "full_scale_error_percent": 0.036,
+        "small_value_relative_error_percent": 2.6,
+        "bbox_xyxy_normalized": [
+          0.602,
+          0.6275,
+          0.611,
+          0.6325
+        ],
+        "evidence_zh": "橙红下界约x=1213、y=1260。",
+        "uncertainty_zh": "定位约±1像素，小值相对精度有限。"
+      },
+      {
+        "series_id": "lower90",
+        "category": "5°C",
+        "expected_value": -1,
+        "observed_value": -1.02,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1.7,
+        "full_scale_error_percent": 0.005,
+        "small_value_relative_error_percent": 2.4,
+        "bbox_xyxy_normalized": [
+          0.927,
+          0.634,
+          0.936,
+          0.639
+        ],
+        "evidence_zh": "右端橙红下界约x=1863、y=1273。",
+        "uncertainty_zh": "距零轴不足2像素；定位约±1像素，无法精确验证相对误差。取节点左侧2像素。"
+      },
+      {
+        "series_id": "upper90",
+        "category": "1°C",
+        "expected_value": 362,
+        "observed_value": 361.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 599.8,
+        "full_scale_error_percent": 0.059,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.276,
+          0.3333,
+          0.285,
+          0.3383
+        ],
+        "evidence_zh": "橙红上界约x=561、y=671.5。",
+        "uncertainty_zh": "定位约±1像素。"
+      },
+      {
+        "series_id": "upper90",
+        "category": "2°C",
+        "expected_value": 178,
+        "observed_value": 178.08,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 295.3,
+        "full_scale_error_percent": 0.015,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.439,
+          0.4855,
+          0.448,
+          0.4905
+        ],
+        "evidence_zh": "橙红上界约x=887、y=976。",
+        "uncertainty_zh": "定位约±1像素。"
+      },
+      {
+        "series_id": "upper90",
+        "category": "5°C",
+        "expected_value": 16,
+        "observed_value": 15.86,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 26.3,
+        "full_scale_error_percent": 0.027,
+        "small_value_relative_error_percent": 0.9,
+        "bbox_xyxy_normalized": [
+          0.927,
+          0.62,
+          0.936,
+          0.625
+        ],
+        "evidence_zh": "右端橙红上界约x=1863、y=1245。",
+        "uncertainty_zh": "定位约±1像素；取节点左侧2像素。"
+      },
+      {
+        "series_id": "central",
+        "category": "0°C",
+        "expected_value": 0,
+        "observed_value": 0.18,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 0.3,
+        "full_scale_error_percent": 0.036,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.113,
+          0.633,
+          0.122,
+          0.638
+        ],
+        "evidence_zh": "共同锚点圆心约x=235、y=1271，与零轴一致。",
+        "uncertainty_zh": "约0.3像素差在定位误差内，不表示真实非零。"
+      },
+      {
+        "series_id": "upper90",
+        "category": "4°C",
+        "expected_value": 41,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.748,
+          0.587,
+          0.791,
+          0.608
+        ],
+        "evidence_zh": "23%标签覆盖橙红上界节点附近；表格41正确，源码映射只作旁证。",
+        "uncertainty_zh": "节点被遮挡，无法独立读取实际几何值；两侧边界仍可追踪。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "1°C大区间",
+        "required_parts": [
+          "黄色99%上下界",
+          "橙红90%上下界",
+          "中心节点",
+          "沙纹"
+        ],
+        "relationship": "外带包含内带，中心位于内带，纹理贯穿数据面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.255,
+          0.225,
+          0.31,
+          0.62
+        ],
+        "evidence_zh": "黄界约455.5/1228.5，橙界约671.5/1200，中心约969像素；可见嵌套而非相加。"
+      },
+      {
+        "category": "5°C小区间",
+        "required_parts": [
+          "黄色外带",
+          "橙红内带",
+          "中心点"
+        ],
+        "relationship": "缩小后仍保持包含关系。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.918,
+          0.604,
+          0.943,
+          0.643
+        ],
+        "evidence_zh": "黄界约1218/1278，橙界约1245/1273，中心约1256像素；两层区域仍分开可见。"
+      },
+      {
+        "category": "3°C近零下界",
+        "required_parts": [
+          "2%黄色下界",
+          "7%橙红下界",
+          "零轴",
+          "沙面"
+        ],
+        "relationship": "两下界依次接近零轴。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.595,
+          0.625,
+          0.621,
+          0.639
+        ],
+        "evidence_zh": "线序仍可追踪，但2%仅距零轴约4像素，精细距离证据有限。"
+      },
+      {
+        "category": "近景大人物",
+        "required_parts": [
+          "头身",
+          "背包",
+          "腿脚",
+          "沙面与阴影",
+          "图带"
+        ],
+        "relationship": "背包附着躯干，脚触沙面；人物在填充前，定量线叠在人物上。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.87,
+          0.586,
+          0.929,
+          0.733
+        ],
+        "evidence_zh": "蓝衣人物头身、背包、脚和向右延伸的阴影清楚，保留场景叠合关系。"
+      },
+      {
+        "category": "较小人物",
+        "required_parts": [
+          "头",
+          "躯干",
+          "双腿",
+          "沙面"
+        ],
+        "relationship": "头身相连，双腿接向沙面，与大人物同处行进队列。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.75,
+          0.608,
+          0.774,
+          0.661
+        ],
+        "evidence_zh": "小人物仍可辨头、身体和腿脚；中心线横过上身但未消除结构，人数不编码。"
+      },
+      {
+        "category": "0°C共同锚点",
+        "required_parts": [
+          "两层区间端部",
+          "中心点",
+          "零轴"
+        ],
+        "relationship": "区间和中心线共同收束于零。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.111,
+          0.628,
+          0.126,
+          0.642
+        ],
+        "evidence_zh": "左端汇合于x≈235、y≈1271，并有0% anchor标注。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入明确采用合成情景，允许当前数据改变峰值、走势及非数据人物姿态。",
+      "output_added_or_lost_meaning_zh": "当前统计角色保留；峰后收窄说明符合数据。原庇护申请论述不再出现，属于许可主题改编。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Synthetic Warming Scenarios；Scenario value (%)；Temperature rise (°C)；上下界行名；Nominal coverage；Intervals are nested, not stacked；traveler count does not encode data。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "冻结输入许可合成主题替代原庇护申请统计。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "峰后下降与区间收窄符合当前数据。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "2%和−1%距零轴仅约4和2像素，小值相对精度有限。"
+      },
+      {
+        "cause": "none",
+        "evidence_zh": "未发现额外语义遗漏；局部标签遮挡已单列轻微问题。"
+      }
+    ],
+    "measurement_coverage_zh": "18处像素测量覆盖五系列各自的大值、内部值和最小正值，另含两个负界及共同零锚点；追加1处遮挡节点的不可测记录。其余节点未逐一反演，但全部六类别、五系列及30个数值文字已核对。"
+  }
+}

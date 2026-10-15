@@ -1,0 +1,304 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为室外深色墙面上的纸条柱，纸面接缝、阴影、草地和树木可见；右侧部分柱受植物遮挡。待评图保留室外墙、草地、纸面纹理和投影；Site A–K共11类，H最高，J/K等高，E/F/I紧贴零线呈极薄标记。当前中文标题、Synthetic rate (%)、SYNTHETIC DATA和各地点独立比较/不构成100%分配说明可读。F的纸面及贴墙关系在全图中难辨，需要原始分辨率核查。",
+  "summary_zh": "数据、标签绑定和共同线性尺度符合冻结要求，生成的墙面与纸张素材实质可见。微小纸柱的材质和贴墙关系仅部分可辨，属于数值缩小与分辨率限制；未发现重大可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "原图为2000×1316。直接读取最终RGB像素：0%与100%刻度约在y=1110、310，量程800px，即8px/百分点。以纸面绿色与墙面灰色的差异定位边界，排除文字及投影。大中柱记录整像素着色支持范围；含部分覆盖的顶行会使该范围略大于净高，换算误差约在0.125个百分点以内。源码的连续高度公式仅作旁证，未作为像素测量。",
+  "uncertainties_zh": "F仅一行部分着色，无法凭硬边界独立恢复其亚像素净高；E/I同样受抗锯齿影响，未声称小值相对精度。参考图没有清晰的指标标题，旧统计的具体含义不确定。已核查素材可见使用和几何代码，未核验生图调用及逐次capture归档历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Site A–K共11个类别按输入顺序出现，单系列Synthetic rate、百分比单位、0–100%刻度、当前标题及SYNTHETIC DATA均齐全；各类有非零纸面或细线。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项核对11个柱上数值，与data.json一致，包含全部给定小数；F标为0.104%，H为52%，J/K均为13.06869527%，没有正值归零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各类别位于对应纸柱中心下方，数值位于同一中心线上方；G/H的高柱、E/F/I的细线及J/K等高柱均与标签正确对应。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同量程800px；H实测416px=52%，G约209px、J/K约105px、A约53px，均符合3个百分点容差。其余柱支持行数与数据顺序相符；最小F为一行部分覆盖，精细相对误差保留不确定。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png墙面及raw_02.png纸张原素材，其墙砖、户外边缘、纸纤维与横向折缝在成图中实质可见。prepare_assets.py与render.py将这些素材用于墙和数据柱；代码按11项数据控制数量、净高及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "大中纸柱位于墙前，实心纸面遮住墙纹，纸边右下方有落在墙面的暗影；纸面顶边和共同底边承担数据长度。墙面接近正视，未见破坏读数的透视、遮挡或层序错误。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下标题、11个类别及数值、轴刻度、单位和底部口径说明均可读。J/K数值虽相邻，仍分开并各自对中；没有必需文字被裁切或植物遮挡。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "H/G及J/K保留有纤维、折缝的纸面、纸边、墙面与投影关系；A也可辨纸面贴墙。E/F/I仅约1–4行像素，不能完整辨认独立纸面及投影关系，整体墙面纸柱结构仍保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "当前标题、Synthetic rate (%)、11个合成地点及独立比较说明共同表达主题、指标、单位和类别角色；底部明确各项独立、不构成100%分配，未误作组成或时间累计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考的地点百分比比较与纸柱贴墙融合；真实城市标签改为合成Site A–K属于冻结输入允许的主题适配。参考无清晰指标标题，不能据此要求恢复未知旧指标或旧峰值。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "E、F、I的非零绿色细线及对应数值可见；F在原图只有一行部分着色像素，纸纤维、折缝、厚度与投影无法分辨。数值文字正确不等于已验证亚像素几何精度。"
+    }
+  },
+  "semantic_attribution_zh": "真实城市统计改为合成地点比例是冻结输入的明确适配，不是输出语义遗漏。当前主题、百分比指标和独立比较角色均有可见文字。纸柱变短来自当前数据；最小柱的部件关系减弱归因于分辨率限制。参考旧指标的具体解释缺少可见证据。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Site F",
+        "expected_value": 0.104,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.501,
+          0.842705,
+          0.554,
+          0.843465
+        ],
+        "evidence_zh": "最终像素在x=1002–1107、y=1109形成非零绿色细线；中央60px带的中位G−B约17，邻近墙纹约0。",
+        "uncertainty_zh": "仅一行部分覆盖，不把1px支持范围等同于1px实心净高；观察值和误差留空。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Site H",
+        "expected_value": 52,
+        "observed_value": 52,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 416,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.651,
+          0.527356,
+          0.704,
+          0.843465
+        ],
+        "evidence_zh": "直接定位纸面为x=1302–1407、y=694–1109，共416行；416/800×100=52%。",
+        "uncertainty_zh": "边界定位约有1px的保守误差；不计墙上投影。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Site G",
+        "expected_value": 26.06860476,
+        "observed_value": 26.125,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 209,
+        "full_scale_error_percent": 0.05639524,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.576,
+          0.68465,
+          0.629,
+          0.843465
+        ],
+        "evidence_zh": "纸面着色支持从y=901到1109，共209行；按800px量程换算约26.125%。",
+        "uncertainty_zh": "顶行部分覆盖；该数为整像素支持范围的近似上界，实际净高略小，非精确亚像素读数。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Site J",
+        "expected_value": 13.06869527,
+        "observed_value": 13.125,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 105,
+        "full_scale_error_percent": 0.05630473,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.801,
+          0.763678,
+          0.854,
+          0.843465
+        ],
+        "evidence_zh": "着色支持为y=1005–1109，共105行；K同样为105行，与J等高。",
+        "uncertainty_zh": "顶行部分覆盖；近似读数的不确定度不超过约0.125个百分点。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Site A",
+        "expected_value": 6.55158946,
+        "observed_value": 6.625,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 53,
+        "full_scale_error_percent": 0.07341054,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.126,
+          0.803191,
+          0.179,
+          0.843465
+        ],
+        "evidence_zh": "着色支持为y=1057–1109，共53行；按共同量程换算约6.625%。",
+        "uncertainty_zh": "顶行只有部分覆盖；报告支持范围上界，不将其差值解释为真实净高偏差。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Site E",
+        "expected_value": 0.20745261,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.426,
+          0.841945,
+          0.479,
+          0.843465
+        ],
+        "evidence_zh": "纸面支持在y=1108–1109两行，首行较淡，末行呈完整纸色。",
+        "uncertainty_zh": "两行支持不等于两行实心净高；无法仅靠边界可靠恢复小值相对精度。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Site I",
+        "expected_value": 0.41381331,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 4,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.726,
+          0.840426,
+          0.779,
+          0.843465
+        ],
+        "evidence_zh": "y=1107–1109有三行明显纸色；y=1106还有较淡边缘，合计约四行支持。",
+        "uncertainty_zh": "首行颜色很弱，阈值法可能只计三行；亚像素净高及相对误差不作精确断言。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Site H（大值）",
+        "required_parts": [
+          "纸面",
+          "横向折缝",
+          "纸边",
+          "墙面",
+          "投影"
+        ],
+        "relationship": "纸面在墙前并遮挡墙纹；横缝处于纸面内部，右下投影落在墙上；顶边至共同零线的净高承载52%。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.646,
+          0.519757,
+          0.714,
+          0.851064
+        ],
+        "evidence_zh": "可见完整长纸面、纤维与数道横缝，右侧暗影贴近纸边；没有用投影延长数据高度。"
+      },
+      {
+        "category": "Site G / Site J（中间值）",
+        "required_parts": [
+          "实心纸面",
+          "纸边",
+          "墙面",
+          "投影"
+        ],
+        "relationship": "不同长度的纸面均从共同底边向上延伸，纹理被裁在各自柱面内，纸边与墙面有浅投影联系。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.571,
+          0.677052,
+          0.864,
+          0.851064
+        ],
+        "evidence_zh": "G约209px、J约105px；横向纸纹和贴墙关系可见，未发现材料纹理跨越柱面改变高度。"
+      },
+      {
+        "category": "Site A（较小值）",
+        "required_parts": [
+          "纸面",
+          "纸边",
+          "墙面"
+        ],
+        "relationship": "短纸面仍覆盖墙纹，下端接触共同零线，纸色区域本身承担长度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.123,
+          0.799392,
+          0.184,
+          0.849544
+        ],
+        "evidence_zh": "约53px高的纸面仍可辨纤维、左右边界和贴墙暗边；没有为保留长纸条外形而抬高。"
+      },
+      {
+        "category": "Site F（最小正值）",
+        "required_parts": [
+          "非零纸面区域",
+          "墙面",
+          "纸边或投影"
+        ],
+        "relationship": "细线位于共同零线紧上方；纸面与墙的独立层次只能从局部颜色变化确认，纸边和投影不能分开辨认。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.498,
+          0.838146,
+          0.558,
+          0.848784
+        ],
+        "evidence_zh": "只有一行部分着色像素，非零位置可辨，但不能从这一行读出纸纤维、折缝和接触阴影。"
+      },
+      {
+        "category": "Site E / Site I（微小值）",
+        "required_parts": [
+          "纸面区域",
+          "墙面",
+          "贴墙关系"
+        ],
+        "relationship": "两处细带仍在共同基线上方覆盖少量墙面；不足以完整呈现纸面、厚度与投影分层。",
+        "status": "partial",
+        "bbox_xyxy_normalized": null,
+        "evidence_zh": "E位于x=852–957、y=1108–1109；I位于x=1452–1557、y≈1106–1109。两个不相邻区域均保留非零细带，但纸质部件辨识有限。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结brief/core将原地点统计明确改为合成地点比例，要求当前11项数据及Synthetic rate (%)，允许随数据改变纸柱长度与非数据部件，不要求旧极值。",
+      "output_added_or_lost_meaning_zh": "输出没有丢失当前主题或统计角色，并明确说明各地点独立、不构成100%分配。旧真实城市名未保留属于输入适配；纸柱贴墙展示地点差异的关系保留。",
+      "visible_inscription_evidence_zh": "可见“室外墙面纸柱图：地点的合成比例”“Synthetic rate (%)”“SYNTHETIC DATA”“11个合成地点·各地点比例独立比较”“所有地点共用0–100%线性尺度”及底部独立比例口径。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原真实城市标签替换为Site A–K及合成比例由冻结输入规定；参考含义部分保留不归为生成器错误。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "H为当前最高52%，J/K等高13.06869527%；纸柱形状随当前数值变化，没有沿用参考的旧极值。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "共同800px量程下F的目标净高不足1px；成图只显示一行部分着色，微小纸质部件关系不可完整辨认。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "参考图可读城市名及百分比，但没有清晰指标标题，不能确定旧百分比的更具体统计含义或论点。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单系列、单一线性长度通道。详细记录最小F、微小E/I、较小A、中间J/G和最大H共7项；另检查B/C/D及K的像素支持和全体11项标签。没有把任何柱上数字单独当作几何证明，未测亚像素真实覆盖率或声称穷尽材料细节。"
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "verdict": "pass",
+  "confidence": 0.94,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为青绿色底上的20根金色啤酒杯柱，顶部有白色泡沫，人物集中在杯底附近，上方有瓶装注释，红色比较线横贯图面。指定成图显示Annual beer consumption、年度人均指标、L/person/year及SYNTHETIC DATA。Region A–T共20列，杯柱逐渐缩短，G/H及M/N分别等高。大杯可辨泡沫、金色液体和透明杯底；右端小值呈极薄横条。各列下方有数值和独立持杯人物。11个瓶装注释及Region U的48.6比较虚线可见，未见标签大面积遮挡。",
+  "summary_zh": "通过。数值、标签绑定及代表性杯高测量符合冻结要求。最小杯仍可见，但内部层次和亚像素精度不能充分确认。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量指定image.png原图2000×1540像素。可见150刻度线约y=300、零线约y=1100，因此800像素对应150 L/person/year。杯顶依据中央像素相对邻近背景的明显颜色变化定位，排除比较线；读数约有±1像素不确定性。误差来自成图像素测量，不是源码公式。T的2行着色覆盖不能直接等同于精确几何高度。",
+  "uncertainties_zh": "最小杯无法独立恢复亚像素高度或泡沫、杯底厚度。参考图仅606×466，人物与高杯的具体接触动作不完全清楚。按限制未检查日志、自检或历史记录，不能独立证明每次渲染均由capture_render.py调用。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "20个地区、20个数值、20个人物、11个瓶装注释及独立比较地区U均可见；主题、单位、合成声明和0–150刻度完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "20列数值与输入一致，包括重复值16.150684、2.596428及最小值0.2896；比较值48.6正确，没有正值被写成0。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A–T依输入顺序与杯柱、数值逐列对齐；11瓶依次绑定D、F、G、H、J、K、L、N、O、Q、S，颜色正确；U卡片连接比较虚线。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "A、D、G/H、J、L的像素高度抽测偏差均小于满量程0.1%；U比较线位置同样符合共同尺度。T仍有可见标记，但小值相对精度不作保证。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的杯材质、三色瓶和红衣人物在成图中实质可见；render.py控制完整杯高映射、比较线和文字。未执行渲染源码。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "完整杯体顶端至杯底承担数据高度，泡沫、液体与底部包含其中。人物和瓶明确为非数据。未见破坏解释的透视、遮挡或接缝问题。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、指标、单位和合成声明清楚；各类别显示REGION父类，旋转数值在原图可读，瓶装注释和比较说明完整。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "大、中杯保留泡沫在液体上方、杯壁包围液体、杯底接触零线的结构。最右端微小杯无法分别辨认全部部件，属于比例缩小后的分辨率限制。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题和副标题明确人均年度啤酒消费量及L/person/year；地区角色、独立比较项，以及瓶和人物不编码数值均有清晰说明。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "地区消费比较和杯体承载数值的关系保留。真实国家与品牌被输入改为合成标签。人物由杯底附近叠合改为下方独立持杯；参考的精确接触动作不清，且允许非数据姿态适配，不据此判重大缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "P–T仍可见逐渐变薄的色痕，T约有2行明显着色；没有膨胀最小值。其泡沫、液体和杯底无法独立辨认。"
+    }
+  },
+  "semantic_attribution_zh": "主题和指标没有丢失。合成地区与瓶号属于输入适配；杯形变扁由数据驱动；最小杯内部层次消失主要属于分辨率限制。人物动作关系仅部分保留，参考具体动作仍存在解释不确定性。未发现明确的必需语义遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_consumption",
+        "category": "Region A",
+        "expected_value": 144.8,
+        "observed_value": 144.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 772,
+        "full_scale_error_percent": 0.033333,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.083,
+          0.212987,
+          0.111,
+          0.714286
+        ],
+        "evidence_zh": "明显杯顶约y=328，杯底约y=1100，完整高度约772像素。",
+        "uncertainty_zh": "边缘阈值约±1像素。"
+      },
+      {
+        "series_id": "annual_consumption",
+        "category": "Region D",
+        "expected_value": 48.35927,
+        "observed_value": 48.375,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 258,
+        "full_scale_error_percent": 0.010487,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.212,
+          0.546753,
+          0.24,
+          0.714286
+        ],
+        "evidence_zh": "杯顶约y=842，至零线约258像素，略低于48.6比较虚线。",
+        "uncertainty_zh": "排除了附近红线像素；边缘约±1像素。"
+      },
+      {
+        "series_id": "annual_consumption",
+        "category": "Region G",
+        "expected_value": 16.150684,
+        "observed_value": 16.125,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 86,
+        "full_scale_error_percent": 0.017123,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.341,
+          0.658442,
+          0.369,
+          0.714286
+        ],
+        "evidence_zh": "杯顶约y=1014，与H同高。",
+        "uncertainty_zh": "约±1像素。"
+      },
+      {
+        "series_id": "annual_consumption",
+        "category": "Region H",
+        "expected_value": 16.150684,
+        "observed_value": 16.125,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 86,
+        "full_scale_error_percent": 0.017123,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.384,
+          0.658442,
+          0.412,
+          0.714286
+        ],
+        "evidence_zh": "杯顶约y=1014，与G同高。",
+        "uncertainty_zh": "约±1像素。"
+      },
+      {
+        "series_id": "annual_consumption",
+        "category": "Region J",
+        "expected_value": 7.774367,
+        "observed_value": 7.875,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 42,
+        "full_scale_error_percent": 0.067089,
+        "small_value_relative_error_percent": 1.294,
+        "bbox_xyxy_normalized": [
+          0.47,
+          0.687013,
+          0.498,
+          0.714286
+        ],
+        "evidence_zh": "明显杯顶约y=1058，杯高约42像素。",
+        "uncertainty_zh": "±1像素约对应目标值的2.4%；相对误差仅为近似读数。"
+      },
+      {
+        "series_id": "annual_consumption",
+        "category": "Region L",
+        "expected_value": 3.742305,
+        "observed_value": 3.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 20,
+        "full_scale_error_percent": 0.00513,
+        "small_value_relative_error_percent": 0.206,
+        "bbox_xyxy_normalized": [
+          0.556,
+          0.701299,
+          0.584,
+          0.714286
+        ],
+        "evidence_zh": "明显杯顶约y=1080，杯高约20像素。",
+        "uncertainty_zh": "±1像素约相当于目标高度的5%；接近零的估计偏差不代表高精度。"
+      },
+      {
+        "series_id": "annual_consumption",
+        "category": "Region T",
+        "expected_value": 0.2896,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.9,
+          0.712338,
+          0.928,
+          0.714935
+        ],
+        "evidence_zh": "中央y=1098、1099两行明显着色，邻行存在抗锯齿混色；0.2896文字可读。",
+        "uncertainty_zh": "2像素是可见覆盖范围，不是可唯一恢复的几何高度，量值及误差留空。"
+      },
+      {
+        "series_id": "annual_consumption",
+        "category": "Region U (comparison)",
+        "expected_value": 48.6,
+        "observed_value": 48.65625,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 259.5,
+        "full_scale_error_percent": 0.0375,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.755,
+          0.545455,
+          0.7825,
+          0.546753
+        ],
+        "evidence_zh": "红线占y=840–841，中点约840.5，距零线约259.5像素。",
+        "uncertainty_zh": "约±1像素；长度表示至零线的距离，不是线条粗细。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Region A（大杯）",
+        "required_parts": [
+          "顶部泡沫",
+          "金色液体",
+          "玻璃杯壁",
+          "杯底",
+          "共同零线"
+        ],
+        "relationship": "泡沫接在液体上方，杯壁包围液体，杯底承接杯体并接触零线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.083,
+          0.212987,
+          0.111,
+          0.714286
+        ],
+        "evidence_zh": "泡沫、金色液体和透明底均可辨，完整外轮廓承载高度。"
+      },
+      {
+        "category": "Region L（较小杯）",
+        "required_parts": [
+          "浅色泡沫边",
+          "金色主体",
+          "玻璃底缘"
+        ],
+        "relationship": "浅色上缘在金色主体之上，底缘接触零线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.556,
+          0.701299,
+          0.584,
+          0.714286
+        ],
+        "evidence_zh": "约20像素杯体仍可辨上缘、金色中段及下缘。"
+      },
+      {
+        "category": "Region T（最小杯）",
+        "required_parts": [
+          "泡沫",
+          "金色液体",
+          "杯底"
+        ],
+        "relationship": "三者应包含于同一极小杯高，实际只能辨认连续薄色痕。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.9,
+          0.712338,
+          0.928,
+          0.714935
+        ],
+        "evidence_zh": "约2行明显着色，无法独立识别三层部件；未人为增高。"
+      },
+      {
+        "category": "人物、瓶装注释和比较线",
+        "required_parts": [
+          "持杯人物",
+          "三色瓶",
+          "瓶颈与瓶身",
+          "Region U虚线及卡片"
+        ],
+        "relationship": "人物手持小杯，瓶颈连接瓶身，瓶号与地区配对；比较虚线连接说明卡片。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.072,
+          0.187013,
+          0.948,
+          0.923377
+        ],
+        "evidence_zh": "20名人物及11瓶均在；红线位于杯体后方，未切断杯柱边界。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入明确使用合成地区和瓶号，保留年度人均啤酒消费主题；人物姿态及非数据尺寸允许适配。",
+      "output_added_or_lost_meaning_zh": "年度人均量、统一尺度、合成性质及独立比较地区保留。人物从杯底叠合改为独立持杯，动作联系仅部分保留；参考具体饮用接触无法可靠确定。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Annual beer consumption；Annual consumption per person · L/person/year；20 REGIONS；REGION A–T；Illustrative bottles · sizes do not encode consumption；Region U · 48.6 L/person/year；Comparison outside the 20 regions。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实国家与品牌被冻结输入替换为合成地区及瓶号。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "144.8至0.2896的数值跨度使杯体由长柱变为扁形。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小杯只有约2行明显着色，内部部件与亚像素高度不可独立辨认。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "低分辨率参考可见人物与杯底叠合，但精确握持或饮用动作不清。"
+      }
+    ],
+    "measurement_coverage_zh": "抽测单一线性高度通道中的A、D、G、H、J、L、T，覆盖大值、中间项、等值对和最小正值，另测比较线U。其余杯检查顺序、共同基线及等高关系，未宣称逐杯精密测量。20个数值、类别、11个瓶装注释及比较文字另作完整核对。"
+  }
+}

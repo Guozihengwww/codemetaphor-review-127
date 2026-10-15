@@ -1,0 +1,280 @@
+{
+  "verdict": "fail",
+  "confidence": 0.94,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图有11条同心彩虹弧带，底部白云遮住左下弧段，年份和金额由引线标注。成图标题、SYNTHETIC DATA、十亿美元单位及2005—2015全部数值可读；弧带由内向外排列，起点在同一水平线。底部云与部分弧根之间似有间隙，顶部刻度文字疑似重叠。上述观察已在读取源码前保存。",
+  "summary_zh": "已保存并通过schema校验的review.json。数值、绑定及扫角映射通过；主要缺陷是未保留前景云遮住彩虹弧根的关系。另有刻度重叠、弧长说明不严谨两项轻微问题。",
+  "issues": [
+    {
+      "category": "occlusion_layering",
+      "severity": "major",
+      "requirement_id": "M3",
+      "expected_zh": "保留参考图底部云在前、彩虹弧根进入云后的接触和遮挡关系。",
+      "observed_zh": "弧带在y约1370处平直截断；多条外侧弧根悬在云上方，内侧弧根覆盖后方云面，未形成前景云遮挡。",
+      "evidence_zh": "2000×1844原图中，2015弧根在x约140、y1370结束，云轮廓到y约1411才出现，间隙约41像素；2014、2013、2012、2011对应位置的间隙约25、34、48、51像素。源码佐证：背景云先于弧带合成，前景云的不透明顶部映射至y约1371。",
+      "bbox_xyxy_normalized": [
+        0.06,
+        0.714,
+        0.313,
+        0.784
+      ]
+    },
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "支出刻度数值与说明可分别辨读。",
+      "observed_zh": "顶部13刻度与“支出刻度”重叠，年度数据标签不受影响。",
+      "evidence_zh": "x约920—1001、y约440—468出现叠印；源码确认两段文字均以约(960,454)为中心。",
+      "bbox_xyxy_normalized": [
+        0.459,
+        0.238,
+        0.501,
+        0.254
+      ]
+    },
+    {
+      "category": "other",
+      "severity": "minor",
+      "requirement_id": "M2",
+      "expected_zh": "金额由扫角解释，跨半径的像素弧长不是统一量尺。",
+      "observed_zh": "中央说明写“弧越长，年度支出越高”；页脚另有正确扫角公式。",
+      "evidence_zh": "2014中心线弧长约1888像素、金额20.2；2013约1811像素、金额20.6。前者更长但金额更小，实际扫角仍正确。",
+      "bbox_xyxy_normalized": [
+        0.548,
+        0.612,
+        0.696,
+        0.629
+      ]
+    }
+  ],
+  "measurement_notes_zh": "直接读取image.png像素，以可见刻度定位圆心约(959.5,1370)，用横截面色段估计半径，沿中心线测起止角，再按26×扫角/180反算。详细样本满量程误差约0.03%—0.06%，低于3%。mark_extent_px为中心线像素弧长，仅描述尺寸。未采用渲染器自检结果。允许调整非数据云层，未发现数值约束与遮挡要求不兼容。",
+  "uncertainties_zh": "抗锯齿、取色阈值及约1像素定位误差使反算值有约±0.05十亿美元不确定性；云轮廓约有2—3像素不确定性。未查阅禁止的运行日志或历史归档，不能确认每轮实际执行capture_render.py。参考未明示的具体节日与统计总体不作推断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11条弧及2005—2015全部年度齐全，标题、合成声明、单位和单系列年度口径均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "11.8、13.1、14.6、14.9、13.3、13.6、16.2、18.4、20.6、20.2、21.6逐项正确；最高值及回落年度说明准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年度和金额直接标在对应弧带内，由内到外2005→2015，未见错配。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "同心、等宽、共起始方向；代表性像素测量符合0—26线性扫角映射，误差远低于3%满量程。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始云素材，成图实质使用其纸纹和云团轮廓；源码加载素材并控制数据几何、数量及文字。历史归档执行情况未核查。"
+    },
+    "integration": {
+      "status": "fail",
+      "evidence_zh": "云素材可见，但多条弧根悬空、内侧弧压在后云上，未实现M3要求的前景云遮弧根关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需标题、11组标签、单位、合成声明和口径可读；顶部13刻度有局部重叠。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "同心彩虹、云团和端点保留，彩色弧带承载数值；弧根进入前景云的关键叠合关系丢失。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "年度合成礼物支出、年份类别、十亿美元单位及非真实统计身份明确；页脚明确扫角编码。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "母亲金钱心意主题由冻结输入适配为年度合成礼物支出，不要求原21B或旧增长论断；此变化不归为输出失败。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值2005弧带约513像素长、38像素宽，弧体、端点和标签清楚；云接触问题另计结构缺陷。"
+    }
+  },
+  "semantic_attribution_zh": "主题与旧统计变化属于允许的输入适配，扫角变化由当前数据驱动。弧根遮挡关系缺失、顶部叠印及弧长措辞来自输出安排，不由微小值或分辨率限制导致。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "gift_spending",
+        "category": "2005",
+        "expected_value": 11.8,
+        "observed_value": 11.7841,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 512.8,
+        "full_scale_error_percent": 0.0613,
+        "small_value_relative_error_percent": 0.135,
+        "bbox_xyxy_normalized": [
+          0.29,
+          0.539,
+          0.456,
+          0.744
+        ],
+        "evidence_zh": "最小正值；像素估计半径360.1、扫角81.582°；标注11.8。",
+        "uncertainty_zh": "反算值约±0.05十亿美元；相对误差不代表亚像素精度保证。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2010",
+        "expected_value": 13.6,
+        "observed_value": 13.5925,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 969.2,
+        "full_scale_error_percent": 0.0288,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1747,
+          0.4118,
+          0.5112,
+          0.7435
+        ],
+        "evidence_zh": "内部年度；像素估计半径590.1、扫角94.102°；标注13.6。",
+        "uncertainty_zh": "反算值约±0.05十亿美元；非最小值，不单列小值相对误差。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2013",
+        "expected_value": 20.6,
+        "observed_value": 20.5908,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1811.4,
+        "full_scale_error_percent": 0.0352,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1057,
+          0.337,
+          0.7793,
+          0.7435
+        ],
+        "evidence_zh": "较大值；像素估计半径728.1、扫角142.552°；标注20.6。",
+        "uncertainty_zh": "反算值约±0.05十亿美元；弧长仅作尺寸记录。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2014",
+        "expected_value": 20.2,
+        "observed_value": 20.187,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1888.1,
+        "full_scale_error_percent": 0.0501,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.0827,
+          0.3121,
+          0.7858,
+          0.7435
+        ],
+        "evidence_zh": "回落样本；像素估计半径774.1、扫角139.756°，小于2013；标注20.2。",
+        "uncertainty_zh": "反算值约±0.05十亿美元；横截面取主连续色段，排除相邻边缘混色。"
+      },
+      {
+        "series_id": "gift_spending",
+        "category": "2015",
+        "expected_value": 21.6,
+        "observed_value": 21.5898,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 2139.3,
+        "full_scale_error_percent": 0.0391,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.0597,
+          0.2871,
+          0.8435,
+          0.7435
+        ],
+        "evidence_zh": "最大值；像素估计半径820.1、扫角149.468°；标注21.6。",
+        "uncertainty_zh": "反算值约±0.05十亿美元；细描边及抗锯齿影响边界取色。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "2005：最小值",
+        "required_parts": [
+          "紫色弧带",
+          "内嵌端点",
+          "前景云层"
+        ],
+        "relationship": "弧体连续、端点位于弧内，起始端应进入前景云后。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.28,
+          0.535,
+          0.46,
+          0.775
+        ],
+        "evidence_zh": "弧和端点清楚，但x约600、y1370的弧根平直结束并覆盖后方云面。"
+      },
+      {
+        "category": "2015：最大值",
+        "required_parts": [
+          "红色弧带",
+          "内嵌端点",
+          "底部云层"
+        ],
+        "relationship": "红弧延伸至值端，起始弧根应与前景云接触并位于其后。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.055,
+          0.285,
+          0.846,
+          0.79
+        ],
+        "evidence_zh": "红弧及端点完整；x约140的弧根与云轮廓之间有约41像素间隙。"
+      },
+      {
+        "category": "整体年度结构",
+        "required_parts": [
+          "11条等宽弧带",
+          "共同起始方向",
+          "年度环序",
+          "支出刻度"
+        ],
+        "relationship": "共享圆心和起始方向，以半径区分年度，以扫角边界承载金额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.034,
+          0.258,
+          0.93,
+          0.756
+        ],
+        "evidence_zh": "各弧约38像素宽，年度由内向外排列；未见透视失配或端点圆点扩大扫角。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "参考母亲金钱心意主题明确适配为年度合成礼物支出，当前数据覆盖原值及旧走势。",
+      "output_added_or_lost_meaning_zh": "年度金额比较和合成统计身份保留；云遮弧根的结构丢失，中央弧长说明与实际扫角编码不完全一致。",
+      "visible_inscription_evidence_zh": "标题、SYNTHETIC DATA、年度礼物支出、USD billion、2005→2015、扫角公式及单系列非真实统计口径均可见。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "母亲角色及原真实统计改为合成礼物支出是冻结输入的适配。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "不同扫角及2009、2014回落由当前数据支持。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "前景云遮弧根关系缺失；弧体足够大，不能归因于小值或分辨率。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "未依据参考母亲文字推断未写明的节日或统计总体。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单系列、一个扫角通道。筛查11条弧，详细记录最小值、内部值、最大值及2013/2014回落对照；其余6年不另列详细测量表。全部11组标签、数量和单位另行逐项核对，大小实例均检查部件关系。"
+  }
+}

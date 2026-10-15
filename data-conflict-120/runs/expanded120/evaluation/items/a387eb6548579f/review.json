@@ -1,0 +1,308 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：三时间带内的红柱从零线向下，德国标志位于较高左盘，中国标志位于较低右盘，天平叠置于图表下部。待评图：32个年度标签及对应负柱可见，首柱−38.2最长，末柱−1.7最短；共同纵轴为0至−40。逐柱数值、十亿EUR单位、净额定义和SYNTHETIC DATA均可见。天平双球接触托盘，梁、支点、支架和底座连续，未见遮住数据柱端。底部显示逆差绝对值减少95.5%及期间未单调变化。",
+  "summary_zh": "评审通过。32个年度、数值和单位完整，柱长符合共同线性尺度，天平部件及图内叠置关系保留。已保存并通过schema校验的review.json；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量2000×2000原图：零线y≈666，−40网格线y≈1576，满量程约910像素。检测到32个红柱段，沿柱侧内缘测量底边并按−40×柱长/910换算，避开文字。边界保守不确定度约±1像素，即±0.044十亿EUR；源码公式仅作旁证。",
+  "uncertainties_zh": "最小柱的±1像素边界不确定度约对应±2.6%相对不确定度，不能据此保证亚像素精度。按限制未查看日志、自检或归档记录，无法独立确认每次渲染均经capture_render.py归档。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "1990—2021共32年、32柱和32个逐柱数值完整；三个时间带分别覆盖11、10、11年。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "32个数值与输入一致；首末年−38.2→−1.7正确，减少95.5%符合95.5497%保留一位小数。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "年份与对应柱中心对齐，数值位于同柱内或紧邻底端；两国文字邻接正确国旗球。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "32柱共用零线并向下延伸，像素扫描所得最大满量程偏差约0.028%，低于3%；最大柱约869像素，最小柱约38.5像素。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png和balance_scale.png中的主体细节实质用于成图；render.py读取数据并控制柱长、顺序和文字。归档执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "球接触托盘，托盘连接倾斜梁，中心支点连接支架与底座；天平覆盖底层网格但不遮挡柱端或数值。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、系列、单位、净额定义、轴刻度及全部年份和数值在原尺寸可辨，无明显重叠或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "双球—双盘—倾斜梁—支点—支架—底座连续，左高右低；保留参考图内叠置关系。实际数据边界是红柱底边，天平不是第二数值尺度。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "合成贸易差额、年度角色、净额=出口−进口及十亿EUR单位明确；期间有波动、未单调变化的说明符合当前序列。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留德中贸易失衡和倾斜天平寓意；原参考关于对华依赖达到新高的论点被允许的合成主题及当前走势替换，不构成输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "2021年最短柱约36像素宽、38.5像素长，零线连接、底边和外置−1.7清楚；2018年约52.5像素长，同样可辨。"
+    }
+  },
+  "semantic_attribution_zh": "原真实统计和旧论点的替换属于允许的输入适配；首末逆差缩小由当前数据驱动。未发现输出语义遗漏。参考采用天平叠置柱图，不要求逐柱与托盘物理融合；倾角明确不编码数值。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "balance",
+        "category": "1990",
+        "expected_value": -38.2,
+        "observed_value": -38.198,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 869,
+        "full_scale_error_percent": 0.0052,
+        "small_value_relative_error_percent": 0.005,
+        "bbox_xyxy_normalized": [
+          0.0945,
+          0.333,
+          0.1125,
+          0.7675
+        ],
+        "evidence_zh": "最大柱底边y≈1535，零线y≈666，长度约869像素。",
+        "uncertainty_zh": "边界约±1像素，换算值为近似值。"
+      },
+      {
+        "series_id": "balance",
+        "category": "1997",
+        "expected_value": -5.8,
+        "observed_value": -5.802,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 132,
+        "full_scale_error_percent": 0.0058,
+        "small_value_relative_error_percent": 0.04,
+        "bbox_xyxy_normalized": [
+          0.2835,
+          0.333,
+          0.3015,
+          0.399
+        ],
+        "evidence_zh": "第一时间带较短柱底边y≈798，长度约132像素。",
+        "uncertainty_zh": "边界约±1像素，外置文字未计入柱长。"
+      },
+      {
+        "series_id": "balance",
+        "category": "2003",
+        "expected_value": -27.8,
+        "observed_value": -27.802,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 632.5,
+        "full_scale_error_percent": 0.006,
+        "small_value_relative_error_percent": 0.009,
+        "bbox_xyxy_normalized": [
+          0.4455,
+          0.333,
+          0.4635,
+          0.64925
+        ],
+        "evidence_zh": "中部较大柱底边y≈1298.5，长度约632.5像素，未被天平遮挡。",
+        "uncertainty_zh": "边界约±1像素，颜色覆盖仅用于估计抗锯齿边缘。"
+      },
+      {
+        "series_id": "balance",
+        "category": "2009",
+        "expected_value": -6.6,
+        "observed_value": -6.593,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 150,
+        "full_scale_error_percent": 0.0165,
+        "small_value_relative_error_percent": 0.1,
+        "bbox_xyxy_normalized": [
+          0.6075,
+          0.333,
+          0.6255,
+          0.408
+        ],
+        "evidence_zh": "第二时间带内部短柱底边y≈816，长度约150像素。",
+        "uncertainty_zh": "边界约±1像素；侧缘量测避开白色数字。"
+      },
+      {
+        "series_id": "balance",
+        "category": "2018",
+        "expected_value": -2.3,
+        "observed_value": -2.308,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 52.5,
+        "full_scale_error_percent": 0.0197,
+        "small_value_relative_error_percent": 0.343,
+        "bbox_xyxy_normalized": [
+          0.8505,
+          0.333,
+          0.8685,
+          0.35925
+        ],
+        "evidence_zh": "第三时间带内部小柱底边y≈718.5，长度约52.5像素，矩形边界独立可辨。",
+        "uncertainty_zh": "±1像素约占柱长1.9%，相对误差估计不代表亚像素精度。"
+      },
+      {
+        "series_id": "balance",
+        "category": "2021",
+        "expected_value": -1.7,
+        "observed_value": -1.6925,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 38.5,
+        "full_scale_error_percent": 0.0187,
+        "small_value_relative_error_percent": 0.441,
+        "bbox_xyxy_normalized": [
+          0.9315,
+          0.333,
+          0.9495,
+          0.35225
+        ],
+        "evidence_zh": "最小非零幅度柱底边y≈704.5，长度约38.5像素；外置−1.7不计入几何。输入均为负值，无正值柱。",
+        "uncertainty_zh": "±1像素约对应2.6%相对不确定度。"
+      },
+      {
+        "series_id": "endpoint_absolute_deficit_reduction",
+        "category": "1990→2021",
+        "expected_value": 95.54973821989527,
+        "observed_value": 95.5,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.489,
+          0.879,
+          0.621,
+          0.911
+        ],
+        "evidence_zh": "95.5%由(38.2−1.7)/38.2×100保留一位小数得到，是首末变化率而非构成份额。",
+        "uncertainty_zh": "仅文字编码，没有对应数量几何。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "1990最大柱",
+        "required_parts": [
+          "零线",
+          "年度标签",
+          "红柱",
+          "数值标签"
+        ],
+        "relationship": "柱顶接零线，矩形向下延伸，底边编码净额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.093,
+          0.294,
+          0.114,
+          0.769
+        ],
+        "evidence_zh": "1990在首柱上方，−38.2位于柱内底部，边界连续且无遮挡。"
+      },
+      {
+        "category": "2021最小柱",
+        "required_parts": [
+          "零线",
+          "年度标签",
+          "短红柱",
+          "外置数值"
+        ],
+        "relationship": "短柱接零线，向下伸出可辨矩形，数值邻接底端。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.93,
+          0.294,
+          0.952,
+          0.394
+        ],
+        "evidence_zh": "2021、约38.5像素短柱和−1.7沿同一中心排列，柱顶与底边关系保留。"
+      },
+      {
+        "category": "德国球与左盘",
+        "required_parts": [
+          "德国国旗球",
+          "左盘",
+          "盘下短柱",
+          "倾斜梁"
+        ],
+        "relationship": "球接触盘内表面，盘通过短柱连接较高左梁端。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.534,
+          0.535,
+          0.655,
+          0.651
+        ],
+        "evidence_zh": "黑红黄球坐于盘内，前盘沿遮住球底，盘下连接连续。"
+      },
+      {
+        "category": "中国球与右盘",
+        "required_parts": [
+          "中国国旗球",
+          "右盘",
+          "盘下短柱",
+          "倾斜梁"
+        ],
+        "relationship": "球接触较低右盘，盘通过短柱连接右梁端。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.825,
+          0.605,
+          0.944,
+          0.714
+        ],
+        "evidence_zh": "一大四小黄星可辨，球底被前盘沿适当遮挡，盘下短柱连接梁端。"
+      },
+      {
+        "category": "支点、底座与图内叠置",
+        "required_parts": [
+          "倾斜梁",
+          "圆形支点",
+          "三角支架",
+          "底座",
+          "年度柱图"
+        ],
+        "relationship": "梁经支点连接支架，支架接触底座；整体叠置于柱图留空区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.534,
+          0.534,
+          0.944,
+          0.789
+        ],
+        "evidence_zh": "梁左高右低，圆轴和三角架连接连续；底座靠近−40网格线。遮挡仅涉及底层网格，保留参考叠置关系。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入要求合成贸易差额替代原真实统计，不要求保留旧极值或依赖加深论点。",
+      "output_added_or_lost_meaning_zh": "年度净差额、负值含义和德中失衡寓意保留；新增首末减少95.5%说明准确，未发现额外语义损失。",
+      "visible_inscription_evidence_zh": "可读“合成贸易差额”“Synthetic trade balance”“净额=出口−进口”“十亿EUR / billion EUR”“每柱为一个年度”“天平倾角不编码数值”和“非真实德中贸易统计”。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成声明明确，旧真实统计与依赖新高论点的替换来自冻结输入。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "最长柱为1990年−38.2，末年最短为−1.7，符合当前数据。"
+      },
+      {
+        "cause": "none",
+        "evidence_zh": "未见输出遗漏导致的结构或语义丢失，最小柱仍保留可辨矩形边界。"
+      }
+    ],
+    "measurement_coverage_zh": "像素扫描覆盖单系列32/32柱，详细列出6根，覆盖三个时间带、最大幅度、最小非零幅度及内部值；全部年份和数值另作可见核对。底部变化率为文字编码，天平倾角不作数值量测。"
+  }
+}

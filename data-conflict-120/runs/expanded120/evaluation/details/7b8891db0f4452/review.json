@@ -1,0 +1,306 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以相连的深蓝西装袖、浅色袖口、腕表、前臂和右向拳头替代横条，末行无手臂。待评图的SYNTHETIC DATA、男性提名者部门占比主题、六个部门及百分比均清楚可读。A、B部件连接可见；C仍有小型袖与拳轮廓；D为极小短标记；E近似微点，部件不可辨；F未见手臂。横轴和读图说明完整，未见标签遮挡或明显错行。以上观察已在读代码前保存。",
+  "summary_zh": "通过。数值、顺序、标签绑定、主题和单位正确，手臂跨度符合满量程容差，零值未画手臂。微小标记存在部件可辨性及连续端点精度限制，未发现重大可见缺陷。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量指定image.png的原始1900×2000像素。图中0与100刻度位于x≈480、1800，满量程1320px。以同图空白绘图区的逐列背景扣除网格，再按RGB最大通道差16定位物体像素包围盒，并比较4–48阈值。A–D观测值是像素最右外边缘跨度的换算值，不是连续轮廓的精确恢复。未运行渲染或采用生成器自检结果。",
+  "uncertainties_zh": "抗锯齿使端点约有1px不确定性，对E的2.5344px预期跨度影响显著。D、E的腕表及袖口关系无法在原始分辨率独立辨清。已查阅capture_render.py源码，但未核验执行日志或渲染历史，不能证明所有完整渲染均经该脚本保存。未推断参考图作者的进一步政治意图。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Department A–F六类按输入顺序齐全，五个正值行有物体像素，F保留类别及0%而无手臂，单一系列完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "96.0%、20.301528%、4.293251%、0.907912%、0.192%、0%逐项与输入一致，正值未舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "部门名称、百分比与相应行手臂对齐，A至E依次缩短，F为空，无错行或串绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "A–D像素跨度约1268、268、57、12px，换算值最大满量程差约0.061个百分点，低于3个百分点。E仅有2–3列像素，连续端点不确定，未见超容差扩张；F为0px。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png和arm_master.png的布纹、袖扣、袖口、腕表及拳头轮廓与图中主体吻合。render.py读取该素材，并由输入值控制总跨度和文字；执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "手臂本身从共同零点延伸至拳头最右实体，直接替代横条。部件处于连续轮廓内，网格在主体后方，未见破坏连接的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "合成声明、主题、副题、六类及数值、指标单位、刻度和读图说明均清晰完整，无必需文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "A、B完整呈现袖接袖口、前臂通向拳头、腕表覆盖腕部。C保留袖与拳形；D、E约12×7及3×2px，不能逐部件验证。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题及副题明确每个部门提名者中男性的比例，部门类别、男性提名者角色和%单位齐全，没有把部门间占比表述成总和100%的组成。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留男性提名者指标及西装手臂替代横条的关系。总统及具名政府部门改为合成部门属于输入明确允许的主题改编，不作为生成缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "C仍可见袖与拳；D只保留短小颜色轮廓；E有非背景像素，但无法识别五个部件。文字准确不能证明微型部件关系或连续几何精度。"
+    }
+  },
+  "semantic_attribution_zh": "当前统计语义完整。政治主体改为合成部门归于输入允许的改编；袖长和厚度变化归于数据驱动适配；D、E部件难辨及E端点不确定归于分辨率限制。没有证据表明必需主题被输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department A",
+        "expected_value": 96,
+        "observed_value": 96.060606,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1268,
+        "full_scale_error_percent": 0.060606,
+        "small_value_relative_error_percent": 0.063131,
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.2765,
+          0.92,
+          0.344
+        ],
+        "evidence_zh": "阈值4–32均为1268px，48为1267px；预期1267.2px。",
+        "uncertainty_zh": "右端抗锯齿约1px，观测值仅为像素外边缘换算。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department B",
+        "expected_value": 20.301528,
+        "observed_value": 20.30303,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 268,
+        "full_scale_error_percent": 0.001502,
+        "small_value_relative_error_percent": 0.0074,
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.3835,
+          0.393684,
+          0.427
+        ],
+        "evidence_zh": "阈值4–48跨度均为268px；预期267.980170px。",
+        "uncertainty_zh": "约1px栅格边界不确定性，不把小于一像素的差解释为连续几何精度。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department C",
+        "expected_value": 4.293251,
+        "observed_value": 4.318182,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 57,
+        "full_scale_error_percent": 0.024931,
+        "small_value_relative_error_percent": 0.580698,
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.494,
+          0.282632,
+          0.506
+        ],
+        "evidence_zh": "阈值4–48跨度均为57px；预期56.670913px。",
+        "uncertainty_zh": "1px对应该值约1.76%的相对变化；细部识别另记。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department D",
+        "expected_value": 0.907912,
+        "observed_value": 0.909091,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 12,
+        "full_scale_error_percent": 0.001179,
+        "small_value_relative_error_percent": 0.129848,
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.5935,
+          0.258947,
+          0.597
+        ],
+        "evidence_zh": "阈值4–48跨度均为12px；预期11.984438px。",
+        "uncertainty_zh": "像素外边缘换算差虽小，但1px约占该值8.34%，不能保证连续端点达到所列相对精度。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department E",
+        "expected_value": 0.192,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.6895,
+          0.254211,
+          0.6905
+        ],
+        "evidence_zh": "阈值4–32得到3×2px包围盒，阈值48剩2×2px；预期跨度2.5344px。真实微标存在，文字为0.192%。",
+        "uncertainty_zh": "像素占据范围不能等同连续实体长度，因此连续观测值及误差留空，不把3px外边缘直接判为放大数据。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department F",
+        "expected_value": 0,
+        "observed_value": 0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 0,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": null,
+        "evidence_zh": "x=480–1802、y=1495–1644区域在阈值4–48下均未发现相对同列背景的物体像素，标签为0%。",
+        "uncertainty_zh": "不存在物体包围盒；零值相对误差不定义。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Department A",
+        "required_parts": [
+          "西装袖",
+          "袖口",
+          "腕表",
+          "前臂",
+          "拳头"
+        ],
+        "relationship": "袖接袖口，袖口接前臂，腕表覆盖腕部，前臂接右向拳头；全部包含于数据跨度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.2765,
+          0.92,
+          0.344
+        ],
+        "evidence_zh": "深蓝袖、浅蓝袖口、肤色腕部与拳头连续相接，棕色表带及表面贴于腕部，最右指节终止跨度，未见断开。"
+      },
+      {
+        "category": "Department B",
+        "required_parts": [
+          "西装袖",
+          "袖口",
+          "腕表",
+          "前臂",
+          "拳头"
+        ],
+        "relationship": "缩短袖段仍连接袖口、佩表前臂及右向拳头。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.3835,
+          0.393684,
+          0.427
+        ],
+        "evidence_zh": "约268×87px主体仍可辨袖扣、袖口、表盘及表带、腕部和拳头，部件未浮离数据范围。"
+      },
+      {
+        "category": "Department C",
+        "required_parts": [
+          "西装袖",
+          "袖口",
+          "腕表",
+          "前臂",
+          "拳头"
+        ],
+        "relationship": "袖与腕部细节连接右侧拳形。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.494,
+          0.282632,
+          0.506
+        ],
+        "evidence_zh": "可见深蓝袖、浅色窄段、腕部浅黄点及肤色拳形相接，表带环腕关系难以可靠辨明。"
+      },
+      {
+        "category": "Department D",
+        "required_parts": [
+          "西装袖",
+          "袖口",
+          "腕表",
+          "前臂",
+          "拳头"
+        ],
+        "relationship": "短袖形与肤色右端相接，内部关系受分辨率限制。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.5935,
+          0.258947,
+          0.597
+        ],
+        "evidence_zh": "约12×7px保留左深蓝、右肤色及中间浅色像素，无法独立确认腕表和袖口的具体关系。"
+      },
+      {
+        "category": "Department E",
+        "required_parts": [
+          "西装袖",
+          "袖口",
+          "腕表",
+          "前臂",
+          "拳头"
+        ],
+        "relationship": "微点位于零点右侧，部件连接及拳头方向不可验证。",
+        "status": "uncertain",
+        "bbox_xyxy_normalized": [
+          0.252632,
+          0.6895,
+          0.254211,
+          0.6905
+        ],
+        "evidence_zh": "最多3×2px，不足以分别辨认五个部件；源码缩放完整素材只能提供旁证。"
+      },
+      {
+        "category": "Department F",
+        "required_parts": [
+          "类别标签",
+          "0%标签",
+          "空数据行"
+        ],
+        "relationship": "零值仅保留标签，不画最小手臂。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.05,
+          0.7475,
+          0.948947,
+          0.8225
+        ],
+        "evidence_zh": "类别及0%清晰可见，右侧与空白网格背景一致。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入将具名政府部门改为六个合成部门，保留部门内男性提名者占比，允许姿态及非数据厚度适配，不要求延续旧数值或高比例分布。",
+      "output_added_or_lost_meaning_zh": "当前统计口径未见丢失，右向闭合拳头和西装袖仍构成数据横条。政治具名语境未延续属于允许改编；微小部件难辨不能证明动作含义被主动改变。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Male nominees by department；Share of all nominees in each department who are male.；MALE NOMINEES (%)；Department A–F；Each arm runs from zero to its rightmost knuckle.；Tiny shares keep their true length; 0% has no arm."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考图总统及具名政府部门被冻结输入要求的合成部门主题替换，图中有醒目合成声明。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "A长袖和B紧凑手臂均保留连接，C–E随当前值缩小，F零值不画物体。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "D、E无法完整辨识五部件，E像素边界随阈值由3列变为2列，连续端点及相对误差不能精确确定。"
+      }
+    ],
+    "measurement_coverage_zh": "单一线性长度通道覆盖全部六行，包含最大值、中间值、最小正值和零值。所有类别、数值、系列及必需主题文字另逐项核对，未以文字或代码公式替代像素证据。"
+  }
+}

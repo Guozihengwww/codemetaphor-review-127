@@ -1,0 +1,305 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图把绿色葱茎折线置于黄油面包及淡黄奶酪上，奶酪下缘形成第二条折线，右侧两线交叉。成图保留红桌面、孔隙面包、涂抹黄油和两种食材数据路径；六个年份、两组各六个百分数可读，2002—2005间隔较短，标题、图例、单位与SYNTHETIC DATA清楚。",
+  "summary_zh": "通过。代表性像素测量符合容差，年份间距、数值标签、食材层次和统计语义保留。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1320成图像素：纵轴42%与15%刻度分别位于y=410、1058，其余刻度支持24像素/百分点；反算v=15+(1058-y)/24。年份刻度x约330、627、923、1220、1443、1740，符合4、4、4、3、4年的间隔。A以绿色茎体截面中点估计中心；B避开节点圆点，拟合奶酪下缘颜色跃迁。mark_extent_px为相对15%刻度的纵向位移，不是食材厚度。满量程误差分母为27个百分点，相对误差分母为原数据值。未使用生成方掩膜或自检结果作为测量。",
+  "uncertainties_zh": "材质、阴影和抗锯齿使边界定位约有±2—3像素不确定性，即±0.08—0.13个百分点；反算小数不代表相同位数的测量精度。未读取日志或历史记录，不能独立确认全部历史渲染流程。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六个指定年份、两系列各六个节点及十二个数值全部可见，路径连接全部年份。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A为30.1、34.7、39.2、36.9、32.8、24.3%；B为22.6、20.8、18.2、21.4、22.9、29.7%，均与输入一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "绿色图例对应SPD and Greens vote share与细茎，黄色图例对应Non voters share与奶酪；十二个标注均明确连接各自节点。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素标定支持共用15—42%线性轴。六个代表节点最大绝对差约0.054个百分点；实际年份间距、直线连接及右侧交叉符合输入。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及chive_surface.png，原素材的面包、黄油、奶酪孔洞与茎体纵纹实质用于主体。prepare_assets.py分离素材，render.py控制数据几何；capture_render.py具有完整渲染保存实现，但未据此推断历史执行记录。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "A直接由实体细茎中心线承载，B直接由黄色奶酪与下层黄油面包之间的真实边界承载；食材不是旁置插图。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "合成声明、主题、系列名称、百分比单位、六年刻度及十二值均可读，底部明确说明两种编码和非数据面积、厚度。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "面包外皮包围多孔内瓤，黄油涂在面包上，奶酪覆盖黄油，细茎叠在其上并跨过奶酪下缘；接触阴影与连续材质支持这些关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题标题、副标题、SPD and Greens、Non voters、YEAR及SHARE IN PERCENT明确当前主题、系列、时间和单位，未误作100%组成或累计量。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图的政党与未投票者比较角色保留，右端未投票份额高于政党份额的交叉仍可见；合成声明明确替代真实选举统计。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "A最小值24.3%的末端仍有可辨茎体；B最小值18.2%的下缘尖点和奶酪面清楚，距15%刻度约78像素。两者均非亚像素标记。"
+    }
+  },
+  "semantic_attribution_zh": "真实统计替换为合成值属于输入允许的改编，当前主题与系列角色未改变。茎体折角、奶酪下缘及交叉随数据变化，非数据上缘适配被明确允许。未发现输出遗漏必需语义；微小边界测量偏差受纹理、阴影与像素定位限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "A",
+        "category": "2009（系列最小值）",
+        "expected_value": 24.3,
+        "observed_value": 24.271,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 222.5,
+        "full_scale_error_percent": 0.11,
+        "small_value_relative_error_percent": 0.12,
+        "bbox_xyxy_normalized": [
+          0.86,
+          0.62,
+          0.88,
+          0.65
+        ],
+        "evidence_zh": "x=1740附近绿色截面约y=830—841，中点835.5；按可见轴反读约24.27%。",
+        "uncertainty_zh": "端部形状、高光与阴影使中心估计约有±2像素不确定性。"
+      },
+      {
+        "series_id": "A",
+        "category": "1998（系列最大值）",
+        "expected_value": 39.2,
+        "observed_value": 39.188,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 580.5,
+        "full_scale_error_percent": 0.05,
+        "small_value_relative_error_percent": 0.03,
+        "bbox_xyxy_normalized": [
+          0.454,
+          0.348,
+          0.47,
+          0.375
+        ],
+        "evidence_zh": "x=924附近绿色截面约y=472—483，中点477.5；反读约39.19%。",
+        "uncertainty_zh": "折角及节点符号造成约±2像素中心定位不确定性。"
+      },
+      {
+        "series_id": "A",
+        "category": "1994（内部点）",
+        "expected_value": 34.7,
+        "observed_value": 34.667,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 472,
+        "full_scale_error_percent": 0.12,
+        "small_value_relative_error_percent": 0.1,
+        "bbox_xyxy_normalized": [
+          0.306,
+          0.431,
+          0.321,
+          0.455
+        ],
+        "evidence_zh": "x=627附近绿色截面约y=580—592，中点586；反读约34.67%。",
+        "uncertainty_zh": "绿色阈值未包含全部高光，中心定位约±2像素。"
+      },
+      {
+        "series_id": "B",
+        "category": "1998（系列最小值）",
+        "expected_value": 18.2,
+        "observed_value": 18.254,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 78.1,
+        "full_scale_error_percent": 0.2,
+        "small_value_relative_error_percent": 0.29,
+        "bbox_xyxy_normalized": [
+          0.448,
+          0.734,
+          0.476,
+          0.75
+        ],
+        "evidence_zh": "拟合节点两侧下缘颜色跃迁，交点约(923.4,979.9)，反读约18.25%；黄色实体延伸到该下缘。",
+        "uncertainty_zh": "跃迁可能位于窄边线内侧，拟合残差约0.8—1.6像素，总定位不确定性约±3像素。"
+      },
+      {
+        "series_id": "B",
+        "category": "2009（系列最大值）",
+        "expected_value": 29.7,
+        "observed_value": 29.678,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 352.3,
+        "full_scale_error_percent": 0.08,
+        "small_value_relative_error_percent": 0.08,
+        "bbox_xyxy_normalized": [
+          0.859,
+          0.528,
+          0.872,
+          0.547
+        ],
+        "evidence_zh": "读取x=1718—1734附近下缘跃迁，短距离外推至x=1740，端点约y=705.7，反读约29.68%。",
+        "uncertainty_zh": "阴影、端点圆点及外推带来约±3像素定位不确定性。"
+      },
+      {
+        "series_id": "B",
+        "category": "2002（内部点）",
+        "expected_value": 21.4,
+        "observed_value": 21.439,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 154.5,
+        "full_scale_error_percent": 0.14,
+        "small_value_relative_error_percent": 0.18,
+        "bbox_xyxy_normalized": [
+          0.596,
+          0.678,
+          0.625,
+          0.694
+        ],
+        "evidence_zh": "拟合节点两侧下缘跃迁，交点约(1218.7,903.5)，反读约21.44%。",
+        "uncertainty_zh": "两段斜率接近，交点横坐标较敏感；纵向定位约±3像素。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体食材层次",
+        "required_parts": [
+          "红色桌面",
+          "面包外皮",
+          "多孔内瓤",
+          "黄油",
+          "奶酪",
+          "绿色细茎"
+        ],
+        "relationship": "面包承接黄油，奶酪覆盖黄油，细茎处于上层。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.11,
+          0.31,
+          0.945,
+          0.825
+        ],
+        "evidence_zh": "外皮围绕内瓤，奶酪上下露出黄油纹路；面包底部及奶酪下缘接触阴影清楚。"
+      },
+      {
+        "category": "A大值：1998",
+        "required_parts": [
+          "相邻绿色茎段",
+          "连接峰点",
+          "下层黄油面包"
+        ],
+        "relationship": "两段细茎连接，峰点中心线承载39.2%。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.41,
+          0.34,
+          0.52,
+          0.41
+        ],
+        "evidence_zh": "峰点两侧具有连续纵纹、高光与阴影，细茎位于黄油面包表面。"
+      },
+      {
+        "category": "A小值：2009",
+        "required_parts": [
+          "细茎末端",
+          "黄油面包",
+          "奶酪下缘"
+        ],
+        "relationship": "细茎跨过奶酪下缘后继续落在面包上，末端承载24.3%。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.83,
+          0.57,
+          0.9,
+          0.65
+        ],
+        "evidence_zh": "末端仍为十余像素宽的绿色实体，位于奶酪外露出的面包区域，标注连接端点。"
+      },
+      {
+        "category": "B小值：1998",
+        "required_parts": [
+          "黄色奶酪面",
+          "下缘尖点",
+          "下层黄油面包"
+        ],
+        "relationship": "奶酪面延伸至尖点，其真实下缘承载18.2%。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.42,
+          0.68,
+          0.51,
+          0.76
+        ],
+        "evidence_zh": "尖点上方为连续黄色材质，下方转为面包及阴影，数据边界是真实外轮廓。"
+      },
+      {
+        "category": "B大值：2009",
+        "required_parts": [
+          "奶酪上缘",
+          "上升下缘",
+          "右侧边",
+          "下层面包"
+        ],
+        "relationship": "下缘与右侧边相接，端点承载29.7%；上缘不编码。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.82,
+          0.47,
+          0.89,
+          0.55
+        ],
+        "evidence_zh": "右侧黄色面约从y=628延伸至y=706，保持正厚度；下缘外为面包。"
+      },
+      {
+        "category": "右侧交叉",
+        "required_parts": [
+          "绿色细茎",
+          "奶酪下缘",
+          "黄油面包"
+        ],
+        "relationship": "细茎从奶酪上方跨过下缘，向右继续下降。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.8,
+          0.55,
+          0.85,
+          0.62
+        ],
+        "evidence_zh": "交叉处茎体连续并覆盖黄色面边界；奶酪下缘继续上升，茎体继续下降至黄油面包表面。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许以合成百分比替换旧统计，改变数据折线与奶酪下缘，并调整非数据上缘。",
+      "output_added_or_lost_meaning_zh": "未发现主题或角色丢失；新增共享轴、非数据面积/厚度及合成性质说明。末端反超关系仍可见，但未冒充真实选举结论。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Voting and non-voting shares、SPD and Greens vote share、Non voters share、SHARE IN PERCENT、YEAR及食材编码说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成值替代真实统计由冻结输入明确允许，图面标明非真实选举结果。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "茎体与奶酪下缘随当前数值变化，非数据上缘保证正厚度。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "纹理、阴影和抗锯齿带来约2—3像素定位不确定性，未导致小值物体关系消失。"
+      }
+    ],
+    "measurement_coverage_zh": "两种定量通道分别测量最小值、最大值及一个内部点，共六点；另测全部年份刻度与七个纵轴刻度。其余节点及全部标签通过原图检查完整性、绑定与连接，未声称逐像素穷尽测量。"
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：屋顶外轮廓随年份向右上升，住宅含墙体、门窗与侧墙，房体升离地面并位于仰望家庭上方；文字主题为新独户住宅售价。待评图：SYNTHETIC DATA、SYNTHETIC House prices、Illustrative new-home price · USD及11 ANNUAL OBSERVATIONS可读。红色瓦片屋顶上沿含11个圆点，从Year 01的68,100连续下降到Year 11的26,400，所有年份和值逐点标注。左轴显示0至80,000；主体可见浅色墙面、四扇窗、一扇门、右侧墙与悬空底沿，下方三人站在地面并仰望。−61.2%与41,700 USD lower为另列的变化摘要。未在屋顶数据边界外看到额外装饰峰；纹理是否由生成素材构成尚待源码和原始素材核验。",
+  "summary_zh": "通过。11个年度值、标签绑定及屋顶轮廓吻合；生成材质实质构成住宅与家庭，悬空住宅的部件连接和数据融合关系保留。参考真实统计及上涨论点的变化属于冻结输入允许的改编。",
+  "issues": [],
+  "measurement_notes_zh": "在1760×2000原图上读取左轴刻度行470、720、970、1220、1470，得到0–80,000 USD跨1000像素。按金色像素连通域测量11个屋顶节点中心；横向间隔均为123像素。以v=(1470−y)×80反算，全部节点的绝对偏差小于满量程0.07%。另在10段中点列检查红色屋顶边界，均有连续边线像素。下列mark_extent_px为零刻度至屋顶节点的纵向编码跨度，不是圆点直径、墙高或屋面厚度；bbox定位节点。源码仅用于佐证，未替代像素测量。",
+  "uncertainties_zh": "抗锯齿与颜色阈值使节点定位约有±1像素（±80 USD）不确定性；报告中的小数不表示亚像素真值保证。最小值仍有约330像素的纵向编码跨度，不受微小标记分辨率限制。未读取受禁止的日志或自检，capture_render.py的保存逻辑只能佐证流程，不能独立证明历史每次渲染均经过该入口。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Year 01至Year 11共11个年份、11个屋顶节点及11个价格标签齐全，单一价格系列、USD、合成数据提示和年度角色均显示。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "依次显示68,100、65,200、63,400、56,400、49,900、45,300、40,600、36,800、33,100、28,900、26,400，与data.json一致。41,700 USD lower正确；−61.2%是端点变化−61.23348%的正确一位小数表示。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各年份和价格在对应屋顶圆点上方，短竖引线指向本点；从左到右按输入顺序排列，无错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素测得11个节点等距123像素，纵坐标按可见线性刻度反算均在0.07%满量程以内；10段红色边线连续位于瓦片屋面的真实上边界。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和raw_02.png；其中瓦纹、四扇窗、中央门及三人家庭与成图对应。assets_manifest.json给出素材对应，render.py实际加载并变形裁切这些素材；capture_render.py包含保存完整图和源码快照的逻辑。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "价格折线就是住宅瓦片屋面的外轮廓，墙体从屋檐连续向下延伸，右端侧墙与屋顶和前墙相接；不是独立图表旁置住宅。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、指标、单位、全部年份及价格、纵轴刻度、端点变化摘要和底部线性尺度说明均可读；未见必要文字重叠或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "可见瓦片屋顶、含四窗一门的前墙、右侧墙及底沿；房体悬空，三人家庭脚接地面并朝上看。大值端和小值端的屋面均与墙体相接，数据边界与完整物体融合。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC House prices、Illustrative new-home price · USD、11 ANNUAL OBSERVATIONS及Year 01–11共同明确合成年度新房价格；底部说明线性0–80,000 USD及非真实市场声明。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "屋顶走势、悬空房体与下方仰望家庭的关系保留。参考的新独户住宅售价中位数及THE AMERICAN NIGHTMARE论点未原样延续；冻结输入已指定示例新房价格和下降数据，并明确不要求旧上涨或噩梦结论，故属于输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值Year 11的节点约在(1559.9,1139.9)，距零刻度约330.1像素；其屋顶边线、瓦面、前墙与侧墙接合清晰。此为同一连续住宅的低值端，不是需要缩成微小独立房屋的符号。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、年度类别、价格指标和USD单位均保留。原真实年份、中位数口径及上涨/噩梦论点转为合成示例，归因于允许的输入改编；屋顶改为下降轮廓归因于当前数据。未发现输出遗漏核心物体关系，亦未把非数据墙高或屋面深度当作价格长度。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "home_price",
+        "category": "Year 01（最大值）",
+        "expected_value": 68100,
+        "observed_value": 68152.56,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 851.907,
+        "full_scale_error_percent": 0.0657,
+        "small_value_relative_error_percent": 0.0772,
+        "bbox_xyxy_normalized": [
+          0.1824,
+          0.3045,
+          0.1932,
+          0.314
+        ],
+        "evidence_zh": "金色节点连通域中心约(329.907,618.093)，可见零刻度y=1470；据轴尺反算约68,153 USD。标签为68,100，点位位于瓦面上边界。",
+        "uncertainty_zh": "约±1像素；中心受抗锯齿阈值影响，偏差远小于3%满量程。"
+      },
+      {
+        "series_id": "home_price",
+        "category": "Year 06（内部值）",
+        "expected_value": 45300,
+        "observed_value": 45352.56,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 566.907,
+        "full_scale_error_percent": 0.0657,
+        "small_value_relative_error_percent": 0.116,
+        "bbox_xyxy_normalized": [
+          0.5318,
+          0.447,
+          0.5426,
+          0.4565
+        ],
+        "evidence_zh": "金色节点连通域中心约(944.907,903.093)，据可见轴尺反算约45,353 USD；节点位于连续下降的真实屋顶边线上，标签45,300。",
+        "uncertainty_zh": "约±1像素；未以源码设定坐标冒充测量。"
+      },
+      {
+        "series_id": "home_price",
+        "category": "Year 11（最小正值）",
+        "expected_value": 26400,
+        "observed_value": 26407.44,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 330.093,
+        "full_scale_error_percent": 0.0093,
+        "small_value_relative_error_percent": 0.0282,
+        "bbox_xyxy_normalized": [
+          0.8812,
+          0.565,
+          0.892,
+          0.575
+        ],
+        "evidence_zh": "金色节点连通域中心约(1559.907,1139.907)，据可见轴尺反算约26,407 USD；屋顶数据边界在此与右端轮廓相接，标签26,400。",
+        "uncertainty_zh": "约±1像素对应该值约±0.30%；0.0282%为阈值中心的点估计，不是精度保证。"
+      },
+      {
+        "series_id": "home_price",
+        "category": "Year 01 → Year 11：相对变化",
+        "expected_value": -61.23348017621145,
+        "observed_value": -61.2,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.156,
+          0.745,
+          0.36,
+          0.784
+        ],
+        "evidence_zh": "图中直接写−61.2%，与(26,400/68,100−1)×100的一位小数一致；该摘要为文字编码。",
+        "uncertainty_zh": "无独立几何编码，不计算几何满量程误差。"
+      },
+      {
+        "series_id": "home_price",
+        "category": "Year 01 → Year 11：下降额（USD）",
+        "expected_value": 41700,
+        "observed_value": 41700,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.159,
+          0.797,
+          0.369,
+          0.815
+        ],
+        "evidence_zh": "图中写41,700 USD lower，等于68,100−26,400。",
+        "uncertainty_zh": "文字摘要，不作为屋顶几何正确性的替代证据。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "大值端：Year 01附近",
+        "required_parts": [
+          "数据屋顶边界",
+          "瓦片屋面",
+          "屋檐",
+          "带窗前墙"
+        ],
+        "relationship": "数据边界是瓦面上沿；瓦面下沿与屋檐、前墙连续相接，窗嵌入前墙。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.125,
+          0.302,
+          0.342,
+          0.59
+        ],
+        "evidence_zh": "左端68,100圆点落在瓦面外轮廓；屋面向左下延至屋檐，浅色墙面和首扇窗接续其下，无额外装饰峰。"
+      },
+      {
+        "category": "内部段：Year 04–06附近",
+        "required_parts": [
+          "下降屋顶",
+          "连续前墙",
+          "中央门"
+        ],
+        "relationship": "屋顶和前墙共同随价格走势弯折，中央门包含于墙面并延至底沿。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.395,
+          0.372,
+          0.57,
+          0.695
+        ],
+        "evidence_zh": "中段瓦纹与屋檐相接，中央深色门位于前墙内；分段倾斜没有割裂住宅部件或形成第二条量值边界。"
+      },
+      {
+        "category": "小值端：Year 11附近",
+        "required_parts": [
+          "低值屋顶节点",
+          "瓦面",
+          "带窗前墙",
+          "右端侧墙",
+          "底沿"
+        ],
+        "relationship": "低值节点位于真实屋顶末端，屋面、前墙和侧墙在右端相接；底沿与地面分离。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.704,
+          0.523,
+          0.893,
+          0.79
+        ],
+        "evidence_zh": "26,400端仍有清晰瓦面；末扇窗嵌入浅色前墙，蓝灰侧墙沿斜边连接屋面及前墙，没有因低值压缩而丢失部件关系。"
+      },
+      {
+        "category": "整体悬空住宅与家庭",
+        "required_parts": [
+          "房体底沿",
+          "地面",
+          "两名成人和一名儿童"
+        ],
+        "relationship": "房体在家庭上方并离开地面；三人脚接地面、视线向上。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.651,
+          0.72,
+          0.893,
+          0.921
+        ],
+        "evidence_zh": "右下房体底沿与地面之间留有可见空隙，三人位于其下，脚部接触地面阴影；未被房体遮没。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入使用合成年度示例新房价格，允许姿态和非数据厚度适配，并明确不得强求参考持续上涨或噩梦论点；当前下降轮廓符合该许可。",
+      "output_added_or_lost_meaning_zh": "保留房价—屋顶走势—悬空住宅—仰望家庭的联系；增加的下降61.2%和41,700 USD摘要由当前数据支持。未延续原真实统计口径及上涨压力论点，属于输入改编，不是输出擅自删除当前语义。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、SYNTHETIC House prices、Illustrative new-home price · USD、11 ANNUAL OBSERVATIONS、Year 01–11、The roof edge traces every annual price.及Linear scale: 0–80,000 USD。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考真实中位数、真实年份和噩梦标题在冻结输入中改为合成年度示例价格；参考意义因此部分保留，不计输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "输入从68,100降至26,400，成图屋顶相应从左高转向右低；非数据房体随轮廓适配，连接和悬空关系仍在。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一空间定量通道为11点屋顶轮廓，已像素提取全部11个节点并检查全部10段边线；详细列出最大值、内部值及最小正值。所有11组年份/数值另逐项核对；两个派生摘要单列文字测量。部件关系覆盖同一住宅的大值端、内部段、小值端及下方家庭；不存在未覆盖的其他空间定量面板。"
+  }
+}

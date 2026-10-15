@@ -1,0 +1,400 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为工厂烟囱连接黑色烟云，云内叠合双色圆盘、排名数字及方向分界，底部有分组表格和两行三列图例。待评图保留这些关系，采用有纹理的烟云；33个圆盘分为A—G七组。B2最大，E3为微小双色圆盘，外接E3·44和+0.05%引线标注。标题、合成数据声明、单位、七组明细及六枚图例均可见。以上观察记录于查看源码前。",
+  "summary_zh": "未发现需报告的可见违约，数据、结构和语义符合冻结要求。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2200×1816原图读取圆盘外径，排除邻近文字和同色背景。以实测B2外径232像素为比例基准，按v=11.6×(d/232)^2反推变化率绝对值。满量程误差为100×|观测−目标|/11.6。源码公式仅作佐证，排名仅作文字编码核验。",
+  "uncertainties_zh": "抗锯齿造成约1像素边界不确定性，尤其E3不能保证小值相对面积精度。参考图细小文字分辨率有限。按限制未执行渲染或查看日志、自检，未独立核验每次历史渲染归档。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "A组三项、B—G各五项，共33圆盘；七组明细包含66个排名及33个变化率，六枚交叉图例完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项对照明细与冻结数据，T0/T1、变化率及当前排名一致；E3保留+0.05%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "圆盘编号、T1排名和表格行对应；E3由引线绑定。33项半盘颜色及方向均与当前数据一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "外径比例筛查未见超过3%满量程容差的偏差。F3约194像素，相对232像素基准反推8.111%，目标8.2%，满量程误差约0.765%；E3保留小值精度不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和smoke.png，其烟云、双烟囱及厂房实质出现在成图。render.py粘贴该素材，并按数据控制圆盘半径、颜色、方向和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "两烟囱连接烟流并汇入主体烟云；圆盘完整叠合于云内，符合参考关系。未见影响读数的遮挡、接缝或透视错置。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、单位、表格和图例在原图可读；小圆盘采用外置编号或引线，未遮挡数据。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "连通烟云、完整双色圆盘、排名及方向分界保留。最大B2和最小E3均位于烟云内，E3排名44通过引线绑定。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题明确为合成排放变化，分别解释变化率%、两期排名名次、面积/颜色/方向和合成可比组，独立指标未被混作组成份额。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留工厂排放—烟云—单元比较关系。真实全球排放对象改为合成组属于core明确允许的主题适配，不归因于输出失败。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "E3约14—16像素，双色完整小盘和水平分界仍可辨，类别、排名及变化率由引线绑定；可辨性不等于相对面积精确。"
+    }
+  },
+  "semantic_attribution_zh": "合成主题与可比组属于获准输入适配；圆盘大小及方向变化属于数据驱动形变。E3精度限制来自栅格分辨率，未观察到必需语义或结构的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "A3",
+        "category": "独立排放变化率绝对值（%）",
+        "expected_value": 4.1,
+        "observed_value": 4.10431,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 138,
+        "full_scale_error_percent": 0.037158,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1868,
+          0.3337,
+          0.2495,
+          0.4097
+        ],
+        "evidence_zh": "原图外径约138像素，按相对B2的外径平方比反推。",
+        "uncertainty_zh": "抗锯齿边界约有1像素不确定性。"
+      },
+      {
+        "series_id": "B2",
+        "category": "独立排放变化率绝对值（%）",
+        "expected_value": 11.6,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 232,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4155,
+          0.2335,
+          0.5209,
+          0.3612
+        ],
+        "evidence_zh": "最大圆盘外径约232像素，图面指定11.6%为最大圆盘，用作比例基准。",
+        "uncertainty_zh": "基准没有独立绝对面积单位，不将归一化零误差视为独立验证。"
+      },
+      {
+        "series_id": "C2",
+        "category": "独立排放变化率绝对值（%）",
+        "expected_value": 3.2,
+        "observed_value": 3.207759,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 122,
+        "full_scale_error_percent": 0.066885,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.62,
+          0.2472,
+          0.6755,
+          0.3144
+        ],
+        "evidence_zh": "外径约122像素，米白半盘对应负变化率。",
+        "uncertainty_zh": "由像素外径平方比得到近似量值。"
+      },
+      {
+        "series_id": "D1",
+        "category": "独立排放变化率绝对值（%）",
+        "expected_value": 0.42,
+        "observed_value": 0.417241,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 44,
+        "full_scale_error_percent": 0.023781,
+        "small_value_relative_error_percent": 0.656814,
+        "bbox_xyxy_normalized": [
+          0.7695,
+          0.266,
+          0.7895,
+          0.2902
+        ],
+        "evidence_zh": "外径约44像素，上半显示3，下半米白，编号在盘下。",
+        "uncertainty_zh": "约1像素边界误差对小值相对精度影响较大。"
+      },
+      {
+        "series_id": "E3",
+        "category": "独立排放变化率绝对值（%）",
+        "expected_value": 0.05,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 15,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2918,
+          0.4526,
+          0.2991,
+          0.4615
+        ],
+        "evidence_zh": "含抗锯齿边缘直径约14—16像素；青色上半、棕色下半及水平深色分界存在。",
+        "uncertainty_zh": "边界阈值影响明显，无法可靠估计小幅相对面积误差，量值和误差留空。"
+      },
+      {
+        "series_id": "F3",
+        "category": "独立排放变化率绝对值（%）",
+        "expected_value": 8.2,
+        "observed_value": 8.111207,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 194,
+        "full_scale_error_percent": 0.765458,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.515,
+          0.4532,
+          0.6032,
+          0.56
+        ],
+        "evidence_zh": "外径约194像素，棕色半盘与上升斜分界可见。",
+        "uncertainty_zh": "外径平方比为近似反推，存在抗锯齿边界误差。"
+      },
+      {
+        "series_id": "G2",
+        "category": "独立排放变化率绝对值（%）",
+        "expected_value": 6.95,
+        "observed_value": 6.982759,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 180,
+        "full_scale_error_percent": 0.282402,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.7182,
+          0.4075,
+          0.8,
+          0.5066
+        ],
+        "evidence_zh": "外径约180像素，排名4和水平分界清楚。",
+        "uncertainty_zh": "约1像素边界不确定性。"
+      },
+      {
+        "series_id": "G3",
+        "category": "独立排放变化率绝对值（%）",
+        "expected_value": 0.55,
+        "observed_value": 0.538793,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 50,
+        "full_scale_error_percent": 0.096611,
+        "small_value_relative_error_percent": 2.037618,
+        "bbox_xyxy_normalized": [
+          0.8091,
+          0.4708,
+          0.8318,
+          0.4983
+        ],
+        "evidence_zh": "外径约50像素，双色、排名5及外置编号均可辨。",
+        "uncertainty_zh": "相对误差仅为像素估计，不保证小值精度。"
+      },
+      {
+        "series_id": "E3",
+        "category": "独立排放变化率（%）",
+        "expected_value": 0.05,
+        "observed_value": 0.05,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5364,
+          0.908,
+          0.5673,
+          0.9251
+        ],
+        "evidence_zh": "E组明细及烟云引线均显示+0.05%。",
+        "uncertainty_zh": "文字正确不证明小圆盘面积精确。"
+      },
+      {
+        "series_id": "G1",
+        "category": "T1排名（名）",
+        "expected_value": 1,
+        "observed_value": 1,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.7386,
+          0.8728,
+          0.7473,
+          0.8888
+        ],
+        "evidence_zh": "表格T0=2、T1=1，主圆盘显示1且方向上升。",
+        "uncertainty_zh": "排名为文字编码。"
+      },
+      {
+        "series_id": "E5",
+        "category": "T1排名（名）",
+        "expected_value": 76,
+        "observed_value": 76,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5177,
+          0.9433,
+          0.5318,
+          0.9604
+        ],
+        "evidence_zh": "表格T0=77、T1=76，主圆盘显示76。",
+        "uncertainty_zh": "排名为文字编码。"
+      },
+      {
+        "series_id": "C4",
+        "category": "T1排名（名）",
+        "expected_value": 16,
+        "observed_value": 16,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.3023,
+          0.9257,
+          0.3164,
+          0.9427
+        ],
+        "evidence_zh": "表格T0=13、T1=16，圆盘显示16且方向下降。",
+        "uncertainty_zh": "排名为文字编码。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "B2大型单元",
+        "required_parts": [
+          "烟云",
+          "双色完整圆盘",
+          "斜分界",
+          "排名40",
+          "编号B2"
+        ],
+        "relationship": "圆盘完整叠合于云内，两半颜色共用直径分界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4155,
+          0.2335,
+          0.5209,
+          0.3612
+        ],
+        "evidence_zh": "青色上左半、棕色下右半及40/B2清楚，无遮挡。"
+      },
+      {
+        "category": "E3最小单元",
+        "required_parts": [
+          "烟云",
+          "微小双色盘",
+          "水平分界",
+          "引线",
+          "E3·44",
+          "+0.05%"
+        ],
+        "relationship": "微小盘位于云内，引线绑定外置类别、排名和变化率。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2909,
+          0.4515,
+          0.3636,
+          0.5
+        ],
+        "evidence_zh": "约15像素圆盘仍有上下双色及水平深线，引线与标注无遮挡。"
+      },
+      {
+        "category": "D1小型负变化单元",
+        "required_parts": [
+          "烟云",
+          "双色盘",
+          "水平分界",
+          "排名3",
+          "D1"
+        ],
+        "relationship": "排名位于上半盘，编号在盘下，圆盘位于烟云内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.7682,
+          0.2643,
+          0.7909,
+          0.3084
+        ],
+        "evidence_zh": "44像素圆盘保留青色与米白两半和水平分界。"
+      },
+      {
+        "category": "排放源与烟云",
+        "required_parts": [
+          "厂房",
+          "双烟囱",
+          "两股烟流",
+          "主体烟云"
+        ],
+        "relationship": "烟流从烟囱口向上延伸并连接主体烟云。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.0491,
+          0.5507,
+          0.3182,
+          0.7896
+        ],
+        "evidence_zh": "左下厂房、烟囱顶部、烟流和主体云连续可见。"
+      },
+      {
+        "category": "交叉图例",
+        "required_parts": [
+          "增减排两行",
+          "排名方向三列",
+          "六枚双色盘"
+        ],
+        "relationship": "颜色按行区分符号，分界方向按列区分排名运动。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.8127,
+          0.8519,
+          0.9568,
+          0.9593
+        ],
+        "evidence_zh": "棕色/米白两行及上升/不变/下降三列完整。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core明确允许将原真实对象替换为合成排放单元与可比组。",
+      "output_added_or_lost_meaning_zh": "保留排放源—烟云—单元比较关系；真实对象的替换属于获准适配，没有把增排等同排名上升。",
+      "visible_inscription_evidence_zh": "可见合成排放标题、33个合成单元、7个可比组、变化率%、排名名次，以及不代表真实国家或地区的说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成主题及可比组的替换由core授权且在图面明确标注。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "B2最大、E3最小；面积对应独立变化率，方向对应两期排名。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "E3约14—16像素，结构可辨，但相对面积精度受抗锯齿限制。"
+      }
+    ],
+    "measurement_coverage_zh": "全部33圆盘进行了颜色、方向及外径筛查；详细记录覆盖七组的8个几何实例和4个文字实例，包含最小、最大及中间值。另核对全部明细、当前排名、组名及六枚图例；未进行穷尽亚像素面积积分。"
+  }
+}

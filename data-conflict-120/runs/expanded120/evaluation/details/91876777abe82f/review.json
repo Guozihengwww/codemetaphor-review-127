@@ -1,0 +1,363 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图呈现方格纸、底部水面和侧视跳水者，脚在左、髋部居高、手臂向右下伸展。待评图的合成声明、GDP per capita标题、USD per person及Year清楚可见；十个年份和数值齐全。红色折线沿脚、腿、泳裤髋部、躯干和手臂穿行，先下降至5,900，再上升至31,200。双腿、头颈、泳帽和手臂连接可辨，初看无路径脱离人体或严重遮挡。",
+  "summary_zh": "通过。十期数值、标签绑定和线性几何正确，人体与数据路径保持融合，主题和单位明确。review.json已保存并通过schema校验；按补充要求未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量2000×2000成图：水面零线中心y≈1669.5，35,000网格线y=480，量程跨度1189.5像素。由空心圆内部像素边界定位中心，按垂直高度换算数值。十点最大满量程误差约0.0543%。mark_extent_px表示点到零线的高度，边界框定位圆点。年份刻度与圆点横向差不超过0.5像素；九段各300个内部采样均落在可见红色路径像素内。源码仅用于佐证控制方式。",
+  "uncertainties_zh": "像素读数保守不确定度约±2像素，即约±59美元/人；细小误差不代表精确经济量偏差。最小值的相对误差估计约0.26%，测量不确定度约1%。未检查渲染历史或日志，不能独立认证全部历史渲染均经capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "一个系列、十个年份、十个圆点、九段连接和十个数值标签完整；轴刻度、单位、Year、图例及合成声明均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "十个标签依次为27,800、23,200、17,100、10,800、5,900、11,200、18,800、25,100、29,300、31,200，全部符合输入。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值引线分别连接对应圆点；圆点与年份刻度对齐，最大横向差0.5像素；单一系列角色明确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部十点的独立像素读数符合0–35,000线性刻度，最大满量程误差约0.0543%，九段直线连接完整。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及变形素材，皮肤纹理、泳帽、泳裤和四肢细节在成图中实质可见。prepare_assets.py按数据变形主体，render.py控制坐标和文字；capture_render.py提供完整渲染保存入口。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "路径连续穿过脚、腿、髋、躯干和手臂至手。人体覆盖背景网格，路径覆盖人体，水面上沿作为共同零线；未见破坏结构的层序或接缝问题。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下全部必需文字可读，无严重重叠、遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "双脚连接双腿，腿接泳裤覆盖的髋部，髋接躯干；肩臂连接双手，头经颈连接肩，泳帽覆盖头部。最低髋部节点和最高手部节点均保留物体归属。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Economic output per person、USD per person、Year及Not a country estimate明确表达合成人均经济产出与逐年观察角色，无累计或构成暗示。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留人均GDP与泳者姿态、方格纸和水面的融合。参考国别与末端下行改为无国别合成序列和末端上行，属于冻结输入允许的适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值5,900距零线约200像素，圆点位于清楚可辨的泳裤髋部；两侧路径与腿、躯干连接完整，不属于亚像素情形。"
+    }
+  },
+  "semantic_attribution_zh": "国别真实统计替换为合成序列属于输入适配；拱形变为先降后升的V形由当前数据决定。未见必需主题、单位或身体部件遗漏。参考图未明写更广泛经济论点，不推断作者意图。像素限制影响细微读数，不影响最小节点的身体归属。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "2000",
+        "expected_value": 27800,
+        "observed_value": 27805.8,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 945,
+        "full_scale_error_percent": 0.0166,
+        "small_value_relative_error_percent": 0.0209,
+        "bbox_xyxy_normalized": [
+          0.14425,
+          0.35675,
+          0.15525,
+          0.36775
+        ],
+        "evidence_zh": "圆点中心约(299.5,724.5)，距水面零线945像素；标签27,800。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，约±59美元/人。"
+      },
+      {
+        "series_id": "S1",
+        "category": "2002",
+        "expected_value": 23200,
+        "observed_value": 23215.64,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 789,
+        "full_scale_error_percent": 0.0447,
+        "small_value_relative_error_percent": 0.0674,
+        "bbox_xyxy_normalized": [
+          0.22825,
+          0.43475,
+          0.23925,
+          0.44575
+        ],
+        "evidence_zh": "圆点中心约(467.5,880.5)，距零线789像素；标签23,200。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，约±59美元/人。"
+      },
+      {
+        "series_id": "S1",
+        "category": "2004",
+        "expected_value": 17100,
+        "observed_value": 17095.42,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 581,
+        "full_scale_error_percent": 0.0131,
+        "small_value_relative_error_percent": 0.0268,
+        "bbox_xyxy_normalized": [
+          0.31225,
+          0.53875,
+          0.32325,
+          0.54975
+        ],
+        "evidence_zh": "圆点中心约(635.5,1088.5)，距零线581像素；标签17,100。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，约±59美元/人。"
+      },
+      {
+        "series_id": "S1",
+        "category": "2006",
+        "expected_value": 10800,
+        "observed_value": 10798.65,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 367,
+        "full_scale_error_percent": 0.0038,
+        "small_value_relative_error_percent": 0.0125,
+        "bbox_xyxy_normalized": [
+          0.39625,
+          0.64575,
+          0.40725,
+          0.65675
+        ],
+        "evidence_zh": "圆点中心约(803.5,1302.5)，距零线367像素；标签10,800。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，约±59美元/人。"
+      },
+      {
+        "series_id": "S1",
+        "category": "2008",
+        "expected_value": 5900,
+        "observed_value": 5884.83,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 200,
+        "full_scale_error_percent": 0.0434,
+        "small_value_relative_error_percent": 0.2572,
+        "bbox_xyxy_normalized": [
+          0.47975,
+          0.72925,
+          0.49075,
+          0.74025
+        ],
+        "evidence_zh": "最小圆点中心约(970.5,1469.5)，距零线200像素，位于蓝色泳裤内；标签5,900。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，对该最小值约为1%；不能将近似偏差当作精确误差。"
+      },
+      {
+        "series_id": "S1",
+        "category": "2010",
+        "expected_value": 11200,
+        "observed_value": 11210.59,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 381,
+        "full_scale_error_percent": 0.0303,
+        "small_value_relative_error_percent": 0.0946,
+        "bbox_xyxy_normalized": [
+          0.56375,
+          0.63875,
+          0.57475,
+          0.64975
+        ],
+        "evidence_zh": "圆点中心约(1138.5,1288.5)，距零线381像素；标签11,200。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，约±59美元/人。"
+      },
+      {
+        "series_id": "S1",
+        "category": "2012",
+        "expected_value": 18800,
+        "observed_value": 18802.02,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 639,
+        "full_scale_error_percent": 0.0058,
+        "small_value_relative_error_percent": 0.0107,
+        "bbox_xyxy_normalized": [
+          0.64775,
+          0.50975,
+          0.65875,
+          0.52075
+        ],
+        "evidence_zh": "圆点中心约(1306.5,1030.5)，距零线639像素；标签18,800。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，约±59美元/人。"
+      },
+      {
+        "series_id": "S1",
+        "category": "2014",
+        "expected_value": 25100,
+        "observed_value": 25098.78,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 853,
+        "full_scale_error_percent": 0.0035,
+        "small_value_relative_error_percent": 0.0049,
+        "bbox_xyxy_normalized": [
+          0.73175,
+          0.40275,
+          0.74275,
+          0.41375
+        ],
+        "evidence_zh": "圆点中心约(1474.5,816.5)，距零线853像素；标签25,100。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，约±59美元/人。"
+      },
+      {
+        "series_id": "S1",
+        "category": "2016",
+        "expected_value": 29300,
+        "observed_value": 29306.43,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 996,
+        "full_scale_error_percent": 0.0184,
+        "small_value_relative_error_percent": 0.0219,
+        "bbox_xyxy_normalized": [
+          0.81525,
+          0.33125,
+          0.82625,
+          0.34225
+        ],
+        "evidence_zh": "圆点中心约(1641.5,673.5)，距零线996像素；标签29,300。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，约±59美元/人。"
+      },
+      {
+        "series_id": "S1",
+        "category": "2018",
+        "expected_value": 31200,
+        "observed_value": 31219,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1061,
+        "full_scale_error_percent": 0.0543,
+        "small_value_relative_error_percent": 0.0609,
+        "bbox_xyxy_normalized": [
+          0.89925,
+          0.29875,
+          0.91025,
+          0.30975
+        ],
+        "evidence_zh": "最大圆点中心约(1809.5,608.5)，距零线1061像素，位于手部；标签31,200。",
+        "uncertainty_zh": "保守读数不确定度约±2像素，约±59美元/人。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "左端脚与双腿",
+        "required_parts": [
+          "双脚",
+          "双腿",
+          "髋部",
+          "数据路径"
+        ],
+        "relationship": "脚接腿，双腿延伸至髋；路径沿前侧脚腿内部下降。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.12,
+          0.3,
+          0.49,
+          0.76
+        ],
+        "evidence_zh": "两脚及并行腿轮廓可辨，2000至2006节点沿其内部排列，无路径跨越空白的可见断段。"
+      },
+      {
+        "category": "2008最小值髋部",
+        "required_parts": [
+          "双腿",
+          "髋部",
+          "泳裤",
+          "躯干",
+          "最低节点"
+        ],
+        "relationship": "泳裤覆盖连接腿与躯干的髋部，最低节点位于其中。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.41,
+          0.66,
+          0.57,
+          0.78
+        ],
+        "evidence_zh": "最低圆点位于蓝色泳裤内，左腿下降段接入、向躯干上升段接出；泳裤与腰侧连续。"
+      },
+      {
+        "category": "躯干、肩臂及头颈",
+        "required_parts": [
+          "躯干",
+          "肩",
+          "手臂",
+          "颈",
+          "侧脸",
+          "泳帽"
+        ],
+        "relationship": "髋接躯干，肩臂向右上延伸，头经颈连接肩，帽子覆盖头部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.5,
+          0.37,
+          0.76,
+          0.76
+        ],
+        "evidence_zh": "11,200至25,100节点沿躯干和前侧手臂上升；侧脸、颈和红帽可辨，未形成断开的部件。"
+      },
+      {
+        "category": "2018最大值手部",
+        "required_parts": [
+          "双臂",
+          "双手",
+          "最高节点"
+        ],
+        "relationship": "手臂连接向右上伸展的双手，路径末端位于手部内部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.72,
+          0.278,
+          0.93,
+          0.45
+        ],
+        "evidence_zh": "两手轮廓可分，2016至2018路径沿前侧前臂进入手部，最高节点未漂浮在人体外。"
+      },
+      {
+        "category": "背景、水面与人体层序",
+        "required_parts": [
+          "方格纸",
+          "人体",
+          "折线",
+          "水面零线"
+        ],
+        "relationship": "网格在人体之后，路径在人体之前，水面位于人体下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.064,
+          0.24,
+          0.937,
+          0.912
+        ],
+        "evidence_zh": "水面上沿水平且对应零值；九段内部采样均位于可见红线，匹配变形主体透明度至少252/255。图面说明明确身体厚度不编码数值。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "允许合成数据替代原统计，并按当前趋势调整姿态、非数据厚度及标签；不要求复制原国别、峰位或下降结论。",
+      "output_added_or_lost_meaning_zh": "保留人均产出与人体姿态的联系，新增合成及非国家估计声明。原末端向下变为向上，符合允许的数据姿态适配，未发现必需语义遗漏。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA、SYNTHETIC GDP per capita、Economic output per person、USD per person、Year、Point height above the waterline = GDP per capita.及Not a country estimate均可见。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "Greek GDP Per Capita改为合成GDP per capita，属于明确允许的主题范围改编。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前2008最低、2018最高，髋部降低和手臂上举承载这一趋势。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "参考图没有明写更广泛的经济论点，不能由下行姿态推断额外作者意图。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单一线性高度通道；已测量全部十个节点，检查九段路径、十个年份刻度及全部必需标签。人体厚度、头颈和另一侧肢体不承担额外定量，未将其尺寸作为数值通道。"
+  }
+}

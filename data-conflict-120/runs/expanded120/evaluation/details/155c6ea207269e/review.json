@@ -1,0 +1,217 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：米粒照片被分成四个彩色扇区，木勺盛米、勺碗靠近中心，木柄向下；品牌与百分比由引线关联。成图：标题为Rice market shares，另有SYNTHETIC DATA、米业市场份额及Share of total market (%)。A、B、C、D分别标21%、7%、15%、57%，四条引线分别接蓝、紫、橙、绿区域。紫色小扇区仍能看见两侧白色边界、外圆弧及米粒。木勺置于圆盘上层，勺碗包含白米，连接向下木柄；中央部分射线被勺遮挡，外围射线可追踪，外圆与米粒纹理连续。未见文字重叠或截断；扇角尚待像素核验。",
+  "summary_zh": "当前数据、标签、扇角及米粒圆盘与盛米木勺的融合关系通过。最小7%扇区清楚可辨。参考实名品牌被冻结输入指定的合成生产者替换，不构成输出缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析2000×2000成图像素：在四段外露白色分界线上提取亮色像素并拟合直线，交会点约(1009.8,1109.9)，各线到该点残差不超过0.31像素。独立拟合彩色圆盘外缘得半径约610.4像素。顺时针分界方向约0°、75.553°、100.781°、154.801°，按扇角/360×100换算份额。mark_extent_px为像素拟合半径与扇角推得的外缘弧长；定位框包含部分被木勺遮挡的扇区中心。未以文字或代码公式代替像素测量。",
+  "uncertainties_zh": "白色分隔线约5像素宽，抗锯齿及边缘选取影响小数位；保守份额测量不确定度约0.1个百分点，微小拟合误差不代表同等精度保证。按限制未检查运行日志或历史记录，不能独立确认全部完整渲染均经过capture_render.py，也不能核验素材生成调用历史；可确认所供原始素材在成图中的实质使用。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列四类完整；Rice producer A、B、C、D及各自百分比均出现，另有合成声明、主题、指标单位和100%总量。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A=21%、B=7%、C=15%、D=57%，与冻结数据逐项一致；4 producers和TOTAL 100%也一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A引线接右上蓝区，B接右侧紫区，C接右下橙区，D接左侧绿区；由顶部顺时针为A、B、C、D，未见错接或类别重排。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素拟合份额约20.987%、7.008%、15.005%、57.000%，最大估计偏差约0.013个百分点，明显小于3个百分点容差；外缘为共心等半径圆，射线可外推至同一中心。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "查看raw_01.png及所供木勺剪切素材；原图的米粒排列、木纹、盛米勺碗和阴影在主体中可对应。render.py用累计份额计算角度并生成扇区掩膜、分隔线和引线，以同源木勺蒙版合成；代码控制定量几何与文字，素材占据整个主体圆盘。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "摄影米粒直接填充四个数据扇区，木勺在同一圆盘内部遮挡中心并与米粒接触；不是普通图表旁置物体。俯视透视和纹理连续，未见破坏读图的接缝或错层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、中文指标、英文单位、四组类别与数值、角度编码说明及总量均可读，无重要文字遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "木质勺碗围住白米，处于圆盘近中心并连接向下木柄；勺缘及右侧可见投影。外围彩色米粒与白色射线承载份额，木勺保持非定量遮挡角色。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Rice market shares、米业市场份额、Share of total market (%)和Rice producer A—D明确主题、指标、单位与生产者角色。100%总量及Sector angle = market share说明份额分割口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留参考的米业市场份额比较及米粒圆盘—盛米木勺融合。参考的品牌市场、实名公司与Others已由输入明确改为合成生产者A—D，故旧的具体品牌统计意义仅部分保留；这是输入改编，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小B=7%为右侧紫色扇区，外缘弧长约269像素，两条外露边界及内部米粒均可辨；木勺仅挡住内端，未吞没小区，也未见最小尺寸夸大。"
+    }
+  },
+  "semantic_attribution_zh": "参考实名品牌/其他类别和旧数值的替换来自冻结合成输入；当前米业份额主题及生产者语义完整。扇区大小变化由当前数据驱动。未发现输出自行丢失必要意义、结构或单位；本例7%扇区未受分辨率限制而失去米粒与扇区关系。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Rice producer A",
+        "expected_value": 21,
+        "observed_value": 20.987,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 805,
+        "full_scale_error_percent": 0.013,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.505,
+          0.25,
+          0.806,
+          0.555
+        ],
+        "evidence_zh": "蓝区两侧白线的像素拟合夹角约75.553°，目标75.6°；换算20.987%。弧长约805像素，A的21%引线位于区内。",
+        "uncertainty_zh": "以内外可见白线中轴拟合，内端被勺遮挡；保守不确定度约0.1个百分点。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Rice producer B",
+        "expected_value": 7,
+        "observed_value": 7.008,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 269,
+        "full_scale_error_percent": 0.008,
+        "small_value_relative_error_percent": 0.11,
+        "bbox_xyxy_normalized": [
+          0.505,
+          0.478,
+          0.81,
+          0.613
+        ],
+        "evidence_zh": "紫区两侧白线拟合夹角约25.227°，目标25.2°；换算约7.008%，外弧约269像素。相对偏差约0.11%按未取整拟合值计算，独立于7%文字。",
+        "uncertainty_zh": "拟合偏差小于边缘提取不确定度；约0.1个百分点对应本小值约1.4%的相对不确定范围，不能据此保证0.11%的真实精度。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Rice producer C",
+        "expected_value": 15,
+        "observed_value": 15.005,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 576,
+        "full_scale_error_percent": 0.005,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.505,
+          0.555,
+          0.805,
+          0.831
+        ],
+        "evidence_zh": "橙区两边界像素拟合夹角约54.020°，目标54°；换算约15.005%，外缘弧长约576像素。",
+        "uncertainty_zh": "木勺遮住射线内段，使用外露部分测量；保守不确定度约0.1个百分点。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Rice producer D",
+        "expected_value": 57,
+        "observed_value": 57,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2186,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2,
+          0.25,
+          0.636,
+          0.86
+        ],
+        "evidence_zh": "绿色大区由下右分界绕左侧至顶部，像素边界确定的优角约205.199°，目标205.2°；换算约57.000%，外缘弧长约2186像素。",
+        "uncertainty_zh": "误差0.000%为报告取整，不表示像素无误差；保守不确定度约0.1个百分点。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体融合结构",
+        "required_parts": [
+          "摄影米粒圆盘",
+          "盛米木勺勺碗",
+          "木柄",
+          "投影"
+        ],
+        "relationship": "勺碗包含白米并在圆盘近中心遮挡底层米粒；下部连续连接向下木柄，阴影支持接触与层序。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2,
+          0.25,
+          0.81,
+          0.86
+        ],
+        "evidence_zh": "勺碗约位于x795—1225、y678—1250像素，白米被木缘围住；木柄从下方颈部延至圆盘底缘。白色扇区射线在勺缘处被遮挡，而未画到白米表面。"
+      },
+      {
+        "category": "大值Rice producer D（57%）",
+        "required_parts": [
+          "绿色米粒区域",
+          "圆形外缘",
+          "顶部与下右分界",
+          "覆盖其内侧的木勺"
+        ],
+        "relationship": "大区位于勺的左侧并延展至下方，与其他扇区共圆；白色射线和外圆弧确定份额，木柄不充当数据长度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2,
+          0.25,
+          0.636,
+          0.86
+        ],
+        "evidence_zh": "绿色米粒连续分布在圆盘左半部；顶部射线到勺碗上缘，下右射线自木勺侧边露出并延伸到外弧。内部遮挡不妨碍追踪约205.2°范围。"
+      },
+      {
+        "category": "最小值Rice producer B（7%）",
+        "required_parts": [
+          "紫色米粒区域",
+          "上下两条白色射线",
+          "外圆弧",
+          "邻接勺碗边缘"
+        ],
+        "relationship": "紫色米粒被两条射线及外弧围成窄扇区；内端位于勺碗之下，外端仍完整可辨。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.59,
+          0.478,
+          0.81,
+          0.613
+        ],
+        "evidence_zh": "上边界约从(1210,1058)露出，下边界约从(1189,1144)露出，分别延至右侧圆周；区内能辨认多颗米粒，B引线落在紫色区域内。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入以合成Rice producer A—D替换参考实名品牌和Others，指定份额21、7、15、57；保留米业市场份额主题，允许非数据木勺的姿态和尺寸适配。",
+      "output_added_or_lost_meaning_zh": "输出保留当前生产者份额比较及100%分割口径，没有把米粒数或木勺面积冒充数量。旧品牌身份及旧份额未保留属于输入改编；未发现另加无依据的趋势或因果结论。",
+      "visible_inscription_evidence_zh": "可读铭文包括SYNTHETIC DATA、Rice market shares、米业市场份额、Share of total market (%)、Rice producer A—D、4 producers / 100% total、Sector angle = market share及Producers and values are synthetic。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原参考具体品牌市场统计改为合成生产者份额，是brief.json和data.json明确指定；reference_meaning的partial归于该改编。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "四个实际扇角对应当前21/7/15/57，未沿用参考20/8/14/58；木勺保持非数据遮挡部件。"
+      },
+      {
+        "cause": "none",
+        "evidence_zh": "当前主题、单位、类别绑定与大、小扇区的米粒—木勺关系均保留，未见需要归为输出遗漏的缺陷。"
+      }
+    ],
+    "measurement_coverage_zh": "已覆盖唯一系列全部四个扇区，包括最小正值7%、最大57%以及中间15%和21%；另逐项核对全部四组类别、数值、单位与总量。只有一个角度定量通道；米粒数、木勺面积及阴影不属于定量通道。"
+  }
+}

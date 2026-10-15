@@ -1,0 +1,250 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图中五条西装手臂从共同零点向右伸展，袖、袖口、腕表和拳头相连，第六类别无手臂。待评图有Department A–F六行，依次标注96%、86%、85%、78%、73%、0%；前五行完整手臂共用零点，F行无手臂。标题、百分比单位及SYNTHETIC DATA清晰，未见明显断接或遮挡。",
+  "summary_zh": "通过。已保存review.json并通过schema校验。六类标签和值准确，五条手臂实测跨度误差均小于0.05个百分点，零值未绘臂。参考政治语境的变化属于允许的输入改编。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取1900×2000的image.png。可见零刻度与100%刻度中心分别为x=459.5和1689.5，满量程1230像素。用皮肤颜色定位拳头，再检测其邻近实体轮廓，排除数字；跨度按最右实体像素外缘至零刻度中心计算。未使用源码自检结果作为测量。",
+  "uncertainties_zh": "抗锯齿端点约有±1像素，即±0.08个百分点的不确定性。没有微小正值，不能外推亚像素表现。未核验捕获执行历史；脚本存在不能证明实际执行。参考图潜在政治讽刺意图不作推断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Department A–F按输入顺序完整出现；五条正值手臂与一个零值空行，类别及数值无缺项。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "96%、86%、85%、78%、73%、0%全部正确；轴为0–100%，合成数据声明明确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个部门名称、手臂及百分数位于对应行；F的0%绑定零值空行。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "五条手臂跨度约1181、1058、1046、960、898像素，换算96.016%、86.016%、85.041%、78.049%、73.008%，均在容差内。F无手臂。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png和arm_master.png；蓝色织纹、袖扣、白袖口、棕表带与拳头清晰用于主体。render.py加载素材并由数据控制跨度及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "手臂本体替代横条，拳头最右实体限定量值；所有部件包含在跨度内，网格位于物体后方，无影响解释的断接或错层。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、副标题、部门名、单位、全部数值、轴刻度及合成数据说明均可读，无关键文字遮挡或截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "最大A与最小正值E均保留连续袖身、白袖口、腕表、裸露前臂及向右闭合拳头；F按零值规则不绘臂。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题及副标题明确各部门提名者中男性的比例；DEPARTMENT与MALE NOMINEES (%)保留类别、指标和单位，各部门未被误表达成总和100%的组成。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考政府及具名机构改为合成部门，属于冻结输入明确改编；西装握拳手臂替代横条及男性提名者比例含义保留。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值73%的E臂约898像素，各部件及连接清晰；0值F无最小手臂。本例不存在亚像素正值。"
+    }
+  },
+  "semantic_attribution_zh": "现实政治特指的减少归因于允许的输入改编。袖身长度变化及F无手臂属于数据驱动形状变化，未造成当前统计含义或融合关系丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department A",
+        "expected_value": 96,
+        "observed_value": 96.01626,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1181,
+        "full_scale_error_percent": 0.01626,
+        "small_value_relative_error_percent": 0.01694,
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.299,
+          0.864,
+          0.381
+        ],
+        "evidence_zh": "拳头最右实体像素列x=1640；相对零刻度中心的跨度约1181像素，满量程1230像素。",
+        "uncertainty_zh": "端点约±1像素；换算小数不表示亚像素实测精度。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department B",
+        "expected_value": 86,
+        "observed_value": 86.01626,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1058,
+        "full_scale_error_percent": 0.01626,
+        "small_value_relative_error_percent": 0.01891,
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.399,
+          0.799,
+          0.481
+        ],
+        "evidence_zh": "拳头最右实体像素列x=1517；跨度约1058像素。",
+        "uncertainty_zh": "端点约±1像素，对应约±0.08个百分点。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department C",
+        "expected_value": 85,
+        "observed_value": 85.04065,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1046,
+        "full_scale_error_percent": 0.04065,
+        "small_value_relative_error_percent": 0.04782,
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.499,
+          0.793,
+          0.581
+        ],
+        "evidence_zh": "拳头最右实体像素列x=1505；跨度约1046像素。",
+        "uncertainty_zh": "端点约±1像素，对应约±0.08个百分点。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department D",
+        "expected_value": 78,
+        "observed_value": 78.04878,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 960,
+        "full_scale_error_percent": 0.04878,
+        "small_value_relative_error_percent": 0.06254,
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.599,
+          0.748,
+          0.681
+        ],
+        "evidence_zh": "拳头最右实体像素列x=1419；跨度约960像素。",
+        "uncertainty_zh": "端点约±1像素，对应约±0.08个百分点。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department E",
+        "expected_value": 73,
+        "observed_value": 73.00813,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 898,
+        "full_scale_error_percent": 0.00813,
+        "small_value_relative_error_percent": 0.01114,
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.699,
+          0.715,
+          0.781
+        ],
+        "evidence_zh": "拳头最右实体像素列x=1357；跨度约898像素。",
+        "uncertainty_zh": "端点约±1像素，对应约±0.08个百分点。"
+      },
+      {
+        "series_id": "male_nominee_share",
+        "category": "Department F",
+        "expected_value": 0,
+        "observed_value": 0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 0,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.795,
+          0.892,
+          0.885
+        ],
+        "evidence_zh": "该行无皮肤色区域；显著前景仅为零轴及0%文字，未发现手臂主体。",
+        "uncertainty_zh": "零值相对误差无定义；排除数字、类别、网格及零轴。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Department A（最大值）",
+        "required_parts": [
+          "西装袖",
+          "白袖口",
+          "腕表",
+          "前臂",
+          "拳头"
+        ],
+        "relationship": "袖口从袖端伸出，表带跨腕，前臂连续连接向右拳头；最右拳头轮廓限定总跨度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.299,
+          0.864,
+          0.381
+        ],
+        "evidence_zh": "袖身起于x约460，袖口约x1316–1372，腕表约x1371–1440，皮肤连续连接到x约1640的拳头，无可见脱离。"
+      },
+      {
+        "category": "Department E（最小正值）",
+        "required_parts": [
+          "西装袖",
+          "白袖口",
+          "腕表",
+          "前臂",
+          "拳头"
+        ],
+        "relationship": "较短袖身仍连接袖口，腕表贴合腕部，前臂通向闭合拳头；所有部件包含于量值跨度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.242,
+          0.699,
+          0.715,
+          0.781
+        ],
+        "evidence_zh": "袖身末端约x1040，白袖口和棕色腕表清晰；皮肤连续到x约1357的拳头，未因缩短失去连接关系。"
+      },
+      {
+        "category": "Department F（零值）",
+        "required_parts": [
+          "部门标签",
+          "0%标签",
+          "无手臂"
+        ],
+        "relationship": "零值仅保留类别和数值，不设最小手臂。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.055,
+          0.795,
+          0.892,
+          0.885
+        ],
+        "evidence_zh": "Department F及0%清楚，数据区除轴、网格和数字外为空。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "原政府男性提名者及真实机构被明确改编为合成部门男性提名者比例，不要求沿用旧统计。",
+      "output_added_or_lost_meaning_zh": "保留男性提名者指标、每部门独立分母、百分比单位及手臂横条关系；政治特指随输入改编移除。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA、Male nominees by department、Share of each department’s nominees who are male、DEPARTMENT、MALE NOMINEES (%)；脚注说明从共同零点量至拳尖，并声明非现实统计。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考政治主题改为合成部门，reference_meaning的partial由允许的主题改编产生。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "袖身长度随五个正值变化，0值行不绘臂，部件连接保持。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一线性长度通道的全部五个正值，包括最大值、内部值和最小正值，并检查零值空行。全部类别、数值、单位及必要主题文字均核对，无遗漏面板。"
+  }
+}

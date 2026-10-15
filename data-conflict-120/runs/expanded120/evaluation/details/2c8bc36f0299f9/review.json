@@ -1,0 +1,328 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图可见水龙头、水滴、杯壁和杯底；八条用途引线连接杯内水平色层。待评图可见醒目的SYNTHETIC DATA、Indoor household water use标题和百分比指标说明。八类标签依次为Toilet 22%、Clothes Washer 18%、Shower 20%、Faucets 17%、Leaks 13%、Bath 6%、Dishwasher 1.5%、Other 2.5%，均有引线落入相应色层。透明杯壁包围分层液体，杯底位于最下色层下方；水龙头出水口下方的水滴朝向杯口。底部两层虽薄，仍可见不同颜色和独立引线。右侧100%括线及页脚明确以液层高度编码份额。以上为查看源码前的可见观察，尚未测量几何。",
+  "summary_zh": "通过。八类数值、顺序、引线绑定及液层高度一致；杯内分层、水龙头和水滴的关系及家庭室内用水份额语义保留，最小1.5%层仍可辨。",
+  "issues": [],
+  "measurement_notes_zh": "测量对象仅为1680×2000的image.png。取x=1080–1159及1180–1259两列带的逐行RGB中位数，以颜色跃迁定位界面；界面约为y=700、920、1100、1300、1470、1600、1660、1675、1700。最下界同时参照可见液体/玻璃底分界；右侧100%括线的可见端点为700和1700。按层高/1000×100换算份额，不使用杯宽、面积或体积。两列带相互印证，源码仅作旁证。零误差均是整像素点估计。",
+  "uncertainties_zh": "抗锯齿及玻璃高光使边界定位约有1像素不确定性；保守层厚误差约±2像素，相当于满量程0.2个百分点，但对15像素最小层可达约13.3%的相对不确定性。依限制未检查历史执行记录，因此不能独立确认所有历史渲染都经capture_render.py保存。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "8/8类别、8个数值和8条独立引线齐全；类别自上至下与输入顺序一致，SYNTHETIC DATA、主题、系列指标和%单位均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可读为Toilet 22%、Clothes Washer 18%、Shower 20%、Faucets 17%、Leaks 13%、Bath 6%、Dishwasher 1.5%、Other 2.5%；合计100%，没有舍去小数。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "原图检测的引线端点中心y约为810、1010、1200、1385、1535、1630、1668、1688，均位于对应层内；底部折线分开连接Dishwasher和Other，没有交叉换绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素测量的八层高度约为220、180、200、170、130、60、15、25像素，对应输入22、18、20、17、13、6、1.5、2.5%；均在3个百分点容差内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与glass_shell.png；杯口、反光杯壁、厚杯底、龙头及水滴与成图对应，素材构成主体。prepare_assets.py派生素材，render.py以输入值控制分层及文字；已读capture_render.py源码，未验证其历史执行。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据色层实际填入收窄杯壁之间，透明玻璃反光覆盖其上，非旁置普通图表。最底色层止于杯内底面上方；杯底厚度不参与共同总高，未见破坏解释的穿透或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成数据告示、八类标签、全部百分比和页脚编码说明在原分辨率可读；底部标签外移并由折线保持绑定，没有遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "龙头把手、阀体、弯管与向下出口连续；出口下两滴位于杯口横向范围内。杯壁连接杯底并包围八层液体，大层及最小层都保留边界和用途引线。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Indoor household water use及Synthetic share of indoor household water use (%)明确当前主题和指标；HOUSEHOLD USE/SHARE及用途名明确类别角色。100% TOTAL与Layer height说明共同总高份额，而非面积、体积或水滴计数。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考的家庭室内用水用途比较及水龙头向分层杯供水的关系均保留。新值明确标为合成数据，是允许的数据替换，未沿用旧比例或声称旧真实统计。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Dishwasher深蓝层约15像素高，Other浅灰蓝层约25像素高，二者均横跨杯内并有独立引线端点；可分辨其相邻关系及与玻璃底的区别，没有为识别而增厚。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题与参考均为家庭室内用水份额；旧数值替换为醒目标明的合成份额属于允许的输入改编。层厚变化由当前数据驱动，杯底非数据厚度和标签位置的适配未改变包含及供水关系。未观察到输出语义遗漏；小值精度限制来自像素边界，不是标签缺失或物体关系丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Toilet",
+        "expected_value": 22,
+        "observed_value": 22,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 220,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.642857,
+          0.35,
+          0.75,
+          0.46
+        ],
+        "evidence_zh": "原图中央两列带的颜色跃迁将该层定位为y≈700至920，高度约220像素；共同总高约1000像素，换算约22%。框为采样区包围框。",
+        "uncertainty_zh": "按整像素边界报告；抗锯齿造成约每边±1像素的定位不确定性，零误差为点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Clothes Washer",
+        "expected_value": 18,
+        "observed_value": 18,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 180,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.642857,
+          0.46,
+          0.75,
+          0.55
+        ],
+        "evidence_zh": "原图中央两列带的颜色跃迁将该层定位为y≈920至1100，高度约180像素；共同总高约1000像素，换算约18%。框为采样区包围框。",
+        "uncertainty_zh": "按整像素边界报告；抗锯齿造成约每边±1像素的定位不确定性，零误差为点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Shower",
+        "expected_value": 20,
+        "observed_value": 20,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 200,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.642857,
+          0.55,
+          0.75,
+          0.65
+        ],
+        "evidence_zh": "原图中央两列带的颜色跃迁将该层定位为y≈1100至1300，高度约200像素；共同总高约1000像素，换算约20%。框为采样区包围框。",
+        "uncertainty_zh": "按整像素边界报告；抗锯齿造成约每边±1像素的定位不确定性，零误差为点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Faucets",
+        "expected_value": 17,
+        "observed_value": 17,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 170,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.642857,
+          0.65,
+          0.75,
+          0.735
+        ],
+        "evidence_zh": "原图中央两列带的颜色跃迁将该层定位为y≈1300至1470，高度约170像素；共同总高约1000像素，换算约17%。框为采样区包围框。",
+        "uncertainty_zh": "按整像素边界报告；抗锯齿造成约每边±1像素的定位不确定性，零误差为点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Leaks",
+        "expected_value": 13,
+        "observed_value": 13,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 130,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.642857,
+          0.735,
+          0.75,
+          0.8
+        ],
+        "evidence_zh": "原图中央两列带的颜色跃迁将该层定位为y≈1470至1600，高度约130像素；共同总高约1000像素，换算约13%。框为采样区包围框。",
+        "uncertainty_zh": "按整像素边界报告；抗锯齿造成约每边±1像素的定位不确定性，零误差为点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Bath",
+        "expected_value": 6,
+        "observed_value": 6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 60,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.642857,
+          0.8,
+          0.75,
+          0.83
+        ],
+        "evidence_zh": "原图中央两列带的颜色跃迁将该层定位为y≈1600至1660，高度约60像素；共同总高约1000像素，换算约6%。框为采样区包围框。",
+        "uncertainty_zh": "按整像素边界报告；抗锯齿造成约每边±1像素的定位不确定性，零误差为点估计。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Dishwasher",
+        "expected_value": 1.5,
+        "observed_value": 1.5,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 15,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.642857,
+          0.83,
+          0.75,
+          0.8375
+        ],
+        "evidence_zh": "原图中央两列带的颜色跃迁将该层定位为y≈1660至1675，高度约15像素；共同总高约1000像素，换算约1.5%。框为采样区包围框。",
+        "uncertainty_zh": "15像素层清晰可见；保守按每边±1像素计，厚度不确定性可达约±2像素，即该小值的约13.3%；零误差不代表亚像素精确。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Other",
+        "expected_value": 2.5,
+        "observed_value": 2.5,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 25,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.642857,
+          0.8375,
+          0.75,
+          0.85
+        ],
+        "evidence_zh": "原图中央两列带的颜色跃迁将该层定位为y≈1675至1700，高度约25像素；共同总高约1000像素，换算约2.5%。框为采样区包围框。",
+        "uncertainty_zh": "下界邻接玻璃底高光，以颜色转折和总高括线共同定位；保守厚度不确定性约±2像素，即该小值的约8%。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体供水场景",
+        "required_parts": [
+          "龙头把手与阀体",
+          "弯管与出水口",
+          "水滴",
+          "杯口",
+          "杯壁与杯底"
+        ],
+        "relationship": "龙头各部件连续相连；水滴位于向下出口与杯口之间，杯壁向下连接杯底并包围液层。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.468,
+          0.0765,
+          0.941,
+          0.905
+        ],
+        "evidence_zh": "出口约在(1060,560)，两滴约在(1056,604)和(1055,648)；杯口约占x=786–1480、y=650–700。杯底延至约y=1810，位于数据下界1700之下。"
+      },
+      {
+        "category": "Toilet：大层",
+        "required_parts": [
+          "绿色液层",
+          "左右杯壁",
+          "杯口",
+          "Toilet引线"
+        ],
+        "relationship": "绿色层在杯口下、杯壁内；下边与黄色层相接，引线终点位于绿色层内部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.412,
+          0.325,
+          0.882,
+          0.46
+        ],
+        "evidence_zh": "绿色层可见y≈700–920，高约220像素；端点约(888,810)，两侧受玻璃壁包围，上方仍可辨椭圆杯口。"
+      },
+      {
+        "category": "Shower：内部层",
+        "required_parts": [
+          "玫红液层",
+          "上下相邻液层",
+          "透明杯壁",
+          "Shower引线"
+        ],
+        "relationship": "玫红层夹在黄色与紫色层之间，左右随杯壁收窄；引线落入该层。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.412,
+          0.55,
+          0.843,
+          0.65
+        ],
+        "evidence_zh": "玫红层上、下界约y=1100、1300；端点约(928,1200)，杯壁反光叠在色层侧缘而未遮断中央数据边界。"
+      },
+      {
+        "category": "Dishwasher：最小正层",
+        "required_parts": [
+          "深蓝薄液层",
+          "上方Bath层",
+          "下方Other层",
+          "杯壁",
+          "独立引线"
+        ],
+        "relationship": "深蓝层在橙色与浅灰蓝层之间，保持杯内横向连续；独立引线末端位于薄层内部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.412,
+          0.827,
+          0.82,
+          0.862
+        ],
+        "evidence_zh": "深蓝层约y=1660–1675、高15像素；引线点暗色边界约x=971–979、y=1664–1672，未跨入相邻层。"
+      },
+      {
+        "category": "Other：底部小层",
+        "required_parts": [
+          "浅灰蓝液层",
+          "深蓝上层",
+          "杯内底面",
+          "厚玻璃底",
+          "独立引线"
+        ],
+        "relationship": "浅灰蓝层位于深蓝层下、玻璃底上，仍被杯壁包围；厚杯底与其分开，不计入数据高度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.412,
+          0.8375,
+          0.832,
+          0.905
+        ],
+        "evidence_zh": "浅灰蓝层约y=1675–1700、高25像素，端点约(977,1688)；其下可见弧形底面反光和厚玻璃底，100%括线止于1700。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许将参考旧比例替换为当前合成值，并适配姿态、杯底非数据厚度及标签位置；当前主题仍是家庭室内各项用水份额。",
+      "output_added_or_lost_meaning_zh": "新增明确的合成数据告示及高度编码说明；没有丢失用途角色、百分比指标、总量口径或水龙头/水滴/杯内分层的关系。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Indoor household water use；Synthetic share of indoor household water use (%)；HOUSEHOLD USE；SHARE；100% TOTAL；Layer height = share of total indoor water use.；Glass width, volume and droplets do not encode values."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考旧统计比例被当前明确标记的合成份额替换；主题和用途角色没有改为其他含义。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "八层厚度服从当前值，尤其底部1.5%和2.5%分别约15和25像素；不同于参考比例不构成缺陷。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "薄层仍可辨，但约1像素的边界定位不确定性在最小层中占比更高，不能将满量程通过解读为小值绝对精确。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一系列S1的全部8个层高，包括最小正值、最大值和所有内部层；逐项检查全部标签及引线端点。只测声明的数据高度通道，不对非编码的杯宽、体积和水滴数量计算比例；未逐像素检验全部反光纹理。"
+  }
+}

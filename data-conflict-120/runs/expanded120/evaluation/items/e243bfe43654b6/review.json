@@ -1,0 +1,414 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图包含六行小兽计数，以及大炮朝右上发射旅行人物的年份序列。最终图两组各六个年份和数值齐全；A以彩色/灰色小兽编码，B以人物腰部圆点纵坐标编码。SYNTHETIC DATA、单位、图例及独立等距说明可读。A的1、7、52次彩段很难直接辨清；B四个小值圆点接近零线，人物仍完整可见。",
+  "summary_zh": "通过。可测几何均在满量程3%容差内，必需标签及结构完整。微小值可辨性部分保留；参考具体犯罪语义的泛化属于输入适配。已保存review.json并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量2000×1444的image.png。A完整兽轮廓宽约86px；直接计数完整彩兽，并由成图彩灰色差定位末只分界，按宽度比例换算。B实测零线中心约1200.27px、12M线约200.15px，跨度1000.12px；由圆点中心逆变换人数。六点x约690、925、1160、1395、1630、1865，间距约235px。两面板分别采用19800事件、12000000人的满量程。源码仅作旁证，未运行或重渲染。",
+  "uncertainties_zh": "A的1、7次分色处于亚像素尺度，无法独立核定相对精度；52次仅约2.48px彩宽。B的9,600人距零约0.88px，不能精确读出小值。误差均为近似测量点估计。未检查禁止的日志、自检及归档记录，不能证明每次渲染均经capture_render.py归档。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "A、B各六个类别完整，A使用1940，B使用1950；两个面板、图例、单位、合成声明、轴刻度和总计均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "A为1、2,657、7、19,080、370、52，总计22,167；B为42,000、540,000、9,600、84,000、4,200,000、10,800,000。图例1兽=1,800次，B轴0/4M/8M/12M均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "A年份、图标与数值逐行对应；B腰点、垂线及底部年份/人数逐列对应，两组年份没有混用。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "A可测四行最大满量程残差约0.0062%；B六点最大约0.0252%，均远低于3%。A两项亚像素值无法单独核定，未见人为放大。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的小兽、三种旅行者和大炮与最终主体可辨对应；源码控制数量、分色、腰锚坐标及文字。归档执行未核实。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "小兽本体承载计数和分色比例，人物腰点承载人数位置；炮口烟团和轨迹连接人物序列，未见破坏结构的错层或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、面板名、全部数值与单位可读；脚注明确说明年份独立等距及人物大小、姿态不编码人数。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "兽的头、角、躯干、四肢与尾巴连接完整；人物及行李完整，圆点附着腰部；炮管、轮架、烟团与发射方向关系保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "事件次数/events、出境旅行者/people、历史年份及两种编码方式均明确，合成统计口径可理解。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "原参考具体凶恶犯罪件数被冻结输入泛化为Incident count，属于允许的输入适配。重复计数、海外旅行者身份及大炮发射关系保留。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "A的1、7次近乎全灰，52次仅左缘极小区域着色；B最小值的人物和腰点完整，但不足1px的位移无法精确辨读。"
+    }
+  },
+  "semantic_attribution_zh": "具体犯罪主题泛化为一般事件次数归因冻结输入适配；灰色余部增多和近零腰点由当前数据驱动。微小彩段及位移的读数限制归因分辨率，没有发现当前主题、单位、类别角色或必需结构的额外遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "incidents",
+        "category": "1900",
+        "expected_value": 1,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1095,
+          0.21468,
+          0.1535,
+          0.29224
+        ],
+        "evidence_zh": "文字为1，灰兽完整；无法稳定定位左缘彩灰分界。",
+        "uncertainty_zh": "源码宽度约0.048px仅作旁证，不能证明可见亚像素精度。"
+      },
+      {
+        "series_id": "incidents",
+        "category": "1940",
+        "expected_value": 7,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1095,
+          0.38227,
+          0.1535,
+          0.45983
+        ],
+        "evidence_zh": "文字为7，灰兽完整；与1次图块仅12个像素存在差异，最大通道差19。",
+        "uncertainty_zh": "源码宽度约0.334px仅作旁证，像素差异不足以确认精确分色宽度。"
+      },
+      {
+        "series_id": "incidents",
+        "category": "1920",
+        "expected_value": 2657,
+        "observed_value": 2657.381,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 40.9637,
+        "full_scale_error_percent": 0.00192,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.11,
+          0.29848,
+          0.201,
+          0.37604
+        ],
+        "evidence_zh": "直接数得1只完整彩兽，末只彩宽约40.96px；按1800×(1+40.9637/86)换算。",
+        "uncertainty_zh": "边界估计约±0.5px，即±10.5次；长度字段仅指末只彩段。"
+      },
+      {
+        "series_id": "incidents",
+        "category": "1960",
+        "expected_value": 19080,
+        "observed_value": 19081.217,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 51.6581,
+        "full_scale_error_percent": 0.00615,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.11,
+          0.46607,
+          0.633,
+          0.54363
+        ],
+        "evidence_zh": "直接数得10只完整彩兽，末只彩宽约51.66px；按1800×(10+51.6581/86)换算。",
+        "uncertainty_zh": "边界估计约±0.5px；测量点估计不表示无限精度。"
+      },
+      {
+        "series_id": "incidents",
+        "category": "1980",
+        "expected_value": 370,
+        "observed_value": 371.218,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 17.736,
+        "full_scale_error_percent": 0.00615,
+        "small_value_relative_error_percent": 0.32913,
+        "bbox_xyxy_normalized": [
+          0.11,
+          0.54986,
+          0.153,
+          0.62742
+        ],
+        "evidence_zh": "左缘彩段约17.74px，完整轮廓宽86px，由宽度比例换算。",
+        "uncertainty_zh": "边界约±0.5px，名义相对残差小于测量不确定度。"
+      },
+      {
+        "series_id": "incidents",
+        "category": "1990",
+        "expected_value": 52,
+        "observed_value": 51.884,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2.4789,
+        "full_scale_error_percent": 0.00059,
+        "small_value_relative_error_percent": 0.22373,
+        "bbox_xyxy_normalized": [
+          0.11,
+          0.63366,
+          0.153,
+          0.71122
+        ],
+        "evidence_zh": "由最终图彩灰对照估得左缘彩宽约2.48px。",
+        "uncertainty_zh": "约±0.5px对应±10.5次；0.22%只是点估计，不能保证该小值的相对精度。"
+      },
+      {
+        "series_id": "travellers",
+        "category": "1900",
+        "expected_value": 42000,
+        "observed_value": 43624.1,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 3.6358,
+        "full_scale_error_percent": 0.013534,
+        "small_value_relative_error_percent": 3.866898,
+        "bbox_xyxy_normalized": [
+          0.3395,
+          0.82108,
+          0.3505,
+          0.83631
+        ],
+        "evidence_zh": "腰点中心约(690,1196.63)，高于实测零线约3.64px。",
+        "uncertainty_zh": "中心测量保守约±0.7px，即±8400人；名义相对残差不构成显著错误。"
+      },
+      {
+        "series_id": "travellers",
+        "category": "1920",
+        "expected_value": 540000,
+        "observed_value": 543016.74,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 45.2567,
+        "full_scale_error_percent": 0.02514,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.457,
+          0.79225,
+          0.468,
+          0.80749
+        ],
+        "evidence_zh": "腰点中心约(925,1155.01)，相对零线高45.26px。",
+        "uncertainty_zh": "反差加权中心受线宽及抗锯齿影响，保守约±0.7px。"
+      },
+      {
+        "series_id": "travellers",
+        "category": "1950",
+        "expected_value": 9600,
+        "observed_value": 10516.64,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 0.8765,
+        "full_scale_error_percent": 0.007639,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5745,
+          0.82299,
+          0.5855,
+          0.83822
+        ],
+        "evidence_zh": "腰点中心约(1160,1199.39)，相对零线高约0.88px；文字为9,600。",
+        "uncertainty_zh": "保守定位不确定度约±0.7px，无法可靠给出小值相对误差。"
+      },
+      {
+        "series_id": "travellers",
+        "category": "1960",
+        "expected_value": 84000,
+        "observed_value": 87018.18,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 7.2524,
+        "full_scale_error_percent": 0.025152,
+        "small_value_relative_error_percent": 3.593073,
+        "bbox_xyxy_normalized": [
+          0.692,
+          0.81857,
+          0.703,
+          0.83381
+        ],
+        "evidence_zh": "腰点中心约(1395,1193.02)，相对零线高7.25px。",
+        "uncertainty_zh": "保守约±0.7px；名义相对残差小于定位不确定度。"
+      },
+      {
+        "series_id": "travellers",
+        "category": "1980",
+        "expected_value": 4200000,
+        "observed_value": 4202707.22,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 350.2669,
+        "full_scale_error_percent": 0.02256,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.8095,
+          0.58103,
+          0.8205,
+          0.59626
+        ],
+        "evidence_zh": "腰点中心约(1630,850.00)，相对零线高350.27px。",
+        "uncertainty_zh": "像素定位保守约±0.7px，远小于满量程容差。"
+      },
+      {
+        "series_id": "travellers",
+        "category": "1990",
+        "expected_value": 10800000,
+        "observed_value": 10801800.62,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 900.2562,
+        "full_scale_error_percent": 0.015005,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.927,
+          0.20015,
+          0.938,
+          0.21538
+        ],
+        "evidence_zh": "腰点中心约(1865,300.01)，相对零线高900.26px。",
+        "uncertainty_zh": "像素定位保守约±0.7px，人物顶部不作为人数边界。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "A／1960大值",
+        "required_parts": [
+          "角与头",
+          "躯干和四肢",
+          "卷尾",
+          "彩灰分界"
+        ],
+        "relationship": "十只全彩兽并列；末只左右彩灰区域共同组成连续兽形。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1095,
+          0.4668,
+          0.6335,
+          0.5443
+        ],
+        "evidence_zh": "部件连接完整，末只分界贯穿本体，右侧灰色保留余部轮廓。"
+      },
+      {
+        "category": "A／1900与1940极小值",
+        "required_parts": [
+          "完整灰兽轮廓",
+          "左缘数据彩段"
+        ],
+        "relationship": "灰色部件保留整体身份，正值对应轮廓最左端。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.1095,
+          0.214,
+          0.1535,
+          0.4598
+        ],
+        "evidence_zh": "灰兽清楚，但无法稳定看到彩灰分界，不能确认各自精确宽度。"
+      },
+      {
+        "category": "A／1990小值",
+        "required_parts": [
+          "卷尾左缘",
+          "灰色躯干和四肢",
+          "彩色份额"
+        ],
+        "relationship": "约2.48px彩段仅覆盖尾部左缘，其余灰色构成完整兽。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.1095,
+          0.6337,
+          0.1535,
+          0.7112
+        ],
+        "evidence_zh": "彩色区域极小，完整兽身份主要靠灰色余部保留。"
+      },
+      {
+        "category": "B／1950最小值",
+        "required_parts": [
+          "头躯干和四肢",
+          "行李",
+          "腰点",
+          "零线"
+        ],
+        "relationship": "横飞人物部件相连，行李贴身，圆点覆盖腰带区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.529,
+          0.7957,
+          0.626,
+          0.8518
+        ],
+        "evidence_zh": "人物没有因小值缩成碎片，腰点附着身体；仅不足1px的位移难以精确分辨。"
+      },
+      {
+        "category": "B／1990大值",
+        "required_parts": [
+          "举起的双臂与头",
+          "躯干腰带",
+          "腿靴",
+          "行李",
+          "腰点"
+        ],
+        "relationship": "人物部件连续、行李贴身，数据圆点位于腰带区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.897,
+          0.135,
+          0.9605,
+          0.2784
+        ],
+        "evidence_zh": "腰点接近10.8M；手臂高于腰点属于非数据姿态，不是数量边界。"
+      },
+      {
+        "category": "大炮与旅行者序列",
+        "required_parts": [
+          "炮管和炮架",
+          "车轮",
+          "炮口外烟团",
+          "轨迹",
+          "首位旅行者"
+        ],
+        "relationship": "炮管由轮架承托并朝右上，烟团在炮口外，轨迹连接首位人物脚侧及后续腰点。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.0365,
+          0.7569,
+          0.392,
+          0.9453
+        ],
+        "evidence_zh": "炮口、烟团、轨迹与人物之间方向连续；“从炮口出发”说明发射关系。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结输入指定合成事件次数及出境旅行者人数，允许按新值改变数量、位置和非数据姿态，不要求保留具体罪类、真实数值或固定涨势。",
+      "output_added_or_lost_meaning_zh": "计数与大炮发射旅行者的关系保留，未发现当前统计角色的额外遗漏；微小值读数受分辨率限制。",
+      "visible_inscription_evidence_zh": "可见当前中文标题、SYNTHETIC DATA、事件次数/events、1只=1,800次、出境旅行者/people、腰部圆点表示人数、线性纵轴0–12百万人，以及独立等距与姿态不编码人数的脚注。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "参考具体犯罪件数在冻结输入中已泛化为事件次数，reference_meaning的partial由此产生。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "A的1960彩兽最多；B四点近零、后两点较高，均对应当前数据。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "1次和7次声明彩宽低于1px；9,600人的声明位移0.8px，实测约0.88px，不能保证小值相对精度。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖两种通道的最小正值、大值和中间值。A六行均核对，其中四行测量分色，两行保留不可独立测量结论；B六个腰点全部测量。另逐项核对全部12个类别与数值、单位、总计及刻度。"
+  }
+}

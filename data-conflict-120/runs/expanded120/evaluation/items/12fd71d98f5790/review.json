@@ -1,0 +1,343 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为金色双拱门连接红色招牌，叠放于双折线坐标区。指定成图保留双拱门、CHEESEBURGER红牌及两条年度曲线，未见招牌遮挡数据。可见1940–2024、85 years · 2 series、SYNTHETIC DATA，末端标为$2.36与$4.24，价格平台标为2001–2016、$1.04 each year。底部五组年度表覆盖1940–2024；脚注明确合成比较口径及招牌大小不编码。早年两线共同起点重合。",
+  "summary_zh": "数据、标签及招牌叠置关系符合冻结要求，未发现重大可见缺陷。早年近邻曲线的独立辨识部分受限；原购买力定义变化属于允许的输入适配。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1630原图上测量。实际$4.50网格线y≈313.648、零基线y≈1093.633，满量程约779.985像素，即173.330像素/USD。以色带或圆标中心换算数值；mark_extent_px表示中心距零基线的垂直距离。9项可测样本的满量程误差均低于0.06%，中心约±1像素。独立检测到85个年度刻度，典型间隔20像素。源码公式仅用于旁证。",
+  "uncertainties_zh": "未逐点独立恢复全部170个顶点。1940共同圆标不能分离两条系列，1941绿色中心受近邻线遮盖；小值相对误差仅对可测样本成立。按限制未检查运行日志、归档轮次或自检，不能确认每次渲染均已归档。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "检测到85个年度刻度；年度表5组各17行，覆盖1940–2024。两系列、年度值、单位及合成声明齐全；源码旁证每系列85个顶点。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "年度表逐组目视对照冻结值未见差异；共同起点$0.18、2001–2016每年$1.04、末端$2.36/$4.24均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "金色线、Price列及$2.36绑定Cheeseburger Price；绿色线、Benchmark列及$4.24绑定Inflation Benchmark。端点引线指向正确系列。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "共同线性0–4.5 USD轴正确；两通道的低值、内部点和大值抽测均在3%满量程容差内。价格平台和基准2008–2009小回落可见。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材、处理后招牌及render.py；双拱门、红牌和纹理实质出现在成图。代码读取当前数据控制折线与文字，项目数据与冻结数据相同。归档执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "招牌位于坐标区内，拱门连接红牌，图例紧邻下方；双线独立编码数值。保留参考叠置关系，无需招牌尺寸编码，未见破坏结构的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成声明、单位、图例、端点和口径脚注清楚。年度表字形高度约12像素，在原始分辨率可读且未截断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "两个金色拱顶共用中部支腿，三处底端接触红牌上沿；牌面包含CHEESEBURGER文字。主体叠置于网格前方，曲线中心线承载数据。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、年度、USD及两系列统计角色明确。脚注明示合成美元序列、非历史价格及非1940归一化购买力，招牌大小不编码。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留招牌与价格/基准双线的时间对照。原历史价格和购买力归一化含义被明确声明的合成范围替代，归因于允许的输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最低0.18值距零线约31像素，可见且未抬高。1941两线理论间距约1.7像素，仅露出细绿色边缘，独立中心难辨；1944代表低值可分离。"
+    }
+  },
+  "semantic_attribution_zh": "历史价格及购买力归一化含义的变化来自明确允许的合成适配，不计输出损失。平台、端点和走势由当前数据驱动。早年近邻线部分合并属于有限线宽与栅格分辨率；未发现当前主题或关键物体关系遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "burger_price",
+        "category": "1955",
+        "expected_value": 0.18,
+        "observed_value": 0.17962,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 31.13,
+        "full_scale_error_percent": 0.00855,
+        "small_value_relative_error_percent": 0.21387,
+        "bbox_xyxy_normalized": [
+          0.225,
+          0.648466,
+          0.231,
+          0.655828
+        ],
+        "evidence_zh": "最低正值水平段：x=456，金色像素带y=1060–1065，中心约1062.5。",
+        "uncertainty_zh": "抗锯齿与阈值造成约±1像素中心不确定性。"
+      },
+      {
+        "series_id": "burger_price",
+        "category": "1990",
+        "expected_value": 0.73,
+        "observed_value": 0.73059,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 126.63,
+        "full_scale_error_percent": 0.01306,
+        "small_value_relative_error_percent": 0.08048,
+        "bbox_xyxy_normalized": [
+          0.575,
+          0.589571,
+          0.581,
+          0.597546
+        ],
+        "evidence_zh": "内部点：x=1156，金色像素带y=965–969，中心约967。",
+        "uncertainty_zh": "斜线截面中心约有±1像素不确定性。"
+      },
+      {
+        "series_id": "burger_price",
+        "category": "2001",
+        "expected_value": 1.04,
+        "observed_value": 1.03925,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 180.13,
+        "full_scale_error_percent": 0.01672,
+        "small_value_relative_error_percent": 0.07236,
+        "bbox_xyxy_normalized": [
+          0.685,
+          0.555828,
+          0.691,
+          0.565031
+        ],
+        "evidence_zh": "平台起点圆标：x=1376，金色带y=910–917，中心约913.5。",
+        "uncertainty_zh": "排除下方引线；圆标中心约有±1像素不确定性。"
+      },
+      {
+        "series_id": "burger_price",
+        "category": "2024",
+        "expected_value": 2.36,
+        "observed_value": 2.36043,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 409.13,
+        "full_scale_error_percent": 0.0095,
+        "small_value_relative_error_percent": 0.01812,
+        "bbox_xyxy_normalized": [
+          0.914,
+          0.414724,
+          0.922,
+          0.425767
+        ],
+        "evidence_zh": "最大价格点：x=1836，圆标金色带y=680–689，中心约684.5；标注$2.36。",
+        "uncertainty_zh": "圆标抗锯齿造成约±1像素中心不确定性。"
+      },
+      {
+        "series_id": "inflation_benchmark",
+        "category": "1940",
+        "expected_value": 0.18,
+        "observed_value": 0.17962,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 31.13,
+        "full_scale_error_percent": 0.00855,
+        "small_value_relative_error_percent": 0.21387,
+        "bbox_xyxy_normalized": [
+          0.074,
+          0.646626,
+          0.082,
+          0.657669
+        ],
+        "evidence_zh": "最低正值共同起点：空心圆中心约(156,1062.5)；Both $0.18绑定两系列。",
+        "uncertainty_zh": "只测得共同位置，不能分别恢复两种颜色的中心。"
+      },
+      {
+        "series_id": "inflation_benchmark",
+        "category": "1944",
+        "expected_value": 0.23,
+        "observed_value": 0.22865,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 39.63,
+        "full_scale_error_percent": 0.0299,
+        "small_value_relative_error_percent": 0.58502,
+        "bbox_xyxy_normalized": [
+          0.115,
+          0.642945,
+          0.121,
+          0.650307
+        ],
+        "evidence_zh": "可分离低值：x=236，绿色带y=1052–1056，中心约1054。",
+        "uncertainty_zh": "约±1像素，折合约±0.0058 USD；不保证所有早年小差异精度。"
+      },
+      {
+        "series_id": "inflation_benchmark",
+        "category": "1980",
+        "expected_value": 1.19,
+        "observed_value": 1.19214,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 206.63,
+        "full_scale_error_percent": 0.04745,
+        "small_value_relative_error_percent": 0.17942,
+        "bbox_xyxy_normalized": [
+          0.475,
+          0.539877,
+          0.481,
+          0.54908
+        ],
+        "evidence_zh": "内部上升段：x=956，绿色带y=884–890，中心约887。",
+        "uncertainty_zh": "斜率与折点影响截面中点，约±1像素。"
+      },
+      {
+        "series_id": "inflation_benchmark",
+        "category": "2008",
+        "expected_value": 2.96,
+        "observed_value": 2.95755,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 512.63,
+        "full_scale_error_percent": 0.05434,
+        "small_value_relative_error_percent": 0.08261,
+        "bbox_xyxy_normalized": [
+          0.755,
+          0.352761,
+          0.761,
+          0.360736
+        ],
+        "evidence_zh": "内部局部高点：x=1516，绿色带y=579–583，中心约581；随后小幅下降可见。",
+        "uncertainty_zh": "折点截面中心约有±1像素不确定性。"
+      },
+      {
+        "series_id": "inflation_benchmark",
+        "category": "2024",
+        "expected_value": 4.24,
+        "observed_value": 4.24123,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 735.13,
+        "full_scale_error_percent": 0.02743,
+        "small_value_relative_error_percent": 0.02911,
+        "bbox_xyxy_normalized": [
+          0.914,
+          0.214724,
+          0.922,
+          0.225767
+        ],
+        "evidence_zh": "最大基准点：x=1836，绿色圆标带y=354–363，中心约358.5；标注$4.24。",
+        "uncertainty_zh": "圆标抗锯齿造成约±1像素中心不确定性。"
+      },
+      {
+        "series_id": "inflation_benchmark",
+        "category": "1941",
+        "expected_value": 0.19,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.0855,
+          0.647239,
+          0.0905,
+          0.655828
+        ],
+        "evidence_zh": "x=176列按固定颜色阈值仅y=1059一行识别为绿色，其下金线占y=1060–1065；年度表可读0.19。",
+        "uncertainty_zh": "绿色笔画被部分遮盖，无法独立恢复中心；可见边缘厚度不能当作数值高度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "主体招牌",
+        "required_parts": [
+          "左右金色拱门",
+          "共用中部支腿",
+          "红色牌面及边框",
+          "CHEESEBURGER文字"
+        ],
+        "relationship": "双拱门三处底端接触牌面上沿；边框包围文字。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.167,
+          0.228834,
+          0.4595,
+          0.557669
+        ],
+        "evidence_zh": "金属高光与红漆纹理连续可见；拱门和红牌无断开，文字位于正面边框内。"
+      },
+      {
+        "category": "招牌与定量图叠置",
+        "required_parts": [
+          "招牌",
+          "坐标网格",
+          "金色价格线",
+          "绿色基准线",
+          "图例"
+        ],
+        "relationship": "招牌包含于绘图区并遮住后方网格；双线使用共同USD轴，图例紧邻牌面下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.078,
+          0.192638,
+          0.918,
+          0.671166
+        ],
+        "evidence_zh": "网格在拱门开口处可见，曲线从招牌下方延伸至右侧。招牌不是数据边界，也未遮住曲线。"
+      },
+      {
+        "category": "大值末端",
+        "required_parts": [
+          "绿色4.24端点",
+          "金色2.36端点",
+          "对应标签与引线"
+        ],
+        "relationship": "两线右端分别连接圆标，标签引线指向相应端点。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.765,
+          0.171779,
+          0.9225,
+          0.429448
+        ],
+        "evidence_zh": "绿色端点约(1836,359)，金色约(1836,685)；标签在左上方，无互换或遮盖。"
+      },
+      {
+        "category": "小值起始段",
+        "required_parts": [
+          "共同起点圆标",
+          "金色0.18水平段",
+          "绿色早年上升段",
+          "零基线"
+        ],
+        "relationship": "两线从同一圆标出发且高于零基线，绿色逐渐与金线分离；不要求将小值缩成小招牌。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.074,
+          0.639877,
+          0.1225,
+          0.672393
+        ],
+        "evidence_zh": "共同起点距零线约31像素；1941绿色仅剩细边，1944两线已可分别辨认。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结core明确采用合成美元比较序列，适配原1940购买力归一化；不要求旧端点、固定峰值或原真实统计。",
+      "output_added_or_lost_meaning_zh": "增加年度明细和实际平台注释，与当前数据一致；保留价格与基准随年份比较，未发现当前统计角色遗漏。",
+      "visible_inscription_evidence_zh": "可见Cheeseburger Price vs. Inflation、Annual observations、U.S. dollars、SYNTHETIC DATA、USD、YEAR及两系列全名；脚注明示非历史价格或1940归一化购买力序列。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "基准口径变化由冻结输入明示并在脚注保留；参考含义部分延续，不归因于生成失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "价格平台1.04、末端2.36/4.24随当前数据变化，未沿用参考旧标注。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "1941两线纵向差约1.7像素，有限线宽导致局部覆盖，无法独立精确测量绿色中心。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖单面板两通道的最低正值、内部值与最大值，并补测价格平台、基准可分离低值及局部高点。共9项可测几何和1项不可测记录。独立统计85个刻度、5×17个年度行，年度文字逐组对照；未声称完成全部170顶点的逐像素测量。"
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图有15条蓝色粉笔笔触、国家名称与旗帜、右侧金额；持粉笔手独立于数据横条。待评图为深绿色黑板底，包含完整主题标题、Annual starting pay、USD/year、15 synthetic regions及SYNTHETIC DATA。A–O徽章、地区标签、15条横条和金额逐行对应，横条从共同零线起始。右下手指夹持蓝色粉笔，未遮住横条或金额；最短Region O的笔触仍清晰可见。以上观察已在读取源码前保存。",
+  "summary_zh": "数值、标签、单位及几何映射均符合要求，粉笔材质和持握关系保留。未发现可见缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量2000×1556的image.png。可见零线中心x≈390，75,000刻度x=1710，满量程跨度1320像素。逐行提取蓝色笔触包络，15条宽度依次为1220、921、823、756、714、707、652、646、552、518、511、504、489、481、330像素。换算后满量程点估计误差最大约0.041%。源码线性公式仅作佐证，并非测量依据。",
+  "uncertainties_zh": "纹理和抗锯齿使边界存在约±2像素不确定性，相当于满量程±0.15%；最短条相对不确定性约±0.61%。未查看执行历史，不能独立核实每次渲染均已归档。素材来源依据所供清单及可见匹配，未查生成日志。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "Region A–O、15个徽章、15条笔触和15个金额完整，顺序一致；单系列及0–75,000刻度齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "15个金额逐项符合数据：69,340、52,360、46,780、42,980、40,580、40,190、37,060、36,730、31,370、29,420、29,050、28,630、27,770、27,340、18,760；美元符号及USD/year准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每行徽章、地区名称、横条和右列金额水平对应，无错绑或遮挡。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部横条从x≈390起始。A/H/O实测约1220/646/330像素；15条满量程点估计误差均≤0.041%，低于3%容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材、笔触及手部素材，其纹理和形态在成图中实质使用。render.py依据数据控制数量、长度和文字；capture_render.py含归档实现，历史执行未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "生成笔触本身构成定量横条；手指夹持独立粉笔，手腕连接袖口。保持参考并置关系，无破坏解释的遮挡、透视错位或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、副题、地区、金额、刻度及合成数据说明清晰完整；底部说明共同零点及手和徽章不编码工资。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "最大与最小笔触均保留粉笔颗粒、清晰边界、黑板承载表面及对应徽章。右下手指夹持粉笔；参考本身没有要求手逐条接触数据横条。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确小学教师起薪，副题明确年度指标和USD/year，15 synthetic regions及SYNTHETIC REGION明确类别角色，底注明确为合成地区比较。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留教师起薪比较及粉笔教学语境。原OECD国家、2014年和PPP真实统计被明确适配为合成地区数据；部分延续源于允许的输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Region O约330×28像素，边界和颗粒清楚，连接共同零线，标签及金额完整，不属于亚像素标记。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家及年份口径改为合成地区属于冻结输入允许的适配。原图与成图均采用数据笔触和持粉笔手并置；长度变化由当前数据驱动。未发现输出遗漏或持握关系损失，像素边界不确定性未影响最小标记身份。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_starting_pay",
+        "category": "Region A",
+        "expected_value": 69340,
+        "observed_value": 69318.18,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1220,
+        "full_scale_error_percent": 0.02909,
+        "small_value_relative_error_percent": 0.03147,
+        "bbox_xyxy_normalized": [
+          0.195,
+          0.25835,
+          0.805,
+          0.27635
+        ],
+        "evidence_zh": "蓝色包络x=390–1609、y=402–429，宽1220像素；按可见1320像素满量程换算。文字为$69,340。",
+        "uncertainty_zh": "边界约±2像素，换算约±114 USD/year。"
+      },
+      {
+        "series_id": "annual_starting_pay",
+        "category": "Region H",
+        "expected_value": 36730,
+        "observed_value": 36704.55,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 646,
+        "full_scale_error_percent": 0.03394,
+        "small_value_relative_error_percent": 0.0693,
+        "bbox_xyxy_normalized": [
+          0.195,
+          0.54627,
+          0.518,
+          0.56427
+        ],
+        "evidence_zh": "内部行蓝色包络x=390–1035、y=850–877，宽646像素；文字为$36,730。",
+        "uncertainty_zh": "边界约±2像素，满量程误差不确定性约±0.15个百分点。"
+      },
+      {
+        "series_id": "annual_starting_pay",
+        "category": "Region O",
+        "expected_value": 18760,
+        "observed_value": 18750,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 330,
+        "full_scale_error_percent": 0.01333,
+        "small_value_relative_error_percent": 0.0533,
+        "bbox_xyxy_normalized": [
+          0.195,
+          0.83419,
+          0.36,
+          0.85219
+        ],
+        "evidence_zh": "最小正值包络x=390–719、y=1298–1325，宽330像素；文字为$18,760。几何可独立测量。",
+        "uncertainty_zh": "边界约±2像素，相对最小值约±0.61%；点估计不保证更细的相对精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Region A（最大值）",
+        "required_parts": [
+          "A徽章与地区文字",
+          "粉笔笔触",
+          "共同零线",
+          "黑板表面"
+        ],
+        "relationship": "徽章和笔触同排；笔触左缘接共同零线，颗粒在黑板表面向右延伸，净长度承载工资。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.044,
+          0.2545,
+          0.805,
+          0.2802
+        ],
+        "evidence_zh": "最长笔触约1220像素，边界连续；徽章不计入数据长度。"
+      },
+      {
+        "category": "Region H（内部值）",
+        "required_parts": [
+          "H徽章与地区文字",
+          "粉笔笔触",
+          "共同零线",
+          "黑板表面"
+        ],
+        "relationship": "同排对应和共同起点保持，笔触以平面长度编码，未被手部遮挡。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.044,
+          0.5424,
+          0.518,
+          0.5681
+        ],
+        "evidence_zh": "约646像素的笔触保留蓝色颗粒及清楚的板面边界。"
+      },
+      {
+        "category": "Region O（最小正值）",
+        "required_parts": [
+          "O徽章与地区文字",
+          "短粉笔笔触",
+          "共同零线",
+          "黑板表面"
+        ],
+        "relationship": "最短笔触仍接共同零线，与徽章和金额同排，保留粉笔颗粒形成板面笔触的关系。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.044,
+          0.8303,
+          0.36,
+          0.8561
+        ],
+        "evidence_zh": "330×28像素笔触可辨，未借徽章或持握粉笔的尺寸补长。"
+      },
+      {
+        "category": "右下持粉笔手",
+        "required_parts": [
+          "圆柱粉笔及端面",
+          "拇指",
+          "食指",
+          "手腕",
+          "袖口"
+        ],
+        "relationship": "粉笔朝左上，拇指在前侧遮住部分笔身，食指在上侧接触；手腕连接袖口，整组与数据横条并置。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.552,
+          0.6,
+          0.858,
+          0.858
+        ],
+        "evidence_zh": "端面、笔身和指腹夹持均可见；手部位于下部横条右侧空区，不遮挡条端或金额。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "原真实国家起薪排名适配为15个合成地区的年度小学教师起薪，不要求保留原年份、PPP口径或真实国家排序。",
+      "output_added_or_lost_meaning_zh": "当前主题、指标、单位和地区比较含义完整。原真实排名身份未沿用，符合输入适配；教学语境及持握动作保留。",
+      "visible_inscription_evidence_zh": "Starting Pay for Primary School Teachers；Annual starting pay · USD/year · 15 synthetic regions；SYNTHETIC REGION；Illustrative regional comparison; not observed salaries。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原参考的2014年OECD真实统计改为明确标注的合成地区数据，reference_meaning的partial不属于输出故障。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "实测横条长度符合当前数据，手部和徽章保持非数据角色。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿和纹理造成像素级边界不确定性；最小条仍长330像素，未丢失身份或部件关系。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一量化通道为15条水平粉笔笔触长度，已测全部15条，详列最大A、内部H和最小O。类别、徽章、数值文本另行全量核对；无辅助面板。"
+  }
+}

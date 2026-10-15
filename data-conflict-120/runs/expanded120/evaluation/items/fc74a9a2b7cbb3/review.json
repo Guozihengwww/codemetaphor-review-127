@@ -1,0 +1,273 @@
+{
+  "verdict": "minor",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：九根竖柱共用底线，第五根 Global wildfires 以燃木火光填充，与其余灰色柱形成高亮；标题说明其在2021年排放中位列第五，烟雾为背景。\n成图：九根竖柱按 Source A、B、C、D、Wildfires、E、F、G、H 排列，共用零线；第五柱约47像素高，内部可见炭木裂纹和橙色火光。Source H 是底线旁约2像素的细条。上方有 SYNTHETIC DATA、合成排放主题和第五位说明，九个数值同时出现在柱上及底部表格。英文单位多处呈 million tonnes CO e，底部中文单位说明的 CO 后出现缺字方框。文字、柱体及烟雾未见明显错误遮挡。",
+  "summary_zh": "九类数值、顺序、第五位高亮和共同线性柱高成立，燃木素材实质填充野火柱。单位中的下标2多处缺失，属局部文字缺陷。最小柱可见，但其相对精度受像素和零线叠合限制。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M5",
+      "expected_zh": "完整呈现单位 million tonnes CO2e，或可读的“百万吨二氧化碳当量”。",
+      "observed_zh": "三处英文单位显示为“million tonnes CO e”；底部中文单位的 CO 后为缺字方框。主题、百万吨量级及其余说明仍可读。",
+      "evidence_zh": "代表位置为原图 x84–264、y358–382；同类缺字还见于 x472、y921 的高亮说明，y1672 的表头及 y1970 的脚注。源码使用 CO₂e；所用两种字体的字符映射均无 U+2082，佐证可见缺字原因。",
+      "bbox_xyxy_normalized": [
+        0.0525,
+        0.179,
+        0.165,
+        0.191
+      ]
+    }
+  ],
+  "measurement_notes_zh": "仅分析指定1600×2000原图，未重渲染。像素扫描确认0与12000网格线约在y1504、424，满量程1080像素，故每像素约11.111百万吨。柱顶取亮边与填充的可见转折，约有±1像素定位不确定性；误差为该近似读数相对12000的绝对百分比，不是源码公式推算。小值相对误差不能据此视为精密渲染误差。",
+  "uncertainties_zh": "Source H仅约2像素高且下缘与零线混合，无法可靠反推精确量值及相对误差。简述中的“横条”与参考、chart_type及左起第五位合同不一致，按后三者一致的竖柱解释。依限制未查归档或执行日志，不能证明每次完整渲染均已归档；此项不作为成图失败。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九类、九柱、九个柱上数值和九条表格记录均在；SYNTHETIC DATA、合成主题、系列及统计口径均出现。单位字形问题单列。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐一核对为11800.0、5426.38691436、2495.39618172、1147.54111751、527.71204269、242.67540025、111.59750986、51.31959891、23.6，均与数据一致，无正数归零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从左至右为Source A、B、C、D、Wildfires、E、F、G、H；数值位于各自柱顶，表格对应一致。第五柱、橙色文字及引导线共同指向Wildfires。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素读数支持共用0–12000线性尺度。代表柱约1062、225、47.5、5、2像素高；可反推的读数误差最大约0.039%满量程，远低于3%。最小柱不宣称精确相对误差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01、smoke与embers素材；烟团形态和炭木裂纹在成图中实质可见。render.py使用这些素材，并依据数据值计算柱高和裁切边界。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "野火柱的燃木及火光位于真实数据矩形内，与共用零线接触；火焰未形成额外高度。其余柱保持灰色比较项，烟雾在图形后方，无破坏结构的遮挡或表面错位。"
+    },
+    "readability": {
+      "status": "fail",
+      "evidence_zh": "单位下标2在三处英文说明中缺失，在中文脚注中成为方框；这是局部必需单位文字缺陷。其他类别、数值、排名和口径可读，无大面积不可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "保留第五根数据柱内部的炭木、橙色燃烧缝隙、矩形边界及与基线的接触；没有把燃木移成独立装饰。其余八根灰柱保持比较关系。"
+    },
+    "semantic_meaning": {
+      "status": "partial",
+      "evidence_zh": "合成排放、九个可比来源、百万吨量级及野火第五名均明确；脚注说明Source A–H为合成来源，非真实国家或部门。单位化学式因缺字未完整表达。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "参考以燃木柱强调野火第五大排放来源；该排名强调与融合关系保留。真实国家及2021年统计被冻结输入明确改为合成来源，属允许的主题适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "野火约47.5像素高，炭木裂纹与火光仍可分辨。Source G约5像素；Source H约2像素，虽有亮带，矩形下缘已与零线混合。标签正确不等同于最小几何可精确辨读。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家和2021年语境的改变来自允许的输入适配；野火柱变矮来自当前数据。Source H形体细节减少归于像素分辨率及基线叠合。单位下标缺失属于输出文字遗漏，不归因于数据或原参考含义。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "emissions",
+        "category": "Source A",
+        "expected_value": 11800.0,
+        "observed_value": 11800.0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1062.0,
+        "full_scale_error_percent": 0.0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1,
+          0.221,
+          0.17375,
+          0.752
+        ],
+        "evidence_zh": "原图柱顶亮边约y442、零线y1504，差1062像素；按独立读取的1080像素满量程换算。",
+        "uncertainty_zh": "边缘抗锯齿带来约±1像素误差，0%为近似读数吻合，不表示无限精度。"
+      },
+      {
+        "series_id": "emissions",
+        "category": "Source C",
+        "expected_value": 2495.39618172,
+        "observed_value": 2500.0,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 225.0,
+        "full_scale_error_percent": 0.03836515,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.29375,
+          0.6395,
+          0.3675,
+          0.752
+        ],
+        "evidence_zh": "中央扫描带在y1279–1280进入柱体，取约y1279，至零线约225像素。",
+        "uncertainty_zh": "约±1像素，足以覆盖与目标之间的4.60百万吨读数差。"
+      },
+      {
+        "series_id": "emissions",
+        "category": "Wildfires",
+        "expected_value": 527.71204269,
+        "observed_value": 527.77777778,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 47.5,
+        "full_scale_error_percent": 0.00054779,
+        "small_value_relative_error_percent": 0.01246,
+        "bbox_xyxy_normalized": [
+          0.4875,
+          0.72825,
+          0.56125,
+          0.752
+        ],
+        "evidence_zh": "橙色上边界集中于y1456–1457，取约1456.5；至y1504为约47.5像素，火光包含于此范围。",
+        "uncertainty_zh": "约±1像素；0.01246%只是中心读数的相对差，不证明该量级的相对精度。"
+      },
+      {
+        "series_id": "emissions",
+        "category": "Source G",
+        "expected_value": 51.31959891,
+        "observed_value": 55.55555556,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 5.0,
+        "full_scale_error_percent": 0.03529964,
+        "small_value_relative_error_percent": 8.25407,
+        "bbox_xyxy_normalized": [
+          0.778125,
+          0.7495,
+          0.851875,
+          0.752
+        ],
+        "evidence_zh": "上边亮带始于约y1499，零线y1504，约5像素；内侧仍见少量灰色填充。",
+        "uncertainty_zh": "约±1像素对应约±11.11百万吨，超过中心估计差值；8.25%不能作为真实小值映射偏差的证据。"
+      },
+      {
+        "series_id": "emissions",
+        "category": "Source H",
+        "expected_value": 23.6,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2.0,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.875,
+          0.751,
+          0.94875,
+          0.752
+        ],
+        "evidence_zh": "约x1400–1518、y1502–1503可见连续亮带，正值未消失；下侧与y1504零线抗锯齿混合。",
+        "uncertainty_zh": "约2像素的外观包含轮廓和基线贡献，不能可靠分离实际填充高度，故不反推量值或误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Source A（大值比较柱）",
+        "required_parts": [
+          "灰色矩形柱体",
+          "上端边界",
+          "共用零线",
+          "对应标签"
+        ],
+        "relationship": "柱体自零线向上延伸；上端边界承载线性量值，标签在同一水平中心下方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1,
+          0.221,
+          0.17375,
+          0.781
+        ],
+        "evidence_zh": "灰柱左右边界连续，顶部约y442，底部接触y1504零线；Source A标签与柱体中心一致。"
+      },
+      {
+        "category": "Wildfires（较小的隐喻柱）",
+        "required_parts": [
+          "炭木裂纹",
+          "橙色燃烧缝隙",
+          "数据矩形边界",
+          "零线",
+          "第五位标签"
+        ],
+        "relationship": "木纹与火光被包含在数据柱内，相邻接触；柱底接触零线，柱顶承载排放高度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4875,
+          0.728,
+          0.56125,
+          0.779
+        ],
+        "evidence_zh": "约118×47.5像素矩形内仍能区分深色焦木和橙色灼热缝隙；未见外伸火焰增加柱高，Wildfires标签位于正下方。"
+      },
+      {
+        "category": "Source H（最小正值）",
+        "required_parts": [
+          "灰色数据细条",
+          "上端边界",
+          "共用零线",
+          "Source H标签"
+        ],
+        "relationship": "细条应位于零线上方并与零线接触，独立高度承载23.6。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.875,
+          0.7505,
+          0.94875,
+          0.779
+        ],
+        "evidence_zh": "位置和对应标签明确，上方亮带可见；仅约2像素高，下边界及内部填充无法与零线清楚分开。"
+      },
+      {
+        "category": "背景与数据层",
+        "required_parts": [
+          "烟雾背景",
+          "灰色比较柱",
+          "燃木柱",
+          "文字"
+        ],
+        "relationship": "烟雾为后景，数据柱和文字在前景；纹理融合仅在野火的数据区域内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.05,
+          0.212,
+          0.949,
+          0.803
+        ],
+        "evidence_zh": "烟团可从柱间看见，灰色柱及标签未被烟雾遮断；平面矩形边界与纹理裁切一致。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "partial",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入将原参考的国家与2021年真实排放改为九个合成可比来源，并要求野火仍为第五位。",
+      "output_added_or_lost_meaning_zh": "输出保留合成排放比较和第五位论点，未沿用旧统计值；单位下标缺失使二氧化碳当量化学式不完整。",
+      "visible_inscription_evidence_zh": "“合成排放对比”“SYNTHETIC DATA”“HIGHLIGHT / RANK 05 OF 09”“九个合成排放来源中的第五位”；页脚注明“Source A–H 为合成可比来源，不对应真实国家或部门”。英文单位可见为“million tonnes CO e”。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实国家、年份被合成来源替换，冻结brief/data/core明确允许；不归为生成器丢失原主题。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "野火当前527.71204269在12000满量程上只占约4.40%，相应变为约47.5像素短柱，燃木仍包含于数据区。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小正值只有约2像素的可见高度，形体边界与零线混合；不能把全量程合格推为小值相对精度保证。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "单位下标2在成图中缺失；源码写有该字符，字体字符映射未提供对应字形。"
+      }
+    ],
+    "measurement_coverage_zh": "单面板、单一柱高通道，记录5/9个代表值，覆盖最大值、内部值、隐喻柱、近最小值及最小正值；其余四柱检查了端点与顺序，未逐项报告精度估计。全部九类标签、柱上数值和表格数值均独立核对。"
+  }
+}
