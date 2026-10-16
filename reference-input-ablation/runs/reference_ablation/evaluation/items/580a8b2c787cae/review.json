@@ -1,0 +1,272 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图：深蓝底，黄色衣装全身人物腾跃于双折线上方；黄色闪光标记、橙色星形标记对应女性与男性，横轴为年龄组，纵轴为每百名患者，标题描述焦虑先恶化后好转。最终图：保留深蓝底、全身腾跃人物和黄/橙双折线及两类标记；八个年龄标签与十六个数值均可见，末端明确标为0.4、0.1。标题说明双系列年龄趋势与合成设计任务，顶部有SYNTHETIC DATA，图例解释为两组合成对照，单位为每100名假想参与者的合成病例数。人物位于曲线上方，未见遮挡数据标记；两条末端标记相邻但可区分。尚未读取渲染代码。",
+  "summary_zh": "未发现实质缺陷。八个年龄组、两系列十六个数值与标记绑定正确；六个代表点的像素测量均满足3%满量程容限。腾跃人物与双折线的并置关系保留。原焦虑及性别主题被明确许可的合成主题替换，原参考含义记为部分保留。",
+  "issues": [],
+  "measurement_notes_zh": "仅测指定image.png（1480×2000）。直接从栅格检测到0线y=1740、8线y=900，中间刻度每105像素；类别刻度x为205、359、513、667、821、975、1129、1283，间隔均154像素。由v=(1740-y)/105换算。A系列以隔离后的对称闪光轮廓上下界估计中心；B系列大值及内点由标记两侧折线像素中心拟合求交，末端由左侧折线拟合至可见标记对称轴。mark_extent_px记符号自身可见高度，并非数值编码长度；数值编码是中心位置。源码公式仅作旁证。",
+  "uncertainties_zh": "测点中心约±1像素；0.1点虽可辨，其相对精度不能由满量程合格推定。仅抽测六个点，其他点作视觉位置核对而未逐点拟合。未查看被禁止的日志、自检或轮次记录，因此不独立确认生成调用历史及每次渲染归档；素材清单、原始素材和使用代码相互一致。参考标题的情绪寓意不外推为作者意图。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八个年龄组按给定顺序齐全；每系列八个数据标记及八个数值，共十六个。标题、合成声明、两组图例、单位、0–8刻度及口径说明可见；本例无额外辅助面板要求。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项读到A：4.1、4.5、5.6、6.7、7.4、6.9、5.2、0.4；B：2.1、2.1、2.7、3.0、3.9、3.5、2.4、0.1，均与data.json一致，正值未归零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "黄色闪光对应合成对照组A，橙色五星对应B；全部数值靠近相应标记，末端0.4与0.1有独立引线；各列对应同一年龄组，无可见错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "统一线性0–8轴与等距年龄类别可由像素核实。六点独立测量最大满量程误差约0.060%，低于3%；人物高度未承担病例数编码。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "查看assets/raw_02.png及assets/leaping_person.png，人物姿态、黄色服装和笔触与最终图主体一致。assets_manifest.json声明其生图来源；render.py加载该素材，并从data.json计算折线与标记中心。调用及归档历史未另行审计。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "全身人物腾跃于两条折线上方，腿部局部遮住背景网格，数据线和标记均清楚。参考原为人物与图表并置，未要求折线贴合人体表面，当前关系成立。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、图例、八个年龄标签、十六个数值与中英单位可读；0.4与0.1分开标注，底部说明未被裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "头颈连接躯干，双臂与双腿完整连接并展开；黄色衣装覆盖躯干及髋部。人物、黄闪光折线、橙五星折线及年龄轴均保留；数值由标记中心而非人体部件承载。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "可见标题说明双系列年龄趋势及合成设计任务；图例写两组合成对照及合成对照组A/B，解释了Group角色；单位为每100名假想参与者的合成病例数，横轴注明年龄组等距有序类别。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留腾跃动作与年龄趋势双线的并置。参考焦虑、女性/男性及先恶化后好转的现实语义已按core.json的declared_synthetic_topic_adaptation改为合成对照，不计为输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "75 and older处黄闪光0.4与橙五星0.1仍分别可辨，轮廓高度约34及24像素，中心分别高于零线约42.5及10.4像素。五星下端接近零线，但中心、连线和引线仍可区分；符号大小不编码值。"
+    }
+  },
+  "semantic_attribution_zh": "原焦虑及性别主题的替换归因于冻结输入明确许可的合成主题适配；现图已补充合成对照组解释与病例单位。峰值转到45–54、末组显著下降归因于新数据。未见必需语义的输出遗漏。最小值位置估计受像素分辨率限制，但未失去闪光/五星身份；不推断更深的原作者意图。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "group_a",
+        "category": "75 and older",
+        "expected_value": 0.4,
+        "observed_value": 0.4048,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 34,
+        "full_scale_error_percent": 0.0595,
+        "small_value_relative_error_percent": 1.19,
+        "bbox_xyxy_normalized": [
+          0.85878,
+          0.8405,
+          0.875,
+          0.8575
+        ],
+        "evidence_zh": "隔离黄闪光轮廓y=1681至1714，中心约1697.5；比零线高42.5像素，换算约0.4048。右侧引线文字为0.4。",
+        "uncertainty_zh": "抗锯齿与中心定位约±1像素，对应±0.0095单位；相对该小值约±2.4%，拟合小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "group_a",
+        "category": "45-54",
+        "expected_value": 7.4,
+        "observed_value": 7.4048,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 34,
+        "full_scale_error_percent": 0.0595,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.54662,
+          0.473,
+          0.56284,
+          0.49
+        ],
+        "evidence_zh": "黄闪光轮廓y=946至979，中心约962.5，换算约7.4048；相邻折线独立拟合交点y约962.94亦接近目标。",
+        "uncertainty_zh": "抗锯齿、轮廓阈值或折线拟合带来约±1像素中心定位不确定性，约±0.0095单位。"
+      },
+      {
+        "series_id": "group_a",
+        "category": "25-34",
+        "expected_value": 5.6,
+        "observed_value": 5.6048,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 34,
+        "full_scale_error_percent": 0.0595,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.33851,
+          0.5675,
+          0.35473,
+          0.5845
+        ],
+        "evidence_zh": "黄闪光轮廓y=1135至1168，中心约1151.5，换算约5.6048；此处前后折线近共线，未用不稳定的交点估计。",
+        "uncertainty_zh": "抗锯齿、轮廓阈值或折线拟合带来约±1像素中心定位不确定性，约±0.0095单位。"
+      },
+      {
+        "series_id": "group_b",
+        "category": "75 and older",
+        "expected_value": 0.1,
+        "observed_value": 0.0987,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 24,
+        "full_scale_error_percent": 0.0158,
+        "small_value_relative_error_percent": 1.27,
+        "bbox_xyxy_normalized": [
+          0.85811,
+          0.858,
+          0.87635,
+          0.8705
+        ],
+        "evidence_zh": "末段橙线43列像素中心拟合残差约0.37像素，在标记对称轴x约1283处得到y约1729.63；高于零线10.37像素，换算约0.0987。文字为0.1。",
+        "uncertainty_zh": "抗锯齿与中心定位约±1像素，对应±0.0095单位；相对该小值约±9.5%，拟合小数不代表同等测量精度。"
+      },
+      {
+        "series_id": "group_b",
+        "category": "45-54",
+        "expected_value": 3.9,
+        "observed_value": 3.9,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 23,
+        "full_scale_error_percent": 0.0002,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.54662,
+          0.659,
+          0.56351,
+          0.6705
+        ],
+        "evidence_zh": "橙五星两侧各43列折线像素中心拟合交点约(820.93,1330.50)，换算约3.9000；轮廓纵向约23像素。",
+        "uncertainty_zh": "抗锯齿、轮廓阈值或折线拟合带来约±1像素中心定位不确定性，约±0.0095单位。"
+      },
+      {
+        "series_id": "group_b",
+        "category": "25-34",
+        "expected_value": 2.7,
+        "observed_value": 2.7036,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 23,
+        "full_scale_error_percent": 0.0451,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.33851,
+          0.722,
+          0.35541,
+          0.7335
+        ],
+        "evidence_zh": "橙五星两侧各43列折线像素中心拟合交点约(514.06,1456.12)，换算约2.7036；轮廓纵向约23像素。",
+        "uncertainty_zh": "抗锯齿、轮廓阈值或折线拟合带来约±1像素中心定位不确定性，约±0.0095单位。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "主体腾跃人物",
+        "required_parts": [
+          "头颈",
+          "躯干与黄色衣装",
+          "左右手臂与手",
+          "左右腿与足"
+        ],
+        "relationship": "四肢连接躯干，双臂及双腿展开；人物置于图表上方，腿部遮挡背景网格而不遮住数值标记。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.34324,
+          0.1705,
+          0.79865,
+          0.522
+        ],
+        "evidence_zh": "上伸手臂经肩部连接躯干，另一臂横伸；两腿从髋部分开，膝踝与足连续可见。衣装覆盖躯干和髋部，没有割裂人体身份的可见接缝。"
+      },
+      {
+        "category": "大值实例：45-54双系列",
+        "required_parts": [
+          "黄色闪光",
+          "橙色五星",
+          "对应折线段",
+          "7.4与3.9标签",
+          "45-54类别"
+        ],
+        "relationship": "两标记处在同一类别纵列，每个中心连接本系列左右折线；标签位于相应标记上方，人物与曲线并置。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.53378,
+          0.455,
+          0.57432,
+          0.6725
+        ],
+        "evidence_zh": "A中心约(821,963)，B中心约(821,1331)，黄橙轮廓及折线可区分；人物不充当坐标或数据容器。"
+      },
+      {
+        "category": "小值实例：75 and older双系列",
+        "required_parts": [
+          "0.4黄色闪光",
+          "0.1橙色五星",
+          "末段折线",
+          "独立引线",
+          "零线与年龄标签"
+        ],
+        "relationship": "末段线分别连接两个标记中心，标记沿相同类别纵列上下排列；标签由独立引线向右连接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.85541,
+          0.839,
+          0.9277,
+          0.914
+        ],
+        "evidence_zh": "黄闪光中心距零线约42.5像素，橙五星中心约10.4像素；两符号之间仍可分辨，五星下部接近零线但未把中心抬高或改成零值。"
+      },
+      {
+        "category": "中间实例：25-34双系列",
+        "required_parts": [
+          "黄色闪光及左右连线",
+          "橙色五星及左右连线",
+          "5.6与2.7标签"
+        ],
+        "relationship": "两标记分别连接同色线段，沿共同类别列定位；形状区分系列，中心纵坐标承载病例数。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.32905,
+          0.549,
+          0.36351,
+          0.734
+        ],
+        "evidence_zh": "两个完整符号分处约y=1152与1456，标签与颜色一致，未被人物或其他标签遮挡。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core.json明确采用合成主题，允许按当前数值调整走势与非数据姿态；不要求沿用原焦虑、性别差异或旧峰值。",
+      "output_added_or_lost_meaning_zh": "现图用合成对照组A/B解释冻结的Group标签，并声明人物姿态不表示病例数。原现实焦虑论述不再出现属于许可适配；腾跃动作和双系列年龄趋势的并置仍保留。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、腾跃人物与双系列年龄趋势、合成数据设计任务、两组合成对照、合成对照组A/B、合成病例数/每100名假想参与者、年龄组（等距有序类别），以及非真实人群统计和人物姿态不表示病例数的说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "冻结core明确declared_synthetic_topic_adaptation；原焦虑及男女统计被合成对照主题替代，故reference_meaning为partial而非失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前两系列峰值均位于45–54，末组为0.4及0.1，数值与位置来自当前数据而非旧参考走势。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小0.1点的中心距零线约10.4像素，±1像素约相当于该值的9.5%；符号身份可见，但不宣称小值具有百分之一精度。"
+      }
+    ],
+    "measurement_coverage_zh": "同一面板的两种位置编码系列各抽测最小正值、最大值和一个内点，共6/16点；另外从栅格测得全部8个类别刻度及0–8网格。全部16个数值与8个类别另行逐项视觉核对。其余10点未作独立中心拟合；人物不属定量通道。"
+  }
+}
