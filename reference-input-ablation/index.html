@@ -4,8 +4,8 @@
 <p>比较同一冲突数据下的两次新生成：<strong>原流程自主决定是否传参考图</strong>，与<strong>禁止向生图工具传原参考图</strong>。两组智能体都可以查看原图并写文字提示；共3个案例、6次新生成，旧图只作额外参照。</p>
 <p>GPT-6-Astra / max；每次最多3次生图、6次完整渲染、35分钟；评审每次15分钟，生成与全部评审共用最多3个会话。首轮为首次完整渲染尝试，最终为最后有效图。数值与几何容差、结构、意义、小值可辨指标沿用120组详细评估；6张可用最终图均安排第二次匿名评审。</p>
 <p class="note">本次固定选取历史上确有传参考图记录的E04、E35、E95，覆盖类别数和趋势形状。只有3组，每条件一次生成，不代表120组总体。若新原流程自行不传图，会如实记录；此时不能将该配对解读为实际图像输入的有无对比。技术异常不计为图像失败，亦不重采样掩盖。</p>
-<p class="note">更新时间（北京时间）：2026-10-16 09:32:09</p>
-<p>生成：已完成6；独立评估：已完成11；最终第二评估：执行中3、待执行3</p>
+<p class="note">更新时间（北京时间）：2026-10-16 09:35:41</p>
+<p>生成：已完成6；独立评估：已完成11；最终第二评估：执行中3、已完成2、待执行1</p>
 <p><a href="docs/reference_ablation/protocol.md">冻结实验方案</a> · <a href="reports/reference_ablation/summary.json">完整统计与评审JSON</a> · <a href="../data-conflict-120/">原120组实验</a></p></div>
 <section id="overall"><h2>两组通过数对照</h2><p class="note">每组分母固定为3。执行中的“已判通过”不是最终通过率；未评、技术失败及非pass均不算通过，评估完成数量同时显示。旧图不计入下表。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>原流程自主传图</th><th>禁止传原参考图</th></tr></thead><tbody><tr><th scope="row">首轮 · 数值支持</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 关键结构</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 参考原意</th><td>0/3 已判通过；已评3/3</td><td>1/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 小值可辨</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 共同主判据</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 数值支持</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 关键结构</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 当前主题意义</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 参考原意</th><td>0/3 已判通过；已评3/3</td><td>2/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 小值可辨</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 共同主判据</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr></tbody></table></div></section><label>案例 <select id="case-filter"><option value="all">全部3案例</option><option value="A01">A01 · 失业人口年龄、性别及族群构成</option><option value="A02">A02 · 年度出生率</option><option value="A03">A03 · 腾跃人物与双系列年龄趋势：合成数据设计任务</option></select></label><section class="case" id="A01"><h2>A01 · 失业人口年龄、性别及族群构成</h2><p>原案例E04 · 同一冲突数据 · 类别数</p><div class="reference"><a href="images/A01/reference.webp"><img loading="lazy" src="images/A01/reference.webp" alt="原参考图"></a></div><p><a href="runs/reference_ablation/trials/A01_adaptive/data.json">共同输入数据</a> · <a href="runs/reference_ablation/trials/A01_adaptive/brief.json">共同简报</a> · <a href="runs/reference_ablation/trials/A01_adaptive/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>历史原流程（仅作参照）</h3><p class="badge">日志确认曾传原参考图</p><a href="images/A01/historical.webp"><img loading="lazy" src="images/A01/historical.webp" alt="历史最终图"></a><p>已保存并通过schema.json验证的review.json。12项数值和标签绑定正确，独立像素测量最大偏差约0.03个百分点；人脸与数据扇区实质融合，未发现必要要求的可见缺陷。未运行submit.py。</p></article><article><h3>原流程：自主决定传图</h3><p>生成：已完成 </p><p>实际传图：已核验；原参考图输入：已传入</p><details><summary>实际参考输入核验记录</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
@@ -852,7 +852,52 @@
     }
   ],
   &quot;measurement_coverage_zh&quot;: &quot;单一S1角度编码面板的12项均做像素角度核查，明细列出最小正值1.5%、最大35.5%、中间6.5%/8.5%以及2.5%和5%共6项。其余6项也在容差内，未逐项展开；全部12项标签、数值、父类及子类编号另行逐项核对。未以像素面积替代所声明的扇角编码。&quot;
-}</pre></details><a href="runs/reference_ablation/evaluation/items/28dd02e3525824/review.json">完整独立评审JSON</a><p class="note">离线代码复现像素一致：True</p></details></article></div></section><section class="case" id="A02"><h2>A02 · 年度出生率</h2><p>原案例E35 · 同一冲突数据 · 趋势形状</p><div class="reference"><a href="images/A02/reference.webp"><img loading="lazy" src="images/A02/reference.webp" alt="原参考图"></a></div><p><a href="runs/reference_ablation/trials/A02_adaptive/data.json">共同输入数据</a> · <a href="runs/reference_ablation/trials/A02_adaptive/brief.json">共同简报</a> · <a href="runs/reference_ablation/trials/A02_adaptive/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>历史原流程（仅作参照）</h3><p class="badge">日志确认曾传原参考图</p><a href="images/A02/historical.webp"><img loading="lazy" src="images/A02/historical.webp" alt="历史最终图"></a><p>未发现违反冻结要求的可见缺陷。已保存 review.json 并通过 schema.json 校验；按后续指令未运行 submit.py。</p></article><article><h3>原流程：自主决定传图</h3><p>生成：已完成 </p><p>实际传图：已核验；原参考图输入：已传入</p><details><summary>实际参考输入核验记录</summary><pre>{
+}</pre></details><a href="runs/reference_ablation/evaluation/items/28dd02e3525824/review.json">完整独立评审JSON</a><details><summary>第二次匿名评价（保留分歧）</summary><pre>{
+  &quot;completeness&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;12个扇区及12组类别、百分比完整，四个White adult women子类和两个Nonwhite adult men子类均显示父类。必需人脸部件齐全。&quot;
+  },
+  &quot;numeric_text&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;依输入顺序显示6.5、6.5、6.5、6.5、7、1.5、8.5、2.5、5.0、5.0、9、35.5%，合计100%。&quot;
+  },
+  &quot;binding&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;12条引线均可追踪至对应扇区；1.5%连接右下窄绿色区，35.5%连接左上大灰色区，两组5.0%子类绑定明确。&quot;
+  },
+  &quot;geometry&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;全部12项像素测量偏差小于0.04个百分点。扇区从12点顺时针排列，汇聚鼻尖，头发和耳朵位于数据圆盘外。&quot;
+  },
+  &quot;source&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;已查看原始人脸素材及映射后的头发；其纹理、五官和耳朵在成图中有实质使用。处理及渲染源码控制素材组合、数据几何和文字。&quot;
+  },
+  &quot;integration&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;定量圆盘直接构成额头、双颊和下巴；鼻尖连接射线，五官位于圆盘内，发型贴合外缘，嘴唇跨越下部扇区。&quot;
+  },
+  &quot;readability&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;标题、合成标识、双语指标、全部类别及数值、底部统计口径说明均可读，无关键遮挡。&quot;
+  },
+  &quot;critical_structure&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;左右发型与脸部连接，左耳接触左侧轮廓，双眼在鼻上方、嘴唇在下方；大小扇区均构成同一张脸。&quot;
+  },
+  &quot;semantic_meaning&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;主题明确为失业人口年龄、性别及族群构成；100% of the unemployed population明确分母，页脚说明不是失业率或真实调查。&quot;
+  },
+  &quot;reference_meaning&quot;: {
+    &quot;status&quot;: &quot;partial&quot;,
+    &quot;evidence_zh&quot;: &quot;保留人口构成与人脸融合的表达；参考中的1980年7月现实统计及衰退措辞按冻结输入改为合成构成，属于允许适配。&quot;
+  },
+  &quot;small_mark_visibility&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;最小1.5%扇区在半径450像素处约宽43.3像素，两侧边界可辨；2.5%扇区约宽71.4像素，仍与嘴唇及鼻尖保持可追踪关系。&quot;
+  }
+}</pre></details><p class="note">离线代码复现像素一致：True</p></details></article></div></section><section class="case" id="A02"><h2>A02 · 年度出生率</h2><p>原案例E35 · 同一冲突数据 · 趋势形状</p><div class="reference"><a href="images/A02/reference.webp"><img loading="lazy" src="images/A02/reference.webp" alt="原参考图"></a></div><p><a href="runs/reference_ablation/trials/A02_adaptive/data.json">共同输入数据</a> · <a href="runs/reference_ablation/trials/A02_adaptive/brief.json">共同简报</a> · <a href="runs/reference_ablation/trials/A02_adaptive/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>历史原流程（仅作参照）</h3><p class="badge">日志确认曾传原参考图</p><a href="images/A02/historical.webp"><img loading="lazy" src="images/A02/historical.webp" alt="历史最终图"></a><p>未发现违反冻结要求的可见缺陷。已保存 review.json 并通过 schema.json 校验；按后续指令未运行 submit.py。</p></article><article><h3>原流程：自主决定传图</h3><p>生成：已完成 </p><p>实际传图：已核验；原参考图输入：已传入</p><details><summary>实际参考输入核验记录</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;original_reference_used&quot;: true,
   &quot;image_call_count&quot;: 1,
@@ -2625,4 +2670,49 @@
     }
   ],
   &quot;measurement_coverage_zh&quot;: &quot;同一面板的两种位置编码系列各抽测最小正值、最大值和一个内点，共6/16点；另外从栅格测得全部8个类别刻度及0–8网格。全部16个数值与8个类别另行逐项视觉核对。其余10点未作独立中心拟合；人物不属定量通道。&quot;
-}</pre></details><a href="runs/reference_ablation/evaluation/items/580a8b2c787cae/review.json">完整独立评审JSON</a><p class="note">离线代码复现像素一致：True</p></details></article></div></section><script>document.querySelector('#case-filter').onchange=e=>document.querySelectorAll('.case').forEach(c=>c.hidden=e.target.value!=='all'&&c.id!==e.target.value)</script></main></body></html>
+}</pre></details><a href="runs/reference_ablation/evaluation/items/580a8b2c787cae/review.json">完整独立评审JSON</a><details><summary>第二次匿名评价（保留分歧）</summary><pre>{
+  &quot;completeness&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;八年龄组、两系列各8个标记和数值、图例、0–8刻度、单位及合成声明完整。&quot;
+  },
+  &quot;numeric_text&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;A为4.1、4.5、5.6、6.7、7.4、6.9、5.2、0.4；B为2.1、2.1、2.7、3.0、3.9、3.5、2.4、0.1，全部符合输入。&quot;
+  },
+  &quot;binding&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;黄色闪光对应A，橙色五角星对应B；数值、年龄列和折线绑定一致，末端小值引线未串组。&quot;
+  },
+  &quot;geometry&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;类别中心间距约154像素，共用0–8线性轴；六个代表点的像素估计差异最大约0.067%满量程，低于3%。&quot;
+  },
+  &quot;source&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;已查看raw_02.png和leaping_person.png，其服装、姿态及细节与成图主体一致；render.py合成该素材并控制数据几何与文字。&quot;
+  },
+  &quot;integration&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;腾跃人物与折线并置，腿部遮挡背景网格但不遮挡数据。参考未要求人物轮廓承担数值编码。&quot;
+  },
+  &quot;readability&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;全部必需标签可读，小值分别标注；未见影响读数或人物身份的裁切、遮挡或接缝。&quot;
+  },
+  &quot;critical_structure&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;人物头颈、躯干、双臂和双腿连接完整；双系列折线、闪光及星形保留，数据由标记中心高度表达。&quot;
+  },
+  &quot;semantic_meaning&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;当前主题、合成病例指标、每100名假想参与者及两组合成对照均明确；年龄是等距有序类别，没有年份、累计或百分比组成的混淆。&quot;
+  },
+  &quot;reference_meaning&quot;: {
+    &quot;status&quot;: &quot;partial&quot;,
+    &quot;evidence_zh&quot;: &quot;腾跃动作及年龄双系列比较保留。参考焦虑与男女主题改为合成对照主题，由core.json明确允许，不属于输出遗漏。&quot;
+  },
+  &quot;small_mark_visibility&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;0.4闪光与0.1星形均可辨，分别连接所属折线及标签；中心约相距31像素。未见人为抬高小值，但相对测量精度有限。&quot;
+  }
+}</pre></details><p class="note">离线代码复现像素一致：True</p></details></article></div></section><script>document.querySelector('#case-filter').onchange=e=>document.querySelectorAll('.case').forEach(c=>c.hidden=e.target.value!=='all'&&c.id!==e.target.value)</script></main></body></html>

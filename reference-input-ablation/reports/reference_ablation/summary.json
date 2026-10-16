@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T01:32:09.252632+00:00",
+  "updated_at": "2026-10-16T01:35:41.413688+00:00",
   "progress": {
     "phase": "running",
     "planned_generations": 6,
@@ -11,7 +11,8 @@
     },
     "final_second_evaluations": {
       "running": 3,
-      "pending": 3
+      "ok": 2,
+      "pending": 1
     }
   },
   "generation_status": {
@@ -1593,7 +1594,278 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为腾跃人物与两条年龄趋势线并置。成图保留完整人物、两组各8个标记、全部年龄及数值标签；0.4和0.1在右下角分别标注。合成声明、两组合成对照、每100名假想参与者的单位及等距年龄组说明可读，人物未遮挡数据标记。",
+        "summary_zh": "通过。未发现违反冻结要求的可见缺陷。完整评审已以UTF-8保存至review.json并通过schema.json校验；按后续要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在1480×2000原图中独立定位零线y≈1740、8刻度y≈900，得到105像素/单位。以局部填色像素质心近似标记中心进行反算。mark_extent_px表示符号可见高度，数值实际由中心位置编码。满量程误差分母为8；中心定位约有±1像素不确定度。",
+        "uncertainties_zh": "精密像素抽查覆盖6/16个标记，全部文字及绑定另行目视核查。0.1的有效高度仅约11像素，不能据满量程通过保证小值相对精度。已查看归档程序，但按限制未检查运行日志或历史归档，实际调用历史未独立核实。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "八年龄组、两系列各8个标记和数值、图例、0–8刻度、单位及合成声明完整。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "A为4.1、4.5、5.6、6.7、7.4、6.9、5.2、0.4；B为2.1、2.1、2.7、3.0、3.9、3.5、2.4、0.1，全部符合输入。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "黄色闪光对应A，橙色五角星对应B；数值、年龄列和折线绑定一致，末端小值引线未串组。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "类别中心间距约154像素，共用0–8线性轴；六个代表点的像素估计差异最大约0.067%满量程，低于3%。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_02.png和leaping_person.png，其服装、姿态及细节与成图主体一致；render.py合成该素材并控制数据几何与文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "腾跃人物与折线并置，腿部遮挡背景网格但不遮挡数据。参考未要求人物轮廓承担数值编码。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "全部必需标签可读，小值分别标注；未见影响读数或人物身份的裁切、遮挡或接缝。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "人物头颈、躯干、双臂和双腿连接完整；双系列折线、闪光及星形保留，数据由标记中心高度表达。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "当前主题、合成病例指标、每100名假想参与者及两组合成对照均明确；年龄是等距有序类别，没有年份、累计或百分比组成的混淆。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "腾跃动作及年龄双系列比较保留。参考焦虑与男女主题改为合成对照主题，由core.json明确允许，不属于输出遗漏。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "0.4闪光与0.1星形均可辨，分别连接所属折线及标签；中心约相距31像素。未见人为抬高小值，但相对测量精度有限。"
+          }
+        },
+        "semantic_attribution_zh": "主题及组别变化属于明确允许的输入适配；峰位与末端低值来自当前数据。未发现必需语义或结构的输出丢失。小值精度限制来自像素定位及抗锯齿。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "group_a",
+              "category": "75 and older",
+              "expected_value": 0.4,
+              "observed_value": 0.4026,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 33,
+              "full_scale_error_percent": 0.032,
+              "small_value_relative_error_percent": 0.65,
+              "bbox_xyxy_normalized": [
+                0.85878,
+                0.841,
+                0.875,
+                0.8575
+              ],
+              "evidence_zh": "填色质心约(1282.70,1697.73)，距零线42.27像素；按105像素/单位反算。",
+              "uncertainty_zh": "约±1像素定位不确定度，折合该值约±2.4%相对不确定度；估计差异不代表确定偏移。"
+            },
+            {
+              "series_id": "group_a",
+              "category": "45-54",
+              "expected_value": 7.4,
+              "observed_value": 7.4025,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 33,
+              "full_scale_error_percent": 0.031,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.54662,
+                0.4735,
+                0.56284,
+                0.49
+              ],
+              "evidence_zh": "填色质心约(820.75,962.74)，距零线777.26像素。",
+              "uncertainty_zh": "填色质心近似中心，定位约±1像素，即±0.0095单位。"
+            },
+            {
+              "series_id": "group_a",
+              "category": "25-34",
+              "expected_value": 5.6,
+              "observed_value": 5.6026,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 33,
+              "full_scale_error_percent": 0.032,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.33851,
+                0.568,
+                0.35473,
+                0.5845
+              ],
+              "evidence_zh": "填色质心约(512.70,1151.73)，距零线588.27像素。",
+              "uncertainty_zh": "填色质心近似中心，定位约±1像素，即±0.0095单位。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "75 and older",
+              "expected_value": 0.1,
+              "observed_value": 0.105,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 26,
+              "full_scale_error_percent": 0.063,
+              "small_value_relative_error_percent": 5.02,
+              "bbox_xyxy_normalized": [
+                0.85811,
+                0.858,
+                0.87568,
+                0.871
+              ],
+              "evidence_zh": "填色质心约(1282.99,1728.97)，距零线11.03像素。",
+              "uncertainty_zh": "五角星质心近似几何中心，约±1像素对应此值约±9.5%相对不确定度；5.02%是估计差异，不能认定为确定偏差。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "45-54",
+              "expected_value": 3.9,
+              "observed_value": 3.9053,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 26,
+              "full_scale_error_percent": 0.067,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.54595,
+                0.6585,
+                0.56351,
+                0.6715
+              ],
+              "evidence_zh": "填色质心约(820.97,1329.94)，距零线410.06像素。",
+              "uncertainty_zh": "五角星填色质心受形状及抗锯齿影响，定位约±1像素。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "35-44",
+              "expected_value": 3,
+              "observed_value": 3.0008,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 25,
+              "full_scale_error_percent": 0.01,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.44189,
+                0.706,
+                0.45946,
+                0.7185
+              ],
+              "evidence_zh": "填色质心约(666.69,1424.92)，距零线315.08像素。",
+              "uncertainty_zh": "五角星填色质心受形状及抗锯齿影响，定位约±1像素。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "完整腾跃人物",
+              "required_parts": [
+                "头颈",
+                "躯干与衣物",
+                "双臂及手",
+                "双腿及脚"
+              ],
+              "relationship": "头颈接躯干，双臂接肩，双腿接髋；衣物覆盖躯干和髋部，四肢向外伸展。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.34,
+                0.17,
+                0.8,
+                0.53
+              ],
+              "evidence_zh": "从左伸手至右上举手、左脚至右下脚均完整可见，肢体未被图线切断。"
+            },
+            {
+              "category": "人物与大值区",
+              "required_parts": [
+                "人物双腿",
+                "A组峰值闪光",
+                "折线",
+                "背景网格"
+              ],
+              "relationship": "人物跨于绘图区上方，与折线并置；腿遮挡网格，峰值仍可见。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.36,
+                0.37,
+                0.8,
+                0.55
+              ],
+              "evidence_zh": "7.4闪光约在(821,963)，处于张开双腿下方空隙，两侧线段连接标记；身体不承担数值。"
+            },
+            {
+              "category": "大值标记",
+              "required_parts": [
+                "A组7.4闪光",
+                "B组3.9星形",
+                "各自前后折线",
+                "45–54年龄列"
+              ],
+              "relationship": "两种符号中心落在同一年龄列，各连所属系列的相邻点，共用纵轴。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.44,
+                0.47,
+                0.67,
+                0.7
+              ],
+              "evidence_zh": "黄色峰值约(821,963)，橙色峰值约(821,1330)；符号与图例对应，外廓大小不编码病例数。"
+            },
+            {
+              "category": "最小值实例",
+              "required_parts": [
+                "0.4闪光",
+                "0.1星形",
+                "末端折线",
+                "分开的标签引线",
+                "零线"
+              ],
+              "relationship": "各折线连接所属符号中心，同色引线连接标签；中心均处于零线上方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.85,
+                0.835,
+                0.93,
+                0.881
+              ],
+              "evidence_zh": "两中心约为(1282.7,1697.7)、(1283.0,1729.0)，零线y≈1740。两符号可区分，星形下端接近零线不等于中心为零。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结core明确允许把参考焦虑与男女统计改为合成病例和两组合成对照，同时保留年龄顺序、共同纵轴及腾跃并置关系。",
+            "output_added_or_lost_meaning_zh": "腾跃动作和年龄双系列比较保留；原真实主题及旧论断未延续，属于输入适配。新增说明明确人物姿态不表示病例数。",
+            "visible_inscription_evidence_zh": "可见当前标题、SYNTHETIC DATA、合成对照组A/B、每100名假想参与者的合成病例数、年龄组（等距有序类别）及人物姿态不表示病例数。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "参考Anxiety、Women/Men改为合成主题与A/B，由冻结输入明确授权。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "两系列峰值在45–54，末端为0.4与0.1，符合当前数据，无需复制旧峰位。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "0.1中心距零线约11像素，亚像素至约1像素的中心定位差异限制相对精度判定。"
+            }
+          ],
+          "measurement_coverage_zh": "两系列各量测最小正值、峰值及一个内部年龄点，共6/16个标记。全部16个数值、16个标记、8个类别及必需文字另行目视核查，未声称其余点均经过精密量测。"
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_ablation/evaluation/items/580a8b2c787cae",
       "numeric_supported": true,
@@ -4058,7 +4330,281 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图与待评图均将共心扇区融合为正视人脸。待评图可见左右不同发型、左耳、双眼、鼻和嘴唇；12组类别及百分比有外围引线。最小1.5%为右下脸部窄绿色区域，最大35.5%位于左上脸部。主题、单位及合成数据说明可读。",
+        "summary_zh": "通过。review.json已保存并通过schema校验。12类数值、绑定和扇角符合要求，人脸融合及最小扇区可辨；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "对1800×2040原图提取主要填色，以588个填色外缘点拟合圆心，在半径450像素处测量12个色区的边界转换。份额按角宽/3.6换算，最大绝对偏差约0.039个百分点；源码公式仅作佐证。",
+        "uncertainties_zh": "边线、抗锯齿和像素取整使份额测量约有±0.1个百分点不确定性，小值相对误差只是点估计。未检查禁止访问的日志或历史渲染记录，不能独立确认每次历史渲染均经过capture_render.py。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "12个扇区及12组类别、百分比完整，四个White adult women子类和两个Nonwhite adult men子类均显示父类。必需人脸部件齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "依输入顺序显示6.5、6.5、6.5、6.5、7、1.5、8.5、2.5、5.0、5.0、9、35.5%，合计100%。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "12条引线均可追踪至对应扇区；1.5%连接右下窄绿色区，35.5%连接左上大灰色区，两组5.0%子类绑定明确。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "全部12项像素测量偏差小于0.04个百分点。扇区从12点顺时针排列，汇聚鼻尖，头发和耳朵位于数据圆盘外。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始人脸素材及映射后的头发；其纹理、五官和耳朵在成图中有实质使用。处理及渲染源码控制素材组合、数据几何和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "定量圆盘直接构成额头、双颊和下巴；鼻尖连接射线，五官位于圆盘内，发型贴合外缘，嘴唇跨越下部扇区。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、合成标识、双语指标、全部类别及数值、底部统计口径说明均可读，无关键遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "左右发型与脸部连接，左耳接触左侧轮廓，双眼在鼻上方、嘴唇在下方；大小扇区均构成同一张脸。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "主题明确为失业人口年龄、性别及族群构成；100% of the unemployed population明确分母，页脚说明不是失业率或真实调查。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留人口构成与人脸融合的表达；参考中的1980年7月现实统计及衰退措辞按冻结输入改为合成构成，属于允许适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小1.5%扇区在半径450像素处约宽43.3像素，两侧边界可辨；2.5%扇区约宽71.4像素，仍与嘴唇及鼻尖保持可追踪关系。"
+          }
+        },
+        "semantic_attribution_zh": "历史现实统计改为合成构成属于输入适配；类别细分及角宽变化属于数据驱动。未发现当前主题、单位、父类别或融合关系遗漏。小值精度受栅格分辨率限制，但结构可辨。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "Nonwhite teen women",
+              "expected_value": 1.5,
+              "observed_value": 1.531,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 43.3,
+              "full_scale_error_percent": 0.031,
+              "small_value_relative_error_percent": 2.04,
+              "bbox_xyxy_normalized": [
+                0.46,
+                0.519,
+                0.697,
+                0.654
+              ],
+              "evidence_zh": "像素转换边界约118.66°至124.17°；长度为半径450像素处弧长。",
+              "uncertainty_zh": "份额约±0.1个百分点；相对误差为点估计。"
+            },
+            {
+              "series_id": "S1",
+              "category": "White adult men",
+              "expected_value": 35.5,
+              "observed_value": 35.497,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1003.7,
+              "full_scale_error_percent": 0.003,
+              "small_value_relative_error_percent": 0.01,
+              "bbox_xyxy_normalized": [
+                0.194,
+                0.284,
+                0.463,
+                0.665
+              ],
+              "evidence_zh": "像素转换边界约232.20°至359.99°；长度为半径450像素处弧长。",
+              "uncertainty_zh": "份额约±0.1个百分点，包围框为可见区域近似范围。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Nonwhite adult women",
+              "expected_value": 8.5,
+              "observed_value": 8.488,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 240,
+              "full_scale_error_percent": 0.013,
+              "small_value_relative_error_percent": 0.15,
+              "bbox_xyxy_normalized": [
+                0.46,
+                0.519,
+                0.684,
+                0.734
+              ],
+              "evidence_zh": "像素转换边界约124.17°至154.73°；长度为半径450像素处弧长。",
+              "uncertainty_zh": "份额约±0.1个百分点，包围框为可见区域近似范围。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Nonwhite teen men",
+              "expected_value": 2.5,
+              "observed_value": 2.525,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 71.4,
+              "full_scale_error_percent": 0.025,
+              "small_value_relative_error_percent": 1,
+              "bbox_xyxy_normalized": [
+                0.46,
+                0.519,
+                0.576,
+                0.748
+              ],
+              "evidence_zh": "像素转换边界约154.73°至163.82°；长度为半径450像素处弧长。",
+              "uncertainty_zh": "份额约±0.1个百分点；相对误差为点估计。"
+            },
+            {
+              "series_id": "S1",
+              "category": "White adult women / subcategory 2",
+              "expected_value": 6.5,
+              "observed_value": 6.507,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 184,
+              "full_scale_error_percent": 0.007,
+              "small_value_relative_error_percent": 0.11,
+              "bbox_xyxy_normalized": [
+                0.46,
+                0.303,
+                0.658,
+                0.522
+              ],
+              "evidence_zh": "像素转换边界约23.36°至46.79°；长度为半径450像素处弧长。",
+              "uncertainty_zh": "份额约±0.1个百分点，包围框为可见区域近似范围。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Nonwhite adult men / subcategory 2",
+              "expected_value": 5,
+              "observed_value": 4.971,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 140.6,
+              "full_scale_error_percent": 0.029,
+              "small_value_relative_error_percent": 0.58,
+              "bbox_xyxy_normalized": [
+                0.371,
+                0.519,
+                0.463,
+                0.755
+              ],
+              "evidence_zh": "像素转换边界约181.79°至199.69°；长度为半径450像素处弧长。",
+              "uncertainty_zh": "份额约±0.1个百分点，包围框为可见区域近似范围。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体人脸",
+              "required_parts": [
+                "左右发型",
+                "左耳",
+                "双眼",
+                "鼻",
+                "嘴唇",
+                "共心扇区"
+              ],
+              "relationship": "发型接触圆盘外缘；耳朵接触左侧脸部；五官包含于圆盘，鼻尖连接全部射线。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.143,
+                0.21,
+                0.772,
+                0.757
+              ],
+              "evidence_zh": "数据填色直接构成完整面部，未替换为旁置图表。"
+            },
+            {
+              "category": "35.5%大扇区",
+              "required_parts": [
+                "灰色面部",
+                "左眼",
+                "鼻尖",
+                "外缘发型",
+                "引线"
+              ],
+              "relationship": "大扇区包含左眼和左侧脸颊，外缘接触发型，两条径向边界汇聚鼻尖。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.146,
+                0.223,
+                0.465,
+                0.666
+              ],
+              "evidence_zh": "35.5%引线连接左上圆弧，头发及左耳在数据盘外。"
+            },
+            {
+              "category": "1.5%最小扇区",
+              "required_parts": [
+                "窄绿色脸颊",
+                "两侧边界",
+                "鼻尖",
+                "圆弧",
+                "引线"
+              ],
+              "relationship": "窄区包含于右下脸部，内端接触鼻尖，两侧邻接7%与8.5%扇区。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.46,
+                0.519,
+                0.697,
+                0.654
+              ],
+              "evidence_zh": "有约43.3像素可测弧宽，独立引线连接外缘与对应标签。"
+            },
+            {
+              "category": "2.5%小扇区与嘴唇",
+              "required_parts": [
+                "深绿色扇区",
+                "鼻尖",
+                "嘴唇右侧",
+                "径向边界"
+              ],
+              "relationship": "扇区由鼻尖向右下下巴延伸，经过嘴唇右侧附近，边界保持可追踪。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.46,
+                0.519,
+                0.576,
+                0.748
+              ],
+              "evidence_zh": "小区外部填色清晰，嘴唇完整，未因遮挡丢失数据分界。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "允许采用合成份额、拆分互斥子类并调整角度，不要求保留旧时点、份额或衰退结论。",
+            "output_added_or_lost_meaning_zh": "保留人口构成塑造人脸的关系；历史统计与衰退措辞按输入被替换，没有发现当前必需意义遗漏。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA、Portrait of unemployment、双语构成说明、100% of the unemployed population及非真实调查说明均可见。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "参考现实调查改为明确标注的合成构成。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "12类细分产生更多射线，仍围绕同一鼻尖中心。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "抗锯齿限制小角度测量精度，但最小区域仍有明显实色内部。"
+            }
+          ],
+          "measurement_coverage_zh": "单面板、单系列、单一扇角通道；扫描全部12项并列出6项代表测量，涵盖最小、最大及内部扇区。全部类别、数值、父类和引线另行完整核对。"
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_ablation/evaluation/items/28dd02e3525824",
       "numeric_supported": true,
