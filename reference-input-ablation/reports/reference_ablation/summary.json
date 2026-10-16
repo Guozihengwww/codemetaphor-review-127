@@ -1,14 +1,19 @@
 {
-  "updated_at": "2026-10-16T00:52:02.283405+00:00",
+  "updated_at": "2026-10-16T01:00:49.797175+00:00",
   "progress": {
     "phase": "running",
     "planned_generations": 6,
     "execution": {
-      "running": 3,
-      "pending": 3
+      "running": 2,
+      "pending": 3,
+      "ok": 1
     },
-    "evaluations": {},
-    "final_second_evaluations": {}
+    "evaluations": {
+      "pending": 2
+    },
+    "final_second_evaluations": {
+      "pending": 1
+    }
   },
   "generation_status": {
     "A01_adaptive": {
@@ -21,10 +26,14 @@
       "status": "pending"
     },
     "A02_adaptive": {
-      "status": "running",
+      "status": "ok",
       "role": "generator",
-      "started_at": "2026-10-16T00:51:32.299735+00:00",
-      "timeout_seconds": 2100
+      "error": "",
+      "completed_at": "2026-10-16T01:00:44.589345+00:00",
+      "elapsed_seconds": 552.29,
+      "cli_returncode": 0,
+      "parent_terminated_after_receipt": true,
+      "model_verified": true
     },
     "A02_textonly": {
       "status": "pending"
@@ -39,7 +48,21 @@
       "timeout_seconds": 2100
     }
   },
-  "reference_input_audits": {},
+  "reference_input_audits": {
+    "A02_adaptive": {
+      "status": "verified",
+      "original_reference_used": true,
+      "image_call_count": 1,
+      "completed_image_calls": 1,
+      "submitted_call_expressions": 1,
+      "image_input_kinds": [
+        "original_reference"
+      ],
+      "unknown": [],
+      "violations": [],
+      "reference_viewed_by_planning_agent": true
+    }
+  },
   "rates": {
     "first": {
       "adaptive": {
@@ -194,6 +217,87 @@
       }
     }
   },
-  "rows": [],
+  "rows": [
+    {
+      "case": "A02",
+      "source_case": "M078",
+      "name": "年度出生率",
+      "conflict_type": "trend_shape",
+      "trial": "A02_adaptive",
+      "condition": "adaptive",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "b33255f1a77e8a",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_ablation/evaluation/items/b33255f1a77e8a",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false
+    },
+    {
+      "case": "A02",
+      "source_case": "M078",
+      "name": "年度出生率",
+      "conflict_type": "trend_shape",
+      "trial": "A02_adaptive",
+      "condition": "adaptive",
+      "stage": "final",
+      "round": 2,
+      "image_available": true,
+      "review_id": "e31e683debe3cc",
+      "reproduction": {
+        "round": 2,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "frozen_dependencies_restored": [
+          "input.json",
+          "brief.json",
+          "data.json",
+          "reference.png",
+          "core.json"
+        ],
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_ablation/evaluation/items/e31e683debe3cc",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false
+    }
+  ],
   "interpretation": "Three descriptive pairs; adaptive can choose not to send the reference. Historical outputs are not pooled with fresh controls."
 }
