@@ -1,0 +1,255 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为书页式说明与婴儿图：红色折线叠在鼓起的白尿布内，头、双臂、双脚与折边可见。成图保留完整婴儿，两手接触尿布上方折边，红线及40–140网格位于白布内部；左栏显示Annual birth rate、SYNTHETIC DATA、每千名女性每年出生数、图例和读图说明。可见最低点1924·68.4、最高点1943·124.6、末点1980·121.6，年份由左至右递增。未见明显错绑、遮挡或破坏物体身份的接缝；待像素核查折线比例。",
+  "summary_zh": "成图保留婴儿、鼓起白尿布与红色年度折线的叠合关系，主题、单位、年份和关键点标签正确。独立像素抽测未发现超出3%满量程的偏差，无可确认的必需结构或可读性缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "以2080×1600原图检测蓝色网格：140对应y=800，40对应y=1210，中间每20单位间隔82像素；1920和1980分别对应x=875和1850。按可见轴反算v=40+(1210-y)/4.1。红色笔画竖列外包中点用于近似定位，代表点的误差以100单位轴跨度计算。mark_extent_px记录局部红笔画/圆环的可见竖向外包跨度，不是柱高；距40基线的编码距离另列于证据。源码仅作样本数量与绘制机制佐证。",
+  "uncertainties_zh": "代表点中线约有±1像素（±0.24单位）的抗锯齿与取列不确定性；陡折处竖列中点会偏离真实顶点，因此全列扫描只作粗筛。连续线中的近共线样本不能仅凭肉眼逐个计数。按限制未查看历史捕获记录，无法独立证明所有渲染均经capture_render.py，所见源码只能证明该机制存在。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "当前数据含1个系列、1920–1980共61年；项目数据与冻结data.json完全一致。源码连接全部61点，成图61个年度横坐标均检测到红线。7个十年刻度、6个数值主刻度、3组关键点及标题、单位、图例、合成提示、说明均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图内与左栏均显示1943·124.6、1924·68.4、1980·121.6，分别符合当前最高、最低和末年值；61 annual observations、1920–1980、40–140和每千名女性每年的单位均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "三个注释通过引线连接对应红色圆环；Year与递增年份绑定横轴，出生率单位与40–140纵轴绑定，红线图例标为Synthetic birth rate。未见类别、单位或高低点错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见网格为共同40–140线性轴。最低、最高、内部年份及末点的像素反算偏差约0.03–0.16%满量程；61年度列截面的粗筛最大偏差约1.62%，仍低于3%，但不把粗筛视为每个折点的精确定位。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其头发、面部、手指、尿布与双脚形态实质出现在成图。prepare_assets.py适配非数据插画；render.py粘贴baby_prepared.png后按当前数据绘制网格、折线与文字。capture_render.py源码存在，执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "实际数据边界是白尿布内部的红色折线，布面纹理仍可见，完整婴儿与图表共同占据右侧面板。红线未移到旁置独立图表，也未穿过皮肤、手部或尿布外缘。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下标题、SYNTHETIC DATA、系列名、单位、轴刻度、关键点及左侧书页说明均清楚。三个关键点引线和红色路径可追踪，无遮挡导致的必要文字缺失。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "头部连接躯干，双臂延伸至两手，两手接触尿布上方折边；鼓起白布覆盖腰胯，双腿从下侧露出并连接双脚。红线及网格叠在布面，左栏保留书页式说明。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Annual birth rate、Births per 1,000 women per year、Synthetic birth rate、Year和61 annual observations共同明确当前主题、指标、单位、系列及年度观测角色；不存在把年份解释为出生队列或把率解释为组成百分比的提示。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图以夸大的婴儿尿布承载年度出生率折线并配书页说明，这一联系仍保留。当前题材仍为出生率；旧美国历史事件和峰谷叙述依冻结要求改为合成数据说明及当前点注释，不构成输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值1924年68.4处的红色圆环外包竖向约11像素、离40基线约117像素，连线与白布均可辨。1964年局部谷点的红线也连续清晰。本案没有接近零或亚像素的数据跨度。"
+    }
+  },
+  "semantic_attribution_zh": "真实历史统计改为醒目标注的合成年度出生率属于冻结输入允许的改编，主题和统计角色保持一致；新峰谷与旧走势不同来自当前数据。尿布和手臂姿态的适配未改变部件连接及布面承载折线的关系。未发现输出造成的语义丢失；像素定位精度与未核验捕获历史属于证据边界。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "1924",
+        "expected_value": 68.4,
+        "observed_value": 68.54,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 11,
+        "full_scale_error_percent": 0.14,
+        "small_value_relative_error_percent": 0.2,
+        "bbox_xyxy_normalized": [
+          0.4486,
+          0.6781,
+          0.4553,
+          0.6875
+        ],
+        "evidence_zh": "最小正值：x=940列红色圆环外包为y=1088–1098，中点约1093；距40基线117像素，按可见网格反算68.54。旁注1924·68.4正确。",
+        "uncertainty_zh": "圆环空心、抗锯齿及像素取整使中点约有±1像素误差；相对误差是近似测量值，不是亚像素精度保证。"
+      },
+      {
+        "series_id": "S1",
+        "category": "1943",
+        "expected_value": 124.6,
+        "observed_value": 124.76,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 12,
+        "full_scale_error_percent": 0.16,
+        "small_value_relative_error_percent": 0.13,
+        "bbox_xyxy_normalized": [
+          0.5966,
+          0.5338,
+          0.6043,
+          0.5444
+        ],
+        "evidence_zh": "最大值：可见年份网格定位x约1248.75，相邻两列圆环外包中点约y=862.5；距40基线347.5像素，反算124.76。1943·124.6引线连接该峰点。",
+        "uncertainty_zh": "相邻列平均和圆环抗锯齿约带来±1像素定位误差。"
+      },
+      {
+        "series_id": "S1",
+        "category": "1950",
+        "expected_value": 111.8,
+        "observed_value": 111.77,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 8.5,
+        "full_scale_error_percent": 0.03,
+        "small_value_relative_error_percent": 0.03,
+        "bbox_xyxy_normalized": [
+          0.6529,
+          0.5681,
+          0.6577,
+          0.5775
+        ],
+        "evidence_zh": "内部年份：1950网格位于x约1362.5，相邻列红线中点平均y约915.75；距40基线294.25像素，反算111.77。",
+        "uncertainty_zh": "这是倾斜红笔画的列截面中点，约±1像素；局部外包跨度是两列8和9像素的平均。"
+      },
+      {
+        "series_id": "S1",
+        "category": "1964",
+        "expected_value": 77.2,
+        "observed_value": 77.32,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 7,
+        "full_scale_error_percent": 0.12,
+        "small_value_relative_error_percent": 0.15,
+        "bbox_xyxy_normalized": [
+          0.7606,
+          0.6563,
+          0.7683,
+          0.665
+        ],
+        "evidence_zh": "内部低点：x=1590列红线覆盖y=1054–1060，中点1057；距40基线153像素，反算77.32，红线保持连续并位于白布内。",
+        "uncertainty_zh": "局部转折与笔画宽度影响中线，约±1像素。"
+      },
+      {
+        "series_id": "S1",
+        "category": "1980",
+        "expected_value": 121.6,
+        "observed_value": 121.71,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 11,
+        "full_scale_error_percent": 0.11,
+        "small_value_relative_error_percent": 0.09,
+        "bbox_xyxy_normalized": [
+          0.8861,
+          0.5413,
+          0.8928,
+          0.5513
+        ],
+        "evidence_zh": "末点：x=1850列圆环外包y=870–880，中点875；距40基线335像素，反算121.71。1980·121.6注释与该端点相连。",
+        "uncertainty_zh": "圆环抗锯齿与竖列采样约有±1像素误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "完整婴儿与尿布",
+        "required_parts": [
+          "头部",
+          "躯干",
+          "双臂与双手",
+          "鼓起白尿布",
+          "上方折边",
+          "双腿与双脚"
+        ],
+        "relationship": "头部连接躯干，手臂延伸至手，两手接触尿布折边；尿布覆盖腰胯前部，腿脚从下侧露出。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.32,
+          0.065,
+          0.968,
+          0.94
+        ],
+        "evidence_zh": "原图大小下可见完整头身和左右手足；上折边压在布面前方，手指与布边接触，尿布外缘遮住腿根，连接和前后层次清楚。"
+      },
+      {
+        "category": "大值1943",
+        "required_parts": [
+          "白尿布布面",
+          "红色峰点与相邻线段",
+          "蓝色网格",
+          "1943·124.6引线"
+        ],
+        "relationship": "红色峰点及左右线段位于白布内部，并与同平面网格及注释连接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.56,
+          0.49,
+          0.65,
+          0.59
+        ],
+        "evidence_zh": "峰点约(1249,863)，上方是尿布折边与单位文字，布纹在网格后可见；峰点不触及身体或布外缘。数量由红线纵坐标承载。"
+      },
+      {
+        "category": "最小值1924",
+        "required_parts": [
+          "左下白布",
+          "红色谷点圆环",
+          "前后年度连线",
+          "1924·68.4引线"
+        ],
+        "relationship": "小值谷点与相邻年度连线留在同一白布表面，注释连接谷点。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.42,
+          0.65,
+          0.5,
+          0.73
+        ],
+        "evidence_zh": "谷点约(940,1093)，左侧可辨布料褶皱，谷点周围仍是白布；圆环及两侧连线均未被褶边或文字遮断。"
+      },
+      {
+        "category": "书页说明与统计图",
+        "required_parts": [
+          "左侧标题与单位",
+          "红线图例",
+          "读图说明",
+          "婴儿尿布图"
+        ],
+        "relationship": "左栏说明指明红线穿过白布并采用40–140共同线性轴，与右图相对应。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.035,
+          0.095,
+          0.275,
+          0.915
+        ],
+        "evidence_zh": "可见How to read the figure、One point for each year及white cloth等说明；标题、单位和当前最大/最小/末年摘要构成保留的书页式解释。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "冻结输入将历史统计替换为合成值，允许更新峰谷、注释和非数据姿态；年度出生率主题及每千名女性每年的口径未变。",
+      "output_added_or_lost_meaning_zh": "增加合成数据免责声明和当前最高、最低、末年摘要；原历史事件注释未沿用，符合输入适配。婴儿尿布作为出生率折线背景的核心联系保留。",
+      "visible_inscription_evidence_zh": "Annual birth rate；SYNTHETIC DATA；Births per 1,000 women per year；Synthetic birth rate；Year；1920–1980；61 annual observations；This series does not describe a real population。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原真实历史统计与事件注释按冻结要求改为合成年度出生率和当前点说明，未改换主题或统计角色。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前峰值位于1943年、最低值位于1924年，末段上升至1980年；这些形状对应当前数值，不要求复现参考的旧峰谷。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "抗锯齿和连续笔画宽度限制亚像素中线定位，但最小数据点及其白布承载关系仍可见。"
+      }
+    ],
+    "measurement_coverage_zh": "仅有一个定量面板和一个系列。正式记录5个代表点，覆盖最小正值、最大值、内部年份、内部谷点和末点；另对全部61年度横坐标检查红线存在并作列截面粗筛。所有必要可见标签、单位和数量已单独核查。未把连续线中每个样本的可分辨性或历史捕获记录声称为已独立验证。"
+  }
+}
