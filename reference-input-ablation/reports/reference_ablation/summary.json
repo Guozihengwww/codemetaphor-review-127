@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T01:36:17.383729+00:00",
+  "updated_at": "2026-10-16T01:39:59.515185+00:00",
   "progress": {
     "phase": "running",
     "planned_generations": 6,
@@ -10,8 +10,8 @@
       "ok": 11
     },
     "final_second_evaluations": {
-      "ok": 3,
-      "running": 3
+      "ok": 4,
+      "running": 2
     }
   },
   "generation_status": {
@@ -2479,7 +2479,283 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图将正视人脸与扇区融合，保留左右不同发型、左耳、双眼、鼻及嘴唇。待评图中失业主题、合成声明、12组类别和百分比清晰；射线汇于鼻部，最大35.5%区域在左侧，最小1.5%区域在右下脸缘并有独立引线。嘴唇覆盖部分射线，外侧边界仍可追踪。未见明显标签遗漏或重叠。",
+        "summary_zh": "通过。12类别、数值、绑定和人脸扇区融合符合要求，像素拟合最大偏差约0.03个百分点。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "读取1800×2040原图，提取12条可见分隔线的线心并拟合直线，所得共心点约为(849.8,1089.7)像素。下方可见圆缘半径约509.4像素。依据图面声明，将相邻射线夹角除以3.6换算百分数。mark_extent_px为外缘弧长。全部12份额的最大拟合偏差约0.028个百分点；以下列出六项代表测量。",
+        "uncertainties_zh": "线宽和抗锯齿限制末位精度，份额估计保守按约±0.05个百分点理解；最小值相对不确定度约3%，接近零的拟合误差不代表精度保证。未读取禁止访问的日志或历史记录；capture_render.py仅佐证保存流程实现，不能证明所有历史调用。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "12类别和12组引线齐全，包括四个White adult women子类及两个Nonwhite adult men子类。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "顺时针数值为6.5、6.5、6.5、6.5、7、1.5、8.5、2.5、5.0、5.0、9、35.5%，逐项正确，合计100%。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "12条引线分别指向对应扇区；四个6.5%子类及两个5.0%子类的名称、序号和顺时针位置匹配。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素拟合确认鼻部共心、12点起顺时针编码；最大份额偏差约0.028个百分点，低于3个百分点容差。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png；同源头发、虹膜、左耳及唇纹在成图中实质可见。源码提取这些部件并叠入数据圆盘。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数据扇区直接构成脸面，眼、鼻、唇和发型与其融合，不是独立图表旁置人像。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、副标题、合成声明、全部类别父类和子类序号、百分比及读图说明均可读。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "完整正视人脸的必要部件均保留。五官局部遮挡射线，但外侧边界仍可追踪至圆缘及引线。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题和副标题明确失业人口按年龄、性别及族群的占比；单位、互斥子类、100%整体和非真实调查声明齐全。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留以人脸呈现失业人口构成的关系；参考的经济衰退及1980年7月历史语境改为允许的合成失业构成，属于输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "1.5%扇区两侧边界可分离，外缘弧长约48像素且有独立引线；2.5%区域外缘约79像素。"
+          }
+        },
+        "semantic_attribution_zh": "当前失业人口构成含义完整。历史语境弱化属于允许的合成化适配；12类别和新扇角属于数据驱动变化。未发现输出遗漏导致的主题或结构损失，抗锯齿仅限制测量末位精度。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "White adult women / subcategory 1",
+              "expected_value": 6.5,
+              "observed_value": 6.485,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 207.57,
+              "full_scale_error_percent": 0.015,
+              "small_value_relative_error_percent": 0.23,
+              "bbox_xyxy_normalized": [
+                0.472,
+                0.284,
+                0.585,
+                0.534
+              ],
+              "evidence_zh": "上额两条可见边界约为0.00°和23.35°，夹角约23.35°。",
+              "uncertainty_zh": "原图线心拟合点估计，保守不确定度约±0.05个百分点；包围框近似。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Nonwhite teen women",
+              "expected_value": 1.5,
+              "observed_value": 1.499,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 47.99,
+              "full_scale_error_percent": 0.001,
+              "small_value_relative_error_percent": 0.04,
+              "bbox_xyxy_normalized": [
+                0.472,
+                0.534,
+                0.721,
+                0.675
+              ],
+              "evidence_zh": "右下脸颊两边界约118.77°和124.17°，夹角约5.398°，细扇区及引线均可见。",
+              "uncertainty_zh": "保守不确定度约±0.05个百分点，即约3%的相对不确定度；0.04%仅为拟合点误差。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Nonwhite adult women",
+              "expected_value": 8.5,
+              "observed_value": 8.51,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 272.37,
+              "full_scale_error_percent": 0.01,
+              "small_value_relative_error_percent": 0.11,
+              "bbox_xyxy_normalized": [
+                0.472,
+                0.534,
+                0.707,
+                0.761
+              ],
+              "evidence_zh": "下右侧脸颊两边界约124.17°和154.80°，夹角约30.635°。",
+              "uncertainty_zh": "原图线心拟合点估计，保守不确定度约±0.05个百分点；包围框近似。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Nonwhite teen men",
+              "expected_value": 2.5,
+              "observed_value": 2.482,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 79.45,
+              "full_scale_error_percent": 0.018,
+              "small_value_relative_error_percent": 0.7,
+              "bbox_xyxy_normalized": [
+                0.472,
+                0.534,
+                0.594,
+                0.775
+              ],
+              "evidence_zh": "嘴唇下方无遮挡边界约154.80°和163.74°，夹角约8.937°。",
+              "uncertainty_zh": "原图线心拟合点估计，保守不确定度约±0.05个百分点；相对误差不代表保证精度。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Nonwhite adult men / subcategory 1",
+              "expected_value": 5,
+              "observed_value": 5.028,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 160.92,
+              "full_scale_error_percent": 0.028,
+              "small_value_relative_error_percent": 0.56,
+              "bbox_xyxy_normalized": [
+                0.463,
+                0.534,
+                0.552,
+                0.784
+              ],
+              "evidence_zh": "底部偏右两边界约163.74°和181.84°，夹角约18.100°；对应Subcategory 1的5.0%引线。",
+              "uncertainty_zh": "原图线心拟合点估计，保守不确定度约±0.05个百分点；包围框近似。"
+            },
+            {
+              "series_id": "S1",
+              "category": "White adult men",
+              "expected_value": 35.5,
+              "observed_value": 35.498,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1136.16,
+              "full_scale_error_percent": 0.002,
+              "small_value_relative_error_percent": 0.007,
+              "bbox_xyxy_normalized": [
+                0.189,
+                0.284,
+                0.473,
+                0.688
+              ],
+              "evidence_zh": "最大区域两边界约232.21°和360.00°，夹角约127.791°；测量不含耳朵或外延头发。",
+              "uncertainty_zh": "原图线心拟合点估计，保守不确定度约±0.05个百分点；外缘弧长由像素测得半径推导。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整个人脸与数据圆盘",
+              "required_parts": [
+                "左右不同发型",
+                "左耳",
+                "双眼",
+                "鼻",
+                "嘴唇",
+                "圆盘扇区",
+                "外围引线"
+              ],
+              "relationship": "发型接脸缘，左耳贴接圆盘左侧；双眼在上半脸，鼻部连接射线，嘴唇位于鼻下。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.13,
+                0.245,
+                0.795,
+                0.785
+              ],
+              "evidence_zh": "必要部件形成同一张正视脸；彩色脸面本身承担数据，圆缘及放射线可追踪。"
+            },
+            {
+              "category": "White adult men（最大区域）",
+              "required_parts": [
+                "左侧脸面",
+                "左眼",
+                "灰色头发",
+                "左耳",
+                "鼻部共心点",
+                "两条数据边界"
+              ],
+              "relationship": "大扇区包含左眼，向外连接发际和耳侧，向内收于鼻部；外延头发及耳朵不加入份额。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.13,
+                0.255,
+                0.474,
+                0.689
+              ],
+              "evidence_zh": "12点射线与左下射线界定同一大区域，35.5%引线指向其左上边缘内侧。"
+            },
+            {
+              "category": "Nonwhite teen women（最小区域）",
+              "required_parts": [
+                "鼻部共心点",
+                "细长脸颊扇区",
+                "两条射线",
+                "圆缘",
+                "1.5%引线"
+              ],
+              "relationship": "细扇区从鼻部朝右下延伸，两条边界到达圆缘，引线端点在其间。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.472,
+                0.534,
+                0.721,
+                0.675
+              ],
+              "evidence_zh": "约48像素的外缘及两条边界可辨；区域仍是脸颊的一部分，没有脱离圆脸或由文字替代。"
+            },
+            {
+              "category": "嘴唇与下方小扇区",
+              "required_parts": [
+                "嘴唇",
+                "2.5%扇区",
+                "两个5%扇区",
+                "下方圆缘"
+              ],
+              "relationship": "嘴唇位于扇区前层；被遮射线在唇下继续伸向圆缘。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.385,
+                0.626,
+                0.594,
+                0.785
+              ],
+              "evidence_zh": "唇纹素材清楚可见，唇下各边界重新出现并对应底部引线，遮挡未破坏归属。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "允许将历史真实统计替换为合成失业人口构成，改变份额及子类数，并适配非数据部件。",
+            "output_added_or_lost_meaning_zh": "当前构成、百分比分母和互斥子类关系完整；历史经济衰退及1980年7月语境不再主张，属于输入适配。",
+            "visible_inscription_evidence_zh": "可见Portrait of unemployment、失业人口按年龄性别族群占比的英文副标题、SYNTHETIC DATA、12 CATEGORIES / 100%，以及互斥子类和非真实调查说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "历史语境改为明确标注的合成构成，当前统计角色保留。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "输入子类拆分形成12扇区，按新顺序及份额排列。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "抗锯齿限制末位测量精度，最小扇区仍有约48像素外缘及可分离边界。"
+            }
+          ],
+          "measurement_coverage_zh": "单面板、单一角度通道。全部12条边界和12份额均完成像素拟合，详列六项代表测量；全部标签、数值和绑定另行检查。非数据头发与耳朵不纳入测量。"
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_ablation/evaluation/items/afbb524bb7cdd2",
       "numeric_supported": true,
