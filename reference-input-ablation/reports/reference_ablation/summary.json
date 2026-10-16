@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T01:07:14.227812+00:00",
+  "updated_at": "2026-10-16T01:07:57.232769+00:00",
   "progress": {
     "phase": "running",
     "planned_generations": 6,
@@ -8,8 +8,8 @@
       "pending": 3
     },
     "evaluations": {
-      "running": 3,
-      "ok": 2,
+      "running": 2,
+      "ok": 3,
       "pending": 1
     },
     "final_second_evaluations": {
@@ -139,39 +139,39 @@
       },
       "textonly": {
         "numeric_supported": {
-          "pass": 0,
+          "pass": 1,
           "planned": 3,
-          "assessed": 0
+          "assessed": 1
         },
         "critical_structure": {
-          "pass": 0,
+          "pass": 1,
           "planned": 3,
-          "assessed": 0
+          "assessed": 1
         },
         "semantic_meaning": {
-          "pass": 0,
+          "pass": 1,
           "planned": 3,
-          "assessed": 0
+          "assessed": 1
         },
         "reference_meaning": {
           "pass": 0,
           "planned": 3,
-          "assessed": 0
+          "assessed": 1
         },
         "small_mark_visibility": {
-          "pass": 0,
+          "pass": 1,
           "planned": 3,
-          "assessed": 0
+          "assessed": 1
         },
         "joint_supported": {
-          "pass": 0,
+          "pass": 1,
           "planned": 3,
-          "assessed": 0
+          "assessed": 1
         },
         "joint_visible_supported": {
-          "pass": 0,
+          "pass": 1,
           "planned": 3,
-          "assessed": 0
+          "assessed": 1
         }
       }
     },
@@ -937,20 +937,307 @@
         ],
         "returncode": 0
       },
-      "quality": "unreviewed",
+      "quality": "pass",
       "execution": "ok",
-      "review": null,
-      "primary_system_success": false,
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为黄色衣着的全身腾跃人物与年龄组双折线并置，黄线使用闪光标记，橙线使用星形标记。待评图保留这些结构，明确标注合成数据、合成对照组及每100名假想参与者的病例数。8个年龄组、两系列和16个数值均可辨；末组0.4和0.1的标记分开且位于零线上方。人物身体连接完整，网格经过小腿但未遮挡数据标记。以上观察已在检查源码前保存。",
+        "summary_zh": "未发现违反明确要求的可见缺陷。数据、标签、线性刻度及人物与双折线的并置关系正确。原主题差异属于允许的合成主题适配。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在1480×2000原图独立测得网格行900、1005、1110、1215、1320、1425、1530、1635及零线1740，即105px/单位。16个填色连通域中心的横位置约为205、359、513、667、821、975、1129、1283，间距约154px。下列6项覆盖每系列最小值、峰值和内部点。mark_extent_px记录符号轮廓高度；数值由符号中心位置换算，不由符号大小编码。",
+        "uncertainties_zh": "填色质心近似符号中心，栅格化和阈值带来约±1px定位不确定性；满量程通过不能保证0.1值的相对精度。已检查归档脚本源码，但按限制未查看归档记录、日志或自检，因此不声称验证了每次渲染的归档执行。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "8个年龄组、两系列、16个数值、0–8刻度、主题、合成声明、单位与统计口径均完整可见。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "A为4.1、4.5、5.6、6.7、7.4、6.9、5.2、0.4；B为2.1、2.1、2.7、3.0、3.9、3.5、2.4、0.1，全部正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "黄色闪光对应合成对照组A，橙色星形对应B；年龄列顺序正确，末组数值使用独立引线。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素实测统一105px/单位，年龄列等距。六项代表测量最大近似误差约0.073%满量程，低于3%容差。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_02.png及leaping_person.png中的人物与最终主体一致；render.py载入人物位图，依据数据控制折线、16个标记及文字。归档脚本存在，其历史执行未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "保留人物与双折线的并置和局部叠合；数据由标记中心承载。无需将人物身体变为数值边界，细网格叠过腿部未破坏结构。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、图例、数值、年龄标签、单位及底注在原分辨率可读，右下小值标签未互相遮盖。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "头颈、躯干、双臂、双腿及手足连续完整；大值和小值符号均保留闪光或星形身份，并连接对应折线。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "图面解释了合成主题、对照组角色、每百名假想参与者的病例数和等距年龄类别，并说明人物姿态不编码病例。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "腾跃动作与双系列并置保留；原焦虑及男女统计主题按core.json明示的合成主题适配替换，不属于生成缺陷。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "末组闪光和星形可分别辨认并连接本系列下降线；中心距零线约42.18px和11.07px。星形下尖接近零线，中心仍在其上方。"
+          }
+        },
+        "semantic_attribution_zh": "原焦虑及男女角色的替换来自允许的输入适配；峰位变化和末组下降由当前数据驱动。未发现当前主题、指标、单位或系列角色被遗漏。最小值精度的不确定性来自栅格分辨率。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "group_a",
+              "category": "75 and older",
+              "expected_value": 0.4,
+              "observed_value": 0.4017,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 33,
+              "full_scale_error_percent": 0.0216,
+              "small_value_relative_error_percent": 0.431,
+              "bbox_xyxy_normalized": [
+                0.858784,
+                0.8405,
+                0.874324,
+                0.857
+              ],
+              "evidence_zh": "填色质心y≈1697.82px，距零线42.18px；以实测105px/单位换算。",
+              "uncertainty_zh": "中心定位约±1px，相当于±0.0095单位、目标值约±2.4%；差异未超出测量不确定性。"
+            },
+            {
+              "series_id": "group_a",
+              "category": "45-54",
+              "expected_value": 7.4,
+              "observed_value": 7.4017,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 33,
+              "full_scale_error_percent": 0.0206,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.546622,
+                0.473,
+                0.562162,
+                0.4895
+              ],
+              "evidence_zh": "填色质心y≈962.83px，距零线777.17px；符号中心承担量值。",
+              "uncertainty_zh": "栅格化及轮廓阈值使中心定位约有±1px不确定性。"
+            },
+            {
+              "series_id": "group_a",
+              "category": "25-34",
+              "expected_value": 5.6,
+              "observed_value": 5.6017,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 33,
+              "full_scale_error_percent": 0.0216,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.338514,
+                0.5675,
+                0.354054,
+                0.584
+              ],
+              "evidence_zh": "填色质心y≈1151.82px，距零线588.18px；与相邻黄线段相连。",
+              "uncertainty_zh": "中心定位约±1px，即±0.0095单位。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "75 and older",
+              "expected_value": 0.1,
+              "observed_value": 0.1055,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 24,
+              "full_scale_error_percent": 0.0684,
+              "small_value_relative_error_percent": 5.474,
+              "bbox_xyxy_normalized": [
+                0.858784,
+                0.8585,
+                0.875676,
+                0.8705
+              ],
+              "evidence_zh": "填色质心y≈1728.93px，距零线11.07px；星形下尖接近零线，但中心保持正值。",
+              "uncertainty_zh": "约±1px相当于目标值约±9.5%；近似相对误差不能据此认定为小值失真。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "45-54",
+              "expected_value": 3.9,
+              "observed_value": 3.9058,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 23,
+              "full_scale_error_percent": 0.073,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.546622,
+                0.659,
+                0.563514,
+                0.6705
+              ],
+              "evidence_zh": "填色质心y≈1329.89px，距零线410.11px，位于B系列峰部。",
+              "uncertainty_zh": "填色质心近似星形中心，存在约±1px的栅格定位不确定性。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "25-34",
+              "expected_value": 2.7,
+              "observed_value": 2.7058,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 23,
+              "full_scale_error_percent": 0.073,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.338514,
+                0.722,
+                0.355405,
+                0.7335
+              ],
+              "evidence_zh": "填色质心y≈1455.89px，距零线284.11px；与相邻橙线段连接。",
+              "uncertainty_zh": "中心定位约±1px，即±0.0095单位。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "全身腾跃人物",
+              "required_parts": [
+                "头颈与躯干",
+                "双臂和手",
+                "髋部、双腿和足",
+                "黄色衣着"
+              ],
+              "relationship": "头颈接躯干，双臂由肩部分向左及右上伸展，双腿由髋部分向两侧展开，衣物覆盖躯干和髋部。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.343,
+                0.17,
+                0.8,
+                0.523
+              ],
+              "evidence_zh": "肩臂、髋腿、踝足轮廓连续，关键连接未被遮断；人物保持腾跃身份。"
+            },
+            {
+              "category": "大值：45–54列",
+              "required_parts": [
+                "A闪光7.4",
+                "B星形3.9",
+                "同色折线",
+                "共享年龄位置"
+              ],
+              "relationship": "两个符号位于同一年龄列，各自的入线和出线连接符号中心，A中心高于B。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.532,
+                0.452,
+                0.578,
+                0.673
+              ],
+              "evidence_zh": "A中心约(821,963)，B约(821,1330)；数值分别位于对应符号上方。"
+            },
+            {
+              "category": "内部值：25–34列",
+              "required_parts": [
+                "A闪光5.6",
+                "B星形2.7",
+                "相邻年龄连接线"
+              ],
+              "relationship": "每个符号接入前后同色折线，维持年龄顺序。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.327,
+                0.548,
+                0.369,
+                0.737
+              ],
+              "evidence_zh": "两符号约在x=513，5.6与2.7分别绑定黄闪光和橙星，未跨接另一系列。"
+            },
+            {
+              "category": "最小值：75 and older列",
+              "required_parts": [
+                "0.4闪光",
+                "0.1星形",
+                "下降线",
+                "数值引线",
+                "零线"
+              ],
+              "relationship": "下降线分别终止于各自符号中心，数值引线向右展开，两符号独立且中心在零线上方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.85,
+                0.832,
+                0.932,
+                0.879
+              ],
+              "evidence_zh": "闪光约在y=1681–1714，星形约在1717–1740，轮廓未融合；星形下尖接近零线不等于中心为零。"
+            },
+            {
+              "category": "人物与图表并置",
+              "required_parts": [
+                "腾跃人物",
+                "双系列折线",
+                "水平网格"
+              ],
+              "relationship": "人物位于双线峰部上方，局部网格叠过小腿；不存在必须贴合的曲面或身体量化边界。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.337,
+                0.167,
+                0.811,
+                0.618
+              ],
+              "evidence_zh": "y≈900和1005的网格经过腿部，但身体轮廓仍可辨，数据线、符号及标签未被人物遮挡。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core.json明确声明合成主题适配，允许替换原焦虑、男女统计及旧峰值。",
+            "output_added_or_lost_meaning_zh": "当前合成对照组、年龄类别和每百名假想参与者的病例数得到完整解释。原焦虑论述被允许的输入适配替换，腾跃动作及双线并置保留。",
+            "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、合成数据设计任务、合成对照组A/B、synthetic cases per 100 hypothetical participants、年龄组（等距有序类别）及人物姿态不表示病例数。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "原焦虑与男女角色替换为合成对照组，来自冻结输入明示的当前语义。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "两系列峰值位于45–54，末组降至0.4和0.1，均由当前数据决定。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "0.1标记中心离零线约11px，约1px定位不确定性相当于该值约9.5%；可见性与精度分别判断。"
+            }
+          ],
+          "measurement_coverage_zh": "检查全部8类、16个数值及绑定，定位16个填色中心；详细记录两个系列各自的最小正值、峰值和内部点，共6项。未逐像素测量所有线段边缘，未用人物尺寸或源码公式替代可见量化证据。"
+        }
+      },
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/reference_ablation/evaluation/items/f2336d758060a1",
-      "numeric_supported": null,
-      "joint_supported": null,
-      "critical_structure": "unreviewed",
-      "semantic_meaning": "unreviewed",
-      "reference_meaning": "unreviewed",
-      "small_mark_visibility": "unreviewed",
-      "joint_system_success": false,
+      "numeric_supported": true,
+      "joint_supported": true,
+      "critical_structure": "pass",
+      "semantic_meaning": "pass",
+      "reference_meaning": "partial",
+      "small_mark_visibility": "pass",
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false
     },
     {
