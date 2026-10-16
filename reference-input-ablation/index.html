@@ -4,8 +4,8 @@
 <p>比较同一冲突数据下的两次新生成：<strong>原流程自主决定是否传参考图</strong>，与<strong>禁止向生图工具传原参考图</strong>。两组智能体都可以查看原图并写文字提示；共3个案例、6次新生成，旧图只作额外参照。</p>
 <p>GPT-6-Astra / max；每次最多3次生图、6次完整渲染、35分钟；评审每次15分钟，生成与全部评审共用最多3个会话。首轮为首次完整渲染尝试，最终为最后有效图。数值与几何容差、结构、意义、小值可辨指标沿用120组详细评估；6张可用最终图均安排第二次匿名评审。</p>
 <p class="note">本次固定选取历史上确有传参考图记录的E04、E35、E95，覆盖类别数和趋势形状。只有3组，每条件一次生成，不代表120组总体。若新原流程自行不传图，会如实记录；此时不能将该配对解读为实际图像输入的有无对比。技术异常不计为图像失败，亦不重采样掩盖。</p>
-<p class="note">更新时间（北京时间）：2026-10-16 09:35:41</p>
-<p>生成：已完成6；独立评估：已完成11；最终第二评估：执行中3、已完成2、待执行1</p>
+<p class="note">更新时间（北京时间）：2026-10-16 09:36:17</p>
+<p>生成：已完成6；独立评估：已完成11；最终第二评估：已完成3、执行中3</p>
 <p><a href="docs/reference_ablation/protocol.md">冻结实验方案</a> · <a href="reports/reference_ablation/summary.json">完整统计与评审JSON</a> · <a href="../data-conflict-120/">原120组实验</a></p></div>
 <section id="overall"><h2>两组通过数对照</h2><p class="note">每组分母固定为3。执行中的“已判通过”不是最终通过率；未评、技术失败及非pass均不算通过，评估完成数量同时显示。旧图不计入下表。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>原流程自主传图</th><th>禁止传原参考图</th></tr></thead><tbody><tr><th scope="row">首轮 · 数值支持</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 关键结构</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 参考原意</th><td>0/3 已判通过；已评3/3</td><td>1/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 小值可辨</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 共同主判据</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 数值支持</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 关键结构</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 当前主题意义</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 参考原意</th><td>0/3 已判通过；已评3/3</td><td>2/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 小值可辨</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 共同主判据</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td>3/3 已判通过；已评3/3</td><td>3/3 已判通过；已评3/3</td></tr></tbody></table></div></section><label>案例 <select id="case-filter"><option value="all">全部3案例</option><option value="A01">A01 · 失业人口年龄、性别及族群构成</option><option value="A02">A02 · 年度出生率</option><option value="A03">A03 · 腾跃人物与双系列年龄趋势：合成数据设计任务</option></select></label><section class="case" id="A01"><h2>A01 · 失业人口年龄、性别及族群构成</h2><p>原案例E04 · 同一冲突数据 · 类别数</p><div class="reference"><a href="images/A01/reference.webp"><img loading="lazy" src="images/A01/reference.webp" alt="原参考图"></a></div><p><a href="runs/reference_ablation/trials/A01_adaptive/data.json">共同输入数据</a> · <a href="runs/reference_ablation/trials/A01_adaptive/brief.json">共同简报</a> · <a href="runs/reference_ablation/trials/A01_adaptive/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>历史原流程（仅作参照）</h3><p class="badge">日志确认曾传原参考图</p><a href="images/A01/historical.webp"><img loading="lazy" src="images/A01/historical.webp" alt="历史最终图"></a><p>已保存并通过schema.json验证的review.json。12项数值和标签绑定正确，独立像素测量最大偏差约0.03个百分点；人脸与数据扇区实质融合，未发现必要要求的可见缺陷。未运行submit.py。</p></article><article><h3>原流程：自主决定传图</h3><p>生成：已完成 </p><p>实际传图：已核验；原参考图输入：已传入</p><details><summary>实际参考输入核验记录</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
@@ -1796,7 +1796,52 @@
     }
   ],
   &quot;measurement_coverage_zh&quot;: &quot;唯一量化通道为单面板折线纵坐标。检查61个年度位置的红线覆盖并粗测中心，详细记录6个代表点；未逐段恢复所有亚像素顶点。必需标签、刻度、关键点和观测总数另行完整核对。&quot;
-}</pre></details><a href="runs/reference_ablation/evaluation/items/923844106e9e6f/review.json">完整独立评审JSON</a><p class="note">离线代码复现像素一致：True</p></details></article></div></section><section class="case" id="A03"><h2>A03 · 腾跃人物与双系列年龄趋势：合成数据设计任务</h2><p>原案例E95 · 同一冲突数据 · 趋势形状</p><div class="reference"><a href="images/A03/reference.webp"><img loading="lazy" src="images/A03/reference.webp" alt="原参考图"></a></div><p><a href="runs/reference_ablation/trials/A03_adaptive/data.json">共同输入数据</a> · <a href="runs/reference_ablation/trials/A03_adaptive/brief.json">共同简报</a> · <a href="runs/reference_ablation/trials/A03_adaptive/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>历史原流程（仅作参照）</h3><p class="badge">日志确认曾传原参考图</p><a href="images/A03/historical.webp"><img loading="lazy" src="images/A03/historical.webp" alt="历史最终图"></a><p>全部类别、系列及16个数值完整，标记中心符合共同0–8线性轴。腾跃人物、两条折线及两类标记保留，素材显著可见。当前合成主题、单位和比较组身份清晰，未见实质违约。review.json已保存并通过schema校验，未运行submit.py。</p></article><article><h3>原流程：自主决定传图</h3><p>生成：已完成 </p><p>实际传图：证据不足；原参考图输入：待核验</p><details><summary>实际参考输入核验记录</summary><pre>{
+}</pre></details><a href="runs/reference_ablation/evaluation/items/923844106e9e6f/review.json">完整独立评审JSON</a><details><summary>第二次匿名评价（保留分歧）</summary><pre>{
+  &quot;completeness&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;单系列、1920–1980共61年；图面数量、年代刻度和系列名完整。源码连接全部61值，全部目标位置附近均有红线。&quot;
+  },
+  &quot;numeric_text&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;最低1924·68.4、最高1943·124.6、末年1980·121.6均与输入一致；轴范围、年份区间及61次观测正确。&quot;
+  },
+  &quot;binding&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;三处关键注释引线连接相应红圈；红色图例、Year轴及每千名女性每年出生数单位绑定明确。&quot;
+  },
+  &quot;geometry&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;八个代表点的像素反算满量程误差约0.029%–0.241%，低于3%；可见刻度均匀，未见错序或截断。&quot;
+  },
+  &quot;source&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;已查看raw_01.png，其婴儿面部、手脚及白布在最终图中实质可见。源码加载处理后的素材，并控制折线及文字；提供capture_render.py入口，但未审计捕获历史。&quot;
+  },
+  &quot;integration&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;红线位于鼓起白尿布正面，网格下可见布纹；双手接触上折边，腿脚从下侧露出，蓝底在婴儿后方。&quot;
+  },
+  &quot;readability&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;合成声明、主题、单位、系列名、轴标签、关键值和读图说明均清楚，无关键遮挡或裁断。&quot;
+  },
+  &quot;critical_structure&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;头、躯干、两臂、双手、折边及双腿双脚保持连接；白尿布包覆下躯干，大值与最小值均由布面上的红线承载。&quot;
+  },
+  &quot;semantic_meaning&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;年度出生率、每千名女性每年的单位、逐年观测及单系列角色明确，未混淆出生队列、累计值或组成比例。&quot;
+  },
+  &quot;reference_meaning&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;保留出生率主题及夸大尿布承载折线的关系；参考旧美国历史数值、事件说明和峰谷由冻结合成输入替换。&quot;
+  },
+  &quot;small_mark_visibility&quot;: {
+    &quot;status&quot;: &quot;pass&quot;,
+    &quot;evidence_zh&quot;: &quot;1924最小值红圈竖向约11px，中心距40刻度约117px，清楚位于白布内，注释可追踪；无需放大数据几何。&quot;
+  }
+}</pre></details><p class="note">离线代码复现像素一致：True</p></details></article></div></section><section class="case" id="A03"><h2>A03 · 腾跃人物与双系列年龄趋势：合成数据设计任务</h2><p>原案例E95 · 同一冲突数据 · 趋势形状</p><div class="reference"><a href="images/A03/reference.webp"><img loading="lazy" src="images/A03/reference.webp" alt="原参考图"></a></div><p><a href="runs/reference_ablation/trials/A03_adaptive/data.json">共同输入数据</a> · <a href="runs/reference_ablation/trials/A03_adaptive/brief.json">共同简报</a> · <a href="runs/reference_ablation/trials/A03_adaptive/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>历史原流程（仅作参照）</h3><p class="badge">日志确认曾传原参考图</p><a href="images/A03/historical.webp"><img loading="lazy" src="images/A03/historical.webp" alt="历史最终图"></a><p>全部类别、系列及16个数值完整，标记中心符合共同0–8线性轴。腾跃人物、两条折线及两类标记保留，素材显著可见。当前合成主题、单位和比较组身份清晰，未见实质违约。review.json已保存并通过schema校验，未运行submit.py。</p></article><article><h3>原流程：自主决定传图</h3><p>生成：已完成 </p><p>实际传图：证据不足；原参考图输入：待核验</p><details><summary>实际参考输入核验记录</summary><pre>{
   &quot;status&quot;: &quot;uncertain&quot;,
   &quot;original_reference_used&quot;: null,
   &quot;image_call_count&quot;: 1,
