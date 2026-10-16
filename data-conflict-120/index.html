@@ -1,5 +1,38 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>120组隐喻数据冲突实验</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f3ed;color:#263b32;font:16px/1.65 system-ui,sans-serif}main{max-width:1500px;margin:auto;padding:24px 16px}.intro,.case{padding:20px;background:white;border-radius:9px;margin:20px 0}.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}img{display:block;width:100%;height:auto}.reference{max-width:600px}p,pre{overflow-wrap:anywhere}pre{white-space:pre-wrap;font-size:13px}a{color:#215c91}summary{cursor:pointer;padding:6px}select,button{padding:8px;font:inherit;margin:4px}[hidden]{display:none!important}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%}td,th{padding:8px;border:1px solid #ccc;text-align:left}@media(max-width:700px){main{padding:14px 10px}.case{padding:14px}.pair{grid-template-columns:1fr}td,th{font-size:13px}}.pair>article{min-width:0}.table-wrap{max-width:100%}select{max-width:100%}</style></head><body><main><h1>隐喻数据冲突 · 120组配对</h1><!-- experiment-conclusion:start -->
 <style>
+.stage-rates{background:#fff;border:1px solid #c6d8c8;border-top:5px solid #315c45;border-radius:9px;padding:24px;margin:20px 0}
+.stage-rates h2{margin:0 0 10px;font-size:27px}.stage-rates h3{margin:24px 0 10px;font-size:20px}
+.stage-rates .stage-scope{margin-top:0;color:#465c4f}.stage-rate-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}
+.stage-rate-card{padding:16px;background:#eff5ed;border-radius:7px;min-width:0}.stage-rate-card p{margin:0}
+.stage-rate-card .stage-number{font-size:32px;font-weight:750;color:#244b35;line-height:1.35;margin:8px 0}
+.stage-rates .table-wrap{max-width:100%;overflow:auto}.stage-rates th{background:#eff4ee}.stage-rates th,.stage-rates td{vertical-align:top}
+.stage-rates td span{font-size:14px;color:#465c4f}.stage-rates caption{text-align:left;padding:8px 0;font-weight:600}
+.stage-rates .stage-note{font-size:14px;line-height:1.7}.stage-rates .stage-links{display:flex;flex-wrap:wrap;gap:8px 16px}
+@media(max-width:700px){.stage-rates{padding:16px}.stage-rates h2{font-size:23px}.stage-rate-cards{gap:8px}.stage-rate-card{padding:10px}.stage-rate-card .stage-number{font-size:23px}.stage-rate-card p{font-size:13px}}
+@media(max-width:359px){.stage-rate-cards{grid-template-columns:1fr}}
+</style>
+<section class="stage-rates" id="stage-pass-rates" aria-labelledby="stage-rates-title">
+<h2 id="stage-rates-title">120组整体 · 首轮与最终通过率</h2>
+<p class="stage-scope">全部120组一起统计 · 每组含相近、冲突两个条件 · 共240个生成任务</p>
+<div class="stage-rate-cards">
+<div class="stage-rate-card"><p>首轮主判据通过率</p><p class="stage-number">85.83%</p><p>206/240个任务</p></div>
+<div class="stage-rate-card"><p>最终主判据通过率</p><p class="stage-number">92.08%</p><p>221/240个任务</p></div>
+<div class="stage-rate-card"><p>最终相对首轮提升</p><p class="stage-number">+6.25</p><p>个百分点 · 净增15个任务</p></div>
+</div>
+<h3>按240个生成任务统计</h3>
+<div class="table-wrap"><table><caption>分母固定为全部240个计划任务，不拆分新旧批次</caption>
+<thead><tr><th scope="col">通过要求</th><th scope="col">首轮</th><th scope="col">最终</th><th scope="col">提升</th></tr></thead>
+<tbody><tr><th scope="row">共同主判据</th><td><strong>85.83%</strong><br><span>206/240</span></td><td><strong>92.08%</strong><br><span>221/240</span></td><td>+6.25个百分点</td></tr><tr><th scope="row">主判据＋小值可辨</th><td><strong>71.67%</strong><br><span>172/240</span></td><td><strong>77.08%</strong><br><span>185/240</span></td><td>+5.42个百分点</td></tr><tr><th scope="row">主判据＋代码像素一致复现</th><td><strong>85.00%</strong><br><span>204/240</span></td><td><strong>91.67%</strong><br><span>220/240</span></td><td>+6.67个百分点</td></tr></tbody></table></div>
+<h3>按120个参考组统计</h3>
+<p>同一参考组的相近数据和冲突数据<strong>两个条件都通过</strong>，才计为该组通过。此处是更严格的组级要求，分母为全部120组。</p>
+<div class="table-wrap"><table><caption>组级通过率：每组两个条件均须通过</caption>
+<thead><tr><th scope="col">通过要求</th><th scope="col">首轮</th><th scope="col">最终</th><th scope="col">提升</th></tr></thead>
+<tbody><tr><th scope="row">共同主判据</th><td><strong>75.00%</strong><br><span>90/120</span></td><td><strong>87.50%</strong><br><span>105/120</span></td><td>+12.50个百分点</td></tr><tr><th scope="row">主判据＋小值可辨</th><td><strong>55.83%</strong><br><span>67/120</span></td><td><strong>65.00%</strong><br><span>78/120</span></td><td>+9.17个百分点</td></tr><tr><th scope="row">主判据＋代码像素一致复现</th><td><strong>73.33%</strong><br><span>88/120</span></td><td><strong>86.67%</strong><br><span>104/120</span></td><td>+13.33个百分点</td></tr></tbody></table></div>
+<p class="stage-note"><strong>统一判据：</strong>首轮和最终均使用原评估。共同主判据要求完整性、数值文字、绑定、几何、素材来源与融合、关键结构、当前主题意义共同通过，且实际使用生成素材、由代码控制数据几何。小值可辨和代码像素一致复现作为两项分别追加的要求，后者并未同时要求小值可辨。</p>
+<p class="stage-note"><strong>分母与轮次：</strong>首轮取第一次完整渲染尝试，最终取最后一张有效完整图；技术失败、缺图、无有效评审及非pass均不计通过，不从分母中剔除。这与下方排除技术失败后的115组有效配对分析采用不同分母。原60组首轮尚无详细补评，因此这里没有将首轮原评分与最终详细评分混算。</p>
+<p class="stage-note stage-links"><a href="reports/expanded120/stage-pass-rates.csv" download>下载完整计算表 CSV</a><a href="reports/expanded120/stage-pass-rates.json">计算口径与组级统计 JSON</a><a href="#experiment-conclusion">查看详细实验结论</a></p>
+</section>
+<style>
 .experiment-conclusion{background:#fff;border:1px solid #cbd9cd;border-top:5px solid #315c45;border-radius:9px;padding:24px;margin:20px 0}
 .experiment-conclusion h2{margin:0 0 12px;font-size:27px}
 .experiment-conclusion h3{margin:30px 0 12px;font-size:21px;scroll-margin-top:20px}
