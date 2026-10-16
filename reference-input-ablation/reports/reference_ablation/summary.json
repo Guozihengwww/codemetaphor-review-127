@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-16T01:39:59.515185+00:00",
+  "updated_at": "2026-10-16T01:41:05.572273+00:00",
   "progress": {
-    "phase": "running",
+    "phase": "complete",
     "planned_generations": 6,
     "execution": {
       "ok": 6
@@ -10,8 +10,7 @@
       "ok": 11
     },
     "final_second_evaluations": {
-      "ok": 4,
-      "running": 2
+      "ok": 6
     }
   },
   "generation_status": {
@@ -955,7 +954,315 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图：完整婴儿站立，鼓起白尿布内部为蓝网格与红折线；头、手臂、双脚、尿布上折边可见，左侧有书页式解释。红线与尿布叠合，原图文字讨论年度出生率。\n待评图：2080×1600版面左侧为年度出生率标题、SYNTHETIC DATA、每千名女性每年出生数单位和阅读说明；右侧完整婴儿双手扶着鼓起白尿布，头部、双臂、双脚与折边清楚。红折线可连续追踪于尿布内，纵轴标40至140，年份从1920到1980。可读注释为1924·68.4、1943·124.6、1980·121.6；前段低、中央高、后段回落再上升。折线未见被手或尿布边缘遮断。尚未检验全部61点的几何位置。",
+        "summary_zh": "已保存review.json并通过schema校验。完整婴儿、白尿布与红折线的承载关系保留；年度样本、单位和关键注释一致。未发现超过3%满量程容差的可见偏差或必要结构缺失。",
+        "issues": [],
+        "measurement_notes_zh": "检查2080×1600原图。纵轴刻度中心依次为865.5、941.5、1017.5、1093.5、1169.5、1245.5，对应140至40，满量程380像素、100单位。依据可见年份端点及网格定位，分离文字和引线后读取红色区域。61个年度列均检出折线；列中位数换算的最大偏差约1.153%满量程，位于1955急转弯，包含描边及拐角测量影响。3%满量程对应11.4像素。",
+        "uncertainties_zh": "抗锯齿、约7像素线宽和拐角限制精确顶点测量，不能据此证明一位小数的几何精度。未运行渲染或读取被禁止的执行记录；capture_render.py的存在不能证明历史执行路径。所供源码目录缺少input.json，因此未宣称复现执行已验证。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "1920–1980共61年、单系列。七个十年标签、六个纵轴主刻度、三处关键注释、系列名、单位及合成提示齐全。61个年度列均有红线；源码以全部61样本连接，作为完整性佐证。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "1924·68.4、1943·124.6、1980·121.6与输入一致；1920–1980、61、40–140及每千名女性每年出生数均准确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "三处注释分别连接最小点、最大点和末点；沿尿布下缘布置的年份保持对应横坐标。红色图例标为Synthetic birth rate，轴角色明确。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "独立像素换算：1924≈68.421、1943≈124.605、1935≈93.947、1980≈121.579。全部年度列的最大估计偏差1.153%满量程，低于3%。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01.png中的脸、卷发、双手、尿布纹理和双脚实质用于最终主体。源码合成素材并按数据控制折线及文字；保存渲染的代码存在，执行历史未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "红折线和网格位于白尿布正面；双手覆盖侧缘、折边位于图区上方、腿脚从下方伸出。没有破坏解释的越界、遮断或接缝。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、合成提示、完整单位、系列名、刻度、关键注释和左侧说明可读；红线与浅色布面区分清楚。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "头部连接躯干，肩臂连接扶布双手；鼓起尿布包覆下腹，上折边和侧褶可辨，双腿双脚完整。最大和最小点均由同一尿布正面承载。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Annual birth rate、Births per 1,000 women per year、Synthetic birth rate及YEAR明确主题、指标、单位和年度类别。未混淆出生队列、累计值或百分比构成。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留婴儿—尿布—年度出生率联系和书页说明。美国真实历史事件与旧峰谷按输入改为合成序列，属于许可改编，不计输出缺陷。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "1924最小点与相邻折线清楚位于尿布内部；红点核心约7–8像素，距40基线约108像素，并非亚像素标记。文字与几何分别核验。"
+          }
+        },
+        "semantic_attribution_zh": "历史注释与真实美国统计改为合成序列，归因于许可的输入改编；曲线形状改变归因于当前数据。未发现当前主题、单位或尿布承载关系遗漏。像素限制只影响精确数值反推。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "1920",
+              "expected_value": 73.2,
+              "observed_value": 72.6316,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 124,
+              "full_scale_error_percent": 0.5684,
+              "small_value_relative_error_percent": 0.7765,
+              "bbox_xyxy_normalized": [
+                0.41875,
+                0.694688,
+                0.427404,
+                0.707188
+              ],
+              "evidence_zh": "x=880的红色像素为y=1120–1123，中位数1121.5；以可见40和140刻度中心换算。extent表示距40基线的纵向编码距离。",
+              "uncertainty_zh": "端点描边和像素取整影响中心；换算小数不代表测量精度。"
+            },
+            {
+              "series_id": "S1",
+              "category": "1924",
+              "expected_value": 68.4,
+              "observed_value": 68.4211,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 108,
+              "full_scale_error_percent": 0.0211,
+              "small_value_relative_error_percent": 0.0308,
+              "bbox_xyxy_normalized": [
+                0.448077,
+                0.704688,
+                0.456731,
+                0.717188
+              ],
+              "evidence_zh": "最小正值，x=941的圆点红色像素为y=1134–1141，中位数1137.5；距40基线108像素。",
+              "uncertainty_zh": "抗锯齿及圆点描边限制中心精度；此相对误差仅为像素估计。"
+            },
+            {
+              "series_id": "S1",
+              "category": "1935",
+              "expected_value": 93.7,
+              "observed_value": 93.9474,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 205,
+              "full_scale_error_percent": 0.2474,
+              "small_value_relative_error_percent": 0.264,
+              "bbox_xyxy_normalized": [
+                0.529327,
+                0.644063,
+                0.537981,
+                0.656563
+              ],
+              "evidence_zh": "内部上升段，x=1110的红色像素为y=1034–1047，中位数1040.5；距40基线205像素。",
+              "uncertainty_zh": "斜线宽度及横坐标取整影响列中位数，非精确矢量顶点。"
+            },
+            {
+              "series_id": "S1",
+              "category": "1943",
+              "expected_value": 124.6,
+              "observed_value": 124.6053,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 321.5,
+              "full_scale_error_percent": 0.0053,
+              "small_value_relative_error_percent": 0.0042,
+              "bbox_xyxy_normalized": [
+                0.588462,
+                0.57125,
+                0.597115,
+                0.58375
+              ],
+              "evidence_zh": "最大值，x=1233的圆点红色像素为y=921–927，中位数924；距40基线321.5像素。",
+              "uncertainty_zh": "圆点描边和抗锯齿限制中心精度，不支持同等小数精度的几何主张。"
+            },
+            {
+              "series_id": "S1",
+              "category": "1955",
+              "expected_value": 87.4,
+              "observed_value": 88.5526,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 184.5,
+              "full_scale_error_percent": 1.1526,
+              "small_value_relative_error_percent": 1.3188,
+              "bbox_xyxy_normalized": [
+                0.676923,
+                0.656875,
+                0.685577,
+                0.669375
+              ],
+              "evidence_zh": "内部急转弯，x=1417的红色像素为y=1054–1068，中位数1061；距40基线184.5像素。",
+              "uncertainty_zh": "相邻斜段和粗线交会使列中位数偏离真实顶点；此处测量不确定性较大。"
+            },
+            {
+              "series_id": "S1",
+              "category": "1964",
+              "expected_value": 77.2,
+              "observed_value": 77.2368,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 141.5,
+              "full_scale_error_percent": 0.0368,
+              "small_value_relative_error_percent": 0.0477,
+              "bbox_xyxy_normalized": [
+                0.743269,
+                0.68375,
+                0.751923,
+                0.69625
+              ],
+              "evidence_zh": "内部低点，x=1555的红色像素为y=1101–1107，中位数1104；距40基线141.5像素。",
+              "uncertainty_zh": "线宽及拐角限制精确顶点测量。"
+            },
+            {
+              "series_id": "S1",
+              "category": "1980",
+              "expected_value": 121.6,
+              "observed_value": 121.5789,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 310,
+              "full_scale_error_percent": 0.0211,
+              "small_value_relative_error_percent": 0.0173,
+              "bbox_xyxy_normalized": [
+                0.861058,
+                0.578438,
+                0.869712,
+                0.590938
+              ],
+              "evidence_zh": "末年圆点，排除上方引线后，x=1800的红色像素为y=932–939，中位数935.5；距40基线310像素。",
+              "uncertainty_zh": "抗锯齿及圆点描边限制中心精度。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "完整婴儿与尿布",
+              "required_parts": [
+                "头部",
+                "躯干",
+                "双臂与双手",
+                "鼓起白尿布",
+                "上折边",
+                "双腿与双脚"
+              ],
+              "relationship": "头接躯干，双臂下伸，双手接触并遮住尿布侧缘；尿布包覆下腹，腿脚从下缘露出。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.34,
+                0.138,
+                0.94,
+                0.904
+              ],
+              "evidence_zh": "身体部件连接完整；上缘叠折、侧褶和鼓起正面可辨，两只脚完整。"
+            },
+            {
+              "category": "1943最大标记",
+              "required_parts": [
+                "白尿布正面",
+                "上折边",
+                "红折线顶点",
+                "引线与124.6注释"
+              ],
+              "relationship": "最大点在上折边下方布面内部，左右折线接入，引线向上连接注释。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.545,
+                0.493,
+                0.654,
+                0.618
+              ],
+              "evidence_zh": "点中心约(1233,924)，红线和注释没有穿过腹部或折边。"
+            },
+            {
+              "category": "1924最小标记",
+              "required_parts": [
+                "白尿布左下正面",
+                "红折线低点",
+                "相邻年度线段",
+                "68.4注释"
+              ],
+              "relationship": "最小点包含于布面，相邻线段从两侧接入，引线向下再向右连接标签。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.417,
+                0.683,
+                0.529,
+                0.774
+              ],
+              "evidence_zh": "点约(941,1137.5)，周围白布和网格清楚，下方仍有布面与边缘，未与腿脚混淆。"
+            },
+            {
+              "category": "1980末点与右手",
+              "required_parts": [
+                "尿布右上正面",
+                "末年圆点",
+                "右手",
+                "尿布侧褶"
+              ],
+              "relationship": "末点位于右手左侧布面内部；手覆盖侧褶而不覆盖数据点。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.819,
+                0.54,
+                0.94,
+                0.64
+              ],
+              "evidence_zh": "末点约(1800,935.5)，终端折线及注释引线可追踪，无遮断。"
+            },
+            {
+              "category": "书页说明与图形",
+              "required_parts": [
+                "左侧解释文字",
+                "指标单位",
+                "系列图例",
+                "右侧婴儿图"
+              ],
+              "relationship": "左侧文字解释尿布承载年度序列，与右侧实际叠合关系对应。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.043,
+                0.322,
+                0.938,
+                0.84
+              ],
+              "evidence_zh": "The oversized diaper carries an entire annual series及The red line follows the rate明确说明承载方式。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "参考真实统计被明确改为1920–1980合成年度出生率；允许姿态及非数据部分适配，不要求旧事件、旧峰位或涨跌结论。",
+            "output_added_or_lost_meaning_zh": "保留出生率与婴儿尿布的对应及年度序列含义；旧美国历史叙述按输入改编。合成提示明确排除真实人口统计主张。",
+            "visible_inscription_evidence_zh": "Annual birth rate；SYNTHETIC DATA；Births per 1,000 women per year；Synthetic birth rate；YEAR；61 annual observations；Every year is connected in order；they do not describe a real population。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "旧历史事件与真实美国统计改为合成年度序列，符合当前输入。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "当前最低1924、最高1943及1980末点与数据一致，无须复制参考旧峰谷。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "抗锯齿和粗折线限制像素中心反推，1955转弯尤为明显；未造成标记或布面关系不可见。"
+            }
+          ],
+          "measurement_coverage_zh": "单面板、单系列、单一线性数值通道。详细记录7点，包括最小正值、最大值、首末点及内部样本；另检查全部61个年度横坐标列。源码只佐证完整连接，不冒充像素计数。必要文字、系列数量及刻度单独核对；未拟合精确矢量中心线或核验历史执行记录。"
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_ablation/evaluation/items/e31e683debe3cc",
       "numeric_supported": true,
@@ -3063,7 +3370,294 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图可见蓝底、黄色衣服的全身腾跃人物、黄色闪光与橙色星形双折线、年龄组横轴及每百名患者纵轴；标题涉及焦虑随年龄先恶化后改善，图例为Women/Men。待评图可见全身腾跃人物与下方双折线并置；黄色闪光对应合成对照组A，橙色星形对应合成对照组B。8个年龄组等距排列，16个数值均可读；最高点为7.4和3.9，最右端为0.4和0.1。SYNTHETIC DATA、当前主题、单位及编码说明清楚，未见人物遮挡数据标记或数值。",
+        "summary_zh": "通过。数据、标签及绑定完整，像素测量支持统一线性轴和正确的小值位置。生成人物实质可见，人物与双折线的并置结构保留。原焦虑及男女主题的改变属于允许的合成主题适配。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在1480×2000原图测量：8刻度y≈929.93、零线y≈1739.58，跨度≈809.65像素。类别刻度中心x≈155.5、324.5、494.5、663.5、832.5、1001.5、1170.5、1339.5，间隔169–170像素。闪光中心取上下边中点，星形中心由五个实测外尖端拟合，再按可见0–8线性轴换算。另以邻近线段像素拟合核查16个顶点，最大近似偏差约0.13%满量程。源码仅作控制关系佐证。",
+        "uncertainties_zh": "中心估计约±1像素，对0.1小值约相当于10%相对误差，不能据满量程通过保证小值高精度。素材来源依据所供清单和原始素材核对；未检查运行日志或历次归档，不独立证明每次渲染均执行了归档。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "8个年龄组、两系列各8个标记与数值、0–8轴、图例、标题、单位及SYNTHETIC DATA均可见；无额外辅助面板要求。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "A为4.1、4.5、5.6、6.7、7.4、6.9、5.2、0.4；B为2.1、2.1、2.7、3.0、3.9、3.5、2.4、0.1，逐项吻合。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "黄色闪光绑定合成对照组A，橙色五星绑定合成对照组B；各点对应正确年龄组，末端0.4和0.1邻接各自标记。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "类别等距，两系列共享0–8线性轴。6处轮廓中心实测近似偏差均低于0.05%满量程；16顶点的邻近线段像素拟合亦在3%容差内。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始和处理后人物素材，其姿态、衣服、纹理与成图主体一致；清单声明为内置生图素材。render.py合成人物并从数据计算折线与标记；封存输入与所给输入一致。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "保留参考的人物与折线并置。背景网格位于人物后方，数据线和标记清晰，未以人物高度或肢体长度编码病例数。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下标题、单位、图例、全部年龄标签和数值及底部说明可读，未见必要文字裁切或遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "头颈、躯干、双臂与手、双腿与足完整相连，分腿腾跃；双折线分别使用四角闪光和五星，指定结构保留。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "当前合成年龄趋势主题、每百名假设参与者的合成病例数、合成组角色与年龄组均明确；底注明确等距类别及人物不编码数值。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "腾跃动作、年龄轴和双系列关系保留；焦虑及Women/Men语义按core明示的合成主题适配改变，不属输出缺陷。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "末端闪光和五星可区分，竖向尺寸约28和22像素；中心分别高于零线约40.08和10.02像素，相隔约30.07像素。五星下尖接近零线，但中心未归零。"
+          }
+        },
+        "semantic_attribution_zh": "旧焦虑主题、男女角色及旧论述的变化归因于明示输入适配；当前统计口径和角色完整。新峰值及末端下降由当前数据决定。未见输出遗漏；最小值相对精度判断受像素分辨率限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "group_a",
+              "category": "75 and older",
+              "expected_value": 0.4,
+              "observed_value": 0.396,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 28,
+              "full_scale_error_percent": 0.049,
+              "small_value_relative_error_percent": 1.0,
+              "bbox_xyxy_normalized": [
+                0.8959,
+                0.843,
+                0.9149,
+                0.857
+              ],
+              "evidence_zh": "闪光上下亮边中点y≈1699.50，距零线40.08像素，换算约0.396；文字为0.4。标记尺寸本身不编码量值。",
+              "uncertainty_zh": "中心约±1像素，对应约±0.010病例/百人，即目标值约2.5%；误差为近似点估计。"
+            },
+            {
+              "series_id": "group_a",
+              "category": "45-54",
+              "expected_value": 7.4,
+              "observed_value": 7.402,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 28,
+              "full_scale_error_percent": 0.019,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.5534,
+                0.4885,
+                0.5723,
+                0.5025
+              ],
+              "evidence_zh": "闪光上下亮边中点y≈990.50，距零线749.08像素，换算约7.402；文字为7.4。",
+              "uncertainty_zh": "抗锯齿及栅格量化使中心约有±1像素不确定性，对应约±0.010病例/百人。"
+            },
+            {
+              "series_id": "group_a",
+              "category": "25-34",
+              "expected_value": 5.6,
+              "observed_value": 5.603,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 28,
+              "full_scale_error_percent": 0.041,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.325,
+                0.5795,
+                0.3439,
+                0.5935
+              ],
+              "evidence_zh": "闪光上下亮边中点y≈1172.50，距零线567.08像素，换算约5.603；文字为5.6。",
+              "uncertainty_zh": "中心约±1像素，对应约±0.010病例/百人；误差为近似点估计。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "75 and older",
+              "expected_value": 0.1,
+              "observed_value": 0.099,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 22,
+              "full_scale_error_percent": 0.013,
+              "small_value_relative_error_percent": 1.0,
+              "bbox_xyxy_normalized": [
+                0.8973,
+                0.859,
+                0.9135,
+                0.87
+              ],
+              "evidence_zh": "五个外尖端像素拟合中心y≈1729.57，距零线10.02像素，换算约0.099；文字为0.1。",
+              "uncertainty_zh": "中心约±1像素，相当于目标小值约10%；不能据点估计保证百分之一量级的相对精度。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "45-54",
+              "expected_value": 3.9,
+              "observed_value": 3.899,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 23,
+              "full_scale_error_percent": 0.008,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.5547,
+                0.6665,
+                0.5709,
+                0.678
+              ],
+              "evidence_zh": "五个外尖端像素拟合中心y≈1344.94，距零线394.64像素，换算约3.899；文字为3.9。",
+              "uncertainty_zh": "中心约±1像素，对应约±0.010病例/百人；误差为近似点估计。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "25-34",
+              "expected_value": 2.7,
+              "observed_value": 2.698,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 22,
+              "full_scale_error_percent": 0.03,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3264,
+                0.7275,
+                0.3426,
+                0.7385
+              ],
+              "evidence_zh": "五个外尖端像素拟合中心y≈1466.57，距零线273.01像素，换算约2.698；文字为2.7。",
+              "uncertainty_zh": "中心约±1像素，对应约±0.010病例/百人；误差为近似点估计。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "全身腾跃人物",
+              "required_parts": [
+                "头颈",
+                "黄色衣服覆盖的躯干",
+                "双臂与手",
+                "双腿与足"
+              ],
+              "relationship": "头经颈连接躯干，双臂从肩部伸出，双腿从髋部分开并连接足部；人物不承载数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.314,
+                0.161,
+                0.817,
+                0.524
+              ],
+              "evidence_zh": "右臂向上、左臂横展，两腿左右伸展；手足完整，身体与衣服边界连续。"
+            },
+            {
+              "category": "大值实例：45-54",
+              "required_parts": [
+                "A四角闪光",
+                "B五星",
+                "左右相邻线段",
+                "共同年龄位置"
+              ],
+              "relationship": "两标记位于同一年龄横坐标，分别连接本系列左右线段；中心纵坐标承载数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.545,
+                0.485,
+                0.582,
+                0.68
+              ],
+              "evidence_zh": "A中心约(832.5,990.5)，B中心约(832.4,1344.9)，对应7.4和3.9；未被人物遮挡。"
+            },
+            {
+              "category": "中间实例：25-34",
+              "required_parts": [
+                "A闪光",
+                "B五星",
+                "两侧折线",
+                "年龄标签"
+              ],
+              "relationship": "两标记分别位于本系列折线转折处，共用对应年龄组位置。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.323,
+                0.575,
+                0.349,
+                0.744
+              ],
+              "evidence_zh": "中心约y=1172.5和1466.6；5.6和2.7邻接正确标记，线条连接清晰。"
+            },
+            {
+              "category": "小值实例：75 and older",
+              "required_parts": [
+                "0.4闪光端点",
+                "0.1五星端点",
+                "各自下降线段",
+                "零线"
+              ],
+              "relationship": "各线终止于相应标记中心；中心高于零线，标记尺寸不编码病例数。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.893,
+                0.841,
+                0.964,
+                0.874
+              ],
+              "evidence_zh": "闪光边界约y=1686–1713，五星外尖约y=1718–1739，仍有可见间隔；五星中心距零线约10像素。"
+            },
+            {
+              "category": "人物与图表并置及层序",
+              "required_parts": [
+                "腾跃人物",
+                "背景网格",
+                "双系列折线"
+              ],
+              "relationship": "人物覆盖局部背景网格，数据线与标记独立位于其下方；参考不要求数据绘于身体表面。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.313,
+                0.44,
+                0.817,
+                0.65
+              ],
+              "evidence_zh": "足部进入上方绘图区空白，7.4峰值和邻近折线完整可见，无破坏结构的透视或遮挡问题。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core明确允许将原焦虑及男女统计改为合成年龄趋势任务，当前数据覆盖旧峰值与走势。",
+            "output_added_or_lost_meaning_zh": "保留腾跃动作与年龄双折线并置；旧焦虑主题和男女语义的改变属于允许适配，未另添统计论断。",
+            "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、完整中文主题、每百名假设参与者的合成病例数及英文单位、合成对照组A/B、年龄组/AGE BAND，以及等距类别和人物不编码病例数的底注。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "原焦虑、Women/Men及旧论述被明示的合成主题替代，reference_meaning记partial，不作为生成失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "当前两系列于45-54达到7.4和3.9，末端降至0.4和0.1；成图遵循当前数据。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "0.1对应约10像素的离轴距离，正值位置和标记身份可辨，但相对精度受约1像素读数不确定性限制。"
+            }
+          ],
+          "measurement_coverage_zh": "唯一面板为共轴双系列折线；详细记录两系列各自最小值、最大值及25-34中间值，共6处轮廓测量，并辅助拟合核查全部16顶点。全部年龄标签、数值及系列绑定另行逐项目视核对；人物姿态不计作量化通道。"
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_ablation/evaluation/items/be5a018910d54a",
       "numeric_supported": true,
@@ -3372,7 +3966,294 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图可见蓝底、黄色衣服的全身腾跃人物、黄色闪光与橙色星形双折线、年龄组横轴及每百名患者纵轴；标题涉及焦虑随年龄先恶化后改善，图例为Women/Men。待评图可见全身腾跃人物与下方双折线并置；黄色闪光对应合成对照组A，橙色星形对应合成对照组B。8个年龄组等距排列，16个数值均可读；最高点为7.4和3.9，最右端为0.4和0.1。SYNTHETIC DATA、当前主题、单位及编码说明清楚，未见人物遮挡数据标记或数值。",
+        "summary_zh": "通过。数据、标签及绑定完整，像素测量支持统一线性轴和正确的小值位置。生成人物实质可见，人物与双折线的并置结构保留。原焦虑及男女主题的改变属于允许的合成主题适配。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在1480×2000原图测量：8刻度y≈929.93、零线y≈1739.58，跨度≈809.65像素。类别刻度中心x≈155.5、324.5、494.5、663.5、832.5、1001.5、1170.5、1339.5，间隔169–170像素。闪光中心取上下边中点，星形中心由五个实测外尖端拟合，再按可见0–8线性轴换算。另以邻近线段像素拟合核查16个顶点，最大近似偏差约0.13%满量程。源码仅作控制关系佐证。",
+        "uncertainties_zh": "中心估计约±1像素，对0.1小值约相当于10%相对误差，不能据满量程通过保证小值高精度。素材来源依据所供清单和原始素材核对；未检查运行日志或历次归档，不独立证明每次渲染均执行了归档。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "8个年龄组、两系列各8个标记与数值、0–8轴、图例、标题、单位及SYNTHETIC DATA均可见；无额外辅助面板要求。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "A为4.1、4.5、5.6、6.7、7.4、6.9、5.2、0.4；B为2.1、2.1、2.7、3.0、3.9、3.5、2.4、0.1，逐项吻合。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "黄色闪光绑定合成对照组A，橙色五星绑定合成对照组B；各点对应正确年龄组，末端0.4和0.1邻接各自标记。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "类别等距，两系列共享0–8线性轴。6处轮廓中心实测近似偏差均低于0.05%满量程；16顶点的邻近线段像素拟合亦在3%容差内。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始和处理后人物素材，其姿态、衣服、纹理与成图主体一致；清单声明为内置生图素材。render.py合成人物并从数据计算折线与标记；封存输入与所给输入一致。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "保留参考的人物与折线并置。背景网格位于人物后方，数据线和标记清晰，未以人物高度或肢体长度编码病例数。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下标题、单位、图例、全部年龄标签和数值及底部说明可读，未见必要文字裁切或遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "头颈、躯干、双臂与手、双腿与足完整相连，分腿腾跃；双折线分别使用四角闪光和五星，指定结构保留。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "当前合成年龄趋势主题、每百名假设参与者的合成病例数、合成组角色与年龄组均明确；底注明确等距类别及人物不编码数值。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "腾跃动作、年龄轴和双系列关系保留；焦虑及Women/Men语义按core明示的合成主题适配改变，不属输出缺陷。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "末端闪光和五星可区分，竖向尺寸约28和22像素；中心分别高于零线约40.08和10.02像素，相隔约30.07像素。五星下尖接近零线，但中心未归零。"
+          }
+        },
+        "semantic_attribution_zh": "旧焦虑主题、男女角色及旧论述的变化归因于明示输入适配；当前统计口径和角色完整。新峰值及末端下降由当前数据决定。未见输出遗漏；最小值相对精度判断受像素分辨率限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "group_a",
+              "category": "75 and older",
+              "expected_value": 0.4,
+              "observed_value": 0.396,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 28,
+              "full_scale_error_percent": 0.049,
+              "small_value_relative_error_percent": 1.0,
+              "bbox_xyxy_normalized": [
+                0.8959,
+                0.843,
+                0.9149,
+                0.857
+              ],
+              "evidence_zh": "闪光上下亮边中点y≈1699.50，距零线40.08像素，换算约0.396；文字为0.4。标记尺寸本身不编码量值。",
+              "uncertainty_zh": "中心约±1像素，对应约±0.010病例/百人，即目标值约2.5%；误差为近似点估计。"
+            },
+            {
+              "series_id": "group_a",
+              "category": "45-54",
+              "expected_value": 7.4,
+              "observed_value": 7.402,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 28,
+              "full_scale_error_percent": 0.019,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.5534,
+                0.4885,
+                0.5723,
+                0.5025
+              ],
+              "evidence_zh": "闪光上下亮边中点y≈990.50，距零线749.08像素，换算约7.402；文字为7.4。",
+              "uncertainty_zh": "抗锯齿及栅格量化使中心约有±1像素不确定性，对应约±0.010病例/百人。"
+            },
+            {
+              "series_id": "group_a",
+              "category": "25-34",
+              "expected_value": 5.6,
+              "observed_value": 5.603,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 28,
+              "full_scale_error_percent": 0.041,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.325,
+                0.5795,
+                0.3439,
+                0.5935
+              ],
+              "evidence_zh": "闪光上下亮边中点y≈1172.50，距零线567.08像素，换算约5.603；文字为5.6。",
+              "uncertainty_zh": "中心约±1像素，对应约±0.010病例/百人；误差为近似点估计。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "75 and older",
+              "expected_value": 0.1,
+              "observed_value": 0.099,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 22,
+              "full_scale_error_percent": 0.013,
+              "small_value_relative_error_percent": 1.0,
+              "bbox_xyxy_normalized": [
+                0.8973,
+                0.859,
+                0.9135,
+                0.87
+              ],
+              "evidence_zh": "五个外尖端像素拟合中心y≈1729.57，距零线10.02像素，换算约0.099；文字为0.1。",
+              "uncertainty_zh": "中心约±1像素，相当于目标小值约10%；不能据点估计保证百分之一量级的相对精度。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "45-54",
+              "expected_value": 3.9,
+              "observed_value": 3.899,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 23,
+              "full_scale_error_percent": 0.008,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.5547,
+                0.6665,
+                0.5709,
+                0.678
+              ],
+              "evidence_zh": "五个外尖端像素拟合中心y≈1344.94，距零线394.64像素，换算约3.899；文字为3.9。",
+              "uncertainty_zh": "中心约±1像素，对应约±0.010病例/百人；误差为近似点估计。"
+            },
+            {
+              "series_id": "group_b",
+              "category": "25-34",
+              "expected_value": 2.7,
+              "observed_value": 2.698,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 22,
+              "full_scale_error_percent": 0.03,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3264,
+                0.7275,
+                0.3426,
+                0.7385
+              ],
+              "evidence_zh": "五个外尖端像素拟合中心y≈1466.57，距零线273.01像素，换算约2.698；文字为2.7。",
+              "uncertainty_zh": "中心约±1像素，对应约±0.010病例/百人；误差为近似点估计。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "全身腾跃人物",
+              "required_parts": [
+                "头颈",
+                "黄色衣服覆盖的躯干",
+                "双臂与手",
+                "双腿与足"
+              ],
+              "relationship": "头经颈连接躯干，双臂从肩部伸出，双腿从髋部分开并连接足部；人物不承载数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.314,
+                0.161,
+                0.817,
+                0.524
+              ],
+              "evidence_zh": "右臂向上、左臂横展，两腿左右伸展；手足完整，身体与衣服边界连续。"
+            },
+            {
+              "category": "大值实例：45-54",
+              "required_parts": [
+                "A四角闪光",
+                "B五星",
+                "左右相邻线段",
+                "共同年龄位置"
+              ],
+              "relationship": "两标记位于同一年龄横坐标，分别连接本系列左右线段；中心纵坐标承载数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.545,
+                0.485,
+                0.582,
+                0.68
+              ],
+              "evidence_zh": "A中心约(832.5,990.5)，B中心约(832.4,1344.9)，对应7.4和3.9；未被人物遮挡。"
+            },
+            {
+              "category": "中间实例：25-34",
+              "required_parts": [
+                "A闪光",
+                "B五星",
+                "两侧折线",
+                "年龄标签"
+              ],
+              "relationship": "两标记分别位于本系列折线转折处，共用对应年龄组位置。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.323,
+                0.575,
+                0.349,
+                0.744
+              ],
+              "evidence_zh": "中心约y=1172.5和1466.6；5.6和2.7邻接正确标记，线条连接清晰。"
+            },
+            {
+              "category": "小值实例：75 and older",
+              "required_parts": [
+                "0.4闪光端点",
+                "0.1五星端点",
+                "各自下降线段",
+                "零线"
+              ],
+              "relationship": "各线终止于相应标记中心；中心高于零线，标记尺寸不编码病例数。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.893,
+                0.841,
+                0.964,
+                0.874
+              ],
+              "evidence_zh": "闪光边界约y=1686–1713，五星外尖约y=1718–1739，仍有可见间隔；五星中心距零线约10像素。"
+            },
+            {
+              "category": "人物与图表并置及层序",
+              "required_parts": [
+                "腾跃人物",
+                "背景网格",
+                "双系列折线"
+              ],
+              "relationship": "人物覆盖局部背景网格，数据线与标记独立位于其下方；参考不要求数据绘于身体表面。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.313,
+                0.44,
+                0.817,
+                0.65
+              ],
+              "evidence_zh": "足部进入上方绘图区空白，7.4峰值和邻近折线完整可见，无破坏结构的透视或遮挡问题。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core明确允许将原焦虑及男女统计改为合成年龄趋势任务，当前数据覆盖旧峰值与走势。",
+            "output_added_or_lost_meaning_zh": "保留腾跃动作与年龄双折线并置；旧焦虑主题和男女语义的改变属于允许适配，未另添统计论断。",
+            "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、完整中文主题、每百名假设参与者的合成病例数及英文单位、合成对照组A/B、年龄组/AGE BAND，以及等距类别和人物不编码病例数的底注。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "原焦虑、Women/Men及旧论述被明示的合成主题替代，reference_meaning记partial，不作为生成失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "当前两系列于45-54达到7.4和3.9，末端降至0.4和0.1；成图遵循当前数据。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "0.1对应约10像素的离轴距离，正值位置和标记身份可辨，但相对精度受约1像素读数不确定性限制。"
+            }
+          ],
+          "measurement_coverage_zh": "唯一面板为共轴双系列折线；详细记录两系列各自最小值、最大值及25-34中间值，共6处轮廓测量，并辅助拟合核查全部16顶点。全部年龄标签、数值及系列绑定另行逐项目视核对；人物姿态不计作量化通道。"
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_ablation/evaluation/items/be5a018910d54a",
       "numeric_supported": true,
