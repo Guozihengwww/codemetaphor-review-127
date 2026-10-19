@@ -1,0 +1,328 @@
+{
+  "verdict": "minor",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以四块斜俯视夹心饼干表示广告份额，下方为独立观众符号。成图保留深棕压纹饼干、白色夹心及下饼干；C占绝大部分，B在右后方，A与D为上方窄片。四项完整精度数值均可见。下方有1个青色与11个灰色人物，注明每人物2人及独立24人示例。大块三层相接；最小片各层关系难以辨清。Category B文字覆盖深色饼面，局部对比度较低。",
+  "summary_zh": "数据、扇角和人物计数符合要求。B标签与引线叠在饼面上，属于局部可读性问题；最小扇块的夹心关系仅部分可辨。review.json已保存并通过schema校验，未运行submit.py。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M1/LABELS",
+      "expected_zh": "类别及完整数值清晰可读，引线不干扰文字。",
+      "observed_zh": "Category B黑字覆盖深棕压纹，引线穿过青色数值区域；文字仍可辨认。",
+      "evidence_zh": "原图右上约x1470–1820、y538–660，Category B前半部对比度较低，黑色引线穿过11.01458495%。",
+      "bbox_xyxy_normalized": [
+        0.734,
+        0.267,
+        0.913,
+        0.331
+      ]
+    }
+  ],
+  "measurement_notes_zh": "测量使用2000×2000成图像素，未使用诊断掩膜或自检结果。A、B、D取实际外缘角点，使用源码声明的纵向压缩0.54与平移中心逆变换。C通过成图与顶面素材的纹理对应定位实际边界，再反算角宽。人物通过可见计数及头部连通域核对。份额以100%为满量程，人物以24人为分母。",
+  "uncertainties_zh": "角点受抗锯齿影响约±1像素，份额测量约±0.05个百分点，C约±0.06个百分点。A仅约6–7像素宽，不能据近似相对误差证明小值高精度。小片层间关系受遮挡和分辨率限制，未确认连接断裂。未访问日志、自检或归档记录，不能确认capture_render.py实际调用。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "四类别、系列、单位及全部数值完整；辅助面板包含两类观众、2人、22人、24人总数和每人物2人的说明。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "0.17484564%、11.01458495%、87.42281867%、1.38775074%与数据一致；2/24及22人正确，小正数未归零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "四条引线分别指向对应扇块；青色单人对应不关注比赛，灰色11人对应关注比赛。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素反算约A0.168%、B11.007%、C87.43%、D1.394%，均在3个百分点容差内；人物为1+11个，每个2人。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材中的花瓣压纹、饼边和奶油纹理实质用于主体；源码读取数据控制扇角、投影、图符数量与文字。归档调用未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "实际饼干顶面扇角承载份额，材质贴合顶面及侧面，前缘夹心连接上下饼干；观众处于独立面板。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需标题、数值、单位及统计口径均可读；B局部重叠降低对比，但未导致必需文字无法辨认。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "整体夹心饼干与独立人物面板保留，大块三层相接；窄片的奶油及下饼干受遮挡，完整层间关系不能逐片辨清。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "广告时段、广告份额percent、合成可比类别、总计100%及独立24人观众示例均有明确说明。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留广告份额与比赛关注状态的双面板关系；真实产品类别和原口号被冻结输入指定的合成类别与标题替换，属于允许的输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "A保留非零细条几何及引线，外端约6–7像素，但完整夹心关系难辨；D顶面更清楚。最少观众组的一个完整人形清楚可见。"
+    }
+  },
+  "semantic_attribution_zh": "真实广告类别改为合成可比类别来自输入适配；C大块和A极窄来自当前数据。小片夹心可辨性下降与尺度、投影及遮挡有关，未证实结构断裂。未发现当前主题、单位、类别角色或独立观众口径的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Category A",
+        "expected_value": 0.17484564,
+        "observed_value": 0.16812431,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 6.52,
+        "full_scale_error_percent": 0.00672133,
+        "small_value_relative_error_percent": 3.84415,
+        "bbox_xyxy_normalized": [
+          0.5675,
+          0.205,
+          0.5725,
+          0.208
+        ],
+        "evidence_zh": "顶端首行位于y411，实色像素约x1137–1142；含抗锯齿边界取(1136.5,411.5)及(1143,411)，反算约0.1681%。",
+        "uncertainty_zh": "角点约±1像素；相对误差估计小于其测量不确定度，不能证明小值精密复现。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Category B",
+        "expected_value": 11.01458495,
+        "observed_value": 11.00732646,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 408.05,
+        "full_scale_error_percent": 0.00725849,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.595,
+          0.2545,
+          0.798,
+          0.423
+        ],
+        "evidence_zh": "可见外缘角点约(1191.5,510.5)、(1594.5,574.5)，弦长约408像素，逆投影角宽约39.626°。",
+        "uncertainty_zh": "角点约±1像素；标签未遮住所测外缘角点。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Category C",
+        "expected_value": 87.42281867,
+        "observed_value": 87.43055556,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1240,
+        "full_scale_error_percent": 0.00773689,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.289,
+          0.284,
+          0.909,
+          0.619
+        ],
+        "evidence_zh": "顶面横向约1240像素。成图与素材对应的纹理差在母圆约−99.0°及−53.75°附近切换，给出约314.75°扇角，即87.43%。",
+        "uncertainty_zh": "使用声明的仿射投影逆变换，实际纹理边界估计约±0.06个百分点；未把被遮挡的外角当作直接测量。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Category D",
+        "expected_value": 1.38775074,
+        "observed_value": 1.39406564,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 54.08,
+        "full_scale_error_percent": 0.0063149,
+        "small_value_relative_error_percent": 0.45505,
+        "bbox_xyxy_normalized": [
+          0.5415,
+          0.2415,
+          0.5695,
+          0.245
+        ],
+        "evidence_zh": "外端边界约(1084,487.5)、(1138,484.5)，弦宽约54像素，逆投影约1.3941%。",
+        "uncertainty_zh": "右端邻近A片，边界约±1像素；相对误差仅为近似测量结果。"
+      },
+      {
+        "series_id": "independent_cohort",
+        "category": "Not following the game",
+        "expected_value": 2,
+        "observed_value": 2,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 136,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.324,
+          0.8435,
+          0.3525,
+          0.9115
+        ],
+        "evidence_zh": "一个青色完整人形，按每人物2人得到2人；头部连通域位于x664–687、y1687–1710。",
+        "uncertainty_zh": "136像素为图符高度；人数通过计数编码，不通过高度编码。"
+      },
+      {
+        "series_id": "independent_cohort",
+        "category": "Following the game",
+        "expected_value": 22,
+        "observed_value": 22,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 1087,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.3755,
+          0.8435,
+          0.919,
+          0.9115
+        ],
+        "evidence_zh": "11个灰色人形，头部从x767起每103像素出现一次，最后一个位于x1797–1820；每人物2人，共22人。",
+        "uncertainty_zh": "1087像素为该组横向范围，不将图符间空白用于人数比例测量。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Category C／大夹心饼干",
+        "required_parts": [
+          "扇形上饼干",
+          "奶油夹心",
+          "下饼干",
+          "径向切边"
+        ],
+        "relationship": "奶油位于两层饼干之间并相接，顶面扇角承载份额。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.289,
+          0.284,
+          0.91,
+          0.697
+        ],
+        "evidence_zh": "前缘深色上层、浅色中层、深色下层连续可辨，曲面与顶面采用共同斜视方向。"
+      },
+      {
+        "category": "Category B／中等扇块",
+        "required_parts": [
+          "压纹顶面",
+          "径向切面",
+          "夹心饼干层"
+        ],
+        "relationship": "分离扇块沿共同投影延伸，前方主体遮挡部分下层。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.595,
+          0.2545,
+          0.799,
+          0.445
+        ],
+        "evidence_zh": "扇形顶面与深色径向侧面清楚；下部奶油和下饼干大部分被C遮挡，全部接触边不能独立确认。"
+      },
+      {
+        "category": "Category A／最小扇块",
+        "required_parts": [
+          "非零上饼干扇面",
+          "奶油层",
+          "下饼干",
+          "标签引线"
+        ],
+        "relationship": "细扇块按共同投影分离，层间保持夹心关系。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.5675,
+          0.205,
+          0.599,
+          0.452
+        ],
+        "evidence_zh": "细棕色片与青色引线端点可见，外端仅约6–7像素；无法清楚分辨完整奶油层与下饼干。"
+      },
+      {
+        "category": "Category D／小扇块",
+        "required_parts": [
+          "窄上饼干扇面",
+          "奶油层",
+          "下饼干"
+        ],
+        "relationship": "窄扇块与A相邻并分离，各层共享扇角。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.542,
+          0.242,
+          0.592,
+          0.436
+        ],
+        "evidence_zh": "约54像素外端和收窄顶面可辨；下部与大块重叠，局部浅色边不足以逐层确认完整连接。"
+      },
+      {
+        "category": "独立观众面板",
+        "required_parts": [
+          "一个青色人形",
+          "十一个灰色人形",
+          "头躯干双臂双腿",
+          "每人物2人说明"
+        ],
+        "relationship": "两个观众组独立于饼干份额面板。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.32,
+          0.814,
+          0.922,
+          0.947
+        ],
+        "evidence_zh": "完整人形及分组线清楚，分别对应2人和22人；未将24人作为广告份额分母。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确使用合成可比类别A–D、当前广告份额和独立24人示例，不要求沿用真实产品名称、旧比例或极值。",
+      "output_added_or_lost_meaning_zh": "当前主题与统计角色完整；原具体产品类别和广告口号未沿用，与输入适配一致。",
+      "visible_inscription_evidence_zh": "广告时段；Ad share·percent；合成可比类别A–D／总计100%；独立观众示例；1个人物=2人；两类比赛关注状态；页底明确观众不是广告份额分母。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实产品类别被明确标注的合成可比类别替换，参考含义部分保留不归为输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前数据形成大块C与极窄A，不要求保持参考近似四等分外观。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "A外端仅约6–7像素，夹心可辨性还受投影与相邻片遮挡影响。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖全部四份额，包括最小A、最大C及中间B；独立计数面板两组均核对。全部类别、数值、单位、合成提示与人数换算均检查；未穷举被遮挡侧面或核验禁止访问的归档记录。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "深色压纹圆饼干、白色夹心、下饼干及独立观众图符保留；手指形图符改为全身人形，饼面花纹更换。",
+      "data_adaptation_excluded_zh": "不因当前类别名、数值、合成标识及扇块大小变化扣分。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "保留斜俯视、分离扇块、上下饼干与夹心接触的整体关系，观众仍在独立下方面板。",
+      "data_adaptation_excluded_zh": "排除数据造成的细扇块及允许的厚度、分离距离和姿态调整。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "上方标题、中部饼干与外围引线数值、下方观众的层级保留；标题和饼干显著放大，B文字进入饼面。",
+      "data_adaptation_excluded_zh": "排除允许的版面适配与当前数值文字长度。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "浅背景、写实深色饼干、浅奶油与青色数字延续；纹理更棕且规则，观众改为扁平实心人形。",
+      "data_adaptation_excluded_zh": "不把数据形状和更新文字视为材质差异。"
+    }
+  }
+}
