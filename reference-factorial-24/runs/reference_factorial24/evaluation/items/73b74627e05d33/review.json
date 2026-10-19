@@ -1,0 +1,354 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为深蓝世界地图、七行向右白色俯视飞机与渐隐尾迹，左侧国旗和航司标识，右侧市值。成图可见七行 Airline A–G、字母识别块、右端全部精确数值和 USD BILLION；上方为 Airline market capitalization、SYNTHETIC DATA，下方明确说明机鼻线性位置及飞机轮廓面积编码。大飞机可见机身、双翼、尾翼和两侧发动机；F、G 为仍可辨飞行方向的极小白色飞机，细节需像素核查。共用金色零线与 0–35 刻度可见，小飞机机身部分位于零线左侧而机鼻接近零线右侧。未见文字遮挡；A 的大翼跨越相邻行高度，但未遮住 B 飞机或数值。",
+  "summary_zh": "未发现违反明确必要要求的可见缺陷。七个类别、数值、单位及合成声明完整；机鼻位置与机体面积的独立像素检查符合满量程容差。最小飞机仍保留机身和翼形，但亚像素位置及小面积相对精度不能精确确认。",
+  "issues": [],
+  "measurement_notes_zh": "对指定 2000×2000 image.png 独立测量，未运行渲染代码。零线与满量程刻度线由图面像素确认在 x≈475、1575。机鼻用与邻近背景的 B−R 色差估计半覆盖轮廓，再按线性轴换算。面积在人工定位区域以 R>45、RGB 极差<14 分割最大连通域并填内部孔洞，以极差阈值 10/18 检查敏感性；排除蓝色地图、金色零线和大部分低亮尾迹。面积以 A 为共同比例定标。面积条目的 mark_extent_px 为机体水平宽度，px² 面积另记在证据中。公式及源码仅作旁证。",
+  "uncertainties_zh": "小飞机的半透明边界、深色机鼻及零线交叉使精确面积和位置具有像素级不确定性；满量程通过不代表小值相对精度已获保证。面积阈值范围只是敏感性分析。未查看禁止的日志、自检或编排证据，因此不确认 capture_render.py 的保存流程；不将此证据限制判为成图失败。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "七行 Airline A–G 按输入顺序出现，七个字母块、七架飞机及七个金额均存在；主题、系列、单位与 SYNTHETIC DATA 可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可读为 31.2、9.002447、2.597566、0.749502、0.216261、0.0624、0.0624，与输入完全一致；合计 43.890576 正确，无正数被写为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "左侧类别块、航司名、同高机身及右侧金额按七行对应；细引导线连接机鼻右侧至金额栏附近，未见错行或串类。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立测量的七个机鼻均符合 0–35 线性轴；代表值 A/B/D/F/G 的满量程偏差估计均小于 0.01%。面积比抽样也远低于 3% 满量程容差；小标记相对精度另保留不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看 raw_01.png 的白色客机和 raw_02.png 的深蓝地形地图，二者在成图中有对应材质与轮廓且占主体。render.py 使用统一飞机素材按平方根缩放并按线性值定位，代码实际控制几何和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "飞机实体轮廓承载面积，机鼻承载位置，均位于真实数据行中；不是旁置装饰。尾迹在后、机体在前，机翼与机身相连，无破坏结构的遮挡或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、类别、所有精确金额、USD BILLION、合成声明及两种编码说明均清晰可读；大翼跨行高度但未遮住相邻飞机或标签。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "保留深色地图、七行朝右俯视客机、后方渐隐白尾迹、左侧识别块和右侧金额。大、中、小飞机均可见机身与双翼、尾翼连接，主端点为机鼻。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Airline market capitalization 与 Synthetic market capitalization 明确当前主题和指标；AIRLINE、Airline A–G 与 USD BILLION 保留类别和单位，不把数值表述为份额或跨期累计。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考图的航空公司市值比较及向右飞行的飞机/尾迹关系保留。真实品牌和旧值被许可的合成类别与当前数值替换，未沿用旧真实统计或额外制造增长结论。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "F/G 约 19 px 长，仍可辨细机身、上下主翼及尾部小翼；双尾迹和机鼻细节不如大飞机分离清楚，机鼻仅超零线约 2 px，精确边界难以肉眼区分。未见为识别而强行放大。"
+    }
+  },
+  "semantic_attribution_zh": "合成航司名与数值是输入允许的适配，航空公司市值主题未改变。飞机大小和位置的强烈差异由当前数据驱动；F/G 的细节与相对测量精度受分辨率限制。未观察到输出遗漏主题、单位、类别角色或必要数据关系。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "market_cap",
+        "category": "Airline A",
+        "expected_value": 31.2,
+        "observed_value": 31.20323,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 980.67,
+        "full_scale_error_percent": 0.0092,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2375,
+          0.2335,
+          0.728,
+          0.4455
+        ],
+        "evidence_zh": "机鼻位置：成图像素中零线 x≈475、35 刻度线 x≈1575；机鼻轮廓 x≈1455.67。按 35×(x−475)/1100 换算。",
+        "uncertainty_zh": "通过机鼻与邻近背景色差估计半覆盖边界，约有 ±0.5 px 定位不确定性。"
+      },
+      {
+        "series_id": "market_cap",
+        "category": "Airline B",
+        "expected_value": 9.002447,
+        "observed_value": 9.00305,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 282.95,
+        "full_scale_error_percent": 0.0017,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2375,
+          0.363,
+          0.379,
+          0.4765
+        ],
+        "evidence_zh": "机鼻位置：成图机鼻 x≈757.95，距共同零线约 282.95 px，换算约 9.00305 USD billion。",
+        "uncertainty_zh": "同一像素边界方法；约 ±0.5 px，不把插值小数视为真实测量精度。"
+      },
+      {
+        "series_id": "market_cap",
+        "category": "Airline D",
+        "expected_value": 0.749502,
+        "observed_value": 0.74773,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 23.5,
+        "full_scale_error_percent": 0.0051,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2155,
+          0.5635,
+          0.2495,
+          0.596
+        ],
+        "evidence_zh": "机鼻位置：成图机鼻 x≈498.50，距零线约 23.50 px，换算约 0.74773 USD billion。",
+        "uncertainty_zh": "±0.5 px 相当于约 ±0.0159 USD billion；小值相对精度低于大值。"
+      },
+      {
+        "series_id": "market_cap",
+        "category": "Airline F",
+        "expected_value": 0.0624,
+        "observed_value": 0.06523,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2.05,
+        "full_scale_error_percent": 0.0081,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.229,
+          0.7355,
+          0.239,
+          0.7445
+        ],
+        "evidence_zh": "机鼻位置：成图色差轮廓估计 x≈477.05，距零线约 2.05 px；估计值在满量程容差内。",
+        "uncertainty_zh": "约 ±0.5 px 已对应目标值约 25.5%；不据此断言小值相对误差，故相对误差留空。"
+      },
+      {
+        "series_id": "market_cap",
+        "category": "Airline G",
+        "expected_value": 0.0624,
+        "observed_value": 0.06147,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1.93,
+        "full_scale_error_percent": 0.0027,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.229,
+          0.8155,
+          0.239,
+          0.8245
+        ],
+        "evidence_zh": "机鼻位置：成图色差轮廓估计 x≈476.93，距零线约 1.93 px；与 F 的差异低于像素级定位不确定性。",
+        "uncertainty_zh": "背景色差使亚像素估计稍有不同，不能据此认定同值标记实际位置不同。"
+      },
+      {
+        "series_id": "market_cap",
+        "category": "Airline A",
+        "expected_value": 31.2,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 439,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.508,
+          0.2335,
+          0.7275,
+          0.4455
+        ],
+        "evidence_zh": "机体面积：成图中性亮色连通域并填内部孔洞，面积约 42482 px²，宽约 439 px；边缘阈值变化得到 42164–42682 px²。此项作为面积比例定标。",
+        "uncertainty_zh": "规格仅规定面积正比，没有绝对面积单位；A 的金额用于定标，不能把其自定标值当独立验证，故 observed_value 与误差留空。"
+      },
+      {
+        "series_id": "market_cap",
+        "category": "Airline B",
+        "expected_value": 9.002447,
+        "observed_value": 8.9615,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 236,
+        "full_scale_error_percent": 0.117,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.261,
+          0.363,
+          0.379,
+          0.4765
+        ],
+        "evidence_zh": "机体面积：独立像素分割约 12202 px²；以 A 的可见面积定标，31.2×12202/42482≈8.9615。",
+        "uncertainty_zh": "边缘阈值敏感范围约 8.835–9.121；这是分割估计范围，非统计置信区间或渲染真实误差。"
+      },
+      {
+        "series_id": "market_cap",
+        "category": "Airline D",
+        "expected_value": 0.749502,
+        "observed_value": 0.73443,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 67,
+        "full_scale_error_percent": 0.0431,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2155,
+          0.564,
+          0.249,
+          0.596
+        ],
+        "evidence_zh": "机体面积：独立像素分割约 1000 px²；以 A 定标约 0.73443，满量程偏差估计约 0.0431%。",
+        "uncertainty_zh": "边缘阈值敏感范围约 0.706–0.759，涵盖目标值；不能将阈值偏差解释为确定的面积失真。"
+      },
+      {
+        "series_id": "market_cap",
+        "category": "Airline F",
+        "expected_value": 0.0624,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 19,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.229,
+          0.7355,
+          0.239,
+          0.7445
+        ],
+        "evidence_zh": "机体面积：原图机体长约 19 px、可见翼展约 18 px；中性亮色分割约 81 px²，阈值变化约 68–96 px²，对应 A 定标约 0.050–0.071。",
+        "uncertainty_zh": "机体只有数十个有效像素，边缘与尾迹混合使精确面积及相对误差不能独立可靠测定，保留空值。"
+      },
+      {
+        "series_id": "market_cap",
+        "category": "Airline G",
+        "expected_value": 0.0624,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 19,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.229,
+          0.8155,
+          0.239,
+          0.8245
+        ],
+        "evidence_zh": "机体面积：原图机体长约 19 px、可见翼展约 18 px；分割约 82 px²，阈值变化约 67–95 px²，与 F 相当。",
+        "uncertainty_zh": "一像素分割差来自背景与抗锯齿敏感性，不能据此认定 F/G 面积不等。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Airline A",
+        "required_parts": [
+          "机身",
+          "双主翼",
+          "尾翼",
+          "机后尾迹",
+          "机鼻端点"
+        ],
+        "relationship": "主翼与尾翼连在纵向机身上，机鼻朝右；双尾迹在机体后方并被机翼遮住前端。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.171,
+          0.2335,
+          0.728,
+          0.4455
+        ],
+        "evidence_zh": "大机体的主翼、尾翼、两侧发动机和表面面板可分辨；实体轮廓作为面积，最右机鼻对齐约 31.2 的位置。"
+      },
+      {
+        "category": "Airline D",
+        "required_parts": [
+          "机身",
+          "双主翼",
+          "尾翼",
+          "机后尾迹",
+          "机鼻端点"
+        ],
+        "relationship": "主翼和尾翼保持连接，飞机朝右，渐隐尾迹在左后方；机体可越过零线，数据端点仍为右端机鼻。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.171,
+          0.5635,
+          0.2495,
+          0.596
+        ],
+        "evidence_zh": "约 67 px 长的飞机可见完整翼形及尾部；机鼻在零线右侧约 23.5 px，未把机尾误作起点。"
+      },
+      {
+        "category": "Airline F / Airline G",
+        "required_parts": [
+          "细机身",
+          "双主翼",
+          "尾翼",
+          "机后尾迹",
+          "机鼻端点"
+        ],
+        "relationship": "小型横向机身连接上下主翼和左侧尾翼，右向机鼻贴近共同零线右侧；白色尾迹延伸到左后方。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.171,
+          0.7355,
+          0.239,
+          0.8245
+        ],
+        "evidence_zh": "原图可见约 19×18 px 的飞机：F 机身约在 y=1479–1480，主翼延至约 y=1471–1488，尾部在 x≈458–461；G 同样结构。双尾迹局部融成微光，细部接触和机鼻边界仅占少数像素。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "原真实航司品牌、国旗和市值替换为 Airline A–G 与冻结合成值；标签位置及非数据外观可调整。当前主题仍为航空公司市值。",
+      "output_added_or_lost_meaning_zh": "新增正确合计、线性轴和面积/尾迹说明，帮助区分定量边界；未增加时间趋势、百分组成或真实公司估值含义。小标记仅损失细节可分辨度。",
+      "visible_inscription_evidence_zh": "可见 SYNTHETIC DATA、Airline market capitalization、Synthetic market capitalization、AIRLINE、USD BILLION，以及 Zero to nose: a linear 0–35 scale. 和 Aircraft silhouette area: proportional to market value.；底注说明合成值与装饰尾迹。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实品牌/国旗替换为合成字母识别块，当前主题与统计角色保留，属于冻结输入允许的适配。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "A 远大于后续类别，F/G 同为最小，符合当前数值的比例与同值关系。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小机身约 19 px、零线至机鼻约 2 px，边缘抗锯齿使面积阈值和位置估计对个别像素敏感。"
+      }
+    ],
+    "measurement_coverage_zh": "检查全部七行标签、精确数值、合计、类别顺序和单位。独立像素检查覆盖全部七架飞机的机鼻与面积；报告列出 A、B、D、F、G 的两类编码，涵盖最大值、内部值与并列最小值。C/E 未单列测量条目；未把有限像素面积估计当作全部小值相对精度保证。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "世界地图、右向俯视客机、白色尾迹、左侧类别识别块及右侧金额均保留。",
+      "data_adaptation_excluded_zh": "真实品牌和国旗替换为合成 Airline A–G 字母块，属类别适配，不扣分。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "飞机均朝右，双翼与尾翼接于机身；尾迹位于机后，类别在左、金额在右，沿七行对应。",
+      "data_adaptation_excluded_zh": "飞机位置和大小随当前量值变化；标签移至固定右栏及姿态细节允许适配。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留顶部标题、中央七行比较及底部注释；标题改为左对齐双行，新增右上合计、显式坐标与底部编码说明，较参考图更强调轴和说明。",
+      "data_adaptation_excluded_zh": "不因当前数值导致长尾分布、飞机向零线聚集或同值 F/G 扣分。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "深蓝地图、白色飞机与淡金强调色接近参考；地图改为较细密的地形/经纬线质感，飞机由简化白色图形改为带灰色面板和发动机的写实材质。",
+      "data_adaptation_excluded_zh": "排除类别文字更新与数据缩放导致的小图细节减少。"
+    }
+  }
+}
