@@ -2,12 +2,12 @@
 *{box-sizing:border-box}body{margin:0;background:#f3f3ed;color:#263b32;font:16px/1.7 system-ui,sans-serif}main{max-width:1720px;margin:auto;padding:24px 16px}section,.intro{background:#fff;padding:22px;border-radius:9px;margin:20px 0}h1{line-height:1.35}h2{margin-top:0}a{color:#215c91}.columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}article{min-width:0}img{display:block;width:100%;height:auto}.reference{max-width:500px}.table-wrap{max-width:100%;overflow:auto}table{border-collapse:collapse;width:100%}td,th{padding:9px;border:1px solid #cad4ca;text-align:left;vertical-align:top}th{background:#eef4ed}pre,p{overflow-wrap:anywhere}pre{white-space:pre-wrap;font-size:13px}summary{cursor:pointer;padding:7px}.note{font-size:14px;color:#465c4f}.status{font-weight:650;color:#315c45}select{font:inherit;padding:8px;max-width:100%;margin:4px}[hidden]{display:none!important}.pill{display:inline-block;background:#eef4e9;padding:4px 9px;border-radius:5px}@media(max-width:1200px){.columns{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){main{padding:14px 10px}section,.intro{padding:15px}.columns{grid-template-columns:1fr}td,th{font-size:13px}}
 </style></head><body><main><h1>参考图双因素消融 · 24个设计 × 4种设置</h1><div class="intro"><p class="status">实验执行中</p>
 <p><strong>共96次全新生成，三类数据冲突各8个设计。</strong>同一设计的四组共用相同冲突数据、文字简报和结构语义合同。规划智能体是否能直接看原图，与生图模型是否接收原图，由执行器独立控制。</p>
-<div class="table-wrap"><table><thead><tr><th>设置</th><th>规划／编码智能体</th><th>生图模型</th><th>计划任务</th></tr></thead><tbody><tr><th>A1G1</th><td>提供原图，必须查看</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A1G0</th><td>提供原图，必须查看</td><td>每次调用禁止传原图</td><td>24</td></tr><tr><th>A0G1</th><td>不提供原图，仅共同文字规格</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A0G0</th><td>不提供原图，仅共同文字规格</td><td>每次调用禁止传原图</td><td>24</td></tr></tbody></table></div><p><strong>全部96任务的共同主判据：首轮69/96、最终79/96已判通过。</strong>执行中尚有待评项，四组对照以下方各24任务的表格为准。</p><p>模型GPT-6-Astra / max；每次生成35分钟、最多3次生图与6次渲染。规划、精确提示转发、生图调用、评审共用最多3个模型会话。全部可用最终图再做第二次独立评审。</p>
+<div class="table-wrap"><table><thead><tr><th>设置</th><th>规划／编码智能体</th><th>生图模型</th><th>计划任务</th></tr></thead><tbody><tr><th>A1G1</th><td>提供原图，必须查看</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A1G0</th><td>提供原图，必须查看</td><td>每次调用禁止传原图</td><td>24</td></tr><tr><th>A0G1</th><td>不提供原图，仅共同文字规格</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A0G0</th><td>不提供原图，仅共同文字规格</td><td>每次调用禁止传原图</td><td>24</td></tr></tbody></table></div><p><strong>全部96任务的共同主判据：首轮70/96、最终79/96已判通过。</strong>执行中尚有待评项，四组对照以下方各24任务的表格为准。</p><p>模型GPT-6-Astra / max；每次生成35分钟、最多3次生图与6次渲染。规划、精确提示转发、生图调用、评审共用最多3个模型会话。全部可用最终图再做第二次独立评审。</p>
 <p class="note">四组都保留由参考图形成的相同文字规格；“智能体无图”检验直接视觉观察在文字之外的增益，不代表没有任何参考知识。精确提示转发器仅执行原样提示和固定传图参数，原图及中继观察不回传给规划智能体。先核验首个区组的实际输入隔离，再展开其余样本，质量通过率不参与启动决策。</p>
-<p>生成：已完成96；首末评审：已完成165、执行中1；最终第二评审：待执行96；输入协议：已核验96</p>
-<p class="note">更新时间（北京时间）：2026-10-20 04:49:06</p>
+<p>生成：已完成96；首末评审：已完成166；最终第二评审：待执行89、执行中3、已完成4；输入协议：已核验96</p>
+<p class="note">更新时间（北京时间）：2026-10-20 05:06:57</p>
 <p><a href="docs/reference_factorial24/protocol.json">冻结方案</a> · <a href="reports/reference_factorial24/summary.json">完整统计与证据</a> · <a href="reports/reference_factorial24/metrics.csv">下载指标CSV</a> · <a href="../reference-input-ablation/">3案例先导实验</a> · <a href="../data-conflict-120/">原120组实验</a></p></div>
-<section id="rates"><h2>首轮与最终通过率：24个设计整体比较</h2><p class="note">各组固定分母24。执行中仅显示已判通过数，待评不是已判失败。下表主数值要求质量通过且输入协议已核验；括号另列图像质量通过数，协议异常与图像缺陷分开。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr></thead><tbody><tr><th scope="row">首轮 · 共同主判据</th><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>16/24 已判通过</strong><br><span class="note">质量通过16；已评23/24</span></td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td><strong>14/24 已判通过</strong><br><span class="note">质量通过14；已评23/24</span></td><td><strong>13/24 已判通过</strong><br><span class="note">质量通过13；已评24/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评23/24</span></td><td><strong>11/24 已判通过</strong><br><span class="note">质量通过11；已评23/24</span></td></tr><tr><th scope="row">首轮 · 数值支持</th><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评24/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>22/24 已判通过</strong><br><span class="note">质量通过22；已评23/24</span></td></tr><tr><th scope="row">首轮 · 关键结构</th><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评24/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评23/24</span></td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评24/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td></tr><tr><th scope="row">首轮 · 小值可辨</th><td><strong>14/24 已判通过</strong><br><span class="note">质量通过14；已评23/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>16/24 已判通过</strong><br><span class="note">质量通过16；已评23/24</span></td><td><strong>14/24 已判通过</strong><br><span class="note">质量通过14；已评23/24</span></td></tr><tr><th scope="row">首轮 · 参考原意</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评23/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评23/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评23/24</span></td></tr><tr><th scope="row">最终 · 共同主判据</th><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评24/24</span></td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>13/24 已判通过</strong><br><span class="note">质量通过13；已评24/24</span></td></tr><tr><th scope="row">最终 · 数值支持</th><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td></tr><tr><th scope="row">最终 · 关键结构</th><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评24/24</span></td></tr><tr><th scope="row">最终 · 当前主题意义</th><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td></tr><tr><th scope="row">最终 · 小值可辨</th><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>16/24 已判通过</strong><br><span class="note">质量通过16；已评24/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td></tr><tr><th scope="row">最终 · 参考原意</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评24/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评24/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评24/24</span></td></tr></tbody></table></div><p class="note">共同主判据沿用必要数值／绑定／素材融合检查、关键结构和当前主题意义；小值可辨作为额外联合要求。首轮是首次完整渲染尝试，最终是最后有效图。技术异常、缺图、partial/fail/uncertain均不计通过，历史输出不混入新96任务。</p></section><section><h2>补充：参考设计保留程度（0–4分）</h2><p class="note">下表为最终图独立首评的适用项均分。排除当前数据及许可语义改编引起的变化；分数不替代原通过判据，第二评审及分歧逐图保留。</p><div class="table-wrap"><table><tr><th>维度</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr><tr><th>非数据物体身份</th><td>3.75/4（n=24）</td><td>3.67/4（n=24）</td><td>3.33/4（n=24）</td><td>3.25/4（n=24）</td></tr><tr><th>非数据姿态与关系</th><td>3.83/4（n=24）</td><td>3.88/4（n=24）</td><td>3.50/4（n=24）</td><td>3.50/4（n=24）</td></tr><tr><th>构图层级</th><td>3.17/4（n=24）</td><td>3.08/4（n=24）</td><td>2.67/4（n=24）</td><td>2.79/4（n=24）</td></tr><tr><th>材质与风格</th><td>2.79/4（n=24）</td><td>2.58/4（n=24）</td><td>2.25/4（n=24）</td><td>2.29/4（n=24）</td></tr></table></div></section><section><h2>配对因素效应与交互</h2><p>实验闭合后计算同一参考内的因素差值、保守区间及多重比较校正；当前不对未完成数据做正式检验。</p></section><label>冲突类型 <select id="type"><option value="all">全部24设计</option><option value="category_count">类别数</option><option value="trend_shape">趋势形状</option><option value="numeric_range">数值范围</option></select></label><label>案例 <select id="case-filter"><option value="all">全部</option><option value="F01">F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</option><option value="F02">F02 · 游戏销售形式转变：四期双面板堆叠柱图</option><option value="F03">F03 · 航空公司市值</option><option value="F04">F04 · 鸡蛋的营养成分构成</option><option value="F05">F05 · 合成事件率：美国地形面具上的十期警示折线</option><option value="F06">F06 · 年度可再生水资源</option><option value="F07">F07 · 奖牌的金属组成与合成示例价值</option><option value="F08">F08 · 复古电脑中的 AI 工作情绪：两轮合成比例</option><option value="F09">F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</option><option value="F10">F10 · 捕梦网中的合成梦境：曲边面积分区图</option><option value="F11">F11 · 年度价格通胀与实际产出变化</option><option value="F12">F12 · 合成烟草产量与股价：香烟物体柱图</option><option value="F13">F13 · 校园供餐风险：青苹果抽离扇块合成数据海报</option><option value="F14">F14 · 女子篮球比赛平均观众数</option><option value="F15">F15 · 宗教信仰及无归属人口构成</option><option value="F16">F16 · 两类餐饮服务的支出变化百分比</option><option value="F17">F17 · 社区街头共绘计划的净支持度（合成议题替代）</option><option value="F18">F18 · 园艺试验地块产量（原参考无可读指标）</option><option value="F19">F19 · 书籍销量</option><option value="F20">F20 · 利率退烧：美国地图病人与床尾三系列趋势图</option><option value="F21">F21 · 广告时段：夹心饼干份额与观众计数的双面板合成信息图</option><option value="F22">F22 · 节日礼物预算偏好</option><option value="F23">F23 · 分来源的各期海洋塑料排放量</option><option value="F24">F24 · 面包与纸钞：合成年度食品预算损耗</option></select></label><section class="case" id="F01" data-type="category_count"><h2>F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</h2><p>E76 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F01/reference.webp"><img loading="lazy" src="images/F01/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F01/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F01/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F01/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+<section id="rates"><h2>首轮与最终通过率：24个设计整体比较</h2><p class="note">各组固定分母24。执行中仅显示已判通过数，待评不是已判失败。下表主数值要求质量通过且输入协议已核验；括号另列图像质量通过数，协议异常与图像缺陷分开。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr></thead><tbody><tr><th scope="row">首轮 · 共同主判据</th><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>16/24 已判通过</strong><br><span class="note">质量通过16；已评23/24</span></td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td><strong>14/24 已判通过</strong><br><span class="note">质量通过14；已评23/24</span></td><td><strong>13/24 已判通过</strong><br><span class="note">质量通过13；已评24/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>11/24 已判通过</strong><br><span class="note">质量通过11；已评23/24</span></td></tr><tr><th scope="row">首轮 · 数值支持</th><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>22/24 已判通过</strong><br><span class="note">质量通过22；已评23/24</span></td></tr><tr><th scope="row">首轮 · 关键结构</th><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评23/24</span></td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td></tr><tr><th scope="row">首轮 · 小值可辨</th><td><strong>14/24 已判通过</strong><br><span class="note">质量通过14；已评23/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>16/24 已判通过</strong><br><span class="note">质量通过16；已评24/24</span></td><td><strong>14/24 已判通过</strong><br><span class="note">质量通过14；已评23/24</span></td></tr><tr><th scope="row">首轮 · 参考原意</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评23/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评23/24</span></td></tr><tr><th scope="row">最终 · 共同主判据</th><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评24/24</span></td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>13/24 已判通过</strong><br><span class="note">质量通过13；已评24/24</span></td></tr><tr><th scope="row">最终 · 数值支持</th><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td></tr><tr><th scope="row">最终 · 关键结构</th><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评24/24</span></td></tr><tr><th scope="row">最终 · 当前主题意义</th><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td></tr><tr><th scope="row">最终 · 小值可辨</th><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>16/24 已判通过</strong><br><span class="note">质量通过16；已评24/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td></tr><tr><th scope="row">最终 · 参考原意</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评24/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评24/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评24/24</span></td></tr></tbody></table></div><p class="note">共同主判据沿用必要数值／绑定／素材融合检查、关键结构和当前主题意义；小值可辨作为额外联合要求。首轮是首次完整渲染尝试，最终是最后有效图。技术异常、缺图、partial/fail/uncertain均不计通过，历史输出不混入新96任务。</p></section><section><h2>补充：参考设计保留程度（0–4分）</h2><p class="note">下表为最终图独立首评的适用项均分。排除当前数据及许可语义改编引起的变化；分数不替代原通过判据，第二评审及分歧逐图保留。</p><div class="table-wrap"><table><tr><th>维度</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr><tr><th>非数据物体身份</th><td>3.75/4（n=24）</td><td>3.67/4（n=24）</td><td>3.33/4（n=24）</td><td>3.25/4（n=24）</td></tr><tr><th>非数据姿态与关系</th><td>3.83/4（n=24）</td><td>3.88/4（n=24）</td><td>3.50/4（n=24）</td><td>3.50/4（n=24）</td></tr><tr><th>构图层级</th><td>3.17/4（n=24）</td><td>3.08/4（n=24）</td><td>2.67/4（n=24）</td><td>2.79/4（n=24）</td></tr><tr><th>材质与风格</th><td>2.79/4（n=24）</td><td>2.58/4（n=24）</td><td>2.25/4（n=24）</td><td>2.29/4（n=24）</td></tr></table></div></section><section><h2>配对因素效应与交互</h2><p>实验闭合后计算同一参考内的因素差值、保守区间及多重比较校正；当前不对未完成数据做正式检验。</p></section><label>冲突类型 <select id="type"><option value="all">全部24设计</option><option value="category_count">类别数</option><option value="trend_shape">趋势形状</option><option value="numeric_range">数值范围</option></select></label><label>案例 <select id="case-filter"><option value="all">全部</option><option value="F01">F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</option><option value="F02">F02 · 游戏销售形式转变：四期双面板堆叠柱图</option><option value="F03">F03 · 航空公司市值</option><option value="F04">F04 · 鸡蛋的营养成分构成</option><option value="F05">F05 · 合成事件率：美国地形面具上的十期警示折线</option><option value="F06">F06 · 年度可再生水资源</option><option value="F07">F07 · 奖牌的金属组成与合成示例价值</option><option value="F08">F08 · 复古电脑中的 AI 工作情绪：两轮合成比例</option><option value="F09">F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</option><option value="F10">F10 · 捕梦网中的合成梦境：曲边面积分区图</option><option value="F11">F11 · 年度价格通胀与实际产出变化</option><option value="F12">F12 · 合成烟草产量与股价：香烟物体柱图</option><option value="F13">F13 · 校园供餐风险：青苹果抽离扇块合成数据海报</option><option value="F14">F14 · 女子篮球比赛平均观众数</option><option value="F15">F15 · 宗教信仰及无归属人口构成</option><option value="F16">F16 · 两类餐饮服务的支出变化百分比</option><option value="F17">F17 · 社区街头共绘计划的净支持度（合成议题替代）</option><option value="F18">F18 · 园艺试验地块产量（原参考无可读指标）</option><option value="F19">F19 · 书籍销量</option><option value="F20">F20 · 利率退烧：美国地图病人与床尾三系列趋势图</option><option value="F21">F21 · 广告时段：夹心饼干份额与观众计数的双面板合成信息图</option><option value="F22">F22 · 节日礼物预算偏好</option><option value="F23">F23 · 分来源的各期海洋塑料排放量</option><option value="F24">F24 · 面包与纸钞：合成年度食品预算损耗</option></select></label><section class="case" id="F01" data-type="category_count"><h2>F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</h2><p>E76 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F01/reference.webp"><img loading="lazy" src="images/F01/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F01/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F01/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F01/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: true,
@@ -3336,7 +3336,80 @@
       &quot;data_adaptation_excluded_zh&quot;: &quot;不计数据柱长和允许的非数据厚度调整。&quot;
     }
   }
-}</pre></details><a href="runs/reference_factorial24/evaluation/items/05f453c1d7b07f/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体无图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/05f453c1d7b07f/review.json">完整独立评审JSON</a><details><summary>第二次独立评审（不覆盖首评）</summary><pre>{
+  &quot;checks&quot;: {
+    &quot;completeness&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;左右各4期，支出12段、销量8段，全部20个原始值和8个同期合计齐全；标题、图例、单位及SYNTHETIC DATA均可见。&quot;
+    },
+    &quot;numeric_text&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;20个段标签与数据一致。支出合计14.8/16.7/17.2/16.4，销量188/245/268/288；+10.8%/+53.2%及页脚7.2→11.2、7.6→5.2均正确。&quot;
+    },
+    &quot;binding&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;深蓝、青、黄绿分别绑定主机实体、PC实体、其他形式。支出三层顺序正确，销量仅有前两层；青色引线连接对应薄层，无串期。&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;20段独立像素换算均在3%满量程容差内，最大估计0.243%。两轴分别0–18和0–300，均从零起，四期等距。&quot;
+    },
+    &quot;source&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;raw_02.png中的外壳、握把、按钮、光盘、手机和箭头与成图主体一致。prepare_assets.py裁切素材，render.py贴入设备并依据data.json绘制柱段和文字；未运行源码。&quot;
+    },
+    &quot;integration&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;图表完整包含于两块屏幕，屏幕连接同一外壳；中央光盘→手机方向保留。未见破坏结构的遮挡、越界或接缝。&quot;
+    },
+    &quot;readability&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;原始分辨率下全部强制文字可读；薄层使用外置数值和引线，未遮住相邻柱。&quot;
+    },
+    &quot;critical_structure&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;双面板、连续设备外壳及中央光盘→手机关联保留。实际数据边界是屏幕内色块的堆叠厚度，外壳及光盘本身不编码数量。&quot;
+    },
+    &quot;semantic_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;当前主题、消费支出/实体销量、十亿美元/百万份、合成时期、三类统计角色及同期合计口径均明确。&quot;
+    },
+    &quot;reference_meaning&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;保留光盘指向手机及游戏消费/实体销量比较。旧真实年份、下降幅度和数字化趋势论断未照搬，符合冻结任务以当前合成数据替代旧统计的要求。&quot;
+    },
+    &quot;small_mark_visibility&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;0.4青层约8px，夹于深蓝和黄绿之间；13青层约17px，接于深蓝柱顶。薄层连续可见，引线清楚；不据此保证高相对精度。&quot;
+    }
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;光盘、箭头、手机身份清晰；原小型灰色图标改为写实部件，并出现显著双屏游戏设备外壳。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣当前数据、四期名称、中文标签及允许适配的非数据部件。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;参考光盘经箭头指向手机，成图仍保留此方向及两侧图表关系。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;横向到纵向的姿态及屏幕排布变化按core允许适配。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保留深蓝标题带、左右双面板及中央光盘/手机；图例移至上方，大外壳成为主要视觉层，页脚改为浅底。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣四期类别、数值标签增加及保证清晰所需排版变化。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;深蓝、青、黄绿配色延续；平面灰色图标改为金属、玻璃和发光按钮，写实材质占主体。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣由新数据决定的柱高、走势、厚度及当前语义标签。&quot;
+    }
+  }
+}</pre></details><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体无图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: false,
   &quot;image_reference_assigned&quot;: true,
@@ -11401,7 +11474,80 @@
       &quot;data_adaptation_excluded_zh&quot;: &quot;不以水流长度、飞溅收缩或更新文字作为风格扣分。&quot;
     }
   }
-}</pre></details><a href="runs/reference_factorial24/evaluation/items/115e67049d21c0/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体有图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/115e67049d21c0/review.json">完整独立评审JSON</a><details><summary>第二次独立评审（不覆盖首评）</summary><pre>{
+  &quot;checks&quot;: {
+    &quot;completeness&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;Region A、B、C、D、E按输入顺序完整出现，各配一个水龙头、一条非零水流和一个数值；单系列的年度水资源语义及单位完整。&quot;
+    },
+    &quot;numeric_text&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;逐项读到8,100.0、1,712.941447、362.243012、76.60507、16.2，与输入完全一致；500×也符合8100/16.2。&quot;
+    },
+    &quot;binding&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;地区名和数值位于相应龙头正上方，五列顺序一致；水流从各自龙头右侧出水口下落，无跨列混淆。&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;独立刻度测量为1260像素/9000单位。A–D水流高度约1134、240、51、11像素，对应估计满量程误差0、0.01494%、0.02270%、0.02185%。E可见2–3像素，与目标2.268像素相容，阈值范围远小于3%满量程容差；不据此保证其相对精度。&quot;
+    },
+    &quot;source&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;已查看raw_01.png及龙头、水纹、飞溅裁切素材，其轮廓和纹理可在最终图中直接对应。render.py读取数据，控制水流长度、飞溅适配、端点裁切和文本；未执行该代码。&quot;
+    },
+    &quot;integration&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;定量边界就是龙头出水口至青色落水末端的竖直距离；A–C水柱直接接触喷嘴并连到终端飞溅，D、E保留接触的青色短流。主体承担编码，没有由旁置普通柱图替代。&quot;
+    },
+    &quot;readability&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;SYNTHETIC DATA、年度水资源标题、五组标签及数值、Gm³/year及其英文定义、0–9000线性刻度、长度编码说明均清楚且无遮挡。&quot;
+    },
+    &quot;critical_structure&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;五个龙头深色主体均约196×169像素，出水口下缘齐平。旋柄—阀杆—阀体—弯嘴连接完整，A–C的水柱和末端飞溅可分辨；D尤其E的短流中飞溅只剩薄边，局部部件关系不能充分辨认。&quot;
+    },
+    &quot;semantic_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;图面直接写明Annual renewable water resources、Gm³/year = billion cubic metres per year、Region A–E及SYNTHETIC DATA；说明长度代表年度可再生水资源，500倍比较与数据一致。&quot;
+    },
+    &quot;reference_meaning&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;保留用五个水龙头落水长度比较地区可再生水资源的语义。参考的真实国家、最高资源排名和缺水预测改为合成地区比较及500倍说明；这是冻结输入授权的统计语境适配，不判为输出失败。&quot;
+    },
+    &quot;small_mark_visibility&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;C约51像素，仍看得见水柱和两侧飞溅；D约11像素，终端飞溅压成很薄的展开边；E仅2–3像素高，可见非零青色标记及喷嘴接触，但无法独立分辨完整水柱—飞溅关系。&quot;
+    }
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;两图均为五个带横向旋柄、竖直阀杆、左侧进水接头和右侧向下弯嘴的黑色侧视水龙头；主体身份完整。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不把合成地区替换国家、数值变化及短水流视为身份损失。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;两图龙头同向并排、出水口齐平，水流由右侧朝下的出水口落下；非数据部件连接关系一致。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;允许非数据厚度与标签位置调整；短流及飞溅随数据收缩不扣分。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保留顶部主题、横排五龙头及下方水流、右下文字区；最终图放大标题并增加左轴和500倍说明，弱化参考的紧凑图形主导层级。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣除五个新值的高低变化、合成标签和替换旧真实统计说明；无须沿用旧峰谷。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;保留浅色底、黑色龙头和青色水；参考为扁平黑色剪影与浅青平涂，最终为金属高光龙头、鲜青白纹水柱及更粗的大号字体。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣除允许调整的流宽、飞溅大小及数据导致的长短变化。&quot;
+    }
+  }
+}</pre></details><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体有图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: false,
@@ -11883,7 +12029,80 @@
       &quot;data_adaptation_excluded_zh&quot;: &quot;不计数据长度、允许调整的非数据宽度和飞溅大小。&quot;
     }
   }
-}</pre></details><a href="runs/reference_factorial24/evaluation/items/11f8a826ead938/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体无图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/11f8a826ead938/review.json">完整独立评审JSON</a><details><summary>第二次独立评审（不覆盖首评）</summary><pre>{
+  &quot;checks&quot;: {
+    &quot;completeness&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;五个龙头、Region A–E、五个数值及合成提示、指标、单位完整，顺序正确。&quot;
+    },
+    &quot;numeric_text&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;8,100、1,712.941447、362.243012、76.60507、16.2均正确；500×及除法说明正确。&quot;
+    },
+    &quot;binding&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;类别位于对应龙头上方，数值位于对应水流下方；D、E灰色引线无交叉错绑。&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;水体占用高度依次1152、244、52、11、3像素。A–D外包络估计偏差均低于满量程0.04%；E的2–3像素边界区间包含目标，未见超出3%满量程容差的偏差。&quot;
+    },
+    &quot;source&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;原始素材表中的龙头、水纹及飞溅与成图对应；裁切素材和render.py确认实际使用，代码控制水流边界与文字。捕获调用链未独立验证。&quot;
+    },
+    &quot;integration&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;量值由出口至飞溅底边的落水距离承载，水体直接接在龙头上；A–D可辨末端关系，E细部另记为部分可辨。&quot;
+    },
+    &quot;readability&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;主题、合成提示、类别和全部数值清楚；Gm³/year明确解释为十亿立方米/年，灰色引线与青色数据区可区分。&quot;
+    },
+    &quot;critical_structure&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;五个龙头图块像素一致，同高出口连接连续水体；A–C水柱及飞溅清楚，D可见短柱和展开底部。E仅能确认出口接触非零青色痕迹，无法独立辨认飞溅。&quot;
+    },
+    &quot;semantic_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;标题和副标题明确年度可再生水资源、五个合成地区及年度体积；单位和共享线性长度说明完整，没有误表为份额或累积量。&quot;
+    },
+    &quot;reference_meaning&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;保留以龙头落水长短比较水资源量的关系；真实国家和旧缺水预测改为合成地区及当前500倍比较，属于允许的输入适配。&quot;
+    },
+    &quot;small_mark_visibility&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;D有11个青色占用行及展开底部；E只有2行明显青色和1行浅色覆盖，数值与非零痕迹可见，但水柱和水花不能独立辨认。&quot;
+    }
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;五个黑色侧视龙头保留横把手、阀杆、左接管及向下弯嘴；参考右下灰色脚印未保留。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不因合成地区名称、流长及短流水花缩小扣分；脚印不是冻结必需部件。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;五龙头同尺度同高并排，接管和出口方向一致；大水流直接接在出口下方，飞溅位于末端。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除允许的非数据厚度与标签位置调整；极短水体辨识另列分辨率限制。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保留上方题文、五龙头横排、水流向下及右下说明区；新图标题和500×说明明显放大，加入左刻度，未保留脚印。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除当前量值造成的长短排序、空白变化及更新标签所需空间。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;保留浅底、黑色龙头和青色水流；参考平面剪影改为有高光的黑色金属与细密水纹。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不评价美观，不因数据几何、更新文字和允许的部件尺度变化扣分。&quot;
+    }
+  }
+}</pre></details><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体无图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: false,
   &quot;image_reference_assigned&quot;: true,
@@ -25487,7 +25706,352 @@
   &quot;violations&quot;: [],
   &quot;external_image_views&quot;: [],
   &quot;scope&quot;: &quot;Direct original-image access and exact relay arguments; common reference-derived text remains in all arms.&quot;
-}</pre></details><a href="images/T063/r02.webp"><img loading="lazy" src="images/T063/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T063/r01.webp"><img loading="lazy" src="images/T063/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T063/r02.webp"><img loading="lazy" src="images/T063/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>通过。全部产量、股价及绑定准确，独立像素测量符合声明映射和3%容差。最小烟头细节仅部分可辨。review.json已保存并通过schema校验；未运行submit.py。</p><div class="table-wrap"><table><tr><th>维度</th><th>状态</th><th>证据</th></tr><tr><td>completeness</td><td>pass</td><td>8个地区柱、单一产量系列、3家公司股价卡齐全；标题、合成声明、单位及编码说明完整。</td></tr><tr><td>numeric_text</td><td>pass</td><td>八个产量依次为22.0、7.80898065、2.77182631、0.98386991、0.34922823、0.12395984、0.12395984、0.044；股价为450、1,740、3,460 CU，均准确。</td></tr><tr><td>binding</td><td>pass</td><td>产量在对应烟头上方，地区名称在对应滤嘴下方；公司和价格各自同卡，顺序正确。</td></tr><tr><td>geometry</td><td>pass</td><td>八个烟身实测约789、547、334、172、75、30、30、11px。最大高度误差约0.1512%满高；反算量值最大误差约0.4142%满量程，均低于3%。</td></tr><tr><td>source</td><td>pass</td><td>原始素材及纸身、滤嘴、烟头部件的纹理在最终主体中实质可见；render.py按数据控制烟身高度并绘制文字。归档执行未独立核验。</td></tr><tr><td>integration</td><td>pass</td><td>接缝至实体烟头承担数据高度，固定滤嘴在零线下接触纸身；烟头包含在数据段内。股价保留独立文字卡片。</td></tr><tr><td>readability</td><td>pass</td><td>必需数值、地区、公司、单位和公式均可读，无遮挡；相邻F/G长数值仍有分隔。</td></tr><tr><td>关键结构</td><td>pass</td><td>灰烬/烟草帽、白纸烟身、金色滤嘴纵向连续连接；最小H仍保留灰褐顶层、白纸窄带和滤嘴接触。</td></tr><tr><td>当前主题意义</td><td>pass</td><td>合成主题、未加工烟草产量、可比地区、LMT及每股CU定义明确；变换、固定滤嘴和股价卡非几何编码均有说明。</td></tr><tr><td>参考原意</td><td>partial</td><td>香烟产量柱与独立股价角色保留。真实国家排名、2021年度和印度公司改为合成地区/公司，属于允许的输入适配。</td></tr><tr><td>小值可辨</td><td>partial</td><td>F/G约30px烟身可区分纸层和烟头；H约11px中灰褐层、白纸和滤嘴连接仍可见，但灰烬细节仅部分可辨。</td></tr></table></div><details><summary>测量、关系、意义与保留程度评分</summary><pre>{
+}</pre></details><a href="images/T063/r02.webp"><img loading="lazy" src="images/T063/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T063/r01.webp"><img loading="lazy" src="images/T063/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T063/r02.webp"><img loading="lazy" src="images/T063/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>已保存并通过schema校验：review.json。数据、绑定和主体结构符合要求；解释框缺两个汉字，属于轻微可读性问题。最小烟身材料细节仅部分可辨。未运行submit.py。</p><div class="table-wrap"><table><tr><th>维度</th><th>状态</th><th>证据</th></tr><tr><td>completeness</td><td>pass</td><td>八个地区、八支香烟、八项产量及三家公司股价齐全；合成标记和两类单位均可见。</td></tr><tr><td>numeric_text</td><td>pass</td><td>产量22.0、7.80898065、2.77182631、0.98386991、0.34922823、0.12395984、0.12395984、0.044及股价450、1,740、3,460 CU均正确。</td></tr><tr><td>binding</td><td>pass</td><td>产量在对应烟头上方、地区名在其下方；F/G数值相同且等高。各公司及股价位于同一卡片。</td></tr><tr><td>geometry</td><td>pass</td><td>八支数据烟身约789、547、334、172、75、30、30、11px，全高790px。高度域最大误差约0.151%，反解产量最大满量程误差约0.414%，均低于3%。</td></tr><tr><td>source</td><td>pass</td><td>已查看原始香烟素材及部件；最终主体可见相同灰烬裂纹、纸纹和滤嘴斑点。素材清单标注生成来源，render.py控制部件尺寸、数量与文字。</td></tr><tr><td>integration</td><td>pass</td><td>白纸和实体灰烬顶共同承载数据高度，下端直接接触固定滤嘴；部件宽度、圆柱明暗和层次相容，未见结构性错位或遮挡。</td></tr><tr><td>readability</td><td>pass</td><td>必需数值、类别、指标、单位及合成说明可读；解释框两处缺字为局部轻微问题。</td></tr><tr><td>关键结构</td><td>pass</td><td>大、小实例均保留灰烬/烟草顶、白纸、固定滤嘴的垂直接触链；独立三列股价徽章保留。</td></tr><tr><td>当前主题意义</td><td>pass</td><td>标题明确合成烟草产量与股价；指标、LMT=十万吨、合成可比地区及CU/share明确，另注明地区与公司无对应关系。</td></tr><tr><td>参考原意</td><td>partial</td><td>保留香烟编码生产量、股票独立标注的关系。原真实国家、年份及印度企业被冻结输入明确替换为合成地区和公司，属于许可适配。</td></tr><tr><td>小值可辨</td><td>partial</td><td>H约11px烟身仍有灰色顶、褐色边和白纸层并接触滤嘴；灰烬/烟草的材料细节难以独立辨认。F/G约30px且分层可见。</td></tr></table></div><details><summary>测量、关系、意义与保留程度评分</summary><pre>{
+  &quot;detailed_evidence&quot;: {
+    &quot;measurements&quot;: [
+      {
+        &quot;series_id&quot;: &quot;S1&quot;,
+        &quot;category&quot;: &quot;Region A&quot;,
+        &quot;expected_value&quot;: 22,
+        &quot;observed_value&quot;: 21.90889438,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 789,
+        &quot;full_scale_error_percent&quot;: 0.414116,
+        &quot;small_value_relative_error_percent&quot;: 0.414116,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.170625,
+          0.2635,
+          0.216875,
+          0.658
+        ],
+        &quot;evidence_zh&quot;: &quot;实体顶约y527，接缝y1316，高789px；目标790px，按可见轴全高790px反解。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;灰烬轮廓及抗锯齿使顶边约有1–2px不确定性。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;S1&quot;,
+        &quot;category&quot;: &quot;Region B&quot;,
+        &quot;expected_value&quot;: 7.80898065,
+        &quot;observed_value&quot;: 7.76732788,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 547,
+        &quot;full_scale_error_percent&quot;: 0.189331,
+        &quot;small_value_relative_error_percent&quot;: 0.533396,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.269375,
+          0.3845,
+          0.315625,
+          0.658
+        ],
+        &quot;evidence_zh&quot;: &quot;实体顶约y769，接缝y1316，高547px；目标548.194px。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;顶边约有1–2px不确定性。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;S1&quot;,
+        &quot;category&quot;: &quot;Region C&quot;,
+        &quot;expected_value&quot;: 2.77182631,
+        &quot;observed_value&quot;: 2.76459139,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 334,
+        &quot;full_scale_error_percent&quot;: 0.032886,
+        &quot;small_value_relative_error_percent&quot;: 0.261016,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.368125,
+          0.491,
+          0.414375,
+          0.658
+        ],
+        &quot;evidence_zh&quot;: &quot;实体顶约y982，接缝y1316，高334px；目标334.484px。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;顶边约有1–2px不确定性。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;S1&quot;,
+        &quot;category&quot;: &quot;Region D&quot;,
+        &quot;expected_value&quot;: 0.98386991,
+        &quot;observed_value&quot;: 0.97914427,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 172,
+        &quot;full_scale_error_percent&quot;: 0.02148,
+        &quot;small_value_relative_error_percent&quot;: 0.480312,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.466875,
+          0.572,
+          0.513125,
+          0.658
+        ],
+        &quot;evidence_zh&quot;: &quot;实体顶约y1144，接缝y1316，高172px；目标172.601px。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;顶边约有1–2px不确定性。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;S1&quot;,
+        &quot;category&quot;: &quot;Region E&quot;,
+        &quot;expected_value&quot;: 0.34922823,
+        &quot;observed_value&quot;: 0.34672201,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 75,
+        &quot;full_scale_error_percent&quot;: 0.011392,
+        &quot;small_value_relative_error_percent&quot;: 0.717644,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.565625,
+          0.6205,
+          0.611875,
+          0.658
+        ],
+        &quot;evidence_zh&quot;: &quot;实体顶约y1241，接缝y1316，高75px；目标75.468px。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;顶边约有1–2px不确定性。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;S1&quot;,
+        &quot;category&quot;: &quot;Region F&quot;,
+        &quot;expected_value&quot;: 0.12395984,
+        &quot;observed_value&quot;: 0.12644809,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 30,
+        &quot;full_scale_error_percent&quot;: 0.01131,
+        &quot;small_value_relative_error_percent&quot;: 2.007305,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.664375,
+          0.643,
+          0.710625,
+          0.658
+        ],
+        &quot;evidence_zh&quot;: &quot;实体顶约y1286，接缝y1316，高30px；目标29.443px。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;顶边约有1–2px不确定性；点估计误差不是小值精度保证。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;S1&quot;,
+        &quot;category&quot;: &quot;Region G&quot;,
+        &quot;expected_value&quot;: 0.12395984,
+        &quot;observed_value&quot;: 0.12644809,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 30,
+        &quot;full_scale_error_percent&quot;: 0.01131,
+        &quot;small_value_relative_error_percent&quot;: 2.007305,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.763125,
+          0.643,
+          0.809375,
+          0.658
+        ],
+        &quot;evidence_zh&quot;: &quot;实体顶约y1286，接缝y1316，高30px，与F一致；目标29.443px。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;顶边约有1–2px不确定性；点估计误差不是小值精度保证。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;S1&quot;,
+        &quot;category&quot;: &quot;Region H&quot;,
+        &quot;expected_value&quot;: 0.044,
+        &quot;observed_value&quot;: 0.04462585,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 11,
+        &quot;full_scale_error_percent&quot;: 0.002845,
+        &quot;small_value_relative_error_percent&quot;: 1.42238,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.861875,
+          0.6525,
+          0.908125,
+          0.658
+        ],
+        &quot;evidence_zh&quot;: &quot;实体顶约y1305，接缝y1316，高11px；目标10.849px。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;±1px即对应约0.04049–0.04878 LMT；不能据点估计确认小值高精度。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;share_prices&quot;,
+        &quot;category&quot;: &quot;Company P&quot;,
+        &quot;expected_value&quot;: 450,
+        &quot;observed_value&quot;: 450,
+        &quot;measurement_method&quot;: &quot;numeric_text_only&quot;,
+        &quot;mark_extent_px&quot;: null,
+        &quot;full_scale_error_percent&quot;: null,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.05,
+          0.835,
+          0.3375,
+          0.9345
+        ],
+        &quot;evidence_zh&quot;: &quot;同一卡片可读Company P及450 CU；面板注明CU/share。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;合同只要求文字编码，几何误差不适用。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;share_prices&quot;,
+        &quot;category&quot;: &quot;Company Q&quot;,
+        &quot;expected_value&quot;: 1740,
+        &quot;observed_value&quot;: 1740,
+        &quot;measurement_method&quot;: &quot;numeric_text_only&quot;,
+        &quot;mark_extent_px&quot;: null,
+        &quot;full_scale_error_percent&quot;: null,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.35625,
+          0.835,
+          0.64375,
+          0.9345
+        ],
+        &quot;evidence_zh&quot;: &quot;同一卡片可读Company Q及1,740 CU。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;合同只要求文字编码，几何误差不适用。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;share_prices&quot;,
+        &quot;category&quot;: &quot;Company R&quot;,
+        &quot;expected_value&quot;: 3460,
+        &quot;observed_value&quot;: 3460,
+        &quot;measurement_method&quot;: &quot;numeric_text_only&quot;,
+        &quot;mark_extent_px&quot;: null,
+        &quot;full_scale_error_percent&quot;: null,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.6625,
+          0.835,
+          0.95,
+          0.9345
+        ],
+        &quot;evidence_zh&quot;: &quot;同一卡片可读Company R及3,460 CU。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;合同只要求文字编码，几何误差不适用。&quot;
+      }
+    ],
+    &quot;part_relations&quot;: [
+      {
+        &quot;category&quot;: &quot;Region A（大值）&quot;,
+        &quot;required_parts&quot;: [
+          &quot;灰烬/烟草实体顶&quot;,
+          &quot;白纸烟身&quot;,
+          &quot;固定滤嘴&quot;
+        ],
+        &quot;relationship&quot;: &quot;灰烬烟草顶接触白纸上端；白纸下端接触滤嘴；顶至接缝为数据高度。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.170625,
+          0.2635,
+          0.216875,
+          0.706
+        ],
+        &quot;evidence_zh&quot;: &quot;灰色碎裂顶、褐色烧灼边、长白纸和橙色滤嘴连续相接，数据段约789px。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;Region D（内值）&quot;,
+        &quot;required_parts&quot;: [
+          &quot;灰烬/烟草实体顶&quot;,
+          &quot;白纸烟身&quot;,
+          &quot;固定滤嘴&quot;
+        ],
+        &quot;relationship&quot;: &quot;缩短的纸身仍位于灰烬顶下方、滤嘴上方，部件保持接触。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.466875,
+          0.572,
+          0.513125,
+          0.706
+        ],
+        &quot;evidence_zh&quot;: &quot;约172px数据段包含灰烬和白纸，滤嘴与大值等高，没有裂开或遮住数据段。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;Region F/G（相等小值）&quot;,
+        &quot;required_parts&quot;: [
+          &quot;薄灰烬烟草顶&quot;,
+          &quot;短白纸烟身&quot;,
+          &quot;固定滤嘴&quot;
+        ],
+        &quot;relationship&quot;: &quot;两个等高短烟身分别紧接滤嘴，深色顶层位于白纸上方。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.664375,
+          0.643,
+          0.809375,
+          0.706
+        ],
+        &quot;evidence_zh&quot;: &quot;两段均约30px，深色顶层与浅色纸带可分，没有将滤嘴算作数据区。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;Region H（最小正值）&quot;,
+        &quot;required_parts&quot;: [
+          &quot;灰烬/烟草顶层&quot;,
+          &quot;白纸薄层&quot;,
+          &quot;固定滤嘴&quot;
+        ],
+        &quot;relationship&quot;: &quot;灰褐顶层在纸层上方，纸层直接接触滤嘴；11px数据段不含滤嘴。&quot;,
+        &quot;status&quot;: &quot;partial&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.861875,
+          0.6525,
+          0.908125,
+          0.706
+        ],
+        &quot;evidence_zh&quot;: &quot;中心y1305–1307灰色、y1308褐色、y1309–1315浅纸色，y1316起为橙色。接触链保留，材料细节仅部分可辨。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;股价辅助面板&quot;,
+        &quot;required_parts&quot;: [
+          &quot;三张独立卡片&quot;,
+          &quot;P/Q/R徽章&quot;,
+          &quot;公司名&quot;,
+          &quot;股价及单位&quot;
+        ],
+        &quot;relationship&quot;: &quot;徽章、公司名和股价同卡包含，三卡与香烟图分离。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.05,
+          0.802,
+          0.95,
+          0.935
+        ],
+        &quot;evidence_zh&quot;: &quot;三卡等大，分别显示450、1,740、3,460 CU；明确说明卡片尺寸不编码股价。&quot;
+      }
+    ],
+    &quot;meaning_trace&quot;: {
+      &quot;current_topic&quot;: &quot;pass&quot;,
+      &quot;metric_and_unit&quot;: &quot;pass&quot;,
+      &quot;category_roles&quot;: &quot;pass&quot;,
+      &quot;reference_action_or_argument&quot;: &quot;partial&quot;,
+      &quot;allowed_input_adaptation_zh&quot;: &quot;冻结输入明确改为合成烟草产量与股价，采用合成地区、公司及虚构货币，允许按新值改变烟身和排版。&quot;,
+      &quot;output_added_or_lost_meaning_zh&quot;: &quot;产量的香烟物体融合和股价的独立文字面板均保留。真实国家排名被许可适配移除；没有把地区顺序解释为时间变化，也没有建立地区与公司的对应关系。&quot;,
+      &quot;visible_inscription_evidence_zh&quot;: &quot;可见合成烟草产量与股价、未加工烟草产量、LMT=十万吨、合成可比地区、Illustrative Share Prices、CU/share、地区与公司无对应关系及SYNTHETIC DATA。&quot;
+    },
+    &quot;attribution&quot;: [
+      {
+        &quot;cause&quot;: &quot;input_adaptation&quot;,
+        &quot;evidence_zh&quot;: &quot;真实国家、企业和年份被冻结的合成类别替代，参考含义因此部分保留。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;data_driven_shape_change&quot;,
+        &quot;evidence_zh&quot;: &quot;烟身按当前log1p映射变化，F/G相等、H最小。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;resolution_limit&quot;,
+        &quot;evidence_zh&quot;: &quot;H仅约11px，材料细节受限，但分层及接触仍可见。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;output_omission&quot;,
+        &quot;evidence_zh&quot;: &quot;解释框两个字符位置为空白，源码相应字符串有字。&quot;
+      }
+    ],
+    &quot;measurement_coverage_zh&quot;: &quot;量取全部八个产量烟身并检查三项股价文字，覆盖最小、大值、内值和相等小值；另检查全部标签与单位。股价没有量化几何，未对其虚构几何测量。&quot;
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;完整香烟身份、橙色固定滤嘴及独立三列股价徽章均保留。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不因合成地区、公司替代真实国家旗帜及企业商标扣分。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;八支香烟竖立并列，白纸及灰烬连续位于滤嘴上方，股价与产量对象独立。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除允许的面板重排、非数据厚度调整及新数据引起的高度变化。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;大标题、香烟主视觉和股价辅助层级大体保留；醒目的08计数及大公式块提高了说明信息的视觉权重。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不因股价面板移到底部、更新标签或允许的排版适配扣分。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;写实纸纹、橙色斑点和灰烬质感保留；白底紫黑标题改为米色底、深绿面板，参考多种烟头外观改为重复的灰烬顶。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不因小值压缩、滤嘴厚度调整及合成文字更新扣分。&quot;
+    }
+  }
+}</pre></details><a href="runs/reference_factorial24/evaluation/retries/fc2a30f8db391f/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>通过。全部产量、股价及绑定准确，独立像素测量符合声明映射和3%容差。最小烟头细节仅部分可辨。review.json已保存并通过schema校验；未运行submit.py。</p><div class="table-wrap"><table><tr><th>维度</th><th>状态</th><th>证据</th></tr><tr><td>completeness</td><td>pass</td><td>8个地区柱、单一产量系列、3家公司股价卡齐全；标题、合成声明、单位及编码说明完整。</td></tr><tr><td>numeric_text</td><td>pass</td><td>八个产量依次为22.0、7.80898065、2.77182631、0.98386991、0.34922823、0.12395984、0.12395984、0.044；股价为450、1,740、3,460 CU，均准确。</td></tr><tr><td>binding</td><td>pass</td><td>产量在对应烟头上方，地区名称在对应滤嘴下方；公司和价格各自同卡，顺序正确。</td></tr><tr><td>geometry</td><td>pass</td><td>八个烟身实测约789、547、334、172、75、30、30、11px。最大高度误差约0.1512%满高；反算量值最大误差约0.4142%满量程，均低于3%。</td></tr><tr><td>source</td><td>pass</td><td>原始素材及纸身、滤嘴、烟头部件的纹理在最终主体中实质可见；render.py按数据控制烟身高度并绘制文字。归档执行未独立核验。</td></tr><tr><td>integration</td><td>pass</td><td>接缝至实体烟头承担数据高度，固定滤嘴在零线下接触纸身；烟头包含在数据段内。股价保留独立文字卡片。</td></tr><tr><td>readability</td><td>pass</td><td>必需数值、地区、公司、单位和公式均可读，无遮挡；相邻F/G长数值仍有分隔。</td></tr><tr><td>关键结构</td><td>pass</td><td>灰烬/烟草帽、白纸烟身、金色滤嘴纵向连续连接；最小H仍保留灰褐顶层、白纸窄带和滤嘴接触。</td></tr><tr><td>当前主题意义</td><td>pass</td><td>合成主题、未加工烟草产量、可比地区、LMT及每股CU定义明确；变换、固定滤嘴和股价卡非几何编码均有说明。</td></tr><tr><td>参考原意</td><td>partial</td><td>香烟产量柱与独立股价角色保留。真实国家排名、2021年度和印度公司改为合成地区/公司，属于允许的输入适配。</td></tr><tr><td>小值可辨</td><td>partial</td><td>F/G约30px烟身可区分纸层和烟头；H约11px中灰褐层、白纸和滤嘴连接仍可见，但灰烬细节仅部分可辨。</td></tr></table></div><details><summary>测量、关系、意义与保留程度评分</summary><pre>{
   &quot;detailed_evidence&quot;: {
     &quot;measurements&quot;: [
       {
@@ -50510,7 +51074,80 @@
       &quot;data_adaptation_excluded_zh&quot;: &quot;排除窄纸钞纹理因定量压缩而不可辨和当前数值、文字变化。&quot;
     }
   }
-}</pre></details><a href="runs/reference_factorial24/evaluation/items/09bbb341e62819/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体有图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/09bbb341e62819/review.json">完整独立评审JSON</a><details><summary>第二次独立评审（不覆盖首评）</summary><pre>{
+  &quot;checks&quot;: {
+    &quot;completeness&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;两类、Current measure系列、总额、两项金额、百分比、主题、单位及SYNTHETIC DATA完整。&quot;
+    },
+    &quot;numeric_text&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;£1,497.00598802、£2.99401198、£1,500及≈99.8004%、≈0.1996%均正确，最小正值未舍入为零。&quot;
+    },
+    &quot;binding&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;Used指向面包，Wasted折线指向右端细条；金额分栏对应类别，材质示意明确排除比例编码。&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;像素估计份额约99.8065%与0.1935%，与目标相差约0.0061个百分点，低于3个百分点容差。&quot;
+    },
+    &quot;source&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;原始素材的面包切片纹理和纸钞肖像、花纹对应最终图。render.py读取数据控制主体净宽和文字；公式另经最终像素核对。&quot;
+    },
+    &quot;integration&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;面包与右端纸条横向相邻，底部约y=1320齐平；细白缝与接触阴影可区分，未见破坏结构的错层。&quot;
+    },
+    &quot;readability&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;必需标题、类别、完整金额、单位、声明和编码说明均可读，无裁切或遮挡。&quot;
+    },
+    &quot;critical_structure&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;完整面包、相邻细条、白缝及接触阴影保留；纸钞印刷部件在主图不可辨，非比例示意仅辅助身份识别。&quot;
+    },
+    &quot;semantic_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;当前食品预算损耗主题、GBP/户/年、Used/Wasted及两类合计分母清楚。&quot;
+    },
+    &quot;reference_meaning&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;保留食物与金钱损耗关联；旧真实统计及倡议被冻结输入规定的合成年度预算主题替代，不属于输出失败。&quot;
+    },
+    &quot;small_mark_visibility&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;最小值细条实际可见，指引和精确金额完整；纸钞内部结构不可独立辨认，未见人为放大。&quot;
+    }
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;面包保留完整成排切片与烤色表皮，纸钞在非比例材质示意中可辨；主体仍为面包与纸钞。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不因数据将主图纸钞压至细条扣除身份保留分；细条可辨性另评。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;主体仍为左面包、右纸钞横向相邻，底部基本齐平，接缝有细亮间隔和阴影。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除按数据改变宽度及允许调整纸钞姿态、非数据厚度；未要求沿用旧三分之一。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保留上方标题、中央大型物象、下方说明的层级；新增总额摘要、两栏金额和材质示意占据较多版面。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除新数据所需文字、合成声明及金额更新；只比较视觉层级。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保留暖米色背景、写实烤色面包和纸币印刷纹样；待评图更明亮清晰，原图明显台面反光减弱为柔和底影。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除因定量压缩造成的纸钞纹样损失及允许的厚度变化。&quot;
+    }
+  }
+}</pre></details><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体有图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: false,
