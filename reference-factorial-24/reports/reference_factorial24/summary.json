@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:52:16.649759+00:00",
+  "updated_at": "2026-10-19T22:59:38.667305+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,10 +11,10 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "ok": 48,
-      "pending": 43,
-      "technical_failure": 2,
-      "running": 3
+      "ok": 51,
+      "pending": 40,
+      "running": 3,
+      "technical_failure": 2
     },
     "routing_audits": {
       "verified": 96
@@ -50925,7 +50925,233 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为米色底、左侧绿色苹果与右侧抽离灰色扇块，蓝色连帽儿童背向观者坐在灰块上；标题与底部文字描述校园关闭及食物风险。待评图保留同一物体关系：绿色苹果中心有短棕色果柄，右侧缺口与灰色扇块对应，儿童坐于灰块外弧附近；左侧绿色主体以水平细线分为两个区域。三个编号分别绑定风险学生及两个Other students合成子类。可读数值为3,100,000与15.5%、两组8,450,000与42.25%，总计20,000,000 students；SYNTHETIC DATA、中文当前主题、系列名和角宽公式均可见。灰块目测角宽约56度，两个绿色区域等大；未见明显文字遮挡。",
+        "summary_zh": "三类别、人数、份额、系列和单位完整准确；像素测量支持角宽与同半径平移映射。青苹果、灰色抽离块及儿童坐在块上的关系清楚，未发现违反明确要求的可见缺陷。原参考疫情停课叙事转为当前合成校园供餐风险，属于输入适配。",
+        "issues": [],
+        "measurement_notes_zh": "在2000×2000原图上读取像素，按颜色边界拟合可见径向直边及圆弧；绿色子类分界实测为y=1040的水平线。灰块角宽约55.761°，两绿色区域约152.102°、152.044°；按图中声明的角宽比例换算人数。误差以20,000,000人为满量程，百分份额差等同百分点差。母体圆弧拟合半径约510.28px，灰块可见圆弧半径中位数509.81px；圆心横向差约419px。阴影、儿童和文字不参与测量。源码仅用于核查路线与映射声明。",
+        "uncertainties_zh": "像素阈值、抗锯齿和细边线带来约1px边界不确定性；绿色边界阈值敏感性检查中的份额变化小于0.05个百分点，测量小数不代表同等精度。儿童遮挡灰块部分上弧，未声称直接测得隐藏区域。按限制未查日志或自检，无法独立确认capture_render归档的执行；未将此证据限制认定为输出失败。原图疫情停课论述与当前合成主题仅部分对应。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "3个类别均有01/02/03编号、完整父类及合成子类名；单系列Synthetic student cohort、总计20,000,000 students与合成声明齐全，无额外必需面板。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "可见3,100,000、8,450,000、8,450,000，分别标15.5%、42.25%、42.25%；合计20,000,000，均与冻结数据一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "01 At risk的引线接灰块下边；02位于下方绿色区域并对应synthetic subcategory 1，03位于上方绿色区域并对应subcategory 2。底栏编号和单位绑定明确。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "独立像素拟合得到约15.489%、42.251%、42.234%；与目标最大偏差约0.016个百分点，远小于3个百分点。灰块与母体半径相差约0.5px，支持仅平移而未缩小。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "查看raw_01.png和child.png，苹果果柄、果皮纹理及蓝衣儿童与成图可对应；render.py将apple_surface.png按数据角宽遮罩、风险区灰度化并贴入儿童，素材构成大面积主体。生图调用及capture归档执行未独立核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "苹果表皮本身承载三个角区；灰块有对应缺口、相同半径和独立平移，儿童臀部叠在灰块表面，接触阴影在其下。无破坏身份或读数的接缝、错层或表面错位。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下标题、SYNTHETIC DATA、系列、三个类别、人数、份额、单位及角宽说明均可读，未被物体遮挡或裁切。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "左侧绿色苹果包含中央果柄和两个有分界的绿色区域；右向缺口对应抽离的灰色角区。蓝衣儿童背坐于灰块外弧附近，身体在块前，保留指定接触和包含关系。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题明确校园供餐风险；统计口径为Synthetic student cohort，单位students（名学生）。At risk与两个Other students合成子类构成同一20,000,000人队列，人数和份额解释明确。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "食物风险学生与抽离苹果块、儿童承坐的关系保留。参考的COVID-19、停课及真实家庭食物不安全统计未复述；冻结输入明确使用合成学生队列与校园供餐风险，不将这一适配列为输出缺陷。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小正值为15.5%，并非亚像素小值；灰块约510px径向尺度，尖端、两径向边及下部外弧可见。儿童坐靠关系可辨，未以放大灰块补偿小值。"
+          }
+        },
+        "semantic_attribution_zh": "疫情停课与真实家庭统计的替换归于冻结输入的合成主题及统计角色适配；新增绿色子类分界归于当前数据。图面未见必需主题、指标、单位或部件关系的输出遗漏。灰块部分边界被儿童遮挡属于参考所要求的叠合，测量保留该限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "At risk",
+              "expected_value": 3100000,
+              "observed_value": 3097840,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 509.8,
+              "full_scale_error_percent": 0.0108,
+              "small_value_relative_error_percent": 0.0697,
+              "bbox_xyxy_normalized": [
+                0.584,
+                0.4,
+                0.841,
+                0.64
+              ],
+              "evidence_zh": "原图x=1190..1400可见灰块边缘拟合角度为−27.873°与27.888°，差55.761°，对应约15.489%及3,097,840人。由两边交点和y=1055..1230外弧估计径向尺度509.8px。",
+              "uncertainty_zh": "人数为像素角宽推算的近似值；边线与抗锯齿误差约1px，上部外弧被儿童遮挡。相对误差估计不构成更高精度保证。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 1",
+              "expected_value": 8450000,
+              "observed_value": 8450106,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 510.3,
+              "full_scale_error_percent": 0.00053,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.12,
+                0.52,
+                0.601,
+                0.776
+              ],
+              "evidence_zh": "下方绿色区右径向边在x=900..1180拟合为27.898°，与水平左向分界构成152.102°，对应约42.251%及8,450,106人。外轮廓像素拟合母圆半径510.28px。",
+              "uncertainty_zh": "这是边缘回归估计，极小误差数值受阈值与抗锯齿影响，不表示精确到单个人；非微小值，相对误差项不适用。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 2",
+              "expected_value": 8450000,
+              "observed_value": 8446873,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 510.3,
+              "full_scale_error_percent": 0.01563,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.12,
+                0.265,
+                0.601,
+                0.521
+              ],
+              "evidence_zh": "上方绿色区右径向边在x=900..1180拟合为−27.956°，与水平左向分界构成152.044°，对应约42.234%及8,446,873人。主体左侧圆弧拟合残差约0.27px。",
+              "uncertainty_zh": "深色纹理和阈值影响边缘拟合；阈值变化下该份额约42.202%至42.239%，仍远在容差内。非微小值，相对误差项不适用。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "绿色主体及两个Other students子类",
+              "required_parts": [
+                "绿色苹果表皮",
+                "中央棕色果柄",
+                "两个绿色数据区域",
+                "水平分界",
+                "右向缺口"
+              ],
+              "relationship": "两个绿色角区共用母圆与中心，在左向水平边界相接；果柄位于中心附近，风险缺口朝右。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.12,
+                0.265,
+                0.601,
+                0.776
+              ],
+              "evidence_zh": "可见果皮纹理连续覆盖上下两区，水平细线从左轮廓延至中心；右侧两条直边围成缺口，02与03分别置于下、上区域。"
+            },
+            {
+              "category": "最小正值At risk抽离块",
+              "required_parts": [
+                "灰色表皮扇块",
+                "尖端",
+                "径向边",
+                "外弧",
+                "苹果对应缺口"
+              ],
+              "relationship": "灰色块沿右向离开母体；其两边与缺口方向一致，径向尺度保持，数据载体为灰色角区。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.374,
+                0.4,
+                0.841,
+                0.641
+              ],
+              "evidence_zh": "灰块尖端约(1169,1040)，母体中心约(750,1039)；同高向右平移约419px。可见两直边夹角约55.76°，其圆弧半径与绿色母体均约510px。"
+            },
+            {
+              "category": "儿童与At risk扇块",
+              "required_parts": [
+                "背向蓝衣儿童",
+                "蜷腿与鞋",
+                "灰块上表面",
+                "接触阴影"
+              ],
+              "relationship": "儿童坐在灰块上，臀部与灰色表面接触，腿与身体在块前遮挡局部上弧，阴影落在块面附近。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.71,
+                0.335,
+                0.845,
+                0.522
+              ],
+              "evidence_zh": "臀部下缘约y=1015，与其下灰色纹理相接；两侧鞋和膝部叠在灰块前，接触阴影可见。儿童未遮盖尖端、下径向边或风险标注。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结要求指定当前校园供餐风险主题、合成学生队列及三个类别，允许按数据调整姿态与排版；旧真实统计和旧份额不应沿用。",
+            "output_added_or_lost_meaning_zh": "保留儿童承坐于抽离风险块的视觉论述；原参考疫情导致停课和下一餐不确定的具体因果文字不再出现，这是当前输入适配，未见另加未授权统计主张。",
+            "visible_inscription_evidence_zh": "可见“校园供餐风险”“SYNTHETIC DATA”“统计口径 / Synthetic student cohort”“总计20,000,000 students”、At risk及两个synthetic subcategory，页脚写明合成数据、名学生和角宽公式。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实疫情停课及家庭统计改为合成校园供餐风险学生队列，来源于当前brief/data/core要求。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "当前风险份额15.5%，另两子类各42.25%；缺口角宽与新增水平分界对应当前数据，不按参考13.9%评价。"
+            },
+            {
+              "cause": "none",
+              "evidence_zh": "未发现独立的输出遗漏、数据误映射或破坏苹果—抽离块—儿童关系的缺陷。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一角宽通道的全部三个标记：最小正值风险块、两个并列大值绿色区；无独立中间数值层级。三类别、系列、总数、百分比、单位及合成声明另行逐项目视核对。未测被儿童遮挡的上弧像素，也未把文字正确当作几何证据。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "绿色苹果、中央棕色果柄与背向观者的蓝色连帽儿童均明确保留。",
+            "data_adaptation_excluded_zh": "不比较风险比例改变所造成的缺口大小及儿童尺寸适配。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "苹果在左、灰块向右平移；儿童蜷腿背坐在灰块上，保持参考的坐靠、前后遮挡与分离关系。",
+            "data_adaptation_excluded_zh": "按core允许儿童具体坐姿、非数据厚度与间距调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方标题、中央左侧大苹果、右侧儿童灰块及下方文字层级；最终标题区更高，底部改为三列数据栏。",
+            "data_adaptation_excluded_zh": "新增类别明细、合成声明与现行标签所需版面不作缺陷；只记录主体与标题相对视觉权重变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留暖米色底、写实绿果皮、灰度风险块与深蓝衣物；参考较粗糙的颗粒拼贴质感变为更光洁果皮与柔和投影。",
+            "data_adaptation_excluded_zh": "不以数据角宽、现行标签或允许的非数据厚度变化扣分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/81482d5d983db7",
       "numeric_supported": true,
@@ -51197,7 +51423,233 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为米色底、左侧绿色苹果与右侧抽离灰色扇块，蓝色连帽儿童背向观者坐在灰块上；标题与底部文字描述校园关闭及食物风险。待评图保留同一物体关系：绿色苹果中心有短棕色果柄，右侧缺口与灰色扇块对应，儿童坐于灰块外弧附近；左侧绿色主体以水平细线分为两个区域。三个编号分别绑定风险学生及两个Other students合成子类。可读数值为3,100,000与15.5%、两组8,450,000与42.25%，总计20,000,000 students；SYNTHETIC DATA、中文当前主题、系列名和角宽公式均可见。灰块目测角宽约56度，两个绿色区域等大；未见明显文字遮挡。",
+        "summary_zh": "三类别、人数、份额、系列和单位完整准确；像素测量支持角宽与同半径平移映射。青苹果、灰色抽离块及儿童坐在块上的关系清楚，未发现违反明确要求的可见缺陷。原参考疫情停课叙事转为当前合成校园供餐风险，属于输入适配。",
+        "issues": [],
+        "measurement_notes_zh": "在2000×2000原图上读取像素，按颜色边界拟合可见径向直边及圆弧；绿色子类分界实测为y=1040的水平线。灰块角宽约55.761°，两绿色区域约152.102°、152.044°；按图中声明的角宽比例换算人数。误差以20,000,000人为满量程，百分份额差等同百分点差。母体圆弧拟合半径约510.28px，灰块可见圆弧半径中位数509.81px；圆心横向差约419px。阴影、儿童和文字不参与测量。源码仅用于核查路线与映射声明。",
+        "uncertainties_zh": "像素阈值、抗锯齿和细边线带来约1px边界不确定性；绿色边界阈值敏感性检查中的份额变化小于0.05个百分点，测量小数不代表同等精度。儿童遮挡灰块部分上弧，未声称直接测得隐藏区域。按限制未查日志或自检，无法独立确认capture_render归档的执行；未将此证据限制认定为输出失败。原图疫情停课论述与当前合成主题仅部分对应。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "3个类别均有01/02/03编号、完整父类及合成子类名；单系列Synthetic student cohort、总计20,000,000 students与合成声明齐全，无额外必需面板。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "可见3,100,000、8,450,000、8,450,000，分别标15.5%、42.25%、42.25%；合计20,000,000，均与冻结数据一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "01 At risk的引线接灰块下边；02位于下方绿色区域并对应synthetic subcategory 1，03位于上方绿色区域并对应subcategory 2。底栏编号和单位绑定明确。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "独立像素拟合得到约15.489%、42.251%、42.234%；与目标最大偏差约0.016个百分点，远小于3个百分点。灰块与母体半径相差约0.5px，支持仅平移而未缩小。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "查看raw_01.png和child.png，苹果果柄、果皮纹理及蓝衣儿童与成图可对应；render.py将apple_surface.png按数据角宽遮罩、风险区灰度化并贴入儿童，素材构成大面积主体。生图调用及capture归档执行未独立核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "苹果表皮本身承载三个角区；灰块有对应缺口、相同半径和独立平移，儿童臀部叠在灰块表面，接触阴影在其下。无破坏身份或读数的接缝、错层或表面错位。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下标题、SYNTHETIC DATA、系列、三个类别、人数、份额、单位及角宽说明均可读，未被物体遮挡或裁切。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "左侧绿色苹果包含中央果柄和两个有分界的绿色区域；右向缺口对应抽离的灰色角区。蓝衣儿童背坐于灰块外弧附近，身体在块前，保留指定接触和包含关系。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题明确校园供餐风险；统计口径为Synthetic student cohort，单位students（名学生）。At risk与两个Other students合成子类构成同一20,000,000人队列，人数和份额解释明确。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "食物风险学生与抽离苹果块、儿童承坐的关系保留。参考的COVID-19、停课及真实家庭食物不安全统计未复述；冻结输入明确使用合成学生队列与校园供餐风险，不将这一适配列为输出缺陷。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小正值为15.5%，并非亚像素小值；灰块约510px径向尺度，尖端、两径向边及下部外弧可见。儿童坐靠关系可辨，未以放大灰块补偿小值。"
+          }
+        },
+        "semantic_attribution_zh": "疫情停课与真实家庭统计的替换归于冻结输入的合成主题及统计角色适配；新增绿色子类分界归于当前数据。图面未见必需主题、指标、单位或部件关系的输出遗漏。灰块部分边界被儿童遮挡属于参考所要求的叠合，测量保留该限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "At risk",
+              "expected_value": 3100000,
+              "observed_value": 3097840,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 509.8,
+              "full_scale_error_percent": 0.0108,
+              "small_value_relative_error_percent": 0.0697,
+              "bbox_xyxy_normalized": [
+                0.584,
+                0.4,
+                0.841,
+                0.64
+              ],
+              "evidence_zh": "原图x=1190..1400可见灰块边缘拟合角度为−27.873°与27.888°，差55.761°，对应约15.489%及3,097,840人。由两边交点和y=1055..1230外弧估计径向尺度509.8px。",
+              "uncertainty_zh": "人数为像素角宽推算的近似值；边线与抗锯齿误差约1px，上部外弧被儿童遮挡。相对误差估计不构成更高精度保证。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 1",
+              "expected_value": 8450000,
+              "observed_value": 8450106,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 510.3,
+              "full_scale_error_percent": 0.00053,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.12,
+                0.52,
+                0.601,
+                0.776
+              ],
+              "evidence_zh": "下方绿色区右径向边在x=900..1180拟合为27.898°，与水平左向分界构成152.102°，对应约42.251%及8,450,106人。外轮廓像素拟合母圆半径510.28px。",
+              "uncertainty_zh": "这是边缘回归估计，极小误差数值受阈值与抗锯齿影响，不表示精确到单个人；非微小值，相对误差项不适用。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 2",
+              "expected_value": 8450000,
+              "observed_value": 8446873,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 510.3,
+              "full_scale_error_percent": 0.01563,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.12,
+                0.265,
+                0.601,
+                0.521
+              ],
+              "evidence_zh": "上方绿色区右径向边在x=900..1180拟合为−27.956°，与水平左向分界构成152.044°，对应约42.234%及8,446,873人。主体左侧圆弧拟合残差约0.27px。",
+              "uncertainty_zh": "深色纹理和阈值影响边缘拟合；阈值变化下该份额约42.202%至42.239%，仍远在容差内。非微小值，相对误差项不适用。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "绿色主体及两个Other students子类",
+              "required_parts": [
+                "绿色苹果表皮",
+                "中央棕色果柄",
+                "两个绿色数据区域",
+                "水平分界",
+                "右向缺口"
+              ],
+              "relationship": "两个绿色角区共用母圆与中心，在左向水平边界相接；果柄位于中心附近，风险缺口朝右。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.12,
+                0.265,
+                0.601,
+                0.776
+              ],
+              "evidence_zh": "可见果皮纹理连续覆盖上下两区，水平细线从左轮廓延至中心；右侧两条直边围成缺口，02与03分别置于下、上区域。"
+            },
+            {
+              "category": "最小正值At risk抽离块",
+              "required_parts": [
+                "灰色表皮扇块",
+                "尖端",
+                "径向边",
+                "外弧",
+                "苹果对应缺口"
+              ],
+              "relationship": "灰色块沿右向离开母体；其两边与缺口方向一致，径向尺度保持，数据载体为灰色角区。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.374,
+                0.4,
+                0.841,
+                0.641
+              ],
+              "evidence_zh": "灰块尖端约(1169,1040)，母体中心约(750,1039)；同高向右平移约419px。可见两直边夹角约55.76°，其圆弧半径与绿色母体均约510px。"
+            },
+            {
+              "category": "儿童与At risk扇块",
+              "required_parts": [
+                "背向蓝衣儿童",
+                "蜷腿与鞋",
+                "灰块上表面",
+                "接触阴影"
+              ],
+              "relationship": "儿童坐在灰块上，臀部与灰色表面接触，腿与身体在块前遮挡局部上弧，阴影落在块面附近。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.71,
+                0.335,
+                0.845,
+                0.522
+              ],
+              "evidence_zh": "臀部下缘约y=1015，与其下灰色纹理相接；两侧鞋和膝部叠在灰块前，接触阴影可见。儿童未遮盖尖端、下径向边或风险标注。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结要求指定当前校园供餐风险主题、合成学生队列及三个类别，允许按数据调整姿态与排版；旧真实统计和旧份额不应沿用。",
+            "output_added_or_lost_meaning_zh": "保留儿童承坐于抽离风险块的视觉论述；原参考疫情导致停课和下一餐不确定的具体因果文字不再出现，这是当前输入适配，未见另加未授权统计主张。",
+            "visible_inscription_evidence_zh": "可见“校园供餐风险”“SYNTHETIC DATA”“统计口径 / Synthetic student cohort”“总计20,000,000 students”、At risk及两个synthetic subcategory，页脚写明合成数据、名学生和角宽公式。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实疫情停课及家庭统计改为合成校园供餐风险学生队列，来源于当前brief/data/core要求。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "当前风险份额15.5%，另两子类各42.25%；缺口角宽与新增水平分界对应当前数据，不按参考13.9%评价。"
+            },
+            {
+              "cause": "none",
+              "evidence_zh": "未发现独立的输出遗漏、数据误映射或破坏苹果—抽离块—儿童关系的缺陷。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一角宽通道的全部三个标记：最小正值风险块、两个并列大值绿色区；无独立中间数值层级。三类别、系列、总数、百分比、单位及合成声明另行逐项目视核对。未测被儿童遮挡的上弧像素，也未把文字正确当作几何证据。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "绿色苹果、中央棕色果柄与背向观者的蓝色连帽儿童均明确保留。",
+            "data_adaptation_excluded_zh": "不比较风险比例改变所造成的缺口大小及儿童尺寸适配。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "苹果在左、灰块向右平移；儿童蜷腿背坐在灰块上，保持参考的坐靠、前后遮挡与分离关系。",
+            "data_adaptation_excluded_zh": "按core允许儿童具体坐姿、非数据厚度与间距调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方标题、中央左侧大苹果、右侧儿童灰块及下方文字层级；最终标题区更高，底部改为三列数据栏。",
+            "data_adaptation_excluded_zh": "新增类别明细、合成声明与现行标签所需版面不作缺陷；只记录主体与标题相对视觉权重变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留暖米色底、写实绿果皮、灰度风险块与深蓝衣物；参考较粗糙的颗粒拼贴质感变为更光洁果皮与柔和投影。",
+            "data_adaptation_excluded_zh": "不以数据角宽、现行标签或允许的非数据厚度变化扣分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/81482d5d983db7",
       "numeric_supported": true,
@@ -82827,7 +83279,249 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "已先以原始分辨率查看两图并保存观察。参考为绿色背景、中央材质扇区圆桌、三位围桌人物、礼盒和宴会食物。待评图为左侧九行数据表、右侧材质圆桌；人物手臂叠于桌缘，礼盒、食品和酒具置于桌面。九个编号均可见，08为橙色窄扇区并有引线。源码前参考保留评分：身份4、姿态关系4、构图2、材质风格3。",
+        "summary_zh": "通过。九类计数、百分比及编号绑定正确，材质扇区直接构成宴会桌面，最小扇区仍可辨。review.json已保存并通过schema.json校验；按追加指令未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "从原图桌面颜色的半过渡位置测量边界，多半径拟合共同交点约为(1299.38,824.49)。以半径340 px取样，按500×角宽/360换算响应数。mark_extent_px为取样弧长，框为取样弧范围。九类均测量，最大份额偏差约0.075个百分点；详列四个代表。源码公式仅作佐证。",
+        "uncertainties_zh": "纹理、细分界线和抗锯齿带来像素级定位不确定性。最小扇区的约1.22%相对误差仅为点估计；两边各约1 px的保守定位范围，对其12.66 px宽度对应约16%的相对不确定性。不能以满量程通过保证小值高精度。capture_render执行历史不在本次允许检查的证据内。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "九个类别、计数、百分比和01—09编号齐全；A、B子类保留父类。总数500、模拟单位、单选说明及SYNTHETIC DATA均可见。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "计数依次为76、38、39、43、44、45、29、3、183；百分比依次为15.2、7.6、7.8、8.6、8.8、9.0、5.8、0.6、36.6，均正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "左表颜色及编号对应桌面同号扇区，顺时针保持输入顺序。08引线终点位于橙色窄扇区内部。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "九类像素边界测量的份额误差均小于0.08个百分点。01、04、08、09角宽约54.76°、30.72°、2.13°、131.71°，目标分别54.72°、30.96°、2.16°、131.76°。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png，人物、礼盒、餐盘、酒具、蜡烛和织物与成图对应。prepare_assets.py提取素材，render.py控制当前计数对应的角宽、纹理分区和文字；未执行这些文件。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "材质扇区共享圆形桌面与桌缘；礼盒和餐盘位于扇区之上，人物从桌外伸手进入桌面。俯视方向和局部遮挡关系一致。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "类别、计数、份额、标题、模拟声明及统计口径均可读；桌面编号未被物件遮住，08单独引出。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "圆形桌缘、径向材质分界、围桌人物及桌上礼盒和食品可见；数据边界直接成为桌面材质边界，大、小扇区均接入共同桌缘。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "HOLIDAY GIFTING、Gift budget preferences、500 simulated responses及One choice per participant明确主题、单位、分母和互斥单选口径。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "礼物预算与宴会桌面份额关系保留。原特定女性样本、求爱及最低花费语境改为合成预算偏好，属于冻结输入泛化。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "08具有可分辨的两条边界和织物表面，与相邻桌面和外缘连续；半径340 px处约12.66 px宽，420 px处约15.68 px宽。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题、模拟响应单位、单选组成和预算类别角色完整。原日元门槛、特定人群及求爱语境的改变来自输入改编；九类及新角宽来自当前数据。小值精度受分辨率限制，未见结构性输出语义损失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "preference",
+              "category": "Budget A / subcategory 1",
+              "expected_value": 76,
+              "observed_value": 76.054,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 324.95,
+              "full_scale_error_percent": 0.0108,
+              "small_value_relative_error_percent": 0.071,
+              "bbox_xyxy_normalized": [
+                0.6475,
+                0.3403,
+                0.7904,
+                0.4476
+              ],
+              "evidence_zh": "半径340 px处边界约269.9495°与324.7084°，角宽54.7589°，对应15.2108%；文字76、15.2%正确。",
+              "uncertainty_zh": "细缝和纹理产生像素级定位误差，末位不代表真实精度。"
+            },
+            {
+              "series_id": "preference",
+              "category": "Budget B / subcategory 1",
+              "expected_value": 43,
+              "observed_value": 42.665,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 182.29,
+              "full_scale_error_percent": 0.0669,
+              "small_value_relative_error_percent": 0.778,
+              "bbox_xyxy_normalized": [
+                0.7547,
+                0.6645,
+                0.8112,
+                0.7738
+              ],
+              "evidence_zh": "04边界约20.2593°与50.9784°，角宽30.7191°，对应8.5331%；文字43、8.6%正确。",
+              "uncertainty_zh": "浅色分界线可使颜色半过渡位置轻微偏移，远小于3个百分点容差。"
+            },
+            {
+              "series_id": "preference",
+              "category": "Budget E",
+              "expected_value": 3,
+              "observed_value": 2.963,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 12.66,
+              "full_scale_error_percent": 0.0073,
+              "small_value_relative_error_percent": 1.218,
+              "bbox_xyxy_normalized": [
+                0.5209,
+                0.7415,
+                0.5292,
+                0.7537
+              ],
+              "evidence_zh": "08边界约136.1016°与138.2353°，角宽2.1337°，对应0.5927%；半径420 px复测约2.1397°。文字3、0.6%正确。",
+              "uncertainty_zh": "相对误差为点估计；两边各约1 px的保守定位范围对应约16%的宽度不确定性，不能保证百分之一量级的小值精度。"
+            },
+            {
+              "series_id": "preference",
+              "category": "Price not a factor",
+              "expected_value": 183,
+              "observed_value": 182.936,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 781.61,
+              "full_scale_error_percent": 0.0127,
+              "small_value_relative_error_percent": 0.035,
+              "bbox_xyxy_normalized": [
+                0.4777,
+                0.3403,
+                0.6515,
+                0.7471
+              ],
+              "evidence_zh": "09边界约138.2353°与269.9495°，角宽131.7142°，对应36.5873%；文字183、36.6%正确。",
+              "uncertainty_zh": "采用未遮挡边界估计逻辑角宽，桌面物件不从份额中扣除。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体宴会桌",
+              "required_parts": [
+                "圆形桌面与桌缘",
+                "三位人物",
+                "礼盒",
+                "食品及酒具"
+              ],
+              "relationship": "扇区构成共同桌面；人物从外侧接触桌面；礼盒和食品位于桌面上。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.33,
+                0.115,
+                0.985,
+                0.925
+              ],
+              "evidence_zh": "三位人物手臂跨过桌缘，礼盒位于黄色区域，餐盘和酒具覆盖中下部材质分界，圆形外缘连续。"
+            },
+            {
+              "category": "大实例：Price not a factor / 09",
+              "required_parts": [
+                "黄色材质扇区",
+                "共同桌缘",
+                "礼盒",
+                "围桌人物"
+              ],
+              "relationship": "黄色区域从共同中心延伸至外缘，礼盒接触其表面，人物向内伸手。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.415,
+                0.25,
+                0.655,
+                0.82
+              ],
+              "evidence_zh": "双礼盒和蜡烛位于黄色织物桌面上，左侧人物手掌伸入该区域。"
+            },
+            {
+              "category": "小实例：Budget E / 08",
+              "required_parts": [
+                "橙色窄材质扇区",
+                "相邻07与09扇区",
+                "共同桌缘",
+                "08引线"
+              ],
+              "relationship": "窄扇区夹在07和09之间，沿径向接入圆桌外缘，引线落在其内部。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.472,
+                0.584,
+                0.652,
+                0.822
+              ],
+              "evidence_zh": "橙色窄条有可分辨边界和织物表面，外端接桌缘，内段局部被酒具遮挡；外置08及0.6%通过引线绑定。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "输入改为500个模拟参与者的互斥预算选择，A、B包含合成子类；不要求原日元门槛、特定女性样本或原百分比。",
+            "output_added_or_lost_meaning_zh": "当前预算偏好和单选份额完整。原求爱、最低花费及受访群体语境的泛化来自输入，未见额外输出遗漏。",
+            "visible_inscription_evidence_zh": "HOLIDAY GIFTING；Gift budget preferences；SYNTHETIC DATA；500 simulated responses · One choice per participant；互斥合成子类说明；全部500响应的份额说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "具体调查语境替换为合成预算偏好与模拟参与者，符合冻结输入。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "当前九类决定九个扇区及新的大小关系。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "08的桌面关系可见，但约13 px取样宽度限制相对精度判定。"
+            }
+          ],
+          "measurement_coverage_zh": "唯一量化通道为共同圆桌角宽。九类边界均取样核对，详列01、04、08、09；其余五类估计份额为7.6379%、7.7929%、8.8367%、8.9339%、5.8747%。全部标签、计数、份额和编号另行逐项核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "三位人物、红缎带礼盒、宴会食物和酒具保留，仍为俯视节日聚会圆桌。",
+            "data_adaptation_excluded_zh": "排除类别、数值、扇区数量及合成主题变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "人物在桌外并伸手进入桌面，礼盒和食品置于桌上，俯视方向一致。",
+            "data_adaptation_excluded_zh": "人物转向、手势、桌缘厚度及物件位置按core允许适配。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "圆桌仍为最大场景主体；中央主图、上方小字和右下大型手写落款，改为顶部大标题、左侧数据表及右侧圆桌，整体信息层级明显重组。",
+            "data_adaptation_excluded_zh": "排除角宽、更新标签及防拥挤的标签移位本身；评分描述标题、表格与场景的整体视觉层级。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "深绿背景、写实俯视物件和金黄、酒红色系大体保留；统一织物纹理替代部分几何图案，手写风格减少。",
+            "data_adaptation_excluded_zh": "排除新增类别所需颜色及文字、数值变化。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/847819f2d67104",
       "numeric_supported": true,
@@ -85138,7 +85832,518 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为白底横向海洋剖面，绿色、亮蓝、深蓝、紫色四层向下叠合，右上游艇接触水面；年份横排，左侧含主题和数据表。成图保留水面、四种颜色的水下材质与右上游艇，水层左深右浅；上方P01–P16齐全，底部有四来源及总值表。标题、SYNTHETIC DATA、100 tonnes/period和不跨期累加说明清楚。P15–P16主图各层很薄，右下明确标注8倍纵向尺度的细节图可辨四层。未见明显层次倒置或重大遮挡。",
+        "summary_zh": "review.json已保存并通过schema.json验证。未发现违反必需要求的重大可见缺陷。64个分项值、16个期总值及绑定正确，代表性像素测量在容差内。主图微薄层的材质辨识有限，明示8倍尺度的细节图补充了小值结构。",
+        "issues": [],
+        "measurement_notes_zh": "按原图2200×1552像素读取色相/亮度交界。主图0、1800、3600、5400、7200网格位于y=450、612、774、936、1098，独立校准为0.09像素/单位；细节图0、100、200、300在y=848、920、992、1064，校准为0.72像素/单位，确为8倍。主图误差以7200为分母，细节图以300为分母。源码仅旁证堆叠和插值，不作为像素测量。",
+        "uncertainties_zh": "主图最薄层仅1–2像素，不能确认其小值相对精度；细节图最小B层约11像素，±2像素厚度定位不确定性仍约相当于该值的19%。未逐点测量全部64个厚度。按限制未核验capture_render.py的执行历史，未运行submit.py。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "主图与表格均列P01–P16；四来源A–D、64个分项值、16个期总值、单位及SYNTHETIC DATA齐全。无第五来源层。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐行核对64个分项全部吻合；独立求和核对16个Total均正确。峰值P02=7020，末两期260、190正确；正值未舍入为零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "绿色A、亮蓝B、深蓝C、紫色D在图例、层内字母和表格色块一致；各期顺序正确，细节图端点为P15、P16。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "主图四系列大值及P08内部点的像素抽测误差约0.002%–0.114%满量程；细节图小值及总深度约0.093%–0.241%，均低于3%。水面水平、四层相邻且无负厚度；源码旁证全部点采用共同分段线性插值。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始及分离素材，船型、光纹和气泡与成图对应，海水纹理覆盖主体各层。render.py以数据累计边界控制遮罩和文字；project/data.json与冻结数据一致。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "彩色海水的上下边界承载各来源厚度，紫色最外缘承载当期总深度。游艇船底接触共同水面，水纹裁于水层内。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、单位、时期、四来源及数值表在原分辨率清楚可读。微薄层数值由外置表和明示放大图表达，未见必需标签遮挡或截断。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "水平水面下依次为绿、亮蓝、深蓝、紫色四个连续相接水层；游艇船体、舱室及桅杆可辨，船底接触水面。层厚与最底外缘分别承担分项和总量。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题、Discharge by source and period、100 tonnes/period、Plastic source A–D与PERIOD明确。The total for each period / Periods are not accumulated准确区分同期求和与跨期累加。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留塑料排放及水体深度表示分来源数量的关系。韩国ERP、真实年份和Deepening叙述被允许的合成时期、来源及当前走势替换，属于输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "主图P15蓝层仅约1–2像素，无法独立辨认水纹；右下8倍细节图可辨四层接触及海水材质，最小蓝层约11像素，没有静默加粗主图。"
+          }
+        },
+        "semantic_attribution_zh": "旧真实年份、韩国ERP名称和加深论点的变化归于允许的合成适配；左深右浅及末端变薄归于当前数据。主图最小层材质辨识不足归于像素分辨率，细节图提供明确尺度补充。未发现当前主题、单位或系列语义的输出遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "A",
+              "category": "P01",
+              "expected_value": 1841,
+              "observed_value": 1844.44,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 166,
+              "full_scale_error_percent": 0.048,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.09,
+                0.289948,
+                0.093182,
+                0.397552
+              ],
+              "evidence_zh": "主图x≈201列，水面y=450至绿/蓝交界约y=616，厚约166像素。",
+              "uncertainty_zh": "色界约±1像素，厚度约±2像素；反算为近似中心估计。"
+            },
+            {
+              "series_id": "B",
+              "category": "P02",
+              "expected_value": 611,
+              "observed_value": 611.11,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 55,
+              "full_scale_error_percent": 0.002,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.147273,
+                0.394974,
+                0.150455,
+                0.431701
+              ],
+              "evidence_zh": "主图B最大值：x≈327列，亮蓝层约y=614–669，厚约55像素。",
+              "uncertainty_zh": "色界约±1像素，厚度约±2像素。"
+            },
+            {
+              "series_id": "C",
+              "category": "P02",
+              "expected_value": 3938,
+              "observed_value": 3933.33,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 354,
+              "full_scale_error_percent": 0.065,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.147273,
+                0.430412,
+                0.150455,
+                0.659794
+              ],
+              "evidence_zh": "主图C最大值：x≈327列，深蓝层约y=669–1023，厚约354像素。",
+              "uncertainty_zh": "色界约±1像素，厚度约±2像素。"
+            },
+            {
+              "series_id": "D",
+              "category": "P04",
+              "expected_value": 655,
+              "observed_value": 655.56,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 59,
+              "full_scale_error_percent": 0.008,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.262727,
+                0.607603,
+                0.265909,
+                0.647552
+              ],
+              "evidence_zh": "主图D最大值：x≈581列，紫层约y=944–1003，厚约59像素。",
+              "uncertainty_zh": "色界约±1像素，厚度约±2像素。"
+            },
+            {
+              "series_id": "A",
+              "category": "P08",
+              "expected_value": 1572,
+              "observed_value": 1566.67,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 141,
+              "full_scale_error_percent": 0.074,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.493636,
+                0.289948,
+                0.496818,
+                0.381443
+              ],
+              "evidence_zh": "主图内部点x≈1089列，绿色从水面至约y=591，厚约141像素。",
+              "uncertainty_zh": "色界约±1像素，厚度约±2像素。"
+            },
+            {
+              "series_id": "B",
+              "category": "P08",
+              "expected_value": 348,
+              "observed_value": 355.56,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 32,
+              "full_scale_error_percent": 0.105,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.493636,
+                0.380155,
+                0.496818,
+                0.402062
+              ],
+              "evidence_zh": "主图内部点亮蓝层约y=591–623，厚约32像素。",
+              "uncertainty_zh": "色界约±1像素，厚度约±2像素。"
+            },
+            {
+              "series_id": "C",
+              "category": "P08",
+              "expected_value": 2486,
+              "observed_value": 2477.78,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 223,
+              "full_scale_error_percent": 0.114,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.493636,
+                0.400773,
+                0.496818,
+                0.545747
+              ],
+              "evidence_zh": "主图内部点深蓝层约y=623–846，厚约223像素。",
+              "uncertainty_zh": "色界约±1像素，厚度约±2像素。"
+            },
+            {
+              "series_id": "D",
+              "category": "P08",
+              "expected_value": 354,
+              "observed_value": 355.56,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 32,
+              "full_scale_error_percent": 0.022,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.493636,
+                0.544459,
+                0.496818,
+                0.566366
+              ],
+              "evidence_zh": "主图内部点紫层约y=846–878，厚约32像素。",
+              "uncertainty_zh": "色界约±1像素，厚度约±2像素。"
+            },
+            {
+              "series_id": "A",
+              "category": "P16",
+              "expected_value": 52,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 4.5,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.954545,
+                0.289948,
+                0.956818,
+                0.293814
+              ],
+              "evidence_zh": "主图A最小值：右端绿色约4–5像素厚，零线和水纹占据部分像素。",
+              "uncertainty_zh": "仅记录厚度粗估，不据反锯齿边界反算精确值；相同值另在细节图测量。"
+            },
+            {
+              "series_id": "B",
+              "category": "P15",
+              "expected_value": 15,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 1.5,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.897727,
+                0.292526,
+                0.900909,
+                0.295747
+              ],
+              "evidence_zh": "全图最小正值：主图亮蓝层约1–2像素；x=1978处y=456为亮蓝、457过渡、458已深蓝。",
+              "uncertainty_zh": "反锯齿影响较大，不能稳健反算相对精度；另由8倍细节图测量。"
+            },
+            {
+              "series_id": "C",
+              "category": "P16",
+              "expected_value": 88,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 8,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.954545,
+                0.293814,
+                0.956818,
+                0.299613
+              ],
+              "evidence_zh": "主图C最小值：深蓝区约8像素厚，可分出上下色界。",
+              "uncertainty_zh": "仅记录粗估，不保证小值相对精度；另在细节图测量。"
+            },
+            {
+              "series_id": "D",
+              "category": "P16",
+              "expected_value": 34,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 3,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.954545,
+                0.298325,
+                0.956818,
+                0.302191
+              ],
+              "evidence_zh": "主图D最小值：紫色主体约3像素厚，外缘存在抗锯齿过渡。",
+              "uncertainty_zh": "仅记录粗估，不反算精确值；另在细节图测量。"
+            },
+            {
+              "series_id": "A",
+              "category": "P16",
+              "expected_value": 52,
+              "observed_value": 51.39,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 37,
+              "full_scale_error_percent": 0.204,
+              "small_value_relative_error_percent": 1.18,
+              "bbox_xyxy_normalized": [
+                0.933182,
+                0.546392,
+                0.935455,
+                0.571521
+              ],
+              "evidence_zh": "8倍细节图x≈2056列，y=848至绿/蓝交界约885，厚约37像素。",
+              "uncertainty_zh": "厚度约±2像素；误差为中心估计，不是小值精度保证。"
+            },
+            {
+              "series_id": "B",
+              "category": "P15",
+              "expected_value": 15,
+              "observed_value": 15.28,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 11,
+              "full_scale_error_percent": 0.093,
+              "small_value_relative_error_percent": 1.85,
+              "bbox_xyxy_normalized": [
+                0.768636,
+                0.57732,
+                0.770909,
+                0.58634
+              ],
+              "evidence_zh": "8倍细节图最小正值：x≈1693列，亮蓝层约y=897–908，厚约11像素；满量程300。",
+              "uncertainty_zh": "厚度约±2像素，对该小值约为19%；中心误差不代表精度保证。"
+            },
+            {
+              "series_id": "C",
+              "category": "P16",
+              "expected_value": 88,
+              "observed_value": 87.5,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 63,
+              "full_scale_error_percent": 0.167,
+              "small_value_relative_error_percent": 0.57,
+              "bbox_xyxy_normalized": [
+                0.933182,
+                0.57732,
+                0.935455,
+                0.619845
+              ],
+              "evidence_zh": "8倍细节图深蓝层约y=897–960，厚约63像素。",
+              "uncertainty_zh": "厚度约±2像素；误差为近似中心估计。"
+            },
+            {
+              "series_id": "D",
+              "category": "P16",
+              "expected_value": 34,
+              "observed_value": 34.72,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 25,
+              "full_scale_error_percent": 0.241,
+              "small_value_relative_error_percent": 2.12,
+              "bbox_xyxy_normalized": [
+                0.933182,
+                0.617912,
+                0.935455,
+                0.635954
+              ],
+              "evidence_zh": "8倍细节图紫层约y=960–985，厚约25像素。",
+              "uncertainty_zh": "厚度约±2像素；误差为近似中心估计。"
+            },
+            {
+              "series_id": "Total",
+              "category": "P15",
+              "expected_value": 260,
+              "observed_value": 259.72,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 187,
+              "full_scale_error_percent": 0.093,
+              "small_value_relative_error_percent": 0.11,
+              "bbox_xyxy_normalized": [
+                0.768636,
+                0.546392,
+                0.770909,
+                0.66817
+              ],
+              "evidence_zh": "8倍细节图水面y=848至紫色外缘约1035，总深度约187像素；文字260。",
+              "uncertainty_zh": "厚度约±2像素；误差为近似中心估计。"
+            },
+            {
+              "series_id": "Total",
+              "category": "P16",
+              "expected_value": 190,
+              "observed_value": 190.28,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 137,
+              "full_scale_error_percent": 0.093,
+              "small_value_relative_error_percent": 0.15,
+              "bbox_xyxy_normalized": [
+                0.933182,
+                0.546392,
+                0.935455,
+                0.635954
+              ],
+              "evidence_zh": "8倍细节图水面y=848至紫色外缘约985，总深度约137像素；文字190。",
+              "uncertainty_zh": "厚度约±2像素；误差为近似中心估计。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "游艇与共同水面",
+              "required_parts": [
+                "船体",
+                "多层舱室与桅杆",
+                "共同水面"
+              ],
+              "relationship": "舱室、桅杆连于船体；船底接触水平水面，水体在其下方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.717273,
+                0.211985,
+                0.918636,
+                0.305412
+              ],
+              "evidence_zh": "游艇部件完整，底缘落在约y=450水面；未见悬空或水层穿过船舱。"
+            },
+            {
+              "category": "大值水体（P01–P04）",
+              "required_parts": [
+                "零水面",
+                "绿色A层",
+                "亮蓝B层",
+                "深蓝C层",
+                "紫色D层"
+              ],
+              "relationship": "四层依次连续接触；各层厚度承载分项，最底外缘承载总量。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.09,
+                0.28866,
+                0.265909,
+                0.701031
+              ],
+              "evidence_zh": "四种水体材质铺满数据带；A从水面起算，B/C/D依次在下，紫色外缘之外为白底，无第五层。"
+            },
+            {
+              "category": "主图微小值（P15–P16）",
+              "required_parts": [
+                "共同水面",
+                "四层薄水体",
+                "紫色总量外缘"
+              ],
+              "relationship": "四层依序位于水面下并向右变浅，局部水体身份受分辨率限制。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.896818,
+                0.28866,
+                0.957727,
+                0.307345
+              ],
+              "evidence_zh": "P15亮蓝层约1–2像素，P16紫层约3像素；颜色次序可辨，但最薄层水纹不能单独辨清。"
+            },
+            {
+              "category": "小值细节图（P15–P16）",
+              "required_parts": [
+                "零水面",
+                "四种有纹理的水层",
+                "0–300刻度",
+                "8倍尺度说明"
+              ],
+              "relationship": "四层在共同零线下连续接触；外缘对应260和190，并标明纵向放大。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.718182,
+                0.467139,
+                0.96,
+                0.724871
+              ],
+              "evidence_zh": "可见四种水纹和逐层接触；最薄蓝层约11像素，8× vertical scale和独立刻度避免误解主图厚度。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "当前输入采用合成P01–P16及Plastic source A–D；真实年份、旧来源名称、旧峰谷及原加深趋势不需保留。",
+            "output_added_or_lost_meaning_zh": "保留分来源当期塑料排放量与水层深度的联系。加入同期求和说明和明确尺度的小值细节图，未改成百分比构成或跨期累计。旧真实统计语境的变化属于允许适配。",
+            "visible_inscription_evidence_zh": "Plastic discharge into the ocean；Discharge by source and period；100 tonnes/period；Plastic source A–D；PERIOD；A+B+C+D；The total for each period；Periods are not accumulated；SYNTHETIC DATA。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实年份和旧统计名称改为冻结数据的合成时期、来源；未延续Deepening旧趋势不构成失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "总深度从左侧数千单位减至末两期260、190，海洋轮廓相应变浅；峰值位于当前P02。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "主图B=15仅约1–2像素，局部水纹和精确相对厚度难判断；明示8倍细节图提供补充。"
+            }
+          ],
+          "measurement_coverage_zh": "主图四通道覆盖大值、P08内部点及各自最小值；主图最小值仅给像素粗估，反算保留空。细节图另测四来源小值及两期总深度，共18条记录。其余点未逐一测量；64个分项、16个总值及全部类别和来源标签已单独核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均可辨白色多层游艇、水平海面与带波纹、光照的海水剖面。",
+            "data_adaptation_excluded_zh": "不比较旧数值、旧峰谷和当前来源命名；艇型细节不作为必需品牌身份。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "游艇均在右上，船底接触顶部水面；四种颜色水层在下方连续相邻。",
+            "data_adaptation_excluded_zh": "排除允许的船身尺寸、位置及非数据厚度适配；左深右浅由当前数据决定。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "海洋主体和横向时期仍主导画面；成图形成上标题、中剖面、下表格的整齐布局，并加入右下细节框。",
+            "data_adaptation_excluded_zh": "外置图例、数值表、标签位置及数据造成的轮廓方向均属允许变化，不作为缺陷。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "均采用白底、写实游艇和有水光纹理的绿蓝紫层；成图较柔和，参考更浓艳且水体明暗反差更强。",
+            "data_adaptation_excluded_zh": "不因当前点位形成的折线轮廓、厚度或微小层减分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/7e2feb12ee4f83",
       "numeric_supported": true,
