@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T23:35:29.841223+00:00",
+  "updated_at": "2026-10-19T23:42:29.956952+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,9 +11,9 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "ok": 67,
-      "pending": 24,
+      "ok": 71,
       "running": 3,
+      "pending": 20,
       "technical_failure": 2
     },
     "routing_audits": {
@@ -44792,7 +44792,372 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为暗色背板前的融化地球，地球连到积液和越过底座前缘的滴流，黑红两折线叠在地球前。成图保留这一连接和叠合关系；可见1960–1982共23个年份、黑色价格与红色产出系列、两行46个数值、百分比单位、SYNTHETIC DATA和1982 FORECAST。−0.4%红点位于零线下。成图地球居左、积液向右延展，新增宽标题区和底部数值表；材质由平面印刷变为立体水彩。",
+        "summary_zh": "未发现违反冻结核心要求的可见缺陷。数据、标签和融化地球叠合关系完整；七个代表点的像素误差均低于3%满量程。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "测量指定image.png原始2000×1140像素。15、12、9、−1刻度网格实测位于y约302、405、508、852；独立标定34.375像素/百分点，零线y约817.625。由局部黑红像素估计点中心并反读数值，未抄录源码坐标。mark_extent_px为点中心至零线的垂直距离。满量程误差分母为16个百分点。",
+        "uncertainties_zh": "中心测量通常约±1像素，陡峰约±2像素；小值相对精度弱于满量程精度。1977两点局部相叠，无法独立精确定位完整中心。未逐点测量其余39个坐标。素材和源码可核实可见合成，但未检查编排文件，无法核实capture_render.py调用链。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "23个年份顺序完整，两行46个数值、两系列图例、单位及1982预测标识可见。源码使用全部23点，项目数据与冻结数据相同。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项核对46个数字均符合输入；六个突出标注9.6、13.4、−0.4、5.9、2.4、5.1均正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "价格为黑色，产出为红色；数值列与年份对齐。1982金色年份、竖虚线和末段虚线共同绑定预测身份。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "两系列共用−1–15%线性轴，各年等距。七点独立像素抽测最大估计误差约0.18%满量程，低于3%阈值；球体和底座透视未扭曲数据坐标。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始及处理素材，地球、积液和滴流与成图对应，构成主要视觉内容。render.py加载素材并根据数据生成路径、点及文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "参考和成图均为双折线叠合融化地球。定量位置由折线中心线承担，液池面积不承担数值；地球未变为独立旁置插图。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原分辨率下标题、合成数据提示、全部年份和数值、图例及单位清楚，负值和预测说明可读。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "大陆覆盖球体，球体下缘连续接入积液，液池铺在浅透视底座上，滴流越过前缘向下；暗背板和前景双系列完整。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题、年度价格通胀与实际产出副标题、YEAR及CHANGE (%)明确主题、年度角色和百分比单位；SYNTHETIC DATA明确合成性质。"
+          },
+          "reference_meaning": {
+            "status": "pass",
+            "evidence_zh": "价格通胀、实际产出的年度百分比角色及融化滴流动作保留。当前合成数据不要求沿用OECD实数、旧峰谷或原衰退结论。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "0.5与−0.4可见并分居零线两侧，价格最小值1.9可定位。1977的3.2/3.3局部相叠，两色仍可追踪，但无法精确辨出两个完整中心；未见明显错值或系列丢失。"
+          }
+        },
+        "semantic_attribution_zh": "合成数值、当前标题和不沿用OECD真实统计属于输入允许的适配；新峰谷由当前数据决定。年度通胀、实际产出、百分比角色及融化动作未丢失。1977的局部辨识限制来自近邻数据和像素笔画；材质及版式差异单独记录于参考保真评分。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "price_inflation",
+              "category": "1968",
+              "expected_value": 13.4,
+              "observed_value": 13.3709,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 459.625,
+              "full_scale_error_percent": 0.1818,
+              "small_value_relative_error_percent": 0.2171,
+              "bbox_xyxy_normalized": [
+                0.3995,
+                0.30702,
+                0.4075,
+                0.32105
+              ],
+              "evidence_zh": "黑色最大值点位于地球上部，中心估计约(807,358)。",
+              "uncertainty_zh": "峰点连接陡线，中心估计约±2像素。"
+            },
+            {
+              "series_id": "price_inflation",
+              "category": "1972",
+              "expected_value": 4.9,
+              "observed_value": 4.9055,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 168.625,
+              "full_scale_error_percent": 0.0341,
+              "small_value_relative_error_percent": 0.1113,
+              "bbox_xyxy_normalized": [
+                0.5485,
+                0.56228,
+                0.5565,
+                0.57632
+              ],
+              "evidence_zh": "内部黑点中心列主要黑色像素位于y=646–652，估计中心y=649。",
+              "uncertainty_zh": "中心估计约±1像素。"
+            },
+            {
+              "series_id": "price_inflation",
+              "category": "1980",
+              "expected_value": 1.9,
+              "observed_value": 1.9091,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 65.625,
+              "full_scale_error_percent": 0.0568,
+              "small_value_relative_error_percent": 0.4785,
+              "bbox_xyxy_normalized": [
+                0.8465,
+                0.65263,
+                0.8545,
+                0.66667
+              ],
+              "evidence_zh": "价格最小值黑点中心列主要像素位于y=749–755，估计中心y=752。",
+              "uncertainty_zh": "约±1像素，相当于该值约1.5%的相对不确定度。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1960",
+              "expected_value": 0.5,
+              "observed_value": 0.5127,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 17.625,
+              "full_scale_error_percent": 0.0795,
+              "small_value_relative_error_percent": 2.5455,
+              "bbox_xyxy_normalized": [
+                0.101,
+                0.69474,
+                0.109,
+                0.70877
+              ],
+              "evidence_zh": "最小正值红点中心列主要像素位于y=796–804，估计中心y=800，高于零线约17.6像素。",
+              "uncertainty_zh": "约±1像素，相当于0.5约5.8%的相对不确定度，不能保证百分之一量级的小值精度。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1967",
+              "expected_value": -0.4,
+              "observed_value": -0.3891,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 13.375,
+              "full_scale_error_percent": 0.0682,
+              "small_value_relative_error_percent": 2.7273,
+              "bbox_xyxy_normalized": [
+                0.362,
+                0.72193,
+                0.37,
+                0.73596
+              ],
+              "evidence_zh": "负值红点主体位于y=827–835，估计中心y=831，低于零线约13.4像素。",
+              "uncertainty_zh": "已排除更下方引线像素；约±1像素，相当于绝对值0.4约7.3%的相对不确定度。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1972",
+              "expected_value": 4.6,
+              "observed_value": 4.6,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 158.125,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.5485,
+                0.57149,
+                0.5565,
+                0.58553
+              ],
+              "evidence_zh": "内部红点中心列主要像素位于y=656–663，估计中心y=659.5，与上方黑点可分。",
+              "uncertainty_zh": "约±1像素；计算误差为0仅对应所选近似中心，不代表实际零误差。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1980",
+              "expected_value": 5.9,
+              "observed_value": 5.9091,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 203.125,
+              "full_scale_error_percent": 0.0568,
+              "small_value_relative_error_percent": 0.1541,
+              "bbox_xyxy_normalized": [
+                0.8465,
+                0.53202,
+                0.8545,
+                0.54605
+              ],
+              "evidence_zh": "产出最大值红点中心列主要像素位于y=610–619，估计中心y=614.5。",
+              "uncertainty_zh": "中心估计约±1像素。"
+            },
+            {
+              "series_id": "price_inflation",
+              "category": "1977",
+              "expected_value": 3.2,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.734,
+                0.6114,
+                0.744,
+                0.6263
+              ],
+              "evidence_zh": "x约1477处，红色像素延至y=706，黑色残留笔画约y=707–710；两线可从两侧追踪，底表显示3.2。",
+              "uncertainty_zh": "两点只差0.1个百分点，局部相叠，无法独立恢复完整标记的精确中心。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1977",
+              "expected_value": 3.3,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.734,
+                0.6114,
+                0.744,
+                0.6263
+              ],
+              "evidence_zh": "x约1477处红点位于黑笔画上方，底表显示3.3，两条路径均可追踪。",
+              "uncertainty_zh": "局部笔画相叠，未以文字或源码代替两点中心的独立像素证据。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "共同主体及融化连接",
+              "required_parts": [
+                "地球与大陆",
+                "下缘融液",
+                "底座上的积液",
+                "越过前缘的滴流"
+              ],
+              "relationship": "球体下缘接入积液；积液接触底座上表面，滴流跨过前缘向下。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.15,
+                0.21,
+                0.89,
+                0.812
+              ],
+              "evidence_zh": "球体下半部多条青绿和乳白流体连接液池；前缘约x=334、503、888、1151处有下垂滴流，未见断开或倒置。"
+            },
+            {
+              "category": "大值实例：1968价格13.4",
+              "required_parts": [
+                "黑色点和折线",
+                "地球表面",
+                "13.4%引线标签"
+              ],
+              "relationship": "黑线在地球前叠合，峰点连接两侧路径，标签指向同一峰点。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.365,
+                0.26,
+                0.448,
+                0.5
+              ],
+              "evidence_zh": "黑点约(807,358)，位于球体欧洲附近；线连续下行至1969。数据由线中心位置承担，地球轮廓不编码13.4。"
+            },
+            {
+              "category": "小值实例：1960产出0.5",
+              "required_parts": [
+                "红色起点",
+                "零线",
+                "液池和底座左缘"
+              ],
+              "relationship": "红点高于零线，并在底座左上缘前景连接右侧路径。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.095,
+                0.679,
+                0.151,
+                0.724
+              ],
+              "evidence_zh": "红点约(210,800)，零线约y=818；点未压成零，路径与主体处于同一叠合图面。"
+            },
+            {
+              "category": "负值实例：1967产出−0.4",
+              "required_parts": [
+                "红色谷点",
+                "零线",
+                "底座前侧",
+                "负值标注"
+              ],
+              "relationship": "谷点在零线下方，路径跨过底座前侧，标注向下连接。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.333,
+                0.69,
+                0.402,
+                0.793
+              ],
+              "evidence_zh": "谷点约(732,831)，低于零线约13.4像素；下方−0.4%负号和连接关系明确。"
+            },
+            {
+              "category": "近邻实例：1977双系列",
+              "required_parts": [
+                "黑色价格笔画",
+                "红色产出笔画",
+                "共同年份位置"
+              ],
+              "relationship": "两条路径在同一年近邻叠合，仍可从左右追踪。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.734,
+                0.6114,
+                0.744,
+                0.6263
+              ],
+              "evidence_zh": "红笔画靠上、黑笔画靠下；局部覆盖使完整标记中心边界不独立，但两个系列仍保留。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "使用当前合成年份与数值，保留通胀、实际产出和年度百分比；允许姿态、非数据厚度、标签位置适配，不要求复制旧恶化论断或OECD实数。",
+            "output_added_or_lost_meaning_zh": "新增完整数值表和合成数据提示；融化、积液与滴流动作保留，没有用物体名称取代经济主题。",
+            "visible_inscription_evidence_zh": "Price inflation & output growth；Annual price inflation and real output change / 1960–1982 / %；CHANGE (%)；YEAR；SYNTHETIC DATA；1982 FORECAST。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "输入明确为合成数据，参考实数和旧涨跌论断不作为复刻要求；年度价格和产出角色一致。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "价格峰为1968，产出最小值为1967、最大值为1980，均符合当前数组。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "1977的0.1个百分点间隔约3.4像素，笔画部分相叠；小值相对精度不能由满量程容差保证。"
+            }
+          ],
+          "measurement_coverage_zh": "单面板两通道各测最小正值、大值和内部点，另测唯一负值，共7/46点；1977两点另列不可精确独立测量。其余39点未逐个反读。全部23个年份、46个数值文字、图例、单位及预测标签另行核对；源码完整用点仅作为佐证。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "地球、大陆、连续融液、下滴、暗背板和浅底座均可见，核心物体身份完整。",
+            "data_adaptation_excluded_zh": "不以大陆位置、球体姿态或非数据厚度差异扣分。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "地球下缘连续接入积液，积液横铺底座，滴流越过前缘向下；折线在地球和积液前叠合。",
+            "data_adaptation_excluded_zh": "允许球体左右位置、姿态与底座厚度适配。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "暗背景上的地球和双折线仍为主要视觉区；标题扩大、图例移到上方、底部新增全值表，参考更集中于中央地球。",
+            "data_adaptation_excluded_zh": "不评价新数据峰谷、年份数量和标签内容变化，仅比较区域层级。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "参考为灰粉色平面印刷插画与轮廓线，成图为青绿乳白立体水彩地球、光泽积液及石质底座；核心物体仍可辨。",
+            "data_adaptation_excluded_zh": "不以数据导致的路径变化或允许的非数据厚度变化扣分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/b3de251c352d89",
       "numeric_supported": true,
@@ -82103,7 +82468,463 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为美国旗纹地图病人、透视病床及床尾三线图板。成图可见地图病人靠在枕垫上，体温计接触口部，两夹扣连接栏杆与图板。红阶梯、黑实线、黑短划线清楚区分；标题、合成声明、单位、刻度和日期可读。未见明显越出板面、断接或关键遮挡。源码前保真评分：身份4、姿态关系4、构图3、材质3；排除新走势、合成主题和获准姿态调整。",
+        "summary_zh": "通过。日期、系列、数值标签完整，抽测几何符合容差，病人—病床—床尾图板关系保留。原参考含义因输入改编而部分保留，不计为输出缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "原图2000×1643。独立像素测得首日期刻线x=247、右轴x=1359、21%网格y=773、9%基线y=1226。反算v=9+(1226-y)×12/453，天数=(x-247)×67/1112。mark_extent_px为沿对应轴距显示起点的距离，不是点直径。纵轴抽样最大偏差约0.036个百分点，即0.30%满量程；横轴约0.036天，即0.054%满量程。源码仅佐证规则。",
+        "uncertainties_zh": "局部点与连线相接，像素中心估计约有1–2px不确定性；最短一日平台约16px，不支持亚像素精度保证。未穷尽测量所有线段。未查看禁用日志、自检或编排证据，不能独立确认每次capture_render.py调用。参考含义仅据可见文字和结构判断。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "21个日期完整：3月10个、4月6个、5月5个；A有11条、B有8条、C有11条数值标注，共30条，包括A的末尾16.9封闭记录。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "30个数值标签与冻结数据一致；2040年日期、% per year、9–21刻度及30条观察说明正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "A绑定红阶梯，B绑定黑实线，C绑定黑短划线；数值与对应点邻接，拥挤末端使用引线，日期在对应横坐标下交错排列。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "九个纵轴样本和三个横轴转折均在容差内。A保持至下一更新日期；B/C按各自日期直连，从03-06开始，分别止于05-08和05-09，未见外推。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_02.png和bed_scene.png中的地图旗纹、眼睛、体温计、栏杆、夹扣及轮子与成图对应。render.py读取素材和数据，控制坐标、路径、标记及文字；未执行渲染。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "病人靠枕垫并位于前栏杆后，夹扣连接图板与栏杆。数据均在前向图板表面内，框架未遮挡关键曲线或标签，符合参考的图板叠合关系。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、声明、图例、单位、日期及全部数值可读；日期错排和末端引线有效，未见必需标签裁切或不可辨重叠。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "旗纹美国轮廓构成病人身体，体温计接触口部；身体、枕垫、床面、栏杆、夹扣、图板、床腿和轮子关系连续。数据由板内折线位置承载。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题、SYNTHETIC DATA、three synthetic comparable series、% per year及2040日期明确表达当前主题、指标、单位和系列角色；没有误表为组成份额。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留美国病人与床尾监测图关系；原FALLING FEVER及真实利率角色被冻结输入改为合成系列和中性年化率变化，属于输入改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "B最低点距截断基线约23–24px，点与连线可辨；A最短一日段约16px，仍连接竖边；C低点空心圈及短划线可辨。小间隔相对精度仍受分辨率限制。"
+          }
+        },
+        "semantic_attribution_zh": "合成题名及Series A/B/C为输入明确允许的改编；不同峰值和走势属于数据驱动变化。输出保留病人—病床—床尾监测图关系，未见当前语义遗漏。短间隔精度限制归于像素分辨率。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "A",
+              "category": "2040-05-09（最小末平台）",
+              "expected_value": 16.9,
+              "observed_value": 16.894,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 298,
+              "full_scale_error_percent": 0.05,
+              "small_value_relative_error_percent": 0.035,
+              "bbox_xyxy_normalized": [
+                0.666,
+                0.56,
+                0.6795,
+                0.57
+              ],
+              "evidence_zh": "末平台像素带y=925–931，中心约928，反算16.894%；末记录与前一平台同为16.9。",
+              "uncertainty_zh": "水平线中心约±1px；同一平台测量不代表两个独立样本。"
+            },
+            {
+              "series_id": "A",
+              "category": "2040-03-15（最大值）",
+              "expected_value": 20.3,
+              "observed_value": 20.298,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 426.5,
+              "full_scale_error_percent": 0.017,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.22,
+                0.482,
+                0.248,
+                0.492
+              ],
+              "evidence_zh": "峰平台像素带y=797–802，中心799.5，反算20.298%。",
+              "uncertainty_zh": "约±1px；本项不是小值。"
+            },
+            {
+              "series_id": "A",
+              "category": "2040-03-18（内部平台）",
+              "expected_value": 19.7,
+              "observed_value": 19.702,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 404,
+              "full_scale_error_percent": 0.017,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.248,
+                0.496,
+                0.339,
+                0.505
+              ],
+              "evidence_zh": "平台内x=535–624的红像素带y=819–825，中心822，反算19.702%。",
+              "uncertainty_zh": "取平台内部，排除文字和竖向转折；约±1px。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-03-06（全图最小值）",
+              "expected_value": 9.6,
+              "observed_value": 9.6358,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 24,
+              "full_scale_error_percent": 0.298,
+              "small_value_relative_error_percent": 0.373,
+              "bbox_xyxy_normalized": [
+                0.1445,
+                0.727,
+                0.153,
+                0.737
+              ],
+              "evidence_zh": "实心点及邻接短线局部纵界1197–1207，中点估计y≈1202，反算约9.636%。",
+              "uncertainty_zh": "连线使包围盒中心略偏上，约±2px；对截断余量0.6个百分点，像素定位不确定性约9%，不能据满量程通过保证小余量精度。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-04-03（最大值）",
+              "expected_value": 15.8,
+              "observed_value": 15.8079,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 257,
+              "full_scale_error_percent": 0.066,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.377,
+                0.586,
+                0.385,
+                0.595
+              ],
+              "evidence_zh": "峰点局部纵界965–973，中心约969，反算15.808%。",
+              "uncertainty_zh": "点与折线相连，中心约±1–2px。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-03-27（内部值）",
+              "expected_value": 14.9,
+              "observed_value": 14.9073,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 223,
+              "full_scale_error_percent": 0.061,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.319,
+                0.606,
+                0.326,
+                0.615
+              ],
+              "evidence_zh": "实心点局部纵界998–1008，中心约1003，反算14.907%。",
+              "uncertainty_zh": "点与斜线相连，中心约±1–2px。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-03-13（最小值）",
+              "expected_value": 10.9,
+              "observed_value": 10.9205,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 72.5,
+              "full_scale_error_percent": 0.171,
+              "small_value_relative_error_percent": 0.188,
+              "bbox_xyxy_normalized": [
+                0.2025,
+                0.698,
+                0.2105,
+                0.707
+              ],
+              "evidence_zh": "空心低点及邻接短划线局部纵界1149–1158，中心约1153.5，反算10.9205%。",
+              "uncertainty_zh": "邻接线影响包围盒，约±1–2px；相对误差以10.9为分母。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-04-24（并列最大值）",
+              "expected_value": 13.2,
+              "observed_value": 13.2119,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 159,
+              "full_scale_error_percent": 0.099,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.551,
+                0.645,
+                0.559,
+                0.655
+              ],
+              "evidence_zh": "空心点局部纵界1063–1071，中心1067，反算13.2119%。",
+              "uncertainty_zh": "约±1px；未重复测量全部并列最大值。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-04-03（内部值）",
+              "expected_value": 12.2,
+              "observed_value": 12.2185,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 121.5,
+              "full_scale_error_percent": 0.155,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.377,
+                0.668,
+                0.385,
+                0.677
+              ],
+              "evidence_zh": "空心点局部纵界1100–1109，中心1104.5，反算12.2185%。",
+              "uncertainty_zh": "邻接短划线影响中心估计，约±1–2px。"
+            },
+            {
+              "series_id": "A（横轴日距通道）",
+              "category": "2040-03-04（距起点1天）",
+              "expected_value": 1,
+              "observed_value": 0.964,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 16,
+              "full_scale_error_percent": 0.054,
+              "small_value_relative_error_percent": 3.597,
+              "bbox_xyxy_normalized": [
+                0.1235,
+                0.522,
+                0.135,
+                0.552
+              ],
+              "evidence_zh": "首个竖边像素x=260–266，中心263，距起点247为16px，反算0.964天。",
+              "uncertainty_zh": "约±1px，相当于一日间隔约6%的相对定位不确定性。"
+            },
+            {
+              "series_id": "A（横轴日距通道）",
+              "category": "2040-03-29（距起点26天）",
+              "expected_value": 26,
+              "observed_value": 25.9987,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 431.5,
+              "full_scale_error_percent": 0.002,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.336,
+                0.504,
+                0.3425,
+                0.509
+              ],
+              "evidence_zh": "内部竖边像素x=676–681，中心678.5，反算25.9987天。",
+              "uncertainty_zh": "边界约±1px。"
+            },
+            {
+              "series_id": "A（横轴日距通道）",
+              "category": "2040-05-07（距起点65天）",
+              "expected_value": 65,
+              "observed_value": 65.0117,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1079,
+              "full_scale_error_percent": 0.017,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.66,
+                0.551,
+                0.6665,
+                0.569
+              ],
+              "evidence_zh": "末次下降竖边像素x=1323–1329，中心1326，反算65.0117天；平台继续至右轴。",
+              "uncertainty_zh": "约±1px；文字引线未计入竖边。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "大型地图病人与病床",
+              "required_parts": [
+                "旗纹美国轮廓",
+                "枕垫与床面",
+                "前后栏杆"
+              ],
+              "relationship": "病人靠在床内枕垫上，前栏杆遮挡下部，床面向右后方延伸。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.3225,
+                0.046,
+                0.95,
+                0.578
+              ],
+              "evidence_zh": "美国轮廓与旗纹连续；白色枕垫在身体后，前栏杆横过身体下方。"
+            },
+            {
+              "category": "体温计与口部",
+              "required_parts": [
+                "病人口部",
+                "体温计尖端",
+                "液柱与外壳"
+              ],
+              "relationship": "尖端接触口部，管体向右上伸出。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.8525,
+                0.206,
+                0.9675,
+                0.262
+              ],
+              "evidence_zh": "白色管尖与口线接触，外壳、刻线和红色液柱连续，未见断接。"
+            },
+            {
+              "category": "床尾图板安装",
+              "required_parts": [
+                "前栏杆",
+                "两个夹扣",
+                "框体",
+                "浅色图板",
+                "床腿与轮子"
+              ],
+              "relationship": "夹扣从栏杆连接图板上缘，图表在板面内部，床腿下接轮子。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.035,
+                0.354,
+                0.7675,
+                0.967
+              ],
+              "evidence_zh": "两夹扣压在板面上缘，数据均位于矩形纸面内，框架层次完整。"
+            },
+            {
+              "category": "大型值：A的20.3峰平台",
+              "required_parts": [
+                "红阶梯",
+                "20.3标签",
+                "纸面",
+                "共用轴"
+              ],
+              "relationship": "平台连接前后阶梯，纵向位置承载年化率。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.2075,
+                0.472,
+                0.2525,
+                0.516
+              ],
+              "evidence_zh": "峰平台位于21%网格下，标签在平台下方，转折连续且无遮挡。"
+            },
+            {
+              "category": "小值：B的9.6起点",
+              "required_parts": [
+                "实心点",
+                "上升实线",
+                "9.6标签",
+                "基线与图板"
+              ],
+              "relationship": "点位于基线上方并连接下一记录，全部落在纸面内。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.141,
+                0.721,
+                0.1765,
+                0.749
+              ],
+              "evidence_zh": "约9px黑点及上升连线可辨，距基线约23–24px，标签未替代几何。"
+            },
+            {
+              "category": "短时间：A首个一日平台",
+              "required_parts": [
+                "03与04日期",
+                "红水平段",
+                "竖向转折"
+              ],
+              "relationship": "03日保持到04日，短水平段接上升竖段。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.12,
+                0.517,
+                0.1375,
+                0.556
+              ],
+              "evidence_zh": "x≈247至263保持17.6后升至18.7；约16px短平台可辨，未扩成等间距。"
+            },
+            {
+              "category": "小值：C的10.9低点",
+              "required_parts": [
+                "空心点",
+                "短划线",
+                "10.9标签",
+                "浅色纸面"
+              ],
+              "relationship": "点内露出纸面，外圈接同系列短划线。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.193,
+                0.693,
+                0.2215,
+                0.732
+              ],
+              "evidence_zh": "黑外圈与浅色内部可分辨，左右短划线继续连接11.0与11.5。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "核心指定合成年化率主题及Series A/B/C，允许姿态、厚度和排版调整，不要求旧峰值或固定涨跌。",
+            "output_added_or_lost_meaning_zh": "当前合成系列和时间变化表达完整；真实利率角色及退烧论点未延续属于规定的输入改编。",
+            "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、ANNUAL RATE CHANGES、synthetic comparable series、Series A/B/C、% per year、2040日期、True calendar-day spacing及Truncated scale: 9–21%。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实利率及退烧题名被输入改为合成年化率与Series A/B/C。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "A的新平台、B先升后缓变及C小幅上升符合当前数据。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "一日平台约16px，边界定位约±1px，满量程通过不保证短间隔高相对精度。"
+            }
+          ],
+          "measurement_coverage_zh": "三系列各测最小、最大或并列最大、内部值，共9项；共用日距测1、26、65天三处转折。全部21日期和30个数值另行核对。未穷尽每段轨迹或全部并列点，未以源码公式代替几何测量。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "保留美国轮廓、星条旗表面、金属栏杆及轮子、红床体和床尾图板；体温计及病人表情可辨。",
+            "data_adaptation_excluded_zh": "不扣新增枕垫、表情和身份兼容的非数据部件调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "病人位于床面及前栏杆后，图板在栏杆下方，床体向右后方延伸；夹扣明确连接图板。",
+            "data_adaptation_excluded_zh": "允许病人姿态、床厚度及非数据部件调整，未要求固定角度。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留左上标题、右上病人及下方主体图板；图例移至左上，右下新增读图说明。",
+            "data_adaptation_excluded_zh": "不扣新数据轴、标签数量及避免拥挤所需空间。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留黑描边、红白蓝地图及灰金属床；参考偏平面印刷网点，成图为米色底、细腻织物与渐变金属。",
+            "data_adaptation_excluded_zh": "曲线形状和新文案不纳入材质保真。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/aec48f73ee4a53",
       "numeric_supported": true,
@@ -90222,7 +91043,232 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为绿色背景上的顶视圆形宴会桌，三人围桌，礼盒、食品与餐具位于材质扇区构成的桌面上。待评图保留这些物体及桌面融合关系；九类计数和百分比均可见。左下Budget E为橙色窄扇区，左侧Price not a factor为最大金色扇区。主题、合成标识、500 simulated responses及单选说明清晰。",
+        "summary_zh": "评审已保存为review.json并通过schema.json校验。九类数据、标签绑定和桌面融合关系符合要求，未发现明确的必需内容或结构缺陷。按后续指令未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "直接读取2000×1412成图像素，在五个半径处定位九条色度边界，拟合桌心约(1049.52,794.94)，按实测角宽×500/360换算计数。九类最大满量程误差约0.0494%，即0.0494个百分点。未使用生成方掩膜或自检作为测量证据。",
+        "uncertainties_zh": "抗锯齿、细接缝和布纹限制边界定位精度，尤其不能把最小项接近零的点估计误差视为高精度保证。未检查被排除的编排或日志文件，不能独立确认全部历史渲染的捕获途径。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "九类、全部计数和百分比、总量500、主题、合成标识、单位及单选说明均完整。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "依次为76/15.2%、38/7.6%、39/7.8%、43/8.6%、44/8.8%、45/9.0%、29/5.8%、3/0.6%、183/36.6%，合计500和100%。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "九条引线落入对应材质扇区，父类与子类名称准确，顺时针类别顺序与输入一致。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "全部九个扇区经最终像素核验，最大份额偏差约0.05个百分点。最小项实测约2.161°，目标2.16°；最大项约131.781°，目标131.76°。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看两张原始素材图，人物、礼盒、食品、饮品和布纹均在成图中实质可见。源码使用计数控制圆盘角度掩膜、素材裁切和文字。捕获历史未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "材质扇区直接构成共同桌面；人物手部接触桌缘，礼盒、食品和饮品由桌面承托。顶视方向及遮挡关系一致。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下全部必需名称、计数、百分比和统计说明可辨，未见明显截断或相互遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "共同圆桌、人物、礼品与食品的接触和包含关系保留；数据边界就是桌面材质边界。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Gift budget preferences、Holiday gifting、simulated responses和One choice per simulated participant明确表达当前主题、单位及互斥单选口径。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留节日礼物预算主题；参考的浪漫问句、最低金额和特定人群限定已由冻结输入泛化为合成预算偏好，属于输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "Budget E橙色窄片在半径400像素处弧宽约15.1像素，仍能辨认其与相邻桌布及共同桌缘的关系。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题、指标、单位和类别角色未见输出遗漏。参考人口限定和真实币值由冻结合成输入替换；九类及角宽变化由当前数据造成。小扇区的像素精度限制不等于物体关系丢失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "preference",
+              "category": "Budget E",
+              "expected_value": 3,
+              "observed_value": 3.001,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 15.1,
+              "full_scale_error_percent": 0.0002,
+              "small_value_relative_error_percent": 0.037,
+              "bbox_xyxy_normalized": [
+                0.364,
+                0.561,
+                0.526,
+                0.778
+              ],
+              "evidence_zh": "实测角宽约2.161°，目标2.16°；弧长报告在半径400像素处。另在y=1040、x=777..794读到18个连续橙色像素，水平宽度不等于弧宽。",
+              "uncertainty_zh": "两侧边界存在约1像素级定位不确定性；0.037%的点估计误差不代表相对测量精度。"
+            },
+            {
+              "series_id": "preference",
+              "category": "Price not a factor",
+              "expected_value": 183,
+              "observed_value": 183.029,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 920,
+              "full_scale_error_percent": 0.0058,
+              "small_value_relative_error_percent": 0.016,
+              "bbox_xyxy_normalized": [
+                0.309,
+                0.258,
+                0.526,
+                0.769
+              ],
+              "evidence_zh": "实测角宽约131.781°，目标131.76°；920像素为半径400像素处的弧长。",
+              "uncertainty_zh": "细接缝和抗锯齿带来约1像素级定位不确定性，计数为近似反推。"
+            },
+            {
+              "series_id": "preference",
+              "category": "Budget C",
+              "expected_value": 45,
+              "observed_value": 45.246,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 227.4,
+              "full_scale_error_percent": 0.0493,
+              "small_value_relative_error_percent": 0.548,
+              "bbox_xyxy_normalized": [
+                0.432,
+                0.561,
+                0.553,
+                0.869
+              ],
+              "evidence_zh": "实测角宽约32.577°，目标32.40°；弧长报告在半径400像素处。",
+              "uncertainty_zh": "色度分界和接缝存在约1像素级定位不确定性，不能将小数位作为测量精度。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Price not a factor（最大扇区）",
+              "required_parts": [
+                "金色数据桌面",
+                "圆桌边缘",
+                "人物手部",
+                "礼盒",
+                "饮品"
+              ],
+              "relationship": "材质构成桌面，人物位于桌外并接触桌缘，礼盒和饮品置于桌面上。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.205,
+                0.208,
+                0.527,
+                0.78
+              ],
+              "evidence_zh": "金色区域与其他扇区共享圆盘，桌面礼盒、酒杯和蜡烛带接触阴影，左侧人物手伸至桌边。"
+            },
+            {
+              "category": "Budget E（最小正值）",
+              "required_parts": [
+                "橙色窄片",
+                "蓝色桌布",
+                "金色桌布",
+                "共同桌缘",
+                "礼盒"
+              ],
+              "relationship": "橙片夹在两块材质之间并终止于共同圆桌边，礼盒遮挡靠内部分。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.364,
+                0.561,
+                0.526,
+                0.778
+              ],
+              "evidence_zh": "外侧窄片连续可辨，无空隙或独立图条；其边界指向共同桌心，礼盒位于其上方。"
+            },
+            {
+              "category": "Budget A子类",
+              "required_parts": [
+                "浅色数据桌面",
+                "食品盘",
+                "食品"
+              ],
+              "relationship": "食品包含于盘内，盘位于两块相邻数据桌布之上。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.551,
+                0.387,
+                0.656,
+                0.513
+              ],
+              "evidence_zh": "食品盘与接触阴影落在浅色桌面上，径向边界在盘外继续显露，未见图面穿透。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入采用500个合成单选响应和Budget父类及互斥子类，替代参考的真实样本、币值阈值和具体问句。",
+            "output_added_or_lost_meaning_zh": "必需当前意义均保留；参考的浪漫和人群限定未出现，属于允许的输入泛化。",
+            "visible_inscription_evidence_zh": "可见Gift budget preferences、Holiday gifting、SYNTHETIC DATA、500 simulated responses、One choice per simulated participant、子类互斥说明及100% total。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "参考的具体问句及人群限定被冻结合成预算偏好输入泛化，不归因于输出缺陷。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "扇区数量和角宽按当前九类数据变化，同时保持共同桌面载体。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "最小项可见且保留桌面关系，但约15像素弧宽限制相对误差的精确估计。"
+            }
+          ],
+          "measurement_coverage_zh": "已测量唯一角宽通道的全部九类，每条边界使用五个半径取样；此处列最小、最大和内部类别代表值，review.json保存完整九项测量。全部标签及必需统计说明另经目视检查。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "圆桌、三位人物、礼盒、食品和饮品保留；人物服饰及具体餐具改变，参考桌外礼盒组合未保留。",
+            "data_adaptation_excluded_zh": "不扣除类别数量、角宽、当前标签和合成主题的变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均为俯视围桌场景，人物在桌外，手部接近或接触桌缘，礼盒与食品位于数据桌面上。",
+            "data_adaptation_excluded_zh": "排除允许的坐姿、手臂姿态和道具位置调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留绿色背景、中央大圆桌和外部引线；待评图标题增大，样本量单独占据右上，文字层级有所变化。",
+            "data_adaptation_excluded_zh": "不扣除新增类别需要的标签数量和允许的位置调整，也不要求旧品牌文字。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "写实人物、礼品、布纹桌面及落影保留；待评图背景更平滑、桌缘有细金色描边，字体更规整。",
+            "data_adaptation_excluded_zh": "不扣除数据引起的材质区域尺寸和标签内容变化。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/ac40a5d587a519",
       "numeric_supported": true,
@@ -98151,7 +99197,251 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.94,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为左侧面包与右侧纸钞相接，中间白缝，下方有反射。待评图清楚显示当前主题、SYNTHETIC DATA、系列、单位、两项金额和份额及总额。长面包占据几乎全部宽度，右端纸钞呈极细暖色竖条；右下细节明确标注横向×80、纵向不放大。主图纸钞面纹和接触阴影难以辨认。以上观察已在查看源码前保存。",
+        "summary_zh": "数值、标签绑定与主体净宽比例符合要求，素材实质可见，代码控制数据几何。未发现重大可见缺陷。微小纸钞的主体身份和接触细节仅部分可辨。已保存并验证review.json，未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "对1440×2040的image.png作只读像素取样。面包着色支撑宽约1218像素，纸钞约3像素，粗比约99.7543%与0.2457%，距离目标均约0.0461个百分点。此为像素支撑测量，不是抗锯齿覆盖率。另检查约195像素宽的×80纸钞细节。未运行渲染或读取已有自检。",
+        "uncertainties_zh": "主图纸钞仅约2至3像素宽，无法可靠分离亚像素覆盖、白缝和阴影，不能确认其精确相对误差。细节图不能替代主图精度证明。依禁止查看日志的范围，未核验历史每次渲染是否调用capture_render.py。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "两类、唯一系列、完整金额、份额、年度总额、单位与合成声明齐全，无遗漏的必需面板。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "£1,497.00598802、£2.99401198、≈99.8004%、≈0.1996%及£1,500均正确，正小值未舍入为零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "图例明确面包→Used、纸钞→Wasted；金额位于对应类别下，Wasted箭头指向右端细条，细节图明确声明倍率与用途。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素支撑粗测份额约99.7543%与0.2457%，目标为99.8004%与0.1996%，差异远低于3个百分点；小值亚像素净宽仍不确定。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01.png的面包纹理与切缝在主图实质可见，raw_02.png的人像和印纹在细节图可见；素材清单与源码给出对应关系。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "生成材质位于实际承载净宽的主体内，白缝、反射与标签不计入宽度分母；共底线和层序合理，细节倍率明确。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、统计口径、数值、单位、图例和倍率说明清楚，无明显遮挡或截断。"
+          },
+          "critical_structure": {
+            "status": "partial",
+            "evidence_zh": "完整面包、相邻纸钞细条、亮缝、共同底边与反射可见；主图纸钞面部结构和接触阴影不能可靠分开，细节图未同时放大面包接缝。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "合成年度食品预算损耗、每户每年GBP口径、Used与Wasted角色及总额明确；两类确为同一预算组成，合计100%合理。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留食物与金钱损耗的联系；旧1/3、£400和宣传劝告被当前合成预算替代，属于输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "主图纸钞细条非零可见且可定位，但其面纹无法独立支持纸钞识别；明确标注的×80细节补充身份，不证明主图相对精度。"
+          }
+        },
+        "semantic_attribution_zh": "旧统计变化属于许可的合成主题适配；面包极宽、纸钞极窄属于数据驱动变化。主图纸钞身份与接触细节不清主要是分辨率限制，不能要求抬高小值。未见当前主题、单位或统计角色遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "annual_food_budget",
+              "category": "Used",
+              "expected_value": 1497.00598802,
+              "observed_value": 1496.31,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1218,
+              "full_scale_error_percent": 0.0461,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.076389,
+                0.395098,
+                0.922222,
+                0.626471
+              ],
+              "evidence_zh": "主体暖色像素支撑范围约x=110至1328；结合纸钞约3像素支撑，1218/(1218+3)×1500≈1496.31英镑。",
+              "uncertainty_zh": "属于像素外接范围粗估，边界存在抗锯齿，约1像素不确定性不影响满量程容差判定。"
+            },
+            {
+              "series_id": "annual_food_budget",
+              "category": "Wasted（主图最小正值）",
+              "expected_value": 2.99401198,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 3,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.922222,
+                0.438725,
+                0.924306,
+                0.626471
+              ],
+              "evidence_zh": "y=1000、1100处，x=1328至1330构成红褐细条，支撑约3像素；按支撑粗计份额约0.2457%，目标0.1996%。",
+              "uncertainty_zh": "3像素着色支撑不等于3像素全覆盖，不能可靠反推实际金额及小值相对误差。"
+            },
+            {
+              "series_id": "annual_food_budget",
+              "category": "Wasted（×80细节图）",
+              "expected_value": 2.99401198,
+              "observed_value": 2.997,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 195,
+              "full_scale_error_percent": 0.0002,
+              "small_value_relative_error_percent": 0.1,
+              "bbox_xyxy_normalized": [
+                0.797917,
+                0.727451,
+                0.934028,
+                0.915196
+              ],
+              "evidence_zh": "细节宽约195像素，按可见×80折算为2.4375像素；主图净跨度约1220像素，1500×(195/80)/1220≈2.997英镑。",
+              "uncertainty_zh": "约1像素边缘误差对应约0.5%的小值相对不确定性，大于约0.1%的点估计偏差；此项不代替主图精度测量。"
+            },
+            {
+              "series_id": "annual_food_budget",
+              "category": "年度食品预算合计",
+              "expected_value": 1500,
+              "observed_value": 1500,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.06,
+                0.72,
+                0.57,
+                0.84
+              ],
+              "evidence_zh": "左下年度食品预算合计£1,500及每户每年GBP单位可读。",
+              "uncertainty_zh": "仅核对文字，不作为几何融合证据。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Used：大型面包",
+              "required_parts": [
+                "完整外轮廓",
+                "表皮",
+                "切片缝",
+                "共同底面"
+              ],
+              "relationship": "切片缝包含于连续面包轮廓，底部落在带浅反射的承托面上；水平外轮廓宽度承载Used。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.076389,
+                0.395098,
+                0.922222,
+                0.65
+              ],
+              "evidence_zh": "圆顶、左侧弧面、表皮与切缝清楚，底缘约y=1278；切片数不参与编码。"
+            },
+            {
+              "category": "Wasted：主图接缝",
+              "required_parts": [
+                "面包右缘",
+                "亮缝",
+                "纸钞面",
+                "接触阴影",
+                "共同底边"
+              ],
+              "relationship": "纸钞位于面包右侧，以窄缝相隔并共底边；其净宽承载Wasted。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.920139,
+                0.438725,
+                0.925694,
+                0.626961
+              ],
+              "evidence_zh": "x≈1327为亮缝，x≈1328至1330为纸钞色条；左右邻接与共底边可确认，面纹和接触阴影未能单独辨认。"
+            },
+            {
+              "category": "纸钞识别细节",
+              "required_parts": [
+                "纸张外缘",
+                "上角弯折",
+                "雕刻印纹",
+                "人像",
+                "英镑符号"
+              ],
+              "relationship": "印纹、人像和£符号包含于纸张轮廓，连接线指回主图右端。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.797917,
+                0.727451,
+                0.934028,
+                0.915196
+              ],
+              "evidence_zh": "纸边、弯曲上角、花纹、人像与£符号可见；图中明确仅横向放大80倍，没有把此细节作为另一份额图。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "原宣传统计适配为合成年度食品预算，使用当前金额与每户每年GBP单位，不沿用旧1/3或£400；允许调整姿态、非数据厚度与排版。",
+            "output_added_or_lost_meaning_zh": "新增倍率明确的纸钞细节；统计角色和金钱损耗含义保留。主图微小纸钞的面纹与接触细节可见性降低。",
+            "visible_inscription_evidence_zh": "当前主题、Current measure、GBP per household per year、Used已使用、Wasted损耗、主体净宽合计100%和SYNTHETIC DATA均可读。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "当前合成主题及金额替代旧统计，符合冻结输入。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "99.8004%与0.1996%导致长面包和极窄纸钞，不应要求参考的旧比例。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "主图纸钞仅约2至3像素，面纹和接触阴影不可可靠分辨。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一净宽通道的两个类别，包括最大与最小正值；仅有两项，无第三个内部数据项。另核对×80细节及总额文字，所有必需标签均独立检查。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "切片面包、纸张外缘、纸钞人像和雕刻花纹保留；肖像与装饰图案局部改变。",
+            "data_adaptation_excluded_zh": "不因纸钞数据宽度微小扣分，不要求旧面额或统计文字。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "面包左、纸钞右、窄缝相隔、共同底线及下方反射的关系保留。",
+            "data_adaptation_excluded_zh": "排除数据压缩、允许的姿态与非数据厚度变化以及辅助细节图位置。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方标题、中央主体、下方金额层级；标题尺度、留白和双栏标注有所变化。",
+            "data_adaptation_excluded_zh": "不因新主题、合成声明、精确数值与单位更新扣分，不要求原宣传标识。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "米色背景、粗黑文字、写实面包、红褐纸钞及反射保留；面包更明亮、纹理更清晰。",
+            "data_adaptation_excluded_zh": "排除数据宽度和标签变化；评分为参考保留程度，不是美观评价。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/b1be2c9a00e2e7",
       "numeric_supported": true,
