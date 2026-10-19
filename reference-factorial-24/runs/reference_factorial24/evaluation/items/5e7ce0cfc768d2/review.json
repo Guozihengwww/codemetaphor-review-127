@@ -1,0 +1,386 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为浅黄色底、手绘绳圈与顶端悬绳结，圈内暖红粉色曲边分区，下方左中右各有成对羽毛。成图保留这一主体关系，圈内可见11个带完整标签的色区，中央Dream G标为6，右上Dream A子类3标为46。SYNTHETIC DATA、主题、Synthetic records、records单位、301总数及面积口径均可读。未见明显空洞、重叠或标签遮挡。",
+  "summary_zh": "通过。11类数值、单位和标签齐全，独立像素面积估计最大偏差约0.045个百分点。捕梦网结构与数据融合关系保留，最小区域可辨。review.json已用UTF-8保存并通过schema.json校验。",
+  "issues": [],
+  "measurement_notes_zh": "直接分析1440×2100的image.png：采样11种填色，以720个径向边缘点拟合完整圆盘，中心约(720.3,957.4)，有效半径约517.5像素。约91.7%的盘内像素可直接归色，其余文字、细线及抗锯齿覆盖处用邻近填色还原；分母为841290平方像素。未运行渲染器或使用生成方掩码、自检。mark_extent_px记录区域包围盒较长边，面积另列于证据。",
+  "uncertainties_zh": "面积是像素估计；文字覆盖与边缘抗锯齿使精确边界存在不确定性。各区轮廓移动1像素对应约0.059—0.164个百分点变化，远低于3个百分点容差；这不是统计置信区间。最小值相对误差点估计不保证同等精度。未查生成调用日志或归档执行记录，不能独立确认每次capture_render.py归档。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11个类别均有独立色区和完整标签；A有3个子类、E和B各2个，其余G/D/C/F各1个，共7个父类。系列、总数301和records单位齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项核对23、23、46、6、26、27、29、36、34、34、17，全部正确；301 records、11 categories、7 dream parents正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值、Dream父类和synthetic subcategory编号均位于各自色区；未见跨界、错绑或歧义。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "11区像素估计均在容差内，最大偏差约0.045个百分点；G约1.988%对目标1.993%，A子类3约15.267%对目标15.282%。区域连续，盘内无可见空洞或重叠。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的红褐缠绳、绳结和三对羽毛在成图主体中可见。prepare_assets.py处理素材，render.py合成；geometry.py按当前值生成分区，代码绘制标签。归档执行记录未查。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区域占据捕梦网完整圆盘，曲边分隔线构成网内结构；外圈包围数据边缘，绳结与羽毛连接于环。未见破坏结构的遮挡、透视偏移或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下全部类别标签可读；合成数据声明、主题、单位、分母和面积说明清楚，未见截字或文字重叠。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "绳圈闭合；短悬环接入圈顶绳结；左中右三对羽毛经系绳连接环下部。大区域与中央小区域均属于被圈包含的同一数据盘。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Synthetic dream categories、Synthetic records、Unit: records及Region area = records ÷ 301明确当前主题、指标、单位和构成口径；父类及合成子类角色完整。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留捕梦网承载梦境内容的融合关系；原调查体验改为合成类别记录构成，并明确not observed dream statistics。这是冻结输入规定的适配，不归为输出失败。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小Dream G=6为中央约154×166像素的闭合浅黄色区域，标签和周围边界均可分辨，面积约16724平方像素；并非仅保留数字。"
+    }
+  },
+  "semantic_attribution_zh": "参考调查百分比及具名梦境体验被替换为合成记录与Dream父类/子类，属于明确输入适配。11区形状随当前数据变化，不能据旧分区面积扣分。未见当前主题、单位或统计角色遗漏；测量限制来自边线、文字覆盖及栅格分辨率。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "count",
+        "category": "Dream A / synthetic subcategory 1",
+        "expected_value": 23,
+        "observed_value": 23.1343,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 435,
+        "full_scale_error_percent": 0.0446,
+        "small_value_relative_error_percent": 0.584,
+        "bbox_xyxy_normalized": [
+          0.236111,
+          0.281429,
+          0.538194,
+          0.458095
+        ],
+        "evidence_zh": "颜色分割及覆盖处邻色还原约64660平方像素，包围盒435×371像素；占比7.686%，目标7.641%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.138个百分点。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream A / synthetic subcategory 2",
+        "expected_value": 23,
+        "observed_value": 23.0066,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 430,
+        "full_scale_error_percent": 0.0022,
+        "small_value_relative_error_percent": 0.029,
+        "bbox_xyxy_normalized": [
+          0.245139,
+          0.209524,
+          0.54375,
+          0.354762
+        ],
+        "evidence_zh": "约64303平方像素，包围盒430×305像素；占比7.643%，目标7.641%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.130个百分点。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream A / synthetic subcategory 3",
+        "expected_value": 46,
+        "observed_value": 45.9534,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 536,
+        "full_scale_error_percent": 0.0155,
+        "small_value_relative_error_percent": 0.101,
+        "bbox_xyxy_normalized": [
+          0.502083,
+          0.209524,
+          0.772917,
+          0.464762
+        ],
+        "evidence_zh": "约128439平方像素，包围盒390×536像素；占比15.267%，目标15.282%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.164个百分点。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream G",
+        "expected_value": 6,
+        "observed_value": 5.9836,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 166,
+        "full_scale_error_percent": 0.0055,
+        "small_value_relative_error_percent": 0.274,
+        "bbox_xyxy_normalized": [
+          0.455556,
+          0.436667,
+          0.5625,
+          0.515714
+        ],
+        "evidence_zh": "约16724平方像素，包围盒154×166像素；占比1.988%，目标1.993%。闭合边界及内部标签可见。",
+        "uncertainty_zh": "1像素轮廓变化约对应0.059个百分点，约为本区域面积的3%；0.274%的相对误差点估计不表示同等精度保证。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream E / synthetic subcategory 1",
+        "expected_value": 26,
+        "observed_value": 25.9615,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 427,
+        "full_scale_error_percent": 0.0128,
+        "small_value_relative_error_percent": 0.148,
+        "bbox_xyxy_normalized": [
+          0.5625,
+          0.295714,
+          0.859028,
+          0.484286
+        ],
+        "evidence_zh": "约72562平方像素，包围盒427×396像素；占比8.625%，目标8.638%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.138个百分点。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream E / synthetic subcategory 2",
+        "expected_value": 27,
+        "observed_value": 26.9837,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 459,
+        "full_scale_error_percent": 0.0054,
+        "small_value_relative_error_percent": 0.06,
+        "bbox_xyxy_normalized": [
+          0.540972,
+          0.440952,
+          0.859722,
+          0.572381
+        ],
+        "evidence_zh": "约75419平方像素，包围盒459×276像素；占比8.965%，目标8.970%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.141个百分点。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream D",
+        "expected_value": 29,
+        "observed_value": 28.958,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 452,
+        "full_scale_error_percent": 0.014,
+        "small_value_relative_error_percent": 0.145,
+        "bbox_xyxy_normalized": [
+          0.507639,
+          0.507143,
+          0.821528,
+          0.681905
+        ],
+        "evidence_zh": "约80937平方像素，包围盒452×367像素；占比9.621%，目标9.635%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.135个百分点。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream C",
+        "expected_value": 36,
+        "observed_value": 35.9544,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 425,
+        "full_scale_error_percent": 0.0151,
+        "small_value_relative_error_percent": 0.127,
+        "bbox_xyxy_normalized": [
+          0.348611,
+          0.502857,
+          0.64375,
+          0.702381
+        ],
+        "evidence_zh": "约100492平方像素，包围盒425×419像素；占比11.945%，目标11.960%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.148个百分点。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream B / synthetic subcategory 1",
+        "expected_value": 34,
+        "observed_value": 34.0707,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 473,
+        "full_scale_error_percent": 0.0235,
+        "small_value_relative_error_percent": 0.208,
+        "bbox_xyxy_normalized": [
+          0.184028,
+          0.455714,
+          0.463889,
+          0.680952
+        ],
+        "evidence_zh": "约95227平方像素，包围盒403×473像素；占比11.319%，目标11.296%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.142个百分点。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream B / synthetic subcategory 2",
+        "expected_value": 34,
+        "observed_value": 34.017,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 456,
+        "full_scale_error_percent": 0.0057,
+        "small_value_relative_error_percent": 0.05,
+        "bbox_xyxy_normalized": [
+          0.140972,
+          0.380952,
+          0.457639,
+          0.572857
+        ],
+        "evidence_zh": "约95077平方像素，包围盒456×403像素；占比11.301%，目标11.296%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.151个百分点。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream F",
+        "expected_value": 17,
+        "observed_value": 16.9768,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 349,
+        "full_scale_error_percent": 0.0077,
+        "small_value_relative_error_percent": 0.136,
+        "bbox_xyxy_normalized": [
+          0.144444,
+          0.289048,
+          0.386806,
+          0.422381
+        ],
+        "evidence_zh": "约47450平方像素，包围盒349×280像素；占比5.640%，目标5.648%。",
+        "uncertainty_zh": "文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.107个百分点。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "大区域：Dream A / synthetic subcategory 3",
+        "required_parts": [
+          "外侧绳圈",
+          "右上曲边数据区",
+          "相邻分区边线",
+          "数值及类别标签"
+        ],
+        "relationship": "区域包含于数据盘，外侧沿绳圈内缘，内部与邻区共边，标签位于区内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.502083,
+          0.209524,
+          0.772917,
+          0.464762
+        ],
+        "evidence_zh": "右上浅红区从圈顶延伸至中心附近，与A及E邻区相接；46及A子类3标签完整位于此区。"
+      },
+      {
+        "category": "最小及内部区域：Dream G",
+        "required_parts": [
+          "浅黄色小数据区",
+          "闭合边线",
+          "相邻区域",
+          "6及Dream G标签"
+        ],
+        "relationship": "小区被邻区完全包围，属于同一数据盘；边线接入分区结构。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.455556,
+          0.436667,
+          0.5625,
+          0.515714
+        ],
+        "evidence_zh": "中央约154×166像素的浅黄区边界闭合，与周围分隔线汇合；不是独立贴图或悬浮数字。"
+      },
+      {
+        "category": "悬挂结构",
+        "required_parts": [
+          "短悬环",
+          "顶端绳结",
+          "绳圈"
+        ],
+        "relationship": "悬环向上伸出，底部接入绳结，绳结接触圈顶。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.46,
+          0.119,
+          0.542,
+          0.211
+        ],
+        "evidence_zh": "小环与红褐绳结连续相接，结下缘落在圈顶，无可见悬空断口。"
+      },
+      {
+        "category": "下方羽毛连接",
+        "required_parts": [
+          "绳圈",
+          "下垂系绳",
+          "左中右三对羽毛",
+          "羽轴和羽枝"
+        ],
+        "relationship": "三对羽毛经系绳附着于环下部左侧、中央及右侧，羽尖朝下。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.054,
+          0.55,
+          0.947,
+          0.909
+        ],
+        "evidence_zh": "侧边细绳连接圈侧与羽根结，中央羽毛连接圈底结；各组两支羽毛及排线羽枝可辨。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入明确指定合成梦境类别、records单位及以301为分母的面积构成，并允许在7个父类内加入合成子类。",
+      "output_added_or_lost_meaning_zh": "原受访人群及具名调查体验被授权替换；成图传达合成类别构成，没有沿用旧调查百分比。捕梦网承载梦境内容的融合关系保留。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Synthetic dream categories；Synthetic records · Unit: records；301 records / 11 categories；Region area = records ÷ 301；The full disk represents 100%；dream parents；synthetic subcategories；not observed dream statistics。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "调查体验及百分比改为合成类别记录构成，reference_meaning记partial，不归为生成失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "7个父类保留，A/E/B按输入细分，11区面积随当前数值变化。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "文字与细线遮住部分填色，面积需邻色还原；小区清晰可辨，但相对误差只是近似点估计。"
+      }
+    ],
+    "measurement_coverage_zh": "全部11个区域均完成像素测量，覆盖最小值6、最大值46及中间值；全部标签和数值另行目视核对。只有一个面积通道，无辅助面板。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "绳圈、顶端悬挂绳结及左中右三对垂羽均保留，羽轴、羽枝和系绳可见。",
+      "data_adaptation_excluded_zh": "未因11个子区替代参考7区或更新标签扣分。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "顶部绳结接触圆环，三对羽毛通过下垂系绳连接环的左下、中下和右下；数据盘仍被环包围。",
+      "data_adaptation_excluded_zh": "顶部长绳改短环、圆环规则化及羽毛姿态变化属于允许的非数据姿态适配。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保持上方标题、中央大捕梦网、下方垂羽的层次；标题改为左对齐两行，底部采用两栏说明，版面较参考更规整。",
+      "data_adaptation_excluded_zh": "未因当前类别数量、统计口径及合成数据声明所需空间扣分。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "浅黄纸感、暖红粉色区与深色羽毛排线相近；成图缠绳更密实、分区线更光滑，字体更规整。",
+      "data_adaptation_excluded_zh": "排除数据决定的面积变化、当前标签文字及允许的非数据厚度变化。"
+    }
+  }
+}

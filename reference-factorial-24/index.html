@@ -2,12 +2,12 @@
 *{box-sizing:border-box}body{margin:0;background:#f3f3ed;color:#263b32;font:16px/1.7 system-ui,sans-serif}main{max-width:1720px;margin:auto;padding:24px 16px}section,.intro{background:#fff;padding:22px;border-radius:9px;margin:20px 0}h1{line-height:1.35}h2{margin-top:0}a{color:#215c91}.columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}article{min-width:0}img{display:block;width:100%;height:auto}.reference{max-width:500px}.table-wrap{max-width:100%;overflow:auto}table{border-collapse:collapse;width:100%}td,th{padding:9px;border:1px solid #cad4ca;text-align:left;vertical-align:top}th{background:#eef4ed}pre,p{overflow-wrap:anywhere}pre{white-space:pre-wrap;font-size:13px}summary{cursor:pointer;padding:7px}.note{font-size:14px;color:#465c4f}.status{font-weight:650;color:#315c45}select{font:inherit;padding:8px;max-width:100%;margin:4px}[hidden]{display:none!important}.pill{display:inline-block;background:#eef4e9;padding:4px 9px;border-radius:5px}@media(max-width:1200px){.columns{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){main{padding:14px 10px}section,.intro{padding:15px}.columns{grid-template-columns:1fr}td,th{font-size:13px}}
 </style></head><body><main><h1>参考图双因素消融 · 24个设计 × 4种设置</h1><div class="intro"><p class="status">实验执行中</p>
 <p><strong>共96次全新生成，三类数据冲突各8个设计。</strong>同一设计的四组共用相同冲突数据、文字简报和结构语义合同。规划智能体是否能直接看原图，与生图模型是否接收原图，由执行器独立控制。</p>
-<div class="table-wrap"><table><thead><tr><th>设置</th><th>规划／编码智能体</th><th>生图模型</th><th>计划任务</th></tr></thead><tbody><tr><th>A1G1</th><td>提供原图，必须查看</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A1G0</th><td>提供原图，必须查看</td><td>每次调用禁止传原图</td><td>24</td></tr><tr><th>A0G1</th><td>不提供原图，仅共同文字规格</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A0G0</th><td>不提供原图，仅共同文字规格</td><td>每次调用禁止传原图</td><td>24</td></tr></tbody></table></div><p><strong>全部96任务的共同主判据：首轮15/96、最终14/96已判通过。</strong>执行中尚有待评项，四组对照以下方各24任务的表格为准。</p><p>模型GPT-6-Astra / max；每次生成35分钟、最多3次生图与6次渲染。规划、精确提示转发、生图调用、评审共用最多3个模型会话。全部可用最终图再做第二次独立评审。</p>
+<div class="table-wrap"><table><thead><tr><th>设置</th><th>规划／编码智能体</th><th>生图模型</th><th>计划任务</th></tr></thead><tbody><tr><th>A1G1</th><td>提供原图，必须查看</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A1G0</th><td>提供原图，必须查看</td><td>每次调用禁止传原图</td><td>24</td></tr><tr><th>A0G1</th><td>不提供原图，仅共同文字规格</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A0G0</th><td>不提供原图，仅共同文字规格</td><td>每次调用禁止传原图</td><td>24</td></tr></tbody></table></div><p><strong>全部96任务的共同主判据：首轮16/96、最终16/96已判通过。</strong>执行中尚有待评项，四组对照以下方各24任务的表格为准。</p><p>模型GPT-6-Astra / max；每次生成35分钟、最多3次生图与6次渲染。规划、精确提示转发、生图调用、评审共用最多3个模型会话。全部可用最终图再做第二次独立评审。</p>
 <p class="note">四组都保留由参考图形成的相同文字规格；“智能体无图”检验直接视觉观察在文字之外的增益，不代表没有任何参考知识。精确提示转发器仅执行原样提示和固定传图参数，原图及中继观察不回传给规划智能体。先核验首个区组的实际输入隔离，再展开其余样本，质量通过率不参与启动决策。</p>
-<p>生成：已完成38、待执行58；首末评审：已完成31、待执行28、执行中1、技术异常1；最终第二评审：待执行38；输入协议：已核验38</p>
-<p class="note">更新时间（北京时间）：2026-10-19 14:49:01</p>
+<p>生成：已完成40、待执行55、执行中1；首末评审：已完成34、待执行30、技术异常1；最终第二评审：待执行40；输入协议：已核验40</p>
+<p class="note">更新时间（北京时间）：2026-10-19 15:14:31</p>
 <p><a href="docs/reference_factorial24/protocol.json">冻结方案</a> · <a href="reports/reference_factorial24/summary.json">完整统计与证据</a> · <a href="reports/reference_factorial24/metrics.csv">下载指标CSV</a> · <a href="../reference-input-ablation/">3案例先导实验</a> · <a href="../data-conflict-120/">原120组实验</a></p></div>
-<section id="rates"><h2>首轮与最终通过率：24个设计整体比较</h2><p class="note">各组固定分母24。执行中仅显示已判通过数，待评不是已判失败。下表主数值要求质量通过且输入协议已核验；括号另列图像质量通过数，协议异常与图像缺陷分开。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr></thead><tbody><tr><th scope="row">首轮 · 共同主判据</th><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评6/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评4/24</span></td></tr><tr><th scope="row">首轮 · 数值支持</th><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td></tr><tr><th scope="row">首轮 · 关键结构</th><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td></tr><tr><th scope="row">首轮 · 小值可辨</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评6/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td></tr><tr><th scope="row">首轮 · 参考原意</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评6/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评6/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评3/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评4/24</span></td></tr><tr><th scope="row">最终 · 共同主判据</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评4/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评8/24</span></td><td><strong>0/24 已判通过</strong><br><span class="note">质量通过0；已评2/24</span></td></tr><tr><th scope="row">最终 · 数值支持</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>8/24 已判通过</strong><br><span class="note">质量通过8；已评8/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td></tr><tr><th scope="row">最终 · 关键结构</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评4/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 当前主题意义</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>8/24 已判通过</strong><br><span class="note">质量通过8；已评8/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td></tr><tr><th scope="row">最终 · 小值可辨</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 参考原意</th><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评4/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr></tbody></table></div><p class="note">共同主判据沿用必要数值／绑定／素材融合检查、关键结构和当前主题意义；小值可辨作为额外联合要求。首轮是首次完整渲染尝试，最终是最后有效图。技术异常、缺图、partial/fail/uncertain均不计通过，历史输出不混入新96任务。</p></section><section><h2>补充：参考设计保留程度（0–4分）</h2><p class="note">下表为最终图独立首评的适用项均分。排除当前数据及许可语义改编引起的变化；分数不替代原通过判据，第二评审及分歧逐图保留。</p><div class="table-wrap"><table><tr><th>维度</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr><tr><th>非数据物体身份</th><td>3.75/4（n=4）</td><td>3.60/4（n=5）</td><td>2.88/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>非数据姿态与关系</th><td>3.75/4（n=4）</td><td>3.80/4（n=5）</td><td>2.88/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>构图层级</th><td>3.25/4（n=4）</td><td>3.00/4（n=5）</td><td>2.75/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>材质与风格</th><td>3.00/4（n=4）</td><td>2.20/4（n=5）</td><td>1.88/4（n=8）</td><td>2.00/4（n=2）</td></tr></table></div></section><section><h2>配对因素效应与交互</h2><p>实验闭合后计算同一参考内的因素差值、保守区间及多重比较校正；当前不对未完成数据做正式检验。</p></section><label>冲突类型 <select id="type"><option value="all">全部24设计</option><option value="category_count">类别数</option><option value="trend_shape">趋势形状</option><option value="numeric_range">数值范围</option></select></label><label>案例 <select id="case-filter"><option value="all">全部</option><option value="F01">F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</option><option value="F02">F02 · 游戏销售形式转变：四期双面板堆叠柱图</option><option value="F03">F03 · 航空公司市值</option><option value="F04">F04 · 鸡蛋的营养成分构成</option><option value="F05">F05 · 合成事件率：美国地形面具上的十期警示折线</option><option value="F06">F06 · 年度可再生水资源</option><option value="F07">F07 · 奖牌的金属组成与合成示例价值</option><option value="F08">F08 · 复古电脑中的 AI 工作情绪：两轮合成比例</option><option value="F09">F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</option><option value="F10">F10 · 捕梦网中的合成梦境：曲边面积分区图</option><option value="F11">F11 · 年度价格通胀与实际产出变化</option><option value="F12">F12 · 合成烟草产量与股价：香烟物体柱图</option><option value="F13">F13 · 校园供餐风险：青苹果抽离扇块合成数据海报</option><option value="F14">F14 · 女子篮球比赛平均观众数</option><option value="F15">F15 · 宗教信仰及无归属人口构成</option><option value="F16">F16 · 两类餐饮服务的支出变化百分比</option><option value="F17">F17 · 社区街头共绘计划的净支持度（合成议题替代）</option><option value="F18">F18 · 园艺试验地块产量（原参考无可读指标）</option><option value="F19">F19 · 书籍销量</option><option value="F20">F20 · 利率退烧：美国地图病人与床尾三系列趋势图</option><option value="F21">F21 · 广告时段：夹心饼干份额与观众计数的双面板合成信息图</option><option value="F22">F22 · 节日礼物预算偏好</option><option value="F23">F23 · 分来源的各期海洋塑料排放量</option><option value="F24">F24 · 面包与纸钞：合成年度食品预算损耗</option></select></label><section class="case" id="F01" data-type="category_count"><h2>F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</h2><p>E76 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F01/reference.webp"><img loading="lazy" src="images/F01/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F01/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F01/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F01/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+<section id="rates"><h2>首轮与最终通过率：24个设计整体比较</h2><p class="note">各组固定分母24。执行中仅显示已判通过数，待评不是已判失败。下表主数值要求质量通过且输入协议已核验；括号另列图像质量通过数，协议异常与图像缺陷分开。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr></thead><tbody><tr><th scope="row">首轮 · 共同主判据</th><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评4/24</span></td></tr><tr><th scope="row">首轮 · 数值支持</th><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td></tr><tr><th scope="row">首轮 · 关键结构</th><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td></tr><tr><th scope="row">首轮 · 小值可辨</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评6/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td></tr><tr><th scope="row">首轮 · 参考原意</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评6/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评6/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评4/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评4/24</span></td></tr><tr><th scope="row">最终 · 共同主判据</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评5/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评8/24</span></td><td><strong>0/24 已判通过</strong><br><span class="note">质量通过0；已评2/24</span></td></tr><tr><th scope="row">最终 · 数值支持</th><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>8/24 已判通过</strong><br><span class="note">质量通过8；已评8/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td></tr><tr><th scope="row">最终 · 关键结构</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 当前主题意义</th><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评6/24</span></td><td><strong>8/24 已判通过</strong><br><span class="note">质量通过8；已评8/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td></tr><tr><th scope="row">最终 · 小值可辨</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评5/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评6/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 参考原意</th><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评5/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评6/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr></tbody></table></div><p class="note">共同主判据沿用必要数值／绑定／素材融合检查、关键结构和当前主题意义；小值可辨作为额外联合要求。首轮是首次完整渲染尝试，最终是最后有效图。技术异常、缺图、partial/fail/uncertain均不计通过，历史输出不混入新96任务。</p></section><section><h2>补充：参考设计保留程度（0–4分）</h2><p class="note">下表为最终图独立首评的适用项均分。排除当前数据及许可语义改编引起的变化；分数不替代原通过判据，第二评审及分歧逐图保留。</p><div class="table-wrap"><table><tr><th>维度</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr><tr><th>非数据物体身份</th><td>3.80/4（n=5）</td><td>3.67/4（n=6）</td><td>2.88/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>非数据姿态与关系</th><td>3.80/4（n=5）</td><td>3.83/4（n=6）</td><td>2.88/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>构图层级</th><td>3.20/4（n=5）</td><td>3.00/4（n=6）</td><td>2.75/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>材质与风格</th><td>3.00/4（n=5）</td><td>2.17/4（n=6）</td><td>1.88/4（n=8）</td><td>2.00/4（n=2）</td></tr></table></div></section><section><h2>配对因素效应与交互</h2><p>实验闭合后计算同一参考内的因素差值、保守区间及多重比较校正；当前不对未完成数据做正式检验。</p></section><label>冲突类型 <select id="type"><option value="all">全部24设计</option><option value="category_count">类别数</option><option value="trend_shape">趋势形状</option><option value="numeric_range">数值范围</option></select></label><label>案例 <select id="case-filter"><option value="all">全部</option><option value="F01">F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</option><option value="F02">F02 · 游戏销售形式转变：四期双面板堆叠柱图</option><option value="F03">F03 · 航空公司市值</option><option value="F04">F04 · 鸡蛋的营养成分构成</option><option value="F05">F05 · 合成事件率：美国地形面具上的十期警示折线</option><option value="F06">F06 · 年度可再生水资源</option><option value="F07">F07 · 奖牌的金属组成与合成示例价值</option><option value="F08">F08 · 复古电脑中的 AI 工作情绪：两轮合成比例</option><option value="F09">F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</option><option value="F10">F10 · 捕梦网中的合成梦境：曲边面积分区图</option><option value="F11">F11 · 年度价格通胀与实际产出变化</option><option value="F12">F12 · 合成烟草产量与股价：香烟物体柱图</option><option value="F13">F13 · 校园供餐风险：青苹果抽离扇块合成数据海报</option><option value="F14">F14 · 女子篮球比赛平均观众数</option><option value="F15">F15 · 宗教信仰及无归属人口构成</option><option value="F16">F16 · 两类餐饮服务的支出变化百分比</option><option value="F17">F17 · 社区街头共绘计划的净支持度（合成议题替代）</option><option value="F18">F18 · 园艺试验地块产量（原参考无可读指标）</option><option value="F19">F19 · 书籍销量</option><option value="F20">F20 · 利率退烧：美国地图病人与床尾三系列趋势图</option><option value="F21">F21 · 广告时段：夹心饼干份额与观众计数的双面板合成信息图</option><option value="F22">F22 · 节日礼物预算偏好</option><option value="F23">F23 · 分来源的各期海洋塑料排放量</option><option value="F24">F24 · 面包与纸钞：合成年度食品预算损耗</option></select></label><section class="case" id="F01" data-type="category_count"><h2>F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</h2><p>E76 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F01/reference.webp"><img loading="lazy" src="images/F01/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F01/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F01/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F01/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: true,
@@ -10726,7 +10726,333 @@
   &quot;violations&quot;: [],
   &quot;external_image_views&quot;: [],
   &quot;scope&quot;: &quot;Direct original-image access and exact relay arguments; common reference-derived text remains in all arms.&quot;
-}</pre></details><a href="images/T079/r03.webp"><img loading="lazy" src="images/T079/r03.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · error</summary></details><details><summary>第2轮 · ok</summary><a href="images/T079/r02.webp"><img loading="lazy" src="images/T079/r02.webp" alt="逐轮成图"></a></details><details><summary>第3轮 · ok</summary><a href="images/T079/r03.webp"><img loading="lazy" src="images/T079/r03.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：待核验</p></details><details><summary>最终独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体有图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="images/T079/r03.webp"><img loading="lazy" src="images/T079/r03.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · error</summary></details><details><summary>第2轮 · ok</summary><a href="images/T079/r02.webp"><img loading="lazy" src="images/T079/r02.webp" alt="逐轮成图"></a></details><details><summary>第3轮 · ok</summary><a href="images/T079/r03.webp"><img loading="lazy" src="images/T079/r03.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：待核验</p></details><details><summary>最终独立评估</summary><p>通过。11类数值、单位和标签齐全，独立像素面积估计最大偏差约0.045个百分点。捕梦网结构与数据融合关系保留，最小区域可辨。review.json已用UTF-8保存并通过schema.json校验。</p><div class="table-wrap"><table><tr><th>维度</th><th>状态</th><th>证据</th></tr><tr><td>completeness</td><td>pass</td><td>11个类别均有独立色区和完整标签；A有3个子类、E和B各2个，其余G/D/C/F各1个，共7个父类。系列、总数301和records单位齐全。</td></tr><tr><td>numeric_text</td><td>pass</td><td>逐项核对23、23、46、6、26、27、29、36、34、34、17，全部正确；301 records、11 categories、7 dream parents正确。</td></tr><tr><td>binding</td><td>pass</td><td>数值、Dream父类和synthetic subcategory编号均位于各自色区；未见跨界、错绑或歧义。</td></tr><tr><td>geometry</td><td>pass</td><td>11区像素估计均在容差内，最大偏差约0.045个百分点；G约1.988%对目标1.993%，A子类3约15.267%对目标15.282%。区域连续，盘内无可见空洞或重叠。</td></tr><tr><td>source</td><td>pass</td><td>raw_01.png中的红褐缠绳、绳结和三对羽毛在成图主体中可见。prepare_assets.py处理素材，render.py合成；geometry.py按当前值生成分区，代码绘制标签。归档执行记录未查。</td></tr><tr><td>integration</td><td>pass</td><td>数据区域占据捕梦网完整圆盘，曲边分隔线构成网内结构；外圈包围数据边缘，绳结与羽毛连接于环。未见破坏结构的遮挡、透视偏移或接缝。</td></tr><tr><td>readability</td><td>pass</td><td>原始分辨率下全部类别标签可读；合成数据声明、主题、单位、分母和面积说明清楚，未见截字或文字重叠。</td></tr><tr><td>关键结构</td><td>pass</td><td>绳圈闭合；短悬环接入圈顶绳结；左中右三对羽毛经系绳连接环下部。大区域与中央小区域均属于被圈包含的同一数据盘。</td></tr><tr><td>当前主题意义</td><td>pass</td><td>Synthetic dream categories、Synthetic records、Unit: records及Region area = records ÷ 301明确当前主题、指标、单位和构成口径；父类及合成子类角色完整。</td></tr><tr><td>参考原意</td><td>partial</td><td>保留捕梦网承载梦境内容的融合关系；原调查体验改为合成类别记录构成，并明确not observed dream statistics。这是冻结输入规定的适配，不归为输出失败。</td></tr><tr><td>小值可辨</td><td>pass</td><td>最小Dream G=6为中央约154×166像素的闭合浅黄色区域，标签和周围边界均可分辨，面积约16724平方像素；并非仅保留数字。</td></tr></table></div><details><summary>测量、关系、意义与保留程度评分</summary><pre>{
+  &quot;detailed_evidence&quot;: {
+    &quot;measurements&quot;: [
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream A / synthetic subcategory 1&quot;,
+        &quot;expected_value&quot;: 23,
+        &quot;observed_value&quot;: 23.1343,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 435,
+        &quot;full_scale_error_percent&quot;: 0.0446,
+        &quot;small_value_relative_error_percent&quot;: 0.584,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.236111,
+          0.281429,
+          0.538194,
+          0.458095
+        ],
+        &quot;evidence_zh&quot;: &quot;颜色分割及覆盖处邻色还原约64660平方像素，包围盒435×371像素；占比7.686%，目标7.641%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.138个百分点。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream A / synthetic subcategory 2&quot;,
+        &quot;expected_value&quot;: 23,
+        &quot;observed_value&quot;: 23.0066,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 430,
+        &quot;full_scale_error_percent&quot;: 0.0022,
+        &quot;small_value_relative_error_percent&quot;: 0.029,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.245139,
+          0.209524,
+          0.54375,
+          0.354762
+        ],
+        &quot;evidence_zh&quot;: &quot;约64303平方像素，包围盒430×305像素；占比7.643%，目标7.641%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.130个百分点。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream A / synthetic subcategory 3&quot;,
+        &quot;expected_value&quot;: 46,
+        &quot;observed_value&quot;: 45.9534,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 536,
+        &quot;full_scale_error_percent&quot;: 0.0155,
+        &quot;small_value_relative_error_percent&quot;: 0.101,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.502083,
+          0.209524,
+          0.772917,
+          0.464762
+        ],
+        &quot;evidence_zh&quot;: &quot;约128439平方像素，包围盒390×536像素；占比15.267%，目标15.282%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.164个百分点。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream G&quot;,
+        &quot;expected_value&quot;: 6,
+        &quot;observed_value&quot;: 5.9836,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 166,
+        &quot;full_scale_error_percent&quot;: 0.0055,
+        &quot;small_value_relative_error_percent&quot;: 0.274,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.455556,
+          0.436667,
+          0.5625,
+          0.515714
+        ],
+        &quot;evidence_zh&quot;: &quot;约16724平方像素，包围盒154×166像素；占比1.988%，目标1.993%。闭合边界及内部标签可见。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;1像素轮廓变化约对应0.059个百分点，约为本区域面积的3%；0.274%的相对误差点估计不表示同等精度保证。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream E / synthetic subcategory 1&quot;,
+        &quot;expected_value&quot;: 26,
+        &quot;observed_value&quot;: 25.9615,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 427,
+        &quot;full_scale_error_percent&quot;: 0.0128,
+        &quot;small_value_relative_error_percent&quot;: 0.148,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.5625,
+          0.295714,
+          0.859028,
+          0.484286
+        ],
+        &quot;evidence_zh&quot;: &quot;约72562平方像素，包围盒427×396像素；占比8.625%，目标8.638%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.138个百分点。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream E / synthetic subcategory 2&quot;,
+        &quot;expected_value&quot;: 27,
+        &quot;observed_value&quot;: 26.9837,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 459,
+        &quot;full_scale_error_percent&quot;: 0.0054,
+        &quot;small_value_relative_error_percent&quot;: 0.06,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.540972,
+          0.440952,
+          0.859722,
+          0.572381
+        ],
+        &quot;evidence_zh&quot;: &quot;约75419平方像素，包围盒459×276像素；占比8.965%，目标8.970%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.141个百分点。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream D&quot;,
+        &quot;expected_value&quot;: 29,
+        &quot;observed_value&quot;: 28.958,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 452,
+        &quot;full_scale_error_percent&quot;: 0.014,
+        &quot;small_value_relative_error_percent&quot;: 0.145,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.507639,
+          0.507143,
+          0.821528,
+          0.681905
+        ],
+        &quot;evidence_zh&quot;: &quot;约80937平方像素，包围盒452×367像素；占比9.621%，目标9.635%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.135个百分点。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream C&quot;,
+        &quot;expected_value&quot;: 36,
+        &quot;observed_value&quot;: 35.9544,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 425,
+        &quot;full_scale_error_percent&quot;: 0.0151,
+        &quot;small_value_relative_error_percent&quot;: 0.127,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.348611,
+          0.502857,
+          0.64375,
+          0.702381
+        ],
+        &quot;evidence_zh&quot;: &quot;约100492平方像素，包围盒425×419像素；占比11.945%，目标11.960%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.148个百分点。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream B / synthetic subcategory 1&quot;,
+        &quot;expected_value&quot;: 34,
+        &quot;observed_value&quot;: 34.0707,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 473,
+        &quot;full_scale_error_percent&quot;: 0.0235,
+        &quot;small_value_relative_error_percent&quot;: 0.208,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.184028,
+          0.455714,
+          0.463889,
+          0.680952
+        ],
+        &quot;evidence_zh&quot;: &quot;约95227平方像素，包围盒403×473像素；占比11.319%，目标11.296%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.142个百分点。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream B / synthetic subcategory 2&quot;,
+        &quot;expected_value&quot;: 34,
+        &quot;observed_value&quot;: 34.017,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 456,
+        &quot;full_scale_error_percent&quot;: 0.0057,
+        &quot;small_value_relative_error_percent&quot;: 0.05,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.140972,
+          0.380952,
+          0.457639,
+          0.572857
+        ],
+        &quot;evidence_zh&quot;: &quot;约95077平方像素，包围盒456×403像素；占比11.301%，目标11.296%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.151个百分点。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream F&quot;,
+        &quot;expected_value&quot;: 17,
+        &quot;observed_value&quot;: 16.9768,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 349,
+        &quot;full_scale_error_percent&quot;: 0.0077,
+        &quot;small_value_relative_error_percent&quot;: 0.136,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.144444,
+          0.289048,
+          0.386806,
+          0.422381
+        ],
+        &quot;evidence_zh&quot;: &quot;约47450平方像素，包围盒349×280像素；占比5.640%，目标5.648%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字及边线覆盖需邻色还原；1像素轮廓变化约对应0.107个百分点。&quot;
+      }
+    ],
+    &quot;part_relations&quot;: [
+      {
+        &quot;category&quot;: &quot;大区域：Dream A / synthetic subcategory 3&quot;,
+        &quot;required_parts&quot;: [
+          &quot;外侧绳圈&quot;,
+          &quot;右上曲边数据区&quot;,
+          &quot;相邻分区边线&quot;,
+          &quot;数值及类别标签&quot;
+        ],
+        &quot;relationship&quot;: &quot;区域包含于数据盘，外侧沿绳圈内缘，内部与邻区共边，标签位于区内。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.502083,
+          0.209524,
+          0.772917,
+          0.464762
+        ],
+        &quot;evidence_zh&quot;: &quot;右上浅红区从圈顶延伸至中心附近，与A及E邻区相接；46及A子类3标签完整位于此区。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;最小及内部区域：Dream G&quot;,
+        &quot;required_parts&quot;: [
+          &quot;浅黄色小数据区&quot;,
+          &quot;闭合边线&quot;,
+          &quot;相邻区域&quot;,
+          &quot;6及Dream G标签&quot;
+        ],
+        &quot;relationship&quot;: &quot;小区被邻区完全包围，属于同一数据盘；边线接入分区结构。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.455556,
+          0.436667,
+          0.5625,
+          0.515714
+        ],
+        &quot;evidence_zh&quot;: &quot;中央约154×166像素的浅黄区边界闭合，与周围分隔线汇合；不是独立贴图或悬浮数字。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;悬挂结构&quot;,
+        &quot;required_parts&quot;: [
+          &quot;短悬环&quot;,
+          &quot;顶端绳结&quot;,
+          &quot;绳圈&quot;
+        ],
+        &quot;relationship&quot;: &quot;悬环向上伸出，底部接入绳结，绳结接触圈顶。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.46,
+          0.119,
+          0.542,
+          0.211
+        ],
+        &quot;evidence_zh&quot;: &quot;小环与红褐绳结连续相接，结下缘落在圈顶，无可见悬空断口。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;下方羽毛连接&quot;,
+        &quot;required_parts&quot;: [
+          &quot;绳圈&quot;,
+          &quot;下垂系绳&quot;,
+          &quot;左中右三对羽毛&quot;,
+          &quot;羽轴和羽枝&quot;
+        ],
+        &quot;relationship&quot;: &quot;三对羽毛经系绳附着于环下部左侧、中央及右侧，羽尖朝下。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.054,
+          0.55,
+          0.947,
+          0.909
+        ],
+        &quot;evidence_zh&quot;: &quot;侧边细绳连接圈侧与羽根结，中央羽毛连接圈底结；各组两支羽毛及排线羽枝可辨。&quot;
+      }
+    ],
+    &quot;meaning_trace&quot;: {
+      &quot;current_topic&quot;: &quot;pass&quot;,
+      &quot;metric_and_unit&quot;: &quot;pass&quot;,
+      &quot;category_roles&quot;: &quot;pass&quot;,
+      &quot;reference_action_or_argument&quot;: &quot;partial&quot;,
+      &quot;allowed_input_adaptation_zh&quot;: &quot;输入明确指定合成梦境类别、records单位及以301为分母的面积构成，并允许在7个父类内加入合成子类。&quot;,
+      &quot;output_added_or_lost_meaning_zh&quot;: &quot;原受访人群及具名调查体验被授权替换；成图传达合成类别构成，没有沿用旧调查百分比。捕梦网承载梦境内容的融合关系保留。&quot;,
+      &quot;visible_inscription_evidence_zh&quot;: &quot;SYNTHETIC DATA；Synthetic dream categories；Synthetic records · Unit: records；301 records / 11 categories；Region area = records ÷ 301；The full disk represents 100%；dream parents；synthetic subcategories；not observed dream statistics。&quot;
+    },
+    &quot;attribution&quot;: [
+      {
+        &quot;cause&quot;: &quot;input_adaptation&quot;,
+        &quot;evidence_zh&quot;: &quot;调查体验及百分比改为合成类别记录构成，reference_meaning记partial，不归为生成失败。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;data_driven_shape_change&quot;,
+        &quot;evidence_zh&quot;: &quot;7个父类保留，A/E/B按输入细分，11区面积随当前数值变化。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;resolution_limit&quot;,
+        &quot;evidence_zh&quot;: &quot;文字与细线遮住部分填色，面积需邻色还原；小区清晰可辨，但相对误差只是近似点估计。&quot;
+      }
+    ],
+    &quot;measurement_coverage_zh&quot;: &quot;全部11个区域均完成像素测量，覆盖最小值6、最大值46及中间值；全部标签和数值另行目视核对。只有一个面积通道，无辅助面板。&quot;
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;绳圈、顶端悬挂绳结及左中右三对垂羽均保留，羽轴、羽枝和系绳可见。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;未因11个子区替代参考7区或更新标签扣分。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;顶部绳结接触圆环，三对羽毛通过下垂系绳连接环的左下、中下和右下；数据盘仍被环包围。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;顶部长绳改短环、圆环规则化及羽毛姿态变化属于允许的非数据姿态适配。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保持上方标题、中央大捕梦网、下方垂羽的层次；标题改为左对齐两行，底部采用两栏说明，版面较参考更规整。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;未因当前类别数量、统计口径及合成数据声明所需空间扣分。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;浅黄纸感、暖红粉色区与深色羽毛排线相近；成图缠绳更密实、分区线更光滑，字体更规整。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除数据决定的面积变化、当前标签文字及允许的非数据厚度变化。&quot;
+    }
+  }
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/5e7ce0cfc768d2/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体有图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: false,
@@ -10738,15 +11064,568 @@
   &quot;violations&quot;: [],
   &quot;external_image_views&quot;: [],
   &quot;scope&quot;: &quot;Direct original-image access and exact relay arguments; common reference-derived text remains in all arms.&quot;
-}</pre></details><a href="images/T057/r02.webp"><img loading="lazy" src="images/T057/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T057/r01.webp"><img loading="lazy" src="images/T057/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T057/r02.webp"><img loading="lazy" src="images/T057/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体无图 · 生图有图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
-  &quot;status&quot;: &quot;pending&quot;
-}</pre></details><p>暂无完整成图</p></article><article><h3>智能体无图 · 生图无图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
-  &quot;status&quot;: &quot;pending&quot;
-}</pre></details><p>暂无完整成图</p></article></div></section><section class="case" id="F11" data-type="trend_shape"><h2>F11 · 年度价格通胀与实际产出变化</h2><p>E39 · 趋势形状 · 四组同一冲突数据</p><div class="reference"><a href="images/F11/reference.webp"><img loading="lazy" src="images/F11/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F11/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F11/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F11/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="images/T057/r02.webp"><img loading="lazy" src="images/T057/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T057/r01.webp"><img loading="lazy" src="images/T057/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T057/r02.webp"><img loading="lazy" src="images/T057/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>11类的数值、绑定和面积比例均符合冻结要求；捕梦网绳圈、悬挂绳结、三对羽毛及圈内连通分区保留。最小区域可辨，未发现重大或次要必需项缺陷。参考材质风格有明显变化，原调查语义按输入明确适配为合成分类。</p><div class="table-wrap"><table><tr><th>维度</th><th>状态</th><th>证据</th></tr><tr><td>completeness</td><td>pass</td><td>11个着色区域和标签齐全：Dream A三子类、Dream E两子类、Dream B两子类，以及G、D、C、F；共7个父类、单系列301 records。无额外辅助面板要求。</td></tr><tr><td>numeric_text</td><td>pass</td><td>逐项可读23、23、46、6、26、27、29、36、34、34、17；百分比依次7.64、7.64、15.28、1.99、8.64、8.97、9.63、11.96、11.30、11.30、5.65，均符合总数301及两位小数口径。</td></tr><tr><td>binding</td><td>pass</td><td>父类、synthetic subcategory编号、记录数与百分比均位于各自区域内部；中央G明确绑定6，未见跨界标签。外围顺序保持A、E、D、C、B、F，G保留内部位置。</td></tr><tr><td>geometry</td><td>pass</td><td>独立像素面积估计覆盖11区；主估计最大偏差约0.043个百分点。大区A子类3约15.325%（目标15.282%），小区G约1.985%（目标1.993%），中等区E子类2约8.984%（目标8.970%）。边界相接，未见实质空洞或重叠。</td></tr><tr><td>source</td><td>pass</td><td>已查看assets/raw_01.png，编绳纹理、顶部绳结及三对羽毛与成图可见主体对应。prepare_assets.py裁切并映射素材；geometry.py与render.py读取当前数据控制区域面积、分割及文字。归档执行历史不在本次核验范围。</td></tr><tr><td>integration</td><td>pass</td><td>完整着色圆盘位于绳圈内，内部曲边本身承担面积数据；绳圈包围圆盘，上绳结接圈顶，羽毛经下缘绳结悬挂。正视结构无须透视反变换，未见破坏包含或接触关系的遮挡。</td></tr><tr><td>readability</td><td>pass</td><td>标题、SYNTHETIC DATA、Synthetic records、301 records、父类与子类、全部数值和底部读取说明均可辨；最小G区也保有清晰文字和可见边界。</td></tr><tr><td>关键结构</td><td>pass</td><td>绳圈、上悬绳结、六个外围父类区域与内部G区、左中右三组成对羽毛均保留；A/E/B内部再分子类，未破坏父类连通性与圈内分区关系。</td></tr><tr><td>当前主题意义</td><td>pass</td><td>Synthetic dream categories给出当前主题；Synthetic records及records给出指标单位；11 categories across 7 parent dreams解释分类；Region area = records ÷ 301和All records belong to one category明确互斥分类份额，非时间累计或独立选择比例。</td></tr><tr><td>参考原意</td><td>partial</td><td>捕梦网承载梦境区域的关系保留；原图具体梦境经历和学生调查被输入明确改为合成父类/子类，并标Not a real-world survey。这属于允许的输入适配，不作为生成失败。</td></tr><tr><td>小值可辨</td><td>pass</td><td>最小正值G保留约129×197 px的封闭内部区域，估计17142 px²；6及1.99%清晰，四周分界和圈内包含关系可辨。未发现为辨认而明显放大该区。</td></tr></table></div><details><summary>测量、关系、意义与保留程度评分</summary><pre>{
+  &quot;detailed_evidence&quot;: {
+    &quot;measurements&quot;: [
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream A / synthetic subcategory 1&quot;,
+        &quot;expected_value&quot;: 23,
+        &quot;observed_value&quot;: 22.996,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 397,
+        &quot;full_scale_error_percent&quot;: 0.0012,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.22361,
+          0.2319,
+          0.49931,
+          0.37905
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积65984 px²，占圆盘7.640%；包围盒约397×309 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得22.913–23.062 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream A / synthetic subcategory 2&quot;,
+        &quot;expected_value&quot;: 23,
+        &quot;observed_value&quot;: 23.005,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 417,
+        &quot;full_scale_error_percent&quot;: 0.0018,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.36875,
+          0.23143,
+          0.59861,
+          0.43
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积66010 px²，占圆盘7.643%；包围盒约331×417 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得22.966–23.054 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream A / synthetic subcategory 3&quot;,
+        &quot;expected_value&quot;: 46,
+        &quot;observed_value&quot;: 46.129,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 579,
+        &quot;full_scale_error_percent&quot;: 0.0429,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.40625,
+          0.23667,
+          0.73472,
+          0.51238
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积132359 px²，占圆盘15.325%；包围盒约473×579 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得46.000–46.220 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream G&quot;,
+        &quot;expected_value&quot;: 6,
+        &quot;observed_value&quot;: 5.974,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 197,
+        &quot;full_scale_error_percent&quot;: 0.0086,
+        &quot;small_value_relative_error_percent&quot;: 0.429,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.43333,
+          0.46381,
+          0.52292,
+          0.55762
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积17142 px²，占圆盘1.985%；包围盒约129×197 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得5.944–6.038 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream E / synthetic subcategory 1&quot;,
+        &quot;expected_value&quot;: 26,
+        &quot;observed_value&quot;: 25.887,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 472,
+        &quot;full_scale_error_percent&quot;: 0.0376,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.66875,
+          0.28476,
+          0.86389,
+          0.50952
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积74278 px²，占圆盘8.600%；包围盒约281×472 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得25.810–25.985 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream E / synthetic subcategory 2&quot;,
+        &quot;expected_value&quot;: 27,
+        &quot;observed_value&quot;: 27.041,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 499,
+        &quot;full_scale_error_percent&quot;: 0.0137,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.51736,
+          0.44857,
+          0.86389,
+          0.58095
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积77590 px²，占圆盘8.984%；包围盒约499×278 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得26.940–27.139 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream D&quot;,
+        &quot;expected_value&quot;: 29,
+        &quot;observed_value&quot;: 28.951,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 519,
+        &quot;full_scale_error_percent&quot;: 0.0164,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.49722,
+          0.52857,
+          0.85764,
+          0.68381
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积83069 px²，占圆盘9.618%；包围盒约519×326 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得28.923–28.988 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream C&quot;,
+        &quot;expected_value&quot;: 36,
+        &quot;observed_value&quot;: 35.966,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 499,
+        &quot;full_scale_error_percent&quot;: 0.0112,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.36528,
+          0.54762,
+          0.71181,
+          0.73048
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积103199 px²，占圆盘11.949%；包围盒约499×384 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得35.914–35.999 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream B / synthetic subcategory 1&quot;,
+        &quot;expected_value&quot;: 34,
+        &quot;observed_value&quot;: 34.002,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 448,
+        &quot;full_scale_error_percent&quot;: 0.0006,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.17431,
+          0.50667,
+          0.43611,
+          0.72
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积97562 px²，占圆盘11.296%；包围盒约377×448 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得33.961–34.046 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream B / synthetic subcategory 2&quot;,
+        &quot;expected_value&quot;: 34,
+        &quot;observed_value&quot;: 34.079,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 430,
+        &quot;full_scale_error_percent&quot;: 0.0264,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.13611,
+          0.4019,
+          0.43472,
+          0.59238
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积97785 px²，占圆盘11.322%；包围盒约430×400 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得34.039–34.121 records，不能视作精确轮廓真值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream F&quot;,
+        &quot;expected_value&quot;: 17,
+        &quot;observed_value&quot;: 16.968,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 348,
+        &quot;full_scale_error_percent&quot;: 0.0105,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.1375,
+          0.31857,
+          0.37917,
+          0.45714
+        ],
+        &quot;evidence_zh&quot;: &quot;成图像素分区估计面积48688 px²，占圆盘5.637%；包围盒约348×291 px。由面积份额×301换算记录数。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;文字与描边按邻近着色区回补；不同阈值及外沿恢复量所得16.913–17.033 records，不能视作精确轮廓真值。&quot;
+      }
+    ],
+    &quot;part_relations&quot;: [
+      {
+        &quot;category&quot;: &quot;完整捕梦网&quot;,
+        &quot;required_parts&quot;: [
+          &quot;绳圈&quot;,
+          &quot;圈内着色圆盘&quot;,
+          &quot;连通曲边分区&quot;
+        ],
+        &quot;relationship&quot;: &quot;包含与共边；区域面积为数据通道&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.11,
+          0.214,
+          0.89,
+          0.748
+        ],
+        &quot;evidence_zh&quot;: &quot;棕色编绳圈包围整张数据圆盘，着色区域共享分界，未见背景穿透数据面的实质缝隙。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;顶部悬挂连接&quot;,
+        &quot;required_parts&quot;: [
+          &quot;上方悬绳&quot;,
+          &quot;绳结&quot;,
+          &quot;绳圈顶部&quot;
+        ],
+        &quot;relationship&quot;: &quot;悬绳经绳结接触并连接圈顶&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.464,
+          0.185,
+          0.536,
+          0.24
+        ],
+        &quot;evidence_zh&quot;: &quot;短悬绳进入顶部缠绕结，结下端与圈顶编绳相接；绳长改变属于允许的非数据姿态适配。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;下方三对羽毛&quot;,
+        &quot;required_parts&quot;: [
+          &quot;绳圈下缘&quot;,
+          &quot;左中右绳结及短绳&quot;,
+          &quot;每组两支羽毛&quot;
+        ],
+        &quot;relationship&quot;: &quot;羽毛从下缘三个连接位置向下悬挂&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.086,
+          0.61,
+          0.923,
+          0.94
+        ],
+        &quot;evidence_zh&quot;: &quot;左、右与中央均可见两支羽毛、羽轴和上方连接结；连接处与圈相接，羽毛主体位于圆盘之外。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;Dream A / synthetic subcategory 3（大区）&quot;,
+        &quot;required_parts&quot;: [
+          &quot;外围绳圈&quot;,
+          &quot;红色连通曲边区&quot;,
+          &quot;相邻区域&quot;,
+          &quot;区内标签&quot;
+        ],
+        &quot;relationship&quot;: &quot;大区外弧贴圈内沿，内边与其他区共边，文字位于区内&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.40625,
+          0.23667,
+          0.73472,
+          0.51238
+        ],
+        &quot;evidence_zh&quot;: &quot;约473×579 px的红区从上缘延伸至内部G区边界；46和15.28%位于该区，区域不是圈外附加图表。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;Dream G（最小区）&quot;,
+        &quot;required_parts&quot;: [
+          &quot;浅黄色封闭区&quot;,
+          &quot;周围区域边界&quot;,
+          &quot;Dream G/6/1.99%标签&quot;
+        ],
+        &quot;relationship&quot;: &quot;小区完全位于圆盘内部，与周围区域共边而不直接接外圈&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.43333,
+          0.46381,
+          0.52292,
+          0.55762
+        ],
+        &quot;evidence_zh&quot;: &quot;约129×197 px内部区四周被其他着色区包围，边界连续且有可见面积；标签位于内部，不依靠数值文字替代区域本身。&quot;
+      }
+    ],
+    &quot;meaning_trace&quot;: {
+      &quot;current_topic&quot;: &quot;pass&quot;,
+      &quot;metric_and_unit&quot;: &quot;pass&quot;,
+      &quot;category_roles&quot;: &quot;pass&quot;,
+      &quot;reference_action_or_argument&quot;: &quot;partial&quot;,
+      &quot;allowed_input_adaptation_zh&quot;: &quot;冻结brief/data指定合成梦境分类、11类和7个语义父类，允许根据当前数值改变分区、非数据厚度与排版；不要求保留原调查比例或具体经历名称。&quot;,
+      &quot;output_added_or_lost_meaning_zh&quot;: &quot;原图学生梦境调查的具体内容被明确改为合成记录。当前记录被说明为单一归类，面积表达总数301中的份额，未引入时间、趋势或真实调查结论。&quot;,
+      &quot;visible_inscription_evidence_zh&quot;: &quot;SYNTHETIC DATA；Synthetic dream categories；Synthetic records · 301 records in total；11 categories across 7 parent dreams；Region area = records ÷ 301；All records belong to one category；Not a real-world survey。&quot;
+    },
+    &quot;attribution&quot;: [
+      {
+        &quot;cause&quot;: &quot;input_adaptation&quot;,
+        &quot;evidence_zh&quot;: &quot;合成分类及父子类角色由brief/data明确提供；原参考调查人群和具体经历不再是当前必需语义。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;data_driven_shape_change&quot;,
+        &quot;evidence_zh&quot;: &quot;七个父类包含11个当前数据区；G为6/301的内部小区，其他区按当前数量变化，允许偏离参考固定区域大小。&quot;
+      }
+    ],
+    &quot;measurement_coverage_zh&quot;: &quot;单面板、单面积通道的全部11区均独立测量，包含最小G、最大A子类3及中等E子类2；全部标签、数值和11区计数另行目视核对。百分比是同一面积通道的派生文字，不另作几何通道。未读取生成器自检或掩膜。&quot;
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;绳圈、顶部悬绳与绳结、左中右三对羽毛均保留，捕梦网身份清楚。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不将七区增至11区、标签替换或中央小区缩小扣分。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;上绳连接圈顶，三组羽毛从圈下缘左右与中央绳结向下悬挂，数据区仍包含在圈中。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;允许圆环规整化、悬绳长度、羽毛角度及非数据厚度调整。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;仍是上标题、中部大圈数据主体、下方羽毛；新增页眉、总数、副标题和底部说明，标题改为居中两行。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;新增语义说明、11类所需排版和数据形状变化不作缺陷处理。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;保留暖纸底和红褐色分区，但原图稀疏酒红手绘线变为铜棕色高细节编绳与写实排线羽毛，标题也由自由手写变为整齐衬线。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不评价新值、分区面积和标签内容；仅比较非数据材质与绘画语言。&quot;
+    }
+  }
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/279c826d40e497/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体无图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+  &quot;status&quot;: &quot;verified&quot;,
+  &quot;agent_reference_assigned&quot;: false,
+  &quot;image_reference_assigned&quot;: true,
+  &quot;agent_reference_view_count&quot;: 0,
+  &quot;planner_direct_image_calls&quot;: 0,
+  &quot;attempted_image_requests&quot;: 1,
+  &quot;successful_image_calls&quot;: 1,
+  &quot;image_calls_with_original_reference&quot;: 1,
+  &quot;violations&quot;: [],
+  &quot;external_image_views&quot;: [],
+  &quot;scope&quot;: &quot;Direct original-image access and exact relay arguments; common reference-derived text remains in all arms.&quot;
+}</pre></details><a href="images/T083/r02.webp"><img loading="lazy" src="images/T083/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T083/r01.webp"><img loading="lazy" src="images/T083/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T083/r02.webp"><img loading="lazy" src="images/T083/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>未发现违反冻结必要要求的重大可见缺陷。11类数值、绑定和面积均符合要求；捕梦网的连接、包含关系及最小中央区域清晰。参考调查语义按输入改为合成类别，单独记为部分保留。</p><div class="table-wrap"><table><tr><th>维度</th><th>状态</th><th>证据</th></tr><tr><td>completeness</td><td>pass</td><td>圆盘和图例均有A1、A2、A3、G、E1、E2、D、C、B1、B2、F，共11类；图例保留7个Dream父类及全部子类名称，显示总数301与记录单位。</td></tr><tr><td>numeric_text</td><td>pass</td><td>按输入顺序可读23、23、46、6、26、27、29、36、34、34、17；占比分别7.64%、7.64%、15.28%、1.99%、8.64%、8.97%、9.63%、11.96%、11.30%、11.30%、5.65%，与分母301一致。</td></tr><tr><td>binding</td><td>pass</td><td>区内缩写、记录数与占比位于对应颜色区内；图例以同色同缩写绑定完整类别，按列自上而下保留输入顺序。未见跨界或错配。</td></tr><tr><td>geometry</td><td>pass</td><td>最终PNG独立面积估计覆盖全部11区，最大偏差约0.031个百分点；G约1.998%对目标1.993%，A3约15.307%对15.282%。圆盘可见连续填色及共用边界，无实质空洞或重叠。</td></tr><tr><td>source</td><td>pass</td><td>已查看raw_01.png；其金色编绳、挂环、两支羽毛的纹理和轮廓在成图中大面积可见。render.py加载对应素材，geometry.py依据数据构造分区并变换曲边；源码只作控制路线佐证。逐次归档未独立核验。</td></tr><tr><td>integration</td><td>pass</td><td>真实数据边界是绳圈内的整块曲边分区圆盘；素材绳圈贴合盘外缘，顶部结与环相接，左右羽毛经结和珠串悬于下缘。未见破坏结构的透视、层序或接缝问题。</td></tr><tr><td>readability</td><td>pass</td><td>标题、SYNTHETIC DATA、各区缩写/数值/占比、图例完整名称、总数和底部统计口径均可读；最小G的6与1.99%未挤出区域。</td></tr><tr><td>关键结构</td><td>pass</td><td>顶部挂环接绳结并接圈顶；绳圈包围数据盘；11个相接曲边区域保留外围区和中央小区关系；圈下左右绳结经珠串接成对羽毛。</td></tr><tr><td>当前主题意义</td><td>pass</td><td>可见Synthetic dream categories、Synthetic records、301、11 categories · 7 dream families、Region area = count / total，以及one category per record · units: records；主题、计数指标、类别角色和互斥分类口径明确。</td></tr><tr><td>参考原意</td><td>partial</td><td>参考大学生梦境体验调查及旧百分比陈述被冻结输入指定的合成梦境类别替代；捕梦网内部承载梦境分区的表达关系保留。原统计内容的变化归因于输入适配，不作为输出失败。</td></tr><tr><td>小值可辨</td><td>pass</td><td>最小G区约137×161像素、约12682像素²；黄色填色、完整边界、邻区接触和6/1.99%标签均清楚，仍为盘内连通小区而非仅有文字。</td></tr></table></div><details><summary>测量、关系、意义与保留程度评分</summary><pre>{
+  &quot;detailed_evidence&quot;: {
+    &quot;measurements&quot;: [
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream G&quot;,
+        &quot;expected_value&quot;: 6,
+        &quot;observed_value&quot;: 6.014,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 161,
+        &quot;full_scale_error_percent&quot;: 0.0048,
+        &quot;small_value_relative_error_percent&quot;: 0.238,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.45208,
+          0.38381,
+          0.54722,
+          0.46048
+        ],
+        &quot;evidence_zh&quot;: &quot;最终原图颜色分割及遮字补估：G约12682像素²，占拟合圆盘1.998%，目标1.993%；包围盒约137×161像素。observed_value为面积折算记录数，extent为包围盒最长边。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;颜色阈值及圆盘半径±1像素敏感性范围为1.987%–2.012%；文字、边线与少量遮挡由相邻填色补估。误差为点估计，不代表精确的小值相对精度。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream A / synthetic subcategory 3&quot;,
+        &quot;expected_value&quot;: 46,
+        &quot;observed_value&quot;: 46.074,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 490,
+        &quot;full_scale_error_percent&quot;: 0.0247,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.50417,
+          0.19619,
+          0.74375,
+          0.42952
+        ],
+        &quot;evidence_zh&quot;: &quot;最终原图颜色分割及遮字补估：A3约97154像素²，占拟合圆盘15.307%，目标15.282%；包围盒约345×490像素。observed_value为面积折算记录数，extent为包围盒最长边。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;颜色阈值及圆盘半径±1像素敏感性范围为15.297%–15.326%；文字、边线与少量遮挡由相邻填色补估。误差为点估计，不代表精确的小值相对精度。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream D&quot;,
+        &quot;expected_value&quot;: 29,
+        &quot;observed_value&quot;: 28.907,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 423,
+        &quot;full_scale_error_percent&quot;: 0.031,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.48056,
+          0.45952,
+          0.77431,
+          0.60905
+        ],
+        &quot;evidence_zh&quot;: &quot;最终原图颜色分割及遮字补估：D约60954像素²，占拟合圆盘9.604%，目标9.635%；包围盒约423×314像素。observed_value为面积折算记录数，extent为包围盒最长边。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;颜色阈值及圆盘半径±1像素敏感性范围为9.581%–9.612%；文字、边线与少量遮挡由相邻填色补估。误差为点估计，不代表精确的小值相对精度。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;count&quot;,
+        &quot;category&quot;: &quot;Dream A / synthetic subcategory 2&quot;,
+        &quot;expected_value&quot;: 23,
+        &quot;observed_value&quot;: 23.047,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 438,
+        &quot;full_scale_error_percent&quot;: 0.0156,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.42639,
+          0.19619,
+          0.57639,
+          0.40476
+        ],
+        &quot;evidence_zh&quot;: &quot;最终原图颜色分割及遮字补估：A2约48598像素²，占拟合圆盘7.657%，目标7.641%；包围盒约216×438像素。observed_value为面积折算记录数，extent为包围盒最长边。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;颜色阈值及圆盘半径±1像素敏感性范围为7.639%–7.673%；文字、边线与少量遮挡由相邻填色补估。误差为点估计，不代表精确的小值相对精度。&quot;
+      }
+    ],
+    &quot;part_relations&quot;: [
+      {
+        &quot;category&quot;: &quot;整体捕梦网&quot;,
+        &quot;required_parts&quot;: [
+          &quot;顶部挂环&quot;,
+          &quot;绳结&quot;,
+          &quot;编绳圆圈&quot;,
+          &quot;数据圆盘&quot;
+        ],
+        &quot;relationship&quot;: &quot;挂环在上方连接圈顶绳结；绳圈包围并贴合填色圆盘。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.166,
+          0.137,
+          0.835,
+          0.642
+        ],
+        &quot;evidence_zh&quot;: &quot;挂环下端与顶部结可见接触；数据填色延伸到绳圈内缘，未成为另置在圈旁的图表。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;下方成对羽毛&quot;,
+        &quot;required_parts&quot;: [
+          &quot;圈下部左右绳结&quot;,
+          &quot;垂绳&quot;,
+          &quot;珠串&quot;,
+          &quot;左右羽毛&quot;
+        ],
+        &quot;relationship&quot;: &quot;两个圈缘连接点分别经绳与珠串接向下悬垂的羽毛。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.213,
+          0.563,
+          0.796,
+          0.787
+        ],
+        &quot;evidence_zh&quot;: &quot;左右羽毛轴向下延伸，羽片接在珠串下方；连接结覆盖圈下弧，未见悬空断开。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;大型A3区域&quot;,
+        &quot;required_parts&quot;: [
+          &quot;A3填色区域&quot;,
+          &quot;共享曲边&quot;,
+          &quot;绳圈内缘&quot;,
+          &quot;46与15.28%&quot;
+        ],
+        &quot;relationship&quot;: &quot;大区连续接触外圈内缘，并与A2、G、E1等相邻区域共享边界。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.504,
+          0.196,
+          0.744,
+          0.43
+        ],
+        &quot;evidence_zh&quot;: &quot;右上赭红大区从上缘延至右侧，区内标签清楚；实际承载值的是整个填色区面积。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;最小G区域&quot;,
+        &quot;required_parts&quot;: [
+          &quot;中央黄色区域&quot;,
+          &quot;邻区共享边界&quot;,
+          &quot;6与1.99%&quot;
+        ],
+        &quot;relationship&quot;: &quot;小区被其它区域包围，与邻区直接接触，仍属于同一完整数据盘。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.452,
+          0.384,
+          0.547,
+          0.46
+        ],
+        &quot;evidence_zh&quot;: &quot;中央黄色区边界闭合，标签位于区内；可见约137×161像素范围，不需要靠图例推断其存在。&quot;
+      }
+    ],
+    &quot;meaning_trace&quot;: {
+      &quot;current_topic&quot;: &quot;pass&quot;,
+      &quot;metric_and_unit&quot;: &quot;pass&quot;,
+      &quot;category_roles&quot;: &quot;pass&quot;,
+      &quot;reference_action_or_argument&quot;: &quot;partial&quot;,
+      &quot;allowed_input_adaptation_zh&quot;: &quot;冻结要求明确使用合成梦境类别与记录数，按301总记录分区；允许非数据姿态、厚度和排版适配，不沿用参考旧统计。&quot;,
+      &quot;output_added_or_lost_meaning_zh&quot;: &quot;新增图例、父类/子类说明和每记录一类的口径，使当前分布可读；原梦境体验调查的具体断言未保留，属于输入指定替换。捕梦网包容梦境分区的关系仍在。&quot;,
+      &quot;visible_inscription_evidence_zh&quot;: &quot;SYNTHETIC DATA；Synthetic dream categories；Synthetic records；301；11 categories · 7 dream families；Region area = count / total；Records / share of all 301 records；one category per record · units: records。&quot;
+    },
+    &quot;attribution&quot;: [
+      {
+        &quot;cause&quot;: &quot;input_adaptation&quot;,
+        &quot;evidence_zh&quot;: &quot;参考大学生梦境体验的旧调查内容改为输入指定的合成Dream父类/子类；不要求恢复旧百分比或旧陈述。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;data_driven_shape_change&quot;,
+        &quot;evidence_zh&quot;: &quot;7个父类按当前数据细分为11个连续区域，中央G按6/301占约2%；面积和轮廓变化没有破坏捕梦网的包含关系。&quot;
+      }
+    ],
+    &quot;measurement_coverage_zh&quot;: &quot;仅有一个面积定量通道。独立颜色分割计算了全部11区；此处列最小且位于内部的G、最大A3、中间量值D和较窄A2四个代表，完整像素估计保存在pixel_measurements.json。全部11类文字、计数与图例绑定另行逐项核对；未以羽毛或绳圈尺寸充当数量编码。&quot;
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;绳圈、顶部悬挂绳结和下方羽毛等身份部件均保留。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不因当前类别增至11个或挂环、羽毛数量和姿态的身份兼容调整扣分。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;仍为正面竖直悬挂；顶绳连接圈顶结，羽毛经绳串连接圈下部，数据区被圈包含。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除允许的长悬绳变挂环及羽毛位置、数量、非数据厚度调整。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保留上方标题、居中大捕梦网与向下悬羽毛的主次层级；新增底部三列图例，参考中的区内完整文字改为缩写。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不惩罚更新标题、类别、数值及为11类所需的合理图例排版。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;米黄背景和暖色圈内分区仍可识别；参考粗线手绘绳圈、墨线羽毛和红色手写标题改为写实编绳、照片感羽毛及整齐印刷字体。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不把数据面积变化和更新标注算作材质差异。&quot;
+    }
+  }
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/6d853a9cec71e5/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体无图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+  &quot;status&quot;: &quot;verified&quot;,
+  &quot;agent_reference_assigned&quot;: false,
+  &quot;image_reference_assigned&quot;: false,
+  &quot;agent_reference_view_count&quot;: 0,
+  &quot;planner_direct_image_calls&quot;: 0,
+  &quot;attempted_image_requests&quot;: 1,
+  &quot;successful_image_calls&quot;: 1,
+  &quot;image_calls_with_original_reference&quot;: 0,
+  &quot;violations&quot;: [],
+  &quot;external_image_views&quot;: [],
+  &quot;scope&quot;: &quot;Direct original-image access and exact relay arguments; common reference-derived text remains in all arms.&quot;
+}</pre></details><a href="images/T021/r02.webp"><img loading="lazy" src="images/T021/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T021/r01.webp"><img loading="lazy" src="images/T021/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T021/r02.webp"><img loading="lazy" src="images/T021/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F11" data-type="trend_shape"><h2>F11 · 年度价格通胀与实际产出变化</h2><p>E39 · 趋势形状 · 四组同一冲突数据</p><div class="reference"><a href="images/F11/reference.webp"><img loading="lazy" src="images/F11/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F11/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F11/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F11/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;pending&quot;
 }</pre></details><p>暂无完整成图</p></article><article><h3>智能体有图 · 生图无图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;pending&quot;
-}</pre></details><p>暂无完整成图</p></article><article><h3>智能体无图 · 生图有图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><p>暂无完整成图</p></article><article><h3>智能体无图 · 生图有图</h3><p>生成：执行中</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;pending&quot;
 }</pre></details><p>暂无完整成图</p></article><article><h3>智能体无图 · 生图无图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;pending&quot;
