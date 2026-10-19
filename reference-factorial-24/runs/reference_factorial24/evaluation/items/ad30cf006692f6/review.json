@@ -1,0 +1,239 @@
+{
+  "verdict": "minor",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为浅黄纸底、红褐色粗线手绘捕梦网，圈内曲边分区，下方成组羽毛，顶部悬绳结与手写标题。待评图保留绳圈、顶部绳结与三对羽毛；圈内可见11个相邻区域，中心Dream G为小浅色区域。类别、数值、records及百分比可读，顶部标明合成数据与301条总数。悬绳遮住副标题across附近部分字形。材质改为精细排线绳羽，字体规整。以上观察先于源码检查。",
+  "summary_zh": "已保存并通过schema校验的review.json；未运行submit.py。数据、面积、标签及捕梦网结构符合要求，仅副标题局部被悬绳遮挡，判为minor。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "LABELS",
+      "expected_zh": "副标题“11 categories across 7 parent dreams”完整可读。",
+      "observed_zh": "顶部悬绳遮住across后半部部分字形；11、7和全部类别数值仍清楚。",
+      "evidence_zh": "原图约x=700–741、y=369–383处可见遮挡。源码佐证：render.py先绘制y=372副标题，再于y=370放置悬绳素材。",
+      "bbox_xyxy_normalized": [
+        0.4861,
+        0.1757,
+        0.5146,
+        0.1824
+      ]
+    }
+  ],
+  "measurement_notes_zh": "在1440×2100原图中按11种区域颜色提取主要连通填充块，以可见边缘拟合圆盘；文字及内部描边按最近背景色补全。估计圆心(719.54,1009.63)、半径524.79px、面积865244px²。全部11区最大绝对份额误差约0.021个百分点。未使用生成器区域掩膜或自检结果。",
+  "uncertainties_zh": "描边与抗锯齿使边界有约1–2px不确定性，微小相对误差仅为分割估计。未检查日志或归档记录，无法核实逐次capture_render.py调用。七区概述按当前七父类、十一叶类别理解。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11个区域及标签齐全：A三子类、G、E两子类、D、C、B两子类、F；总数301，七父类，单位records。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "23、23、46、6、26、27、29、36、34、34、17全部正确；对应百分比均正确保留两位小数。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各标签与数值位于自身区域；A/E/B子类编号保留父类，未见跨区错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "11区独立像素估计最大份额误差约0.021个百分点，低于3个百分点；区域相接并填满圆盘。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的编绳、绳结和羽毛在成图中实质可见。prepare_assets.py处理素材；geometry.py控制面积分区，render.py绘制区域与标签。未执行生成器，逐次归档未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "分区充满绳圈内部，外缘接圈内侧；羽毛经短绳与珠结连接圈下侧。未见影响结构或数据解读的错位、断接或素材挖空。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "全部必需类别、子类、数值、单位和合成声明可读；附加副标题仅局部轻微遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "绳圈包含连通曲边区域；顶部悬挂绳结接触圈体；下方三对羽毛均有连接。大小区域实际承担面积编码。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Synthetic records、301 records、合成声明、面积公式及每条记录归一类的说明明确当前主题、单位、分母和统计口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留捕梦网容纳梦境类别的关系；原梦境体验调查改为合成记录互斥分区，属于冻结输入允许的语义适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小G区域约129×197px，闭合边界、邻区接触及6 records/1.99%均可辨，并非仅文字保留小值。"
+    }
+  },
+  "semantic_attribution_zh": "原调查改为合成互斥记录分区属于输入适配；七父类细分为十一叶区域属于数据驱动变化。未发现必需统计角色遗漏。顶部遮挡是局部排版损失，微小面积误差的不确定性来自像素分割。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "count",
+        "category": "Dream A / synthetic subcategory 2",
+        "expected_value": 23,
+        "observed_value": 22.994,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 524,
+        "full_scale_error_percent": 0.002,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.385417,
+          0.231905,
+          0.559722,
+          0.481429
+        ],
+        "evidence_zh": "区域约66098px²，外接框251×524px；份额约7.639%，目标7.641%。记录数由像素份额乘301反推。",
+        "uncertainty_zh": "描边和文字覆盖需补全；圆盘半径±1px使份额变化约0.015个百分点以内。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream A / synthetic subcategory 3",
+        "expected_value": 46,
+        "observed_value": 45.938,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 590,
+        "full_scale_error_percent": 0.0205,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.469444,
+          0.230952,
+          0.734028,
+          0.511905
+        ],
+        "evidence_zh": "区域约132053px²，外接框381×590px；份额约15.262%，目标15.282%。",
+        "uncertainty_zh": "描边中心和抗锯齿造成近似误差；该差值不能解释为精确几何偏差。"
+      },
+      {
+        "series_id": "count",
+        "category": "Dream G",
+        "expected_value": 6,
+        "observed_value": 6.013,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 197,
+        "full_scale_error_percent": 0.0045,
+        "small_value_relative_error_percent": 0.224,
+        "bbox_xyxy_normalized": [
+          0.433333,
+          0.46381,
+          0.522917,
+          0.557619
+        ],
+        "evidence_zh": "区域约17286px²，外接框129×197px；份额约1.998%，目标1.993%。",
+        "uncertainty_zh": "相对误差仅为当前分割估计，边界1–2px不确定性不支持同等精度保证；独立区域可见性明确。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体捕梦网与附件",
+        "required_parts": [
+          "编绳圆环",
+          "顶部悬挂绳结",
+          "下方三对羽毛",
+          "连接短绳与珠结"
+        ],
+        "relationship": "顶部绳结接触圆环；羽毛从圈下侧三处经绳和珠结向下悬挂；圆环包围数据盘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.086,
+          0.176,
+          0.923,
+          0.94
+        ],
+        "evidence_zh": "左下、底中、右下均见连接到羽轴的绳与珠；六片羽毛有可见羽轴和羽片排线。"
+      },
+      {
+        "category": "大区域：Dream A / synthetic subcategory 3",
+        "required_parts": [
+          "红棕色曲边区域",
+          "绳圈内缘",
+          "相邻分区",
+          "46 records标签"
+        ],
+        "relationship": "区域在圈内，上方外弧接圈内缘，其余边界与A子类2、E及G相接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.469444,
+          0.230952,
+          0.734028,
+          0.511905
+        ],
+        "evidence_zh": "右上区域从圆盘顶部延伸到中心上侧，轮廓连续；46及15.28%位于区域内部。"
+      },
+      {
+        "category": "小内部区域：Dream G",
+        "required_parts": [
+          "浅色闭合区域",
+          "相邻曲边边界",
+          "6 records标签"
+        ],
+        "relationship": "完全包含于圆盘，与A、B、C、D、E区域相邻，不直接接触外圈。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.433333,
+          0.46381,
+          0.522917,
+          0.557619
+        ],
+        "evidence_zh": "中心浅色小区有完整边界，未被绳羽遮盖；6及1.99%在区域内。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结说明要求合成梦境记录、七父类十一类别，面积=记录数/301，并允许非数据姿态、厚度和排版适配。",
+      "output_added_or_lost_meaning_zh": "合成性、单位与互斥口径完整；旧具名梦境体验调查由指定的新类别替换，捕梦网承载梦境类别的关系保留。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Synthetic dream categories；Synthetic records · 301 records in total；synthetic subcategory；Region area = records ÷ 301；All records belong to one category；Not a real-world survey。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "旧体验百分比改为合成互斥记录分区由冻结输入明确给定，不归为输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "七父类细分为十一连通区域，面积随当前记录数变化。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "描边、抗锯齿和文字覆盖需要像素补全，微小误差为近似估计。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一数量通道为圆盘面积，分母301 records。像素测量覆盖全部11区，代表项列出窄中等区、最大区和最小内部区；其余结果在pixel_measurements.json。所有11项标签与百分比另行逐项核对。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "编绳框、顶部绳结及下方成对羽毛均清晰保留。",
+      "data_adaptation_excluded_zh": "不扣除七父类适配为十一叶区域及面积变化。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "顶部绳结接触圆环，羽毛通过短绳与结向下悬挂。",
+      "data_adaptation_excluded_zh": "排除允许的绳粗、羽毛角度及悬挂长度调整。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留大标题、中央主导绳圈及下方羽毛；自由手写标题改为居中两行。",
+      "data_adaptation_excluded_zh": "排除新增类别所需标签、说明及数据适配排版。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "暖纸底和红棕色系延续，但粗线稿改为精细明暗编绳与密集羽毛排线，手写字改为规整衬线字。",
+      "data_adaptation_excluded_zh": "不扣除区域数量、比例和更新文字内容。"
+    }
+  }
+}
