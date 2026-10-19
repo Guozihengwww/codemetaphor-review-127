@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:52:04.864368+00:00",
+  "updated_at": "2026-10-19T22:00:08.821833+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,8 +11,8 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "ok": 24,
-      "pending": 69,
+      "ok": 28,
+      "pending": 65,
       "running": 3
     },
     "routing_audits": {
@@ -9455,7 +9455,415 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.94,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为深蓝地图上的七行白色朝右俯视飞机，配左侧航司识别、渐隐尾迹及右侧金额。最终图保留七行结构，使用银色客机、独立类别块和金额列。标题、SYNTHETIC DATA、指标及USD billion清晰。七个金额与输入一致；飞机逐行缩小并趋近共同零线，F、G等大且微小。",
+        "summary_zh": "通过。已保存UTF-8 review.json并通过schema校验，未运行submit.py。未发现超过容差的重大可见缺陷；微小飞机的精确面积和尾部连接细节受分辨率限制。",
+        "issues": [],
+        "measurement_notes_zh": "测量所供2000×2000 image.png，未运行渲染程序。可见0与35刻度约在x=540、1690，跨度1150px；机鼻用局部半对比度边界估计并换算数值。面积以最终像素的同阈值亮区域比作独立近似，未把外接矩形当实体面积，也未读取生成方掩膜或自检。",
+        "uncertainties_zh": "机鼻边界估计约有±1px不确定性，对F/G约2px的正距离不可忽略。亮度阈值不能准确分离微小机体与尾迹，故其精确面积和相对误差未知。未核查捕获调用链，不能确认capture_render.py执行记录。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "Airline A–G依序齐全，七架飞机、七组金额及类别识别块可见。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "31.2、9.002447、2.597566、0.749502、0.216261、0.0624、0.0624逐项准确，无正值舍入为零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "每行类别、飞机中心与金额对应；F/G金额相同，飞机等大且端点相同。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "七个机鼻像素估计与线性刻度相符；B/C亮区域面积比在阈值变化下仍远小于3%满量程偏差。微小机体精确面积另保留不确定性。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01的银色机体及raw_02地图纹理在最终图中有实质对应；render.py读取素材并控制位置、缩放和文字。捕获执行记录未核查。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "机鼻本身为数据端点，飞机实体大小为第二编码；尾迹位于后层，图注明确尾迹不编码数值。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成声明、指标、单位、七类名称及全精度金额均可读，无关键遮挡或截断。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "深色地图、七行朝右俯视客机、向左尾迹、类别块及右金额均保留。大中飞机的双翼、尾翼与机身连接清楚。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "主题标题、Synthetic market capitalization、USD billion、CARRIER及Airline A–G明确表达航空公司合成市值比较。"
+          },
+          "reference_meaning": {
+            "status": "pass",
+            "evidence_zh": "保留航空公司市值比较与飞机承载金额的关系；合成类别替换真实品牌属于允许改编。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "F/G原像素裁块仍见细机身和双侧主翼，尾部与白尾迹局部混合，尾翼连接细节不能可靠分辨；标记未缺失。"
+          }
+        },
+        "semantic_attribution_zh": "主题未改变；品牌及真实统计替换为合成航司和金额属于输入授权。飞机大小和位置变化由数据驱动。F/G细节降低主要归于像素分辨率，不归为输出删除或语义错误。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "market_cap / nose_position",
+              "category": "Airline A",
+              "expected_value": 31.2,
+              "observed_value": 31.194752,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 1024.97,
+              "full_scale_error_percent": 0.01499,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.782,
+                0.335,
+                0.784,
+                0.339
+              ],
+              "evidence_zh": "最终图机鼻局部半对比度边界距零点约1024.970px，按1150px对应35换算。",
+              "uncertainty_zh": "边界约有±1px不确定性，不是透明度边界的精确测量。"
+            },
+            {
+              "series_id": "market_cap / nose_position",
+              "category": "Airline B",
+              "expected_value": 9.002447,
+              "observed_value": 8.99713,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 295.62,
+              "full_scale_error_percent": 0.01519,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.416,
+                0.425,
+                0.419,
+                0.429
+              ],
+              "evidence_zh": "局部半对比度边界距零点约295.620px，按可见线性刻度换算。",
+              "uncertainty_zh": "边界约有±1px不确定性。"
+            },
+            {
+              "series_id": "market_cap / nose_position",
+              "category": "Airline C",
+              "expected_value": 2.597566,
+              "observed_value": 2.59404,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 85.233,
+              "full_scale_error_percent": 0.01007,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.311,
+                0.515,
+                0.314,
+                0.519
+              ],
+              "evidence_zh": "局部半对比度边界距零点约85.233px，按可见线性刻度换算。",
+              "uncertainty_zh": "边界约有±1px不确定性。"
+            },
+            {
+              "series_id": "market_cap / nose_position",
+              "category": "Airline D",
+              "expected_value": 0.749502,
+              "observed_value": 0.744527,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 24.463,
+              "full_scale_error_percent": 0.01421,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.281,
+                0.605,
+                0.284,
+                0.609
+              ],
+              "evidence_zh": "局部半对比度边界距零点约24.463px，按可见线性刻度换算。",
+              "uncertainty_zh": "边界约有±1px不确定性。"
+            },
+            {
+              "series_id": "market_cap / nose_position",
+              "category": "Airline E",
+              "expected_value": 0.216261,
+              "observed_value": 0.212165,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 6.971,
+              "full_scale_error_percent": 0.0117,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.272,
+                0.695,
+                0.275,
+                0.699
+              ],
+              "evidence_zh": "局部半对比度边界距零点约6.971px，按可见线性刻度换算。",
+              "uncertainty_zh": "约±1px边界不确定性使小值相对精度难以保证。"
+            },
+            {
+              "series_id": "market_cap / nose_position",
+              "category": "Airline F",
+              "expected_value": 0.0624,
+              "observed_value": 0.05714,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 1.877,
+              "full_scale_error_percent": 0.01503,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.269,
+                0.785,
+                0.272,
+                0.789
+              ],
+              "evidence_zh": "局部半对比度边界距零点约1.877px，支持微小正距离。",
+              "uncertainty_zh": "边界约±1px；相对于约2px的距离，不足以可靠确定小值相对误差。"
+            },
+            {
+              "series_id": "market_cap / nose_position",
+              "category": "Airline G",
+              "expected_value": 0.0624,
+              "observed_value": 0.057303,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 1.883,
+              "full_scale_error_percent": 0.01456,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.269,
+                0.875,
+                0.272,
+                0.879
+              ],
+              "evidence_zh": "局部半对比度边界距零点约1.883px，与F一致。",
+              "uncertainty_zh": "边界约±1px，不足以可靠确定小值相对误差。"
+            },
+            {
+              "series_id": "market_cap / airframe_area",
+              "category": "Airline A",
+              "expected_value": 31.2,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 499,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.533,
+                0.251,
+                0.7825,
+                0.423
+              ],
+              "evidence_zh": "最终图L>130分割得到34054个亮机体像素，边界跨度约499×344px，用作面积比参照。",
+              "uncertainty_zh": "亮区域不是完整实体透明度面积；不存在独立绝对像素面积标尺。"
+            },
+            {
+              "series_id": "market_cap / airframe_area",
+              "category": "Airline B",
+              "expected_value": 9.002447,
+              "observed_value": 9.006167,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 268,
+              "full_scale_error_percent": 0.01063,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.284,
+                0.3815,
+                0.418,
+                0.4735
+              ],
+              "evidence_zh": "同阈值亮区域9830px，9830/34054×31.2约为9.006；阈值100–150时估计为8.850–9.040。",
+              "uncertainty_zh": "相同纹理的亮区域比例近似，非完整实体面积积分，仅支持满量程容差判断。"
+            },
+            {
+              "series_id": "market_cap / airframe_area",
+              "category": "Airline C",
+              "expected_value": 2.597566,
+              "observed_value": 2.591907,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 142,
+              "full_scale_error_percent": 0.01617,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2415,
+                0.4925,
+                0.3125,
+                0.542
+              ],
+              "evidence_zh": "同阈值亮区域2829px，2829/34054×31.2约为2.592；阈值100–150时估计为2.581–2.651。",
+              "uncertainty_zh": "受阴影及抗锯齿影响，所列误差是亮区域比例估计，不能视作精确实体面积误差。"
+            },
+            {
+              "series_id": "market_cap / airframe_area",
+              "category": "Airline F",
+              "expected_value": 0.0624,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 21,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2605,
+                0.784,
+                0.271,
+                0.791
+              ],
+              "evidence_zh": "原像素裁块约21×14px亮轮廓，L>130有76个亮像素；尾迹与抗锯齿边缘影响实体分离。",
+              "uncertainty_zh": "精确实体面积及相对误差未知，不以数字标签或源码公式替代测量。"
+            },
+            {
+              "series_id": "market_cap / airframe_area",
+              "category": "Airline G",
+              "expected_value": 0.0624,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 21,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2605,
+                0.874,
+                0.271,
+                0.881
+              ],
+              "evidence_zh": "约21×14px亮轮廓，L>130同为76个亮像素，支持与F等大。",
+              "uncertainty_zh": "亮像素相等不证明精确实体面积，小值相对误差未知。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Airline A",
+              "required_parts": [
+                "机身",
+                "双翼",
+                "尾翼",
+                "朝右机鼻",
+                "向左尾迹"
+              ],
+              "relationship": "双翼连接机身两侧，尾翼位于左后部；尾迹在后层向左延伸，机鼻为最右数据边界。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.175,
+                0.251,
+                0.783,
+                0.423
+              ],
+              "evidence_zh": "大型银色机体的翼根和尾部连接清楚；尾迹延至机体后方，被实体遮挡而未穿过机鼻。"
+            },
+            {
+              "category": "Airline C",
+              "required_parts": [
+                "机身",
+                "双翼",
+                "尾翼",
+                "机鼻",
+                "尾迹"
+              ],
+              "relationship": "缩小后仍保留同向机身、双侧机翼和后尾翼，机鼻位于零线右侧。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.175,
+                0.491,
+                0.313,
+                0.542
+              ],
+              "evidence_zh": "主翼和尾翼可分别辨认并接触机身，尾迹位于左侧，实体未被零线切断。"
+            },
+            {
+              "category": "Airline F",
+              "required_parts": [
+                "机身",
+                "双翼",
+                "尾翼",
+                "机鼻",
+                "尾迹"
+              ],
+              "relationship": "机鼻略越过零线，主翼位于机身两侧，尾部与尾迹紧邻。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.2475,
+                0.7775,
+                0.2825,
+                0.7975
+              ],
+              "evidence_zh": "原像素裁块中可见机身及双侧主翼；尾翼仅少量像素并与尾迹混合，精细连接边界不可靠。"
+            },
+            {
+              "category": "Airline G",
+              "required_parts": [
+                "机身",
+                "双翼",
+                "尾翼",
+                "机鼻",
+                "尾迹"
+              ],
+              "relationship": "与F具有相同朝向、大小和端点，尾迹朝左。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.2475,
+                0.8675,
+                0.2825,
+                0.8875
+              ],
+              "evidence_zh": "原像素裁块可见微小机身和翼形，尾部连接细节同样受分辨率限制。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "允许合成航司和金额替换真实品牌及旧数值；保留航空公司市值主题，不要求旧排名或原统计结论。",
+            "output_added_or_lost_meaning_zh": "新增刻度、共同零点及双编码说明；未把金额误作份额或累计量。小值部件细节减少，指标含义未丢失。",
+            "visible_inscription_evidence_zh": "可见Airline market capitalization、SYNTHETIC DATA、Synthetic market capitalization、USD billion、CARRIER和White wakes do not encode value。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "合成航司和金额替换真实品牌与金额，主题和类别角色仍一致。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "小金额使机鼻接近共同零点、机体显著缩小，不据此扣除参考保真分。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "F/G约21×14px亮轮廓、机鼻距零约2px，使尾部连接和精确面积难以量化。"
+            }
+          ],
+          "measurement_coverage_zh": "核对全部七类、七个数值、顺序、单位和绑定，测量七个机鼻。面积重点检查最大A、较大B、中间C及最小F/G；未对D/E做完整实体面积积分。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "七行朝右俯视客机、机身双翼尾翼、航司识别块和深色世界地图均保留。",
+            "data_adaptation_excluded_zh": "排除合成类别替换真实品牌、旗帜，以及数值决定的机体大小变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "朝右俯视、双翼连接机身、尾翼位于左后部、尾迹向左且处于机体后层；行内类别与金额对应关系保留。",
+            "data_adaptation_excluded_zh": "排除位置、面积、允许的姿态和标签位置适配，以及宽尾迹改为细尾迹的非数据厚度变化。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方标题、七行比较及地图底层；增加刻度、说明区和独立金额列，标题更宽。",
+            "data_adaptation_excluded_zh": "排除新数值导致的标记集中于零点及合成数据声明。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留深蓝背景与亮色飞机对比；平面白色剪影和雾感背景改为银色细节机体及纹理地图，米黄重点字改为白色和青色。",
+            "data_adaptation_excluded_zh": "不以数值缩放或新标签文字计入材质评分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/3d855c3ab42d3c",
       "numeric_supported": true,
@@ -37803,7 +38211,352 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为红灰地球融化成积液和向下滴流，黑红曲线覆盖球体及积液，具有暗背板和浅透视底座。最终图保留这些部件与叠合关系，改用蓝绿水彩纹理。经济主题、百分比单位、SYNTHETIC DATA、1982预测标识及23年两行数值均可见。1960小正值在零线上方，1967负值在零线下方。",
+        "summary_zh": "通过。23年、两系列及46个数值完整，代表点像素测量符合容差，所需融化结构及曲线叠合关系保留。review.json已保存并通过schema.json校验；未执行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "测量指定image.png原始2000×1140像素。从可见网格确认零线y=795、15%线y=300、−1%线y=828，得到33像素/百分点及528像素满量程。通过代表点实色连通区域测量圆心，未把源码坐标作为像素测量。7点最大估计满量程误差约0.063%。mark_extent_px表示点中心到零线的纵向距离。",
+        "uncertainties_zh": "圆心定位约±0.5–1像素，约±0.015–0.03个百分点；对最小正值0.5%，相对测量不确定性约3–6%。1977两轨迹仅隔约3像素，颜色可分，但未报告其差值的高精度测量。未读取被排除的编排、自检或日志，因此未核证capture_render.py执行链。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "底部包含1960–1982共23年、两行46个数值；两条连续路径使用全部年份，1982单独标注预测。项目数据与冻结数据一致。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐列核对46个数值与输入一致；1967产出−0.4、峰值13.4和5.9、1977的3.2/3.3及预测尾值均正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "图例、曲线及表格一致使用黑色价格通胀、红色产出增长；年份对齐，关键标签指向对应点，1982空心点与虚线对应Forecast。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "两系列共用−1至15%线性轴，坐标不随球体或底座透视改变。7个代表点覆盖两系列最小正值、最大值、内部点和唯一负值，像素测量均符合容差。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始及处理素材，最终图的大陆、水彩纹理、积液和滴流与其对应。artwork.svg内嵌PNG与earth_melt.png哈希一致；render.py控制数据路径、点和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "曲线覆盖地球及积液并延伸到同一背板，保留参考的叠合关系。物体没有被替换为旁置图标；数据由线条位置承载，不由液体轮廓承载。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、合成提示、年度指标、百分比、图例、年份和值表清楚。1977局部浅底和细线使相邻轨迹可分。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "球体下缘连续融入积液，积液连接向下滴流；暗背板与浅透视底座保留。两系列作为前景路径叠合。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题和副标题明确年度价格通胀与实际产出变化及百分比单位；年份角色、两系列角色和1982预测身份清楚，不构成份额组成。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留经济指标角色和融化下滴动作；未沿用原图繁荣流失论点及OECD真实统计语境。冻结输入明确采用合成数据，属于允许的输入改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "0.5%红点距零线约16.5像素，−0.4%红点在零线下约13.3像素，1.9%黑点清楚。1977两条细线仍可分，但间距不支持高精度推断。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题、年度类别、两系列角色及百分比含义保留。移除真实统计语境和旧恶化论点属于冻结输入允许的改编；新峰谷属于数据驱动。1977近邻轨迹的精密读数受像素分辨率限制，未发现实质输出遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "output_growth",
+              "category": "1960",
+              "expected_value": 0.5,
+              "observed_value": 0.5,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 16.5,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.1255,
+                0.680702,
+                0.1295,
+                0.685088
+              ],
+              "evidence_zh": "实色核心中心y约778.5；零线y=795，按33像素/百分点换算。",
+              "uncertainty_zh": "定位约±0.5–1像素；零估计误差不代表无限精度。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1967",
+              "expected_value": -0.4,
+              "observed_value": -0.403,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 13.3,
+              "full_scale_error_percent": 0.0189,
+              "small_value_relative_error_percent": 0.7576,
+              "bbox_xyxy_normalized": [
+                0.3755,
+                0.70614,
+                0.3785,
+                0.712281
+              ],
+              "evidence_zh": "实色核心中心y约808.3，位于零线下方。",
+              "uncertainty_zh": "定位约±0.5–1像素，误差估计受抗锯齿影响。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1980",
+              "expected_value": 5.9,
+              "observed_value": 5.8948,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 194.53,
+              "full_scale_error_percent": 0.0326,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.8395,
+                0.523684,
+                0.843,
+                0.529825
+              ],
+              "evidence_zh": "实色核心中心y约600.47，对应产出最大值。",
+              "uncertainty_zh": "定位约±0.5–1像素；非小值，未单列小值相对误差。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1972",
+              "expected_value": 4.6,
+              "observed_value": 4.5945,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 151.62,
+              "full_scale_error_percent": 0.0345,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.554,
+                0.561404,
+                0.5575,
+                0.567544
+              ],
+              "evidence_zh": "内部年份红点实色核心中心y约643.38。",
+              "uncertainty_zh": "定位约±0.5–1像素；非小值，未单列小值相对误差。"
+            },
+            {
+              "series_id": "price_inflation",
+              "category": "1980",
+              "expected_value": 1.9,
+              "observed_value": 1.896,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 62.57,
+              "full_scale_error_percent": 0.0253,
+              "small_value_relative_error_percent": 0.2127,
+              "bbox_xyxy_normalized": [
+                0.8395,
+                0.639474,
+                0.843,
+                0.645614
+              ],
+              "evidence_zh": "价格最小值黑点实色核心中心y约732.43。",
+              "uncertainty_zh": "定位约±0.5–1像素，误差估计受抗锯齿影响。"
+            },
+            {
+              "series_id": "price_inflation",
+              "category": "1968",
+              "expected_value": 13.4,
+              "observed_value": 13.41,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 442.53,
+              "full_scale_error_percent": 0.0626,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.411,
+                0.30614,
+                0.415,
+                0.312281
+              ],
+              "evidence_zh": "价格峰值黑点实色核心中心y约352.47。",
+              "uncertainty_zh": "定位约±0.5–1像素；非小值，未单列小值相对误差。"
+            },
+            {
+              "series_id": "price_inflation",
+              "category": "1972",
+              "expected_value": 4.9,
+              "observed_value": 4.893,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 161.47,
+              "full_scale_error_percent": 0.044,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.554,
+                0.552632,
+                0.5575,
+                0.558772
+              ],
+              "evidence_zh": "内部年份黑点实色核心中心y约633.53。",
+              "uncertainty_zh": "定位约±0.5–1像素；非小值，未单列小值相对误差。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "主体地球—积液—滴流",
+              "required_parts": [
+                "球体及大陆轮廓",
+                "横向积液",
+                "向下滴流"
+              ],
+              "relationship": "球体下缘连续连接积液，积液边缘继续向下形成滴流。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.0775,
+                0.237719,
+                0.895,
+                0.810526
+              ],
+              "evidence_zh": "蓝绿纹理连续进入液面，约x=245、360、575、870处有相连下伸液滴；量值由叠合线条承载。"
+            },
+            {
+              "category": "大值与前景路径",
+              "required_parts": [
+                "价格折线",
+                "13.4%峰值点",
+                "地球及背板"
+              ],
+              "relationship": "折线跨过球体及背板，峰值由线中心位置表示。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.3705,
+                0.3,
+                0.454,
+                0.485965
+              ],
+              "evidence_zh": "1968黑色峰值约在(826,352)，相邻线段连续，未随球面曲率改变坐标。"
+            },
+            {
+              "category": "最小正值的叠合关系",
+              "required_parts": [
+                "1960产出红点",
+                "红色连接线",
+                "零线",
+                "积液"
+              ],
+              "relationship": "红点和连接线覆盖积液，红点位于零线上方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.115,
+                0.65614,
+                0.176,
+                0.717544
+              ],
+              "evidence_zh": "点中心约(255,778.5)，零线y=795；液体纹理在标记周围可见。"
+            },
+            {
+              "category": "负值与液面",
+              "required_parts": [
+                "1967产出红点",
+                "零线",
+                "积液及相邻红线"
+              ],
+              "relationship": "红线穿过零线进入负区后上升，标记覆盖积液。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.3385,
+                0.642982,
+                0.418,
+                0.719298
+              ],
+              "evidence_zh": "负点低于零线约13.3像素；负号、年份和连续折线可见，无零点裁切。"
+            },
+            {
+              "category": "1977近邻轨迹",
+              "required_parts": [
+                "黑色价格细线",
+                "红色产出细线",
+                "共同浅底框"
+              ],
+              "relationship": "两轨迹相邻且可区分。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.7235,
+                0.586842,
+                0.7455,
+                0.617544
+              ],
+              "evidence_zh": "红线转折约y=686，黑线约y=689；细点形态受像素限制，不以数值标签代替几何证据。"
+            },
+            {
+              "category": "背板与浅透视底座",
+              "required_parts": [
+                "暗背板",
+                "底座顶面",
+                "底座前面及侧面"
+              ],
+              "relationship": "底座从背板下缘向前展开，数据轴保持平面坐标。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.036,
+                0.785088,
+                0.9855,
+                0.855263
+              ],
+              "evidence_zh": "斜侧边、浅色顶面及窄前立面连接背板下缘；网格未随底座倾斜。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入明确采用合成价格通胀与实际产出变化，允许当前数据决定峰谷及姿态调整，无需保留原真实数值、OECD范围或旧恶化结论。",
+            "output_added_or_lost_meaning_zh": "输出增加合成提示、完整值表和预测图例；保留融化下滴动作，不复述原图繁荣流失论点。未发现当前指标或类别语义丢失。",
+            "visible_inscription_evidence_zh": "可见Price inflation and output growth、Annual price inflation and real output change (%)、SYNTHETIC DATA、1982 FORECAST及Synthetic values, not historical statistics。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实OECD语境和旧繁荣流失结论未沿用，与冻结的合成主题一致。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "价格峰值在1968、产出峰值在1980，对应当前数据，不以参考峰谷位置判失败。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "1977两系列相差0.1个百分点，约3.3像素；轨迹可辨，但未声称高精度相对误差。"
+            }
+          ],
+          "measurement_coverage_zh": "7个像素测量覆盖两系列各自的最小正值、最大值、内部1972年及唯一负值。23年46个数值文字逐列核对；其余点以可见路径和源码作完整性旁证，未声称逐点像素测量。1977仅作可辨性检查。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均有大陆轮廓地球、积液、下滴液流、暗背板和浅透视底座。",
+            "data_adaptation_excluded_zh": "不以配色、球体大小及当前峰谷判断身份。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "球体下缘接入积液，积液连接细滴流；主体及曲线位于背板前，底座从背板底部展开。",
+            "data_adaptation_excluded_zh": "排除core允许的球体左移、非数据厚度及姿态调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "暗背板内仍以融化地球和曲线为主体；标题图例移到上方，地球偏左，右侧曲线空间增多，构图较参考展开。",
+            "data_adaptation_excluded_zh": "新增年份、当前数值及必要标签本身不扣分。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "参考采用扁平红灰印刷插画及粗线，最终图采用蓝绿水彩、细线圆点和现代浅底排版，材质风格明显改变。",
+            "data_adaptation_excluded_zh": "不计数据峰谷、更新主题及数值标签。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/3c5d196814d927",
       "numeric_supported": true,
@@ -44153,7 +44906,216 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为米色背景、居中标题、绿色近俯视苹果及向右抽离的灰色扇块；蓝色连帽儿童背向观者坐在灰块上。待评图为2000×2000，左上校园供餐风险标题、右上SYNTHETIC DATA；绿色苹果居中偏左，有果梗和叶片，灰色风险片在右侧，红衣儿童坐于灰片表面、双腿垂在前方。绿色主体由左向中心的细线分成两个区域，分别标02/03及42.25%；风险片标01，右侧标15.5%和3,100,000人；底部三项为3,100,000、8,450,000、8,450,000人，总样本20,000,000人。当前图可读到学生群体、人数占比、合成子类及角宽计算口径。可见灰片与主体缺口方向相同，儿童未遮住其两条径向边的大部分。",
+        "summary_zh": "三个类别的人数、占比、顺序及标签绑定完整准确。像素边界估计占比为15.51%、42.25%、42.27%，均在容差内；灰色风险片保持同半径并向右抽离，儿童与风险片的接触关系可见。未发现需要判为缺陷的具体问题。",
+        "issues": [],
+        "measurement_notes_zh": "直接读取2000×2000的image.png像素，拟合可见径向边及绿色子类共用分界线，再按角宽/360°×20,000,000换算。风险片使用x=1000..1160的边缘，稳健拟合排除纹理误选；绿色边缘使用x=840..1150，共用分界使用x=350..750。未用生成方遮罩或几何报告代替成图测量。外弧至可见尖端的距离中位数：风险片465.74px，母形465.47px；尖端横向间距约169.45px，支持仅平移、未缩小。",
+        "uncertainties_zh": "像素阈值、抗锯齿与纹理使边缘估计有约1–4px局部波动，占比保守按约±0.2个百分点理解；换算人数不是逐人精度。儿童遮挡部分灰片内部，但两条径向边和外弧仍足够测量。未读取日志、自检或运行渲染，capture_render.py的归档过程未独立验证。原参考的情绪意图不能仅凭儿童朝向确定。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "S1及Synthetic student cohort、三项类别、三个精确人数、对应占比和20,000,000人总样本均出现；SYNTHETIC DATA醒目。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "At risk为3,100,000人/15.5%；两个Other students合成子类各8,450,000人/42.25%；合计20,000,000人及100%，与冻结数据一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "01标在灰片并由引线连至风险数值；02位于下方绿色区，03位于上方绿色区，底部编号、双语类别和人数逐一对应。从右侧风险片起顺时针为01、02、03。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "独立像素边缘拟合得到55.824°、152.115°、152.160°，对应15.5067%、42.2541%、42.2667%；相对目标的满量程误差均小于0.02个百分点。可见半径约466px且风险片只发生平移。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png苹果和raw_02.png儿童；成图可见相同果皮斑点、果梗叶脉及红衣人物。render.py将这些素材裁入按数据计算的扇区，并控制文字、半径和位移；这是源码佐证，几何判断另据成图像素。归档执行过程未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "苹果表皮本身覆盖三个数据面，灰色风险面承载儿童，非独立背景装饰。灰片尖端朝向苹果缺口，手掌及臀部与灰面接触，腿在前缘之前；厚度和阴影未混作数据边界。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原分辨率下标题、人数、百分比、双语类别、合成声明、单位与底部角宽说明均可读，无必需标签被裁切或遮住。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "绿色母形、中心缺口、右侧灰片和坐于灰片的儿童均具备；两条径向边及外弧构成真正承载占比的物体边界，绿色主体不是与图表分离的插图。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "可读到校园供餐风险、人数占比、合成学生群体、S1及人/students；At risk与Other students父类保留，两个新增类别明确写为synthetic subcategory。合成队列的三项组成及共同分母清楚。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留学生坐在被抽离食物份额上的结构；原参考的疫情、停课影响及2018年家庭统计未沿用，属于冻结输入要求的合成学生主题和统计角色适配，不归为输出失败。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小正值为15.5%，灰片径向长度约466px、上下跨度约435px，非微小或亚像素标记。儿童遮挡局部表面，但尖端、两条径向边、灰色外弧和接触关系均可辨。"
+          }
+        },
+        "semantic_attribution_zh": "当前校园供餐风险、学生计数及风险/其他学生角色均保留。参考的真实家庭统计改为合成学生队列是输入适配；灰片角宽及绿色子类分界是数据驱动变化。未观察到输出遗漏或分辨率导致的关键语义丢失；不推断参考儿童姿态的作者意图。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "At risk",
+              "expected_value": 3100000,
+              "observed_value": 3101345.2,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 465.74,
+              "full_scale_error_percent": 0.00673,
+              "small_value_relative_error_percent": 0.0434,
+              "bbox_xyxy_normalized": [
+                0.4795,
+                0.401,
+                0.713,
+                0.6195
+              ],
+              "evidence_zh": "灰片上、下径向边的像素拟合斜率约-0.53002和0.52946，交点约(959.39,1019.56)，夹角55.824°，换算15.5067%。161列中上边137列、下边161列进入拟合，内点残差均小于0.56px。extent记录尖端至外弧的半径。",
+              "uncertainty_zh": "数值为边缘估计；纹理误选用稳健拟合排除，儿童与侧面不计。保守份额不确定性约±0.2个百分点，不将小误差数字解释为亚像素精度。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 1",
+              "expected_value": 8450000,
+              "observed_value": 8450821.4,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 465.47,
+              "full_scale_error_percent": 0.00411,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.162,
+                0.5095,
+                0.601,
+                0.743
+              ],
+              "evidence_zh": "下方绿色区由左向水平分界与右下径向边围成；像素拟合得到152.115°，换算42.2541%。径向边拟合残差小于0.50px。extent为共用母形的可见半径。",
+              "uncertainty_zh": "排除约30px非数据厚度；底部外弧部分邻接阴影，半径取未受遮挡的母形外弧。份额估计保守约±0.2个百分点。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 2",
+              "expected_value": 8450000,
+              "observed_value": 8453340.5,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 465.47,
+              "full_scale_error_percent": 0.0167,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.162,
+                0.277,
+                0.601,
+                0.5105
+              ],
+              "evidence_zh": "上方绿色区由右上径向边与左向共用水平分界围成；像素拟合得到152.160°，换算42.2667%。extent为母形可见半径，叶片不计量。",
+              "uncertainty_zh": "上边缘浅绿描边受表皮纹理干扰，局部拟合残差最高约3.74px，故结果只作近似估计；保守份额不确定性约±0.2个百分点。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "绿色母形及两个大扇区",
+              "required_parts": [
+                "绿色果皮主体",
+                "果梗",
+                "叶片",
+                "两个绿色数据面",
+                "共用径向分界",
+                "风险缺口"
+              ],
+              "relationship": "两个绿色面相接构成苹果主体，果梗与叶片连接；右侧两条径向边围成缺口，表皮区域本身承载角宽。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.162,
+                0.212,
+                0.665,
+                0.758
+              ],
+              "evidence_zh": "02位于下方、03位于上方，细浅色线自左外缘连接至约(790,1020)；果梗在绿色凹部中，叶柄连至果梗附近并向右上伸展。叶片未被解释为数据面。"
+            },
+            {
+              "category": "最小正值风险片及儿童",
+              "required_parts": [
+                "灰色扇面",
+                "尖端和两条径向边",
+                "灰色弧形外缘",
+                "儿童臀部与双手",
+                "垂下双腿"
+              ],
+              "relationship": "灰片从母形缺口向右平移，尖端仍朝向母形；儿童坐在灰面上，手掌接触表面，腿部叠在前缘之前。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.4795,
+                0.401,
+                0.713,
+                0.675
+              ],
+              "evidence_zh": "灰片尖端约(959,1020)，母形缺口尖端约(790,1019)，方向及边缘角度匹配。儿童臀部在约(1290,1115)灰面上，两手分置左右；双腿越过灰片前部边缘，灰面仍在身体周围清楚可见。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入把参考的疫情/家庭食物不安全统计改为校园供餐风险的合成学生队列，要求按当前数据增加两个其他学生子类，并允许姿态、非数据厚度和排版适配。",
+            "output_added_or_lost_meaning_zh": "当前图保留风险学生依附于抽离苹果份额的关系；未继续表达原参考的停课因果文字及旧年份统计，此项归因于输入适配。未观察到当前统计口径或父类别丢失。",
+            "visible_inscription_evidence_zh": "校园供餐风险；SCHOOL MEALS / STUDENT COHORT；SYNTHETIC DATA；Synthetic student cohort · S1；人数占比 / students；At risk；Other students / synthetic subcategory 1、2；100% = 20,000,000人；底部说明角宽=人数÷总人数×360°。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实家庭/疫情叙事改为合成学生队列，是brief.json及core.json明确给出的当前含义；reference_meaning的partial不作为生成缺陷。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "风险份额使用当前15.5%，其他学生细分为两个42.25%区域；这些角宽、类别和人数变化不扣参考保真分。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "参考儿童是连帽背影，当前为可见面容的坐姿学生；姿态适配获准，无法据此确定原作者的情绪论点发生了何种变化。"
+            }
+          ],
+          "measurement_coverage_zh": "单面板、单系列、单一角宽通道的全部3个类别均测量，覆盖最小正值风险片、一个大值及序列中间类别；另核对全部必需类别、编号、人数、占比、系列、单位、总数和合成声明。没有额外未测的定量面板。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "绿色摄影苹果、棕色果梗、灰色抽离片与坐姿儿童均保留；儿童由连帽背影变成可见面容的红衣学生，苹果增加显眼叶片。",
+            "data_adaptation_excluded_zh": "不扣除当前扇角、类别数量、更新文字及允许的儿童姿态调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "灰片仍位于母形右侧、尖端朝向缺口；儿童臀部及手掌落在灰片上，双腿垂出，保留坐在抽离风险片上的关系。",
+            "data_adaptation_excluded_zh": "排除允许的儿童朝向、非数据厚度、片间距离及当前数据导致的角度差异。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "大苹果仍是第一视觉主体，风险片和其数值位于右侧；标题改为左对齐且显著增大，底部说明变为三列数据栏。",
+            "data_adaptation_excluded_zh": "不扣除新增类别所需的标签和人数明细，也不要求保留旧统计说明。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "浅暖背景、绿色苹果摄影纹理、灰色风险表面及摄影儿童拼贴仍在；待评苹果更光亮、叶脉突出，字体由衬线混排变为较统一的粗体无衬线。",
+            "data_adaptation_excluded_zh": "排除允许的侧面厚度和当前标签布局变化。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/3a65cc249326cf",
       "numeric_supported": true,
@@ -68914,7 +69876,156 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图以美国地图病人、金属病床和床尾三系列图板构成主体。待评图保留这些部件，增加面孔、口中体温计、枕头和毯子；两个挂钩连接床尾横杆与图板。红阶梯、黑实线、黑短划线及完整记录表清晰，图板内容共同顺应板面倾斜。",
+        "summary_zh": "通过。review.json已以UTF-8保存并通过schema.json校验，包含全部检查、14项像素测量及参考保真度评分。按追加要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "独立像素测量覆盖九个纵值和五处日期转折；最大满量程误差点估计分别为0.286%和0.019%，均低于3%容差。完整测量记录见review.json。",
+        "uncertainties_zh": "未逐像素验证全部线段。笔画宽度与抗锯齿限制短间距的相对精度；依要求未查看日志、自检及编排资料，未确认每次渲染归档流程。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "全部21个日期及A/B/C的11/8/11条记录完整，共30条。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "记录表30个数值、图内数值注释、2040年份和年化百分比单位准确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "红阶梯、黑实线和黑短划线分别绑定A/B/C，图例、日期列及表格行一致。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素抽样支持真实日距、9–21%截断轴和指定插值；A末平台正确，B/C未见外推。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始素材，其主体实质用于成图；SVG内嵌素材哈希一致，源码控制数据路径、坐标和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "挂钩、横杆和图板连接连续；病人、枕毯及床垫接触合理，体温计接嘴，板内图形与板面方向一致。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下必需标题、合成数据声明、单位、图例、日期、说明和记录表均可读。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "美国地图病人卧床、体温计接嘴、床架连接脚轮、图板挂接床尾，数据由板内曲线位置承载。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题、副题、合成声明、年化率单位及2040日期清楚表达当前主题；A/B/C符合冻结角色。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "卧床诊疗类比保留；旧真实利率类别和退烧下降论点由输入明确改编为当前合成序列，不归责输出。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "B最小值距截断基线约14.78像素，A最短平台约15像素，均可辨；不据此保证高相对精度。"
+          }
+        },
+        "semantic_attribution_zh": "原参考主题与统计类别的变化属于允许的输入改编，曲线变化由当前数据驱动。未发现当前统计意义或必需部件的输出遗漏；小标记精度限制来自像素与笔画宽度。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "A",
+              "category": "2040-03-15（最高平台内取样）",
+              "expected_value": 20.3,
+              "observed_value": 20.288,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 269.87,
+              "full_scale_error_percent": 0.1,
+              "small_value_relative_error_percent": 0.06,
+              "bbox_xyxy_normalized": [
+                0.275,
+                0.419963,
+                0.2755,
+                0.423615
+              ],
+              "evidence_zh": "原图笔画中心约(550,692.5)，按可见倾斜网格反算年化百分比。",
+              "uncertainty_zh": "笔画及抗锯齿约造成±1–2像素不确定度；完整14项测量已保存于review.json。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "主体与床尾图板",
+              "required_parts": [
+                "美国地图病人",
+                "病床",
+                "体温计",
+                "挂钩",
+                "图板"
+              ],
+              "relationship": "病人位于床上，体温计接嘴，两个挂钩将图板连接床尾横杆，曲线包含于板内。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.143,
+                0.024,
+                0.976,
+                0.671
+              ],
+              "evidence_zh": "连接、接触、遮挡及板内数据承载关系可辨；完整大小实例证据已保存于review.json。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入允许合成A/B/C、2040日期、当前走势及非数据姿态适配。",
+            "output_added_or_lost_meaning_zh": "保留病人卧床和床尾趋势图；未要求沿用旧利率类别或下降论点。",
+            "visible_inscription_evidence_zh": "ANNUAL RATE CHANGES、Three synthetic annualized-rate series、SYNTHETIC DATA、Rate (%/year)、Series A/B/C及2040日期均可见。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "旧真实利率主题和退烧走势被明确替换为当前合成年化率。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "约15像素的短平台及14.78像素的超基线距离可辨，但精密相对测量受笔画宽度限制。"
+            }
+          ],
+          "measurement_coverage_zh": "review.json完整记录各系列最小值、大值和中间值，共九个纵值，并记录五处日期转折；全部21日期和30数值另作完整核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "星条旗美国地图病人、红床垫、金属床架、脚轮与床尾图板均保留。",
+            "data_adaptation_excluded_zh": "排除当前数值、系列命名、标题及允许的厚度和姿态调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "病人位于床上，图板挂接床尾，床架连接脚轮，体温计接嘴。",
+            "data_adaptation_excluded_zh": "排除许可的靠枕姿态、床体厚度及排版适配。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留左上标题、右上病人和前景图板层级；标题视觉比重增大。",
+            "data_adaptation_excluded_zh": "不扣除为完整呈现当前记录新增的表格和日期标签。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留复古红深浅配色，但平涂网点改为金属高光、织物纹理和柔和投影。",
+            "data_adaptation_excluded_zh": "排除数据变化及允许的厚度调整；评分仅反映材质表现差异。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/41278dbb84a17c",
       "numeric_supported": true,
