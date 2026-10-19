@@ -1,0 +1,334 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为米白背景、居中标题、七本等高相接的红黄绿褐黑蓝棕旧式精装书，书脊金线与磨损可见，下方引线交错标注。待评图保留同类书脊与配色，七组外部标签按输入顺序为12%、2%、24%、16%、42%、0.12%、3.88%；Jewish仅见黑书与棕书之间极细蓝线。标题、人口百分比单位、SYNTHETIC DATA及总计100%可读。新图纹理更粗、外轮廓更齐整。",
+  "summary_zh": "七组数据、顺序、标签和单位正确，书脊宽度直接承载人口份额；未见超过容差的可见缺陷。最小Jewish细带存在，但其装订细节与亚像素有效宽度不能独立辨清，单列为局部保留和测量限制。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1392原图像素。多条书体横截面的非背景范围为x=120至1879，总宽1760px；上下突变位于y=360、1010。以y=440至959的逐列RGB中位数及原图可见材质切换估计分界，整数近似为120、331、367、789、1071、1810、1812、1880。六个非微小书脊用宽度/1760×100换算；界面取整与暗边带来约±1至2px的宽度不确定性，相当于约±0.057至0.114个百分点。Jewish只报告可见蓝色列，不把混色列数当作精确覆盖率。源码公式仅作旁证。",
+  "uncertainties_zh": "Jewish仅约2个蓝色可辨像素列，另有混色边缘；无法从这些像素独立恢复0.12%的精确有效覆盖，也无法辨认其全部装订部件。满量程容差通过不代表微小值相对精度已验证。按限定未检查capture_render.py调用历史或运行日志，流程调用来源未独立核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "全部七类均出现，按Hindu、Folk religions、Muslim、Unaffiliated、Christian、Jewish、Buddhist从左至右排列，七组外部名称和百分比完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可读12%、2%、24%、16%、42%、0.12%、3.88%，与输入一致；底部Total 100%也正确，正值未舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "六条直引线分别对应各书脊中部；Jewish的蓝色折线起点对准黑书与棕书之间的细蓝带，末端接0.12%和Jewish，没有交叉错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实测总宽1760px，六个可测宽度约211、36、422、282、739、68px，换算误差均小于0.05个百分点，计入边界不确定性仍远低于3个百分点。最小项仅见约2px蓝带及混色边缘，不支持精确相对误差结论，但没有被放大到最小书宽或消失。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png、raw_02.png；红黄书皮、褐书花饰、绿书框线和黑书凸棱在成图中可对应，构成主体。素材清单和render.py显示代码按数据计算连续宽度、采样素材并排版文字；未执行渲染或采信自检结论。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界就是相接书脊的左右边界，材质、金线和包边位于各自书脊内部；不是普通图表旁置书本。正视面与文字方向协调，未见邻带被遮没。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、Percent of population及七组外部标签清晰无截断。交错行与Jewish折线避免末端两小类标签重叠；底部编码和合成口径说明可读。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "整体为等高、相接的旧式精装书，金线、磨损、包边及接触暗边明确，书脊本体承载宽度。Jewish仅能辨认同高细带及左右接触，不能独立分辨其完整装订部件，局部结构可辨性有限。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "宗教归属标题、人口百分比单位、各宗教及无归属类别、总计100%和合成提示共同明确单个人口构成；没有将其误写为年份变化或其他统计量。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考的宗教及无归属类别与书列联系，以及按份额分配书脊宽度的关系。旧数值、经典书名和宣传口号并非当前冻结要求；未据其变化判错。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "Jewish在x=1810至1811有蓝色可辨像素，x=1809附近可见混色边缘，外部标签正确；但书皮、金线、包边无法作为独立部件辨认。2%的黄色细书仍可辨上下横线、表面和相邻接触。"
+    }
+  },
+  "semantic_attribution_zh": "当前宗教及无归属人口构成含义保留。合成声明、新百分比和类别书脊文字属于输入允许的更新；黑书变宽、蓝书极窄属于数据驱动形状变化。Jewish部件可辨性下降归于约2px的分辨率限制，不等同于输出遗漏或可任意增宽的理由。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "share",
+        "category": "Hindu",
+        "expected_value": 12,
+        "observed_value": 11.989,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 211,
+        "full_scale_error_percent": 0.011,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.06,
+          0.258621,
+          0.1655,
+          0.725575
+        ],
+        "evidence_zh": "红书从x≈120延伸至331，宽约211px；211/1760×100≈11.989%。外部文字12%。",
+        "uncertainty_zh": "材质暗边与取整使宽度约有1至2px不确定性；小数为换算结果而非亚像素测量精度。"
+      },
+      {
+        "series_id": "share",
+        "category": "Folk religions",
+        "expected_value": 2,
+        "observed_value": 2.045,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 36,
+        "full_scale_error_percent": 0.045,
+        "small_value_relative_error_percent": 2.27,
+        "bbox_xyxy_normalized": [
+          0.1655,
+          0.258621,
+          0.1835,
+          0.725575
+        ],
+        "evidence_zh": "黄色书脊可见范围约x=331至367，宽36px，对应约2.045%。外部文字2%。",
+        "uncertainty_zh": "两侧有混色暗边，约±2px会改变相对误差数值；2.27%仅为整数边界估计，不是精密偏差测定。"
+      },
+      {
+        "series_id": "share",
+        "category": "Muslim",
+        "expected_value": 24,
+        "observed_value": 23.977,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 422,
+        "full_scale_error_percent": 0.023,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1835,
+          0.258621,
+          0.3945,
+          0.725575
+        ],
+        "evidence_zh": "绿色书脊约x=367至789，宽422px，对应约23.977%。外部文字24%。",
+        "uncertainty_zh": "材质切换边界约±1px，宽度不确定性约±2px。"
+      },
+      {
+        "series_id": "share",
+        "category": "Unaffiliated",
+        "expected_value": 16,
+        "observed_value": 16.023,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 282,
+        "full_scale_error_percent": 0.023,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.3945,
+          0.258621,
+          0.5355,
+          0.725575
+        ],
+        "evidence_zh": "褐色书脊约x=789至1071，宽282px，对应约16.023%。外部文字16%。",
+        "uncertainty_zh": "右侧褐黑暗边过渡使分界约有1px不确定性；未将内部金线作为书脊边界。"
+      },
+      {
+        "series_id": "share",
+        "category": "Christian",
+        "expected_value": 42,
+        "observed_value": 41.989,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 739,
+        "full_scale_error_percent": 0.011,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5355,
+          0.258621,
+          0.905,
+          0.725575
+        ],
+        "evidence_zh": "黑色大书脊约x=1071至1810，宽739px，对应约41.989%。外部文字42%。",
+        "uncertainty_zh": "两侧暗边和右侧蓝色混色列使宽度约有±2px不确定性。"
+      },
+      {
+        "series_id": "share",
+        "category": "Jewish",
+        "expected_value": 0.12,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.9045,
+          0.258621,
+          0.906,
+          0.725575
+        ],
+        "evidence_zh": "原图逐列RGB中位数在x=1810、1811呈蓝色优势，邻列有混色；可确认约2px蓝色核心及细带连续存在。文字为0.12%。源码分配2.112px仅作代码旁证，未用作实测值。",
+        "uncertainty_zh": "蓝色优势列数不等于抗锯齿后的有效覆盖宽度，因此无法独立给出观测份额、满量程误差或小值相对误差。"
+      },
+      {
+        "series_id": "share",
+        "category": "Buddhist",
+        "expected_value": 3.88,
+        "observed_value": 3.864,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 68,
+        "full_scale_error_percent": 0.016,
+        "small_value_relative_error_percent": 0.42,
+        "bbox_xyxy_normalized": [
+          0.906,
+          0.258621,
+          0.94,
+          0.725575
+        ],
+        "evidence_zh": "右端棕书约x=1812至1880，宽68px，对应约3.864%。外部文字3.88%。",
+        "uncertainty_zh": "左界有蓝棕混色，整数近似约±1px；相对误差只表示本次边界估计。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体书列",
+        "required_parts": [
+          "七个相邻书脊带",
+          "共同上下边界",
+          "接触暗边",
+          "外部引线"
+        ],
+        "relationship": "同高书脊按输入顺序横向接触，宽度承载份额；引线从相应书脊下方接至外部名称与数值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.06,
+          0.258621,
+          0.94,
+          0.93
+        ],
+        "evidence_zh": "书列统一从y≈360至1010，左右连续相接；外部标注上下交错，最小项用折线分流。阴影在书列下方，没有盖住数据面。"
+      },
+      {
+        "category": "Christian（大实例）",
+        "required_parts": [
+          "黑色皮革书脊",
+          "包边",
+          "金色横线",
+          "隆起书筋",
+          "邻接书脊"
+        ],
+        "relationship": "金线与横向书筋位于黑色书脊面内，边缘包覆表面，左右接触褐书和蓝色细带。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.5355,
+          0.258621,
+          0.906,
+          0.725575
+        ],
+        "evidence_zh": "可见上下金色压线、四道明显横向凸棱和周边磨损，部件随同一书脊面连接；42%由整块黑书宽度承担。"
+      },
+      {
+        "category": "Muslim（内部实例）",
+        "required_parts": [
+          "绿色书脊面",
+          "金色矩形框",
+          "磨损包边",
+          "左右相邻书脊"
+        ],
+        "relationship": "金框包含在绿色面内，包边环绕并与黄色及褐色书脊接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1835,
+          0.258621,
+          0.3945,
+          0.725575
+        ],
+        "evidence_zh": "金框没有越过绿色边界，边缘磨损与表面连续；24%标签引线对准绿色面中部。"
+      },
+      {
+        "category": "Folk religions（小实例）",
+        "required_parts": [
+          "黄色书脊",
+          "上下横线",
+          "侧缘",
+          "相邻红绿书脊"
+        ],
+        "relationship": "横线包覆黄色细书表面，侧缘在红书与绿书之间相接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1655,
+          0.258621,
+          0.1835,
+          0.725575
+        ],
+        "evidence_zh": "约36px宽的黄色体仍可辨上下黑色横线、侧缘和内部竖排标题；外部2%文字清楚。"
+      },
+      {
+        "category": "Jewish（最小实例）",
+        "required_parts": [
+          "蓝色书脊带",
+          "包边",
+          "金线",
+          "与黑棕书脊的接触"
+        ],
+        "relationship": "蓝带应贯穿相同行高并夹在黑书与棕书之间；装订部件包含于极细数据带内部。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.9045,
+          0.258621,
+          0.906,
+          0.725575
+        ],
+        "evidence_zh": "能确认同高蓝色细带与左右接触，折线正确指向它；约2px宽度不足以分别辨认包边、金线和皮革细节。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许使用当前合成百分比、类别文字及适配后的书宽、非数据姿态和外部标签位置；无需复用参考的旧数值、经典书名或口号。",
+      "output_added_or_lost_meaning_zh": "宗教与无归属人口构成及书脊宽度表达份额的含义保留，新增明确合成口径。未观察到必要统计含义丢失；最小项损失的是可辨装订细节。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Religious affiliation shares、Percent of population · religion and no affiliation、Spine width = population share / Total 100%，以及七个具名类别和准确百分比。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "图面声明合成数据并替换旧数值和书脊文字，符合当前冻结输入；原宗教及无归属主题不变。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "42%黑书较宽、0.12%蓝书极窄，属于当前份额要求；未按参考旧宽度或最小书宽固定。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小份额在1760px总宽下只有约2px，可确认细带存在，但不能逐一辨认其装订部件或精确有效覆盖。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一份额通道的全部七类；六类给出独立像素宽度换算，最小项只给可辨像素范围并保留份额不确定性。另逐项核对七个数值、七个类别、顺序、单位和总计；没有用源码替代可见测量。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "红黄绿褐黑蓝棕旧式精装书的身份、金色装饰、磨损和包边保持，主体仍是一排书脊。",
+      "data_adaptation_excluded_zh": "排除当前数据导致的宽窄差异，以及经典书名改为类别名。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "保持正视、竖直、同高、紧挨的书列关系和下方接触阴影，没有变为分散物体或旁置装饰。",
+      "data_adaptation_excluded_zh": "允许外轮廓齐整、非数据厚度调整及Jewish引线折转；不要求复制参考微小姿态差异。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保持上方居中标题、中部主书列、下方交错引线的层级；卷草装饰改为直线菱形，新增页脚分隔说明，局部编辑式构图有变化。",
+      "data_adaptation_excluded_zh": "不扣除合成提示和更新文字，也不将数值造成的各书宽度、允许的标签位移计为构图缺陷。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留皮革颗粒、金色压线和磨损；最终纹理较参考粗重，黑书凸棱更突出，周边矩形切边更齐整，整体仍属写实旧书材质。",
+      "data_adaptation_excluded_zh": "排除宽度适配引起的整体长宽比变化及最小书脊的像素细节损失。"
+    }
+  }
+}
