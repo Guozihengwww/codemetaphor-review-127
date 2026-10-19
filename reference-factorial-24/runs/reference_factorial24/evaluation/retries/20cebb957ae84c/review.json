@@ -1,0 +1,206 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "已在检查源码前记录参考图与成图的可见结构、文字、材质及参考保真评分。",
+  "summary_zh": "完整评审已保存至 review.json，并通过 schema.json 校验，包含全部检查和19条像素测量。未发现重大缺陷；小值辨识限制及允许的语义改编已单列。未运行 submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "详细测量见 review.json。",
+  "uncertainties_zh": "极薄色带的材质辨识和亚像素精度受分辨率限制。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "16期、四来源、64个分项与16个总值完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "数表与冻结数据一致，总值经独立求和核对。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "图例、层序、层内名称及表格绑定一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "代表测量均在对应面板3%满量程容差内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始游艇与水纹素材在主体中实质可见，代码控制定量裁切。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "海水层厚及最深外缘承载数值，游艇接触共同水面。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必需标题、单位、来源、时期及数值可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "水面、游艇、海水材质及四个连续水下层保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题、来源角色、单位与同期期内相加口径明确。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "真实地区及来源身份依冻结输入改为合成角色，属于允许改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最薄橙层主图约1–2px、放大图约3px，连接可见但纹理及相对精度有限。"
+    }
+  },
+  "semantic_attribution_zh": "参考身份变化归于允许的输入改编；微小层辨识限制归于分辨率。完整证据及次级保真评分已写入 review.json。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "C",
+        "category": "P02（主图）",
+        "expected_value": 3938,
+        "observed_value": 3933.33,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 354,
+        "full_scale_error_percent": 0.0648,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.168636,
+          0.463273,
+          0.170909,
+          0.691366
+        ],
+        "evidence_zh": "x=373，色区边界约y=719至1073；按可见主图刻度换算。",
+        "uncertainty_zh": "整数像素边界约±1–2px。"
+      },
+      {
+        "series_id": "B",
+        "category": "P15（主图）",
+        "expected_value": 15,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.893182,
+          0.326031,
+          0.895455,
+          0.32732
+        ],
+        "evidence_zh": "x=1967，约两行橙色占优混合像素。",
+        "uncertainty_zh": "抗锯齿薄带不足以独立反算真实厚度。"
+      },
+      {
+        "series_id": "B",
+        "category": "P15（放大图）",
+        "expected_value": 15,
+        "observed_value": 15,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.849545,
+          0.590206,
+          0.851818,
+          0.592139
+        ],
+        "evidence_zh": "x=1871，边界约y=916至919；内图每单位0.20px。",
+        "uncertainty_zh": "零误差只是粗测中心估计；1px不确定性约占该层33%，不保证小值相对精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "主图大值区域",
+        "required_parts": [
+          "共同水面",
+          "A层",
+          "B层",
+          "C层",
+          "D层",
+          "总量外缘"
+        ],
+        "relationship": "四层从共同水面依序相接，D下缘限定总深度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.113636,
+          0.321521,
+          0.281818,
+          0.732603
+        ],
+        "evidence_zh": "四个定量海水层连续，没有第五数据层。"
+      },
+      {
+        "category": "主图微小值P15–P16",
+        "required_parts": [
+          "水面",
+          "青A带",
+          "橙B带",
+          "蓝C带",
+          "深蓝D带"
+        ],
+        "relationship": "四带上下相接并向共同水面收拢。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.890909,
+          0.320876,
+          0.950455,
+          0.338273
+        ],
+        "evidence_zh": "细带仍连续，但最薄橙带无法独立识别水纹细节。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "允许合成时期及来源角色替代原真实年份、地区和来源身份。",
+      "output_added_or_lost_meaning_zh": "当前海洋塑料排放主题及每期来源相加口径保留。",
+      "visible_inscription_evidence_zh": "可见Plastic discharge into the ocean、Discharge per period, by source、100 tonnes/period、Plastic source A–D和SYNTHETIC DATA。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原真实来源身份按输入改为合成A–D。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "极薄层可见但材质辨识及亚像素精度有限。"
+      }
+    ],
+    "measurement_coverage_zh": "此回执摘列代表证据；review.json包含19条测量、完整覆盖说明及全部检查。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "白色多层游艇、水面及水下剖面保留。",
+      "data_adaptation_excluded_zh": "排除允许的艇型、尺寸和朝向适配。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "艇底接水面，四层连续位于水下。",
+      "data_adaptation_excluded_zh": "排除非数据姿态调整及数据驱动的深浅变化。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "横向海洋剖面仍为主体，顶部标题区占比增加。",
+      "data_adaptation_excluded_zh": "不扣分于允许外置的图例、数表和标签。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "写实游艇和透光水纹保留，配色较参考柔和。",
+      "data_adaptation_excluded_zh": "排除数据驱动的边界和层厚变化。"
+    }
+  }
+}
