@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:23:52.718145+00:00",
+  "updated_at": "2026-10-19T21:33:50.240334+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,9 +11,9 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "pending": 81,
-      "running": 3,
-      "ok": 12
+      "pending": 77,
+      "ok": 16,
+      "running": 3
     },
     "routing_audits": {
       "verified": 96
@@ -42916,7 +42916,227 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为米色底、绿色苹果缺口、右侧灰色抽离扇块及其上背向蓝衣儿童。待评图保留这些部件与承坐关系；绿色主体分为02、03两区，各42.25%，风险片01标15.5%与3,100,000名学生。底部三列列出At risk与两个带Other students父类的合成子类，数值分别3,100,000、8,450,000、8,450,000；顶部标SYNTHETIC DATA、校园供餐风险及20,000,000名学生。",
+        "summary_zh": "全部类别、人数、百分比和单位完整，像素测量支持正确角宽及同半径抽离。青苹果、灰色风险片与儿童承坐关系保留，未发现必要要求的可见缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "直接读取2000×2000的image.png像素，拟合切边、分界线和外弧，未以渲染遮罩代替测量。灰片切边方向约−27.868°、27.895°；绿色缺口边约−27.946°、27.900°；内部横线朝向180°。角宽除以360后乘20,000,000换算人数。主体外弧拟合半径535.99px，灰片未遮外弧约534.71px。源码仅作补充核对。",
+        "uncertainties_zh": "儿童遮挡灰片部分上缘与外弧，半径由未遮部分估计。纹理、抗锯齿及薄侧边带来数像素不确定性，极小拟合误差不代表同等精度保证。按限定范围未读取生成日志、自检或capture_render调用记录，未独立核实每次渲染归档。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "一个Synthetic student cohort系列、三个类别均出现；01风险类与02、03两个Other students合成子类分别列明，样本总数和单位齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "3,100,000、8,450,000、8,450,000 students及15.5%、42.25%、42.25%，总数20,000,000，均与冻结数据一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "01风险注释引线落在灰片内；02位于下方绿色扇区、03位于上方绿色扇区，编号对应底部同序类别和数值。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素拟合灰片55.76°、02区152.10°、03区152.05°，目标分别55.8°、152.1°、152.1°，均在3个百分点容差内。灰片和主体半径约535px与536px，支持仅平移、未实质缩小。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png、apple_disk.png及child.png；果皮、果梗和蓝衣儿童的纹理与形状在最终主体中可见。prepare_assets.py处理素材，render.py将其裁入数据扇区并绘制文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "苹果纹理覆盖实际定量扇区，灰片表面承接儿童下身；浅色径向线区分两个绿色子类。儿童与阴影未充当份额边界。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原分辨率下标题、SYNTHETIC DATA、全部类别和人数、百分比、单位及统计口径均可读，无必要文字遮挡或裁切。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "绿色苹果有中央果梗和向右开口；右侧灰片与缺口相对且分离，背向蓝衣儿童的臀腿和鞋位于灰片表面，接触关系可辨。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "校园供餐风险标题明确主题；合成样本总数、Synthetic student cohort、students及按人数占比绘制的说明明确指标和分母。两子类保留Other students父类。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "供餐风险主题及儿童承坐风险片关系保留；参考中的疫情、停课论述与2018家庭统计被合成学生口径替代，属于冻结输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小份额15.5%的灰片仍为数百像素实体；尖角、切边、灰色表面、外弧和儿童接触处均可辨，并非仅靠数字标签表达。"
+          }
+        },
+        "semantic_attribution_zh": "原参考家庭食物不安全统计和疫情停课叙事改为合成学生风险口径，归因于允许的输入适配；新增两个Other students子类及边界来自当前数据。未观察到输出遗漏或小值分辨率导致的核心关系丢失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "At risk",
+              "expected_value": 3100000,
+              "observed_value": 3097916,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 535,
+              "full_scale_error_percent": 0.0104,
+              "small_value_relative_error_percent": 0.0672,
+              "bbox_xyxy_normalized": [
+                0.573,
+                0.397,
+                0.842,
+                0.652
+              ],
+              "evidence_zh": "灰片未遮切边上端点约(1220,1010)、(1440,894)，下端点约(1220,1089)、(1440,1205)；拟合角宽55.762°，换算15.4896%。mark_extent为未遮外弧拟合半径。",
+              "uncertainty_zh": "边线拟合残差约0.31px；薄侧边、阈值和部分遮挡带来系统误差。反算人数不表示逐人准确。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 1",
+              "expected_value": 8450000,
+              "observed_value": 8449977,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 536,
+              "full_scale_error_percent": 0.0001,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.106,
+                0.523,
+                0.612,
+                0.795
+              ],
+              "evidence_zh": "02区切边像素约(850,1102)至(1180,1277)，方向27.900°；与朝左内部横线形成152.100°，换算42.2499%。共享母形半径约536px。",
+              "uncertainty_zh": "内部线宽、果皮阈值与抗锯齿影响亚像素结果；接近零的点估计误差不代表精确相等。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 2",
+              "expected_value": 8450000,
+              "observed_value": 8447417,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 536,
+              "full_scale_error_percent": 0.0129,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.106,
+                0.256,
+                0.612,
+                0.526
+              ],
+              "evidence_zh": "03区切边像素约(850,996)至(1180,819)，方向−27.946°；与朝左内部横线形成152.054°，换算42.2371%。共享母形半径约536px。",
+              "uncertainty_zh": "切边拟合残差约0.93px；外轮廓含薄侧边，估计用于近似角宽及容差判定。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Other students绿色主体（大实例）",
+              "required_parts": [
+                "青苹果果皮与中央果梗",
+                "02下部扇区",
+                "03上部扇区",
+                "中心至左缘的分界线"
+              ],
+              "relationship": "两个绿色区域共同组成苹果母形，在水平径向线相邻；右侧切边形成抽离缺口。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.106,
+                0.256,
+                0.612,
+                0.795
+              ],
+              "evidence_zh": "果梗邻接缺口尖端，浅色分界线延伸至左轮廓；03、02分别位于上、下绿色区域内。"
+            },
+            {
+              "category": "At risk灰片（最小实例）",
+              "required_parts": [
+                "苹果缺口",
+                "灰色扇片尖角",
+                "两条切边",
+                "右侧外弧"
+              ],
+              "relationship": "灰片向右抽离，尖角朝左与母形缺口相对；切边方向及外弧尺度对应母形。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.373,
+                0.397,
+                0.842,
+                0.652
+              ],
+              "evidence_zh": "两尖端水平相隔约400px，背景间隙清楚；两组边线方向相差小于0.1°，外弧半径约536px和535px。"
+            },
+            {
+              "category": "儿童与灰片接触",
+              "required_parts": [
+                "背向蓝色连帽儿童",
+                "臀腿及鞋",
+                "灰片上表面",
+                "接触阴影"
+              ],
+              "relationship": "儿童位于灰片上方，下身和鞋覆盖其表面；灰片在儿童后方延续。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.731,
+                0.354,
+                0.842,
+                0.538
+              ],
+              "evidence_zh": "儿童腿脚收拢于灰片上，下身邻近灰色纹理并有局部阴影，未与扇片脱离或穿到其下方。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入采用合成学生队列、20,000,000人分母及三个当前类别，不要求参考13.9%、2.9 million或2018家庭统计。",
+            "output_added_or_lost_meaning_zh": "当前风险角色、学生单位及按人数占比分区完整；原疫情和停课叙事未延续属于输入改写，未观察到额外输出语义缺漏。",
+            "visible_inscription_evidence_zh": "可见校园供餐风险、SYNTHETIC DATA、合成样本总数、At risk、Other students及两个synthetic subcategory、Synthetic student cohort和儿童与阴影不计量的说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实家庭统计及疫情叙事由冻结输入改为合成学生供餐风险，参考含义记为部分保留，不归为生成失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "风险角宽按15.5%更新，其余84.5%分为两个42.25%子类，边界变化来自当前数据。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖全部三个角宽，包括最小风险片、并列大值和序列中间类别；检查主体及灰片外弧尺度。全部类别、数值、单位和总数逐项核对，未对儿童遮挡的隐藏像素作直接测量。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "保留绿色苹果及果梗、灰色抽离片、背向蓝色连帽儿童。",
+            "data_adaptation_excluded_zh": "不扣除风险比例、两个合成子类及更新文字。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "苹果居左，风险片向右平移，儿童背向坐在灰片上方，接触关系可见。",
+            "data_adaptation_excluded_zh": "儿童腿脚姿态与非数据厚度允许适配，未作扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "苹果与儿童仍为主体；标题改为左上大字，新增右上总数及底部三列说明。",
+            "data_adaptation_excluded_zh": "允许更新主题、类别和排版；不要求旧13.9%或2.9 million。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "米色底、摄影果皮、灰片和蓝衣拼贴质感保留；待评图果皮更鲜亮，阴影更立体，灰片高光更强。",
+            "data_adaptation_excluded_zh": "不扣除数据驱动边界及允许调整的非数据厚度。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/1eb1036b0de83f",
       "numeric_supported": true,
@@ -43188,7 +43408,227 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为米色底、绿色苹果缺口、右侧灰色抽离扇块及其上背向蓝衣儿童。待评图保留这些部件与承坐关系；绿色主体分为02、03两区，各42.25%，风险片01标15.5%与3,100,000名学生。底部三列列出At risk与两个带Other students父类的合成子类，数值分别3,100,000、8,450,000、8,450,000；顶部标SYNTHETIC DATA、校园供餐风险及20,000,000名学生。",
+        "summary_zh": "全部类别、人数、百分比和单位完整，像素测量支持正确角宽及同半径抽离。青苹果、灰色风险片与儿童承坐关系保留，未发现必要要求的可见缺陷。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "直接读取2000×2000的image.png像素，拟合切边、分界线和外弧，未以渲染遮罩代替测量。灰片切边方向约−27.868°、27.895°；绿色缺口边约−27.946°、27.900°；内部横线朝向180°。角宽除以360后乘20,000,000换算人数。主体外弧拟合半径535.99px，灰片未遮外弧约534.71px。源码仅作补充核对。",
+        "uncertainties_zh": "儿童遮挡灰片部分上缘与外弧，半径由未遮部分估计。纹理、抗锯齿及薄侧边带来数像素不确定性，极小拟合误差不代表同等精度保证。按限定范围未读取生成日志、自检或capture_render调用记录，未独立核实每次渲染归档。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "一个Synthetic student cohort系列、三个类别均出现；01风险类与02、03两个Other students合成子类分别列明，样本总数和单位齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "3,100,000、8,450,000、8,450,000 students及15.5%、42.25%、42.25%，总数20,000,000，均与冻结数据一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "01风险注释引线落在灰片内；02位于下方绿色扇区、03位于上方绿色扇区，编号对应底部同序类别和数值。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素拟合灰片55.76°、02区152.10°、03区152.05°，目标分别55.8°、152.1°、152.1°，均在3个百分点容差内。灰片和主体半径约535px与536px，支持仅平移、未实质缩小。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png、apple_disk.png及child.png；果皮、果梗和蓝衣儿童的纹理与形状在最终主体中可见。prepare_assets.py处理素材，render.py将其裁入数据扇区并绘制文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "苹果纹理覆盖实际定量扇区，灰片表面承接儿童下身；浅色径向线区分两个绿色子类。儿童与阴影未充当份额边界。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原分辨率下标题、SYNTHETIC DATA、全部类别和人数、百分比、单位及统计口径均可读，无必要文字遮挡或裁切。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "绿色苹果有中央果梗和向右开口；右侧灰片与缺口相对且分离，背向蓝衣儿童的臀腿和鞋位于灰片表面，接触关系可辨。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "校园供餐风险标题明确主题；合成样本总数、Synthetic student cohort、students及按人数占比绘制的说明明确指标和分母。两子类保留Other students父类。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "供餐风险主题及儿童承坐风险片关系保留；参考中的疫情、停课论述与2018家庭统计被合成学生口径替代，属于冻结输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小份额15.5%的灰片仍为数百像素实体；尖角、切边、灰色表面、外弧和儿童接触处均可辨，并非仅靠数字标签表达。"
+          }
+        },
+        "semantic_attribution_zh": "原参考家庭食物不安全统计和疫情停课叙事改为合成学生风险口径，归因于允许的输入适配；新增两个Other students子类及边界来自当前数据。未观察到输出遗漏或小值分辨率导致的核心关系丢失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "At risk",
+              "expected_value": 3100000,
+              "observed_value": 3097916,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 535,
+              "full_scale_error_percent": 0.0104,
+              "small_value_relative_error_percent": 0.0672,
+              "bbox_xyxy_normalized": [
+                0.573,
+                0.397,
+                0.842,
+                0.652
+              ],
+              "evidence_zh": "灰片未遮切边上端点约(1220,1010)、(1440,894)，下端点约(1220,1089)、(1440,1205)；拟合角宽55.762°，换算15.4896%。mark_extent为未遮外弧拟合半径。",
+              "uncertainty_zh": "边线拟合残差约0.31px；薄侧边、阈值和部分遮挡带来系统误差。反算人数不表示逐人准确。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 1",
+              "expected_value": 8450000,
+              "observed_value": 8449977,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 536,
+              "full_scale_error_percent": 0.0001,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.106,
+                0.523,
+                0.612,
+                0.795
+              ],
+              "evidence_zh": "02区切边像素约(850,1102)至(1180,1277)，方向27.900°；与朝左内部横线形成152.100°，换算42.2499%。共享母形半径约536px。",
+              "uncertainty_zh": "内部线宽、果皮阈值与抗锯齿影响亚像素结果；接近零的点估计误差不代表精确相等。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Other students / synthetic subcategory 2",
+              "expected_value": 8450000,
+              "observed_value": 8447417,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 536,
+              "full_scale_error_percent": 0.0129,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.106,
+                0.256,
+                0.612,
+                0.526
+              ],
+              "evidence_zh": "03区切边像素约(850,996)至(1180,819)，方向−27.946°；与朝左内部横线形成152.054°，换算42.2371%。共享母形半径约536px。",
+              "uncertainty_zh": "切边拟合残差约0.93px；外轮廓含薄侧边，估计用于近似角宽及容差判定。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Other students绿色主体（大实例）",
+              "required_parts": [
+                "青苹果果皮与中央果梗",
+                "02下部扇区",
+                "03上部扇区",
+                "中心至左缘的分界线"
+              ],
+              "relationship": "两个绿色区域共同组成苹果母形，在水平径向线相邻；右侧切边形成抽离缺口。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.106,
+                0.256,
+                0.612,
+                0.795
+              ],
+              "evidence_zh": "果梗邻接缺口尖端，浅色分界线延伸至左轮廓；03、02分别位于上、下绿色区域内。"
+            },
+            {
+              "category": "At risk灰片（最小实例）",
+              "required_parts": [
+                "苹果缺口",
+                "灰色扇片尖角",
+                "两条切边",
+                "右侧外弧"
+              ],
+              "relationship": "灰片向右抽离，尖角朝左与母形缺口相对；切边方向及外弧尺度对应母形。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.373,
+                0.397,
+                0.842,
+                0.652
+              ],
+              "evidence_zh": "两尖端水平相隔约400px，背景间隙清楚；两组边线方向相差小于0.1°，外弧半径约536px和535px。"
+            },
+            {
+              "category": "儿童与灰片接触",
+              "required_parts": [
+                "背向蓝色连帽儿童",
+                "臀腿及鞋",
+                "灰片上表面",
+                "接触阴影"
+              ],
+              "relationship": "儿童位于灰片上方，下身和鞋覆盖其表面；灰片在儿童后方延续。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.731,
+                0.354,
+                0.842,
+                0.538
+              ],
+              "evidence_zh": "儿童腿脚收拢于灰片上，下身邻近灰色纹理并有局部阴影，未与扇片脱离或穿到其下方。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入采用合成学生队列、20,000,000人分母及三个当前类别，不要求参考13.9%、2.9 million或2018家庭统计。",
+            "output_added_or_lost_meaning_zh": "当前风险角色、学生单位及按人数占比分区完整；原疫情和停课叙事未延续属于输入改写，未观察到额外输出语义缺漏。",
+            "visible_inscription_evidence_zh": "可见校园供餐风险、SYNTHETIC DATA、合成样本总数、At risk、Other students及两个synthetic subcategory、Synthetic student cohort和儿童与阴影不计量的说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实家庭统计及疫情叙事由冻结输入改为合成学生供餐风险，参考含义记为部分保留，不归为生成失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "风险角宽按15.5%更新，其余84.5%分为两个42.25%子类，边界变化来自当前数据。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖全部三个角宽，包括最小风险片、并列大值和序列中间类别；检查主体及灰片外弧尺度。全部类别、数值、单位和总数逐项核对，未对儿童遮挡的隐藏像素作直接测量。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "保留绿色苹果及果梗、灰色抽离片、背向蓝色连帽儿童。",
+            "data_adaptation_excluded_zh": "不扣除风险比例、两个合成子类及更新文字。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "苹果居左，风险片向右平移，儿童背向坐在灰片上方，接触关系可见。",
+            "data_adaptation_excluded_zh": "儿童腿脚姿态与非数据厚度允许适配，未作扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "苹果与儿童仍为主体；标题改为左上大字，新增右上总数及底部三列说明。",
+            "data_adaptation_excluded_zh": "允许更新主题、类别和排版；不要求旧13.9%或2.9 million。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "米色底、摄影果皮、灰片和蓝衣拼贴质感保留；待评图果皮更鲜亮，阴影更立体，灰片高光更强。",
+            "data_adaptation_excluded_zh": "不扣除数据驱动边界及允许调整的非数据厚度。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/1eb1036b0de83f",
       "numeric_supported": true,
@@ -50152,7 +50592,373 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图是白底、蓝左红右的平行双叉，齿连接宽弧头、细颈与长柄。待评图保留这些关系；两组各8类，Table D为0%空位，Table E的3%为可见短齿。主题、合成数据声明、系列名称及百分比单位可读，标签靠近对应齿尖或零值根部。待评图反光更强，说明区移至右上，长柄完整入画。",
+        "summary_zh": "通过。数值、标签和齿长映射符合要求，双叉结构与数据融合保留。review.json已以UTF-8保存并通过schema.json校验；按追加要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在2000×1825原图中检测齿面边界，按声明的−30°刚体变换反投影；零线由每组7个齿间空隙的叉头前缘拟合。可见标尺五刻度横坐标为1214、1299、1384、1469、1554像素，对应17像素/百分点。全部15根正值齿的最大点估计偏差约0.156%满量程，低于3%容差。边界来自原图像素，未以源码公式代替测量。",
+        "uncertainties_zh": "抗锯齿与高光带来约±2像素长度不确定性，即±0.118个百分点；对最短3%齿相当于约±3.9%的相对长度不确定性。零值根缘约0.13像素的阈值残差不构成可见伸出齿。未检查被排除的编排记录，不能独立确认capture_render.py的实际调用过程。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "两组各8个类别位置；蓝组7根正值齿和1个零值空位，红组8根正值齿。16组标签、系列名称、单位及合成数据声明齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "蓝组依次为16、11、10、0、3、6.25、9.5、12.75%；红组依次为20、8、12、14、15、11、14、17%，与输入一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "Table类别绑定蓝叉，Quick类别绑定红叉，各自按给定顺序排列。数值邻近对应齿尖，Table D 0%邻近空位根部，无交叉歧义。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "标尺实测340像素对应20%。蓝组16%、3%、6.25%齿约271.9、51.2、106.2像素；红组20%、8%、14%齿约339.9、136.1、238.2像素。全部正值齿在容差内，零值无伸出齿。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始素材及映射叉身、齿面素材，其高光与纹理在成图主体中实质可见。源码佐证render.py使用这些素材，并以数据控制齿长、位置和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数值由实际连接叉头的彩色叉齿长度承担；叉头、细颈和长柄连续。两叉平行，未见破坏解释的脱离、遮挡或接缝。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下主题、系列、全部类别及数值、标尺和底部说明清晰。长类别分行但保留Table或Quick父类，必要文字未被遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "保留白底蓝红双叉、宽弧头、细颈和长柄。大齿与最短3%齿均连接叉头，0%保留空位；实际数据边界为根到尖的齿长。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Restaurant spending change、Table service、Quick service和Spending change (%)明确当前主题、系列角色及单位；合成数据与非实测声明清楚，没有误示100%组成或累计量。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留餐饮支出、两类服务比较和叉齿编码。参考真实品牌、Q2及逆转下滑叙事未复述，属于冻结输入要求的合成化与旧结论排除，不作为输出失误。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "Table E 3%短齿约51.2像素，尖端、侧边和根部连接均可辨；Quick B 8%约136.1像素。零值空位清楚，未增设假齿。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题和服务角色完整保留。真实品牌、时期及旧趋势叙事替换为合成类别属于输入适配；齿数、长度和零值空位属于数据驱动变化。未发现输出遗漏造成的主题或结构损失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "table_service",
+              "category": "Table A",
+              "expected_value": 16,
+              "observed_value": 15.994,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 271.9,
+              "full_scale_error_percent": 0.028,
+              "small_value_relative_error_percent": 0.03,
+              "bbox_xyxy_normalized": [
+                0.0877,
+                0.5151,
+                0.1695,
+                0.6529
+              ],
+              "evidence_zh": "像素检测齿尖约(189.2,948.1)，齿根约(325.2,1183.6)；按实测17像素/百分点换算。",
+              "uncertainty_zh": "角度采用声明的刚体变换，边界来自原图；长度约±2像素，误差为点估计。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table C",
+              "expected_value": 10,
+              "observed_value": 10.006,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 170.1,
+              "full_scale_error_percent": 0.031,
+              "small_value_relative_error_percent": 0.06,
+              "bbox_xyxy_normalized": [
+                0.1772,
+                0.5229,
+                0.2336,
+                0.6124
+              ],
+              "evidence_zh": "像素检测齿尖约(368.3,962.3)，齿根约(453.3,1109.6)，对应10%文字。",
+              "uncertainty_zh": "抗锯齿与高光使长度约有±2像素不确定性。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table E",
+              "expected_value": 3,
+              "observed_value": 3.012,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 51.2,
+              "full_scale_error_percent": 0.06,
+              "small_value_relative_error_percent": 0.4,
+              "bbox_xyxy_normalized": [
+                0.271,
+                0.5388,
+                0.2977,
+                0.5719
+              ],
+              "evidence_zh": "最小正值齿尖约(555.9,991.3)，根部约(581.5,1035.6)，长度51.2像素，实体连接可见。",
+              "uncertainty_zh": "±2像素约相当于该短齿±3.9%的相对长度不确定性；不主张亚像素精度。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table chain added 1",
+              "expected_value": 6.25,
+              "observed_value": 6.249,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 106.2,
+              "full_scale_error_percent": 0.006,
+              "small_value_relative_error_percent": 0.02,
+              "bbox_xyxy_normalized": [
+                0.2893,
+                0.4924,
+                0.3298,
+                0.5516
+              ],
+              "evidence_zh": "齿尖约(592.5,906.7)，根部约(645.6,998.7)，106.2像素对应6.25%。",
+              "uncertainty_zh": "边界约±2像素；文字准确不单独充当几何证据。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table chain added 3",
+              "expected_value": 12.75,
+              "observed_value": 12.781,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 217.3,
+              "full_scale_error_percent": 0.156,
+              "small_value_relative_error_percent": 0.24,
+              "bbox_xyxy_normalized": [
+                0.3257,
+                0.3992,
+                0.3938,
+                0.5111
+              ],
+              "evidence_zh": "齿尖约(665.2,736.5)，根部约(773.8,924.7)。这是全部正值齿中点估计偏差最大的项，仍远低于容差。",
+              "uncertainty_zh": "约0.53像素长度差小于约±2像素的边界测量不确定性。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick A",
+              "expected_value": 20,
+              "observed_value": 19.996,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 339.9,
+              "full_scale_error_percent": 0.019,
+              "small_value_relative_error_percent": 0.02,
+              "bbox_xyxy_normalized": [
+                0.5107,
+                0.4582,
+                0.6095,
+                0.6283
+              ],
+              "evidence_zh": "齿尖约(1035.2,844.2)，根部约(1205.2,1138.6)，与340像素满量程标尺一致。",
+              "uncertainty_zh": "原图边界约±2像素；未用目标长度替代测量。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick B",
+              "expected_value": 8,
+              "observed_value": 8.006,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 136.1,
+              "full_scale_error_percent": 0.029,
+              "small_value_relative_error_percent": 0.07,
+              "bbox_xyxy_normalized": [
+                0.5937,
+                0.5346,
+                0.6416,
+                0.608
+              ],
+              "evidence_zh": "红组最小值齿尖约(1201.2,983.7)，根部约(1269.3,1101.6)，长136.1像素。",
+              "uncertainty_zh": "抗锯齿与高光使长度约有±2像素不确定性。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick D",
+              "expected_value": 14,
+              "observed_value": 14.011,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 238.2,
+              "full_scale_error_percent": 0.053,
+              "small_value_relative_error_percent": 0.08,
+              "bbox_xyxy_normalized": [
+                0.6323,
+                0.4457,
+                0.7057,
+                0.5675
+              ],
+              "evidence_zh": "红组内部位置齿尖约(1278.4,821.3)，根部约(1397.4,1027.6)，对应14%。",
+              "uncertainty_zh": "边界测量约±2像素，误差为点估计。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "双叉整体",
+              "required_parts": [
+                "蓝叉",
+                "红叉",
+                "宽弧叉头",
+                "细颈",
+                "长柄"
+              ],
+              "relationship": "蓝左红右，平行指向左上；宽头连续收细为颈部并连接右下方长柄。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.085,
+                0.34,
+                0.91,
+                0.92
+              ],
+              "evidence_zh": "主体不互相遮挡，头、颈、柄连续，生成材质高光贯穿这些部件。"
+            },
+            {
+              "category": "Table A 16%大齿",
+              "required_parts": [
+                "齿尖",
+                "齿身",
+                "根线",
+                "蓝色叉头"
+              ],
+              "relationship": "长齿由蓝叉头根线向左上伸出，根到尖承担数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.085,
+                0.51,
+                0.18,
+                0.66
+              ],
+              "evidence_zh": "约271.9像素长齿直接连接叉头，根部未见白色断缝。"
+            },
+            {
+              "category": "Table E 3%短齿",
+              "required_parts": [
+                "短齿尖",
+                "短齿身",
+                "蓝色叉头",
+                "3%标签"
+              ],
+              "relationship": "短齿保留同向伸出和实体连接。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.27,
+                0.535,
+                0.305,
+                0.59
+              ],
+              "evidence_zh": "51.2像素短齿轮廓和根部接触清楚，3%标签在其轴向前方。"
+            },
+            {
+              "category": "Table D 0%位置",
+              "required_parts": [
+                "零值标签",
+                "类别空位",
+                "根线"
+              ],
+              "relationship": "在Table C与Table E之间保留根部位置，不伸出齿。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.225,
+                0.535,
+                0.285,
+                0.61
+              ],
+              "evidence_zh": "约(517,1073)的蓝色根缘前没有可见正长度齿。"
+            },
+            {
+              "category": "Quick A 20%大齿",
+              "required_parts": [
+                "齿尖",
+                "红色齿身",
+                "红色叉头"
+              ],
+              "relationship": "满量程长齿沿共同方向伸出并连接叉头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.505,
+                0.455,
+                0.62,
+                0.64
+              ],
+              "evidence_zh": "339.9像素长齿与叉头连续，未被遮挡而缩短。"
+            },
+            {
+              "category": "Quick B 8%组内短齿",
+              "required_parts": [
+                "短齿尖",
+                "红色齿身",
+                "红色叉头"
+              ],
+              "relationship": "与其他红齿同向、同根线，根部接触叉头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.59,
+                0.53,
+                0.65,
+                0.62
+              ],
+              "evidence_zh": "136.1像素齿的端点、侧边及根部接触均清楚。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "允许使用当前合成类别和值，调整齿数、齿长、姿态、非数据厚度与标签，不沿用旧真实数据及涨跌结论。",
+            "output_added_or_lost_meaning_zh": "当前支出变化及两类服务对照保留。旧时期和趋势叙事的缺席归因于输入适配；新增合成声明与读图标尺没有新增真实统计主张。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA、Restaurant spending change、Change in spending · percent (%)、Table service、Quick service、8 categories · supplied order，以及非实测结果声明均可见。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实品牌、Q2语境和旧趋势改为合成类别，当前主题仍为餐饮支出变化。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "每组8个位置、当前齿长顺序和Table D空位均与当前数据一致。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "像素边界带来约±2像素测量不确定性，但最短51.2像素齿的结构仍可辨。"
+            }
+          ],
+          "measurement_coverage_zh": "核对全部16个类别及数值，像素扫描15根正值齿和1个零值位置。详细列出8例，覆盖两组最大、最小正值、内部位置、小数及最大观测偏差项；其余扫描结果保存于pixel_measurements.json。非数据叉身尺寸不作为数量通道。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "蓝红两叉均具宽弧叉头、细颈和连续长柄，保留白底双叉身份。",
+            "data_adaptation_excluded_zh": "排除8类别带来的齿数和宽度变化、当前齿长及允许的非数据厚度调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "蓝左红右、平行指向左上，齿、头、颈、柄相接，没有改为旁置装饰。",
+            "data_adaptation_excluded_zh": "排除允许的整体倾角、柄端位置和标签位置适配。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留左上大标题和中下部双叉主视觉；右侧细栏改为右上说明，系列说明移至下方，柄端完整入画。",
+            "data_adaptation_excluded_zh": "不扣合成主题、标签更新、旧品牌装饰移除和数据驱动齿形变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "白底蓝红及亮面保留；参考以平涂色块和简洁白高光塑形，待评图为强镜面渐变与多重边缘反光。",
+            "data_adaptation_excluded_zh": "评分排除允许的厚度、姿态与数值形状改变；材质差异未构成必要要求缺陷。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/1ecb2771b89914",
       "numeric_supported": true,
@@ -50545,7 +51351,373 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图是白底、蓝左红右的平行双叉，齿连接宽弧头、细颈与长柄。待评图保留这些关系；两组各8类，Table D为0%空位，Table E的3%为可见短齿。主题、合成数据声明、系列名称及百分比单位可读，标签靠近对应齿尖或零值根部。待评图反光更强，说明区移至右上，长柄完整入画。",
+        "summary_zh": "通过。数值、标签和齿长映射符合要求，双叉结构与数据融合保留。review.json已以UTF-8保存并通过schema.json校验；按追加要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在2000×1825原图中检测齿面边界，按声明的−30°刚体变换反投影；零线由每组7个齿间空隙的叉头前缘拟合。可见标尺五刻度横坐标为1214、1299、1384、1469、1554像素，对应17像素/百分点。全部15根正值齿的最大点估计偏差约0.156%满量程，低于3%容差。边界来自原图像素，未以源码公式代替测量。",
+        "uncertainties_zh": "抗锯齿与高光带来约±2像素长度不确定性，即±0.118个百分点；对最短3%齿相当于约±3.9%的相对长度不确定性。零值根缘约0.13像素的阈值残差不构成可见伸出齿。未检查被排除的编排记录，不能独立确认capture_render.py的实际调用过程。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "两组各8个类别位置；蓝组7根正值齿和1个零值空位，红组8根正值齿。16组标签、系列名称、单位及合成数据声明齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "蓝组依次为16、11、10、0、3、6.25、9.5、12.75%；红组依次为20、8、12、14、15、11、14、17%，与输入一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "Table类别绑定蓝叉，Quick类别绑定红叉，各自按给定顺序排列。数值邻近对应齿尖，Table D 0%邻近空位根部，无交叉歧义。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "标尺实测340像素对应20%。蓝组16%、3%、6.25%齿约271.9、51.2、106.2像素；红组20%、8%、14%齿约339.9、136.1、238.2像素。全部正值齿在容差内，零值无伸出齿。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始素材及映射叉身、齿面素材，其高光与纹理在成图主体中实质可见。源码佐证render.py使用这些素材，并以数据控制齿长、位置和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数值由实际连接叉头的彩色叉齿长度承担；叉头、细颈和长柄连续。两叉平行，未见破坏解释的脱离、遮挡或接缝。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下主题、系列、全部类别及数值、标尺和底部说明清晰。长类别分行但保留Table或Quick父类，必要文字未被遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "保留白底蓝红双叉、宽弧头、细颈和长柄。大齿与最短3%齿均连接叉头，0%保留空位；实际数据边界为根到尖的齿长。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Restaurant spending change、Table service、Quick service和Spending change (%)明确当前主题、系列角色及单位；合成数据与非实测声明清楚，没有误示100%组成或累计量。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留餐饮支出、两类服务比较和叉齿编码。参考真实品牌、Q2及逆转下滑叙事未复述，属于冻结输入要求的合成化与旧结论排除，不作为输出失误。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "Table E 3%短齿约51.2像素，尖端、侧边和根部连接均可辨；Quick B 8%约136.1像素。零值空位清楚，未增设假齿。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题和服务角色完整保留。真实品牌、时期及旧趋势叙事替换为合成类别属于输入适配；齿数、长度和零值空位属于数据驱动变化。未发现输出遗漏造成的主题或结构损失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "table_service",
+              "category": "Table A",
+              "expected_value": 16,
+              "observed_value": 15.994,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 271.9,
+              "full_scale_error_percent": 0.028,
+              "small_value_relative_error_percent": 0.03,
+              "bbox_xyxy_normalized": [
+                0.0877,
+                0.5151,
+                0.1695,
+                0.6529
+              ],
+              "evidence_zh": "像素检测齿尖约(189.2,948.1)，齿根约(325.2,1183.6)；按实测17像素/百分点换算。",
+              "uncertainty_zh": "角度采用声明的刚体变换，边界来自原图；长度约±2像素，误差为点估计。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table C",
+              "expected_value": 10,
+              "observed_value": 10.006,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 170.1,
+              "full_scale_error_percent": 0.031,
+              "small_value_relative_error_percent": 0.06,
+              "bbox_xyxy_normalized": [
+                0.1772,
+                0.5229,
+                0.2336,
+                0.6124
+              ],
+              "evidence_zh": "像素检测齿尖约(368.3,962.3)，齿根约(453.3,1109.6)，对应10%文字。",
+              "uncertainty_zh": "抗锯齿与高光使长度约有±2像素不确定性。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table E",
+              "expected_value": 3,
+              "observed_value": 3.012,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 51.2,
+              "full_scale_error_percent": 0.06,
+              "small_value_relative_error_percent": 0.4,
+              "bbox_xyxy_normalized": [
+                0.271,
+                0.5388,
+                0.2977,
+                0.5719
+              ],
+              "evidence_zh": "最小正值齿尖约(555.9,991.3)，根部约(581.5,1035.6)，长度51.2像素，实体连接可见。",
+              "uncertainty_zh": "±2像素约相当于该短齿±3.9%的相对长度不确定性；不主张亚像素精度。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table chain added 1",
+              "expected_value": 6.25,
+              "observed_value": 6.249,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 106.2,
+              "full_scale_error_percent": 0.006,
+              "small_value_relative_error_percent": 0.02,
+              "bbox_xyxy_normalized": [
+                0.2893,
+                0.4924,
+                0.3298,
+                0.5516
+              ],
+              "evidence_zh": "齿尖约(592.5,906.7)，根部约(645.6,998.7)，106.2像素对应6.25%。",
+              "uncertainty_zh": "边界约±2像素；文字准确不单独充当几何证据。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table chain added 3",
+              "expected_value": 12.75,
+              "observed_value": 12.781,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 217.3,
+              "full_scale_error_percent": 0.156,
+              "small_value_relative_error_percent": 0.24,
+              "bbox_xyxy_normalized": [
+                0.3257,
+                0.3992,
+                0.3938,
+                0.5111
+              ],
+              "evidence_zh": "齿尖约(665.2,736.5)，根部约(773.8,924.7)。这是全部正值齿中点估计偏差最大的项，仍远低于容差。",
+              "uncertainty_zh": "约0.53像素长度差小于约±2像素的边界测量不确定性。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick A",
+              "expected_value": 20,
+              "observed_value": 19.996,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 339.9,
+              "full_scale_error_percent": 0.019,
+              "small_value_relative_error_percent": 0.02,
+              "bbox_xyxy_normalized": [
+                0.5107,
+                0.4582,
+                0.6095,
+                0.6283
+              ],
+              "evidence_zh": "齿尖约(1035.2,844.2)，根部约(1205.2,1138.6)，与340像素满量程标尺一致。",
+              "uncertainty_zh": "原图边界约±2像素；未用目标长度替代测量。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick B",
+              "expected_value": 8,
+              "observed_value": 8.006,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 136.1,
+              "full_scale_error_percent": 0.029,
+              "small_value_relative_error_percent": 0.07,
+              "bbox_xyxy_normalized": [
+                0.5937,
+                0.5346,
+                0.6416,
+                0.608
+              ],
+              "evidence_zh": "红组最小值齿尖约(1201.2,983.7)，根部约(1269.3,1101.6)，长136.1像素。",
+              "uncertainty_zh": "抗锯齿与高光使长度约有±2像素不确定性。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick D",
+              "expected_value": 14,
+              "observed_value": 14.011,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 238.2,
+              "full_scale_error_percent": 0.053,
+              "small_value_relative_error_percent": 0.08,
+              "bbox_xyxy_normalized": [
+                0.6323,
+                0.4457,
+                0.7057,
+                0.5675
+              ],
+              "evidence_zh": "红组内部位置齿尖约(1278.4,821.3)，根部约(1397.4,1027.6)，对应14%。",
+              "uncertainty_zh": "边界测量约±2像素，误差为点估计。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "双叉整体",
+              "required_parts": [
+                "蓝叉",
+                "红叉",
+                "宽弧叉头",
+                "细颈",
+                "长柄"
+              ],
+              "relationship": "蓝左红右，平行指向左上；宽头连续收细为颈部并连接右下方长柄。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.085,
+                0.34,
+                0.91,
+                0.92
+              ],
+              "evidence_zh": "主体不互相遮挡，头、颈、柄连续，生成材质高光贯穿这些部件。"
+            },
+            {
+              "category": "Table A 16%大齿",
+              "required_parts": [
+                "齿尖",
+                "齿身",
+                "根线",
+                "蓝色叉头"
+              ],
+              "relationship": "长齿由蓝叉头根线向左上伸出，根到尖承担数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.085,
+                0.51,
+                0.18,
+                0.66
+              ],
+              "evidence_zh": "约271.9像素长齿直接连接叉头，根部未见白色断缝。"
+            },
+            {
+              "category": "Table E 3%短齿",
+              "required_parts": [
+                "短齿尖",
+                "短齿身",
+                "蓝色叉头",
+                "3%标签"
+              ],
+              "relationship": "短齿保留同向伸出和实体连接。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.27,
+                0.535,
+                0.305,
+                0.59
+              ],
+              "evidence_zh": "51.2像素短齿轮廓和根部接触清楚，3%标签在其轴向前方。"
+            },
+            {
+              "category": "Table D 0%位置",
+              "required_parts": [
+                "零值标签",
+                "类别空位",
+                "根线"
+              ],
+              "relationship": "在Table C与Table E之间保留根部位置，不伸出齿。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.225,
+                0.535,
+                0.285,
+                0.61
+              ],
+              "evidence_zh": "约(517,1073)的蓝色根缘前没有可见正长度齿。"
+            },
+            {
+              "category": "Quick A 20%大齿",
+              "required_parts": [
+                "齿尖",
+                "红色齿身",
+                "红色叉头"
+              ],
+              "relationship": "满量程长齿沿共同方向伸出并连接叉头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.505,
+                0.455,
+                0.62,
+                0.64
+              ],
+              "evidence_zh": "339.9像素长齿与叉头连续，未被遮挡而缩短。"
+            },
+            {
+              "category": "Quick B 8%组内短齿",
+              "required_parts": [
+                "短齿尖",
+                "红色齿身",
+                "红色叉头"
+              ],
+              "relationship": "与其他红齿同向、同根线，根部接触叉头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.59,
+                0.53,
+                0.65,
+                0.62
+              ],
+              "evidence_zh": "136.1像素齿的端点、侧边及根部接触均清楚。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "允许使用当前合成类别和值，调整齿数、齿长、姿态、非数据厚度与标签，不沿用旧真实数据及涨跌结论。",
+            "output_added_or_lost_meaning_zh": "当前支出变化及两类服务对照保留。旧时期和趋势叙事的缺席归因于输入适配；新增合成声明与读图标尺没有新增真实统计主张。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA、Restaurant spending change、Change in spending · percent (%)、Table service、Quick service、8 categories · supplied order，以及非实测结果声明均可见。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实品牌、Q2语境和旧趋势改为合成类别，当前主题仍为餐饮支出变化。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "每组8个位置、当前齿长顺序和Table D空位均与当前数据一致。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "像素边界带来约±2像素测量不确定性，但最短51.2像素齿的结构仍可辨。"
+            }
+          ],
+          "measurement_coverage_zh": "核对全部16个类别及数值，像素扫描15根正值齿和1个零值位置。详细列出8例，覆盖两组最大、最小正值、内部位置、小数及最大观测偏差项；其余扫描结果保存于pixel_measurements.json。非数据叉身尺寸不作为数量通道。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "蓝红两叉均具宽弧叉头、细颈和连续长柄，保留白底双叉身份。",
+            "data_adaptation_excluded_zh": "排除8类别带来的齿数和宽度变化、当前齿长及允许的非数据厚度调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "蓝左红右、平行指向左上，齿、头、颈、柄相接，没有改为旁置装饰。",
+            "data_adaptation_excluded_zh": "排除允许的整体倾角、柄端位置和标签位置适配。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留左上大标题和中下部双叉主视觉；右侧细栏改为右上说明，系列说明移至下方，柄端完整入画。",
+            "data_adaptation_excluded_zh": "不扣合成主题、标签更新、旧品牌装饰移除和数据驱动齿形变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "白底蓝红及亮面保留；参考以平涂色块和简洁白高光塑形，待评图为强镜面渐变与多重边缘反光。",
+            "data_adaptation_excluded_zh": "评分排除允许的厚度、姿态与数值形状改变；材质差异未构成必要要求缺陷。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/1ecb2771b89914",
       "numeric_supported": true,
@@ -52091,7 +53263,353 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为白底蓝红双叉，齿向左上、柄向右下，宽弧叉头经细颈连接长柄。最终图保留这些连接；蓝组七根正值齿及一个零位，红组八根正值齿。16项标签、主题、服务类型、百分比单位及合成声明可读。Table E的短齿仍连接叉头。最终材质的金属反光明显强于参考插画。",
+        "summary_zh": "符合当前数据和核心结构要求。review.json 已保存并通过 schema.json 校验；未运行 submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在2000×1825原图上检测齿尖与可见标尺。源码方向仅辅助定位，端点来自像素；标尺拟合约19.9948px/百分点。全部15根正值齿的估计满量程误差均小于0.05%，边界不确定性约±1.5px。以下数值为近似测量。",
+        "uncertainties_zh": "抗锯齿与高光影响边界定位；最小齿的相对精度不能由满量程合格替代。未读取禁止的日志或自检，无法独立确认capture_render.py执行过程。参考风格评分属于可见保留程度判断。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "两组各八类别，蓝组七根正值齿加Table D零位，红组八根正值齿，顺序与输入一致。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "蓝组16、11、10、0、3、6.25、9.5、12.75%；红组20、8、12、14、15、11、14、17%，均准确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "类别及数值紧邻对应齿尖；Table D位于第四根部位置。新增标签保留Table chain或Quick chain父类。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "全部15根正值齿的像素测量符合共用0–20%线性尺度；Table E约60px，Quick A约400px。零值无伸出齿。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始及派生素材；其亮边、颈部和柄端反射在最终主体可辨。源码把素材嵌入按数据裁定的齿轮廓。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "叉齿本身承载数值，并接入宽弧叉头；叉头经细颈连接长柄，未见破坏读数的断裂、遮挡或表面错位。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成声明、服务标题、单位、16项类别及数值均清晰，无必要文字被裁切或遮盖。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "白底蓝红双叉平行斜放，宽弧叉头、细颈和长柄连续；大小正值齿均与头部接触。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Restaurant spending change、两服务类型及Spending change (%)明确主题、系列角色和单位；没有将变化率表述为100%构成。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留餐饮支出主题、服务比较和叉齿编码。参考中的Q2及历史趋势叙述未沿用，属于冻结输入允许的合成数据改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小正值Table E约60px，齿尖、实体及与叉头的连接可辨；Table D仅保留零位标记。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题、单位和服务角色均保留。真实品牌、时期及旧趋势的替换归因于允许的输入改编；齿数、齿长和零位变化归因于数据。未发现输出语义遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "table_service",
+              "category": "Table A",
+              "expected_value": 16,
+              "observed_value": 15.999,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 319.9,
+              "full_scale_error_percent": 0.003,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.098,
+                0.4492,
+                0.1639,
+                0.6232
+              ],
+              "evidence_zh": "沿原图齿轴检测中心线边缘，长度约319.9px。",
+              "uncertainty_zh": "边界约±1.5px；不另报告大值的相对误差。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table D",
+              "expected_value": 0,
+              "observed_value": 0,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 0,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.273,
+                0.571,
+                0.293,
+                0.583
+              ],
+              "evidence_zh": "根部仅有短横零位标记，没有伸出齿。",
+              "uncertainty_zh": "零位标记线宽不计为数据长度；零值相对误差不适用。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table E",
+              "expected_value": 3,
+              "observed_value": 2.999,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 60,
+              "full_scale_error_percent": 0.01,
+              "small_value_relative_error_percent": 0.04,
+              "bbox_xyxy_normalized": [
+                0.3081,
+                0.5277,
+                0.336,
+                0.5655
+              ],
+              "evidence_zh": "最小正值齿实测约60px，仍有清晰实体与根部接触。",
+              "uncertainty_zh": "约±1.5px对应约±2.5%相对长度不确定性；不能宣称精确到小数末位。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table chain added 1",
+              "expected_value": 6.25,
+              "observed_value": 6.244,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 124.8,
+              "full_scale_error_percent": 0.03,
+              "small_value_relative_error_percent": 0.1,
+              "bbox_xyxy_normalized": [
+                0.3416,
+                0.4793,
+                0.379,
+                0.5511
+              ],
+              "evidence_zh": "内部类别齿长约124.8px，符合6.25%的共用尺度。",
+              "uncertainty_zh": "端点和可见标尺来自像素，边界约±1.5px。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick A",
+              "expected_value": 20,
+              "observed_value": 20.005,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 400,
+              "full_scale_error_percent": 0.02,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.5363,
+                0.4072,
+                0.6139,
+                0.6232
+              ],
+              "evidence_zh": "最大齿实测约400px，齿尖对应20%参考线。",
+              "uncertainty_zh": "边界约±1.5px；不另报告大值的相对误差。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick B",
+              "expected_value": 8,
+              "observed_value": 7.992,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 159.8,
+              "full_scale_error_percent": 0.04,
+              "small_value_relative_error_percent": 0.1,
+              "bbox_xyxy_normalized": [
+                0.6144,
+                0.5186,
+                0.6569,
+                0.6088
+              ],
+              "evidence_zh": "红组最小正值齿实测约159.8px。",
+              "uncertainty_zh": "边界约±1.5px，数值为近似测量。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick D",
+              "expected_value": 14,
+              "observed_value": 14.006,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 280,
+              "full_scale_error_percent": 0.03,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.6829,
+                0.4268,
+                0.743,
+                0.5799
+              ],
+              "evidence_zh": "红组内部类别齿实测约280px。",
+              "uncertainty_zh": "边界约±1.5px；不另报告大值的相对误差。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "双叉整体",
+              "required_parts": [
+                "蓝红双叉",
+                "宽弧叉头",
+                "细颈",
+                "长柄"
+              ],
+              "relationship": "平行斜放，叉头经细颈连续连接长柄。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.098,
+                0.338,
+                0.921,
+                0.913
+              ],
+              "evidence_zh": "两主体轮廓连续，未见漂浮组件。"
+            },
+            {
+              "category": "Table A，16%",
+              "required_parts": [
+                "长数据齿",
+                "共同根部",
+                "蓝色叉头"
+              ],
+              "relationship": "齿根接入叉头，齿尖向左上界定长度。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.098,
+                0.449,
+                0.171,
+                0.646
+              ],
+              "evidence_zh": "约320px齿体从根部(309,1132)延至齿尖(215,826)。"
+            },
+            {
+              "category": "Table E，3%",
+              "required_parts": [
+                "短数据齿",
+                "齿尖",
+                "共同根部",
+                "蓝色叉头"
+              ],
+              "relationship": "小齿仍从零线伸出并与叉头接触。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.304,
+                0.525,
+                0.347,
+                0.585
+              ],
+              "evidence_zh": "约60px短齿从(653,1027)延至(635,970)，根部无白缝。"
+            },
+            {
+              "category": "Table D，0%",
+              "required_parts": [
+                "第四类别位置",
+                "零位标记",
+                "叉头根边"
+              ],
+              "relationship": "类别保留在根边，不伸出数据齿。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.26,
+                0.529,
+                0.3,
+                0.585
+              ],
+              "evidence_zh": "约(567,1053)处只有沿根边的短横线。"
+            },
+            {
+              "category": "Quick A，20%",
+              "required_parts": [
+                "长数据齿",
+                "共同根部",
+                "红色叉头"
+              ],
+              "relationship": "最长齿连续接入红色叉头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.535,
+                0.405,
+                0.621,
+                0.644
+              ],
+              "evidence_zh": "约400px齿体连接根部(1209,1132)与齿尖(1092,750)。"
+            },
+            {
+              "category": "Quick B，8%",
+              "required_parts": [
+                "红组最短齿",
+                "共同根部",
+                "红色叉头"
+              ],
+              "relationship": "最短红齿采用同一根边并完整连接叉头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.611,
+                0.516,
+                0.663,
+                0.628
+              ],
+              "evidence_zh": "约160px齿体从(1295,1106)延至(1248,953)，接触关系可辨。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "合成类别和当前变化率替换真实品牌、旧数值及旧趋势；姿态、非数据厚度和标签位置允许调整。",
+            "output_added_or_lost_meaning_zh": "当前主题与指标未丢失。旧时期及反转下降的论述未出现，属于允许改编；新增说明明确齿长和零值规则。",
+            "visible_inscription_evidence_zh": "Restaurant spending change；Table service；Quick service；Spending change (%)；SYNTHETIC DATA；One common 0–20% tine-length scale。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "原图品牌与Q2历史叙述替换为合成类别及当前数据。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "八类别、不同齿长和Table D零位由当前数据决定。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "抗锯齿与高光带来约±1.5px边界不确定性，但最小齿的实体连接仍清楚。"
+            }
+          ],
+          "measurement_coverage_zh": "检查全部16个标签和位置，测量全部15根正值齿中心线；展示两组大小值、内部类别及零位共7项。未把非数据叉头面积或柄长当作量值。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "蓝红两叉的宽弧头、细颈、长柄及可辨叉形完整保留。",
+            "data_adaptation_excluded_zh": "排除类别数量、齿长变化及允许的非数据厚度调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两叉平行斜放，齿向左上、柄向右下，部件连接完整。",
+            "data_adaptation_excluded_zh": "排除允许的倾角、间距和标签位置调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留白底、上方标题和蓝红双主体；侧栏改为分组标题及底部说明，灰色品牌背景未保留。",
+            "data_adaptation_excluded_zh": "不惩罚合成主题、服务名称及新增类别标签。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留红蓝亮面色彩；强镜面反射与参考平面色块、简化亮边有明显差别。",
+            "data_adaptation_excluded_zh": "排除数据齿长、非数据厚度和姿态变化，仅比较表面风格。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/1e1514453e6599",
       "numeric_supported": true,
@@ -73930,7 +75448,538 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为横向海洋剖面，游艇位于右上水面，四个水下颜色层向下叠合。成图保留游艇、共同水面、海水纹理和四个连续来源层；P01–P16从左至右，P02最深，后期趋薄。标题、合成数据声明、单位、四来源数值表及末期放大图可见。主图后期细层难以分辨，未见明显遮挡、断层或第五层。",
+        "summary_zh": "通过。review.json已以UTF-8保存并通过schema校验，包含19项测量及全部11项检查。未发现具体输出缺陷；小值像素精度和参考语义的允许改编分别保留说明。按后续限制未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "读取指定image.png的2200×1552原始像素，按可见刻度校准主图约0.09px/单位、放大图约0.20px/单位，再定位颜色边界。误差分别使用7,200和1,000面板满量程。源码仅作佐证，未执行渲染或自检。",
+        "uncertainties_zh": "每条像素边界约有±1px不确定性，主图最小橙层无法可靠反推相对误差。未逐像素穷尽全部插值段。按限制未检查日志、自检或capture_render调用记录，不能独立认证渲染启动历史。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "按序P01–P16、四来源、64个分项及16个总值齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "64个分项与冻结数据一致；独立相加的16个总值均匹配表格。峰值7,020及末期860、260、190正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "来源颜色在图例、图内标签、表格和放大图中一致，时期列对齐主图刻度。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "代表性可量测项的近似满量程误差均不超过0.30%；未见负厚度、过冲或第五层。最小主图层的精确厚度另保留不确定性。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始素材及裁切素材；游艇窗体、水下光束、气泡和塑料碎片与成图对应。源码按累计值裁剪四层材质。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "海水纹理覆盖并终止于数据累计边界，深度实际承载数值；船底接触零水面。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原分辨率下主题、SYNTHETIC DATA、单位、时期、来源及完整数值表清楚可读。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "横向水面、贴水游艇、四个连续水下来源层及当期总深度外缘均保留。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "图面明确海洋塑料排放、按期分来源和100 tonnes/period；说明及页脚明确各期重新从水面计量，不跨期累计。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留塑料排放及海洋分层表达；参考中的韩国ERP、真实年份和来源专名被输入改成合成时期及来源A–D，属于允许改编。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "主图B/P15约1–2px，P16全栈约17px，细层水体质感及精确厚度难辨；明示尺度的放大图中B/P15约3px，四层相邻关系仍可见。"
+          }
+        },
+        "semantic_attribution_zh": "历史背景和来源专名的替换归于冻结输入改编；后期变浅归于当前数据；极薄层的辨认限制归于像素分辨率。未观察到主题、单位、来源角色或关键结构的输出遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "A",
+              "category": "P01（主图）",
+              "expected_value": 1841,
+              "observed_value": 1844.44,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 166,
+              "full_scale_error_percent": 0.0478,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.112727,
+                0.322165,
+                0.114545,
+                0.429124
+              ],
+              "evidence_zh": "x≈250，颜色边界y≈500至666。",
+              "uncertainty_zh": "边界约±1px，反推值为近似值。"
+            },
+            {
+              "series_id": "B",
+              "category": "P01（主图）",
+              "expected_value": 526,
+              "observed_value": 522.22,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 47,
+              "full_scale_error_percent": 0.0525,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.112727,
+                0.429124,
+                0.114545,
+                0.459407
+              ],
+              "evidence_zh": "x≈250，颜色边界y≈666至713。",
+              "uncertainty_zh": "边界约±1px，反推值为近似值。"
+            },
+            {
+              "series_id": "C",
+              "category": "P01（主图）",
+              "expected_value": 3487,
+              "observed_value": 3488.89,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 314,
+              "full_scale_error_percent": 0.0262,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.112727,
+                0.459407,
+                0.114545,
+                0.661727
+              ],
+              "evidence_zh": "x≈250，颜色边界y≈713至1027。",
+              "uncertainty_zh": "边界约±1px，反推值为近似值。"
+            },
+            {
+              "series_id": "D",
+              "category": "P01（主图）",
+              "expected_value": 626,
+              "observed_value": 633.33,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 57,
+              "full_scale_error_percent": 0.1019,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.112727,
+                0.661727,
+                0.114545,
+                0.698454
+              ],
+              "evidence_zh": "x≈250，颜色边界y≈1027至1084。",
+              "uncertainty_zh": "边界约±1px，反推值为近似值。"
+            },
+            {
+              "series_id": "A",
+              "category": "P08（主图）",
+              "expected_value": 1572,
+              "observed_value": 1572.22,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 141.5,
+              "full_scale_error_percent": 0.0031,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.503182,
+                0.322165,
+                0.505,
+                0.413338
+              ],
+              "evidence_zh": "x≈1109，y≈500至641.5；混色边界取近似中点。",
+              "uncertainty_zh": "边界约±1px；近似一致不证明亚像素精度。"
+            },
+            {
+              "series_id": "B",
+              "category": "P08（主图）",
+              "expected_value": 348,
+              "observed_value": 350,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 31.5,
+              "full_scale_error_percent": 0.0278,
+              "small_value_relative_error_percent": 0.57,
+              "bbox_xyxy_normalized": [
+                0.503182,
+                0.413338,
+                0.505,
+                0.433634
+              ],
+              "evidence_zh": "x≈1109，y≈641.5至673。",
+              "uncertainty_zh": "边界约±1px；相对误差仅为近似反推。"
+            },
+            {
+              "series_id": "C",
+              "category": "P08（主图）",
+              "expected_value": 2486,
+              "observed_value": 2477.78,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 223,
+              "full_scale_error_percent": 0.1142,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.503182,
+                0.433634,
+                0.505,
+                0.57732
+              ],
+              "evidence_zh": "x≈1109，y≈673至896。",
+              "uncertainty_zh": "边界约±1px，邻近采样列含轻微插值差。"
+            },
+            {
+              "series_id": "D",
+              "category": "P08（主图）",
+              "expected_value": 354,
+              "observed_value": 366.67,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 33,
+              "full_scale_error_percent": 0.1759,
+              "small_value_relative_error_percent": 3.58,
+              "bbox_xyxy_normalized": [
+                0.503182,
+                0.57732,
+                0.505,
+                0.598582
+              ],
+              "evidence_zh": "x≈1109，y≈896至929。",
+              "uncertainty_zh": "边界约±1px；相对误差受边界取整影响。"
+            },
+            {
+              "series_id": "B",
+              "category": "P15（主图）",
+              "expected_value": 15,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 2,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.893182,
+                0.326031,
+                0.895,
+                0.32732
+              ],
+              "evidence_zh": "x≈1967，y≈506至508有橙色混合像素，细带未被抹去。",
+              "uncertainty_zh": "仅1–2个混色像素，无法可靠反推真实厚度或相对误差。"
+            },
+            {
+              "series_id": "TOTAL",
+              "category": "P16（主图）",
+              "expected_value": 190,
+              "observed_value": 188.89,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 17,
+              "full_scale_error_percent": 0.0154,
+              "small_value_relative_error_percent": 0.58,
+              "bbox_xyxy_normalized": [
+                0.948182,
+                0.322165,
+                0.95,
+                0.333119
+              ],
+              "evidence_zh": "x≈2088，共同水面y≈500至最深外缘y≈517。",
+              "uncertainty_zh": "边界约±1px；不能据此保证各小分项精度。"
+            },
+            {
+              "series_id": "TOTAL",
+              "category": "P02（主图）",
+              "expected_value": 7020,
+              "observed_value": 7022.22,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 632,
+              "full_scale_error_percent": 0.0309,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.168636,
+                0.322165,
+                0.170455,
+                0.729381
+              ],
+              "evidence_zh": "最深顶点空心标记中心约y1132，零线约y500；未把圆点半径计入深度。",
+              "uncertainty_zh": "顶点被标记覆盖，使用可见中心近似定位。"
+            },
+            {
+              "series_id": "A",
+              "category": "P14（放大图）",
+              "expected_value": 245,
+              "observed_value": 245,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 49,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.758636,
+                0.581186,
+                0.760455,
+                0.612758
+              ],
+              "evidence_zh": "x≈1671，y≈902至951。",
+              "uncertainty_zh": "边界约±1px；整数反推一致不证明精确零误差。"
+            },
+            {
+              "series_id": "B",
+              "category": "P14（放大图）",
+              "expected_value": 43,
+              "observed_value": 40,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 8,
+              "full_scale_error_percent": 0.3,
+              "small_value_relative_error_percent": 6.98,
+              "bbox_xyxy_normalized": [
+                0.758636,
+                0.612758,
+                0.760455,
+                0.617912
+              ],
+              "evidence_zh": "x≈1671，y≈951至959。",
+              "uncertainty_zh": "边界约±1px；相对误差受像素取整显著影响。"
+            },
+            {
+              "series_id": "C",
+              "category": "P14（放大图）",
+              "expected_value": 426,
+              "observed_value": 425,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 85,
+              "full_scale_error_percent": 0.1,
+              "small_value_relative_error_percent": 0.23,
+              "bbox_xyxy_normalized": [
+                0.758636,
+                0.617912,
+                0.760455,
+                0.67268
+              ],
+              "evidence_zh": "x≈1671，y≈959至1044。",
+              "uncertainty_zh": "边界约±1px，邻近采样列含轻微插值差。"
+            },
+            {
+              "series_id": "D",
+              "category": "P14（放大图）",
+              "expected_value": 146,
+              "observed_value": 145,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 29,
+              "full_scale_error_percent": 0.1,
+              "small_value_relative_error_percent": 0.68,
+              "bbox_xyxy_normalized": [
+                0.758636,
+                0.67268,
+                0.760455,
+                0.691366
+              ],
+              "evidence_zh": "x≈1671，y≈1044至1073。",
+              "uncertainty_zh": "边界约±1px，反推值为近似值。"
+            },
+            {
+              "series_id": "B",
+              "category": "P15（放大图）",
+              "expected_value": 15,
+              "observed_value": 15,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 3,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.849545,
+                0.590206,
+                0.851364,
+                0.592139
+              ],
+              "evidence_zh": "x≈1871，橙层y≈916至919，约3px。",
+              "uncertainty_zh": "边界约±1px；近似反推一致不等于小值精度已得到证明。"
+            },
+            {
+              "series_id": "A",
+              "category": "P16（放大图）",
+              "expected_value": 52,
+              "observed_value": 50,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 10,
+              "full_scale_error_percent": 0.2,
+              "small_value_relative_error_percent": 3.85,
+              "bbox_xyxy_normalized": [
+                0.94,
+                0.581186,
+                0.941818,
+                0.587629
+              ],
+              "evidence_zh": "x≈2070，y≈902至912。",
+              "uncertainty_zh": "边界约±1px；相对误差为像素近似值。"
+            },
+            {
+              "series_id": "C",
+              "category": "P16（放大图）",
+              "expected_value": 88,
+              "observed_value": 85,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 17,
+              "full_scale_error_percent": 0.3,
+              "small_value_relative_error_percent": 3.41,
+              "bbox_xyxy_normalized": [
+                0.94,
+                0.590206,
+                0.941818,
+                0.60116
+              ],
+              "evidence_zh": "x≈2070，y≈916至933。",
+              "uncertainty_zh": "边界约±1px；相对误差为像素近似值。"
+            },
+            {
+              "series_id": "D",
+              "category": "P16（放大图）",
+              "expected_value": 34,
+              "observed_value": 35,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 7,
+              "full_scale_error_percent": 0.1,
+              "small_value_relative_error_percent": 2.94,
+              "bbox_xyxy_normalized": [
+                0.94,
+                0.60116,
+                0.941818,
+                0.60567
+              ],
+              "evidence_zh": "x≈2070，y≈933至940。",
+              "uncertainty_zh": "边界约±1px；相对误差为像素近似值。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "大值剖面P01–P02",
+              "required_parts": [
+                "共同水面",
+                "A层",
+                "B层",
+                "C层",
+                "D层",
+                "总深度外缘"
+              ],
+              "relationship": "四层自共同水面向下连续接触，最下边界为当期四项和。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.113,
+                0.321,
+                0.226,
+                0.732
+              ],
+              "evidence_zh": "四条色带依次相邻，海水光纹和塑料碎片处于数据区域内。"
+            },
+            {
+              "category": "游艇与水面",
+              "required_parts": [
+                "船体",
+                "甲板及窗体",
+                "船底",
+                "水面"
+              ],
+              "relationship": "上部结构连接船体，船底接触共同零水面。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.54,
+                0.145,
+                0.951,
+                0.325
+              ],
+              "evidence_zh": "船底水迹与约y500的水面衔接，未遮挡下方累计边界。"
+            },
+            {
+              "category": "最小主图层P15–P16",
+              "required_parts": [
+                "零水面",
+                "四个来源层",
+                "总深度外缘"
+              ],
+              "relationship": "四层依次相邻，总深度为各层厚度之和。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.89,
+                0.321,
+                0.951,
+                0.338
+              ],
+              "evidence_zh": "细色带存在，但B/P15仅1–2px，各细层海水质感和精确厚度难辨。"
+            },
+            {
+              "category": "末期放大图",
+              "required_parts": [
+                "独立尺度",
+                "共同水面",
+                "四来源层",
+                "总值标签"
+              ],
+              "relationship": "明示放大尺度后仍保持四层相邻和同一期相加关系。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.716,
+                0.513,
+                0.96,
+                0.739
+              ],
+              "evidence_zh": "标明P14–P16及0–1,000尺度，四层连续变薄，860、260、190位于最深边缘下方。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "允许使用16个合成时期和四个合成来源，新值决定峰谷，游艇姿态及标签位置可调整。",
+            "output_added_or_lost_meaning_zh": "保留按期分来源排放和海洋叠层；参考真实地域、年份和来源专名的替换来自输入改编。峰值及局部图均依据当前数据。",
+            "visible_inscription_evidence_zh": "Plastic discharge into the ocean；Discharge per period, by source；100 tonnes/period；Plastic source A–D；SYNTHETIC DATA；periods are not accumulated。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "历史背景、年份及具体来源改为冻结合成时期和来源A–D。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "P02总值7,020、P16总值190决定后期变浅，无须复制参考变深趋势。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "最小主图层仅跨1–2个混色像素；放大图改善可辨性但不证明亚像素精度。"
+            }
+          ],
+          "measurement_coverage_zh": "19项记录覆盖四来源和两个尺度：主图大值、内部时期、最小B层与大小总深度；放大图大值及各来源最小值。其余点与连续插值未逐像素穷尽，所有数值另经文字核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "源码前观察：横向海洋剖面、真实海水材质和白色游艇均明确保留。",
+            "data_adaptation_excluded_zh": "排除数据轮廓、新标签和游艇具体型号变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "源码前观察：艇仍位于右上水面，船底接水，各水下层连续相邻。",
+            "data_adaptation_excluded_zh": "排除允许的游艇朝向、大小和非数据厚度调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "源码前观察：保留宽幅海洋及右上游艇，标题移至上方并更显著，转为分区阅读。",
+            "data_adaptation_excluded_zh": "不扣允许外置的图例、表格及数据导致的轮廓变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "源码前观察：保留写实水体和游艇；荧光绿蓝紫及强暗部渐变改为浅青橙蓝配色与较均匀色层。",
+            "data_adaptation_excluded_zh": "不以新层厚、深度、峰谷或线性插值几何扣分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/retries/20cebb957ae84c",
       "numeric_supported": true,
