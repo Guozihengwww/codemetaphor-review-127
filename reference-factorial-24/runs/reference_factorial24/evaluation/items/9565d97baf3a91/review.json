@@ -1,0 +1,321 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为草地包围的俯拍泥土地块，彩绳网区由木桩固定，周边有施工人物和工具。待评图保留这些物体及人物遮挡绳边的关系。六个网区依序递增；A、B主图接近细线，另有标注纵向×12、线性0–2.5 kg的A–C细节图。全部类别、产量、kg单位、总量及合成声明可读。代码前记录的参考保真评分为身份4、姿态关系3、构图3、材质3。",
+  "summary_zh": "通过。六类产量、单位和绑定完整，代表性网区的独立像素测量均在容差内，生成素材实质参与数据场景。主图最小网区仅部分可辨，明确标注的细节图补充了证据。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "仅测所供2100×1295的image.png，未重渲染。通过虚线像素周期独立定位主图刻度，90至0跨690 px；细节图2.5至0跨230 px。网边通过颜色行覆盖定位，F使用未遮挡区的行覆盖重心。保守读数不确定度约±1 px。误差使用各面板自己的满量程；源码仅作旁证。",
+  "uncertainties_zh": "主图A上下绳线合并，不能可靠测量其中心线间距或小值相对误差。参考图无可读指标，旧统计含义不可恢复。素材与源码证明实际使用关系，但未核验capture_render.py调用链；未读取日志、自检或编排文件。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "主图六类Plot A–F和Harvest yield系列齐全；标题、单位、合成声明、共同基线及刻度完整。细节图明确重复A–C。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "0.172、0.596105、2.065934、7.159958、24.814438、86.0 kg逐项正确，总量120.808435 kg正确，无正值归零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "六类按输入顺序位于对应网区下方，颜色标识对应网绳；细节图标签亦正确绑定。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "主图D约55 px、F约659.15 px，满量程误差约0.016%、0.027%；细节A/B/C约16/55/190 px，均在各自面板3%容差内。主图A精确小值几何保留不确定。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png、raw_02.png，其中土壤、草地、工具、人物和木桩在成图主体可见。render.py加载素材并由data.json控制网高和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据边界就是地面彩绳网框；木桩连接绳端，网孔透出土壤，人物遮挡F局部绳线，保留实际融合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、全部数值、类别、单位及细节面板刻度和纵向×12说明可读，必要标签未被遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大网区清楚保留木桩—绳端连接、网孔包含土壤及人物位于绳线前方的层次；小值细节图也保留网框、桩与土壤关系。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Garden plot yield、Harvest yield (kg)、GARDEN TRIAL / SIX PLOTS及kg per plot明确当前主题、指标和地块角色，没有组成比例或时间累计误读。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留地块施工和布置绳网的场景关系。core明确允许主题改编，原参考无可读指标，当前产量主题不构成输出丢失。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "主图A为约3行像素的合并色带，无法分辨上下边及网孔；细节图中A约16 px高，木桩、网框和交叉线可见，未抬高主图最小值。"
+    }
+  },
+  "semantic_attribution_zh": "产量主题来自明确的输入改编，悬殊网高来自当前数据。主图A细部损失归因于像素限制，并由独立刻度的细节图缓解。未观察到当前主题、单位或类别角色遗漏；不推断参考作者意图。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "yield",
+        "category": "Plot A（主图）",
+        "expected_value": 0.172,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.163,
+          0.778,
+          0.247,
+          0.782
+        ],
+        "evidence_zh": "x=358–501间，y=1008–1010连续三行可见浅绿色像素。3 px为合并色带占用，不是编码中心线间距；0.172 kg文字正确。",
+        "uncertainty_zh": "上下绳线合并，无法可靠反推产量或相对误差。"
+      },
+      {
+        "series_id": "yield",
+        "category": "Plot D（主图）",
+        "expected_value": 7.159958,
+        "observed_value": 7.173913,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 55,
+        "full_scale_error_percent": 0.015506,
+        "small_value_relative_error_percent": 0.194904,
+        "bbox_xyxy_normalized": [
+          0.549,
+          0.734,
+          0.632,
+          0.783
+        ],
+        "evidence_zh": "水平绳边在y≈955及1010，间距约55 px；按独立刻度690 px/90 kg换算。",
+        "uncertainty_zh": "边距约±1 px，不代表亚像素精度。"
+      },
+      {
+        "series_id": "yield",
+        "category": "Plot F（主图）",
+        "expected_value": 86,
+        "observed_value": 85.975479,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 659.145337,
+        "full_scale_error_percent": 0.027246,
+        "small_value_relative_error_percent": 0.028513,
+        "bbox_xyxy_normalized": [
+          0.806,
+          0.266,
+          0.89,
+          0.783
+        ],
+        "evidence_zh": "未遮挡的x=1710–1779段，上下橙绳行覆盖重心为y≈350.369、1009.515，间距约659.15 px。",
+        "uncertainty_zh": "颜色阈值及抗锯齿影响重心，保守约±1 px；未使用被人物遮挡部分。"
+      },
+      {
+        "series_id": "yield",
+        "category": "Plot A（细节图）",
+        "expected_value": 0.172,
+        "observed_value": 0.173913,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 16,
+        "full_scale_error_percent": 0.076522,
+        "small_value_relative_error_percent": 1.112235,
+        "bbox_xyxy_normalized": [
+          0.216,
+          0.534,
+          0.281,
+          0.562
+        ],
+        "evidence_zh": "上下绳边y≈700、716，间距约16 px；细节面板230 px对应2.5 kg。",
+        "uncertainty_zh": "±1 px相当于约±0.01087 kg，即该小值约6.3%；不能据名义误差保证小值精度。"
+      },
+      {
+        "series_id": "yield",
+        "category": "Plot B（细节图）",
+        "expected_value": 0.596105,
+        "observed_value": 0.597826,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 55,
+        "full_scale_error_percent": 0.068843,
+        "small_value_relative_error_percent": 0.288722,
+        "bbox_xyxy_normalized": [
+          0.313,
+          0.503,
+          0.379,
+          0.562
+        ],
+        "evidence_zh": "上边覆盖y=660–661，下边覆盖715–716，中点差约55 px；使用细节面板刻度换算。",
+        "uncertainty_zh": "约±1 px，不能声称与数值文字相同的小数精度。"
+      },
+      {
+        "series_id": "yield",
+        "category": "Plot C（细节图）",
+        "expected_value": 2.065934,
+        "observed_value": 2.065217,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 190,
+        "full_scale_error_percent": 0.028664,
+        "small_value_relative_error_percent": 0.034687,
+        "bbox_xyxy_normalized": [
+          0.411,
+          0.399,
+          0.477,
+          0.562
+        ],
+        "evidence_zh": "上边覆盖y=525–526，下边覆盖715–716，中点差约190 px；该面板满量程为2.5 kg。",
+        "uncertainty_zh": "约±1 px；未套用主图90 kg分母。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Plot F及人物",
+        "required_parts": [
+          "橙色交叉绳网",
+          "木桩",
+          "土壤",
+          "施工人物"
+        ],
+        "relationship": "绳端连接木桩，网孔透出地面，人物接触并遮挡网边。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.804,
+          0.218,
+          0.968,
+          0.786
+        ],
+        "evidence_zh": "左上和下方两角可见桩与绳端相接；绳线在人手及身体处中断。右上锚点被人物局部遮挡。"
+      },
+      {
+        "category": "Plot D与Plot E",
+        "required_parts": [
+          "边框绳",
+          "交叉网绳",
+          "角部木桩",
+          "土壤"
+        ],
+        "relationship": "网绳位于边框内，边框接触木桩，下边落于共同基线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.545,
+          0.624,
+          0.764,
+          0.786
+        ],
+        "evidence_zh": "交叉网孔内可见土壤，四角有桩，网线止于边框，无破坏结构的接缝。"
+      },
+      {
+        "category": "Plot A主图",
+        "required_parts": [
+          "上边绳",
+          "下边绳",
+          "木桩",
+          "网孔"
+        ],
+        "relationship": "微小高度连接顶边与共同基线，木桩不编码产量。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.16,
+          0.769,
+          0.25,
+          0.786
+        ],
+        "evidence_zh": "浅绿线和端部木桩可见，但上下边合并，独立网孔及上下固定点无法辨清。"
+      },
+      {
+        "category": "Plot A细节图",
+        "required_parts": [
+          "浅绿网框",
+          "交叉绳",
+          "木桩",
+          "土壤"
+        ],
+        "relationship": "独立放大面板保留绳端连接木桩和网孔包含土壤的关系。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.214,
+          0.533,
+          0.282,
+          0.562
+        ],
+        "evidence_zh": "约16 px高的网框上下边可分，内部有交叉线和土壤，角部有桩；面板明确标注纵向×12。"
+      },
+      {
+        "category": "地块环境与工具",
+        "required_parts": [
+          "草地",
+          "裸土",
+          "手推车",
+          "木桩堆",
+          "铲",
+          "线轴"
+        ],
+        "relationship": "草地包围裸土，工具位于地块外围。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.03,
+          0.197,
+          0.163,
+          0.833
+        ],
+        "evidence_zh": "左侧工具置于草地，数据网区直接铺于裸土，保留施工场景身份。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "core明确adapted_topic，当前园艺试验产量为允许改编，不要求沿用参考旧数值或论点。",
+      "output_added_or_lost_meaning_zh": "六个地块的独立产量及总收成明确；没有误加时间累计或100%组成含义。主图最小网孔的可见细部受像素限制。",
+      "visible_inscription_evidence_zh": "Garden plot yield、Harvest yield (kg)、GARDEN TRIAL / SIX PLOTS、kg per plot、SYNTHETIC DATA及线性0–90 kg说明可见；细节另标0–2.5 kg、VERTICAL ×12。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "当前主题由冻结输入明确改编，参考意义部分保留不归为生成失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "悬殊网高对应当前0.172至86 kg，不要求恢复参考旧高度。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "主图A上下边合并；独立细节图补充可见结构，主图比例未被抬高。"
+      },
+      {
+        "cause": "uncertain_reference",
+        "evidence_zh": "参考无可读指标，无法恢复旧统计论点或精确施工意图。"
+      }
+    ],
+    "measurement_coverage_zh": "主图记录A（不可分离）、D、F，细节图记录A、B、C，覆盖两个面板的小值、内部值和大值。其余主图类别检查边界及顺序，未报告独立精确值；全部六类文字、绑定和总量逐项核对。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "裸土、外围草地、彩绳网、木桩、人物及手推车和工具均保留。",
+      "data_adaptation_excluded_zh": "排除当前网高、主题标签、配色和人物数量差异。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留绳端连接桩及人物接触遮挡网边；参考两侧多处小型固定/转折点，成图主要呈四角锚定的规整网框。",
+      "data_adaptation_excluded_zh": "排除允许的人物重定位、姿态、非数据厚度和网高适配；连接布局差异不构成结构失败。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "地面绳网仍是主体，工具位于左侧；相较满幅参考，新增大标题、数值区和较大细节插图。",
+      "data_adaptation_excluded_zh": "排除数据导致的高度、排序及空白变化，不扣更新标签本身。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留土壤、草地、木材及细绳的写实取向；成图土纹更均匀、网线更规则，参考更接近粗糙航拍照片。",
+      "data_adaptation_excluded_zh": "排除数据几何、标签及允许的非数据厚度变化；材质差异不构成数据错误。"
+    }
+  }
+}

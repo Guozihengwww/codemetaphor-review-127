@@ -1,0 +1,312 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为橙色背景、紫白大标题、暖色半透明背面举球运动员，白色年度折线在人物前方叠合。待评图保留完整背面运动员、头顶篮球、接触篮球的双手、双臂及球衣；折线连续覆盖小腿。15个年份及数值均可读，主题、平均每场指标、单位和SYNTHETIC DATA清楚。人物移至右侧，摄影细节较参考清晰。",
+  "summary_zh": "通过。15个年度点及标签准确，最大实测满量程误差约0.066%。人物结构、折线叠合及当前统计语义保留。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接测量1600×2000原图。可见纵轴刻度y=750至1710对应1500至0，相邻250单位间隔160像素。提取15个圆点深紫核心质心，按v=(1710-y)×1500/960反读；最大满量程误差0.0661%。圆心与对应年度刻度横向偏差均不足0.8像素。mark_extent_px表示圆心距零轴的垂直距离。代码公式仅作佐证。",
+  "uncertainties_zh": "抗锯齿带来约±1像素定位不确定性，相当于±1.56千名观众/场，不能将微小反读差异解释为真实数值偏差。参考具体统计口径与增长叙事已由输入适配。未读取日志或自检，capture_render.py保存流程未独立核实。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "单系列15个圆点、2010—2024全部年份、15个数值、主题、指标、单位及合成提示齐全；15 ANNUAL POINTS计数正确。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部数值1360、432、366、303、202、241、228、163、217、197、234、221、170、260、246与输入一致；范围163—432及2010系列最高标注正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值标签邻近对应圆点，年份顺序正确；圆心与对应年份刻度横向偏差均不足0.8像素。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "全部15点使用可见0—1500等距线性轴，白色折线依次连接全部点。独立像素反读最大满量程误差0.0661%，低于3%容差。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材和athlete.png中的球面接缝、手势、马尾、衣褶及鞋形与成图一致，素材构成右侧大幅主体。render.py加载素材，并从数据计算折线、圆点及文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "2019—2021附近折线在人物小腿及袜子前方连续通过，保留场景叠合关系。数据由坐标系内的圆心和折线位置承载，无需贴合人体曲面。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "全部数值和年份可读；人物区域文字有浅色描边，未被腿部遮挡。主题、指标、单位及合成提示清楚。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整背面运动员、头顶篮球、接触球面的双手、连接肩部的双臂、球衣和下肢均保留；折线位于人物前景。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "WOMEN’S BASKETBALL VIEWERS表达女子篮球主题；Average viewers per game和thousand viewers per game明确指标、统计口径和单位；Year及年份表达年度，合成提示明确非实测统计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "篮球动作、平均观众指标及年度折线叠合保留。参考WNBA/ESPN具体口径和2024上升叙事由冻结输入适配为女子篮球合成数据；此变化不归为输出缺陷。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小值163的圆心距零轴约104.71像素，深紫核心约10像素宽，白环及两侧连线清楚。反读相对差约0.378%，仍需保留±1像素测量不确定性。"
+    }
+  },
+  "semantic_attribution_zh": "参考具体联赛、转播来源及真实统计身份改为当前合成女子篮球数据，属于输入适配；峰位转至2010属于数据驱动形状变化。未见当前主题、单位、年度角色或关键物体关系遗漏。人物右移、缩放与姿态调整在允许范围内；抗锯齿限制测量精度，但未造成小值关系丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "average_viewers",
+        "category": "2010",
+        "expected_value": 1360,
+        "observed_value": 1360.48,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 870.71,
+        "full_scale_error_percent": 0.0321,
+        "small_value_relative_error_percent": 0.035,
+        "bbox_xyxy_normalized": [
+          0.09044,
+          0.41215,
+          0.10919,
+          0.42715
+        ],
+        "evidence_zh": "圆心像素质心约(159.71,839.29)，距零轴870.71像素；可见刻度校准后反读1360.48千名观众/场。",
+        "uncertainty_zh": "定位约±1像素，相当于±1.56千名观众/场。"
+      },
+      {
+        "series_id": "average_viewers",
+        "category": "2011",
+        "expected_value": 432,
+        "observed_value": 432.37,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 276.71,
+        "full_scale_error_percent": 0.0244,
+        "small_value_relative_error_percent": 0.085,
+        "bbox_xyxy_normalized": [
+          0.1508,
+          0.71114,
+          0.16455,
+          0.72214
+        ],
+        "evidence_zh": "圆心像素质心约(252.29,1433.29)，距零轴276.71像素；反读432.37千名观众/场。",
+        "uncertainty_zh": "定位约±1像素；所列微小误差不表示亚像素精度保证。"
+      },
+      {
+        "series_id": "average_viewers",
+        "category": "2013",
+        "expected_value": 303,
+        "observed_value": 303.57,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 194.29,
+        "full_scale_error_percent": 0.0381,
+        "small_value_relative_error_percent": 0.189,
+        "bbox_xyxy_normalized": [
+          0.26705,
+          0.75236,
+          0.2808,
+          0.76336
+        ],
+        "evidence_zh": "内部圆点质心约(438.29,1515.71)，距零轴194.29像素；反读303.57千名观众/场。",
+        "uncertainty_zh": "定位约±1像素，相当于±1.56千名观众/场。"
+      },
+      {
+        "series_id": "average_viewers",
+        "category": "2017",
+        "expected_value": 163,
+        "observed_value": 163.62,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 104.71,
+        "full_scale_error_percent": 0.0411,
+        "small_value_relative_error_percent": 0.378,
+        "bbox_xyxy_normalized": [
+          0.4992,
+          0.79714,
+          0.51295,
+          0.80814
+        ],
+        "evidence_zh": "最小圆点质心约(809.71,1605.29)，距零轴104.71像素；深紫核心约10像素宽，反读163.62千名观众/场。",
+        "uncertainty_zh": "定位约±1像素，满量程通过不等于保证小值亚像素精度。"
+      },
+      {
+        "series_id": "average_viewers",
+        "category": "2020",
+        "expected_value": 234,
+        "observed_value": 234.82,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 150.29,
+        "full_scale_error_percent": 0.0548,
+        "small_value_relative_error_percent": 0.351,
+        "bbox_xyxy_normalized": [
+          0.6733,
+          0.77436,
+          0.68705,
+          0.78536
+        ],
+        "evidence_zh": "人物叠合区域圆点质心约(1088.29,1559.71)，距零轴150.29像素；反读234.82千名观众/场。",
+        "uncertainty_zh": "定位约±1像素；人物背景未阻断圆点及连线。"
+      },
+      {
+        "series_id": "average_viewers",
+        "category": "2024",
+        "expected_value": 246,
+        "observed_value": 246.42,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 157.71,
+        "full_scale_error_percent": 0.0279,
+        "small_value_relative_error_percent": 0.17,
+        "bbox_xyxy_normalized": [
+          0.90294,
+          0.76865,
+          0.92169,
+          0.78365
+        ],
+        "evidence_zh": "末端圆点质心约(1459.71,1552.29)，距零轴157.71像素；反读246.42千名观众/场。端点直径不承载数值。",
+        "uncertainty_zh": "定位约±1像素，相当于±1.56千名观众/场。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "主体举球关系",
+        "required_parts": [
+          "篮球",
+          "双手",
+          "双臂",
+          "肩部",
+          "背面球衣"
+        ],
+        "relationship": "篮球在头顶，双手接触球面，屈肘双臂连续连接肩部，球衣覆盖背部。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.548,
+          0.075,
+          0.81,
+          0.46
+        ],
+        "evidence_zh": "球、手接触和左右肩肘连接可见，人物背向观看者，无必要部件断接。"
+      },
+      {
+        "category": "全身部件连接",
+        "required_parts": [
+          "球衣",
+          "短裤",
+          "双腿",
+          "袜子",
+          "球鞋"
+        ],
+        "relationship": "躯干经腰部连接短裤，双腿连续延伸至袜子和球鞋。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.574,
+          0.29,
+          0.802,
+          0.932
+        ],
+        "evidence_zh": "全身位于画框内，下肢连接可追踪，抠图边缘未破坏必要物体身份。"
+      },
+      {
+        "category": "2010最大数据点",
+        "required_parts": [
+          "1360标注",
+          "2010圆点",
+          "连接线段",
+          "年度刻度"
+        ],
+        "relationship": "最高圆点与1360及2010绑定，白线连接下一年度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.09,
+          0.394,
+          0.3,
+          0.887
+        ],
+        "evidence_zh": "左端最高点属于同一连续路径，数值由纵坐标承载，人物大小不承载此值。"
+      },
+      {
+        "category": "2017最小数据点",
+        "required_parts": [
+          "163标注",
+          "2017圆点",
+          "两侧连线",
+          "零轴"
+        ],
+        "relationship": "最小点位于零轴上方，与2016和2018连续连接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.44,
+          0.772,
+          0.573,
+          0.888
+        ],
+        "evidence_zh": "离零轴约104.71像素，白环、深紫核心及两侧线段清楚。本设计共用一个人物，不要求每个小值形成独立微型人体。"
+      },
+      {
+        "category": "低值折线与人物叠合",
+        "required_parts": [
+          "2019—2021圆点及白线",
+          "小腿",
+          "袜子"
+        ],
+        "relationship": "数据线在人物前景跨越腿部及袜子区域。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.613,
+          0.753,
+          0.781,
+          0.814
+        ],
+        "evidence_zh": "白线和圆点未被人物遮断，保持平面信息图叠合关系。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结要求采用合成女子篮球平均每场观众数据，允许替换旧统计口径、旧峰位和增长结论，并允许姿态及标签位置调整。",
+      "output_added_or_lost_meaning_zh": "投篮准备动作与观众年度趋势保留；2010系列最高及2011—2024范围均由当前数据支持。旧增长论点未保留，与输入适配一致。",
+      "visible_inscription_evidence_zh": "WOMEN’S BASKETBALL VIEWERS；Average viewers per game；thousand viewers per game；SYNTHETIC DATA；Year；2010 · SERIES HIGH；Illustrative values • not observed statistics。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "当前主题明确为合成女子篮球观众数据，与参考WNBA/ESPN具体口径的差异由冻结输入允许。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前2010=1360最高，后续为163—432；左高右低的走势正确替换参考末年陡升走势。"
+      }
+    ],
+    "measurement_coverage_zh": "实测全部15个圆心及15个年度刻度，逐项核查全部标签。详列最大值、非峰值上界、内部点、最小值、人物叠合处和末端共6点；其余9点未逐项展开。全部点最大满量程差0.0661%、最大相对差0.5031%。单系列单通道，无遗漏面板。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "背面篮球运动员、头顶篮球、双手双臂和无袖球衣均保留，全身延伸至球鞋。",
+      "data_adaptation_excluded_zh": "不要求参考球衣号码、球员身份或品牌；排除允许的姿态调整。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "两手接触篮球两侧，屈肘双臂举过头顶并连接肩部，人物背向观看者，投篮准备动作保留。",
+      "data_adaptation_excluded_zh": "排除允许的手臂角度、身体尺度、站位和跃起姿势调整。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留竖版、大标题、人物及前景折线叠合；人物由中央大幅背景移至右侧全身，标题移至上部，网格更密。",
+      "data_adaptation_excluded_zh": "不惩罚最高点转至2010、走势变化、全年度标签及当前单位说明。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留橙黄底色、紫白文字、白色折线和摄影人物；参考为低反差暖色半透明叠影，成图人物为细节清晰的高反差抠图。",
+      "data_adaptation_excluded_zh": "排除当前标题措辞、数值更新和数据形状变化。"
+    }
+  }
+}
