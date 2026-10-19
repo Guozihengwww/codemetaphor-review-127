@@ -1,0 +1,402 @@
+{
+  "verdict": "minor",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为暗背板上的粉红陆地、灰蓝海洋地球，下部连成浅透视底座上的积液及向下滴流，黑红曲线叠在球面前。待评图保留这些关系，增加左侧说明，材质更明亮且有水彩纹理和高光。主题、年度变化口径、百分比、SYNTHETIC DATA、两系列图例及1982预测说明均清楚。−0.4%下方1967文字与1964轴刻度重叠。",
+  "summary_zh": "已保存并通过schema校验的review.json，未运行submit.py。数据、主题和关键结构基本完整；9个代表点的最大估计误差约为满量程0.12%。存在一处轻微年份文字重叠。",
+  "issues": [
+    {
+      "category": "layout_readability",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "关键点年份与横轴年份应分别清楚可读。",
+      "observed_zh": "−0.4%下方红色1967压在黑色1964轴刻度上；负值引线仍指向正确点。",
+      "evidence_zh": "最终图约x=750–810、y=872–900可见红黑数字重叠。源码旁证：1967说明右对齐锚点约(804,883)，1964刻度中心约(778,888)；这些位置为代码推导。",
+      "bbox_xyxy_normalized": [
+        0.375,
+        0.765,
+        0.405,
+        0.789
+      ]
+    }
+  ],
+  "measurement_notes_zh": "读取2000×1140原图像素。15%与−1%导线位于y≈237、857，跨度620 px对应16个百分点；按v=−1+(857−y)×16/620换算。点内部颜色区间中点定位约±1 px。mark_extent_px为点中心至零线的垂直距离，不是点直径。",
+  "uncertainties_zh": "未独立像素复核全部46点；1977黑点受红线覆盖，无法单独测量。最小值相对精度受像素定位限制。按访问限制未检查capture_render.py执行履历。参考图分辨率较低，材质评分仅描述可见差异。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "1960–1982、两系列、12个偶数年标签、10个纵轴刻度、图例、单位、合成声明及1982预测标记均存在。源码遍历每系列23点，密集年份省略部分文字符合M1。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "13.4%、−0.4%、红5.1%、黑2.4%、23 annual points及−1%至15%均符合输入；年份文字重叠另列轻微问题。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "价格为黑、产出为红；图例、端点标签和负值引线对应正确，1982预测身份保持。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "9点抽测覆盖两系列最小正值、大值、内部值、负值及预测端点；最大估计误差为满量程0.121%，低于3%。1977黑点保留测量不确定性。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始素材和globe.png；最终主体纹理、积液及滴流与素材一致。render.py粘贴素材并依据数据控制路径与文字，未检查执行日志。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "两曲线覆盖地球及其熔融下部，保留参考叠合关系。量值由线中心纵坐标承载，地球轮廓不是定量面积；底座透视未改变数据坐标。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、单位、图例、合成声明与预测解释清楚。仅1967说明与1964刻度局部重叠，未造成主要指标不可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "地球海陆与经纬网延伸进积液，积液铺在浅透视底座上并向下滴流；暗背板与两系列前层叠合保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题标题、Annual changes from the previous year (%)、Real output change (%)和YEAR明确表达年度通胀与实际产出变化。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "融化滴流动作、通胀/实际产出角色及同比百分比保留。原繁荣流失论断和OECD实数口径未照搬，属于冻结输入允许的合成数据适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "红0.5%高于零线约19 px，黑1.9%高于零线约74 px，红−0.4%低于零线约15 px，均可见且仍叠合在地球表面。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、年度角色、单位与预测身份保留。合成声明及旧实数、旧涨跌论断的移除归于允许的输入适配；新峰位属于数据驱动变化。年份重叠是局部排版损失。1977黑点不可分辨来自线宽覆盖，不能据此推断数值错误。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "output_growth",
+        "category": "1960",
+        "expected_value": 0.5,
+        "observed_value": 0.49677,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 19.25,
+        "full_scale_error_percent": 0.02016,
+        "small_value_relative_error_percent": 0.64516,
+        "bbox_xyxy_normalized": [
+          0.3065,
+          0.694737,
+          0.3135,
+          0.707018
+        ],
+        "evidence_zh": "最小正值红点内部位于y=796–802，中心约799；根据实测轴线反算。",
+        "uncertainty_zh": "中心约±1 px，即±0.026个百分点；相对误差不确定度约±5.2%。"
+      },
+      {
+        "series_id": "output_growth",
+        "category": "1980",
+        "expected_value": 5.9,
+        "observed_value": 5.91613,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 229.25,
+        "full_scale_error_percent": 0.10081,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.702,
+          0.510526,
+          0.709,
+          0.522807
+        ],
+        "evidence_zh": "系列最大值红点内部位于y=586–592，中心约589。",
+        "uncertainty_zh": "中心约±1 px；数值为像素估计。"
+      },
+      {
+        "series_id": "output_growth",
+        "category": "1973",
+        "expected_value": 3.4,
+        "observed_value": 3.4129,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 132.25,
+        "full_scale_error_percent": 0.08065,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5635,
+          0.595614,
+          0.5705,
+          0.607895
+        ],
+        "evidence_zh": "内部年份红点内部位于y=683–689，中心约686。",
+        "uncertainty_zh": "中心约±1 px。"
+      },
+      {
+        "series_id": "output_growth",
+        "category": "1967",
+        "expected_value": -0.4,
+        "observed_value": -0.38065,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 14.75,
+        "full_scale_error_percent": 0.12097,
+        "small_value_relative_error_percent": 4.83871,
+        "bbox_xyxy_normalized": [
+          0.445,
+          0.724561,
+          0.452,
+          0.736842
+        ],
+        "evidence_zh": "排除引线后，负值红点内部位于y=830–836，中心约833，明确低于零线。",
+        "uncertainty_zh": "中心约±1 px，相对误差不确定度约±6.5%；点估计不足以证明小值失真。"
+      },
+      {
+        "series_id": "price_inflation",
+        "category": "1980",
+        "expected_value": 1.9,
+        "observed_value": 1.91613,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 74.25,
+        "full_scale_error_percent": 0.10081,
+        "small_value_relative_error_percent": 0.8489,
+        "bbox_xyxy_normalized": [
+          0.702,
+          0.646491,
+          0.709,
+          0.658772
+        ],
+        "evidence_zh": "系列最小正值黑点内部位于y=741–747，中心约744。",
+        "uncertainty_zh": "中心约±1 px，折合约±0.026个百分点。"
+      },
+      {
+        "series_id": "price_inflation",
+        "category": "1968",
+        "expected_value": 13.4,
+        "observed_value": 13.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 519.25,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4645,
+          0.25614,
+          0.4715,
+          0.268421
+        ],
+        "evidence_zh": "排除引线和相邻线段后，峰值黑点内部位于y=296–302，中心约299。",
+        "uncertainty_zh": "中心约±1 px；零点估计误差不表示无限精度。"
+      },
+      {
+        "series_id": "price_inflation",
+        "category": "1964",
+        "expected_value": 9,
+        "observed_value": 9.0129,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 349.25,
+        "full_scale_error_percent": 0.08065,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.3855,
+          0.405263,
+          0.3925,
+          0.417544
+        ],
+        "evidence_zh": "内部年份黑点内部位于y=466–472，中心约469。",
+        "uncertainty_zh": "中心约±1 px。"
+      },
+      {
+        "series_id": "output_growth",
+        "category": "1982",
+        "expected_value": 5.1,
+        "observed_value": 5.10323,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 197.75,
+        "full_scale_error_percent": 0.02016,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.7415,
+          0.538158,
+          0.7485,
+          0.550439
+        ],
+        "evidence_zh": "预测环形标记中央红色像素位于y=619–622，旁注5.1%。",
+        "uncertainty_zh": "中心约±1 px。"
+      },
+      {
+        "series_id": "price_inflation",
+        "category": "1982",
+        "expected_value": 2.4,
+        "observed_value": 2.41935,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 93.75,
+        "full_scale_error_percent": 0.12097,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.7415,
+          0.629386,
+          0.7485,
+          0.641667
+        ],
+        "evidence_zh": "预测环形标记中央黑色像素位于y=723–726，旁注2.4%。",
+        "uncertainty_zh": "中心约±1 px。"
+      },
+      {
+        "series_id": "price_inflation",
+        "category": "1977",
+        "expected_value": 3.2,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.641,
+          0.598,
+          0.651,
+          0.617
+        ],
+        "evidence_zh": "x=1290–1294、y=683–703窗口内未检出独立黑点内部，红线及描边覆盖该位置。",
+        "uncertainty_zh": "不能从最终像素单独恢复黑点值；代码包含该点仅作旁证。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "整体地球—积液—滴流",
+        "required_parts": [
+          "经纬网地球",
+          "连续海陆表面",
+          "积液",
+          "液滴",
+          "浅透视底座",
+          "暗背板"
+        ],
+        "relationship": "球体下缘连续展开为底座上的积液，液体越过前沿向下垂落。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.172,
+          0.17,
+          0.86,
+          0.953
+        ],
+        "evidence_zh": "海陆与经纬网延续进铺展区；多个大小液滴连接液体前沿，背板在后、底座在下。"
+      },
+      {
+        "category": "大值：1968价格峰值",
+        "required_parts": [
+          "黑色折线与点",
+          "地球表面",
+          "13.4%标签",
+          "线性纵轴"
+        ],
+        "relationship": "数据点叠在地球前层，量值由纵坐标承载，标签引线连接峰点。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.438,
+          0.201,
+          0.495,
+          0.335
+        ],
+        "evidence_zh": "(936,299)附近黑点覆盖地球表面，13.4%标签位于上方。"
+      },
+      {
+        "category": "小值：1960产出0.5%",
+        "required_parts": [
+          "红色起点",
+          "零线",
+          "地球下缘表面"
+        ],
+        "relationship": "红点位于零线上方并叠合在地球下缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.302,
+          0.689,
+          0.32,
+          0.727
+        ],
+        "evidence_zh": "中心约(620,799)，距零线约19 px，背景仍为连续海陆及经纬网。"
+      },
+      {
+        "category": "小值与负值",
+        "required_parts": [
+          "1980黑色低点",
+          "1967红色负点",
+          "地球表面",
+          "零线"
+        ],
+        "relationship": "黑点在零线上方，红点在零线下方、积液展开区上缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.441,
+          0.642,
+          0.714,
+          0.742
+        ],
+        "evidence_zh": "黑点约(1411,744)，红点约(897,833)，均保留与地球表面的叠合。"
+      },
+      {
+        "category": "1977相近系列点",
+        "required_parts": [
+          "价格黑线",
+          "产出红线",
+          "浅色描边"
+        ],
+        "relationship": "前层红线及描边遮住接近位置的黑点内部。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.641,
+          0.598,
+          0.651,
+          0.617
+        ],
+        "evidence_zh": "黑点中心不能独立读取，两侧黑线仍可追踪；不足以证明超过容差的数据错误。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "允许使用当前合成数据、更新走势和峰位，不沿用旧真实统计或涨跌论断。",
+      "output_added_or_lost_meaning_zh": "融化滴流、两指标同比变化与预测身份保留；旧繁荣流失论断未复述，属于允许适配。局部年份重叠降低清晰度。",
+      "visible_inscription_evidence_zh": "可见主题标题、Annual changes from the previous year (%)、PRICE INFLATION、OUTPUT GROWTH、Real output change (%)、YEAR、1982 PROJECTED及SYNTHETIC DATA。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "冻结输入规定合成年度数据且无需复制旧涨跌结论，不将旧实数与旧论断的移除判为输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "1968价格峰值、1967产出负值和1982端点来自当前数据，不能按参考旧峰谷扣分。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "小值定位约有±1 px不确定度；1977红线与描边覆盖黑点，无法独立恢复其坐标。"
+      }
+    ],
+    "measurement_coverage_zh": "46点中独立测量9点：价格4点、产出5点，覆盖两系列最小正值、最大值、内部值、预测端点和唯一负值；另记录1个被遮挡点。其余36点未逐点反算。必需文字与系列角色另行全图核对。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "地球经纬网、海陆、积液和滴流、暗背板及浅透视底座均保留。",
+      "data_adaptation_excluded_zh": "不扣除新数据曲线、年度标签与合成主题标注。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "球体连续铺展成底座上的积液，液滴越过前沿下垂，两曲线叠在球体前方。",
+      "data_adaptation_excluded_zh": "排除允许的球体朝向、非数据厚度及标签位置变化。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留上方标题、中央地球与曲线、下方底座图例层级；新增较大左侧说明和右侧端点标注。",
+      "data_adaptation_excluded_zh": "不以曲线峰位、走势和当前标题长度差异扣分。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "保留深背板、珊瑚陆地和浅蓝海洋基调；参考较平涂且有印刷颗粒，待评图呈明亮水彩、立体高光和半透明积液。",
+      "data_adaptation_excluded_zh": "排除数据驱动曲线变化及允许的非数据厚度变化。"
+    }
+  }
+}
