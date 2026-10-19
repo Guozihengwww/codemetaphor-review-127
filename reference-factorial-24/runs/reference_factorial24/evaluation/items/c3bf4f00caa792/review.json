@@ -1,0 +1,350 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为近正面完整鸡蛋，上窄下圆，左亮右暗，成分分区在蛋体内部一点汇合。待评图保留完整蛋形、细孔壳纹、受光和暗面；九个闭合分区从共同汇聚点延伸到外轮廓。最小1.0%为顶部窄褐色带，Water占左部和下部大区域；九个数值与外部引线标签均可见，四个Protein子类写明父类。标题、Percent of egg composition、SYNTHETIC DATA、9 COMPONENTS / 100% TOTAL及面积编码说明均清楚。未见分区脱离蛋体、明显空缺或标签遮挡；面积准确性仍需像素核查。",
+  "summary_zh": "九类标签、数值、单位与面积编码完整且正确；独立像素估计均在3个百分点容差内。完整鸡蛋及其共同汇聚分区融合关系保留，生成壳纹实质可见，未发现必要要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "以2000×1800原图测量。先按背景色差提取主连通蛋体并去除细引线、填孔，再以目视定位的九条色界为初值拟合连续像素色差；未使用项目分区遮罩、目标份额或源码坐标求观测值。拟合汇聚点约(927.6,964.5)，按实际轮廓内像素计面积，不以角度/360换算。主估计蛋体面积696486像素；背景色差阈值45、60、75所得面积为697325、696486、695542像素，九类结果稳定。表中误差为百分比中心估计与目标的绝对差，满量程100%，故数值也等于百分点差。源码仅佐证按面积分位控制分区及数据绑定。",
+  "uncertainties_zh": "细描边、壳纹、抗锯齿使边界定位约有1像素不确定性；最小区估计0.992%不等于证明其相对误差小于1%。其边界扰动样本约0.92%—1.02%，汇聚尖端最后数像素难单独分辨。参考图仅300×270，细材质比较有限。按限制未查运行日志、自检或结果文件，未核实capture_render.py执行历史；未将此当作输出缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "全部九类可见：维生素矿物质盐、三类脂肪、四个Protein子类及Water；图上显示9 COMPONENTS / 100% TOTAL，无遗漏。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可读1.0%、1.5%、3.1%、4.7%、四项3.25%、76.7%，与data.json一致；合计100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "九条外部引线分别接到对应色区外缘；沿顶部至右下顺序与输入一致，四个Protein子类1—4各接一个独立区，Water引线接左侧大区。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "独立像素估计依次约0.992%、1.518%、3.066%、4.764%、3.264%、3.246%、3.258%、3.249%、76.643%，最大中心估计偏差约0.064个百分点；敏感性检查仍远低于3个百分点。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及egg_shell.png；原素材的蛋形、壳孔和明暗可在主体对应。render.py读取处理后的素材并用于全部分区，代码按遮罩面积分位构建边界及文字；没有执行渲染。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数量承载区直接组成完整蛋体，连续壳纹和明暗贯穿色区；各区共享内顶点并接触外轮廓，未见旁置普通图表、分区脱落或破坏解读的遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成数据提示、百分比单位、九类名称及数值均清楚，标签在蛋体外且未相互遮挡；底部面积说明与互斥子类说明可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整上窄下圆蛋形近正面竖立，左亮右暗并有底部投影；大Water区与顶部最小窄区都以蛋形外缘和共同内顶点闭合，九区拼成一个主体。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Egg nutrient composition和Percent of egg composition明确当前主题与单位；SYNTHETIC DATA、AREA = SHARE及Protein互斥合成子类说明明确统计解释。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考图用蛋体分区表达营养成分构成的关系。输入改变合成值并拆分Protein，未改变主题，故不要求原图数值或旧蛋白质单区。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "1.0%区在顶部为约28像素最大横宽、491像素高的独立褐色窄带，带壳纹并由外部引线标注；1.5%及四个3.25%区也可分辨。汇聚尖端的亚像素部分不作精度保证。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题、成分角色、百分比单位及面积融合均保留。合成数值、Protein四个互斥子类和相应分区变化来自允许的输入适配，并非输出语义丢失；没有更换原主题。尖端细节的不确定性归于分辨率与抗锯齿，参考细材质判断受低分辨率限制。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "composition",
+        "category": "Vitamins minerals and salt",
+        "expected_value": 1,
+        "observed_value": 0.992,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 491,
+        "full_scale_error_percent": 0.008,
+        "small_value_relative_error_percent": 0.83,
+        "bbox_xyxy_normalized": [
+          0.464,
+          0.2594,
+          0.478,
+          0.5322
+        ],
+        "evidence_zh": "直接从image.png色界拟合分区边界，在独立提取的蛋体轮廓内计得约6907像素，占696486像素总面积的0.992%；标注为1%。包围盒约28×491像素，mark_extent_px为较长边。",
+        "uncertainty_zh": "色界受细描边、壳纹和抗锯齿影响；顶点及边界约1像素扰动的50组敏感性样本为0.92%—1.02%，不是置信区间。误差字段为中心估计，不表示达到该精度。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Polyunsaturated fat",
+        "expected_value": 1.5,
+        "observed_value": 1.518,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 491,
+        "full_scale_error_percent": 0.018,
+        "small_value_relative_error_percent": 1.23,
+        "bbox_xyxy_normalized": [
+          0.464,
+          0.2617,
+          0.499,
+          0.5344
+        ],
+        "evidence_zh": "直接从image.png色界拟合分区边界，在独立提取的蛋体轮廓内计得约10576像素，占696486像素总面积的1.518%；标注为1.5%。包围盒约70×491像素，mark_extent_px为较长边。",
+        "uncertainty_zh": "色界受细描边、壳纹和抗锯齿影响；顶点及边界约1像素扰动的50组敏感性样本为1.47%—1.58%，不是置信区间。误差字段为中心估计，不表示达到该精度。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Saturated fat",
+        "expected_value": 3.1,
+        "observed_value": 3.066,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 483,
+        "full_scale_error_percent": 0.034,
+        "small_value_relative_error_percent": 1.11,
+        "bbox_xyxy_normalized": [
+          0.464,
+          0.2672,
+          0.5395,
+          0.5356
+        ],
+        "evidence_zh": "直接从image.png色界拟合分区边界，在独立提取的蛋体轮廓内计得约21351像素，占696486像素总面积的3.066%；标注为3.1%。包围盒约151×483像素，mark_extent_px为较长边。",
+        "uncertainty_zh": "色界受细描边、壳纹和抗锯齿影响；顶点及边界约1像素扰动的50组敏感性样本为3.01%—3.13%，不是置信区间。误差字段为中心估计，不表示达到该精度。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Monounsaturated fat",
+        "expected_value": 4.7,
+        "observed_value": 4.764,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 438,
+        "full_scale_error_percent": 0.064,
+        "small_value_relative_error_percent": 1.37,
+        "bbox_xyxy_normalized": [
+          0.4645,
+          0.2917,
+          0.593,
+          0.535
+        ],
+        "evidence_zh": "直接从image.png色界拟合分区边界，在独立提取的蛋体轮廓内计得约33183像素，占696486像素总面积的4.764%；标注为4.7%。包围盒约257×438像素，mark_extent_px为较长边。",
+        "uncertainty_zh": "色界受细描边、壳纹和抗锯齿影响；顶点及边界约1像素扰动的50组敏感性样本为4.7%—4.82%，不是置信区间。误差字段为中心估计，不表示达到该精度。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Protein / subcategory 1",
+        "expected_value": 3.25,
+        "observed_value": 3.264,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 325,
+        "full_scale_error_percent": 0.014,
+        "small_value_relative_error_percent": 0.44,
+        "bbox_xyxy_normalized": [
+          0.464,
+          0.3556,
+          0.6225,
+          0.5361
+        ],
+        "evidence_zh": "直接从image.png色界拟合分区边界，在独立提取的蛋体轮廓内计得约22736像素，占696486像素总面积的3.264%；标注为3.25%。包围盒约317×325像素，mark_extent_px为较长边。",
+        "uncertainty_zh": "色界受细描边、壳纹和抗锯齿影响；顶点及边界约1像素扰动的50组敏感性样本为3.22%—3.31%，不是置信区间。误差字段为中心估计，不表示达到该精度。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Protein / subcategory 2",
+        "expected_value": 3.25,
+        "observed_value": 3.246,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 364,
+        "full_scale_error_percent": 0.004,
+        "small_value_relative_error_percent": 0.13,
+        "bbox_xyxy_normalized": [
+          0.4645,
+          0.41,
+          0.6465,
+          0.5361
+        ],
+        "evidence_zh": "直接从image.png色界拟合分区边界，在独立提取的蛋体轮廓内计得约22606像素，占696486像素总面积的3.246%；标注为3.25%。包围盒约364×227像素，mark_extent_px为较长边。",
+        "uncertainty_zh": "色界受细描边、壳纹和抗锯齿影响；顶点及边界约1像素扰动的50组敏感性样本为3.19%—3.29%，不是置信区间。误差字段为中心估计，不表示达到该精度。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Protein / subcategory 3",
+        "expected_value": 3.25,
+        "observed_value": 3.258,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 394,
+        "full_scale_error_percent": 0.008,
+        "small_value_relative_error_percent": 0.26,
+        "bbox_xyxy_normalized": [
+          0.465,
+          0.4694,
+          0.662,
+          0.5361
+        ],
+        "evidence_zh": "直接从image.png色界拟合分区边界，在独立提取的蛋体轮廓内计得约22694像素，占696486像素总面积的3.258%；标注为3.25%。包围盒约394×120像素，mark_extent_px为较长边。",
+        "uncertainty_zh": "色界受细描边、壳纹和抗锯齿影响；顶点及边界约1像素扰动的50组敏感性样本为3.2%—3.31%，不是置信区间。误差字段为中心估计，不表示达到该精度。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Protein / subcategory 4",
+        "expected_value": 3.25,
+        "observed_value": 3.249,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 408,
+        "full_scale_error_percent": 0.001,
+        "small_value_relative_error_percent": 0.04,
+        "bbox_xyxy_normalized": [
+          0.465,
+          0.5322,
+          0.669,
+          0.595
+        ],
+        "evidence_zh": "直接从image.png色界拟合分区边界，在独立提取的蛋体轮廓内计得约22627像素，占696486像素总面积的3.249%；标注为3.25%。包围盒约408×113像素，mark_extent_px为较长边。",
+        "uncertainty_zh": "色界受细描边、壳纹和抗锯齿影响；顶点及边界约1像素扰动的50组敏感性样本为3.2%—3.31%，不是置信区间。误差字段为中心估计，不表示达到该精度。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Water",
+        "expected_value": 76.7,
+        "observed_value": 76.643,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1103,
+        "full_scale_error_percent": 0.057,
+        "small_value_relative_error_percent": 0.07,
+        "bbox_xyxy_normalized": [
+          0.2595,
+          0.2606,
+          0.669,
+          0.8733
+        ],
+        "evidence_zh": "直接从image.png色界拟合分区边界，在独立提取的蛋体轮廓内计得约533806像素，占696486像素总面积的76.643%；标注为76.7%。包围盒约819×1103像素，mark_extent_px为较长边。",
+        "uncertainty_zh": "色界受细描边、壳纹和抗锯齿影响；顶点及边界约1像素扰动的50组敏感性样本为76.48%—76.82%，不是置信区间。误差字段为中心估计，不表示达到该精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "完整蛋体与九个区域",
+        "required_parts": [
+          "上窄下圆的完整蛋形",
+          "生成壳纹与明暗",
+          "九个闭合分区",
+          "共同内部汇聚点"
+        ],
+        "relationship": "九区包含于同一蛋形，彼此相接；径向边界连接内部共同点与外轮廓。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2595,
+          0.259,
+          0.669,
+          0.8733
+        ],
+        "evidence_zh": "可见壳面连续，分区共同点约(928,965)；右侧色区和左下Water区一起形成蛋体，没有可见空洞或分离切片。"
+      },
+      {
+        "category": "Water（大值）",
+        "required_parts": [
+          "左部及下部大壳面",
+          "与相邻区接触的两条边界",
+          "外部Water标签与引线"
+        ],
+        "relationship": "大区由左、下蛋形轮廓与两条汇聚边界围合；标签引线接左缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2595,
+          0.2606,
+          0.669,
+          0.8733
+        ],
+        "evidence_zh": "Water覆盖左侧亮面、下部和右下暗面；从内部汇聚点至顶部及右侧的分界围出连续大区，引线接点约(523,1154)。"
+      },
+      {
+        "category": "Vitamins minerals and salt（最小正值）",
+        "required_parts": [
+          "顶部窄褐色壳面",
+          "顶部外轮廓",
+          "共同汇聚尖端",
+          "1.0%引线标签"
+        ],
+        "relationship": "窄区接触顶部外轮廓并向内部共同点收窄，与Water及Polyunsaturated fat相邻。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4635,
+          0.2594,
+          0.479,
+          0.537
+        ],
+        "evidence_zh": "约28像素最大横宽的褐色条带保留可见壳纹；顶部接点约(942,470)绑定1.0%。尖端最后数像素受抗锯齿限制，但连续收敛关系可辨。"
+      },
+      {
+        "category": "Protein / subcategory 1—4（中间值）",
+        "required_parts": [
+          "四个相邻灰绿色壳面区",
+          "同一内部汇聚点",
+          "各自右侧外轮廓",
+          "四条外部引线"
+        ],
+        "relationship": "四个互斥区依次相接，均由共同点延伸到蛋壳右缘，并分别接标签。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4635,
+          0.3556,
+          0.669,
+          0.595
+        ],
+        "evidence_zh": "四区从右上斜向延续至右侧偏下，各有独立色界与3.25%标签；没有把四个子类合并成一块或脱离蛋体。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "允许使用当前合成份额，将Protein拆为四个互斥合成子类，并调整分区、姿态及标签位置；主题仍为鸡蛋营养成分构成。",
+      "output_added_or_lost_meaning_zh": "未见主题或统计角色丢失；新增面积说明、合成提示与子类说明使当前口径明确，未沿用旧真实数值或引入趋势结论。",
+      "visible_inscription_evidence_zh": "可见Egg nutrient composition、Percent of egg composition、SYNTHETIC DATA、9 COMPONENTS / 100% TOTAL、AREA = SHARE、Each region is its percentage of the whole egg.，以及Protein subcategories are mutually exclusive synthetic parts.。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "数值为当前合成数据，Protein标签保留父类并分成四个互斥子类，属于输入许可变化。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "参考的单一Protein扇区改成四区，所有份额按当前数据调整；不据此降低结构或意义评价。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小窄区总体可见，近汇聚点最后数像素的独立色带受抗锯齿限制；精确相对误差保留不确定性。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一面积通道的全部九区，包括最小1.0%、最大76.7%及所有中间区；九项数值和类别另行逐项目视核对。未用生成器自检或项目分区遮罩充当最终像素证据；未量化纹理、阴影和细描边，因为它们不编码数据。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "两图均为单枚近正面、上窄下圆的完整鸡蛋，壳面有明暗与细颗粒，未替换为独立普通饼图。",
+      "data_adaptation_excluded_zh": "不按当前九类分区的大小、颜色或蛋体绝对尺寸扣分。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "均为竖立蛋体，成分边界由内部共同点延伸至壳外轮廓，底部保留柔和投影。",
+      "data_adaptation_excluded_zh": "汇聚点位置、比例及外部标签位置可适配；不要求旧角度与旧份额。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "仍由中央鸡蛋主导，标签围绕蛋体；待评图增加大型上方标题和下方说明条，较参考紧凑布局更具页面层次。",
+      "data_adaptation_excluded_zh": "不扣新增必要合成数据提示、单位、四个蛋白质子类和Water标签外置。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留暖橙壳色、左亮右暗和柔影；待评图壳孔更鲜明，蛋白质分区转为灰绿色，背景由淡青变为淡米绿。",
+      "data_adaptation_excluded_zh": "不按数据导致的扇区角度、面积和新增子类扣分。"
+    }
+  }
+}
