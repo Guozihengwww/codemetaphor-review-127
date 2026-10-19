@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:34:19.888830+00:00",
+  "updated_at": "2026-10-19T22:40:44.244901+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,10 +11,10 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "ok": 40,
-      "pending": 52,
+      "ok": 43,
+      "pending": 48,
       "running": 3,
-      "technical_failure": 1
+      "technical_failure": 2
     },
     "routing_audits": {
       "verified": 96
@@ -3332,7 +3332,308 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为青绿色背景、四段圆环，果蔬位于孔内，车辆和行人沿外缘分布。成图为六段共中心圆环，人数67、34、34、41、21、3及对应百分比均可见；圆心包含果蔬摊、人物及装菜汽车。标题、合成提示、样本数、单位与统计口径可读，插画未遮盖数据扇区。已在检查源码前保存观察与参考保真度评分。",
+        "summary_zh": "通过。全部六段数据、标签绑定及内外半径比符合要求，生成素材清晰用于中央场景。review.json已保存并通过schema校验；按追加要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "直接测量指定2000×1666像素成图。拟合圆心约(1000,910)，外半径480.1像素、内半径297.8像素，比值0.6203。在455、462、470像素半径取样，以相邻色段间隔中点估计分界，按整圆200人换算。最大份额偏差约0.020个百分点。源码仅作佐证，未运行渲染器或自检。",
+        "uncertainties_zh": "角宽读数约±0.2°，对应±0.111人、±0.056个百分点；最小3人扇区的相对读数不确定度约±3.7%。参考分辨率有限，不能确认更强的动作意图。依限制未检查渲染归档，因此未独立核实每次渲染是否经capture_render.py归档。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "一个系列、六个类别完整；三个SHORT DRIVE子类别保留父类和编号，另三类名称齐全。样本数、单位及合成提示可见。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "人数67、34、34、41、21、3合计200；百分比33.5%、17%、17%、20.5%、10.5%、1.5%均正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "六段从顶部顺时针按输入顺序排列，引线分别邻接对应扇区；NOT SURE绑定顶部灰色窄段。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素测得占比约33.481%、16.999%、17.004%、20.508%、10.490%、1.518%，全部在容差内；共享圆心，内外半径比约0.6203。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始和处理后素材，相同市场、人物和汽车清晰出现在圆心。render.py读取素材，并根据数据值与总人数计算角宽和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "生成场景包含在圆孔内，外围圆环承担定量编码。汽车、车轮、后备厢果蔬袋及摊位关系连贯，未遮挡数据边界或标签。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、合成提示、全部类别与编号、人数、百分比、统计口径均可读，无明显重叠或截断。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "共中心圆环包含果蔬获取、人物与交通场景；主要部件完整，数据由圆环角宽承担，图标数量不冒充人数。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "当前主题、Fresh produce access category、people（人）、200人分母及角度公式明确；三个新增子类别保留SHORT DRIVE角色。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "鲜果蔬获取及驾车、步行、不确定的角色保留。参考外缘切向排列的交通图标改为孔内购物与开后备厢场景，方向性空间线索仅部分保留；不能据参考推断更强行动论点。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "灰色最小扇区保留内外弧及两侧径向边界，r=462处实测分界弧长约44.1像素；3人/1.5%外标清楚，未人为放大小值。"
+          }
+        },
+        "semantic_attribution_zh": "合成统计、三个SHORT DRIVE子类别及其角宽变化来自输入适配，当前主题与单位没有丢失。成图将外缘交通图标组织为中心市场场景，参考方向性布局仅部分保留，不据此推断作者意图或核心语义失败。最小值的精度限制来自像素与抗锯齿。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "access_count",
+              "category": "SHORT DRIVE / synthetic subcategory 1",
+              "expected_value": 67,
+              "observed_value": 66.961,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 971.9,
+              "full_scale_error_percent": 0.019,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.502,
+                0.259904,
+                0.739,
+                0.690276
+              ],
+              "evidence_zh": "像素边界角宽约120.530°，占整圆33.481%；按200人换算。extent为r=462处弧长。",
+              "uncertainty_zh": "角宽约±0.2°，即±0.111人；抗锯齿与分隔线限制末位精度。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "SHORT DRIVE / synthetic subcategory 2",
+              "expected_value": 34,
+              "observed_value": 33.997,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 493.4,
+              "full_scale_error_percent": 0.001,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.4945,
+                0.639856,
+                0.705,
+                0.833133
+              ],
+              "evidence_zh": "像素边界角宽约61.195°，占整圆16.999%；extent为r=462处弧长。",
+              "uncertainty_zh": "角宽约±0.2°，即±0.111人。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "SHORT DRIVE / synthetic subcategory 3",
+              "expected_value": 34,
+              "observed_value": 34.008,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 493.6,
+              "full_scale_error_percent": 0.004,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.288,
+                0.629652,
+                0.494,
+                0.833133
+              ],
+              "evidence_zh": "像素边界角宽约61.215°，占整圆17.004%；extent为r=462处弧长。",
+              "uncertainty_zh": "角宽约±0.2°，即±0.111人。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "WALKING DISTANCE",
+              "expected_value": 41,
+              "observed_value": 41.017,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 595.3,
+              "full_scale_error_percent": 0.008,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2615,
+                0.338535,
+                0.396,
+                0.67467
+              ],
+              "evidence_zh": "像素边界角宽约73.830°，占整圆20.508%；extent为r=462处弧长。",
+              "uncertainty_zh": "角宽约±0.2°，即±0.111人。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "LONG DRIVE",
+              "expected_value": 21,
+              "observed_value": 20.981,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 304.5,
+              "full_scale_error_percent": 0.01,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3375,
+                0.261104,
+                0.484,
+                0.413565
+              ],
+              "evidence_zh": "像素边界角宽约37.765°，占整圆10.490%；extent为r=462处弧长。",
+              "uncertainty_zh": "角宽约±0.2°，即±0.111人。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "NOT SURE",
+              "expected_value": 3,
+              "observed_value": 3.036,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 44.1,
+              "full_scale_error_percent": 0.018,
+              "small_value_relative_error_percent": 1.204,
+              "bbox_xyxy_normalized": [
+                0.4795,
+                0.259304,
+                0.498,
+                0.366747
+              ],
+              "evidence_zh": "像素边界角宽约5.465°，占整圆1.518%；extent为r=462处弧长。",
+              "uncertainty_zh": "角宽约±0.2°，对应约±3.7%的小值相对读数不确定度；点估计偏差不代表亚像素精度保证。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "最大段：SHORT DRIVE / synthetic subcategory 1",
+              "required_parts": [
+                "共同外弧",
+                "共同内弧",
+                "两条径向分界",
+                "百分比与人数标签"
+              ],
+              "relationship": "深绿扇区由内外弧和径向边界闭合，外部引线对应该类别；场景位于内弧以内。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.5,
+                0.258,
+                0.741,
+                0.693
+              ],
+              "evidence_zh": "大段从顶部延伸至右下，角宽约120.53°，边界未被插画遮盖。"
+            },
+            {
+              "category": "最小段：NOT SURE",
+              "required_parts": [
+                "灰色窄环段",
+                "共同内外弧",
+                "两条径向分界",
+                "外引标签"
+              ],
+              "relationship": "灰色段贯穿整个环宽，与邻段共用圆心和内外边界；标签置于环外。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.477,
+                0.213,
+                0.635,
+                0.37
+              ],
+              "evidence_zh": "灰色段约位于x=955–1000、y=430–614，完整弧段可辨，文字没有替代几何。"
+            },
+            {
+              "category": "中央获取鲜果蔬场景",
+              "required_parts": [
+                "摊棚与支柱",
+                "果蔬货箱",
+                "摊主",
+                "顾客与购物袋",
+                "汽车与车轮",
+                "开启后备厢及车内果蔬袋"
+              ],
+              "relationship": "摊主在货箱后，果蔬包含于货箱和袋内；顾客包带搭肩，汽车在摊位前右方，轮胎连接车体并落在阴影上。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.374,
+                0.428,
+                0.623,
+                0.657
+              ],
+              "evidence_zh": "整组场景包含在圆孔内，原素材对象可逐项对应，主要物体未被内弧切断。"
+            },
+            {
+              "category": "参考交通图标与圆环的关系",
+              "required_parts": [
+                "中央果蔬主题",
+                "车辆与行人",
+                "外围数据圆环"
+              ],
+              "relationship": "参考采用中央果蔬与外缘交通图标相邻排列，成图采用市场、人物和汽车共同被圆环包围。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.26,
+                0.258,
+                0.741,
+                0.835
+              ],
+              "evidence_zh": "中心包含与主题叠合保留，外缘切向图标排列未保留；未改变数据边界或分类含义。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "输入规定合成数据、200人样本及三个SHORT DRIVE子类别；允许姿态、非数据厚度与排版适配，不要求旧百分比或固定极值。",
+            "output_added_or_lost_meaning_zh": "新增市场、购物袋与装菜汽车，使获取目的地更具体；参考外缘交通排列弱化。当前指标、单位、分母和类别角色未丢失。",
+            "visible_inscription_evidence_zh": "可见鲜果蔬获取距离构成、SYNTHETIC DATA、n=200、Fresh produce access category、people（人）、分母全部200人，以及人物车辆不代表人数的说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "合成提示、具名子类别与人数均由冻结输入规定。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "圆环改为当前六段，角宽服从当前人数，未要求复用原百分比。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "可确认外缘图标与中央果蔬的空间关系，不能从低分辨率参考确认更强行动论点。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "最小扇区可见，但分隔线与抗锯齿限制其相对测量精度。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一数量通道的全部六段，包括最小3人、最大67人及内部34人类别，并测量共同圆心和内外半径比。全部类别、人数、百分比、单位和样本数另行逐项核对；图标与阴影不作人数测量。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "果蔬、机动车和行人均可辨；独立水果及两辆简化小车改为果蔬摊、单辆开后备厢汽车和两个人物，新增树木与摊棚。",
+            "data_adaptation_excluded_zh": "排除合成数值、六类别及标签变化；允许非数据人物姿态适配。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "参考车辆与行人在环外缘沿切向分布，成图全部同处中央孔内；中心包含关系保留，外缘相邻关系未保留。",
+            "data_adaptation_excluded_zh": "不要求原车辆朝向、固定位置或原扇区大小；记录外缘与中心之间的关系变化。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "大圆环、中央主题插画、环外类别标注的主次结构保留，成图新增宽阔标题区与底部统计口径。",
+            "data_adaptation_excluded_zh": "排除六类别、合成提示、双语标签与统计口径所需的排版扩展。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "参考为饱和青绿底、鲜黄红渐变圆环和极简图标；成图为米白底、低饱和绿色土黄赭色平面扇区，中央插画细节和光影更丰富。",
+            "data_adaptation_excluded_zh": "排除数据驱动角宽变化及允许的非数据厚度调整，仅评价可见材质与画风。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/75ff97f4660821",
       "numeric_supported": true,
@@ -29906,7 +30207,238 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考为蓝底颗粒插画，电脑屏幕内有五组黄绿双柱，下方键盘旁有机器人和橙色双手。待评图为米白底写实米色电脑，深绿色屏幕内五组橙绿双柱，十个数值、双语情绪标签、Wave A/B图例及0–70轴清楚。标题、合成标识和独立多选口径完整；机器人与双手未出现。",
+        "summary_zh": "通过。数据、标签、尺度及电脑屏幕内分组柱结构正确。review.json已保存并通过schema校验；按后续要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "原图1800×2049。实际0与70网格行约为y=1130、674，满量程456像素。测量全部十柱实色连通区，最大估计偏差0.157%满量程。最小15%柱高约97像素，换算14.890%，相对误差约0.731%。完整逐柱测量已保存于review.json。",
+        "uncertainties_zh": "抗锯齿边界约±1像素，对应约±0.154个百分点。未查阅受限的日志、自检或归档记录，无法核实每次渲染是否经过capture_render.py。参考机器人和双手的具体叙事意图不作推定。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "五类情绪、每类两柱、十个数值、两轮图例、纵轴、标题、合成标识和统计口径齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项为28/19、54/36、64/62、15/23、31/42%；最高值及−18、+11个百分点摘要正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "橙色对应Wave A，浅绿色对应Wave B；数值位于所属柱上方，情绪标签位于对应柱对下方。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "十柱等宽、共享零基线及线性0–70%尺度；像素测量估计误差均小于0.2%满量程。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png，机壳纹理、散热孔、指示灯与键帽在成图中明确对应。源代码使用裁出的显示器和键盘，并根据冻结数据绘制柱形及文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "图表完整位于玻璃屏幕内，机壳包围屏幕，底座承接显示器，键盘位于前方；未见破坏结构的遮挡、透视错配或接缝。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下必要标题、数值、双语类别、图例、轴与脚注均清楚，无裁切或重叠。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "电脑壳、屏幕内五组双柱及下方键盘完整。数据由矩形柱上沿到共同零基线的高度承载。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "明确表达AI工作情绪、两轮合成比例、百分比单位及独立多选口径，不将其解释为100%组成。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留AI工作情绪比较与电脑屏幕展示关系；真实年份改为合成Wave A/B属于输入许可适配。参考机器人和手部互动未保留。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小15%柱实色区域约67×97像素，上下边界、零基线接触及与23%柱的并列关系清楚。"
+          }
+        },
+        "semantic_attribution_zh": "真实年份与旧趋势的替换属于输入许可适配。机器人、双手和原插画材质未保留，属于非核心表现损失，记录于参考保真度；未见当前主题、单位或统计角色丢失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "Indifference",
+              "category": "Wave A",
+              "expected_value": 15,
+              "observed_value": 14.89,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 97,
+              "full_scale_error_percent": 0.157,
+              "small_value_relative_error_percent": 0.731,
+              "bbox_xyxy_normalized": [
+                0.598333,
+                0.504148,
+                0.635556,
+                0.551489
+              ],
+              "evidence_zh": "最小柱实色区约67×97像素，y=1033–1130；可见标注15%。",
+              "uncertainty_zh": "抗锯齿边界约±1像素，不代表亚像素精度。"
+            },
+            {
+              "series_id": "Curiosity",
+              "category": "Wave A",
+              "expected_value": 64,
+              "observed_value": 64.013,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 417,
+              "full_scale_error_percent": 0.019,
+              "small_value_relative_error_percent": 0.021,
+              "bbox_xyxy_normalized": [
+                0.47,
+                0.347975,
+                0.507222,
+                0.551489
+              ],
+              "evidence_zh": "最大柱实色区约67×417像素，y=713–1130；可见标注64%。",
+              "uncertainty_zh": "抗锯齿边界约±1像素。"
+            },
+            {
+              "series_id": "Optimism",
+              "category": "Wave B",
+              "expected_value": 36,
+              "observed_value": 35.921,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 234,
+              "full_scale_error_percent": 0.113,
+              "small_value_relative_error_percent": 0.219,
+              "bbox_xyxy_normalized": [
+                0.389444,
+                0.437286,
+                0.426667,
+                0.551489
+              ],
+              "evidence_zh": "内部值柱实色区约67×234像素，y=896–1130；可见标注36%。",
+              "uncertainty_zh": "抗锯齿边界约±1像素。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体电脑",
+              "required_parts": [
+                "机壳",
+                "屏幕",
+                "五组双柱",
+                "底座",
+                "键盘"
+              ],
+              "relationship": "机壳包围屏幕，屏幕包含图表；底座承接机壳，键盘位于底座前方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.046,
+                0.208,
+                0.953,
+                0.858
+              ],
+              "evidence_zh": "屏幕约x259–1545、y550–1265；图表没有越过屏幕，底座延伸至键盘后沿附近。"
+            },
+            {
+              "category": "大值Curiosity",
+              "required_parts": [
+                "64%柱",
+                "62%柱",
+                "零基线",
+                "类别标签",
+                "屏幕"
+              ],
+              "relationship": "两柱在屏幕内并列，共享零基线，类别标签位于下方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.467,
+                0.329,
+                0.557,
+                0.6
+              ],
+              "evidence_zh": "两柱顶部约y713、726，底部均为y1130；上沿差异可辨且未接触机壳。"
+            },
+            {
+              "category": "小值Indifference",
+              "required_parts": [
+                "15%柱",
+                "23%柱",
+                "零基线",
+                "类别标签",
+                "屏幕"
+              ],
+              "relationship": "小柱保持矩形边界并接触零基线，与23%柱并列，整体被屏幕包含。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.596,
+                0.464,
+                0.689,
+                0.601
+              ],
+              "evidence_zh": "15%柱约y1033–1130，23%柱约y980–1130；小柱未退化为点、线或仅文字。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "原真实年份改为合成Wave A/B；数值和趋势按当前数据更新，非数据姿态、厚度和排版允许适配。",
+            "output_added_or_lost_meaning_zh": "当前统计含义完整；新增摘要受数据支持。参考机器人与手触键盘的互动未保留，其具体论证意图不明。",
+            "visible_inscription_evidence_zh": "标题、SYNTHETIC DATA、情绪选择比例 (%)、Wave A/B及“每类情绪独立多选，比例不合计为100%”均可见。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实年份替换为明确声明的合成两轮，不要求复现原调查来源和历史叙述。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "柱高与最大升降摘要来自当前数据。"
+            },
+            {
+              "cause": "output_omission",
+              "evidence_zh": "参考机器人与橙色双手未出现，核心电脑与屏幕图表结构保留。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "约±1像素边界不确定性不影响最小柱及包含关系辨认。"
+            }
+          ],
+          "measurement_coverage_zh": "实际覆盖全部十根柱及全部必要标签；此处列最小、大值和内部值代表，完整十柱测量见已保存的review.json。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "复古电脑、屏幕和键盘保留；机器人与橙色双手未出现。",
+            "data_adaptation_excluded_zh": "不计新数据、两轮名称、双语标签及允许的机壳厚度变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留机壳包围屏幕、键盘位于下方前部的主关系；角色坐在电脑附近及手触键盘的关系消失。",
+            "data_adaptation_excluded_zh": "不因允许的正面姿态、支架厚度和键盘透视调整扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "均为上方标题、中部大屏幕图表、下方键盘；装饰角色不再穿插其间。",
+            "data_adaptation_excluded_zh": "排除新标签、轴、统计口径和摘要所需的排版调整。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 1,
+            "evidence_zh": "高饱和蓝底、黑色粗轮廓的颗粒插画改为低饱和米色塑料写实光影，仅复古感相通。",
+            "data_adaptation_excluded_zh": "不因柱高和必需文字更新扣分；评分针对非数据材质与整体色调。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/78e16376f198ee",
       "numeric_supported": true,
@@ -30310,7 +30842,238 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考为蓝底颗粒插画，电脑屏幕内有五组黄绿双柱，下方键盘旁有机器人和橙色双手。待评图为米白底写实米色电脑，深绿色屏幕内五组橙绿双柱，十个数值、双语情绪标签、Wave A/B图例及0–70轴清楚。标题、合成标识和独立多选口径完整；机器人与双手未出现。",
+        "summary_zh": "通过。数据、标签、尺度及电脑屏幕内分组柱结构正确。review.json已保存并通过schema校验；按后续要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "原图1800×2049。实际0与70网格行约为y=1130、674，满量程456像素。测量全部十柱实色连通区，最大估计偏差0.157%满量程。最小15%柱高约97像素，换算14.890%，相对误差约0.731%。完整逐柱测量已保存于review.json。",
+        "uncertainties_zh": "抗锯齿边界约±1像素，对应约±0.154个百分点。未查阅受限的日志、自检或归档记录，无法核实每次渲染是否经过capture_render.py。参考机器人和双手的具体叙事意图不作推定。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "五类情绪、每类两柱、十个数值、两轮图例、纵轴、标题、合成标识和统计口径齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项为28/19、54/36、64/62、15/23、31/42%；最高值及−18、+11个百分点摘要正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "橙色对应Wave A，浅绿色对应Wave B；数值位于所属柱上方，情绪标签位于对应柱对下方。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "十柱等宽、共享零基线及线性0–70%尺度；像素测量估计误差均小于0.2%满量程。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png，机壳纹理、散热孔、指示灯与键帽在成图中明确对应。源代码使用裁出的显示器和键盘，并根据冻结数据绘制柱形及文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "图表完整位于玻璃屏幕内，机壳包围屏幕，底座承接显示器，键盘位于前方；未见破坏结构的遮挡、透视错配或接缝。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下必要标题、数值、双语类别、图例、轴与脚注均清楚，无裁切或重叠。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "电脑壳、屏幕内五组双柱及下方键盘完整。数据由矩形柱上沿到共同零基线的高度承载。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "明确表达AI工作情绪、两轮合成比例、百分比单位及独立多选口径，不将其解释为100%组成。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留AI工作情绪比较与电脑屏幕展示关系；真实年份改为合成Wave A/B属于输入许可适配。参考机器人和手部互动未保留。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小15%柱实色区域约67×97像素，上下边界、零基线接触及与23%柱的并列关系清楚。"
+          }
+        },
+        "semantic_attribution_zh": "真实年份与旧趋势的替换属于输入许可适配。机器人、双手和原插画材质未保留，属于非核心表现损失，记录于参考保真度；未见当前主题、单位或统计角色丢失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "Indifference",
+              "category": "Wave A",
+              "expected_value": 15,
+              "observed_value": 14.89,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 97,
+              "full_scale_error_percent": 0.157,
+              "small_value_relative_error_percent": 0.731,
+              "bbox_xyxy_normalized": [
+                0.598333,
+                0.504148,
+                0.635556,
+                0.551489
+              ],
+              "evidence_zh": "最小柱实色区约67×97像素，y=1033–1130；可见标注15%。",
+              "uncertainty_zh": "抗锯齿边界约±1像素，不代表亚像素精度。"
+            },
+            {
+              "series_id": "Curiosity",
+              "category": "Wave A",
+              "expected_value": 64,
+              "observed_value": 64.013,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 417,
+              "full_scale_error_percent": 0.019,
+              "small_value_relative_error_percent": 0.021,
+              "bbox_xyxy_normalized": [
+                0.47,
+                0.347975,
+                0.507222,
+                0.551489
+              ],
+              "evidence_zh": "最大柱实色区约67×417像素，y=713–1130；可见标注64%。",
+              "uncertainty_zh": "抗锯齿边界约±1像素。"
+            },
+            {
+              "series_id": "Optimism",
+              "category": "Wave B",
+              "expected_value": 36,
+              "observed_value": 35.921,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 234,
+              "full_scale_error_percent": 0.113,
+              "small_value_relative_error_percent": 0.219,
+              "bbox_xyxy_normalized": [
+                0.389444,
+                0.437286,
+                0.426667,
+                0.551489
+              ],
+              "evidence_zh": "内部值柱实色区约67×234像素，y=896–1130；可见标注36%。",
+              "uncertainty_zh": "抗锯齿边界约±1像素。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体电脑",
+              "required_parts": [
+                "机壳",
+                "屏幕",
+                "五组双柱",
+                "底座",
+                "键盘"
+              ],
+              "relationship": "机壳包围屏幕，屏幕包含图表；底座承接机壳，键盘位于底座前方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.046,
+                0.208,
+                0.953,
+                0.858
+              ],
+              "evidence_zh": "屏幕约x259–1545、y550–1265；图表没有越过屏幕，底座延伸至键盘后沿附近。"
+            },
+            {
+              "category": "大值Curiosity",
+              "required_parts": [
+                "64%柱",
+                "62%柱",
+                "零基线",
+                "类别标签",
+                "屏幕"
+              ],
+              "relationship": "两柱在屏幕内并列，共享零基线，类别标签位于下方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.467,
+                0.329,
+                0.557,
+                0.6
+              ],
+              "evidence_zh": "两柱顶部约y713、726，底部均为y1130；上沿差异可辨且未接触机壳。"
+            },
+            {
+              "category": "小值Indifference",
+              "required_parts": [
+                "15%柱",
+                "23%柱",
+                "零基线",
+                "类别标签",
+                "屏幕"
+              ],
+              "relationship": "小柱保持矩形边界并接触零基线，与23%柱并列，整体被屏幕包含。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.596,
+                0.464,
+                0.689,
+                0.601
+              ],
+              "evidence_zh": "15%柱约y1033–1130，23%柱约y980–1130；小柱未退化为点、线或仅文字。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "原真实年份改为合成Wave A/B；数值和趋势按当前数据更新，非数据姿态、厚度和排版允许适配。",
+            "output_added_or_lost_meaning_zh": "当前统计含义完整；新增摘要受数据支持。参考机器人与手触键盘的互动未保留，其具体论证意图不明。",
+            "visible_inscription_evidence_zh": "标题、SYNTHETIC DATA、情绪选择比例 (%)、Wave A/B及“每类情绪独立多选，比例不合计为100%”均可见。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实年份替换为明确声明的合成两轮，不要求复现原调查来源和历史叙述。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "柱高与最大升降摘要来自当前数据。"
+            },
+            {
+              "cause": "output_omission",
+              "evidence_zh": "参考机器人与橙色双手未出现，核心电脑与屏幕图表结构保留。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "约±1像素边界不确定性不影响最小柱及包含关系辨认。"
+            }
+          ],
+          "measurement_coverage_zh": "实际覆盖全部十根柱及全部必要标签；此处列最小、大值和内部值代表，完整十柱测量见已保存的review.json。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "复古电脑、屏幕和键盘保留；机器人与橙色双手未出现。",
+            "data_adaptation_excluded_zh": "不计新数据、两轮名称、双语标签及允许的机壳厚度变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留机壳包围屏幕、键盘位于下方前部的主关系；角色坐在电脑附近及手触键盘的关系消失。",
+            "data_adaptation_excluded_zh": "不因允许的正面姿态、支架厚度和键盘透视调整扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "均为上方标题、中部大屏幕图表、下方键盘；装饰角色不再穿插其间。",
+            "data_adaptation_excluded_zh": "排除新标签、轴、统计口径和摘要所需的排版调整。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 1,
+            "evidence_zh": "高饱和蓝底、黑色粗轮廓的颗粒插画改为低饱和米色塑料写实光影，仅复古感相通。",
+            "data_adaptation_excluded_zh": "不因柱高和必需文字更新扣分；评分针对非数据材质与整体色调。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/78e16376f198ee",
       "numeric_supported": true,
@@ -66366,7 +67129,326 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.94,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为草地包围的俯拍泥土场地，六组彩绳网由木桩固定，人物、工具、手推车和杆材散布周边。成图保留泥土草边、六组带木桩的彩绳网、两名分别接触E/F网区的园丁及手工具和绳卷；A/B近细线，C为浅窄网区，D至F为可辨网格。六类标签和全部数值、Harvest yield (kg)、Garden plot yield及SYNTHETIC DATA均可读。成图新增大标题区和场内说明卡，工具更集中。此记录在查看源码前完成。",
+        "summary_zh": "六类数据、数值标签、统一线性长度编码和园艺产量语义通过。生成素材实质可见，绳网与人物、木桩、地面形成完整场景。A/B的网格内部关系受真实短长度与分辨率限制，仅部分可辨。review.json已用UTF-8保存并通过schema.json校验；按后续明确要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "仅测指定image.png（2100×1295）。纸边刻度像素行依次为224–225、324–325至1124–1125，满量程约900 px，即10 px/kg。通过各网区横向RGB扫描确认顶绳位置，估计其至零刻度的长度；不把木桩、引绳、阴影或网宽计入数据长度。源码公式仅作佐证，不替代像素测量。",
+        "uncertainties_zh": "A仅占约两行像素，无法可靠恢复亚像素真实长度；B的小值相对精度也受约1 px边界不确定性限制。原参考无可读统计指标，不能推断原统计论点。按限制未查看日志、自检或运行历史，无法独立确认capture_render.py实际执行历史。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "六个网区和Plot A–F按输入次序完整出现；指标、kg单位、园艺产量标题、SYNTHETIC DATA、0–90刻度和共同零基线均存在。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "依次可读0.172、0.596105、2.065934、7.159958、24.814438、86.0 kg，与输入逐项相符。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "类别及数值位于对应网区正下方，同色圆点与绳色对应，绑定清楚。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "B–F独立粗测约6、21、72、248、860 px，按10 px/kg换算，偏差远低于满量程3%。A约两行像素，与极小正值相容，未见强制放大；其相对精度另保留不确定性。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看两张原始素材，泥土草边、人物、工具、绳卷及木桩与成图明显对应并构成主体。render.py使用这些素材，以输入控制网区边界与文字；执行包装器历史未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数据边界就是贴地彩绳网的顶边，底边共用零基线；绳端连接木桩，E/F人物双手局部遮挡网边，融合关系保留。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、单位、全部类别数值和合成声明清晰；说明卡未遮挡数据网区，人物未遮挡类别或数值标签。"
+          },
+          "critical_structure": {
+            "status": "partial",
+            "evidence_zh": "较大网区保留泥土、交织彩绳、固定木桩及人物接触遮挡，工具与草边完整。A/B的网格内部和上下边分离关系因短长度只能部分确认。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Garden plot yield、Harvest yield (kg)、Six experimental plots、Plot A–F及SYNTHETIC DATA明确主题、指标、单位和类别角色；说明明确长度编码产量。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "地面拉绳、固定网区及人员施工关系保留。core.json明确允许改编为园艺产量主题；原参考无可读指标，不能要求继承未明的统计论点。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "A可见紫色细带和错开的固定桩，但约两行像素不足以辨清网眼或准确恢复长度；B为窄蓝带，C已能看到浅网格。数值可读不等于小几何精度已获证明。"
+          }
+        },
+        "semantic_attribution_zh": "园艺产量主题属于明确许可的输入改编。A/B压缩来自数据驱动的真实短长度，细部识别受栅格分辨率限制；没有可证的输出遗漏或人为夸大。人员姿态、工具布局和标签更新未改变当前统计含义。参考原统计论点不可辨，未据此推断作者意图。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "yield",
+              "category": "Plot A",
+              "expected_value": 0.172,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 2,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.153333,
+                0.866409,
+                0.250476,
+                0.869498
+              ],
+              "evidence_zh": "原图x=330–519区域，紫色信号主要占y=1123、1124两行；其下是共同基线。可确认正值细带存在。",
+              "uncertainty_zh": "约2 px是着色带占用的栅格行数，不是精确几何长度；抗锯齿、上下绳合并及基线相邻使真实长度和相对误差不能可靠恢复。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot B",
+              "expected_value": 0.596105,
+              "observed_value": 0.6,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 6,
+              "full_scale_error_percent": 0.00433,
+              "small_value_relative_error_percent": 0.65341,
+              "bbox_xyxy_normalized": [
+                0.284762,
+                0.86332,
+                0.381905,
+                0.869498
+              ],
+              "evidence_zh": "顶端主要蓝绳信号首行约y=1119；至零刻度按像素外缘估计约6 px，反算约0.6 kg。",
+              "uncertainty_zh": "边界约±1 px，即±0.1 kg，约为目标值的16.8%；所列误差仅为粗测点估计。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot C",
+              "expected_value": 2.065934,
+              "observed_value": 2.1,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 21,
+              "full_scale_error_percent": 0.03785,
+              "small_value_relative_error_percent": 1.64894,
+              "bbox_xyxy_normalized": [
+                0.41619,
+                0.851737,
+                0.513333,
+                0.869498
+              ],
+              "evidence_zh": "顶端主要绿绳信号首行约y=1104；至零刻度约21 px，反算约2.1 kg。",
+              "uncertainty_zh": "边界约±1 px，即±0.1 kg，约为目标值的4.8%；不保证小值的精确相对误差。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot D",
+              "expected_value": 7.159958,
+              "observed_value": 7.2,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 72,
+              "full_scale_error_percent": 0.04449,
+              "small_value_relative_error_percent": 0.55925,
+              "bbox_xyxy_normalized": [
+                0.547619,
+                0.812355,
+                0.644762,
+                0.869498
+              ],
+              "evidence_zh": "顶端主要彩绳信号首行约y=1053；至零刻度约72 px，反算约7.2 kg。",
+              "uncertainty_zh": "顶绳厚度、抗锯齿及边缘判定造成约±1 px的不确定性。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot E",
+              "expected_value": 24.814438,
+              "observed_value": 24.8,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 248,
+              "full_scale_error_percent": 0.01604,
+              "small_value_relative_error_percent": 0.05818,
+              "bbox_xyxy_normalized": [
+                0.679048,
+                0.676448,
+                0.77619,
+                0.869498
+              ],
+              "evidence_zh": "顶端主要橙绳信号首行约y=877；至零刻度约248 px，反算约24.8 kg。",
+              "uncertainty_zh": "顶绳厚度、抗锯齿及边缘判定造成约±1 px的不确定性。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot F",
+              "expected_value": 86,
+              "observed_value": 86,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 860,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.810476,
+                0.203861,
+                0.907619,
+                0.869498
+              ],
+              "evidence_zh": "顶端主要黄绳信号首行约y=265；至零刻度约860 px，反算约86 kg。",
+              "uncertainty_zh": "约±1 px的边界不确定性仍存在；零误差是粗测点估计，不代表精确无误差。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Plot F（大值）",
+              "required_parts": [
+                "泥土地面",
+                "彩绳网格",
+                "木桩和短引绳",
+                "园丁双手"
+              ],
+              "relationship": "网格贴于泥土，顶底边连接侧边，端部经短绳接木桩；人物双手局部接触和遮挡右边绳。基线至顶边为数据长度。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.7924,
+                0.1946,
+                0.9867,
+                0.8803
+              ],
+              "evidence_zh": "黄色网区内部透见土面，顶底锚点可辨；绿衣人物手部位于局部网边前方，顶边约265 px，基线约1125 px。"
+            },
+            {
+              "category": "Plot E（中大值）",
+              "required_parts": [
+                "橙色网格",
+                "泥土地面",
+                "固定木桩",
+                "蓝衣园丁"
+              ],
+              "relationship": "网内透见泥土，角部引绳接地面木桩，左上网边延伸至园丁手部遮挡处。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.5752,
+                0.6402,
+                0.7933,
+                0.8803
+              ],
+              "evidence_zh": "橙网横纵绳连续，右上和下端木桩可见；左上端靠近双手并被局部遮挡。"
+            },
+            {
+              "category": "Plot A/B（最小值）",
+              "required_parts": [
+                "压缩彩绳边带",
+                "两对错开木桩",
+                "共同零基线",
+                "泥土"
+              ],
+              "relationship": "绳端经短引绳连接错开的木桩；极短跨度限制网眼和上下边的可分辨性。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.1367,
+                0.8571,
+                0.3986,
+                0.8803
+              ],
+              "evidence_zh": "A紫带仅约两行像素，两端可见错位锚点；B为约6 px高的窄蓝带。锚定关系可见，A内部网眼无法可靠辨清。"
+            },
+            {
+              "category": "Plot C（小值）",
+              "required_parts": [
+                "浅绿色网边",
+                "短纵绳",
+                "木桩",
+                "泥土"
+              ],
+              "relationship": "两横边由短纵绳连接，土面透过内部，端部引绳接地面锚点。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.399,
+                0.844,
+                0.53,
+                0.8803
+              ],
+              "evidence_zh": "约21 px高的绿网内可见短纵绳与土面；顶底端引绳和木桩未被标签遮挡。"
+            },
+            {
+              "category": "场地与工具",
+              "required_parts": [
+                "泥土",
+                "周边青草",
+                "手铲",
+                "手叉",
+                "绳卷"
+              ],
+              "relationship": "青草围绕场地，工具与绳卷放在网区同一土面并带接触阴影。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.1229,
+                0.1637,
+                0.5081,
+                0.9035
+              ],
+              "evidence_zh": "工具与绳卷位于中左土面，局部阴影支持放置接触；青草沿场地周边可见。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "core.json明确将原参考改编为园艺试验地块产量，允许人物姿态、非数据厚度和标签位置适配，不继承旧高低结论。",
+            "output_added_or_lost_meaning_zh": "新增清楚的合成产量与统一尺度说明，保留固定绳网和人员施工动作。小值网眼关系部分不可辨，当前类别、单位和统计口径未丢失。",
+            "visible_inscription_evidence_zh": "Garden plot yield；Harvest yield (kg) · Six experimental plots；SYNTHETIC DATA；ONE LINEAR SCALE / 0–90 kg；Plot A–F；More harvest, longer net.；Equal width & mesh spacing; pegs and people are illustrative."
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "当前园艺产量语义由冻结core明确指定，参考意义的partial不计为生成失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "极小A/B值使网区接近基线，较大E/F仍形成清楚网格，不要求恢复参考旧长度。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "A主要占两行像素，无法可靠分离上下边或验证亚像素长度；B的相对精度也受边界分辨率限制。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "原参考无可读主题、指标或单位，只能确认地面绳网施工关系，无法确定原统计论点。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一长度通道的六个网区：A报告像素占用并保留定量不确定性，B–F独立粗测。全部类别、数值、单位及顺序另行核对。木桩数、人物数、网宽和网密度不作为定量通道。未读取成对图、自检、日志或旧评审。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "俯拍泥土、草边、木桩、园丁、绳网与工具保留；参考中的手推车和杆材堆未复现，工具改为手铲、手叉和绳卷。",
+            "data_adaptation_excluded_zh": "不扣当前数据造成的网长、类别数、标签或许可的人物姿态与非数据厚度调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "木桩接触地面，网贴地；右侧两名园丁俯身、双手靠近E/F网边。参考沿多处网区分布的施工关系缩减为两处，工具从边缘移至场内。",
+            "data_adaptation_excluded_zh": "不要求复制人物原坐标或姿态；不因小数据使网区压缩而扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "仍以泥土中的六组网为主图；参考几乎满幅的田地被大页眉、页脚标签和场内大说明卡重新分层，场内留白显著增加。",
+            "data_adaptation_excluded_zh": "排除新数据造成的高低分布变化和必要语义标签增补。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留摄影式泥土、青草、人物与工具；成图网绳更笔直规则、木桩更统一，背景土粒较粗，叠加清晰编辑式排版。",
+            "data_adaptation_excluded_zh": "不把数据驱动的长度变化、许可的绳粗调整和更新文字视为材质损失。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/762b6e748d41ea",
       "numeric_supported": true,
