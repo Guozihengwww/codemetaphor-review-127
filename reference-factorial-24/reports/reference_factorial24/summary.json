@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:33:50.240334+00:00",
+  "updated_at": "2026-10-19T21:45:02.621823+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,9 +11,9 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "pending": 77,
-      "ok": 16,
-      "running": 3
+      "running": 3,
+      "ok": 20,
+      "pending": 73
     },
     "routing_audits": {
       "verified": 96
@@ -6747,7 +6747,362 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.94,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为左右平面堆叠柱，中间并置光盘、右向弯箭头和手机。待评图改为写实双屏掌机，两图包含在屏幕内，控制部件连接机壳。当前标题、SYNTHETIC DATA、三系列图例、20个段值、8个合计及单位均可读；细小青绿色段可见，无明显遮挡或越界。",
+        "summary_zh": "已保存 UTF-8 review.json，并通过 schema 校验。当前核心合同通过；参考图的特定设备图示、方向关系和材质风格保留有限，已单列评估。",
+        "issues": [],
+        "measurement_notes_zh": "直接读取2000×1425原图像素，以可见网格校准：左图18单位约349像素，右图300单位约348像素。避开文字，用相邻填色的50%过渡估计边界。20段名义满量程误差均小于0.12%；柱中心间隔约130.5–131像素。未使用源码导出边界作为像素测量，未重渲染。",
+        "uncertainties_zh": "抗锯齿与基线笔画带来约±1像素误差；最小段约7.54像素，其相对精度不能由满量程通过保证。参考实图为图标与双图并置，冻结文字概括为游戏设备叠置且未细列设备类型，因此特定图示缺失单列为参考保留度损失。未核验capture_render.py执行历史或工具来源记录。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "两面板各有Year 1–4；支出12段、销量8段，20个段值及8个同期合计完整。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "全部段值吻合；支出合计14.8/16.7/17.2/16.4，销量188/245/268/288；增加1.6和100、变化+10.8%和+53.2%正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "橙色、青绿色、灰蓝色分别对应主机实体版、PC实体版、其他形式；标签位置及堆叠顺序正确。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "独立像素测量覆盖20段，最大名义满量程误差约0.111%；量尺分别0–18与0–300，类别等距、零基线堆叠。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "所供raw_01.png及device_clean.png的机壳、按键与摇杆实质用于主体。render.py粘贴素材并根据数据绘制柱段及文字；归档执行历史未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "图表被屏幕及边框包含，与正面显示平面对齐；控制部件连接外侧机壳，无数据越界或外壳遮挡。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、合成标识、系列、指标、单位、全部数值和统计口径均可读。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "同一游戏设备连接左右控制部件与双屏，两屏分别承载支出和销量图。数据边界是屏内矩形色段，机壳尺寸不编码数值。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "当前游戏销售形式主题明确；十亿美元与百万份分别对应支出和销量，三系列与两系列口径清楚，同期合计未被表达为跨期累计。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "游戏支出、实体销量及销售形式分类保留；光盘→手机图示及旧数字化替代论断未保留。当前数据的实体增长属于允许的数据适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小支出PC段约7.54像素，夹在上下色段之间；最小销量PC段约15.27像素，直接接触橙段顶部，均有真实可辨色带。"
+          }
+        },
+        "semantic_attribution_zh": "旧真实年份、跌幅和趋势被合成四期与当前值替换，属于输入适配；新柱高属于数据驱动变化。光盘、手机与方向箭头缺席属于参考图示损失，当前设备与双图关联仍在。最小色带测量受分辨率限制，未发现漏值或统计角色混淆。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "consumer_spend_pc_physical",
+              "category": "Year 1",
+              "expected_value": 0.4,
+              "observed_value": 0.3891,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 7.544,
+              "full_scale_error_percent": 0.0605,
+              "small_value_relative_error_percent": 2.7241,
+              "bbox_xyxy_normalized": [
+                0.221,
+                0.57209,
+                0.256,
+                0.57738
+              ],
+              "evidence_zh": "x=446处，色段边界y约815.23–822.77；按18单位对应349像素折算。",
+              "uncertainty_zh": "厚度约±1像素；1像素约占此段13%，名义相对误差不构成小值精度保证。"
+            },
+            {
+              "series_id": "consumer_spend_console_physical",
+              "category": "Year 4",
+              "expected_value": 10.4,
+              "observed_value": 10.4065,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 201.771,
+              "full_scale_error_percent": 0.0363,
+              "small_value_relative_error_percent": 0.0628,
+              "bbox_xyxy_normalized": [
+                0.4175,
+                0.52858,
+                0.452,
+                0.67018
+              ],
+              "evidence_zh": "x=838处，色段边界y约753.23–955.00；按18单位对应349像素折算。",
+              "uncertainty_zh": "色边和基线约±1像素；未使用代码边界。"
+            },
+            {
+              "series_id": "consumer_spend_other_formats",
+              "category": "Year 2",
+              "expected_value": 7.3,
+              "observed_value": 7.3098,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 141.729,
+              "full_scale_error_percent": 0.0544,
+              "small_value_relative_error_percent": 0.1342,
+              "bbox_xyxy_normalized": [
+                0.2865,
+                0.44265,
+                0.3215,
+                0.54211
+              ],
+              "evidence_zh": "x=577处，色段边界y约630.77–772.50；按18单位对应349像素折算。",
+              "uncertainty_zh": "色边读数约±1像素。"
+            },
+            {
+              "series_id": "physical_unit_sales_pc_physical",
+              "category": "Year 1",
+              "expected_value": 13,
+              "observed_value": 13.1647,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 15.271,
+              "full_scale_error_percent": 0.0549,
+              "small_value_relative_error_percent": 1.2673,
+              "bbox_xyxy_normalized": [
+                0.565,
+                0.51614,
+                0.6,
+                0.52686
+              ],
+              "evidence_zh": "x=1134处，色段边界y约735.50–750.77；按300单位对应348像素折算。",
+              "uncertainty_zh": "色边读数约±1像素，名义相对误差不代表精确的小值精度。"
+            },
+            {
+              "series_id": "physical_unit_sales_console_physical",
+              "category": "Year 4",
+              "expected_value": 260,
+              "observed_value": 260.1475,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 301.771,
+              "full_scale_error_percent": 0.0492,
+              "small_value_relative_error_percent": 0.0567,
+              "bbox_xyxy_normalized": [
+                0.761,
+                0.4577,
+                0.796,
+                0.66947
+              ],
+              "evidence_zh": "x=1527处，色段边界y约652.23–954.00；按300单位对应348像素折算。",
+              "uncertainty_zh": "色边和基线约±1像素。"
+            },
+            {
+              "series_id": "physical_unit_sales_console_physical",
+              "category": "Year 2",
+              "expected_value": 227,
+              "observed_value": 227.1552,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 263.5,
+              "full_scale_error_percent": 0.0517,
+              "small_value_relative_error_percent": 0.0684,
+              "bbox_xyxy_normalized": [
+                0.6305,
+                0.48456,
+                0.665,
+                0.66947
+              ],
+              "evidence_zh": "x=1265处，色段边界y约690.50–954.00；按300单位对应348像素折算。",
+              "uncertainty_zh": "色边和基线约±1像素。"
+            },
+            {
+              "series_id": "consumer_spend_total_change_percent",
+              "category": "Year 1 → Year 4",
+              "expected_value": 10.8,
+              "observed_value": 10.8,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.4065,
+                0.84281,
+                0.4825,
+                0.88211
+              ],
+              "evidence_zh": "14.8→16.4、增加1.6、+10.8%均与当前合计计算一致。",
+              "uncertainty_zh": "仅文字编码，无独立几何长度及几何误差。"
+            },
+            {
+              "series_id": "physical_unit_sales_total_change_percent",
+              "category": "Year 1 → Year 4",
+              "expected_value": 53.2,
+              "observed_value": 53.2,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.75,
+                0.84281,
+                0.826,
+                0.88211
+              ],
+              "evidence_zh": "188→288、增加100、+53.2%均与当前合计计算一致。",
+              "uncertainty_zh": "仅文字编码，无独立几何长度及几何误差。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "设备整体与双面板",
+              "required_parts": [
+                "机壳",
+                "双屏及边框",
+                "十字键",
+                "左右摇杆",
+                "右侧四按键"
+              ],
+              "relationship": "控制部件连接机壳，机壳包含双屏，屏幕分别包含两图。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.026,
+                0.33263,
+                0.974,
+                0.76632
+              ],
+              "evidence_zh": "中央接缝分隔双屏，四周边框连续，数据未跨到机壳上。"
+            },
+            {
+              "category": "消费支出大柱：Year 4",
+              "required_parts": [
+                "10.4橙段",
+                "0.8青绿色段",
+                "5.2灰蓝段",
+                "左屏幕"
+              ],
+              "relationship": "三段由下到上连续接触，整个柱被屏幕包含。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.4175,
+                0.44686,
+                0.452,
+                0.67018
+              ],
+              "evidence_zh": "三段之间无可见断裂，合计16.4位于柱顶。"
+            },
+            {
+              "category": "消费支出最小段：Year 1 PC",
+              "required_parts": [
+                "0.4青绿色带",
+                "下方6.8橙段",
+                "上方7.6灰蓝段"
+              ],
+              "relationship": "小段横跨柱宽，并同时接触上下两段。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.221,
+                0.57209,
+                0.2785,
+                0.58246
+              ],
+              "evidence_zh": "约7.54像素色带真实可辨，右侧0.4标签与其高度对应。"
+            },
+            {
+              "category": "实体销量大柱：Year 4",
+              "required_parts": [
+                "260橙段",
+                "28青绿色顶段",
+                "右屏幕"
+              ],
+              "relationship": "顶段直接接触底段，两段形成288合计并被屏幕包含。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.761,
+                0.43493,
+                0.796,
+                0.66947
+              ],
+              "evidence_zh": "橙段约301.77像素、顶段约32.46像素，边框未遮挡。"
+            },
+            {
+              "category": "实体销量最小段：Year 1 PC",
+              "required_parts": [
+                "13青绿色顶段",
+                "175橙段"
+              ],
+              "relationship": "小段作为顶帽直接接触主机段。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.565,
+                0.51614,
+                0.619,
+                0.53193
+              ],
+              "evidence_zh": "约15.27像素高的小段保持完整柱宽，右侧13标签清楚。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "采用合成四期及当前值，允许新峰值、新涨跌及非数据姿态、厚度和排版适配，不沿用旧真实年份与负增长。",
+            "output_added_or_lost_meaning_zh": "加入掌机屏幕容纳图表的表达；光盘指向手机的图示消失。当前游戏销售形式比较及数据趋势表达正确。",
+            "visible_inscription_evidence_zh": "完整中文题名、SYNTHETIC DATA、双面板英文指标与单位、三种系列名、“柱顶数字 = 同期合计”和底部统计口径均可见。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "合成四期替换原真实年份，实体增长替换旧下降趋势。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "主机实体段逐期增高，其他形式段逐期降低，与当前值一致。"
+            },
+            {
+              "cause": "output_omission",
+              "evidence_zh": "光盘、右向弯箭头及手机未出现，已记录参考保留度损失。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "最小段约7.54像素，1像素读数误差对应约13%的相对不确定性。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "参考实图并置设备图标与双图，冻结核心概括为游戏设备叠置且允许非数据适配，未细列必须保留的旧图标。"
+            }
+          ],
+          "measurement_coverage_zh": "像素采样覆盖全部20段；明细保留两面板各一例最小正段、大段、内部段，覆盖全部5个面板系列，另列两项文字变化率。其余14段不逐项展开；20个段值与8个合计另行逐项核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 1,
+            "evidence_zh": "原光盘及手机不再出现，改为带十字键、双摇杆和四按键的双屏掌机，仅延续宽泛游戏设备身份。",
+            "data_adaptation_excluded_zh": "排除当前数值、标签、系列颜色及允许的非数据厚度调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 1,
+            "evidence_zh": "原光盘经右向箭头指向手机、与双图并置；输出改为外壳包围双屏、双屏容纳图表。",
+            "data_adaptation_excluded_zh": "不扣合理姿态、厚度及排版调整，仅记录原部件及方向关系的保留程度。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留上方标题、左右双图与底部说明；图例移至顶部，写实掌机成为主体，原中央图示消失。",
+            "data_adaptation_excluded_zh": "排除当前标题、合成标识、数值更新及数据改变所需柱高变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 1,
+            "evidence_zh": "平面色块、白底及灰色图标改成米白写实机壳、阴影与深色屏幕；平面柱图和深蓝文字仍在。",
+            "data_adaptation_excluded_zh": "排除允许的布局、设备姿态和非数据厚度适配，仅评价材质与图形风格保留。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/2faed2f19e4823",
       "numeric_supported": true,
@@ -33933,7 +34288,392 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考为奶黄色底、红褐手写标题、粗放绳圈线描与下方三对羽毛，圈内曲边区域含旧梦境调查百分数。最终图显示合成数据标题、301 records总数、11类及7个父类；绳圈包围曲边彩色圆盘，顶部绳结和三对羽毛连接完整。全部类别与数量可读，Dream G位于内部浅色小区；未见明显错位、空洞或文字跨区。",
+        "summary_zh": "通过。11类数值、绑定及面积比例一致，捕梦网结构与数据承载关系保留。参考调查内容改为合成记录属于允许的输入适配。已保存并通过schema校验的review.json。",
+        "issues": [],
+        "measurement_notes_zh": "直接分析1440×2100最终PNG，未调用生成几何、预存区域掩码或自检。采样各区填色，提取连通色块，以邻近可见填色补回文字及描边遮挡。由720个外缘点拟合圆，采用半径523.82px的中间估计并检验±1px敏感性。中间圆盘862018px²，区域面积份额乘301换算记录数。mark_extent_px为外接框较长边。中间估计最大误差0.0372个百分点，外缘敏感性范围内最大0.0626个百分点。",
+        "uncertainties_zh": "描边、文字插补及抗锯齿造成像素级测量不确定性；最小区的相对误差点估计不代表同等精度保证。素材来源由资产清单声明，原始素材与最终图可见匹配；未查看禁用日志或自检，逐次渲染归档执行记录未独立核验。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "Synthetic records系列、11个类别和7个父类齐全；A有3个、E与B各2个子类，G/D/C/F均存在。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "按输入顺序的23、23、46、6、26、27、29、36、34、34、17全部正确；对应百分比均正确保留两位小数，总数301正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "类别、父类、子类编号、数量和百分比均位于对应区域内；Dream G与最小值6正确绑定。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "全部11区的独立像素面积估计符合目标，误差远低于3个百分点；恢复描边后的各区均单连通。目视未见圆盘空洞、重叠或绳圈切走数据区。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01.png的编绳、顶部绑结及羽毛细节在最终图中实质可见。render.py加载素材，geometry.py按输入值求面积，代码控制区域及文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数据分区填满绳圈内圆盘，顶部结接触圈缘，三对羽毛通过绳结及珠饰连接；表面对齐、层次合理。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、合成声明、指标单位、总数、全部区内标签和页脚口径可读；最小区的Dream G、6及1.99%未被遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "绳圈、悬挂结、连通曲边分区和下方三对羽毛保留；7个父区适配为11个当前类别。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题、Synthetic records、records单位、301总数及父类/子类名称表达当前统计角色；页脚明确面积比例及每条记录只属一类。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留梦境统计嵌入捕梦网的关系；原学生调查与多项特征百分数改为合成记录分区，属于冻结输入规定的适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "Dream G约129×198px，为封闭浅色内区；轮廓、相邻区域关系及三行标签均可辨，并非仅靠数字表示。"
+          }
+        },
+        "semantic_attribution_zh": "合成主题、当前数值及互斥分区口径来自冻结输入；11个子区和面积变化来自数据。未见输出丢失必要语义。参考材质变化单独计入保留评分；像素边界限制测量精度，未导致最小区身份丢失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "count",
+              "category": "Dream A / synthetic subcategory 1",
+              "expected_value": 23,
+              "observed_value": 22.94885,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 396,
+              "full_scale_error_percent": 0.01699,
+              "small_value_relative_error_percent": 0.22239,
+              "bbox_xyxy_normalized": [
+                0.22431,
+                0.2319,
+                0.49931,
+                0.37905
+              ],
+              "evidence_zh": "约65722px²，外接框396×309px，面积份额7.62420%；换算单位为records。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream A / synthetic subcategory 2",
+              "expected_value": 23,
+              "observed_value": 23.02846,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 417,
+              "full_scale_error_percent": 0.00946,
+              "small_value_relative_error_percent": 0.12375,
+              "bbox_xyxy_normalized": [
+                0.36875,
+                0.23143,
+                0.59931,
+                0.43
+              ],
+              "evidence_zh": "约65950px²，外接框332×417px，面积份额7.65065%。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream A / synthetic subcategory 3",
+              "expected_value": 46,
+              "observed_value": 46.05064,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 578,
+              "full_scale_error_percent": 0.01682,
+              "small_value_relative_error_percent": 0.11009,
+              "bbox_xyxy_normalized": [
+                0.40625,
+                0.23667,
+                0.73403,
+                0.5119
+              ],
+              "evidence_zh": "约131882px²，外接框472×578px，面积份额15.29922%。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream G",
+              "expected_value": 6,
+              "observed_value": 6.03105,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 198,
+              "full_scale_error_percent": 0.01031,
+              "small_value_relative_error_percent": 0.51747,
+              "bbox_xyxy_normalized": [
+                0.43333,
+                0.46333,
+                0.52292,
+                0.55762
+              ],
+              "evidence_zh": "约17272px²，外接框129×198px，面积份额2.00367%。",
+              "uncertainty_zh": "仅改变外缘半径时换算值约6.008至6.054；小区边线归属另影响相对精度，0.52%仅为点估计。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream E / synthetic subcategory 1",
+              "expected_value": 26,
+              "observed_value": 25.89698,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 472,
+              "full_scale_error_percent": 0.03423,
+              "small_value_relative_error_percent": 0.39622,
+              "bbox_xyxy_normalized": [
+                0.66806,
+                0.28476,
+                0.86389,
+                0.50952
+              ],
+              "evidence_zh": "约74165px²，外接框282×472px，面积份额8.60365%。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream E / synthetic subcategory 2",
+              "expected_value": 27,
+              "observed_value": 27.11178,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 497,
+              "full_scale_error_percent": 0.03714,
+              "small_value_relative_error_percent": 0.41401,
+              "bbox_xyxy_normalized": [
+                0.51806,
+                0.44905,
+                0.86319,
+                0.58095
+              ],
+              "evidence_zh": "约77644px²，外接框497×277px，面积份额9.00724%。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream D",
+              "expected_value": 29,
+              "observed_value": 28.95231,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 518,
+              "full_scale_error_percent": 0.01584,
+              "small_value_relative_error_percent": 0.16444,
+              "bbox_xyxy_normalized": [
+                0.49722,
+                0.5281,
+                0.85694,
+                0.68286
+              ],
+              "evidence_zh": "约82915px²，外接框518×325px，面积份额9.61871%。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream C",
+              "expected_value": 36,
+              "observed_value": 35.97643,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 501,
+              "full_scale_error_percent": 0.00783,
+              "small_value_relative_error_percent": 0.06547,
+              "bbox_xyxy_normalized": [
+                0.36528,
+                0.54762,
+                0.71319,
+                0.73048
+              ],
+              "evidence_zh": "约103031px²，外接框501×384px，面积份额11.95230%。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream B / synthetic subcategory 1",
+              "expected_value": 34,
+              "observed_value": 34.00496,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 448,
+              "full_scale_error_percent": 0.00165,
+              "small_value_relative_error_percent": 0.01458,
+              "bbox_xyxy_normalized": [
+                0.17431,
+                0.50667,
+                0.43611,
+                0.72
+              ],
+              "evidence_zh": "约97385px²，外接框377×448px，面积份额11.29733%。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream B / synthetic subcategory 2",
+              "expected_value": 34,
+              "observed_value": 34.04476,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 430,
+              "full_scale_error_percent": 0.01487,
+              "small_value_relative_error_percent": 0.13166,
+              "bbox_xyxy_normalized": [
+                0.13611,
+                0.4019,
+                0.43472,
+                0.5919
+              ],
+              "evidence_zh": "约97499px²，外接框430×399px，面积份额11.31055%。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream F",
+              "expected_value": 17,
+              "observed_value": 16.95377,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 347,
+              "full_scale_error_percent": 0.01536,
+              "small_value_relative_error_percent": 0.27195,
+              "bbox_xyxy_normalized": [
+                0.13819,
+                0.31857,
+                0.37917,
+                0.45714
+              ],
+              "evidence_zh": "约48553px²，外接框347×291px，面积份额5.63248%。",
+              "uncertainty_zh": "描边、文字插补及圆盘外缘存在像素级不确定性。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体捕梦网",
+              "required_parts": [
+                "圆形绳圈",
+                "顶部悬挂结",
+                "曲边数据圆盘"
+              ],
+              "relationship": "顶部绑结接触绳圈；绳圈包围数据圆盘。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.11,
+                0.185,
+                0.89,
+                0.749
+              ],
+              "evidence_zh": "顶部结与编绳相接，连续绳圈围住全部填色，正面视角一致。"
+            },
+            {
+              "category": "Dream A / synthetic subcategory 3（最大区）",
+              "required_parts": [
+                "曲边色区",
+                "外绳圈",
+                "相邻分区",
+                "类别及46标签"
+              ],
+              "relationship": "大区上侧抵达绳圈，下侧曲边接邻其他区域，标签位于区内。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.40625,
+                0.23667,
+                0.73403,
+                0.5119
+              ],
+              "evidence_zh": "右上红褐区连续延至中央，类别、子类编号、46与15.28%均在内部；区域边界承担面积编码。"
+            },
+            {
+              "category": "Dream G（最小及内部区）",
+              "required_parts": [
+                "封闭浅色内区",
+                "周围分区",
+                "Dream G及6标签",
+                "共同外绳圈"
+              ],
+              "relationship": "小区被相邻数据区围合，包含于共同绳圈内。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.43333,
+                0.46333,
+                0.52292,
+                0.55762
+              ],
+              "evidence_zh": "浅色内区有清楚封闭轮廓，与周边色区接壤，三行标签可辨。"
+            },
+            {
+              "category": "下方三对羽毛",
+              "required_parts": [
+                "圈下缘",
+                "短绳及绑结",
+                "珠饰",
+                "三对羽毛"
+              ],
+              "relationship": "左、右下侧及最低点各连接一对向下羽毛。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.086,
+                0.61,
+                0.923,
+                0.94
+              ],
+              "evidence_zh": "六片羽毛均可辨羽轴和羽片，连接端贴合圈缘，中央一对较低；未见断接或遮挡数据。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入明确采用Synthetic dream categories与Synthetic records；新子类保留父类，当前值及面积口径覆盖参考旧调查文字。",
+            "output_added_or_lost_meaning_zh": "保留统计信息嵌入捕梦网的关系，明确当前互斥分类口径；原学生调查背景未延续属于输入适配，未见必要当前含义缺失。",
+            "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Synthetic dream categories、Synthetic records · 301 records in total、11 categories across 7 parent dreams、Region area = records ÷ 301、All records belong to one category及Not a real-world survey。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "原调查描述和特征百分数替换为合成记录分区，原参考含义因此判partial，不归为生成失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "保留7个父类结构，A/E/B细分后共11区，面积随当前301条记录改变。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "细边线、抗锯齿及文字遮挡限制像素测量精度，最小区轮廓与文字仍充分可见。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一面积通道的全部11区，包含最小内部区G=6、最大A子类3=46及中间值；另核对全部名称、数量、百分比、父类、总数和单位。未核验受限的渲染归档执行历史。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "绳圈、顶部绑结及下方左中右三对羽毛均保留，羽轴、羽片和悬挂部件可辨。",
+            "data_adaptation_excluded_zh": "排除11类带来的分区增多、圆盘规整化及允许的部件尺寸调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "正面绳圈包含分区，绑结搭接顶部；三对羽毛经短绳接圈下缘，向下悬挂。",
+            "data_adaptation_excluded_zh": "按M6排除上方悬绳缩短和羽毛间距、高度调整；关键包含与连接未改变。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保持上方标题、中部圆盘、下方羽毛的主层级；新增页眉页脚说明，布局更对称，标题与物体分离更明显。",
+            "data_adaptation_excluded_zh": "排除合成主题文字、当前类别数及完整标签所需空间。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留暖色纸底、红褐分区及墨线羽毛；粗放不规则线描变为细密编绳、珠结和刻线羽毛，标题改为衬线排版。",
+            "data_adaptation_excluded_zh": "排除更新的标题含义、标签和数据决定的边界形状。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/279c826d40e497",
       "numeric_supported": true,
@@ -55665,7 +56405,341 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为街头成人共同涂绘的写实场景，黄绿折线叠合于场景上方。最终图保留成人、刷具、漆桶、彩色路面及前后遮挡；前景和中景刷头均接触路面。折线覆盖场景上半部，可读合成数据提示、净支持主题、百分点单位和指标定义。路径由+28.4下降，经+8.1，跨零转绿，标出−4.9与终值−4.0；下方显示期间变化−32.4。",
+        "summary_zh": "未发现违反冻结要求的可见缺陷。数据、标签及共绘叠合关系均保留。原议题按输入改编，参考意义为部分保留。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "量测2000×2000的image.png。可见网格中心约为y=290、495.5、701、906.5、1030，对应30、20、10、0、−6；拟合零点y=906.583，每百分点20.554像素。分割得到44个正值和16个负值节点。全部60点最大数值位置误差约0.0261个百分点，即满量程的0.0724%；日期间距最大偏差0.456像素。mark_extent_px为节点中心至零线的纵向距离；bbox限定实测浅色核心。源码仅作交叉核对。",
+        "uncertainties_zh": "像素量测约±0.05个百分点，对0.9和−0.4分别约为±5.6%和±12.5%的相对不确定性。未读取被禁止的日志、自检或编排文件，不能独立确认capture_render.py保存链。参考行动意涵仅依据可见场景与标题判断。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "像素中检出60个节点，与60个日期及单一系列一致；源码使用全部输入点。必要主题、合成提示、日期范围、单位、图例、定义和关键标签齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "+28.4、+8.1、−4.9、−4.0及对应关键日期准确；期间变化−32.4等于终值减初值，60 OBSERVATIONS与日期范围准确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "关键数值与日期靠近对应节点，内部标签有短引线；黄正绿负图例与标记一致。纵轴为净支持百分点，横轴为观测日期。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "全部60点最大误差约0.0261个百分点，低于1.08个百分点的3%满量程容差；日期横向映射最大误差0.456像素。换色位于y约906—907，与零线重合。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01.png中的成人、刷具、漆桶、建筑及路面在最终图中大面积可见。render.py加载素材并根据日期与数值绘制路径、节点和文字；可见几何另经像素核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "参考与最终均为二维折线叠合写实街景。数值由折线中心位置承载，路面涂料边界不承担数值，无需地面透视变换。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原始分辨率下主题、合成提示、定义、单位、图例、刻度及关键标签均可读，未见必要标签被遮挡或截断。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "前景跪姿成人、中景俯身成人及后方长柄刷成人均保留手—柄—刷头—路面的连接；前景遮挡后景，折线叠在场景前方。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题明确社区街头艺术净支持；Percentage points及Net support = % in favor − % opposed说明单位和口径。日期、60 OBSERVATIONS及合成声明说明序列角色。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "参考的Black Lives Matter议题按core明确改编为社区街头艺术。共绘动作和净支持指标保留；旧增长论点不要求复制，当前下降符合输入。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "两个0.9节点核心各约4×4像素，中心在零线上方约18.8像素；−0.4节点在零线下约7.9像素并呈绿色。未见归零或人为抬高，小值精度受像素限制。"
+          }
+        },
+        "semantic_attribution_zh": "议题改变属于明确允许的输入改编；增长改为下降属于数据驱动的轨迹变化。未发现输出遗漏当前主题、统计口径或共绘关系。小值精度保留意见来自像素定位限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "net_support",
+              "category": "2017-05-01",
+              "expected_value": 28.4,
+              "observed_value": 28.417,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 584.08,
+              "full_scale_error_percent": 0.0474,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.0835,
+                0.16,
+                0.0865,
+                0.163
+              ],
+              "evidence_zh": "节点核心中心约(169.5,322.5)，相邻+28.4及01 MAY 2017标签可读。",
+              "uncertainty_zh": "抗锯齿、阈值与网格定位合计约±1像素，即±0.05个百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2018-06-06",
+              "expected_value": 8.1,
+              "observed_value": 8.115,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 166.8,
+              "full_scale_error_percent": 0.0419,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.37,
+                0.3685,
+                0.373,
+                0.3715
+              ],
+              "evidence_zh": "内部节点中心约(742.5,739.79)，与+8.1及06 JUN 2018标签对应。",
+              "uncertainty_zh": "定位约±1像素，即±0.05个百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2019-06-23",
+              "expected_value": 0.9,
+              "observed_value": 0.913,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 18.76,
+              "full_scale_error_percent": 0.0359,
+              "small_value_relative_error_percent": 1.437,
+              "bbox_xyxy_normalized": [
+                0.6435,
+                0.443,
+                0.6455,
+                0.445
+              ],
+              "evidence_zh": "第42个节点中心约(1288.18,887.82)，黄色且与零线分离。",
+              "uncertainty_zh": "约±0.05个百分点；相对误差为中心估计，不保证百分之一量级精度。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2019-07-31",
+              "expected_value": 0.9,
+              "observed_value": 0.918,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 18.87,
+              "full_scale_error_percent": 0.05,
+              "small_value_relative_error_percent": 1.999,
+              "bbox_xyxy_normalized": [
+                0.6705,
+                0.443,
+                0.6725,
+                0.445
+              ],
+              "evidence_zh": "第二个最小正值节点中心约(1342.5,887.71)，随后路径下降跨零。",
+              "uncertainty_zh": "约±0.05个百分点；小值相对误差仅为中心估计。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2019-08-19",
+              "expected_value": -0.4,
+              "observed_value": -0.385,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 7.92,
+              "full_scale_error_percent": 0.0411,
+              "small_value_relative_error_percent": 3.699,
+              "bbox_xyxy_normalized": [
+                0.684,
+                0.4565,
+                0.686,
+                0.4585
+              ],
+              "evidence_zh": "最小绝对值负节点中心约(1369.5,914.5)，位于零线下并呈绿色。",
+              "uncertainty_zh": "约±0.05个百分点，相当于目标绝对值的±12.5%；不能据中心估计断言微小比例偏差。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2020-02-07",
+              "expected_value": -4.9,
+              "observed_value": -4.896,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 100.63,
+              "full_scale_error_percent": 0.0112,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.8065,
+                0.5025,
+                0.8095,
+                0.5055
+              ],
+              "evidence_zh": "负向极值节点中心约(1615.5,1007.21)，与−4.9及07 FEB 2020标签对应。",
+              "uncertainty_zh": "定位约±1像素，即±0.05个百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2020-06-01",
+              "expected_value": -4,
+              "observed_value": -3.985,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 81.92,
+              "full_scale_error_percent": 0.0403,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.8885,
+                0.493,
+                0.8915,
+                0.496
+              ],
+              "evidence_zh": "终点核心中心约(1779.5,988.5)，与右侧−4.0及Jun 2020轴端对应。",
+              "uncertainty_zh": "定位约±1像素，即±0.05个百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "期间变化：2020-06-01减2017-05-01",
+              "expected_value": -32.4,
+              "observed_value": -32.4,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.733,
+                0.854,
+                0.918,
+                0.946
+              ],
+              "evidence_zh": "右下CHANGE OVER THE PERIOD显示−32.4 percentage points，与端点相减一致；此处为文字编码。",
+              "uncertainty_zh": "没有独立定量形状，几何范围和误差不适用。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "前景较大成人及手刷",
+              "required_parts": [
+                "成人身体与手",
+                "短刷柄",
+                "刷毛",
+                "彩色路面"
+              ],
+              "relationship": "手握刷柄，刷毛接触路面，身体遮挡后方物体。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.64,
+                0.525,
+                1,
+                0.85
+              ],
+              "evidence_zh": "右下跪姿成人的手—短柄—刷毛连续，刷毛落在红色涂料边缘；涂料边界不承载数值。"
+            },
+            {
+              "category": "后方较小成人及长柄刷",
+              "required_parts": [
+                "俯身成人",
+                "握柄双手",
+                "长刷柄",
+                "刷头",
+                "已涂路面"
+              ],
+              "relationship": "双手控制向左下延伸的长柄，刷头落地；成人被前景人物局部遮挡。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.647,
+                0.33,
+                0.855,
+                0.558
+              ],
+              "evidence_zh": "长柄从手部连续延伸至左下刷头，刷头接触彩色街面；较小人物仍保留工具连接和动作。"
+            },
+            {
+              "category": "较大正值与叠合关系",
+              "required_parts": [
+                "黄色起始节点",
+                "折线",
+                "纵轴网格",
+                "写实街景"
+              ],
+              "relationship": "数值由节点及折线中心的纵向坐标承载，路径覆盖街景。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.08,
+                0.145,
+                0.175,
+                0.35
+              ],
+              "evidence_zh": "+28.4节点在30刻度下方，黄色路径向右下延伸并覆盖建筑与人物附近区域。"
+            },
+            {
+              "category": "微小正负值与零线",
+              "required_parts": [
+                "两个0.9黄色节点",
+                "−0.4绿色节点",
+                "连续折线",
+                "零线",
+                "后方街景"
+              ],
+              "relationship": "黄色节点在零线上方，连接段跨零转绿并连接下方负节点。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.638,
+                0.436,
+                0.69,
+                0.464
+              ],
+              "evidence_zh": "小正值距零线约18.8像素，首个负节点距零线约7.9像素。换色在y约906—907，线段连续；背景物体不随小值缩小。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core明确adapted_topic，允许将议题改为社区街头共绘计划净支持，并调整姿态与标签位置，不要求旧涨跌方向。",
+            "output_added_or_lost_meaning_zh": "共同涂绘动作、叠合关系及净支持指标保留。旧议题与增长论点被允许的当前主题和下降数据替代；新增−32.4为正确端点差。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA；Net support for community street art；Percentage points；Net support = % in favor − % opposed；60 OBSERVATIONS / MAY 2017 — JUN 2020；Illustrative series • not a real survey。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "社区街头艺术替代Black Lives Matter由core明示；参考意义部分保留不归咎生成器。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "输入由28.4下降至−4.0，输出对应由黄转绿的下降路径及−32.4端点差。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "节点核心仅数个像素宽，定位不确定性限制微小值相对精度，但正负位置及叠合关系可辨。"
+            }
+          ],
+          "measurement_coverage_zh": "独立定位单一面板全部60个节点并核对数值与日期间距；详细列出最大值、内部值、两个最小正值、最小绝对值负值、负向极值及终点。另核对期间变化文字、全部必要标签及跨零换色。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均以写实成人、刷具、漆桶、已涂路面和城市街道构成共绘场景；最终图可见五位成人。",
+            "data_adaptation_excluded_zh": "不要求复制具体人物身份、人数、旧主题或折线峰谷。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均有前景大人物、后方较小人物及刷头触地；最终图保留跪姿、俯身、长刷动作及深度遮挡。",
+            "data_adaptation_excluded_zh": "按core允许调整姿态、非数据厚度与标签位置，不对逐人姿势差异扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留满幅街景、上部折线和底部主标题；最终图增加独立期间变化区和更显著的坐标网格。",
+            "data_adaptation_excluded_zh": "排除当前数值造成的下降轨迹、量程高度和主题字数变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留日照、粗糙道路、涂料、写实人物及黄绿数据线；最终图更暖更暗，手写字体改为无衬线，路面色块更柔和。",
+            "data_adaptation_excluded_zh": "不计数据正负分布、更新文字与允许的姿态变化。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/25789605433564",
       "numeric_supported": true,
@@ -56083,7 +57157,341 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为街头成人共同涂绘的写实场景，黄绿折线叠合于场景上方。最终图保留成人、刷具、漆桶、彩色路面及前后遮挡；前景和中景刷头均接触路面。折线覆盖场景上半部，可读合成数据提示、净支持主题、百分点单位和指标定义。路径由+28.4下降，经+8.1，跨零转绿，标出−4.9与终值−4.0；下方显示期间变化−32.4。",
+        "summary_zh": "未发现违反冻结要求的可见缺陷。数据、标签及共绘叠合关系均保留。原议题按输入改编，参考意义为部分保留。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "量测2000×2000的image.png。可见网格中心约为y=290、495.5、701、906.5、1030，对应30、20、10、0、−6；拟合零点y=906.583，每百分点20.554像素。分割得到44个正值和16个负值节点。全部60点最大数值位置误差约0.0261个百分点，即满量程的0.0724%；日期间距最大偏差0.456像素。mark_extent_px为节点中心至零线的纵向距离；bbox限定实测浅色核心。源码仅作交叉核对。",
+        "uncertainties_zh": "像素量测约±0.05个百分点，对0.9和−0.4分别约为±5.6%和±12.5%的相对不确定性。未读取被禁止的日志、自检或编排文件，不能独立确认capture_render.py保存链。参考行动意涵仅依据可见场景与标题判断。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "像素中检出60个节点，与60个日期及单一系列一致；源码使用全部输入点。必要主题、合成提示、日期范围、单位、图例、定义和关键标签齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "+28.4、+8.1、−4.9、−4.0及对应关键日期准确；期间变化−32.4等于终值减初值，60 OBSERVATIONS与日期范围准确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "关键数值与日期靠近对应节点，内部标签有短引线；黄正绿负图例与标记一致。纵轴为净支持百分点，横轴为观测日期。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "全部60点最大误差约0.0261个百分点，低于1.08个百分点的3%满量程容差；日期横向映射最大误差0.456像素。换色位于y约906—907，与零线重合。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01.png中的成人、刷具、漆桶、建筑及路面在最终图中大面积可见。render.py加载素材并根据日期与数值绘制路径、节点和文字；可见几何另经像素核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "参考与最终均为二维折线叠合写实街景。数值由折线中心位置承载，路面涂料边界不承担数值，无需地面透视变换。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原始分辨率下主题、合成提示、定义、单位、图例、刻度及关键标签均可读，未见必要标签被遮挡或截断。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "前景跪姿成人、中景俯身成人及后方长柄刷成人均保留手—柄—刷头—路面的连接；前景遮挡后景，折线叠在场景前方。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题明确社区街头艺术净支持；Percentage points及Net support = % in favor − % opposed说明单位和口径。日期、60 OBSERVATIONS及合成声明说明序列角色。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "参考的Black Lives Matter议题按core明确改编为社区街头艺术。共绘动作和净支持指标保留；旧增长论点不要求复制，当前下降符合输入。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "两个0.9节点核心各约4×4像素，中心在零线上方约18.8像素；−0.4节点在零线下约7.9像素并呈绿色。未见归零或人为抬高，小值精度受像素限制。"
+          }
+        },
+        "semantic_attribution_zh": "议题改变属于明确允许的输入改编；增长改为下降属于数据驱动的轨迹变化。未发现输出遗漏当前主题、统计口径或共绘关系。小值精度保留意见来自像素定位限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "net_support",
+              "category": "2017-05-01",
+              "expected_value": 28.4,
+              "observed_value": 28.417,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 584.08,
+              "full_scale_error_percent": 0.0474,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.0835,
+                0.16,
+                0.0865,
+                0.163
+              ],
+              "evidence_zh": "节点核心中心约(169.5,322.5)，相邻+28.4及01 MAY 2017标签可读。",
+              "uncertainty_zh": "抗锯齿、阈值与网格定位合计约±1像素，即±0.05个百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2018-06-06",
+              "expected_value": 8.1,
+              "observed_value": 8.115,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 166.8,
+              "full_scale_error_percent": 0.0419,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.37,
+                0.3685,
+                0.373,
+                0.3715
+              ],
+              "evidence_zh": "内部节点中心约(742.5,739.79)，与+8.1及06 JUN 2018标签对应。",
+              "uncertainty_zh": "定位约±1像素，即±0.05个百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2019-06-23",
+              "expected_value": 0.9,
+              "observed_value": 0.913,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 18.76,
+              "full_scale_error_percent": 0.0359,
+              "small_value_relative_error_percent": 1.437,
+              "bbox_xyxy_normalized": [
+                0.6435,
+                0.443,
+                0.6455,
+                0.445
+              ],
+              "evidence_zh": "第42个节点中心约(1288.18,887.82)，黄色且与零线分离。",
+              "uncertainty_zh": "约±0.05个百分点；相对误差为中心估计，不保证百分之一量级精度。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2019-07-31",
+              "expected_value": 0.9,
+              "observed_value": 0.918,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 18.87,
+              "full_scale_error_percent": 0.05,
+              "small_value_relative_error_percent": 1.999,
+              "bbox_xyxy_normalized": [
+                0.6705,
+                0.443,
+                0.6725,
+                0.445
+              ],
+              "evidence_zh": "第二个最小正值节点中心约(1342.5,887.71)，随后路径下降跨零。",
+              "uncertainty_zh": "约±0.05个百分点；小值相对误差仅为中心估计。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2019-08-19",
+              "expected_value": -0.4,
+              "observed_value": -0.385,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 7.92,
+              "full_scale_error_percent": 0.0411,
+              "small_value_relative_error_percent": 3.699,
+              "bbox_xyxy_normalized": [
+                0.684,
+                0.4565,
+                0.686,
+                0.4585
+              ],
+              "evidence_zh": "最小绝对值负节点中心约(1369.5,914.5)，位于零线下并呈绿色。",
+              "uncertainty_zh": "约±0.05个百分点，相当于目标绝对值的±12.5%；不能据中心估计断言微小比例偏差。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2020-02-07",
+              "expected_value": -4.9,
+              "observed_value": -4.896,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 100.63,
+              "full_scale_error_percent": 0.0112,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.8065,
+                0.5025,
+                0.8095,
+                0.5055
+              ],
+              "evidence_zh": "负向极值节点中心约(1615.5,1007.21)，与−4.9及07 FEB 2020标签对应。",
+              "uncertainty_zh": "定位约±1像素，即±0.05个百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2020-06-01",
+              "expected_value": -4,
+              "observed_value": -3.985,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 81.92,
+              "full_scale_error_percent": 0.0403,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.8885,
+                0.493,
+                0.8915,
+                0.496
+              ],
+              "evidence_zh": "终点核心中心约(1779.5,988.5)，与右侧−4.0及Jun 2020轴端对应。",
+              "uncertainty_zh": "定位约±1像素，即±0.05个百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "期间变化：2020-06-01减2017-05-01",
+              "expected_value": -32.4,
+              "observed_value": -32.4,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.733,
+                0.854,
+                0.918,
+                0.946
+              ],
+              "evidence_zh": "右下CHANGE OVER THE PERIOD显示−32.4 percentage points，与端点相减一致；此处为文字编码。",
+              "uncertainty_zh": "没有独立定量形状，几何范围和误差不适用。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "前景较大成人及手刷",
+              "required_parts": [
+                "成人身体与手",
+                "短刷柄",
+                "刷毛",
+                "彩色路面"
+              ],
+              "relationship": "手握刷柄，刷毛接触路面，身体遮挡后方物体。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.64,
+                0.525,
+                1,
+                0.85
+              ],
+              "evidence_zh": "右下跪姿成人的手—短柄—刷毛连续，刷毛落在红色涂料边缘；涂料边界不承载数值。"
+            },
+            {
+              "category": "后方较小成人及长柄刷",
+              "required_parts": [
+                "俯身成人",
+                "握柄双手",
+                "长刷柄",
+                "刷头",
+                "已涂路面"
+              ],
+              "relationship": "双手控制向左下延伸的长柄，刷头落地；成人被前景人物局部遮挡。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.647,
+                0.33,
+                0.855,
+                0.558
+              ],
+              "evidence_zh": "长柄从手部连续延伸至左下刷头，刷头接触彩色街面；较小人物仍保留工具连接和动作。"
+            },
+            {
+              "category": "较大正值与叠合关系",
+              "required_parts": [
+                "黄色起始节点",
+                "折线",
+                "纵轴网格",
+                "写实街景"
+              ],
+              "relationship": "数值由节点及折线中心的纵向坐标承载，路径覆盖街景。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.08,
+                0.145,
+                0.175,
+                0.35
+              ],
+              "evidence_zh": "+28.4节点在30刻度下方，黄色路径向右下延伸并覆盖建筑与人物附近区域。"
+            },
+            {
+              "category": "微小正负值与零线",
+              "required_parts": [
+                "两个0.9黄色节点",
+                "−0.4绿色节点",
+                "连续折线",
+                "零线",
+                "后方街景"
+              ],
+              "relationship": "黄色节点在零线上方，连接段跨零转绿并连接下方负节点。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.638,
+                0.436,
+                0.69,
+                0.464
+              ],
+              "evidence_zh": "小正值距零线约18.8像素，首个负节点距零线约7.9像素。换色在y约906—907，线段连续；背景物体不随小值缩小。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core明确adapted_topic，允许将议题改为社区街头共绘计划净支持，并调整姿态与标签位置，不要求旧涨跌方向。",
+            "output_added_or_lost_meaning_zh": "共同涂绘动作、叠合关系及净支持指标保留。旧议题与增长论点被允许的当前主题和下降数据替代；新增−32.4为正确端点差。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA；Net support for community street art；Percentage points；Net support = % in favor − % opposed；60 OBSERVATIONS / MAY 2017 — JUN 2020；Illustrative series • not a real survey。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "社区街头艺术替代Black Lives Matter由core明示；参考意义部分保留不归咎生成器。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "输入由28.4下降至−4.0，输出对应由黄转绿的下降路径及−32.4端点差。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "节点核心仅数个像素宽，定位不确定性限制微小值相对精度，但正负位置及叠合关系可辨。"
+            }
+          ],
+          "measurement_coverage_zh": "独立定位单一面板全部60个节点并核对数值与日期间距；详细列出最大值、内部值、两个最小正值、最小绝对值负值、负向极值及终点。另核对期间变化文字、全部必要标签及跨零换色。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均以写实成人、刷具、漆桶、已涂路面和城市街道构成共绘场景；最终图可见五位成人。",
+            "data_adaptation_excluded_zh": "不要求复制具体人物身份、人数、旧主题或折线峰谷。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均有前景大人物、后方较小人物及刷头触地；最终图保留跪姿、俯身、长刷动作及深度遮挡。",
+            "data_adaptation_excluded_zh": "按core允许调整姿态、非数据厚度与标签位置，不对逐人姿势差异扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留满幅街景、上部折线和底部主标题；最终图增加独立期间变化区和更显著的坐标网格。",
+            "data_adaptation_excluded_zh": "排除当前数值造成的下降轨迹、量程高度和主题字数变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留日照、粗糙道路、涂料、写实人物及黄绿数据线；最终图更暖更暗，手写字体改为无衬线，路面色块更柔和。",
+            "data_adaptation_excluded_zh": "不计数据正负分布、更新文字与允许的姿态变化。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/25789605433564",
       "numeric_supported": true,
@@ -58027,7 +59435,340 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为俯拍泥地，六列彩绳网由角桩固定，周围有施工人物、草地和工具。待评图保留上述对象；六个网区沿同一零线排列，A、B为极薄绳带，C、D为短网，E、F为清晰长网。Plot A–F、全部给定数值及kg可读；Garden plot yield、Harvest yield和SYNTHETIC DATA明确可见。右侧人物手边有绳线延伸至F网边。未见明显透视冲突或遮挡文字。",
+        "summary_zh": "通过。六类数值、绑定、当前语义和满量程几何符合要求；生图材质实际构成网区与场景。A、B极小网区的内部结构仅部分可辨，A的相对几何精度无法可靠量测。",
+        "issues": [],
+        "measurement_notes_zh": "测量来自image.png原始2100×1295像素：在各网区中部宽约130px扫描横绳颜色，取显色峰行。左轴0/90刻度峰约y=1060/260，跨度800px；B–F顶边峰约1055/1042/996/839/295。按长度×90/800换算；峰行定位约±1px，不是亚像素中心线测量。3%满量程对应24px或2.7kg。源码的线性公式仅作佐证。",
+        "uncertainties_zh": "A边绳合并，无法独立验证小值的相对精度；B仅约5px，相对误差受像素量化明显影响。原参考无可读指标，不能恢复其未明示的统计论证。依限制未读取执行日志或自检，未核验capture_render.py的历史调用；可见素材使用及当前渲染代码已核对。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "六个网区与Plot A–F均存在，顺序正确；唯一系列Harvest yield、kg、主题标题及SYNTHETIC DATA均完整。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项可读0.172、0.596105、2.065934、7.159958、24.814438、86.0 kg；总量120.808435 kg正确，正值未写成零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "六张标签卡分别位于对应网区正下方，中心短引线及一致绳色辅助绑定，无错位或混淆。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "共同零线及统一线性0–90kg刻度可见。B–F像素读数的名义满量程误差均低于0.07%，且约±1px远小于24px容差；A显色带仅3px，未见满量程超差，但不据此保证小值相对准确度。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01中的泥地、人物、独轮车和草地与终图一致；raw_02中的结绳、木桩和绳圈可在终图辨认。render.py引用这些素材，按数据裁切网区、绘制边绳及文字；未执行源码。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "E、F尤其清楚：彩绳网本身的顶边至地面共同基线承担数值，网区内仍可见泥土，角绳连接木桩；右侧施工者手边绳线延伸到F网边。并非仅用数字或旁置物体表示数据。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、系列、单位、六个完整小数、轴刻度、合成声明及读图说明均可读；未见必要文字被遮挡或截断。"
+          },
+          "critical_structure": {
+            "status": "partial",
+            "evidence_zh": "大中网区的网绳围合、角绳接桩和贴地关系保留，施工者、工具、草地均在。A、B过短，使上下角桩与网面局部合并，内部结构只能部分辨识；这是当前比例下的局部限制。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Garden plot yield与Harvest yield (kg) across six synthetic garden plots明确园艺地块产量、指标和单位；Plot A–F是地块类别，图面注明统一线性尺度及长度编码。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "原图施工者布置地面彩绳网的可见关系保留；园艺产量与合成主题属于core明确的adapted_topic。原参考未给可读指标，不将主题适配计为输出失败。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "A的青色细带和两端浅木色桩帽可见，但独立上下边界及网面孔格不能可靠分开；B可分出上下绳带，完整网孔与四角桩关系仍不清楚。标签准确不等于微小几何已获验证。"
+          }
+        },
+        "semantic_attribution_zh": "园艺产量及SYNTHETIC DATA来自明确允许的输入主题适配，未见输出丢失指标、单位或类别角色。A、B的网面压缩来自给定小值，局部关系不清受像素分辨率限制；不归为输出遗漏。原参考更具体的统计论证无法确认。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "yield",
+              "category": "Plot A",
+              "expected_value": 0.172,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 3,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2119,
+                0.8162,
+                0.2833,
+                0.8201
+              ],
+              "evidence_zh": "原图y=1058–1060有连续青绿色显色，共3行；这里的3px是两条边绳合并后的显色带厚度，不是可解码的中心线间距。标签为0.172 kg。",
+              "uncertainty_zh": "按可见800px满量程，目标跨度仅约1.529px；抗锯齿与线宽重叠，不能可靠独立量出上下边绳间距，故不填观测kg或相对误差。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot B",
+              "expected_value": 0.596105,
+              "observed_value": 0.5625,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 5,
+              "full_scale_error_percent": 0.037339,
+              "small_value_relative_error_percent": 5.63743,
+              "bbox_xyxy_normalized": [
+                0.3262,
+                0.8131,
+                0.3976,
+                0.8201
+              ],
+              "evidence_zh": "在网区中部扫描横向绳色，顶边显色峰约y=1055，底边约y=1060；峰行差5px。独立读取左轴90至0约800px，换算约0.5625kg。",
+              "uncertainty_zh": "约±1px对应±0.1125kg，约为本值的18.9%；所列相对误差只是整像素峰行读数偏差，不能作为精密相对准确度。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot C",
+              "expected_value": 2.065934,
+              "observed_value": 2.025,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 18,
+              "full_scale_error_percent": 0.045482,
+              "small_value_relative_error_percent": 1.98138,
+              "bbox_xyxy_normalized": [
+                0.4405,
+                0.8031,
+                0.5119,
+                0.8201
+              ],
+              "evidence_zh": "在网区中部扫描横向绳色，顶边显色峰约y=1042，底边约y=1060；峰行差18px。独立读取左轴90至0约800px，换算约2.025kg。",
+              "uncertainty_zh": "边绳峰行约±1px；不能据此验证标签六位小数对应的几何精度。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot D",
+              "expected_value": 7.159958,
+              "observed_value": 7.2,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 64,
+              "full_scale_error_percent": 0.044491,
+              "small_value_relative_error_percent": 0.559249,
+              "bbox_xyxy_normalized": [
+                0.5548,
+                0.7683,
+                0.6262,
+                0.8201
+              ],
+              "evidence_zh": "在网区中部扫描横向绳色，顶边显色峰约y=996，底边约y=1060；峰行差64px。独立读取左轴90至0约800px，换算约7.2kg。",
+              "uncertainty_zh": "边绳峰行约±1px；结果为原图栅格近似。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot E",
+              "expected_value": 24.814438,
+              "observed_value": 24.8625,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 221,
+              "full_scale_error_percent": 0.053402,
+              "small_value_relative_error_percent": 0.193686,
+              "bbox_xyxy_normalized": [
+                0.669,
+                0.6471,
+                0.7405,
+                0.8201
+              ],
+              "evidence_zh": "在网区中部扫描横向绳色，顶边显色峰约y=839，底边约y=1060；峰行差221px。独立读取左轴90至0约800px，换算约24.8625kg。",
+              "uncertainty_zh": "边绳峰行约±1px；结果为原图栅格近似。"
+            },
+            {
+              "series_id": "yield",
+              "category": "Plot F",
+              "expected_value": 86,
+              "observed_value": 86.0625,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 765,
+              "full_scale_error_percent": 0.069444,
+              "small_value_relative_error_percent": 0.072674,
+              "bbox_xyxy_normalized": [
+                0.7833,
+                0.227,
+                0.8548,
+                0.8201
+              ],
+              "evidence_zh": "在网区中部扫描横向绳色，顶边显色峰约y=295，底边约y=1060；峰行差765px。独立读取左轴90至0约800px，换算约86.0625kg。",
+              "uncertainty_zh": "边绳峰行约±1px；细绳中心线可能位于相邻像素之间。"
+            },
+            {
+              "series_id": "yield",
+              "category": "总产量（直接文字）",
+              "expected_value": 120.808435,
+              "observed_value": 120.808435,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.8,
+                0.1042,
+                0.9214,
+                0.1521
+              ],
+              "evidence_zh": "右上TOTAL HARVEST显示120.808435 kg，与六值之和一致。",
+              "uncertainty_zh": "这是文字编码，没有对应的额外长度或面积，不能作为几何融合证据。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Plot F（大值）",
+              "required_parts": [
+                "粉红网绳",
+                "四角木桩",
+                "泥土地面",
+                "共同基线"
+              ],
+              "relationship": "网绳围出贴地长矩形，角部短绳向外接木桩；下边在共同零线，上边承担数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.7743,
+                0.2208,
+                0.8633,
+                0.8263
+              ],
+              "evidence_zh": "网孔内露出泥土，顶底横绳及两侧绳连续，四角浅木色桩帽可见；测量边界是网绳，不是桩外轮廓或右侧自由绳尾。"
+            },
+            {
+              "category": "Plot D（中间值）",
+              "required_parts": [
+                "蓝色网绳",
+                "角桩",
+                "泥土"
+              ],
+              "relationship": "短矩形网贴地，边绳围合并向角桩延伸。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.5457,
+                0.7614,
+                0.6348,
+                0.8263
+              ],
+              "evidence_zh": "约64px高度内能辨认交叉绳、网孔、上下边界及角部连接，未见脱离地面的投影冲突。"
+            },
+            {
+              "category": "Plot A（最小值）",
+              "required_parts": [
+                "青色上下边绳",
+                "网面",
+                "角桩"
+              ],
+              "relationship": "预期为真实比例极薄网区，角绳接桩，不额外扩大数据长度。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.2029,
+                0.81,
+                0.2919,
+                0.8247
+              ],
+              "evidence_zh": "仅见连续青色细带及左右桩帽；上下边绳混合，四角和网孔无法分别辨认。位置及标签可识别，完整网面关系不能单凭外观确认。"
+            },
+            {
+              "category": "Plot B（小值）",
+              "required_parts": [
+                "浅蓝上下边绳",
+                "网格片段",
+                "角桩"
+              ],
+              "relationship": "上下横绳限定狭窄泥地区域，两端接桩。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.3171,
+                0.8062,
+                0.4062,
+                0.8247
+              ],
+              "evidence_zh": "两条横绳约隔5px，内部只有截短斜绳片段；两端上下木桩局部重合，完整孔格不清楚。"
+            },
+            {
+              "category": "施工者与Plot F的接触",
+              "required_parts": [
+                "右侧人物手",
+                "自由绳尾",
+                "F网边",
+                "地面"
+              ],
+              "relationship": "绳尾从网右边延伸至手边，手处于绳尾前层，人物在地面作业。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.8514,
+                0.3822,
+                0.9952,
+                0.5792
+              ],
+              "evidence_zh": "粉红曲线连续接到网边，并终止于伸出手指附近；未见穿过手掌的明显错层。草地、跪姿人物与泥土接触关系一致。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core明确将无可读指标的原参考适配为园艺试验地块产量，使用六个合成地块和Harvest yield (kg)，不继承旧数值或涨跌论证。",
+            "output_added_or_lost_meaning_zh": "当前主题、单位、类别和合成性质完整；施工者在彩绳网旁作业的动作线索保留。原图未明示更具体的统计论证，无法据此评价其恢复程度。",
+            "visible_inscription_evidence_zh": "Garden plot yield；Harvest yield (kg) across six synthetic garden plots；SYNTHETIC DATA；Plot A–F；Top rope = harvest yield；All six plots share a linear 0–90 kg scale。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "园艺产量和合成地块语义由冻结core和data明确指定，属于允许的主题适配。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "六值从0.172至86kg跨度大；A、B网区变成极薄绳带，不能要求复现旧网区高度或为识别而增高。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "A目标跨度约1.529px，显色带仅3行；B约5px。网孔和上下角部关系受到线宽及像素采样限制。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "原参考没有可读指标或统计文字，只能确认现场布网对象与动作，不能推定原作者的具体统计论证。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一长度通道的全部六个网区：B–F独立像素估读，A记录可见显色带但编码间距不可可靠量出；另核对总量直接文字。六个类别、数值、单位及必要标题均逐项核查。未进行亚像素拟合，也未把源码坐标当作像素测量。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "泥土、草地、六列彩绳网、浅木色角桩、施工人物、独轮车、木棍及园艺工具均可辨。",
+            "data_adaptation_excluded_zh": "排除新数据造成的网长变化和极短网区。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "俯拍及网贴地、角绳接桩关系保留；施工者改为左右边缘的大比例跪姿人物，右手附近绳线仍与F网相连。",
+            "data_adaptation_excluded_zh": "不扣除允许的人物姿态、数量和非数据厚度调整；主要差异为人物与网区的相对尺度及分布。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "仍以泥地中的六列网区为主体，但新增大标题、左上说明区及底部标签卡；原参考无此文字层级，人物从小型点缀变为侧边显著元素。",
+            "data_adaptation_excluded_zh": "不因新数值的递增形状、左部低值留白或必要标签增添扣分；记录非数据排版的整体变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留照片式泥土、草木与工具材质；新图网绳更规则且有均匀重复结点，土壤与人物呈更整洁的布景质感。",
+            "data_adaptation_excluded_zh": "不扣除网长、宽度、密度和绳色的允许调整。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/24164949aa94e1",
       "numeric_supported": true,
