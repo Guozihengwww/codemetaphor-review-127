@@ -1,0 +1,334 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为白底蓝、红两把平行斜叉，齿长承担百分比，宽弧叉头经细颈接长柄。待评图保留双叉及连接结构；蓝组7根伸出齿、Table D在根部标0%，红组8根伸出齿。16项标签和值可读，两组均有0–20%斜轴；最小正值Table E的短齿仍清楚接触叉头。主题、两类服务、支出变化及SYNTHETIC DATA可见。待评图改用强镜面高光，双叉齐排，柄端完整露出。",
+  "summary_zh": "两组数值、标签和共同线性齿长尺度一致，零值处理正确；叉齿与叉身的融合关系及当前餐饮支出主题完整。未发现违反冻结要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "以2000×1825最终PNG取样。源码声明的−17°角度及位置仅用于逆变换和定位；端点来自图中连续彩色齿区域，尺度来自两组可见灰色刻度。每组0–20%尺距约400像素。15根正值齿的估计偏差均约不超过0.063%满量程，显著小于3%容差；不是用代码预设长度代替测量。",
+  "uncertainties_zh": "强高光、抗锯齿及取样阈值造成约±1.5像素的边界不确定性，即约±0.075个百分点；最短3%齿的相对精度不能由满量程通过直接保证。按限制未读取运行日志或自检，capture_render.py的实际调用历史未独立核验。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两系列各8个类别位置，蓝组7根正值齿及1个零值位置，红组8根正值齿；16项类别、数值及单位完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "蓝组依次为16、11、10、0、3、6.25、9.5、12.75%；红组依次为20、8、12、14、15、11、14、17%，均与data.json一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "标签及百分比紧邻各自齿尖；Table D对应第4根部空位。类别顺序正确，新增类别明确带Table或Quick父类。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "两组可见标尺共用约20像素/百分点。PNG中最小正值齿约60.3像素，最大齿约400.2像素；15根正值齿均在3%满量程容差内，零值无伸出齿。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的蓝红叉体高光、细颈与柄部纹理在成图中实质可见。prepare_assets.py处理这些素材，render.py把素材嵌入主体及按值裁切的叉齿，并控制标签。调用历史未作为已验证事实。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "实际彩色叉齿边界承担数值；齿根与叉头上缘接触，宽弧头向下连续收为细颈、长柄。没有用旁置普通条形图替代叉齿。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原图中主题、SYNTHETIC DATA、两系列标题、16项类别及百分比均可读，新增类别分行但未遮挡相邻数值。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "蓝左红右，两把叉子平行斜放。宽弧叉头、细颈、长柄及亮面彩色材质保留；长短齿均接到同一局部零线，Table D保留位置而不伸齿。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Restaurant spending change、Table service、Quick service及Spending change (%)明确当前主题、两系列角色和单位；页脚声明合成类别与数据，不是实际餐饮统计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留餐饮服务分类及以叉齿比较百分比的关系。参考的Q2、2009及真实品牌历史叙述改为当前合成支出变化，属于冻结输入允许的语义改编，不是输出缺失。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小正值Table E约60像素长，圆端、两侧和接触叉头的根部均可见；红组最短Quick B约160像素长。零值处只保留根部标注，未人为加长。"
+    }
+  },
+  "semantic_attribution_zh": "历史季度结论与品牌名称的替换来自允许的合成输入适配。当前主题、指标和类别父类未遗失；8类及新数值造成齿数、齿长变化。未见分辨率导致必要部件关系丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "table_service",
+        "category": "Table A",
+        "expected_value": 16,
+        "observed_value": 16.012,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 320.3,
+        "full_scale_error_percent": 0.062,
+        "small_value_relative_error_percent": 0.078,
+        "bbox_xyxy_normalized": [
+          0.1113,
+          0.4445,
+          0.1772,
+          0.6187
+        ],
+        "evidence_zh": "在最终PNG沿齿轴测得根线至齿尖约320.3像素；同组可见0–20%尺距约400像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使边界约有±1.5像素不确定性；小数位不代表亚像素精度。"
+      },
+      {
+        "series_id": "table_service",
+        "category": "Table E",
+        "expected_value": 3,
+        "observed_value": 3.012,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 60.3,
+        "full_scale_error_percent": 0.062,
+        "small_value_relative_error_percent": 0.417,
+        "bbox_xyxy_normalized": [
+          0.3061,
+          0.5282,
+          0.3341,
+          0.5662
+        ],
+        "evidence_zh": "在最终PNG沿齿轴测得根线至齿尖约60.3像素；同组可见0–20%尺距约400像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使边界约有±1.5像素不确定性，对3%短齿约为±2.5%相对误差；小数位不代表亚像素精度。"
+      },
+      {
+        "series_id": "table_service",
+        "category": "Table chain added 1",
+        "expected_value": 6.25,
+        "observed_value": 6.257,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 125.2,
+        "full_scale_error_percent": 0.037,
+        "small_value_relative_error_percent": 0.12,
+        "bbox_xyxy_normalized": [
+          0.3359,
+          0.481,
+          0.3733,
+          0.553
+        ],
+        "evidence_zh": "在最终PNG沿齿轴测得根线至齿尖约125.2像素；同组可见0–20%尺距约400像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使边界约有±1.5像素不确定性；小数位不代表亚像素精度。"
+      },
+      {
+        "series_id": "quick_service",
+        "category": "Quick A",
+        "expected_value": 20,
+        "observed_value": 20.007,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 400.2,
+        "full_scale_error_percent": 0.037,
+        "small_value_relative_error_percent": 0.037,
+        "bbox_xyxy_normalized": [
+          0.5496,
+          0.4026,
+          0.6272,
+          0.6187
+        ],
+        "evidence_zh": "在最终PNG沿齿轴测得根线至齿尖约400.2像素；同组可见0–20%尺距约400像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使边界约有±1.5像素不确定性；小数位不代表亚像素精度。"
+      },
+      {
+        "series_id": "quick_service",
+        "category": "Quick B",
+        "expected_value": 8,
+        "observed_value": 8.007,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 160.2,
+        "full_scale_error_percent": 0.037,
+        "small_value_relative_error_percent": 0.094,
+        "bbox_xyxy_normalized": [
+          0.6239,
+          0.5152,
+          0.6664,
+          0.6056
+        ],
+        "evidence_zh": "在最终PNG沿齿轴测得根线至齿尖约160.2像素；同组可见0–20%尺距约400像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使边界约有±1.5像素不确定性；小数位不代表亚像素精度。"
+      },
+      {
+        "series_id": "quick_service",
+        "category": "Quick D",
+        "expected_value": 14,
+        "observed_value": 14.007,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 280.2,
+        "full_scale_error_percent": 0.037,
+        "small_value_relative_error_percent": 0.054,
+        "bbox_xyxy_normalized": [
+          0.6848,
+          0.4261,
+          0.7449,
+          0.5793
+        ],
+        "evidence_zh": "在最终PNG沿齿轴测得根线至齿尖约280.2像素；同组可见0–20%尺距约400像素。",
+        "uncertainty_zh": "抗锯齿及颜色阈值使边界约有±1.5像素不确定性；小数位不代表亚像素精度。"
+      },
+      {
+        "series_id": "table_service",
+        "category": "Table D",
+        "expected_value": 0,
+        "observed_value": 0,
+        "measurement_method": "symbol_count",
+        "mark_extent_px": 0,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.257,
+          0.529,
+          0.303,
+          0.585
+        ],
+        "evidence_zh": "第4类别位置保留Table D与0%标签，根部无伸出齿；这里只记录零根伸出齿，不把根线厚度计作数值长度。",
+        "uncertainty_zh": "零值由无伸出齿的结构确认，不据根线抗锯齿边缘推算连续长度误差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Table A／蓝叉整体",
+        "required_parts": [
+          "16%叉齿",
+          "共同齿根",
+          "宽弧叉头",
+          "细颈",
+          "长柄"
+        ],
+        "relationship": "长齿下端接触叉头上缘，叉头收窄为颈，再连续接长柄。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.11,
+          0.44,
+          0.475,
+          0.915
+        ],
+        "evidence_zh": "约320像素的蓝齿在根线终止并接入蓝色肩部；头、颈、柄轮廓连续，没有悬浮或断开的必要部件。"
+      },
+      {
+        "category": "Table E／最小正值",
+        "required_parts": [
+          "3%短齿",
+          "齿尖",
+          "共同齿根",
+          "蓝色叉头"
+        ],
+        "relationship": "短齿从同一根线向上伸出，末端与叉头接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.303,
+          0.526,
+          0.358,
+          0.602
+        ],
+        "evidence_zh": "3%短齿约60像素，端帽、左右边界和根部均可分辨；短齿仍是叉的一部分。"
+      },
+      {
+        "category": "Table D／零值",
+        "required_parts": [
+          "类别位置",
+          "0%标签",
+          "齿根"
+        ],
+        "relationship": "保留根部类别位置，不添加伸出齿。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.257,
+          0.529,
+          0.303,
+          0.585
+        ],
+        "evidence_zh": "Table C与Table E之间留出一个类别间距，Table D 0%紧邻该根部空位。"
+      },
+      {
+        "category": "Quick A／红叉整体",
+        "required_parts": [
+          "20%叉齿",
+          "共同齿根",
+          "红色宽弧叉头",
+          "细颈",
+          "长柄"
+        ],
+        "relationship": "最长齿与叉头连接，头经细颈连续接长柄，方向与蓝叉一致。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.549,
+          0.4,
+          0.924,
+          0.915
+        ],
+        "evidence_zh": "20%齿约400像素；根部由叉头上缘承接，肩部、细颈与长柄连续，未出现改变数据长度的遮挡。"
+      },
+      {
+        "category": "Quick B／红组最小值",
+        "required_parts": [
+          "8%叉齿",
+          "齿尖",
+          "共同齿根",
+          "红色叉头"
+        ],
+        "relationship": "较短齿与其他红齿共用根线，并接入同一叉头。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.623,
+          0.513,
+          0.687,
+          0.642
+        ],
+        "evidence_zh": "8%红齿约160像素，完整可见并接入肩部；其长度差由齿尖位置承担。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "使用合成类别及当前支出变化百分比，允许适配姿态和非数据厚度，不要求延续旧季度结论、品牌或峰值。",
+      "output_added_or_lost_meaning_zh": "新增共同尺度和零值解释，增强读图说明；参考历史叙述被明确合成主题替代，未丢失当前要求的统计含义。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Restaurant spending change、Table service、Quick service、Spending change (%)，以及说明每根齿代表一类别、长度代表支出变化的文字。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实品牌及参考季度叙述改为合成餐饮类别与支出变化，图面明确声明合成数据。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "每组8个类别位置和当前齿长由新输入决定；蓝组0值不伸齿，不沿用参考齿数或峰位。"
+      },
+      {
+        "cause": "none",
+        "evidence_zh": "当前主题、必要部件连接和数据承担关系未见输出遗漏。"
+      }
+    ],
+    "measurement_coverage_zh": "像素取样覆盖全部15根正值齿；此处列出每组最小值、大值和内点共6项，另记录零值无伸出齿。全部16项标签、数值及顺序另行目视核对。非定量叉柄长度不作为数据测量。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "两色叉的宽弧头、细颈和长柄完整，叉头较参考更宽展，柄端完整可见。",
+      "data_adaptation_excluded_zh": "不扣当前8类造成的叉头增宽及齿数、齿长变化。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "蓝左红右、两叉平行斜放；齿与头、头与颈、颈与柄连续连接，保持参考关系。",
+      "data_adaptation_excluded_zh": "core允许姿态适配；不扣倾角变小、两头齐排和柄端露出。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "白底、顶部醒目标题及画面下部主导的双叉保留；右侧说明改到下方，并增加分组标题和细网格，参考底部浅灰标志纹样未保留。",
+      "data_adaptation_excluded_zh": "不扣合成主题、更新类别标签及更多类别所需空间。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "蓝红亮面材质与白底保留；参考的大块平滑色面和少量亮边改为更强的金属镜面条纹。",
+      "data_adaptation_excluded_zh": "不扣允许的非数据厚度变化及定量齿形变化。"
+    }
+  }
+}
