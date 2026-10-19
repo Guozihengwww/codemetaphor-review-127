@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:59:38.667305+00:00",
+  "updated_at": "2026-10-19T23:06:52.850569+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,8 +11,8 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "ok": 51,
-      "pending": 40,
+      "ok": 55,
+      "pending": 36,
       "running": 3,
       "technical_failure": 2
     },
@@ -25042,7 +25042,433 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为横排三枚带绶带奖牌，圆盘材料分区与下方金额对应。成图为三枚等大的浮雕金属圆盘，材料扇区直接构成盘面；人物、羽翼及月桂跨分区连续。主题、合成标记、质量百分比、材料子类和USD金额均可见。参考绶带未保留，成图增加完整数据表。金和锡的小扇区可见。",
+        "summary_zh": "通过。review.json已保存并通过schema校验；按后续要求未运行submit.py。数值、绑定和盘面融合正确，参考外观差异另记于保真评分。",
+        "issues": [],
+        "measurement_notes_zh": "直接采样2100×1498成图，以可见盘心及径向接缝估计角宽，再换算份额；没有使用原生ID掩膜或自检结果。弧长统一对应距盘心200像素处。源码仅佐证映射方式和素材使用。",
+        "uncertainties_zh": "接缝宽度、盘心定位和抗锯齿带来约±0.2个百分点估计不确定度，不能据此保证最小锡区的高相对精度。依限制未检查生成调用日志或归档执行记录，无法独立确认capture_render.py的调用过程。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "三枚奖牌、八材料行、四个银合成子类、24个百分比及3个金额完整。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "全部百分比和零值匹配输入；金额720、360、6正确，小正值未被舍入为零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "奖牌标题、扇区标签和表格列一致；S1–S4明确对应银合成子类，小扇区引线接触对应材料。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "三个圆盘等大。扫描14个正扇区，份额点估计最大偏差约0.05个百分点，含定位不确定度仍低于3个百分点容差。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始及处理后的素材；人物、羽翼、月桂与成图一致。源码读取素材并按累计角度裁切着色，控制半径、数量和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "材料分区构成奖牌盘面，浮雕跨边界连续，外缘位于盘面后下方，没有明显漂浮或错层。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成标记、质量口径、材料名称、所有数值和USD均可读，无必需文字裁切或重叠。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "三枚等大圆盘均具备金属分区、浮雕和外缘；大小材料区均从共同盘心延伸至圆弧。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "明确表达奖牌金属组成、独立质量100%和合成示例价值，并说明等半径不编码总质量、金额仅作文字。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留材料组成与对应金额比较；原Olympic实值语境转为合成示例属于冻结输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "金1.5%和锡0.6%的细楔可见并连接盘面；锡在r=200像素处约宽7.2像素，近盘心细节受分辨率限制。"
+          }
+        },
+        "semantic_attribution_zh": "合成示例、四银子类及当前份额属于输入适配和数据驱动变化。绶带缺席及写实浮雕风格记录为次级参考保真差异；核心盘面融合与必需语义保留。最小锡区尖端的不确定性来自分辨率。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "medal_Gold",
+              "category": "Gold",
+              "expected_value": 1.5,
+              "observed_value": 1.466,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 18.4,
+              "full_scale_error_percent": 0.034,
+              "small_value_relative_error_percent": 2.26,
+              "bbox_xyxy_normalized": [
+                0.1952,
+                0.2624,
+                0.2057,
+                0.4105
+              ],
+              "evidence_zh": "成图接缝边界约0.004°至5.282°；弧长对应r=200像素。",
+              "uncertainty_zh": "约±0.2个百分点定位不确定度；相对误差仅为点估计。"
+            },
+            {
+              "series_id": "medal_Gold",
+              "category": "Copper",
+              "expected_value": 5.9,
+              "observed_value": 5.946,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 74.7,
+              "full_scale_error_percent": 0.046,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.1952,
+                0.263,
+                0.2429,
+                0.4105
+              ],
+              "evidence_zh": "成图接缝边界约5.282°至26.688°。",
+              "uncertainty_zh": "约±0.2个百分点；弧长不是面积或直径。"
+            },
+            {
+              "series_id": "medal_Gold",
+              "category": "Silver / synthetic subcategory 2",
+              "expected_value": 23.15,
+              "observed_value": 23.169,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 291.2,
+              "full_scale_error_percent": 0.019,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.1705,
+                0.4105,
+                0.2952,
+                0.5587
+              ],
+              "evidence_zh": "成图接缝边界约109.911°至193.319°。",
+              "uncertainty_zh": "约±0.2个百分点定位不确定度。"
+            },
+            {
+              "series_id": "medal_Silver",
+              "category": "Copper",
+              "expected_value": 6.5,
+              "observed_value": 6.526,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 82,
+              "full_scale_error_percent": 0.026,
+              "small_value_relative_error_percent": 0.39,
+              "bbox_xyxy_normalized": [
+                0.5,
+                0.2624,
+                0.5424,
+                0.4105
+              ],
+              "evidence_zh": "成图接缝边界约−0.032°至23.460°。",
+              "uncertainty_zh": "约±0.2个百分点；相对误差仅为点估计。"
+            },
+            {
+              "series_id": "medal_Silver",
+              "category": "Silver / synthetic subcategory 1",
+              "expected_value": 23.375,
+              "observed_value": 23.333,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 293.2,
+              "full_scale_error_percent": 0.042,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.5,
+                0.2744,
+                0.6057,
+                0.4559
+              ],
+              "evidence_zh": "成图接缝边界约23.460°至107.460°。",
+              "uncertainty_zh": "约±0.2个百分点定位不确定度。"
+            },
+            {
+              "series_id": "medal_Silver",
+              "category": "Silver / synthetic subcategory 3",
+              "expected_value": 23.375,
+              "observed_value": 23.369,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 293.7,
+              "full_scale_error_percent": 0.006,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3943,
+                0.3952,
+                0.5,
+                0.5561
+              ],
+              "evidence_zh": "成图接缝边界约191.726°至275.855°。",
+              "uncertainty_zh": "约±0.2个百分点定位不确定度。"
+            },
+            {
+              "series_id": "medal_Bronze",
+              "category": "Copper",
+              "expected_value": 96.5,
+              "observed_value": 96.488,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1212.5,
+              "full_scale_error_percent": 0.012,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.699,
+                0.2624,
+                0.9105,
+                0.5587
+              ],
+              "evidence_zh": "成图接缝边界约0.005°至347.363°。",
+              "uncertainty_zh": "约±0.2个百分点；所记长度为圆弧长。"
+            },
+            {
+              "series_id": "medal_Bronze",
+              "category": "Tin",
+              "expected_value": 0.6,
+              "observed_value": 0.571,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 7.2,
+              "full_scale_error_percent": 0.029,
+              "small_value_relative_error_percent": 4.77,
+              "bbox_xyxy_normalized": [
+                0.7814,
+                0.265,
+                0.8048,
+                0.4105
+              ],
+              "evidence_zh": "成图接缝边界约347.363°至349.420°。",
+              "uncertainty_zh": "约±0.2个百分点；4.77%仅为点估计，不能保证微小值的相对精度。"
+            },
+            {
+              "series_id": "medal_Bronze",
+              "category": "Zinc",
+              "expected_value": 2.9,
+              "observed_value": 2.94,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 37,
+              "full_scale_error_percent": 0.04,
+              "small_value_relative_error_percent": 1.39,
+              "bbox_xyxy_normalized": [
+                0.7852,
+                0.2624,
+                0.8048,
+                0.4105
+              ],
+              "evidence_zh": "成图接缝边界约349.420°至360.005°。",
+              "uncertainty_zh": "约±0.2个百分点；相对误差仅为点估计。"
+            },
+            {
+              "series_id": "illustrative_value",
+              "category": "Gold",
+              "expected_value": 720,
+              "observed_value": 720,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.1629,
+                0.5841,
+                0.229,
+                0.6602
+              ],
+              "evidence_zh": "金牌下方显示$720、合成示例价值和USD。",
+              "uncertainty_zh": "仅文字编码，无金额几何比例。"
+            },
+            {
+              "series_id": "illustrative_value",
+              "category": "Silver",
+              "expected_value": 360,
+              "observed_value": 360,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.4671,
+                0.5841,
+                0.5333,
+                0.6602
+              ],
+              "evidence_zh": "银牌下方显示$360、合成示例价值和USD。",
+              "uncertainty_zh": "仅文字编码，无金额几何比例。"
+            },
+            {
+              "series_id": "illustrative_value",
+              "category": "Bronze",
+              "expected_value": 6,
+              "observed_value": 6,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.7857,
+                0.5841,
+                0.8238,
+                0.6602
+              ],
+              "evidence_zh": "铜牌下方显示$6、合成示例价值和USD。",
+              "uncertainty_zh": "仅文字编码，无金额几何比例。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "三枚奖牌整体",
+              "required_parts": [
+                "等大圆盘",
+                "材料分区",
+                "浮雕",
+                "薄外缘"
+              ],
+              "relationship": "材料分区包含于盘面，浮雕跨分区连续，外缘贴合圆盘后下方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.0871,
+                0.2624,
+                0.9129,
+                0.5668
+              ],
+              "evidence_zh": "三盘同高同径，盘面、边缘和投影相接，无明显错位。"
+            },
+            {
+              "category": "金牌较大银S2区",
+              "required_parts": [
+                "银S2扇区",
+                "盘心",
+                "圆弧",
+                "浮雕"
+              ],
+              "relationship": "径向边界汇于盘心，外弧接圆盘边缘，衣褶和月桂连续通过。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.1705,
+                0.4105,
+                0.2952,
+                0.5587
+              ],
+              "evidence_zh": "S2标签位于对应区域内部，角宽估计23.17%。"
+            },
+            {
+              "category": "金牌最小金区",
+              "required_parts": [
+                "窄金区",
+                "盘心",
+                "顶部外缘",
+                "引线"
+              ],
+              "relationship": "金区介于银S4与铜之间，自盘心连接顶部圆弧，引线接触外端。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.1952,
+                0.2597,
+                0.2057,
+                0.4105
+              ],
+              "evidence_zh": "连续金色细楔可见，r=200像素处约宽18.4像素。"
+            },
+            {
+              "category": "铜牌大铜区",
+              "required_parts": [
+                "大铜区",
+                "人物及羽翼浮雕",
+                "外缘"
+              ],
+              "relationship": "铜区占据几乎整个盘面，浮雕完整，与外缘相接。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.699,
+                0.2624,
+                0.9105,
+                0.5587
+              ],
+              "evidence_zh": "96.5%标签位于铜区，角宽估计96.49%。"
+            },
+            {
+              "category": "铜牌锡与锌细区",
+              "required_parts": [
+                "锡细楔",
+                "锌细楔",
+                "盘心",
+                "顶部圆弧",
+                "引线"
+              ],
+              "relationship": "锡夹在铜与锌之间，锌邻接12点方向，两区均连接盘心和外弧。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.7814,
+                0.2624,
+                0.8052,
+                0.4112
+              ],
+              "evidence_zh": "浅青锡区和深蓝锌区可分辨，引线分别接触对应外端；近盘心微细浮雕不可确认。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结要求采用合成数据、更新比例和金额，并将银细分为四个具名合成子类。",
+            "output_added_or_lost_meaning_zh": "质量组成与对应价值角色保留，并明确等半径不表示总质量；未新增走势或因果论断。原Olympic实值语境不再表达。",
+            "visible_inscription_evidence_zh": "标题、SYNTHETIC DATA、每枚总量100%、质量占比(%)、银合成子类说明、USD及非真实奖牌统计声明均可读。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "合成标记、新子类和示例金额由冻结输入规定。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "材料角宽对应当前份额，银子类分别占据扇区。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "锡区外端可见，近盘心趋于亚像素，微细材质与高相对精度不确定。"
+            },
+            {
+              "cause": "output_omission",
+              "evidence_zh": "参考绶带未呈现；冻结核心要求的圆盘、分区、浮雕及边缘均存在。"
+            }
+          ],
+          "measurement_coverage_zh": "扫描覆盖14个正扇区，详细记录9个代表扇区和3个文字金额；其余5个同值银子类不逐项展开。24个百分比及全部类别另行核对，零值没有正面积扇区。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "三枚圆形金银铜奖牌身份保留，彩色绶带缺失，新增人物和月桂浮雕。",
+            "data_adaptation_excluded_zh": "排除材料份额、银子类、当前标题及金额更新。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "圆盘仍横排，材料分区仍包含于盘面；参考绶带从上方接到盘后的关系未呈现。",
+            "data_adaptation_excluded_zh": "排除间距、非数据厚度、允许的姿态调整及扇区角度变化。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方标题、中间三奖牌、下方逐枚金额；参考彩带占据的主视觉上半部改由大盘面承担。",
+            "data_adaptation_excluded_zh": "不扣新增类别所需表格、更新标签和允许的排版调整。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "浅米色背景和金银铜色系保留；平面纸感色块改为写实浮雕金属、高光和投影。",
+            "data_adaptation_excluded_zh": "排除当前数据所需分区及允许的边缘厚度变化。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/retries/833712d014e124",
       "numeric_supported": true,
@@ -36491,7 +36917,304 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为绿色连续景观叠合橙柱，右侧断轴，云层跨过最高柱，生活物件与人物分布在基线附近。最终图可见11个顺序一致的生活选择标签及完整数值，标题、SYNTHETIC DATA、Synthetic annual savings及tCO2e/year (synthetic)清楚；右侧显示0–4、20–60及4–20省略说明。橙柱与乡村景观、衣架、洗衣机、车辆、食物、风机、飞机、骑车者和推车家庭叠合，最高柱在云带处断开。前几根柱紧贴基线，最小柱的厚度不能仅凭整体视图精确判断。未见明显文字遮挡或错序。",
+        "summary_zh": "未发现必要要求的可见违例。11类数值、顺序、单位和影响分组完整；断轴两段映射的代表性像素测量在容差内。景观、人物、橙柱和云层遮挡保留；最小柱的相对精度受像素分辨率限制。",
+        "issues": [],
+        "measurement_notes_zh": "只测所供2000×1162的image.png。独立读取右轴刻度像素：下段约y=895至365，对应0–4，132.5像素/单位；上段约y=330至170，对应20–60，4像素/单位。以橙色像素及可见柱顶定位，按所属分段反算，不相加两段高度。误差分母分别为4和40；整像素读数约有±1像素不确定性。源码公式仅作旁证。",
+        "uncertainties_zh": "最小两柱仅出现1、2行橙色像素，抗锯齿和背景混合使有效面积及相对误差不能可靠反算；其数值文字可确认。按访问限制未查阅日志或自检，不能核验每次capture_render.py归档执行。原参考的真实研究口径已由冻结输入明确适配为合成情景。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "11个生活选择按输入顺序完整显示；低、中、高影响分组分别覆盖6、2、3类。右轴包含0、1、2、3、4及20、30、40、50、60，省略说明、标题、系列和单位齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项可读为0.006、0.0116861、0.02276081、0.04433084、0.08634241、0.16816764、0.32753722、0.63793862、1.2425021、2.42、56.8，均与输入一致；无正值舍入为零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "每个数值与类别在对应橙柱下方同列排列；上段56.8再次标于Household size柱顶。影响分组边界落在Plant-rich diet与EV to car-free之间、Green energy与One less long flight之间。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "独立像素反算：Plant-rich diet约0.16604、Green energy约0.63396、Car-free living约2.42264、Household size约56.75；各自分段满量程误差约0.053%、0.099%、0.066%、0.125%，均低于3%。微小柱未见人为增高，但不据此保证其相对精度。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png与raw_02.png；景观、云、家庭、车辆、风机及生活物件与最终图可见形态对应，使用面积实质充足。prepare_assets.py裁取这些素材，render.py读取数据并控制11柱的分段矩形、类别位置及文字；未执行渲染。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "景观在柱后，骑车者、家庭及前景风机覆盖柱内部分区域；最高柱在云带及断轴符号处中断，上端仍清楚。这是景观叠合柱图，未把图标自身大小误作量值或要求物件变成柱形。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、SYNTHETIC DATA、系列、单位、全部类别和精确数值可读且无明显互遮。省略区明确写4–20 omitted; scales differ，另提示不要相加两段可见高度。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "连续绿色丘陵连接各类别；橙柱叠于其上，人物及生活部件进入柱前景。最高柱有下段和上段，云带跨过其断轴位置，柱和右轴均有断轴符号；保留要求的叠合与遮挡关系。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "可见Personal choices: a synthetic climate scenario、Synthetic annual savings、tCO2e/year (synthetic)、11 choices及全部具体生活选择。页脚说明均为示意而非观测估计，主题、年节约量、单位及类别角色明确。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留个人生活选择与气候减排量的比较及影响分组。参考图的真实研究、发达国家口径及少生孩子的后代累计含义，被输入明确替换为合成年度情景和Household size；此部分差异归于允许的输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "最小两类分别有1、2行橙色像素，灯泡和晾衣物件以及文字仍能识别和定位。微小柱厚度及两者相对比例不能在原分辨率下稳定读取，未将正确文字当作精确几何的证明。"
+          }
+        },
+        "semantic_attribution_zh": "合成主题、Household size及年度口径来自冻结输入适配；柱高和6/2/3影响分组来自当前数据。最小柱实体厚度的部分不可辨归于分辨率限制，未发现输出遗漏必要语义。参考材质画法有明显变化，单独记录于保真评分，不推断作者意图或据此判失败。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Efficient lighting",
+              "expected_value": 0.006,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.049,
+                0.7685,
+                0.101,
+                0.7711
+              ],
+              "evidence_zh": "x=120、150、190处均在y=894出现橙色；该行橙色横跨x=98–201，共104像素。按可见轴尺度目标高度约0.795像素；文字为0.006。",
+              "uncertainty_zh": "1行着色不等于1像素有效面积；背景、抗锯齿及基线混合使真实高度和相对误差不可可靠反算。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Air-dry clothes",
+              "expected_value": 0.0116861,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 2,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.127,
+                0.7676,
+                0.179,
+                0.7711
+              ],
+              "evidence_zh": "x=286、306处橙色连续占y=893–894；基线附近橙色横跨x=254–357。目标高度约1.548像素，文字为0.0116861。",
+              "uncertainty_zh": "仅2行着色，不能把像素行计数直接解释为准确的量值或相对误差。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Plant-rich diet",
+              "expected_value": 0.16816764,
+              "observed_value": 0.16603774,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 22,
+              "full_scale_error_percent": 0.053248,
+              "small_value_relative_error_percent": 1.266536,
+              "bbox_xyxy_normalized": [
+                0.439,
+                0.7504,
+                0.491,
+                0.7702
+              ],
+              "evidence_zh": "x=910、930、962处连续橙色为y=873–894，约22像素；按下段22/132.5反算约0.16604。食物碗在柱顶上方，未遮住测量列。",
+              "uncertainty_zh": "约±1像素，对应±0.00755单位；所列误差为整像素读数的点估计，不代表亚像素精度。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Green energy",
+              "expected_value": 0.63793862,
+              "observed_value": 0.63396226,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 84,
+              "full_scale_error_percent": 0.099409,
+              "small_value_relative_error_percent": 0.623313,
+              "bbox_xyxy_normalized": [
+                0.595,
+                0.6962,
+                0.647,
+                0.7702
+              ],
+              "evidence_zh": "避开风机柱身，在x=1193、1210、1288测得连续橙色y=811–894，约84像素；下段反算约0.63396。",
+              "uncertainty_zh": "柱顶约±1像素；反算值和误差为像素级近似。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Car-free living",
+              "expected_value": 2.42,
+              "observed_value": 2.42264151,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 321,
+              "full_scale_error_percent": 0.066038,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.751,
+                0.4931,
+                0.803,
+                0.7702
+              ],
+              "evidence_zh": "x=1508、1554、1598处柱顶均为y≈574；至公共基线y≈895的端点距离约321像素，按下段反算约2.42264。",
+              "uncertainty_zh": "骑车者遮住部分柱身，测量依据未遮挡柱顶与公共基线，非逐列连续色带长度；端点约±1像素。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Household size",
+              "expected_value": 56.8,
+              "observed_value": 56.75,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 147,
+              "full_scale_error_percent": 0.125,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.829,
+                0.1566,
+                0.881,
+                0.284
+              ],
+              "evidence_zh": "上段柱顶为y≈183；x=1662和1758处橙色延伸至y=329，至20刻度y≈330约147像素。20+147/4≈56.75；未将下段高度相加。",
+              "uncertainty_zh": "上段端点约±1像素，即约±0.25单位；中部云层遮住部分下缘，左右测量列仍保留可用边界。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Household size（大值）",
+              "required_parts": [
+                "上、下橙柱段",
+                "云带",
+                "断轴符号",
+                "成人、儿童和婴儿车",
+                "连续景观"
+              ],
+              "relationship": "同列柱段被省略带分隔；云在柱前；成人接触推车把手，儿童位于车座内，车轮接近基线。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.81,
+                0.155,
+                0.906,
+                0.772
+              ],
+              "evidence_zh": "最高柱的上端和下段均可见，y≈330–365横向云带遮断其连续性并带有双斜线；下部家庭覆盖橙柱，手、车把、座椅和轮子仍可辨。"
+            },
+            {
+              "category": "Car-free living（下段大值）",
+              "required_parts": [
+                "橙柱",
+                "骑车者",
+                "自行车车把、踏板和双轮",
+                "景观"
+              ],
+              "relationship": "人物坐于车上并接触车把及踏板，双轮位于基线附近；整个人车组合在柱前。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.736,
+                0.492,
+                0.825,
+                0.773
+              ],
+              "evidence_zh": "柱顶在y≈574，骑车者位于其下部；人体、自行车和轮廓清楚，未遮住定量上端。"
+            },
+            {
+              "category": "Green energy（中间值）",
+              "required_parts": [
+                "橙柱",
+                "风机塔柱",
+                "轮毂与叶片",
+                "背景丘陵"
+              ],
+              "relationship": "叶片连接轮毂，轮毂连接竖直塔柱；前景风机与橙柱重叠，背景丘陵在后。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.566,
+                0.557,
+                0.667,
+                0.771
+              ],
+              "evidence_zh": "前景风机塔柱穿过绿色能源柱内部，但两侧柱顶与柱缘仍可识别；不以风机自身高度编码数值。"
+            },
+            {
+              "category": "Efficient lighting（最小值）",
+              "required_parts": [
+                "灯泡球体",
+                "螺纹底座",
+                "微小橙柱",
+                "基线及类别文字"
+              ],
+              "relationship": "球体连接底座，灯泡在细柱上方同列；数据边界由橙色细条承担。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.049,
+                0.699,
+                0.101,
+                0.853
+              ],
+              "evidence_zh": "灯泡球体、底座与对应文字可辨；底座与橙条间有少量间距，属于物件与柱的垂直关联。橙条只剩1行像素，实体厚度和相对量值不能稳定辨读，未要求灯泡本身成为定量柱。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入明确采用Personal choices: a synthetic climate scenario、Synthetic annual savings及tCO2e/year (synthetic)，允许按当前值调整姿态和排版，并以Household size替代参考的少生孩子措辞。",
+            "output_added_or_lost_meaning_zh": "当前生活选择与年度节约量比较完整；没有强加原参考真实统计和后代累计论点。新增云带说明与页脚阐明断轴及合成口径，未发现必要语义的输出遗漏。",
+            "visible_inscription_evidence_zh": "标题、SYNTHETIC DATA、Synthetic annual savings、tCO2e/year (synthetic)、11 choices、全部具体类别、Low/Moderate/High impact及其阈值均可见；页脚写明illustrative, not observed estimates。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实气候统计及后代累计语义被输入明确替换为合成年度节约情景，参考含义因此为部分保留，不归因于输出失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "当前小值压缩前几根柱，0.2与0.8阈值形成6/2/3类分组；不要求原参考峰值或分组边界。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "0.006和0.0116861在下段尺度对应不足2像素的高度，出现1、2行着色而非可精确量取的实体厚度。"
+            }
+          ],
+          "measurement_coverage_zh": "下段抽测5类：最小两类、两个中间值及下段较大值；上段唯一柱已测。其余6根下段柱未逐一报告独立数值误差。另核对前9柱基线处104像素橙色宽度，以及全部11类数值、类别顺序、单位、刻度和6/2/3分组。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "生活选择物件、风机、飞机、骑车者、婴儿车及绿色景观均保留；原图月牙未见，新增乡村房屋及家庭人物。",
+            "data_adaptation_excluded_zh": "不扣除当前类别名称、合成主题、柱高和分组变化；家庭人物允许随Household size适配。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "物件位于对应类别附近，人物和风机与橙柱重叠，衣物悬挂，骑车者与自行车相接，成人推婴儿车；最高柱被横向云带遮断。",
+            "data_adaptation_excluded_zh": "排除核心允许的人物姿态、非数据部件厚度和位置调整，不要求复现原柱顶位置。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "仍是横向标题、连续景观柱图、右侧刻度、底部类别与影响分组；最终图增加浅色页边、顶部统计说明和较大断轴解释区。",
+            "data_adaptation_excluded_zh": "排除柱高、低中高分组边界和当前标签所需空间变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留绿色景观和暖橙色柱；参考以平面剪影、几何云层和深绿天空为主，最终为纸感浅底、细致绘画树木房屋与立体物件。",
+            "data_adaptation_excluded_zh": "仅评价材质及画法变化，不以合成语义、当前数值或允许的姿态适配扣分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/88ac4c33898521",
       "numeric_supported": true,
@@ -37231,7 +37954,357 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图以绿色平面景观、人物及生活物件叠合橙柱，右侧断轴，云层横过高柱断处。待评图保留连续景观、生活场景、橙柱与云层遮挡；11类名称及数值可读，标题、系列、单位和SYNTHETIC DATA齐全。主图前三项仅呈基线附近细橙痕，左上另有前六项放大面板。",
+        "summary_zh": "未发现重大可见缺陷。类别、数值、分组及分段轴符合要求，生成素材实质可见。主图极小柱可辨性有限，放大面板保留数量信息。已保存UTF-8 review.json并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "对2000×1162原图进行只读像素分析。可见刻度校准得到下段0–4约530像素、上段20–60约160像素、放大面板0–0.2约429像素。满量程误差分别按跨度4、40、0.2计算。橙色核心边界约有±1像素不确定度；代表可测项误差均不超过约0.13%。源码仅作佐证。",
+        "uncertainties_zh": "主图0.006约一像素，无法独立可靠反演数值或辨认柱内景观关系。放大面板最小条约13像素，仍不能保证高相对精度。按限制未查看日志、自检或编排证据，因此未独立验证每次渲染归档过程。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "11个类别及数值顺序完整；放大面板含前6项。两段各5个刻度、断轴说明、3个影响分组、标题、系列、单位和合成数据提示齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "11项数值与data.json逐项一致，细节面板6项重复值一致，正值未舍入为零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "主图名称及数值位于对应柱下；细节面板逐行对应。低影响6项、适中2项、高影响3项与阈值一致。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素测量支持分段线性编码：2.42柱约320像素，最高柱反演约56.75，细节0.006条约13像素。可测代表项均在容差内，主图最小柱另记不可可靠反演。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png、landscape.png、cloud.png，人物、房屋、车辆、菜园及云与成图相符。render.py读取数据并控制分段柱和细节条形几何，合成素材构成主要景观。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "景观在橙柱后且透过柱面可见；前景云遮挡最高柱断处，右轴同步断开。二维叠合关系成立，未见影响读数的接缝或层级反转。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原图中标题、全部类别与完整数值、单位、刻度、分组及脚注可读，必要文字未被云遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "人物和生活物件沿共同地面形成连续场景，橙柱矩形上边界编码数值。最高柱分段，云、斜切符号及省略说明共同保留断轴结构。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "明确表达个人选择的合成气候情景、年度节约及tCO₂e/year (synthetic)。类别角色具体，脚注说明每类年度节约且选择不相加。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留生活选择与气候节约的比较。原真实统计、少生一孩及后代排放语境由冻结输入明确改为合成情景与Household size，属于输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "主图最小柱约一像素，内部景观关系难辨；放大面板最小条约13像素且标签完整。未观察到主图小值被统一抬高。"
+          }
+        },
+        "semantic_attribution_zh": "统计语境变化来自明确的合成输入适配；低柱缩短来自当前数据。极小主图柱内部关系难辨属于分辨率限制，非数值遗漏。放大面板提供数量阅读渠道，不构成物体几何融合。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Efficient lighting（主图）",
+              "expected_value": 0.006,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 1,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.054,
+                0.802926,
+                0.1015,
+                0.805508
+              ],
+              "evidence_zh": "x≈155、y=934处有橙色混合像素，约一行高，下方为共同基线。",
+              "uncertainty_zh": "背景、透明度及抗锯齿混合，无法独立可靠恢复亚像素柱高；数值标签不替代测量。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Efficient lighting（放大面板）",
+              "expected_value": 0.006,
+              "observed_value": 0.00606061,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 13,
+              "full_scale_error_percent": 0.0303,
+              "small_value_relative_error_percent": 1.0101,
+              "bbox_xyxy_normalized": [
+                0.1625,
+                0.280551,
+                0.169,
+                0.290878
+              ],
+              "evidence_zh": "橙色核心宽约13像素；0至0.2刻度跨度约429像素。",
+              "uncertainty_zh": "边界约±1像素，对该小值产生约±7.8%的相对误差不确定度。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Cold-water wash（放大面板）",
+              "expected_value": 0.04433084,
+              "observed_value": 0.04428904,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 95,
+              "full_scale_error_percent": 0.0209,
+              "small_value_relative_error_percent": 0.09428,
+              "bbox_xyxy_normalized": [
+                0.1625,
+                0.360585,
+                0.21,
+                0.370912
+              ],
+              "evidence_zh": "橙色核心宽约95像素，使用可见0–0.2轴的429像素跨度换算。",
+              "uncertainty_zh": "抗锯齿边界约±1像素。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Plant-rich diet（放大面板）",
+              "expected_value": 0.16816764,
+              "observed_value": 0.16829837,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 361,
+              "full_scale_error_percent": 0.06536,
+              "small_value_relative_error_percent": 0.07774,
+              "bbox_xyxy_normalized": [
+                0.1625,
+                0.413941,
+                0.343,
+                0.424269
+              ],
+              "evidence_zh": "橙色核心宽约361像素，使用可见0–0.2轴的429像素跨度换算。",
+              "uncertainty_zh": "抗锯齿边界约±1像素。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "EV to car-free（主图下段）",
+              "expected_value": 0.32753722,
+              "observed_value": 0.3245283,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 43,
+              "full_scale_error_percent": 0.07522,
+              "small_value_relative_error_percent": 0.91865,
+              "bbox_xyxy_normalized": [
+                0.519,
+                0.767642,
+                0.5665,
+                0.804647
+              ],
+              "evidence_zh": "柱顶橙色核心约y=892，基线约935；以0–4段530像素反演。",
+              "uncertainty_zh": "边界约±1像素，对应±0.00755 tCO2e/year。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "One less long flight（主图下段）",
+              "expected_value": 1.2425021,
+              "observed_value": 1.23773585,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 164,
+              "full_scale_error_percent": 0.11916,
+              "small_value_relative_error_percent": 0.3836,
+              "bbox_xyxy_normalized": [
+                0.674,
+                0.663511,
+                0.7215,
+                0.804647
+              ],
+              "evidence_zh": "柱顶橙色核心约y=771，基线约935；以0–4段530像素反演。",
+              "uncertainty_zh": "边界约±1像素，未把上下段像素高度相加。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Car-free living（主图下段）",
+              "expected_value": 2.42,
+              "observed_value": 2.41509434,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 320,
+              "full_scale_error_percent": 0.12264,
+              "small_value_relative_error_percent": 0.20271,
+              "bbox_xyxy_normalized": [
+                0.7515,
+                0.52926,
+                0.799,
+                0.804647
+              ],
+              "evidence_zh": "柱顶橙色核心约y=615，基线约935；以0–4段530像素反演。",
+              "uncertainty_zh": "边界约±1像素，对应±0.00755 tCO2e/year。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Household size（主图上段）",
+              "expected_value": 56.8,
+              "observed_value": 56.75,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 147,
+              "full_scale_error_percent": 0.125,
+              "small_value_relative_error_percent": 0.08803,
+              "bbox_xyxy_normalized": [
+                0.829,
+                0.19191,
+                0.8765,
+                0.318417
+              ],
+              "evidence_zh": "20和60刻度约y=370和210，柱顶约y=223；20+(370−223)/160×40≈56.75。",
+              "uncertainty_zh": "柱顶±1像素对应±0.25；147像素是柱顶至20刻度的尺度距离，底端局部被云遮挡。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "连续主景观",
+              "required_parts": [
+                "地面与植被",
+                "生活物件",
+                "人物",
+                "橙色柱"
+              ],
+              "relationship": "人物与物件接触共同地面；景观在后、橙柱在前，矩形上边界承载数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.0345,
+                0.434596,
+                0.8995,
+                0.804647
+              ],
+              "evidence_zh": "晾衣线、分类桶、洗衣机、汽车、菜园及自行车构成连续场景；较高柱内仍可见背景纹理。"
+            },
+            {
+              "category": "Household size大值",
+              "required_parts": [
+                "下段柱",
+                "上段柱",
+                "前景云",
+                "断轴符号",
+                "右侧分段轴"
+              ],
+              "relationship": "同一横向位置的两段由省略区间分隔，云在断处前方遮挡，右轴同步断开。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.715,
+                0.180723,
+                0.944,
+                0.804647
+              ],
+              "evidence_zh": "云横过最高柱断处，柱与右轴均有斜切符号，并标明4–20 omitted; scales differ。"
+            },
+            {
+              "category": "Car-free living较大下段柱",
+              "required_parts": [
+                "橙柱上边界",
+                "背景房屋与地面",
+                "相邻人物及自行车"
+              ],
+              "relationship": "柱覆盖连续景观，柱顶而非人物身高编码数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.69,
+                0.524957,
+                0.815,
+                0.804647
+              ],
+              "evidence_zh": "约320像素高橙柱叠于房屋与地面前方，相邻人物、车架和车轮仍可识别。"
+            },
+            {
+              "category": "Efficient lighting与Air-dry clothes小值",
+              "required_parts": [
+                "灯具",
+                "晾衣人物及衣绳",
+                "极薄橙柱",
+                "基线"
+              ],
+              "relationship": "背景物件保留连接，小柱仅在基线形成细痕，柱内包覆关系难辨。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.0525,
+                0.628227,
+                0.25,
+                0.805508
+              ],
+              "evidence_zh": "灯具、人物与悬挂衣物可见；对应主图柱约一至数像素，不能据此声称柱内物体融合清楚可辨。"
+            },
+            {
+              "category": "低影响放大面板",
+              "required_parts": [
+                "六个类别",
+                "六根水平条",
+                "0–0.2刻度",
+                "完整数值"
+              ],
+              "relationship": "每行名称、条形和数值对应同一选择，共用线性横轴。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.039,
+                0.193632,
+                0.5,
+                0.472461
+              ],
+              "evidence_zh": "面板明确注明Same series及first six choices；它是普通条形数量编码，没有以生活物件轮廓编码条长。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入明确将现实气候选择比较改为合成情景，允许类别、姿态、非数据部件及排版适配，不要求旧极值或后代排放论点。",
+            "output_added_or_lost_meaning_zh": "新增放大面板及选择不相加的说明，与当前数据相容。未发现当前必需语义丢失。",
+            "visible_inscription_evidence_zh": "Personal choices: a synthetic climate scenario；Synthetic annual savings；tCO₂e/year (synthetic)；SYNTHETIC DATA；Illustrative values, not real-world estimates；choices are not added together。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "原真实统计和后代排放语境改为明确标识的合成年度情景，Household size来自当前类别表。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "前六项低于0.2，主图柱明显缩短；56.8仍进入上段，影响分组依当前值调整。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "0.006在主图约一像素高，柱内景观关系难辨；放大面板将同值显示为约13像素条。"
+            }
+          ],
+          "measurement_coverage_zh": "全部11项文字及分组均已检查。像素核查细节6条、主图4个中大下段柱及唯一上段柱；记录8个代表项，覆盖最小、内部及大值。主图最小值单列不可可靠反演，其余极小主图柱未逐一恢复。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "环保景观、晾衣、回收、洗衣、汽车、种植、自行车、风机、飞机及家庭人物总体保留，改为连续村落场景。",
+            "data_adaptation_excluded_zh": "不扣除新类别与柱高变化；Household size允许以家庭人物适配婴儿车。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "共同地面、景观后置、橙柱前置及云遮断处保留；云不再横贯全图。",
+            "data_adaptation_excluded_zh": "排除允许的人物物件姿态调整及小值造成的柱顶位置变化，不要求旧柱顶接触关系。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方标题、右轴、下方类别与影响分组、景观叠合柱图；主景观集中在下半部，左上新增较大放大面板。",
+            "data_adaptation_excluded_zh": "不扣除放大面板本身及新数据造成的高度分布，记录整体主次区域变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留绿色环境与橙柱配色；参考扁平剪影及绿底改为浅底、细密植物纹理和具明暗的建筑人物。",
+            "data_adaptation_excluded_zh": "排除数据几何、标题及类别文字更新，仅评价非数据视觉材料保留程度。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/923aa41fbe4aa1",
       "numeric_supported": true,
@@ -44166,7 +45239,379 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为粉红陆地、灰蓝海洋及经纬网地球，底部连续融为积液并向底座前沿滴落；黑红折线叠在同一地球与积液上，后方暗背板、下方浅透视底座。待评图保留这些连接与叠合关系；宽幅地球呈细纹理水彩质感，积液向两侧展开，前沿有三条显著滴流。黑红线有年度圆点，使用同一−1至15%刻度；负值1967年−0.4%位于零线下。主题、单位、系列、合成数据及1982预测标识清楚，未见明显错绑或遮挡。",
+        "summary_zh": "定量、语义及核心叠合结构通过，未发现具体功能缺陷。review.json已保存并通过schema.json校验；按追加要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "测量原始2000×1140像素。由可见刻度短线拟合每个百分点约38.741像素、零线y≈831.151，再定位数据圆点或短刻度。满量程为16个百分点；mark_extent_px表示数据中心距零线的纵向距离。SVG仅作全点序列佐证，不作为像素测量。",
+        "uncertainties_zh": "圆点定位约±1像素，即±0.026个百分点；0.5%小值的相对测量不确定性约±5.2%。其余37点未逐点像素反演。外部capture_render.py保存链路未核验，未读取日志或自检。参考标题的额外作者意图不作推断。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "两个系列各23个年度点，顺序1960—1982；SVG有44个数据圆点及1977年的两个短刻度。每年刻度、隔年年份和关键年标签符合密集年份政策。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "关键值9.6、12.7、13.4%、0.5、5.8、5.9%、1.9、−0.4%、1977的3.2%/3.3%及终点2.4%/5.1%均正确；两侧峰谷数值及年份正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "黑线绑定Price inflation，红线绑定Output growth；年份递增。1982虚线末段、空心端点和预测图例一致。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "9个代表点的像素反演最大估计误差约0.113%满量程，低于3%；覆盖两系列小值、峰值、内部点，以及负值和近重合点。其余SVG点序列与输入相符。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始及处理素材；最终大陆、水彩纹理、积液和滴流可对应。素材实际构成主体，代码控制数据线、点、刻度和文字；外部保存封装未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "两系列叠在地球和连续积液上，以线和点的纵坐标承载数据，保持参考叠合方式；球面透视未扭曲线性数据坐标。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、合成标识、年度同比口径、百分比单位、图例、关键数值、年份和预测标识均可辨，1977双值标签有明确颜色区分。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "球体下缘及陆海纹理连续进入积液，积液连接向下滴流；暗背板在后、浅透视底座在下，黑红折线在前叠合。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题及副标题明确价格通胀、实际产出增长和较上年变化口径；YEAR轴为观察年份，%为变化率，1982标为预测。"
+          },
+          "reference_meaning": {
+            "status": "pass",
+            "evidence_zh": "保留通胀与实际产出年度变化的统计角色，以及地球融化滴落并叠合两系列的关系。按冻结要求，不强加旧峰谷、固定衰退论断或旧真实统计范围。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "0.5%红点在零线上方约19.65像素，−0.4%红点在下方约15.35像素。1977红黑细刻度相隔约3.88像素，中间存在浅色间隔，仍可区分。"
+          }
+        },
+        "semantic_attribution_zh": "合成数值、当前峰谷及中性标题属于允许的输入适配和数据驱动变化，没有发现当前必需语义遗漏。水彩材质和横向构图差异单列参考保真评分；小值测量不确定性归于像素分辨率。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "price_inflation",
+              "category": "1980",
+              "expected_value": 1.9,
+              "observed_value": 1.914,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 74.15,
+              "full_scale_error_percent": 0.088,
+              "small_value_relative_error_percent": 0.74,
+              "bbox_xyxy_normalized": [
+                0.6825,
+                0.65702,
+                0.6915,
+                0.67281
+              ],
+              "evidence_zh": "最小价格值：黑点中心约(1373,757)，在零线上方74.15像素；1.9及1980 minimum标注对应。",
+              "uncertainty_zh": "中心定位约±1像素，误差为像素抽测估计。"
+            },
+            {
+              "series_id": "price_inflation",
+              "category": "1968",
+              "expected_value": 13.4,
+              "observed_value": 13.4005,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 519.15,
+              "full_scale_error_percent": 0.0032,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.453,
+                0.26579,
+                0.4625,
+                0.28158
+              ],
+              "evidence_zh": "黑色峰点中心约(915,312)，距零线519.15像素，邻近标注13.4%。",
+              "uncertainty_zh": "中心定位约±1像素，不代表亚像素精确度。"
+            },
+            {
+              "series_id": "price_inflation",
+              "category": "1973",
+              "expected_value": 5.2,
+              "observed_value": 5.218,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 202.15,
+              "full_scale_error_percent": 0.113,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.5485,
+                0.54386,
+                0.5575,
+                0.56053
+              ],
+              "evidence_zh": "内部黑点中心约(1106,629)，位于4与6刻度之间。",
+              "uncertainty_zh": "中心定位约±1像素。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1960",
+              "expected_value": 0.5,
+              "observed_value": 0.5072,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 19.65,
+              "full_scale_error_percent": 0.0452,
+              "small_value_relative_error_percent": 1.45,
+              "bbox_xyxy_normalized": [
+                0.3005,
+                0.70439,
+                0.3095,
+                0.72018
+              ],
+              "evidence_zh": "全图最小正值：红点中心约(610,811.5)，距零线19.65像素；圆点及相连线段可见。",
+              "uncertainty_zh": "±1像素约对应该值±5.2%的相对测量不确定性，不能据满量程合格宣称高精度。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1980",
+              "expected_value": 5.9,
+              "observed_value": 5.902,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 228.65,
+              "full_scale_error_percent": 0.0126,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.6825,
+                0.52105,
+                0.6915,
+                0.53684
+              ],
+              "evidence_zh": "红色峰点中心约(1373,602.5)，距零线228.65像素，标注5.9%。",
+              "uncertainty_zh": "中心定位约±1像素。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1973",
+              "expected_value": 3.4,
+              "observed_value": 3.3982,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 131.65,
+              "full_scale_error_percent": 0.0111,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.5485,
+                0.60614,
+                0.5575,
+                0.62193
+              ],
+              "evidence_zh": "内部红点中心约(1106,699.5)，低于同年黑点。",
+              "uncertainty_zh": "中心定位约±1像素。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1967",
+              "expected_value": -0.4,
+              "observed_value": -0.3962,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 15.35,
+              "full_scale_error_percent": 0.0237,
+              "small_value_relative_error_percent": 0.95,
+              "bbox_xyxy_normalized": [
+                0.434,
+                0.73421,
+                0.443,
+                0.75088
+              ],
+              "evidence_zh": "红色谷点中心约(877,846.5)，在零线下15.35像素；1967: −0.4%通过短引线关联。",
+              "uncertainty_zh": "约±1像素；负号与零线下位置确定。"
+            },
+            {
+              "series_id": "price_inflation",
+              "category": "1977",
+              "expected_value": 3.2,
+              "observed_value": 3.1975,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 123.87,
+              "full_scale_error_percent": 0.0156,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.626,
+                0.61842,
+                0.633,
+                0.62281
+              ],
+              "evidence_zh": "黑色短刻度像素加权中心y≈707.277，标签框内黑色3.2%对应。",
+              "uncertainty_zh": "短刻度约2像素厚，中心定位约±0.5像素。"
+            },
+            {
+              "series_id": "output_growth",
+              "category": "1977",
+              "expected_value": 3.3,
+              "observed_value": 3.2976,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 127.75,
+              "full_scale_error_percent": 0.015,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.626,
+                0.61491,
+                0.633,
+                0.61842
+              ],
+              "evidence_zh": "红色短刻度中心y≈703.398，在黑刻度上方约3.88像素，与0.1个百分点差值一致。",
+              "uncertainty_zh": "短刻度约2像素厚、有抗锯齿，定位约±0.5像素。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体物体与承托",
+              "required_parts": [
+                "地球及经纬网",
+                "积液",
+                "滴流",
+                "暗背板",
+                "浅透视底座"
+              ],
+              "relationship": "地球下缘连接积液，积液向下延伸为滴流；背板在后、底座在下。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.07,
+                0.16667,
+                0.93,
+                0.89474
+              ],
+              "evidence_zh": "球体下缘和大陆纹理连续弯入积液；中央大滴流及左右较小滴流均与积液相连，向底座前方下垂。"
+            },
+            {
+              "category": "大值：价格1968",
+              "required_parts": [
+                "球体表面",
+                "黑色折线",
+                "峰点与标签"
+              ],
+              "relationship": "黑线和峰点叠在地球表面，以高度承载数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.439,
+                0.22807,
+                0.5135,
+                0.34474
+              ],
+              "evidence_zh": "13.4%峰点位于球体上部纹理前方，连接两侧折线；无需球体轮廓随数值改变。"
+            },
+            {
+              "category": "小值：产出1960",
+              "required_parts": [
+                "积液",
+                "红色起点",
+                "后续折线",
+                "零线"
+              ],
+              "relationship": "小值圆点及相连红线叠在积液上，位于零线上方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.295,
+                0.68684,
+                0.3325,
+                0.73509
+              ],
+              "evidence_zh": "红点、白边及向1961的连线可见，后方积液纹理连续，未以数值文字替代几何。"
+            },
+            {
+              "category": "负值：产出1967",
+              "required_parts": [
+                "积液",
+                "零线",
+                "红色谷点",
+                "负值标签"
+              ],
+              "relationship": "谷点下穿零线进入负区，标签通过短引线连接。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.393,
+                0.7193,
+                0.4845,
+                0.78596
+              ],
+              "evidence_zh": "红线下穿至y≈846.5后回升，1967: −0.4%与谷点明确关联。"
+            },
+            {
+              "category": "接近值：1977双系列",
+              "required_parts": [
+                "黑色短刻度",
+                "红色短刻度",
+                "两条折线",
+                "双值标签框"
+              ],
+              "relationship": "红色3.3%刻度高于黑色3.2%刻度，保持不同中心。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.5945,
+                0.60614,
+                0.6655,
+                0.70175
+              ],
+              "evidence_zh": "两条短刻度中间存在浅色间隔，引线向下连接1977及双色数值框。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "冻结输入允许合成年度值、峰谷变化、非数据姿态与标签位置调整，不要求复现旧涨跌论断。",
+            "output_added_or_lost_meaning_zh": "新增当前峰谷摘要且与数据一致；融化滴落动作、年度指标及叠合方式保留，未发现必需意义损失。",
+            "visible_inscription_evidence_zh": "Price inflation and output growth；SYNTHETIC DATA；Annual price change and real output growth；Percent from the previous year；ANNUAL CHANGE (%)；YEAR；1982 forecast。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "合成标识及当前中性主题符合冻结输入，不视为输出遗漏。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "1968价格峰与1980产出峰按当前数据形成，不按参考旧峰位扣分。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "小点及细刻度存在抗锯齿，定位精度受约0.5—1像素限制。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "仅判断可见融化滴流与统计角色，不推定额外作者意图。"
+            }
+          ],
+          "measurement_coverage_zh": "像素测量9/46个位置，覆盖两系列最小正值、最大值、内部点，以及唯一负值和1977近重合双点。其余37点核对SVG与输入并查看全图。必需文字、系列数、年份及23点/系列计数另行核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "地球、陆海区分、经纬网、积液、滴流、暗背板和透视底座均保留。",
+            "data_adaptation_excluded_zh": "不计当前曲线峰谷、数值和主题文字更新。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "球体接入积液，积液向下滴落；背板在后、底座在下、曲线在前叠合。",
+            "data_adaptation_excluded_zh": "按core允许姿态、非数据厚度与标签位置适配，不因陆地朝向或滴流宽度变化扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留中央地球和曲线为主体、图例置于底座的层级；新增大标题和左右摘要，构图明显宽幅化。",
+            "data_adaptation_excluded_zh": "不计数据线形、标签内容及可读性所需局部移动。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留珊瑚粉、灰蓝、浅色经纬网和暗背景；参考扁平印刷风格变为明显水彩颗粒、球体明暗及高光滴流。",
+            "data_adaptation_excluded_zh": "不计数值驱动曲线变化及允许的非数据尺寸调整。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/9223b97bb2323c",
       "numeric_supported": true,
