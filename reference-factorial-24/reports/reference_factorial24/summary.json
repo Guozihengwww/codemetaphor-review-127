@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:14:17.211325+00:00",
+  "updated_at": "2026-10-19T22:22:18.645452+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,8 +11,8 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "ok": 33,
-      "pending": 60,
+      "ok": 37,
+      "pending": 56,
       "running": 3
     },
     "routing_audits": {
@@ -12367,7 +12367,265 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为单枚棕色鸡蛋，小分区共享内部汇聚点。待评图保留完整蛋形、壳面纹理及连续明暗；九个分区汇聚于约(1150,1010)，顶部窄区可见。九组外部标签、主题、合成提示、百分比单位和蛋白质子类互斥说明均可读。",
+        "summary_zh": "通过。未发现超过容差的数据偏差、错误绑定或核心结构缺失。review.json已保存并通过schema.json校验；按后续要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "独立测量最终2000×1800图像，未使用生成器区域ID或自检报告。依据可见轮廓和描边中心计算屏幕面积，蛋形分母约706145像素²。九区估计依次为1.022、1.504、3.079、4.720、3.252、3.258、3.241、3.249、76.674%；最大点差约0.026个百分点。替代边界定位方法造成的差异最高约0.12个百分点。mark_extent_px记录区域包围框高度。",
+        "uncertainties_zh": "细描边、抗锯齿和轮廓分割限制测量精度，尤其不能由满量程通过保证小值的相对精度。参考图仅300×270，细纹理比较有限。未检查编排、日志或自检，无法核实capture_render.py的实际调用历史。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "九个分区及九组标签完整；四个蛋白质子类均保留Protein父类，标题、单位、总量与合成提示齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "1.0%、1.5%、3.1%、4.7%、四个3.25%及76.7%均与输入一致，Total 100%正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "逐条引线连接对应分区，顺时针类别顺序符合输入，未见交叉误绑。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "九区独立像素面积估计均在3个百分点容差内；共享内部汇聚点并填满蛋形，未见空缺或重叠。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始素材，成图可见对应壳面纹理及明暗。render.py合成素材并绘制文字，geometry.py按面积分位数控制几何；capture调用历史未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "蛋体本身承担完整分母和各数据区域，纹理覆盖各区；没有另置普通图表替代融合关系。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "全部类别、百分比、子类编号与底部说明可辨，无裁切或文字重叠。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "单枚近正面鸡蛋上窄下圆，保留受光面和暗面；分区由内聚边和外轮廓闭合，大小区域均属于同一蛋体。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "主题明确为鸡蛋营养成分构成，指标为蛋体构成百分比，四个Protein子类声明互斥。"
+          },
+          "reference_meaning": {
+            "status": "pass",
+            "evidence_zh": "保留参考的营养构成主题及蛋体区域承载份额的关系；合成数值和蛋白质拆分属于输入允许的改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "1.0%与1.5%窄区可辨，保留壳面、外轮廓和内聚边。1%区约7217像素²，顶部横宽约24像素；汇聚点附近自然收尖。"
+          }
+        },
+        "semantic_attribution_zh": "合成提示、更新数值及四个Protein子类来自冻结输入；分区数和布局变化属于允许的数据适配。未见当前主题或核心关系遗漏。小区边界测量与低分辨率参考材质比较存在精度限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "composition",
+              "category": "Vitamins minerals and salt",
+              "expected_value": 1,
+              "observed_value": 1.022,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 574,
+              "full_scale_error_percent": 0.022,
+              "small_value_relative_error_percent": 2.2,
+              "bbox_xyxy_normalized": [
+                0.4915,
+                0.239444,
+                0.5745,
+                0.558333
+              ],
+              "evidence_zh": "顶部棕色窄区约7217像素²；分母约706145像素²，y=450处横宽约24像素。",
+              "uncertainty_zh": "细描边中心存在约1像素定位不确定性；替代梯度定位约得0.91%，不能将2.2%的点估计偏差视为真实相对误差保证。"
+            },
+            {
+              "series_id": "composition",
+              "category": "Polyunsaturated fat",
+              "expected_value": 1.5,
+              "observed_value": 1.504,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 576,
+              "full_scale_error_percent": 0.004,
+              "small_value_relative_error_percent": 0.29,
+              "bbox_xyxy_normalized": [
+                0.504,
+                0.24,
+                0.575,
+                0.56
+              ],
+              "evidence_zh": "相邻琥珀色窄区约10623像素²，外部引线接入其顶部。",
+              "uncertainty_zh": "轮廓与描边定位影响估计，面积不确定性保守取约0.15个百分点。"
+            },
+            {
+              "series_id": "composition",
+              "category": "Protein / subcategory 2",
+              "expected_value": 3.25,
+              "observed_value": 3.258,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 232,
+              "full_scale_error_percent": 0.008,
+              "small_value_relative_error_percent": 0.26,
+              "bbox_xyxy_normalized": [
+                0.575,
+                0.432222,
+                0.6935,
+                0.561111
+              ],
+              "evidence_zh": "右侧第二个绿色分区约23009像素²，两条径向边与蛋形外轮廓闭合。",
+              "uncertainty_zh": "轮廓与描边定位影响估计，面积不确定性保守取约0.15个百分点。"
+            },
+            {
+              "series_id": "composition",
+              "category": "Water",
+              "expected_value": 76.7,
+              "observed_value": 76.674,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1137,
+              "full_scale_error_percent": 0.026,
+              "small_value_relative_error_percent": 0.03,
+              "bbox_xyxy_normalized": [
+                0.2955,
+                0.24,
+                0.684,
+                0.871667
+              ],
+              "evidence_zh": "左侧及下部连续壳面区域约541430像素²，占完整蛋体的大部分。",
+              "uncertainty_zh": "轮廓与描边定位影响估计，面积不确定性保守取约0.15个百分点。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "完整蛋体",
+              "required_parts": [
+                "连续蛋形外轮廓",
+                "蛋壳纹理",
+                "受光面与暗面",
+                "九个分区",
+                "共同汇聚点"
+              ],
+              "relationship": "分区包含于同一蛋形并共同构成完整蛋体，径向边在内部接触。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.2955,
+                0.2394,
+                0.702,
+                0.8717
+              ],
+              "evidence_zh": "蛋体约x591–1404、y431–1569；九区在约(1150,1010)相接，未见脱离片块。"
+            },
+            {
+              "category": "Water（最大区）",
+              "required_parts": [
+                "左侧及下部壳面",
+                "外轮廓",
+                "两条分界边",
+                "标签引线"
+              ],
+              "relationship": "沿外轮廓闭合，两分界边回到共同汇聚点；标签指向该区。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.2955,
+                0.24,
+                0.684,
+                0.8717
+              ],
+              "evidence_zh": "76.7%区域连续覆盖左侧及底部，保留亮暗面；左下引线接于约(606,1208)壳面。"
+            },
+            {
+              "category": "Vitamins minerals and salt（最小区）",
+              "required_parts": [
+                "顶部短外轮廓",
+                "两条窄区边",
+                "壳面",
+                "共同汇聚点",
+                "标签引线"
+              ],
+              "relationship": "两条边从顶部向共同内点收拢，窄区直接构成蛋体。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.4915,
+                0.2394,
+                0.5755,
+                0.5622
+              ],
+              "evidence_zh": "棕色窄区由顶部约x984–1010的轮廓段向(1150,1010)收尖，锚点位于该区顶部，未见间隙或悬空。"
+            },
+            {
+              "category": "Protein / subcategory 2",
+              "required_parts": [
+                "绿色壳面",
+                "两条径向边",
+                "右侧外轮廓",
+                "独立引线"
+              ],
+              "relationship": "由径向边及蛋体外轮廓围合，与相邻子类共享边界。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.575,
+                0.4322,
+                0.6935,
+                0.5611
+              ],
+              "evidence_zh": "右侧第二个绿色区域保留纹理，两边汇聚至共同内点，引线连接正确子类。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "Protein拆成四个互斥合成子类，各百分比更新；标签位置及几何允许适配。",
+            "output_added_or_lost_meaning_zh": "增加面积阅读与合成口径说明，未见主题、构成百分比或父类角色丢失。",
+            "visible_inscription_evidence_zh": "Egg nutrient composition、SYNTHETIC DATA、Percent of egg composition / Total 100%、四个Protein子类编号及互斥说明均可读。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "Protein四子类及合成声明来自当前冻结输入。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "九区面积对应当前份额；分区数量与布局变化未破坏完整鸡蛋及共同汇聚关系。"
+            }
+          ],
+          "measurement_coverage_zh": "唯一面积通道的九区均完成独立像素估计，详列最小区、另一窄区、内部区及最大区；全部标签与数值另行逐项核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均为单枚完整、上窄下圆的棕色鸡蛋，保留壳面纹理和亮暗面。",
+            "data_adaptation_excluded_zh": "分区数、比例变化及颜色重分配不作为身份扣分。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均近正面竖置，分区内聚并包含于完整蛋形，底部有软投影。",
+            "data_adaptation_excluded_zh": "允许的汇聚点、蛋形宽高和标签位置适配已排除。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "蛋体仍是主要数据主体，标签位于外侧；待评图增加大标题、页眉和底部说明，扩展了参考的紧凑版式。",
+            "data_adaptation_excluded_zh": "不对新增类别所需标签、当前标题和单位内容本身扣分。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "均保留浅背景、棕壳、左上照明与软影；待评图毛孔更鲜明，蛋白质区域采用低饱和绿色。",
+            "data_adaptation_excluded_zh": "分区数量、面积、当前文字和允许的姿态变化不计入材质评分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/5c107d011f5a6d",
       "numeric_supported": true,
@@ -12641,7 +12899,265 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为单枚棕色鸡蛋，小分区共享内部汇聚点。待评图保留完整蛋形、壳面纹理及连续明暗；九个分区汇聚于约(1150,1010)，顶部窄区可见。九组外部标签、主题、合成提示、百分比单位和蛋白质子类互斥说明均可读。",
+        "summary_zh": "通过。未发现超过容差的数据偏差、错误绑定或核心结构缺失。review.json已保存并通过schema.json校验；按后续要求未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "独立测量最终2000×1800图像，未使用生成器区域ID或自检报告。依据可见轮廓和描边中心计算屏幕面积，蛋形分母约706145像素²。九区估计依次为1.022、1.504、3.079、4.720、3.252、3.258、3.241、3.249、76.674%；最大点差约0.026个百分点。替代边界定位方法造成的差异最高约0.12个百分点。mark_extent_px记录区域包围框高度。",
+        "uncertainties_zh": "细描边、抗锯齿和轮廓分割限制测量精度，尤其不能由满量程通过保证小值的相对精度。参考图仅300×270，细纹理比较有限。未检查编排、日志或自检，无法核实capture_render.py的实际调用历史。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "九个分区及九组标签完整；四个蛋白质子类均保留Protein父类，标题、单位、总量与合成提示齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "1.0%、1.5%、3.1%、4.7%、四个3.25%及76.7%均与输入一致，Total 100%正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "逐条引线连接对应分区，顺时针类别顺序符合输入，未见交叉误绑。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "九区独立像素面积估计均在3个百分点容差内；共享内部汇聚点并填满蛋形，未见空缺或重叠。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始素材，成图可见对应壳面纹理及明暗。render.py合成素材并绘制文字，geometry.py按面积分位数控制几何；capture调用历史未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "蛋体本身承担完整分母和各数据区域，纹理覆盖各区；没有另置普通图表替代融合关系。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "全部类别、百分比、子类编号与底部说明可辨，无裁切或文字重叠。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "单枚近正面鸡蛋上窄下圆，保留受光面和暗面；分区由内聚边和外轮廓闭合，大小区域均属于同一蛋体。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "主题明确为鸡蛋营养成分构成，指标为蛋体构成百分比，四个Protein子类声明互斥。"
+          },
+          "reference_meaning": {
+            "status": "pass",
+            "evidence_zh": "保留参考的营养构成主题及蛋体区域承载份额的关系；合成数值和蛋白质拆分属于输入允许的改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "1.0%与1.5%窄区可辨，保留壳面、外轮廓和内聚边。1%区约7217像素²，顶部横宽约24像素；汇聚点附近自然收尖。"
+          }
+        },
+        "semantic_attribution_zh": "合成提示、更新数值及四个Protein子类来自冻结输入；分区数和布局变化属于允许的数据适配。未见当前主题或核心关系遗漏。小区边界测量与低分辨率参考材质比较存在精度限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "composition",
+              "category": "Vitamins minerals and salt",
+              "expected_value": 1,
+              "observed_value": 1.022,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 574,
+              "full_scale_error_percent": 0.022,
+              "small_value_relative_error_percent": 2.2,
+              "bbox_xyxy_normalized": [
+                0.4915,
+                0.239444,
+                0.5745,
+                0.558333
+              ],
+              "evidence_zh": "顶部棕色窄区约7217像素²；分母约706145像素²，y=450处横宽约24像素。",
+              "uncertainty_zh": "细描边中心存在约1像素定位不确定性；替代梯度定位约得0.91%，不能将2.2%的点估计偏差视为真实相对误差保证。"
+            },
+            {
+              "series_id": "composition",
+              "category": "Polyunsaturated fat",
+              "expected_value": 1.5,
+              "observed_value": 1.504,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 576,
+              "full_scale_error_percent": 0.004,
+              "small_value_relative_error_percent": 0.29,
+              "bbox_xyxy_normalized": [
+                0.504,
+                0.24,
+                0.575,
+                0.56
+              ],
+              "evidence_zh": "相邻琥珀色窄区约10623像素²，外部引线接入其顶部。",
+              "uncertainty_zh": "轮廓与描边定位影响估计，面积不确定性保守取约0.15个百分点。"
+            },
+            {
+              "series_id": "composition",
+              "category": "Protein / subcategory 2",
+              "expected_value": 3.25,
+              "observed_value": 3.258,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 232,
+              "full_scale_error_percent": 0.008,
+              "small_value_relative_error_percent": 0.26,
+              "bbox_xyxy_normalized": [
+                0.575,
+                0.432222,
+                0.6935,
+                0.561111
+              ],
+              "evidence_zh": "右侧第二个绿色分区约23009像素²，两条径向边与蛋形外轮廓闭合。",
+              "uncertainty_zh": "轮廓与描边定位影响估计，面积不确定性保守取约0.15个百分点。"
+            },
+            {
+              "series_id": "composition",
+              "category": "Water",
+              "expected_value": 76.7,
+              "observed_value": 76.674,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1137,
+              "full_scale_error_percent": 0.026,
+              "small_value_relative_error_percent": 0.03,
+              "bbox_xyxy_normalized": [
+                0.2955,
+                0.24,
+                0.684,
+                0.871667
+              ],
+              "evidence_zh": "左侧及下部连续壳面区域约541430像素²，占完整蛋体的大部分。",
+              "uncertainty_zh": "轮廓与描边定位影响估计，面积不确定性保守取约0.15个百分点。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "完整蛋体",
+              "required_parts": [
+                "连续蛋形外轮廓",
+                "蛋壳纹理",
+                "受光面与暗面",
+                "九个分区",
+                "共同汇聚点"
+              ],
+              "relationship": "分区包含于同一蛋形并共同构成完整蛋体，径向边在内部接触。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.2955,
+                0.2394,
+                0.702,
+                0.8717
+              ],
+              "evidence_zh": "蛋体约x591–1404、y431–1569；九区在约(1150,1010)相接，未见脱离片块。"
+            },
+            {
+              "category": "Water（最大区）",
+              "required_parts": [
+                "左侧及下部壳面",
+                "外轮廓",
+                "两条分界边",
+                "标签引线"
+              ],
+              "relationship": "沿外轮廓闭合，两分界边回到共同汇聚点；标签指向该区。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.2955,
+                0.24,
+                0.684,
+                0.8717
+              ],
+              "evidence_zh": "76.7%区域连续覆盖左侧及底部，保留亮暗面；左下引线接于约(606,1208)壳面。"
+            },
+            {
+              "category": "Vitamins minerals and salt（最小区）",
+              "required_parts": [
+                "顶部短外轮廓",
+                "两条窄区边",
+                "壳面",
+                "共同汇聚点",
+                "标签引线"
+              ],
+              "relationship": "两条边从顶部向共同内点收拢，窄区直接构成蛋体。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.4915,
+                0.2394,
+                0.5755,
+                0.5622
+              ],
+              "evidence_zh": "棕色窄区由顶部约x984–1010的轮廓段向(1150,1010)收尖，锚点位于该区顶部，未见间隙或悬空。"
+            },
+            {
+              "category": "Protein / subcategory 2",
+              "required_parts": [
+                "绿色壳面",
+                "两条径向边",
+                "右侧外轮廓",
+                "独立引线"
+              ],
+              "relationship": "由径向边及蛋体外轮廓围合，与相邻子类共享边界。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.575,
+                0.4322,
+                0.6935,
+                0.5611
+              ],
+              "evidence_zh": "右侧第二个绿色区域保留纹理，两边汇聚至共同内点，引线连接正确子类。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "Protein拆成四个互斥合成子类，各百分比更新；标签位置及几何允许适配。",
+            "output_added_or_lost_meaning_zh": "增加面积阅读与合成口径说明，未见主题、构成百分比或父类角色丢失。",
+            "visible_inscription_evidence_zh": "Egg nutrient composition、SYNTHETIC DATA、Percent of egg composition / Total 100%、四个Protein子类编号及互斥说明均可读。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "Protein四子类及合成声明来自当前冻结输入。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "九区面积对应当前份额；分区数量与布局变化未破坏完整鸡蛋及共同汇聚关系。"
+            }
+          ],
+          "measurement_coverage_zh": "唯一面积通道的九区均完成独立像素估计，详列最小区、另一窄区、内部区及最大区；全部标签与数值另行逐项核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均为单枚完整、上窄下圆的棕色鸡蛋，保留壳面纹理和亮暗面。",
+            "data_adaptation_excluded_zh": "分区数、比例变化及颜色重分配不作为身份扣分。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均近正面竖置，分区内聚并包含于完整蛋形，底部有软投影。",
+            "data_adaptation_excluded_zh": "允许的汇聚点、蛋形宽高和标签位置适配已排除。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "蛋体仍是主要数据主体，标签位于外侧；待评图增加大标题、页眉和底部说明，扩展了参考的紧凑版式。",
+            "data_adaptation_excluded_zh": "不对新增类别所需标签、当前标题和单位内容本身扣分。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "均保留浅背景、棕壳、左上照明与软影；待评图毛孔更鲜明，蛋白质区域采用低饱和绿色。",
+            "data_adaptation_excluded_zh": "分区数量、面积、当前文字和允许的姿态变化不计入材质评分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/5c107d011f5a6d",
       "numeric_supported": true,
@@ -35828,7 +36344,397 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为米色背景、红色手写标题、深褐绳圈和七个曲边区，顶部悬挂绳结，下方左中右三对羽毛。待评图保留这些关系，圈内可见11个带数值的连通区；中心浅色Dream G标6。合成声明、主题、records单位和301总数清楚，全部父子类标签可读，未见明显空洞或遮字。源码前保真评分：身份4、姿态关系4、构图3、材质风格3。",
+        "summary_zh": "通过。11类数值、标签、单位和总数完整；独立像素测量最大面积偏差约0.055个百分点。关键部件及融合关系保留，生图素材实质参与主体。review.json已用UTF-8写入并通过schema.json校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在原始1440×2100图中抽样区域颜色进行分割，独立拟合可见圆盘，中心约(719.57,956.63)、半径516.80 px、面积839058 px²。文字及细线覆盖的68929像素按最近可见色块补全；未读取生成器掩膜或自检结果。区域面积除以圆盘面积再乘301得到records。mark_extent_px为外接框最长边；误差为近似点估计。",
+        "uncertainties_zh": "抗锯齿、圆周拟合和覆盖像素补全存在边界误差。最小区边界移动1像素的敏感性范围约5.828–6.183 records，不能据点估计宣称极高相对精度。原参考多项调查百分比不能自动视为互斥组成。按限制未检查运行日志或编排文件，未独立核验capture_render.py的执行归档。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "11个叶类别、7个父类和count系列齐全；A/E/B分别有3/2/2个子类，其余G/D/C/F各1类，总数301正确。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项可读23、23、46、6、26、27、29、36、34、34、17，与输入一致；单位records和总数301明确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "各数值及父子类标签位于对应色区内；中心6对应Dream G，最大46对应Dream A子类3，无跨界或错配。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "全部11区独立像素测量最大误差约0.055个百分点，均为单一连通块。最大46约测得46.013，中心6约测得6.005，中间值26约测得25.948 records。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png和hoop.png，绳圈纹理、顶结及三对羽毛明显用于最终主体。render.py调用geometry.py按当前数据生成分区并绘制文字；可见面积另经像素核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "曲边区域填满圈内并共享边界，外缘与绳圈接合。顶部悬挂环和绳结接圈顶，三对羽毛通过细绳或绳结连接；未见破坏结构的遮挡或错层。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成声明、11组类别和数值、单位、分母及口径说明均可读；小区标签未压线。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "绳圈包含完整数据分区，顶部悬挂连接和下方三对羽毛保留；七父区细分成11叶区，主体本身承担面积编码。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Synthetic dream categories、Synthetic records、Unit: records及records ÷ 301明确表达主题、指标、单位和共同分母；父子类别角色完整，页脚明确非真实统计。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "捕梦网容纳梦境信息的关系保留；具体梦境经历调查被改为合成父子类和301记录组成，属于冻结输入明确允许的主题适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "Dream G闭合浅色区约155×166 px，边界和标签均可辨；测得面积约1.995%，目标1.993%，未见人为放大。"
+          }
+        },
+        "semantic_attribution_zh": "合成主题及100%面积组成来自允许的输入适配；11叶区细分由数据层级驱动。未发现输出遗漏造成的主题或结构丢失。原调查各百分比的联合统计关系不确定，不推定其互斥；像素分辨率主要限制面积测量精度。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "count",
+              "category": "Dream A / synthetic subcategory 1",
+              "expected_value": 23,
+              "observed_value": 23.165,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 435,
+              "full_scale_error_percent": 0.0548,
+              "small_value_relative_error_percent": 0.717,
+              "bbox_xyxy_normalized": [
+                0.23611,
+                0.28095,
+                0.53819,
+                0.4581
+              ],
+              "evidence_zh": "分割面积约64574 px²，占圆盘7.696%；外接框435×372 px。",
+              "uncertainty_zh": "文字及细线覆盖经最近邻补全，边界抗锯齿使结果为近似点估计。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream A / synthetic subcategory 2",
+              "expected_value": 23,
+              "observed_value": 23.013,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 429,
+              "full_scale_error_percent": 0.0042,
+              "small_value_relative_error_percent": 0.054,
+              "bbox_xyxy_normalized": [
+                0.24583,
+                0.20952,
+                0.54375,
+                0.35429
+              ],
+              "evidence_zh": "分割面积约64149 px²，占圆盘7.645%；外接框429×304 px。",
+              "uncertainty_zh": "圆周拟合和覆盖像素补全存在像素级误差。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream A / synthetic subcategory 3",
+              "expected_value": 46,
+              "observed_value": 46.013,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 537,
+              "full_scale_error_percent": 0.0042,
+              "small_value_relative_error_percent": 0.027,
+              "bbox_xyxy_normalized": [
+                0.50139,
+                0.20952,
+                0.77292,
+                0.46524
+              ],
+              "evidence_zh": "分割面积约128263 px²，占圆盘15.287%；外接框391×537 px。",
+              "uncertainty_zh": "近似点估计；1像素边界敏感性范围约45.515–46.370 records。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream G",
+              "expected_value": 6,
+              "observed_value": 6.005,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 166,
+              "full_scale_error_percent": 0.0016,
+              "small_value_relative_error_percent": 0.081,
+              "bbox_xyxy_normalized": [
+                0.45486,
+                0.43619,
+                0.5625,
+                0.51524
+              ],
+              "evidence_zh": "分割面积约16739 px²，占圆盘1.995%；外接框155×166 px，闭合边界可辨。",
+              "uncertainty_zh": "1像素边界敏感性范围约5.828–6.183 records；不能据点估计宣称小值精确到0.1%。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream E / synthetic subcategory 1",
+              "expected_value": 26,
+              "observed_value": 25.948,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 426,
+              "full_scale_error_percent": 0.0173,
+              "small_value_relative_error_percent": 0.2,
+              "bbox_xyxy_normalized": [
+                0.5625,
+                0.29619,
+                0.85833,
+                0.48429
+              ],
+              "evidence_zh": "分割面积约72332 px²，占圆盘8.621%；外接框426×395 px。",
+              "uncertainty_zh": "近似点估计；1像素边界敏感性范围约25.529–26.259 records。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream E / synthetic subcategory 2",
+              "expected_value": 27,
+              "observed_value": 26.944,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 458,
+              "full_scale_error_percent": 0.0185,
+              "small_value_relative_error_percent": 0.206,
+              "bbox_xyxy_normalized": [
+                0.54097,
+                0.44095,
+                0.85903,
+                0.57238
+              ],
+              "evidence_zh": "分割面积约75109 px²，占圆盘8.952%；外接框458×276 px。",
+              "uncertainty_zh": "圆周拟合和覆盖像素补全存在像素级误差。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream D",
+              "expected_value": 29,
+              "observed_value": 28.918,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 450,
+              "full_scale_error_percent": 0.0272,
+              "small_value_relative_error_percent": 0.283,
+              "bbox_xyxy_normalized": [
+                0.50833,
+                0.50714,
+                0.82083,
+                0.68143
+              ],
+              "evidence_zh": "分割面积约80611 px²，占圆盘9.607%；外接框450×366 px。",
+              "uncertainty_zh": "圆周拟合和覆盖像素补全存在像素级误差。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream C",
+              "expected_value": 36,
+              "observed_value": 35.9,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 424,
+              "full_scale_error_percent": 0.0333,
+              "small_value_relative_error_percent": 0.278,
+              "bbox_xyxy_normalized": [
+                0.34792,
+                0.50286,
+                0.64236,
+                0.7019
+              ],
+              "evidence_zh": "分割面积约100073 px²，占圆盘11.927%；外接框424×418 px。",
+              "uncertainty_zh": "圆周拟合和覆盖像素补全存在像素级误差。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream B / synthetic subcategory 1",
+              "expected_value": 34,
+              "observed_value": 34.059,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 472,
+              "full_scale_error_percent": 0.0195,
+              "small_value_relative_error_percent": 0.173,
+              "bbox_xyxy_normalized": [
+                0.18472,
+                0.45571,
+                0.46389,
+                0.68048
+              ],
+              "evidence_zh": "分割面积约94941 px²，占圆盘11.315%；外接框402×472 px。",
+              "uncertainty_zh": "圆周拟合和覆盖像素补全存在像素级误差。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream B / synthetic subcategory 2",
+              "expected_value": 34,
+              "observed_value": 34.058,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 456,
+              "full_scale_error_percent": 0.0193,
+              "small_value_relative_error_percent": 0.171,
+              "bbox_xyxy_normalized": [
+                0.14097,
+                0.38095,
+                0.45764,
+                0.57333
+              ],
+              "evidence_zh": "分割面积约94939 px²，占圆盘11.315%；外接框456×404 px。",
+              "uncertainty_zh": "圆周拟合和覆盖像素补全存在像素级误差。"
+            },
+            {
+              "series_id": "count",
+              "category": "Dream F",
+              "expected_value": 17,
+              "observed_value": 16.978,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 350,
+              "full_scale_error_percent": 0.0072,
+              "small_value_relative_error_percent": 0.128,
+              "bbox_xyxy_normalized": [
+                0.14444,
+                0.28905,
+                0.3875,
+                0.42238
+              ],
+              "evidence_zh": "分割面积约47328 px²，占圆盘5.641%；外接框350×280 px。",
+              "uncertainty_zh": "圆周拟合和覆盖像素补全存在像素级误差。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体捕梦网与悬挂结构",
+              "required_parts": [
+                "绳圈",
+                "顶部悬挂环",
+                "绳结",
+                "圈内曲边区域"
+              ],
+              "relationship": "悬挂环向下接绳结，绳结接触圈顶；绳圈包围数据圆盘。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.094,
+                0.118,
+                0.906,
+                0.734
+              ],
+              "evidence_zh": "顶部连接连续，色区延伸到圈内边界；分区承担面积通道，未变成圈旁装饰。"
+            },
+            {
+              "category": "大值：Dream A / synthetic subcategory 3",
+              "required_parts": [
+                "外圈",
+                "共享曲边",
+                "46及子类标签",
+                "连通色区"
+              ],
+              "relationship": "右上大色区外侧接绳圈，内侧与其他区域共边，标签被区域包含。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.50139,
+                0.20952,
+                0.77292,
+                0.46524
+              ],
+              "evidence_zh": "珊瑚色区域从圈顶延至中心右侧，与邻区曲线连续；46及完整子类标签在内部。"
+            },
+            {
+              "category": "小值：Dream G",
+              "required_parts": [
+                "闭合小色区",
+                "共享边界",
+                "6和Dream G文字",
+                "完整外层圆盘"
+              ],
+              "relationship": "小区完全包含在圆盘内部，与邻区接壤而非空洞。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.45486,
+                0.43619,
+                0.5625,
+                0.51524
+              ],
+              "evidence_zh": "浅黄色小区边界完整，数值与名称均在区内，保留参考内部小区域的结构角色。"
+            },
+            {
+              "category": "下方三组成对羽毛",
+              "required_parts": [
+                "左侧羽毛对",
+                "中央羽毛对",
+                "右侧羽毛对",
+                "连接绳及绳结"
+              ],
+              "relationship": "侧边羽毛通过细绳接圈侧下部，中央羽毛从圈底绳结向下展开。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.053,
+                0.553,
+                0.947,
+                0.907
+              ],
+              "evidence_zh": "三处均能分辨两根带羽轴和羽片的羽毛；绳线下端接羽毛根部，未见漂浮或反向连接。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入明确要求合成梦境类别、Synthetic records及301记录的面积组成，并允许有名父类的子类扩展和非数据姿态调整。",
+            "output_added_or_lost_meaning_zh": "原调查的具体梦境经历语义不再出现，归因于输入主题改写；捕梦网包含梦境分区的融合关系保留，未额外声称真实统计。",
+            "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Synthetic dream categories、Synthetic records · Unit: records、301 records / 11 categories、Region area = records ÷ 301及not observed dream statistics。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "原调查改为合成父子类别及records组成属于明确允许的主题适配，reference_meaning记partial，不列生成缺陷。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "七父类细分为11叶类，粗细曲线表达层级；最小6按新数据占约2%。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "抗锯齿及文字、细线覆盖限制面积测量精度，小区结构仍可辨。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "原图多项调查百分比的联合统计关系不明确，未强行视为100%组成。"
+            }
+          ],
+          "measurement_coverage_zh": "单一面积通道覆盖全部11区，包括最小值、最大值和所有中间值；全体标签、数值、单位及数量另经原图核对。无遗漏面板；部件检查覆盖顶部连接、绳圈和三组羽毛。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "源码前可见绳圈、顶结及左中右三对带羽轴和羽片的羽毛，非数据物体身份完整。",
+            "data_adaptation_excluded_zh": "排除七父类细分为11叶区及数值、面积和标签更新。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "源码前可见顶部连接圈顶、分区包含于圈内、三组羽毛向下垂挂，接触和包含关系保留。",
+            "data_adaptation_excluded_zh": "按core排除长悬绳改短环、圈形比例及非数据厚度等允许调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "标题在上、圆盘主体居中、羽毛向下延伸的层级保留；标题改为左对齐两行，增加顶部统计和底部说明。",
+            "data_adaptation_excluded_zh": "不因新类别、数值及必要合成声明导致的内容增加扣分。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "米色纸感、暖红棕色和深色线描羽毛延续参考；线条更细密，色区更平滑，标题改为衬线排字。",
+            "data_adaptation_excluded_zh": "排除数据决定的分区轮廓、数量及允许更新的标签内容。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/5e7ce0cfc768d2",
       "numeric_supported": true,
@@ -56808,7 +57714,326 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为白底蓝红双叉，宽弧叉头接细颈和长柄，叉齿承担数值。待评图保留上述关系，蓝组七根正值齿及一个零值根部位置，红组八根齿。全部类别和数值可读，3%短齿仍能辨认尖端、侧边及根部连接。主题、服务类型、百分比、合成声明和共用尺度清楚。",
+        "summary_zh": "通过。数值、类别绑定、齿长尺度及叉体连接符合要求，生成素材实质可见。已保存并通过schema校验的review.json；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在2000×1825原图上独立测量，未修改或重渲染图片。由可见尺标像素拟合齿轴，20%跨度约399.847像素。分别提取蓝红叉的有色连通主体，以齿间直线边界估计零根，投影测量齿长。15根正值齿的近似满量程误差均小于0.23%。源码公式仅作交叉佐证。",
+        "uncertainties_zh": "抗锯齿、零线描边和阈值带来约±1.5像素边界不确定性，最小3%齿的相对测量不确定性约2.5%。未查看禁止的日志、自检或编排文件，无法独立核实生成调用及capture_render.py运行历史。参考正文的支出与访问量表述存在口径不确定性，本评估遵循冻结指标。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "两组各8个类别，共16项；蓝组7根正值齿及零根位置，红组8根齿。必要标题、标签、单位及合成声明完整。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "蓝组16、11、10、0、3、6.25、9.5、12.75%；红组20、8、12、14、15、11、14、17%，逐项与输入一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "类别顺序正确，标签紧邻对应齿尖或零根；新增类别保留Table chain或Quick chain父类。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "蓝组16%、3%、6.25%约319.2、59.1、124.2像素；红组20%、8%、12%约399.2、159.2、239.3像素，符合共用约20像素/百分点的尺度。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "原始素材和处理后的蓝红叉身、齿面纹理与成图高光对应。render.py及composition.svg以数据裁切素材，控制齿长、位置和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数值由叉齿本身承载，齿接叉头，叉头经细颈连接长柄；未见破坏结构的错层、断接或表面错位。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、系列、百分比、合成声明及全部类别数值均可读，新增双行标签完整且无遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "白底蓝红双叉平行斜放，宽弧叉头、细颈、长柄和亮面材质齐全；大齿与短齿均保留完整连接。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题和分组明确表达两类餐饮服务的支出变化百分比；类别角色清楚，没有将百分比误作100%构成。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留餐饮支出、两类服务比较及叉齿融合关系。真实品牌、Q2和五个月趋势反转由冻结合成输入替换，属于许可改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "3%短齿约59.1像素长，尖端、侧边及根部连接可辨；红组8%约159.2像素。零值保持无齿空位。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题、指标、单位和类别角色没有可见输出遗漏。旧品牌与时间论述的变化归因于许可输入适配；齿数、齿长及叉头展宽来自当前数据和允许的形态调整。像素分辨率限制精度声明，不影响短齿关系辨认。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "table_service",
+              "category": "Table A",
+              "expected_value": 16,
+              "observed_value": 15.965,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 319.2,
+              "full_scale_error_percent": 0.175,
+              "small_value_relative_error_percent": 0.219,
+              "bbox_xyxy_normalized": [
+                0.05381,
+                0.42913,
+                0.11992,
+                0.60419
+              ],
+              "evidence_zh": "像素齿尖约(129.7,789.5)，齿根约(217.7,1096.3)，沿像素拟合齿轴测长，以可见尺标换算。",
+              "uncertainty_zh": "边界约±1.5像素；结果为近似测量。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table E",
+              "expected_value": 3,
+              "observed_value": 2.957,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 59.1,
+              "full_scale_error_percent": 0.215,
+              "small_value_relative_error_percent": 1.432,
+              "bbox_xyxy_normalized": [
+                0.2932,
+                0.50212,
+                0.32346,
+                0.5402
+              ],
+              "evidence_zh": "最小正值；像素齿尖约(608.5,922.7)，齿根约(624.8,979.5)，沿齿轴测长并用尺标换算。",
+              "uncertainty_zh": "边界约±1.5像素，相对测量不确定性约2.5%。"
+            },
+            {
+              "series_id": "table_service",
+              "category": "Table chain added 1",
+              "expected_value": 6.25,
+              "observed_value": 6.214,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 124.2,
+              "full_scale_error_percent": 0.178,
+              "small_value_relative_error_percent": 0.57,
+              "bbox_xyxy_normalized": [
+                0.33517,
+                0.4518,
+                0.37441,
+                0.52419
+              ],
+              "evidence_zh": "内部类别；像素齿尖约(692.5,830.9)，齿根约(726.7,950.3)，沿齿轴测长并用尺标换算。",
+              "uncertainty_zh": "边界约±1.5像素；结果为近似测量。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick A",
+              "expected_value": 20,
+              "observed_value": 19.97,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 399.2,
+              "full_scale_error_percent": 0.152,
+              "small_value_relative_error_percent": 0.152,
+              "bbox_xyxy_normalized": [
+                0.5052,
+                0.38697,
+                0.58235,
+                0.6042
+              ],
+              "evidence_zh": "最大值；像素齿尖约(1032.5,712.6)，齿根约(1142.6,1096.3)，沿齿轴测长并用尺标换算。",
+              "uncertainty_zh": "边界约±1.5像素；结果为近似测量。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick B",
+              "expected_value": 8,
+              "observed_value": 7.961,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 159.2,
+              "full_scale_error_percent": 0.196,
+              "small_value_relative_error_percent": 0.49,
+              "bbox_xyxy_normalized": [
+                0.58925,
+                0.49741,
+                0.6333,
+                0.58819
+              ],
+              "evidence_zh": "本系列最小正值；像素齿尖约(1200.6,914.1)，齿根约(1244.5,1067.1)，沿齿轴测长并用尺标换算。",
+              "uncertainty_zh": "边界约±1.5像素；结果为近似测量。"
+            },
+            {
+              "series_id": "quick_service",
+              "category": "Quick C",
+              "expected_value": 12,
+              "observed_value": 11.968,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 239.3,
+              "full_scale_error_percent": 0.162,
+              "small_value_relative_error_percent": 0.271,
+              "bbox_xyxy_normalized": [
+                0.62939,
+                0.43913,
+                0.68448,
+                0.5721
+              ],
+              "evidence_zh": "内部类别；像素齿尖约(1280.9,807.8)，齿根约(1346.9,1037.7)，沿齿轴测长并用尺标换算。",
+              "uncertainty_zh": "边界约±1.5像素；结果为近似测量。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Table A大齿及蓝叉主体",
+              "required_parts": [
+                "16%齿",
+                "零根",
+                "宽弧叉头",
+                "细颈",
+                "长柄"
+              ],
+              "relationship": "齿沿左上轴伸出，根接叉头，叉头收窄成细颈并连接长柄。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.05,
+                0.35,
+                0.49,
+                0.9
+              ],
+              "evidence_zh": "长齿从约(218,1096)连至(130,790)，叉头、细颈及长柄连续。"
+            },
+            {
+              "category": "Table E最小正值齿",
+              "required_parts": [
+                "3%齿尖",
+                "侧边",
+                "零根",
+                "蓝色叉头"
+              ],
+              "relationship": "短齿自共同零线伸出，根部接入叉头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.29,
+                0.5,
+                0.34,
+                0.58
+              ],
+              "evidence_zh": "约59.1像素的短齿保留顶端和侧边，在约(625,980)接入叉头，没有悬浮或被吞没。"
+            },
+            {
+              "category": "Quick A大齿及红叉主体",
+              "required_parts": [
+                "20%齿",
+                "零根",
+                "宽弧叉头",
+                "细颈",
+                "长柄"
+              ],
+              "relationship": "大齿接叉头上缘，叉头经细颈接长柄，与蓝叉平行。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.5,
+                0.3,
+                0.95,
+                0.9
+              ],
+              "evidence_zh": "约399.2像素的红齿从约(1143,1096)伸至(1033,713)，主体部件连续。"
+            },
+            {
+              "category": "Quick B最小正值齿",
+              "required_parts": [
+                "8%齿尖",
+                "侧边",
+                "零根",
+                "红色叉头"
+              ],
+              "relationship": "最短红齿与其他齿共根线并接入同一叉头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.58,
+                0.49,
+                0.65,
+                0.63
+              ],
+              "evidence_zh": "约159.2像素的齿在约(1244,1067)接叉头，尖端约(1201,914)，轮廓完整。"
+            },
+            {
+              "category": "Table D零值位置",
+              "required_parts": [
+                "Table D 0%标签",
+                "根部圆点",
+                "共同零线"
+              ],
+              "relationship": "保留第四类别位置，不设置伸出齿。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.23,
+                0.5,
+                0.29,
+                0.58
+              ],
+              "evidence_zh": "第三根蓝齿与3%短齿之间有零值标签及根部圆点，上方留白，无正值齿轮廓。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "使用合成类别及当前支出变化值，允许姿态和非数据厚度适配，不复制旧品牌、峰谷或涨跌结论。",
+            "output_added_or_lost_meaning_zh": "当前服务比较完整，增加共用尺度和零值说明；原时间及反转论述不属于当前数据，未复述属于许可改编。",
+            "visible_inscription_evidence_zh": "可见Restaurant spending change、Table service、Quick service、Spending change (%)、SYNTHETIC DATA及Unit: % · Scale: 0–20。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "旧品牌和时间叙述由合成类别及当前主题替代，reference_meaning的partial来自许可变化。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "八类别位置、零值空位及新齿长由当前数据决定，叉头展宽仍保留连接关系。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "抗锯齿和根线描边限制边界精度，但最小齿约59像素，物理关系可辨。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "参考标题写支出，正文提到访问量；不据此推定更具体原始口径，按冻结指标判断。"
+            }
+          ],
+          "measurement_coverage_zh": "扫描全部15根正值齿，记录两系列各自最大、最小正值及内部类别共6个代表测量。其余蓝齿约219.2、199.2、189.0、254.1像素，红齿约279.1、299.2、219.2、279.2、339.1像素，均符合尺度容差。零值单独检查空位关系，16项标签和绑定逐项核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "蓝红叉的宽弧叉头、细颈及长柄完整，身份清楚且部件连续。",
+            "data_adaptation_excluded_zh": "不扣除类别增加造成的展宽、当前齿长和允许的非数据厚度调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "双叉平行斜放、蓝左红右，齿向左上，柄向右下，连接顺序保留。",
+            "data_adaptation_excluded_zh": "倾角和非数据外形调整属于明确允许的适配。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留白底、顶部标题及双叉主体；图例改为分组标题，增加尺标和说明，未保留底部灰色品牌拼贴。",
+            "data_adaptation_excluded_zh": "不扣除当前主题、合成声明及新增类别所需排布。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留蓝红亮面和白色反光；待评图立体渐变与圆柱高光更强，参考更接近平面矢量色块。",
+            "data_adaptation_excluded_zh": "不将齿数、齿长和允许的厚度变化计入材质评分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/58380cba833303",
       "numeric_supported": true,
@@ -74557,7 +75782,326 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.94,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为中央斜俯视分离夹心饼干、外围百分数及下方独立计数面板。成图保留该结构：C最大，B为中等扇块，A顶面近细线，D为窄片，深色饼干与浅色奶油可辨。四个百分数与输入一致；下方有1个青色、11个灰色人形，标注每人物2人及独立24人分母。必要文字未见裁切。源码前已记录保真度：身份3、姿态关系4、构图3、材质3。",
+        "summary_zh": "未发现违反关键要求的可见缺陷。数值、计数及绑定正确，成图扇角测量均在容差内。最小A的相对精度受像素限制。review.json已保存并通过schema.json校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "分析指定2000×2000成图，未重渲染。使用声明的斜视比例Q=0.54逆变换；B、C母圆位置由实际轮廓拟合，A中心及D搜索位置由源码提供非数据标定，端点和材质边界取自成图。份额误差以百分点表示。测量小数不代表相同等级的像素精度。",
+        "uncertainties_zh": "A端点各±1像素的敏感性范围约0.066%–0.263%，不是置信区间；不能据点估计保证小值相对精度。D梯度测量受浮雕纹理影响。部分内端和下层被遮挡，不能逐点验证全部接触线。未读取日志、自检及归档执行记录，未独立核实capture_render.py完整调用链。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "四个类别、Ad share系列、全部百分数、两类观众、24人总量、每人物2人和SYNTHETIC DATA均出现；可见12个人形。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "四个百分数逐位符合输入；观众2人、22人、总计24人正确，正小值未归零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "A、B、D、C引线分别落到实际青色点约(673,504)、(1047,567)、(830,601)、(740,1079)。青色单人形绑定2人，灰色11人形绑定22人。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "逆投影测得A约0.165%、B约10.993%、C约87.424%、D约1.362%，均在3个百分点容差内；人物数量及分组准确。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png，其饼干浮雕、侧纹和奶油纹理实质用于成图主体；源码将材质映射到数据控制的扇块。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "饼干顶面扇角承担广告份额，人物面板独立计数；上下饼干夹奶油关系成立，未见主要层次倒置或脱离。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、系列、单位、全部数值、类别、换算及分母声明在原图可读，无必要文字遮挡或裁切。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "保留分离夹心饼干扇块及独立观众面板。C前沿层次连续；最小A仍可辨深—浅—深侧面结构。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "广告份额、百分比、合成可比类别、人数单位及两个独立分母均明确。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "广告份额与独立比赛关注人数的并置关系保留；具体产品类别及品牌化文案被合成类别和新标题替换，属于冻结输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "A顶面外缘仅约5–6像素，仍能定位且侧面夹心可辨；D局部顶面宽约14像素。A的小值相对精度不能可靠确认。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题、指标、单位和独立观众计数语义完整。具体产品类别改为合成A–D属于输入适配；巨大C和细小A、D由数据驱动。A精读困难主要来自分辨率，未见必要语义输出遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "Category A",
+              "expected_value": 0.17484564,
+              "observed_value": 0.1646177393,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 5.3852,
+              "full_scale_error_percent": 0.0102279007,
+              "small_value_relative_error_percent": 5.8497,
+              "bbox_xyxy_normalized": [
+                0.297,
+                0.2205,
+                0.4655,
+                0.3565
+              ],
+              "evidence_zh": "实际外缘角点约(594,443)、(599,441)，弦长5.39像素；采用声明投影与非数据中心标定，逆算角宽约0.593°。",
+              "uncertainty_zh": "中心来自源码，端点来自成图。端点各±1像素对应约0.066%–0.263%；相对误差仅为不稳定的点估计。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Category B",
+              "expected_value": 11.01458495,
+              "observed_value": 10.9932059065,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 398.2788,
+              "full_scale_error_percent": 0.0213790435,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.4135,
+                0.245,
+                0.6115,
+                0.407
+              ],
+              "evidence_zh": "实际端点约(827,542)、(1222,491)。196个轮廓点拟合中心约(1156.28,812.86)，逆算角宽39.576°。",
+              "uncertainty_zh": "轮廓拟合残差约0.50像素，角点存在约1像素选择差异。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Category C",
+              "expected_value": 87.42281867,
+              "observed_value": 87.4237966929,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 1200.5759,
+              "full_scale_error_percent": 0.0009780229,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2985,
+                0.307,
+                0.9,
+                0.71
+              ],
+              "evidence_zh": "209个轮廓像素拟合中心(1197.50,936.69)、半径600.29像素。起始角点约(1263,614)；另一可见径向遮挡边由79个像素转折拟合，斜率0.66639。逆算角宽314.726°。",
+              "uncertainty_zh": "另一外缘角点被遮挡，使用同一直线的可见边界方向。轮廓和直线拟合残差约0.42、0.34像素；不保证千分之一百分点精度。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Category D",
+              "expected_value": 1.38775074,
+              "observed_value": 1.3615675779,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 14.3517,
+              "full_scale_error_percent": 0.0261831621,
+              "small_value_relative_error_percent": 1.8867,
+              "bbox_xyxy_normalized": [
+                0.47,
+                0.334,
+                0.535,
+                0.39
+              ],
+              "evidence_zh": "x=940–1070区域的两条可见材质边界斜率约0.67125、0.80318，逆算角差4.902°。x≈1000处顶面垂直带宽约14.35像素。",
+              "uncertainty_zh": "中心用源码作位置标定，斜率来自实际色差。浮雕和抗锯齿影响梯度峰，误差为粗略点估计。"
+            },
+            {
+              "series_id": "independent_cohort",
+              "category": "Not following the game",
+              "expected_value": 2,
+              "observed_value": 2,
+              "measurement_method": "symbol_count",
+              "mark_extent_px": 136,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.324,
+                0.8435,
+                0.3525,
+                0.912
+              ],
+              "evidence_zh": "1个完整青色人形，高约136像素；按每人物2人，表示2人。",
+              "uncertainty_zh": "计数明确；头与身体之间的空隙不构成两个符号，面板分母为24人。"
+            },
+            {
+              "series_id": "independent_cohort",
+              "category": "Following the game",
+              "expected_value": 22,
+              "observed_value": 22,
+              "measurement_method": "symbol_count",
+              "mark_extent_px": 136,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.3755,
+                0.8435,
+                0.919,
+                0.912
+              ],
+              "evidence_zh": "逐个可见11个灰色人形，颜色连通区域交叉确认11组头与身体；每人物2人，合计22人。",
+              "uncertainty_zh": "136像素为单个人形高度；实际数量编码是11个符号，独立分母24人。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "大值C",
+              "required_parts": [
+                "上饼干",
+                "奶油层",
+                "下饼干",
+                "扇角边界"
+              ],
+              "relationship": "奶油夹于上下饼干之间，顶面扇角承担份额。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.2985,
+                0.307,
+                0.9,
+                0.71
+              ],
+              "evidence_zh": "前沿深—浅—深弧带连续；局部遮挡没有使奶油翻到顶面或脱离饼干。"
+            },
+            {
+              "category": "中值B",
+              "required_parts": [
+                "扇形顶面",
+                "径向切面",
+                "奶油层",
+                "下饼干"
+              ],
+              "relationship": "径向边围出中等扇角，浅色夹层位于深色饼干之间。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.4135,
+                0.245,
+                0.612,
+                0.486
+              ],
+              "evidence_zh": "顶面及右侧切面清楚；内端部分被遮挡，可见夹心层次仍连贯。"
+            },
+            {
+              "category": "最小值A",
+              "required_parts": [
+                "极窄顶面",
+                "上饼干侧面",
+                "奶油切面",
+                "下饼干侧面"
+              ],
+              "relationship": "窄顶面下保持上下深色饼干夹奶油，引线落在顶缘附近。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.297,
+                0.2205,
+                0.466,
+                0.4355
+              ],
+              "evidence_zh": "由左上向右下可跟踪深—浅—深侧面；内端有遮挡。外缘顶面约5–6像素，宽侧面不编码份额。"
+            },
+            {
+              "category": "小值D",
+              "required_parts": [
+                "窄顶面",
+                "上层侧面",
+                "奶油层",
+                "下饼干"
+              ],
+              "relationship": "窄顶面与侧面夹层相连，部分下层被前景遮挡。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.365,
+                0.2675,
+                0.555,
+                0.4815
+              ],
+              "evidence_zh": "顶面、深色侧面和奶油可辨；不能完整追踪下层接触线，但未见脱层证据。"
+            },
+            {
+              "category": "独立观众面板",
+              "required_parts": [
+                "青色单人形",
+                "灰色11人形",
+                "换算图例",
+                "类别标签",
+                "独立分母声明"
+              ],
+              "relationship": "两种颜色分别计数；面板与饼干主图分离，不共享分母。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.055,
+                0.7585,
+                0.945,
+                0.984
+              ],
+              "evidence_zh": "分隔线以下为独立计数区，组线绑定2人和22人；底注明确24人不是广告份额分母。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入指定合成广告类别及新份额，保留百分比和独立观众人数；允许改变姿态、非数据厚度及排版。",
+            "output_added_or_lost_meaning_zh": "当前主题、量纲、类别角色和独立分母保留。具体产品分类及品牌文案的替换属于输入适配，未添加旧趋势或极值论断。",
+            "visible_inscription_evidence_zh": "广告时段；广告份额；Ad share·percent；合成可比类别A–D；总计100%；独立观众示例；Synthetic people·people；1个人物=2人；两类比赛关注标签；独立24人分母说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "具体商品类别被合成可比类别替换，图面明确SYNTHETIC DATA。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "巨大C及细小A、D符合当前份额，不能按参考较均匀的扇块判错。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "A外缘仅约5–6像素，文字与侧面结构保留，但小值相对精度难以确认。"
+            },
+            {
+              "cause": "none",
+              "evidence_zh": "局部遮挡限制完整接触线观察，未发现夹心结构断裂或层序错误的可见证据。"
+            }
+          ],
+          "measurement_coverage_zh": "测量覆盖四个广告份额及两类观众，包含最小、最大和中间标记。强制标签另行逐项检查；不可见接触线及亚像素精度未计作完整测量。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留写实夹心饼干及计数符号；参考手指形符号改为完整人形。",
+            "data_adaptation_excluded_zh": "不扣除当前扇块大小、合成类别和新文字；符号替换不构成核心要求失败。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "保留斜俯视、分离扇块、饼干夹奶油及独立计数面板关系。",
+            "data_adaptation_excluded_zh": "排除允许的分离距离、抬升、非数据厚度和姿态调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方饼干主图、外围数值和下方辅助面板；标题占比增大、主图偏右，三组数值集中左侧。",
+            "data_adaptation_excluded_zh": "不扣除更新数值、极端份额或小扇块可见性所需的分离。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留巧克力浮雕、奶油、白底青色和细引线；侧纹更规则，切面有拉伸感，采用规整中文排版。",
+            "data_adaptation_excluded_zh": "不扣除中文更新、数据驱动轮廓及允许的层厚调整；材质差异未破坏身份或读图。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/4964dee7f6985c",
       "numeric_supported": true,
