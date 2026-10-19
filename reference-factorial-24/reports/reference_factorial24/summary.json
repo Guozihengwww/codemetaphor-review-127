@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-10-19T14:16:15.033553+00:00",
+  "updated_at": "2026-10-19T14:35:37.610618+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
     "planned_trials": 96,
     "generation": {
-      "ok": 78,
-      "running": 1,
-      "pending": 17
+      "ok": 80,
+      "pending": 16
     },
     "evaluations": {
-      "ok": 72,
-      "pending": 62
+      "ok": 73,
+      "pending": 64,
+      "running": 1
     },
     "final_second_evaluations": {
-      "pending": 78
+      "pending": 80
     },
     "routing_audits": {
-      "verified": 78
+      "verified": 80
     },
     "routing_gate_passed": true
   },
@@ -25,63 +25,63 @@
     "first": {
       "a1g1": {
         "numeric_supported": {
-          "image_quality_pass": 11,
-          "verified_system_pass": 11,
+          "image_quality_pass": 12,
+          "verified_system_pass": 12,
           "planned": 24,
-          "assessed": 11
+          "assessed": 12
         },
         "critical_structure": {
-          "image_quality_pass": 9,
-          "verified_system_pass": 9,
+          "image_quality_pass": 10,
+          "verified_system_pass": 10,
           "planned": 24,
-          "assessed": 11
+          "assessed": 12
         },
         "semantic_meaning": {
-          "image_quality_pass": 11,
-          "verified_system_pass": 11,
+          "image_quality_pass": 12,
+          "verified_system_pass": 12,
           "planned": 24,
-          "assessed": 11
+          "assessed": 12
         },
         "reference_meaning": {
           "image_quality_pass": 2,
           "verified_system_pass": 2,
           "planned": 24,
-          "assessed": 11
+          "assessed": 12
         },
         "small_mark_visibility": {
-          "image_quality_pass": 7,
-          "verified_system_pass": 7,
+          "image_quality_pass": 8,
+          "verified_system_pass": 8,
           "planned": 24,
-          "assessed": 11
+          "assessed": 12
         },
         "joint_supported": {
-          "image_quality_pass": 9,
-          "verified_system_pass": 9,
+          "image_quality_pass": 10,
+          "verified_system_pass": 10,
           "planned": 24,
-          "assessed": 11
+          "assessed": 12
         },
         "joint_visible_supported": {
-          "image_quality_pass": 7,
-          "verified_system_pass": 7,
+          "image_quality_pass": 8,
+          "verified_system_pass": 8,
           "planned": 24,
-          "assessed": 11
+          "assessed": 12
         },
         "reference_fidelity": {
           "nondata_identity": {
-            "mean": 3.8181818181818183,
-            "assessed_applicable": 11
+            "mean": 3.8333333333333335,
+            "assessed_applicable": 12
           },
           "nondata_pose_relations": {
             "mean": 4.0,
-            "assessed_applicable": 11
+            "assessed_applicable": 12
           },
           "composition_hierarchy": {
             "mean": 3.0,
-            "assessed_applicable": 11
+            "assessed_applicable": 12
           },
           "material_style": {
-            "mean": 2.5454545454545454,
-            "assessed_applicable": 11
+            "mean": 2.5833333333333335,
+            "assessed_applicable": 12
           }
         }
       },
@@ -35050,20 +35050,458 @@
         "pixel_identical": true,
         "returncode": 0
       },
-      "quality": "unreviewed",
+      "quality": "pass",
       "execution": "ok",
-      "review": null,
-      "primary_system_success": false,
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为星条旗美国地图病人、透视病床和前景床尾图板。待评图保留地图轮廓、病床、体温计及图板关系；红阶梯、深色实线和密集短划线均在纸面内。标题、合成提示、日期及单位可读。已在查看源码前保存观察和参考保真评分。",
+        "summary_zh": "通过。review.json已保存并通过schema.json校验。21个日期、30条记录完整；代表性像素测量符合容差，关键物体关系保留。未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "原图2000×1643。像素定位基线y≈1226、顶网格y≈773、横轴x≈247–1359；按9–21%及0–67天反算。率值extent指中心到截断基线的距离，并非点直径。源码仅作补充证据。",
+        "uncertainties_zh": "标记中心约有±1像素不确定性。一天平台约16像素，满量程合格不保证其相对精度。按限制未检查日志、自检或归档执行历史。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "21个日期、A的11条、B的8条、C的11条记录及30个数值标签完整，A末端闭合记录保留。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "全部30个数值与冻结数据一致，日期范围、9–21轴、单位及记录总数正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "红阶梯对应A，深色实线对应B，密集短划线及空心点对应C；标签与各自日期和系列匹配。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "九个率值抽查最大误差约为满量程0.1711%；1、7、16天间隔符合真实日距。A为右连续阶梯，B/C连接各自观测且不外推。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_02.png及bed_scene.png中的地图病人、体温计和病床实质出现在成图中。render.py按数据计算曲线和文字；项目数据与冻结数据一致。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数据线、轴和标签包含在床尾纸面内，夹具连接图板与床栏；病人与前景栏杆的遮挡关系合理。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原始分辨率下必需文字可读，密集日期采用错行及短引线，未见必需文字被遮断。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "地图病人接触枕头及床面，体温计接触面部，图板连接床栏，栏杆连接轮子；数据通道是图板上的曲线与观测点。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "合成提示、年化率标题、synthetic comparable series、Series A/B/C和% per year完整表达冻结主题及统计角色。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "诊疗隐喻保留；原退烧论述及真实金融系列被允许的合成主题适配取代，不属于输出缺陷。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "B=9.6点距基线约23像素；A最短平台约16像素；C最低空心点及短划线可辨，均保留与共享纸面的关系。"
+          }
+        },
+        "semantic_attribution_zh": "原统计名称及退烧论述的变化归因于允许的输入适配，新走势归因于当前数据。未发现当前主题或必需结构的输出遗漏；小间隔精度限制归因于像素分辨率。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "A",
+              "category": "2040-05-07",
+              "expected_value": 16.9,
+              "observed_value": 16.894,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 298,
+              "full_scale_error_percent": 0.0497,
+              "small_value_relative_error_percent": 0.0353,
+              "bbox_xyxy_normalized": [
+                0.66,
+                0.5606,
+                0.682,
+                0.5697
+              ],
+              "evidence_zh": "最小平台红线像素范围y=925–931，中心约928；按9–21%轴反算。",
+              "uncertainty_zh": "中心约±1像素；extent为距9%基线的距离。"
+            },
+            {
+              "series_id": "A",
+              "category": "2040-03-15",
+              "expected_value": 20.3,
+              "observed_value": 20.298,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 426.5,
+              "full_scale_error_percent": 0.0166,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.219,
+                0.482,
+                0.2405,
+                0.4924
+              ],
+              "evidence_zh": "最大平台红线范围y=797–802，中心约799.5。",
+              "uncertainty_zh": "中心约±1像素。"
+            },
+            {
+              "series_id": "A",
+              "category": "2040-04-02",
+              "expected_value": 18.6,
+              "observed_value": 18.6026,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 362.5,
+              "full_scale_error_percent": 0.0221,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3685,
+                0.5204,
+                0.4055,
+                0.532
+              ],
+              "evidence_zh": "内部平台范围y=861–866，中心约863.5。",
+              "uncertainty_zh": "中心约±1像素。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-03-06",
+              "expected_value": 9.6,
+              "observed_value": 9.6093,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 23,
+              "full_scale_error_percent": 0.0773,
+              "small_value_relative_error_percent": 0.0966,
+              "bbox_xyxy_normalized": [
+                0.1445,
+                0.7279,
+                0.153,
+                0.7383
+              ],
+              "evidence_zh": "全图最小率值实心点中心列范围y=1199–1207，中心约1203，距基线23像素。",
+              "uncertainty_zh": "中心约±1像素，不证明亚像素精度。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-04-03",
+              "expected_value": 15.8,
+              "observed_value": 15.8079,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 257,
+              "full_scale_error_percent": 0.0662,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3765,
+                0.5849,
+                0.3855,
+                0.5959
+              ],
+              "evidence_zh": "最大值实心点中心列范围y=965–973，中心约969。",
+              "uncertainty_zh": "中心约±1像素。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-04-17",
+              "expected_value": 15,
+              "observed_value": 15.0132,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 227,
+              "full_scale_error_percent": 0.1104,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.4925,
+                0.6032,
+                0.502,
+                0.6141
+              ],
+              "evidence_zh": "内部实心点中心列范围y=995–1003，中心约999。",
+              "uncertainty_zh": "中心约±1像素。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-03-13",
+              "expected_value": 10.9,
+              "observed_value": 10.9205,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 72.5,
+              "full_scale_error_percent": 0.1711,
+              "small_value_relative_error_percent": 0.1883,
+              "bbox_xyxy_normalized": [
+                0.202,
+                0.6975,
+                0.2115,
+                0.7079
+              ],
+              "evidence_zh": "最小值空心点中心列范围y=1149–1158，中心约1153.5。",
+              "uncertainty_zh": "圆环及抗锯齿使中心约有±1像素不确定性。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-04-24",
+              "expected_value": 13.2,
+              "observed_value": 13.2119,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 159,
+              "full_scale_error_percent": 0.0993,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.551,
+                0.6446,
+                0.5595,
+                0.6549
+              ],
+              "evidence_zh": "并列最大值空心点范围y=1063–1071，中心约1067。",
+              "uncertainty_zh": "中心约±1像素。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-04-03",
+              "expected_value": 12.2,
+              "observed_value": 12.2185,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 121.5,
+              "full_scale_error_percent": 0.1545,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3765,
+                0.6677,
+                0.3855,
+                0.678
+              ],
+              "evidence_zh": "内部空心点中心列范围y=1100–1109，中心约1104.5。",
+              "uncertainty_zh": "中心约±1像素。"
+            },
+            {
+              "series_id": "A_time",
+              "category": "2040-03-03→2040-03-04",
+              "expected_value": 1,
+              "observed_value": 0.964,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 16,
+              "full_scale_error_percent": 0.0537,
+              "small_value_relative_error_percent": 3.5971,
+              "bbox_xyxy_normalized": [
+                0.1215,
+                0.5441,
+                0.135,
+                0.5533
+              ],
+              "evidence_zh": "起始日期位置x≈247，首次竖阶中心x≈263；按1112像素对应67天反算，单位为天。",
+              "uncertainty_zh": "端点有约1–2像素合成不确定性；短平台相对精度不由满量程合格保证。"
+            },
+            {
+              "series_id": "A_time",
+              "category": "2040-03-08→2040-03-15",
+              "expected_value": 7,
+              "observed_value": 6.9892,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 116,
+              "full_scale_error_percent": 0.0161,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.163,
+                0.4827,
+                0.225,
+                0.5021
+              ],
+              "evidence_zh": "两次竖阶中心由像素截面测得x≈329.5和445.5，反算日距。",
+              "uncertainty_zh": "端点有约1–2像素合成不确定性。"
+            },
+            {
+              "series_id": "A_time",
+              "category": "2040-04-02→2040-04-18",
+              "expected_value": 16,
+              "observed_value": 15.9969,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 265.5,
+              "full_scale_error_percent": 0.0047,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3695,
+                0.5192,
+                0.5085,
+                0.546
+              ],
+              "evidence_zh": "长平台两端竖阶中心测得x≈745和1010.5，反算日距。",
+              "uncertainty_zh": "端点有约1–2像素合成不确定性。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "病人与病床主体",
+              "required_parts": [
+                "美国地图病人",
+                "枕头及床面",
+                "床头栏杆",
+                "床尾栏杆"
+              ],
+              "relationship": "病人接触床面；床头栏杆在后，床尾栏杆在前。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.275,
+                0.0456,
+                0.95,
+                0.7608
+              ],
+              "evidence_zh": "地图、旗帜和面部构成病人，枕头在其后，前栏遮挡身体下左部，层次连续。"
+            },
+            {
+              "category": "体温计",
+              "required_parts": [
+                "地图面部",
+                "体温计",
+                "红色液柱"
+              ],
+              "relationship": "体温计左端接触面部，管体向右上伸出。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.845,
+                0.2039,
+                0.9675,
+                0.2635
+              ],
+              "evidence_zh": "体温计及液柱完整；作为病人身份部件，不承担三系列量值编码。"
+            },
+            {
+              "category": "床尾图板",
+              "required_parts": [
+                "纸面图板",
+                "夹具",
+                "床栏",
+                "数据线和坐标"
+              ],
+              "relationship": "夹具连接图板与床栏，纸面包含全部定量图形。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.0625,
+                0.3561,
+                0.765,
+                0.8521
+              ],
+              "evidence_zh": "两枚夹具跨接栏杆和图板上缘，图表与正面床尾平面相合，没有越出纸面。"
+            },
+            {
+              "category": "大值标记",
+              "required_parts": [
+                "A=20.3平台",
+                "相邻竖阶",
+                "图板纸面"
+              ],
+              "relationship": "平台连接左右竖阶并位于纸面内。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.2185,
+                0.4808,
+                0.252,
+                0.5076
+              ],
+              "evidence_zh": "最高平台约y=799.5，左侧升阶、右侧降阶均连续，20.3标签可读。"
+            },
+            {
+              "category": "最小值标记",
+              "required_parts": [
+                "B=9.6点",
+                "后续实线",
+                "9%基线",
+                "图板纸面"
+              ],
+              "relationship": "点位于基线上方，向右上连接下一观测。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.143,
+                0.6683,
+                0.212,
+                0.7505
+              ],
+              "evidence_zh": "最低点约(297,1203)，距基线23像素，点径约9像素；与上升线连续且位于纸面内。"
+            },
+            {
+              "category": "短平台与空心点",
+              "required_parts": [
+                "A首日平台",
+                "首次升阶",
+                "C最低空心点",
+                "相邻短划线"
+              ],
+              "relationship": "短平台连接竖阶；空心点连接短划线路径。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.1205,
+                0.5161,
+                0.212,
+                0.7091
+              ],
+              "evidence_zh": "A首段约16像素可辨；C=10.9空心圆与线型可分辨，共享纸面关系完整。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结主题为合成年化率变化，角色为Series A/B/C；允许当前走势及相容的非数据姿态调整，不要求旧下降论断。",
+            "output_added_or_lost_meaning_zh": "诊疗图板隐喻保留，新增眼睛和枕头；未丢失当前统计语义。旧退烧论述未沿用属于允许适配。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA；ANNUAL RATE CHANGES；synthetic comparable series；Series A/B/C；% per year；2040日期；Axis begins at 9%；B/C connect observations only。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "旧真实金融名称及退烧论述被冻结的合成主题取代。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "A先升后降、B/C总体上升匹配当前数据。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "一天平台约16像素，中心读数存在像素级不确定性。"
+            }
+          ],
+          "measurement_coverage_zh": "测量9个率值，覆盖各系列最小值、大值和内部点；另测1、7、16天间隔。全部21个日期及30个数值标签另行核对，未对所有线段逐像素反演。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "星条旗美国地图病人、病床、栏杆、轮子和前景图板身份完整，体温计明确可见。",
+            "data_adaptation_excluded_zh": "排除系列改名、合成主题及曲线变化；眼睛和枕头属于身份相容细节。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "保留病人接触床面、前栏遮挡、图板承托及体温计接触面部的关系。",
+            "data_adaptation_excluded_zh": "排除允许的倚靠姿态、枕头及非数据厚度调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留左上标题、右上病人及前下方图板层次；标题图例更大，底部增加说明。",
+            "data_adaptation_excluded_zh": "排除更新标签及当前主题所需文字，仅记录视觉占比与留白变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留粗轮廓、红灰配色和网点印刷插画；最终图金属及布面阴影更丰富，背景更暖。",
+            "data_adaptation_excluded_zh": "不将曲线形状、标记或数值标签变化计为材质差异。"
+          }
+        }
+      },
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/500e914aa0a136",
-      "numeric_supported": null,
-      "joint_supported": null,
-      "critical_structure": "unreviewed",
-      "semantic_meaning": "unreviewed",
-      "reference_meaning": "unreviewed",
-      "small_mark_visibility": "unreviewed",
-      "joint_system_success": false,
+      "numeric_supported": true,
+      "joint_supported": true,
+      "critical_structure": "pass",
+      "semantic_meaning": "pass",
+      "reference_meaning": "partial",
+      "small_mark_visibility": "pass",
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false,
       "factor_audit": {
         "status": "verified",
@@ -35120,6 +35558,190 @@
         "attempted_image_requests": 2,
         "successful_image_calls": 2,
         "image_calls_with_original_reference": 2,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F20",
+      "source_case": "M099",
+      "name": "利率退烧：美国地图病人与床尾三系列趋势图",
+      "conflict_type": "trend_shape",
+      "trial": "T089",
+      "condition": "a1g0",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "2e5a25d6600336",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/2e5a25d6600336",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": true,
+        "image_reference_assigned": false,
+        "agent_reference_view_count": 1,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 0,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F20",
+      "source_case": "M099",
+      "name": "利率退烧：美国地图病人与床尾三系列趋势图",
+      "conflict_type": "trend_shape",
+      "trial": "T089",
+      "condition": "a1g0",
+      "stage": "final",
+      "round": 3,
+      "image_available": true,
+      "review_id": "41278dbb84a17c",
+      "reproduction": {
+        "round": 3,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/41278dbb84a17c",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": true,
+        "image_reference_assigned": false,
+        "agent_reference_view_count": 1,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 0,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F20",
+      "source_case": "M099",
+      "name": "利率退烧：美国地图病人与床尾三系列趋势图",
+      "conflict_type": "trend_shape",
+      "trial": "T069",
+      "condition": "a0g1",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "a60155015e85df",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/a60155015e85df",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": false,
+        "image_reference_assigned": true,
+        "agent_reference_view_count": 0,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 1,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F20",
+      "source_case": "M099",
+      "name": "利率退烧：美国地图病人与床尾三系列趋势图",
+      "conflict_type": "trend_shape",
+      "trial": "T069",
+      "condition": "a0g1",
+      "stage": "final",
+      "round": 2,
+      "image_available": true,
+      "review_id": "f6cf4c2d87c1f3",
+      "reproduction": {
+        "round": 2,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/f6cf4c2d87c1f3",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": false,
+        "image_reference_assigned": true,
+        "agent_reference_view_count": 0,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 1,
         "violations": [],
         "external_image_views": [],
         "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
@@ -35900,13 +36522,24 @@
       "parent_terminated_after_receipt": true
     },
     "T089": {
-      "status": "running",
+      "status": "ok",
       "role": "planner",
-      "started_at": "2026-10-19T14:08:05.750588+00:00",
-      "timeout_seconds": 2100
+      "error": "",
+      "completed_at": "2026-10-19T14:23:00.099241+00:00",
+      "elapsed_seconds": 894.35,
+      "cli_returncode": 0,
+      "model_verified": true,
+      "parent_terminated_after_receipt": true
     },
     "T069": {
-      "status": "pending"
+      "status": "ok",
+      "role": "planner",
+      "error": "",
+      "completed_at": "2026-10-19T14:35:31.491780+00:00",
+      "elapsed_seconds": 744.36,
+      "cli_returncode": 0,
+      "model_verified": true,
+      "parent_terminated_after_receipt": true
     },
     "T038": {
       "status": "ok",
@@ -36965,6 +37598,32 @@
       "attempted_image_requests": 2,
       "successful_image_calls": 2,
       "image_calls_with_original_reference": 2,
+      "violations": [],
+      "external_image_views": [],
+      "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+    },
+    "T089": {
+      "status": "verified",
+      "agent_reference_assigned": true,
+      "image_reference_assigned": false,
+      "agent_reference_view_count": 1,
+      "planner_direct_image_calls": 0,
+      "attempted_image_requests": 1,
+      "successful_image_calls": 1,
+      "image_calls_with_original_reference": 0,
+      "violations": [],
+      "external_image_views": [],
+      "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+    },
+    "T069": {
+      "status": "verified",
+      "agent_reference_assigned": false,
+      "image_reference_assigned": true,
+      "agent_reference_view_count": 0,
+      "planner_direct_image_calls": 0,
+      "attempted_image_requests": 1,
+      "successful_image_calls": 1,
+      "image_calls_with_original_reference": 1,
       "violations": [],
       "external_image_views": [],
       "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
