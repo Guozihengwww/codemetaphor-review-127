@@ -2,12 +2,12 @@
 *{box-sizing:border-box}body{margin:0;background:#f3f3ed;color:#263b32;font:16px/1.7 system-ui,sans-serif}main{max-width:1720px;margin:auto;padding:24px 16px}section,.intro{background:#fff;padding:22px;border-radius:9px;margin:20px 0}h1{line-height:1.35}h2{margin-top:0}a{color:#215c91}.columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}article{min-width:0}img{display:block;width:100%;height:auto}.reference{max-width:500px}.table-wrap{max-width:100%;overflow:auto}table{border-collapse:collapse;width:100%}td,th{padding:9px;border:1px solid #cad4ca;text-align:left;vertical-align:top}th{background:#eef4ed}pre,p{overflow-wrap:anywhere}pre{white-space:pre-wrap;font-size:13px}summary{cursor:pointer;padding:7px}.note{font-size:14px;color:#465c4f}.status{font-weight:650;color:#315c45}select{font:inherit;padding:8px;max-width:100%;margin:4px}[hidden]{display:none!important}.pill{display:inline-block;background:#eef4e9;padding:4px 9px;border-radius:5px}@media(max-width:1200px){.columns{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){main{padding:14px 10px}section,.intro{padding:15px}.columns{grid-template-columns:1fr}td,th{font-size:13px}}
 </style></head><body><main><h1>参考图双因素消融 · 24个设计 × 4种设置</h1><div class="intro"><p class="status">实验执行中</p>
 <p><strong>共96次全新生成，三类数据冲突各8个设计。</strong>同一设计的四组共用相同冲突数据、文字简报和结构语义合同。规划智能体是否能直接看原图，与生图模型是否接收原图，由执行器独立控制。</p>
-<div class="table-wrap"><table><thead><tr><th>设置</th><th>规划／编码智能体</th><th>生图模型</th><th>计划任务</th></tr></thead><tbody><tr><th>A1G1</th><td>提供原图，必须查看</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A1G0</th><td>提供原图，必须查看</td><td>每次调用禁止传原图</td><td>24</td></tr><tr><th>A0G1</th><td>不提供原图，仅共同文字规格</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A0G0</th><td>不提供原图，仅共同文字规格</td><td>每次调用禁止传原图</td><td>24</td></tr></tbody></table></div><p><strong>全部96任务的共同主判据：首轮11/96、最终12/96已判通过。</strong>执行中尚有待评项，四组对照以下方各24任务的表格为准。</p><p>模型GPT-6-Astra / max；每次生成35分钟、最多3次生图与6次渲染。规划、精确提示转发、生图调用、评审共用最多3个模型会话。全部可用最终图再做第二次独立评审。</p>
+<div class="table-wrap"><table><thead><tr><th>设置</th><th>规划／编码智能体</th><th>生图模型</th><th>计划任务</th></tr></thead><tbody><tr><th>A1G1</th><td>提供原图，必须查看</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A1G0</th><td>提供原图，必须查看</td><td>每次调用禁止传原图</td><td>24</td></tr><tr><th>A0G1</th><td>不提供原图，仅共同文字规格</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A0G0</th><td>不提供原图，仅共同文字规格</td><td>每次调用禁止传原图</td><td>24</td></tr></tbody></table></div><p><strong>全部96任务的共同主判据：首轮13/96、最终13/96已判通过。</strong>执行中尚有待评项，四组对照以下方各24任务的表格为准。</p><p>模型GPT-6-Astra / max；每次生成35分钟、最多3次生图与6次渲染。规划、精确提示转发、生图调用、评审共用最多3个模型会话。全部可用最终图再做第二次独立评审。</p>
 <p class="note">四组都保留由参考图形成的相同文字规格；“智能体无图”检验直接视觉观察在文字之外的增益，不代表没有任何参考知识。精确提示转发器仅执行原样提示和固定传图参数，原图及中继观察不回传给规划智能体。先核验首个区组的实际输入隔离，再展开其余样本，质量通过率不参与启动决策。</p>
-<p>生成：已完成32、待执行64；首末评审：已完成25、待执行23、执行中1、技术异常1；最终第二评审：待执行32；输入协议：已核验32</p>
-<p class="note">更新时间（北京时间）：2026-10-19 13:40:50</p>
+<p>生成：已完成34、执行中1、待执行61；首末评审：已完成28、待执行25、技术异常1；最终第二评审：待执行34；输入协议：已核验34</p>
+<p class="note">更新时间（北京时间）：2026-10-19 14:03:10</p>
 <p><a href="docs/reference_factorial24/protocol.json">冻结方案</a> · <a href="reports/reference_factorial24/summary.json">完整统计与证据</a> · <a href="reports/reference_factorial24/metrics.csv">下载指标CSV</a> · <a href="../reference-input-ablation/">3案例先导实验</a> · <a href="../data-conflict-120/">原120组实验</a></p></div>
-<section id="rates"><h2>首轮与最终通过率：24个设计整体比较</h2><p class="note">各组固定分母24。执行中仅显示已判通过数，待评不是已判失败。下表主数值要求质量通过且输入协议已核验；括号另列图像质量通过数，协议异常与图像缺陷分开。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr></thead><tbody><tr><th scope="row">首轮 · 共同主判据</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评4/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评3/24</span></td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评3/24</span></td></tr><tr><th scope="row">首轮 · 数值支持</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td></tr><tr><th scope="row">首轮 · 关键结构</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评4/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评3/24</span></td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td></tr><tr><th scope="row">首轮 · 小值可辨</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评3/24</span></td></tr><tr><th scope="row">首轮 · 参考原意</th><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评4/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评5/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评3/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评3/24</span></td></tr><tr><th scope="row">最终 · 共同主判据</th><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评8/24</span></td><td><strong>0/24 已判通过</strong><br><span class="note">质量通过0；已评2/24</span></td></tr><tr><th scope="row">最终 · 数值支持</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>8/24 已判通过</strong><br><span class="note">质量通过8；已评8/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td></tr><tr><th scope="row">最终 · 关键结构</th><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 当前主题意义</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>8/24 已判通过</strong><br><span class="note">质量通过8；已评8/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td></tr><tr><th scope="row">最终 · 小值可辨</th><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 参考原意</th><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr></tbody></table></div><p class="note">共同主判据沿用必要数值／绑定／素材融合检查、关键结构和当前主题意义；小值可辨作为额外联合要求。首轮是首次完整渲染尝试，最终是最后有效图。技术异常、缺图、partial/fail/uncertain均不计通过，历史输出不混入新96任务。</p></section><section><h2>补充：参考设计保留程度（0–4分）</h2><p class="note">下表为最终图独立首评的适用项均分。排除当前数据及许可语义改编引起的变化；分数不替代原通过判据，第二评审及分歧逐图保留。</p><div class="table-wrap"><table><tr><th>维度</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr><tr><th>非数据物体身份</th><td>4.00/4（n=2）</td><td>3.60/4（n=5）</td><td>2.88/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>非数据姿态与关系</th><td>4.00/4（n=2）</td><td>3.80/4（n=5）</td><td>2.88/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>构图层级</th><td>3.00/4（n=2）</td><td>3.00/4（n=5）</td><td>2.75/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>材质与风格</th><td>2.50/4（n=2）</td><td>2.20/4（n=5）</td><td>1.88/4（n=8）</td><td>2.00/4（n=2）</td></tr></table></div></section><section><h2>配对因素效应与交互</h2><p>实验闭合后计算同一参考内的因素差值、保守区间及多重比较校正；当前不对未完成数据做正式检验。</p></section><label>冲突类型 <select id="type"><option value="all">全部24设计</option><option value="category_count">类别数</option><option value="trend_shape">趋势形状</option><option value="numeric_range">数值范围</option></select></label><label>案例 <select id="case-filter"><option value="all">全部</option><option value="F01">F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</option><option value="F02">F02 · 游戏销售形式转变：四期双面板堆叠柱图</option><option value="F03">F03 · 航空公司市值</option><option value="F04">F04 · 鸡蛋的营养成分构成</option><option value="F05">F05 · 合成事件率：美国地形面具上的十期警示折线</option><option value="F06">F06 · 年度可再生水资源</option><option value="F07">F07 · 奖牌的金属组成与合成示例价值</option><option value="F08">F08 · 复古电脑中的 AI 工作情绪：两轮合成比例</option><option value="F09">F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</option><option value="F10">F10 · 捕梦网中的合成梦境：曲边面积分区图</option><option value="F11">F11 · 年度价格通胀与实际产出变化</option><option value="F12">F12 · 合成烟草产量与股价：香烟物体柱图</option><option value="F13">F13 · 校园供餐风险：青苹果抽离扇块合成数据海报</option><option value="F14">F14 · 女子篮球比赛平均观众数</option><option value="F15">F15 · 宗教信仰及无归属人口构成</option><option value="F16">F16 · 两类餐饮服务的支出变化百分比</option><option value="F17">F17 · 社区街头共绘计划的净支持度（合成议题替代）</option><option value="F18">F18 · 园艺试验地块产量（原参考无可读指标）</option><option value="F19">F19 · 书籍销量</option><option value="F20">F20 · 利率退烧：美国地图病人与床尾三系列趋势图</option><option value="F21">F21 · 广告时段：夹心饼干份额与观众计数的双面板合成信息图</option><option value="F22">F22 · 节日礼物预算偏好</option><option value="F23">F23 · 分来源的各期海洋塑料排放量</option><option value="F24">F24 · 面包与纸钞：合成年度食品预算损耗</option></select></label><section class="case" id="F01" data-type="category_count"><h2>F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</h2><p>E76 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F01/reference.webp"><img loading="lazy" src="images/F01/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F01/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F01/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F01/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+<section id="rates"><h2>首轮与最终通过率：24个设计整体比较</h2><p class="note">各组固定分母24。执行中仅显示已判通过数，待评不是已判失败。下表主数值要求质量通过且输入协议已核验；括号另列图像质量通过数，协议异常与图像缺陷分开。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr></thead><tbody><tr><th scope="row">首轮 · 共同主判据</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评4/24</span></td></tr><tr><th scope="row">首轮 · 数值支持</th><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td></tr><tr><th scope="row">首轮 · 关键结构</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评4/24</span></td></tr><tr><th scope="row">首轮 · 小值可辨</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评4/24</span></td></tr><tr><th scope="row">首轮 · 参考原意</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评5/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评5/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评3/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评4/24</span></td></tr><tr><th scope="row">最终 · 共同主判据</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评3/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评3/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评8/24</span></td><td><strong>0/24 已判通过</strong><br><span class="note">质量通过0；已评2/24</span></td></tr><tr><th scope="row">最终 · 数值支持</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>8/24 已判通过</strong><br><span class="note">质量通过8；已评8/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td></tr><tr><th scope="row">最终 · 关键结构</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评3/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 当前主题意义</th><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评3/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评5/24</span></td><td><strong>8/24 已判通过</strong><br><span class="note">质量通过8；已评8/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评2/24</span></td></tr><tr><th scope="row">最终 · 小值可辨</th><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评3/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评5/24</span></td><td><strong>6/24 已判通过</strong><br><span class="note">质量通过6；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr><tr><th scope="row">最终 · 参考原意</th><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评3/24</span></td><td><strong>2/24 已判通过</strong><br><span class="note">质量通过2；已评5/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评8/24</span></td><td><strong>1/24 已判通过</strong><br><span class="note">质量通过1；已评2/24</span></td></tr></tbody></table></div><p class="note">共同主判据沿用必要数值／绑定／素材融合检查、关键结构和当前主题意义；小值可辨作为额外联合要求。首轮是首次完整渲染尝试，最终是最后有效图。技术异常、缺图、partial/fail/uncertain均不计通过，历史输出不混入新96任务。</p></section><section><h2>补充：参考设计保留程度（0–4分）</h2><p class="note">下表为最终图独立首评的适用项均分。排除当前数据及许可语义改编引起的变化；分数不替代原通过判据，第二评审及分歧逐图保留。</p><div class="table-wrap"><table><tr><th>维度</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr><tr><th>非数据物体身份</th><td>3.67/4（n=3）</td><td>3.60/4（n=5）</td><td>2.88/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>非数据姿态与关系</th><td>3.67/4（n=3）</td><td>3.80/4（n=5）</td><td>2.88/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>构图层级</th><td>3.33/4（n=3）</td><td>3.00/4（n=5）</td><td>2.75/4（n=8）</td><td>3.00/4（n=2）</td></tr><tr><th>材质与风格</th><td>3.00/4（n=3）</td><td>2.20/4（n=5）</td><td>1.88/4（n=8）</td><td>2.00/4（n=2）</td></tr></table></div></section><section><h2>配对因素效应与交互</h2><p>实验闭合后计算同一参考内的因素差值、保守区间及多重比较校正；当前不对未完成数据做正式检验。</p></section><label>冲突类型 <select id="type"><option value="all">全部24设计</option><option value="category_count">类别数</option><option value="trend_shape">趋势形状</option><option value="numeric_range">数值范围</option></select></label><label>案例 <select id="case-filter"><option value="all">全部</option><option value="F01">F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</option><option value="F02">F02 · 游戏销售形式转变：四期双面板堆叠柱图</option><option value="F03">F03 · 航空公司市值</option><option value="F04">F04 · 鸡蛋的营养成分构成</option><option value="F05">F05 · 合成事件率：美国地形面具上的十期警示折线</option><option value="F06">F06 · 年度可再生水资源</option><option value="F07">F07 · 奖牌的金属组成与合成示例价值</option><option value="F08">F08 · 复古电脑中的 AI 工作情绪：两轮合成比例</option><option value="F09">F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</option><option value="F10">F10 · 捕梦网中的合成梦境：曲边面积分区图</option><option value="F11">F11 · 年度价格通胀与实际产出变化</option><option value="F12">F12 · 合成烟草产量与股价：香烟物体柱图</option><option value="F13">F13 · 校园供餐风险：青苹果抽离扇块合成数据海报</option><option value="F14">F14 · 女子篮球比赛平均观众数</option><option value="F15">F15 · 宗教信仰及无归属人口构成</option><option value="F16">F16 · 两类餐饮服务的支出变化百分比</option><option value="F17">F17 · 社区街头共绘计划的净支持度（合成议题替代）</option><option value="F18">F18 · 园艺试验地块产量（原参考无可读指标）</option><option value="F19">F19 · 书籍销量</option><option value="F20">F20 · 利率退烧：美国地图病人与床尾三系列趋势图</option><option value="F21">F21 · 广告时段：夹心饼干份额与观众计数的双面板合成信息图</option><option value="F22">F22 · 节日礼物预算偏好</option><option value="F23">F23 · 分来源的各期海洋塑料排放量</option><option value="F24">F24 · 面包与纸钞：合成年度食品预算损耗</option></select></label><section class="case" id="F01" data-type="category_count"><h2>F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</h2><p>E76 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F01/reference.webp"><img loading="lazy" src="images/F01/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F01/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F01/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F01/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: true,
@@ -8345,7 +8345,632 @@
   &quot;violations&quot;: [],
   &quot;external_image_views&quot;: [],
   &quot;scope&quot;: &quot;Direct original-image access and exact relay arguments; common reference-derived text remains in all arms.&quot;
-}</pre></details><a href="images/T022/r02.webp"><img loading="lazy" src="images/T022/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T022/r01.webp"><img loading="lazy" src="images/T022/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T022/r02.webp"><img loading="lazy" src="images/T022/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体有图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="images/T022/r02.webp"><img loading="lazy" src="images/T022/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T022/r01.webp"><img loading="lazy" src="images/T022/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T022/r02.webp"><img loading="lazy" src="images/T022/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>已保存并通过schema校验的review.json。数据、绑定、屏幕包含关系与统计语义符合要求；仅纵轴顶部存在轻微文字重叠。未运行submit.py。</p><div class="table-wrap"><table><tr><th>维度</th><th>状态</th><th>证据</th></tr><tr><td>completeness</td><td>pass</td><td>五类情绪、每类两柱、两轮图例、全部数值、标题、合成声明、单位及多选口径齐全。</td></tr><tr><td>numeric_text</td><td>pass</td><td>28/19、54/36、64/62、15/23、31/42%全部与输入一致。</td></tr><tr><td>binding</td><td>pass</td><td>黄色为Wave A、绿色为Wave B；数值位于对应柱内，五组标签绑定正确。</td></tr><tr><td>geometry</td><td>pass</td><td>全部十柱通过直接像素测量，共享0–70线性轴、零基线及等宽柱形。</td></tr><tr><td>source</td><td>pass</td><td>已查看原始素材、computer_stage.png和render.py；电脑插画实质可见，代码读取数据控制柱形及文字。</td></tr><tr><td>integration</td><td>pass</td><td>图表完整包含在正面屏幕内；机壳、键盘与前景双手层次成立，数据未被遮挡。</td></tr><tr><td>readability</td><td>pass</td><td>必需标签、数值和统计说明均可读；顶部额外百分号的局部挤叠为轻微瑕疵。</td></tr><tr><td>关键结构</td><td>pass</td><td>复古机壳围合屏幕，屏幕内包含五组双柱，下方保留散热栅、驱动器及键盘。</td></tr><tr><td>当前主题意义</td><td>pass</td><td>AI工作情绪、两轮合成比例、百分比单位及独立多选口径明确，没有误表达为100%组成。</td></tr><tr><td>参考原意</td><td>pass</td><td>保留AI工作情绪主题、五类统计角色、双时期比较和电脑操作情境；真实年份及数值依输入替换为合成两轮。</td></tr><tr><td>小值可辨</td><td>pass</td><td>15%柱约98px高，彩色内部、黑色轮廓、顶边、零线接触及数字均清楚。</td></tr></table></div><details><summary>测量、关系、意义与保留程度评分</summary><pre>{
+  &quot;detailed_evidence&quot;: {
+    &quot;measurements&quot;: [
+      {
+        &quot;series_id&quot;: &quot;Confidence&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 28,
+        &quot;observed_value&quot;: 27.969,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 183,
+        &quot;full_scale_error_percent&quot;: 0.044,
+        &quot;small_value_relative_error_percent&quot;: 0.109,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.21556,
+          0.49927,
+          0.26167,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈1023，零线y≈1206，高183px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，误差为像素点估计。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Confidence&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 19,
+        &quot;observed_value&quot;: 18.952,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 124,
+        &quot;full_scale_error_percent&quot;: 0.069,
+        &quot;small_value_relative_error_percent&quot;: 0.253,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.26778,
+          0.52806,
+          0.31389,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈1082，零线y≈1206，高124px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，误差为像素点估计。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Optimism&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 54,
+        &quot;observed_value&quot;: 53.952,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 353,
+        &quot;full_scale_error_percent&quot;: 0.069,
+        &quot;small_value_relative_error_percent&quot;: 0.089,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.34167,
+          0.4163,
+          0.38778,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈853，零线y≈1206，高353px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，误差为像素点估计。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Optimism&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 36,
+        &quot;observed_value&quot;: 36.07,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 236,
+        &quot;full_scale_error_percent&quot;: 0.1,
+        &quot;small_value_relative_error_percent&quot;: 0.194,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.39389,
+          0.4734,
+          0.44,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈970，零线y≈1206，高236px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，误差为像素点估计。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Curiosity&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 64,
+        &quot;observed_value&quot;: 64.039,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 419,
+        &quot;full_scale_error_percent&quot;: 0.056,
+        &quot;small_value_relative_error_percent&quot;: 0.061,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.46778,
+          0.38409,
+          0.51389,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈787，零线y≈1206，高419px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，误差为像素点估计。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Curiosity&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 62,
+        &quot;observed_value&quot;: 62.052,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 406,
+        &quot;full_scale_error_percent&quot;: 0.075,
+        &quot;small_value_relative_error_percent&quot;: 0.085,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.52,
+          0.39043,
+          0.56611,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈800，零线y≈1206，高406px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，误差为像素点估计。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Indifference&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 15,
+        &quot;observed_value&quot;: 14.978,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 98,
+        &quot;full_scale_error_percent&quot;: 0.031,
+        &quot;small_value_relative_error_percent&quot;: 0.146,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.59333,
+          0.54075,
+          0.63944,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈1108，零线y≈1206，高98px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，约对应±2.0%相对误差。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Indifference&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 23,
+        &quot;observed_value&quot;: 22.926,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 150,
+        &quot;full_scale_error_percent&quot;: 0.106,
+        &quot;small_value_relative_error_percent&quot;: 0.323,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.64556,
+          0.51537,
+          0.69167,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈1056，零线y≈1206，高150px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，误差为像素点估计。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Concern&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 31,
+        &quot;observed_value&quot;: 31.026,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 203,
+        &quot;full_scale_error_percent&quot;: 0.037,
+        &quot;small_value_relative_error_percent&quot;: 0.085,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.71944,
+          0.48951,
+          0.76556,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈1003，零线y≈1206，高203px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，误差为像素点估计。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Concern&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 42,
+        &quot;observed_value&quot;: 42.031,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 275,
+        &quot;full_scale_error_percent&quot;: 0.044,
+        &quot;small_value_relative_error_percent&quot;: 0.073,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.77167,
+          0.45437,
+          0.81778,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;顶边y≈931，零线y≈1206，高275px；按458px对应70%换算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;柱高保守±2px，误差为像素点估计。&quot;
+      }
+    ],
+    &quot;part_relations&quot;: [
+      {
+        &quot;category&quot;: &quot;电脑主体与屏幕&quot;,
+        &quot;required_parts&quot;: [
+          &quot;机壳&quot;,
+          &quot;屏幕&quot;,
+          &quot;五组双柱&quot;,
+          &quot;散热栅&quot;,
+          &quot;驱动器&quot;
+        ],
+        &quot;relationship&quot;: &quot;机壳围合屏幕，图表被屏幕包含，散热栅与驱动器连接于机壳下沿。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.075,
+          0.243,
+          0.925,
+          0.731
+        ],
+        &quot;evidence_zh&quot;: &quot;屏幕四周边框连续，数据和标签完整位于内面。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;大值Curiosity双柱&quot;,
+        &quot;required_parts&quot;: [
+          &quot;64%黄柱&quot;,
+          &quot;62%绿柱&quot;,
+          &quot;共同零线&quot;,
+          &quot;屏幕内面&quot;
+        ],
+        &quot;relationship&quot;: &quot;两柱并列，底边接于同一零线，顶边高度承载数据。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.46778,
+          0.38409,
+          0.56611,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;两柱分别约419和406px高，完整包含于屏幕，未被遮挡。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;小值Indifference双柱&quot;,
+        &quot;required_parts&quot;: [
+          &quot;15%黄柱&quot;,
+          &quot;23%绿柱&quot;,
+          &quot;共同零线&quot;,
+          &quot;屏幕内面&quot;
+        ],
+        &quot;relationship&quot;: &quot;最小柱与邻柱共享尺度和基线，保留彩色内部与屏幕包含关系。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.59333,
+          0.51537,
+          0.69167,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;15%柱约98px高，23%柱约150px高；最小柱未被人为抬高，文字完整位于柱内。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;键盘与操作动作&quot;,
+        &quot;required_parts&quot;: [
+          &quot;键盘&quot;,
+          &quot;橙色双手&quot;,
+          &quot;显示器底座&quot;,
+          &quot;上缘机器人&quot;
+        ],
+        &quot;relationship&quot;: &quot;键盘位于显示器前下方，双手覆盖键区；机器人坐于机壳上缘。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.035,
+          0.14,
+          0.965,
+          0.935
+        ],
+        &quot;evidence_zh&quot;: &quot;手指与键帽前后层次清楚，机器人腿垂在边框前，接触关系可辨。&quot;
+      }
+    ],
+    &quot;meaning_trace&quot;: {
+      &quot;current_topic&quot;: &quot;pass&quot;,
+      &quot;metric_and_unit&quot;: &quot;pass&quot;,
+      &quot;category_roles&quot;: &quot;pass&quot;,
+      &quot;reference_action_or_argument&quot;: &quot;pass&quot;,
+      &quot;allowed_input_adaptation_zh&quot;: &quot;冻结输入要求合成两轮、多选比例及新数值，允许姿态、非数据厚度和排版适配。&quot;,
+      &quot;output_added_or_lost_meaning_zh&quot;: &quot;保留AI工作情绪、五类比较及打字操作关系；增加合成与多选解释。参考真实年份和来源依输入退出当前统计口径。&quot;,
+      &quot;visible_inscription_evidence_zh&quot;: &quot;可见AI工作情绪、两轮合成比例、SYNTHETIC DATA、Wave A/B、选择比例(%)、独立多选及比例无需合计100%的说明。&quot;
+    },
+    &quot;attribution&quot;: [
+      {
+        &quot;cause&quot;: &quot;input_adaptation&quot;,
+        &quot;evidence_zh&quot;: &quot;真实年份改成合成Wave A/B符合冻结输入，主题保持。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;data_driven_shape_change&quot;,
+        &quot;evidence_zh&quot;: &quot;十柱高度及涨跌由当前数据决定，不要求原走势。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;output_omission&quot;,
+        &quot;evidence_zh&quot;: &quot;参考键盘上及右侧附属机器人未保留；核心部件完整，仅影响次级身份保真。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;resolution_limit&quot;,
+        &quot;evidence_zh&quot;: &quot;抗锯齿限制亚像素定位，最小柱未出现消失或部件不可辨。&quot;
+      }
+    ],
+    &quot;measurement_coverage_zh&quot;: &quot;覆盖唯一面板的全部10柱，包括最小值、最大值及内部值，两轮均覆盖；全部必需数值、标签、图例、单位和口径另行逐项核对。&quot;
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;机壳、屏幕、散热栅、驱动器、键盘、橙色双手及上缘机器人保持；键盘上的机器人与右侧局部机器人未保留。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除新数值、中文标题、两轮名称及允许的机壳厚度变化；装饰机器人数量不是核心硬性要求。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;正面显示器包围数据，键盘位于前下方，双手搭于键区，上缘机器人腿垂至边框前，主要关系保持。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不因允许的电脑比例、非数据厚度、肢体姿态和排版适配扣分。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保持上部标题、中部主导显示器及下部键盘双手；标题由右侧英文块变为跨页中文标题，主要层级仍清楚。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除合成标注、标题内容、坐标、多选说明及数据造成的柱高变化。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;蓝底、米白黑框、橙手、黄绿柱及纸面颗粒保持复古插画特征；背景和图表区较平滑，旧印刷噪点弱于参考。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不将柱高、数值文字方向或必要语义标签更新视为材质偏离。&quot;
+    }
+  }
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/1c586968785a56/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>通过。10根柱的数据、绑定和比例正确，屏内图表及电脑部件关系完整，合成主题和独立多选口径清楚。review.json已保存并通过schema校验；未运行submit.py。</p><div class="table-wrap"><table><tr><th>维度</th><th>状态</th><th>证据</th></tr><tr><td>completeness</td><td>pass</td><td>五类情绪、两波次、10根柱、图例、刻度、单位、标题、合成声明与多选说明完整。</td></tr><tr><td>numeric_text</td><td>pass</td><td>28/19、54/36、64/62、15/23、31/42全部与冻结数据一致。</td></tr><tr><td>binding</td><td>pass</td><td>黄色左柱对应Wave A，绿色右柱对应Wave B；五类情绪顺序正确，数值均在对应柱内。</td></tr><tr><td>geometry</td><td>pass</td><td>10根90px等宽柱共享458px满量程，最大测量偏差约0.074个百分点。</td></tr><tr><td>source</td><td>pass</td><td>已查看两份原始素材；机壳、机器人、键盘和双手在成图中实质可见。render.py加载素材，并由数据控制柱高、数量和文字。</td></tr><tr><td>integration</td><td>pass</td><td>图表完整位于屏幕边框内，二维坐标与显示器正面协调；键盘和双手的前后遮挡关系正常。</td></tr><tr><td>readability</td><td>pass</td><td>原尺寸下全部必需标签可读，无明显裁切、重叠或遮挡。</td></tr><tr><td>关键结构</td><td>pass</td><td>机壳包围屏幕，屏幕容纳五组双柱，键盘位于前下方。数据承载关系为屏内柱图，与参考一致。</td></tr><tr><td>当前主题意义</td><td>pass</td><td>AI工作情绪、两轮合成比例、五类情绪、百分比和独立多选口径均明确。</td></tr><tr><td>参考原意</td><td>partial</td><td>保留AI工作情绪与两轮比较；参考真实历史年份被输入明确要求的合成Wave A/B替换，属于允许适配。</td></tr><tr><td>小值可辨</td><td>pass</td><td>最小15%柱约98px高、90px宽，填充、轮廓、标签及与基线的接触完整可辨。</td></tr></table></div><details><summary>测量、关系、意义与保留程度评分</summary><pre>{
+  &quot;detailed_evidence&quot;: {
+    &quot;measurements&quot;: [
+      {
+        &quot;series_id&quot;: &quot;Confidence&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 28,
+        &quot;observed_value&quot;: 27.969,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 183,
+        &quot;full_scale_error_percent&quot;: 0.044,
+        &quot;small_value_relative_error_percent&quot;: 0.109,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.212222,
+          0.499268,
+          0.262222,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=1023，基线y=1206，高183px，标签28%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px；点估计不代表亚像素精度。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Confidence&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 19,
+        &quot;observed_value&quot;: 18.952,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 124,
+        &quot;full_scale_error_percent&quot;: 0.069,
+        &quot;small_value_relative_error_percent&quot;: 0.253,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.267778,
+          0.528062,
+          0.317778,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=1082，基线y=1206，高124px，标签19%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Optimism&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 54,
+        &quot;observed_value&quot;: 53.952,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 353,
+        &quot;full_scale_error_percent&quot;: 0.069,
+        &quot;small_value_relative_error_percent&quot;: 0.089,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.338333,
+          0.416301,
+          0.388333,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=853，基线y=1206，高353px，标签54%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Optimism&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 36,
+        &quot;observed_value&quot;: 36.07,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 236,
+        &quot;full_scale_error_percent&quot;: 0.1,
+        &quot;small_value_relative_error_percent&quot;: 0.194,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.393889,
+          0.473402,
+          0.443889,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=970，基线y=1206，高236px，标签36%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Curiosity&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 64,
+        &quot;observed_value&quot;: 64.039,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 419,
+        &quot;full_scale_error_percent&quot;: 0.056,
+        &quot;small_value_relative_error_percent&quot;: 0.061,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.464444,
+          0.38409,
+          0.514444,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=787，基线y=1206，高419px，标签64%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Curiosity&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 62,
+        &quot;observed_value&quot;: 62.052,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 406,
+        &quot;full_scale_error_percent&quot;: 0.075,
+        &quot;small_value_relative_error_percent&quot;: 0.085,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.52,
+          0.390434,
+          0.57,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=800，基线y=1206，高406px，标签62%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Indifference&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 15,
+        &quot;observed_value&quot;: 14.978,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 98,
+        &quot;full_scale_error_percent&quot;: 0.031,
+        &quot;small_value_relative_error_percent&quot;: 0.146,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.59,
+          0.540752,
+          0.64,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=1108，基线y=1206，高98px，标签15%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px，对该值约为±1.02%相对测量精度。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Indifference&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 23,
+        &quot;observed_value&quot;: 22.926,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 150,
+        &quot;full_scale_error_percent&quot;: 0.106,
+        &quot;small_value_relative_error_percent&quot;: 0.323,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.645556,
+          0.515373,
+          0.695556,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=1056，基线y=1206，高150px，标签23%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Concern&quot;,
+        &quot;category&quot;: &quot;Wave A&quot;,
+        &quot;expected_value&quot;: 31,
+        &quot;observed_value&quot;: 31.026,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 203,
+        &quot;full_scale_error_percent&quot;: 0.037,
+        &quot;small_value_relative_error_percent&quot;: 0.085,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.716111,
+          0.489507,
+          0.766111,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=1003，基线y=1206，高203px，标签31%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;Concern&quot;,
+        &quot;category&quot;: &quot;Wave B&quot;,
+        &quot;expected_value&quot;: 42,
+        &quot;observed_value&quot;: 42.031,
+        &quot;measurement_method&quot;: &quot;direct_pixel&quot;,
+        &quot;mark_extent_px&quot;: 275,
+        &quot;full_scale_error_percent&quot;: 0.044,
+        &quot;small_value_relative_error_percent&quot;: 0.073,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.771667,
+          0.454368,
+          0.821667,
+          0.58858
+        ],
+        &quot;evidence_zh&quot;: &quot;柱顶y=931，基线y=1206，高275px，标签42%。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±1px。&quot;
+      }
+    ],
+    &quot;part_relations&quot;: [
+      {
+        &quot;category&quot;: &quot;显示器与屏内图表&quot;,
+        &quot;required_parts&quot;: [
+          &quot;复古机壳&quot;,
+          &quot;屏幕&quot;,
+          &quot;边框&quot;,
+          &quot;五组双柱&quot;,
+          &quot;格栅和磁盘槽&quot;
+        ],
+        &quot;relationship&quot;: &quot;机壳包围屏幕，屏幕容纳图表，格栅和磁盘槽位于屏幕下方。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.075,
+          0.243045,
+          0.926111,
+          0.730112
+        ],
+        &quot;evidence_zh&quot;: &quot;边框连续，所有数据和标签在屏内，未覆盖机壳功能部件。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;大值Curiosity双柱&quot;,
+        &quot;required_parts&quot;: [
+          &quot;黄色64%柱&quot;,
+          &quot;绿色62%柱&quot;,
+          &quot;黑色轮廓&quot;,
+          &quot;共同基线&quot;,
+          &quot;屏面&quot;
+        ],
+        &quot;relationship&quot;: &quot;双柱并列、底边接触共同基线，黑框包含色面及数字。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.464444,
+          0.38409,
+          0.57,
+          0.589556
+        ],
+        &quot;evidence_zh&quot;: &quot;两柱分别约419px和406px高，之间有间隙，均完整位于屏面。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;最小值Indifference/Wave A&quot;,
+        &quot;required_parts&quot;: [
+          &quot;黄色15%柱&quot;,
+          &quot;黑色轮廓&quot;,
+          &quot;15%标签&quot;,
+          &quot;共同基线&quot;,
+          &quot;屏面&quot;
+        ],
+        &quot;relationship&quot;: &quot;黑框包围黄色矩形，数字在柱内，底边接触基线。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.59,
+          0.540752,
+          0.64,
+          0.589556
+        ],
+        &quot;evidence_zh&quot;: &quot;98px高、90px宽，轮廓与色面完整，标签未越界。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;键盘与双手&quot;,
+        &quot;required_parts&quot;: [
+          &quot;显示器下部支撑&quot;,
+          &quot;键盘和按键&quot;,
+          &quot;橙色双手&quot;
+        ],
+        &quot;relationship&quot;: &quot;键盘在显示器前下方，双手覆盖部分按键，呈操作接触关系。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.038889,
+          0.714983,
+          0.961111,
+          0.934602
+        ],
+        &quot;evidence_zh&quot;: &quot;多排键帽可辨，双手位于前景，不遮挡屏幕。&quot;
+      }
+    ],
+    &quot;meaning_trace&quot;: {
+      &quot;current_topic&quot;: &quot;pass&quot;,
+      &quot;metric_and_unit&quot;: &quot;pass&quot;,
+      &quot;category_roles&quot;: &quot;pass&quot;,
+      &quot;reference_action_or_argument&quot;: &quot;partial&quot;,
+      &quot;allowed_input_adaptation_zh&quot;: &quot;当前要求为合成Wave A/B与独立多选；原年份、真实数值和历史走势不属于当前必需内容。&quot;,
+      &quot;output_added_or_lost_meaning_zh&quot;: &quot;保留当前统计含义和电脑工作场景；历史真实比较被合成比较替换，两处辅助机器人省略。&quot;,
+      &quot;visible_inscription_evidence_zh&quot;: &quot;可读AI工作情绪、两轮合成比例、SYNTHETIC DATA、Wave A/B、选择比例(%)、独立多选、无需合计100%及非真实调查。&quot;
+    },
+    &quot;attribution&quot;: [
+      {
+        &quot;cause&quot;: &quot;input_adaptation&quot;,
+        &quot;evidence_zh&quot;: &quot;合成两轮取代参考真实历史年份，符合冻结输入。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;data_driven_shape_change&quot;,
+        &quot;evidence_zh&quot;: &quot;Confidence下降、Concern上升等新方向正确反映当前数据。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;output_omission&quot;,
+        &quot;evidence_zh&quot;: &quot;参考下方中央和右侧辅助机器人未出现；核心电脑、屏内图表和键盘关系完整。&quot;
+      }
+    ],
+    &quot;measurement_coverage_zh&quot;: &quot;唯一量化面板全部10根柱均已测量，覆盖最小、最大及内部值；全部必需文字与数量另行逐项检查，无遗漏的辅助量化通道。&quot;
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;机壳、格栅、磁盘槽、键盘、双手及顶部机器人保留；下方中央和右侧机器人未出现。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不计新数值、合成波次、更新标签及允许的非数据厚度调整。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;顶部机器人仍坐在机壳边缘，双手仍操作前下方键盘；另外两处机器人关系未保留。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不因允许的机壳姿态、手部形状及非数据厚度变化扣分。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;上方标题、中部主体电脑与图表、下方键盘和双手的层次保持。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除允许的标题排版、合成声明、口径文字及柱高变化。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;蓝底、奶油白黑色机壳、橙色手、黄绿双柱、粗黑轮廓和印刷颗粒质感接近参考。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不以更新字体或允许的布局变化作为材质损失。&quot;
+    }
+  }
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/38ddc4f6cdb5f2/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体有图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: false,
@@ -8797,15 +9422,345 @@
   &quot;violations&quot;: [],
   &quot;external_image_views&quot;: [],
   &quot;scope&quot;: &quot;Direct original-image access and exact relay arguments; common reference-derived text remains in all arms.&quot;
-}</pre></details><a href="images/T065/r01.webp"><img loading="lazy" src="images/T065/r01.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T065/r01.webp"><img loading="lazy" src="images/T065/r01.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F09" data-type="numeric_range"><h2>F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</h2><p>E120 · 数值范围 · 四组同一冲突数据</p><div class="reference"><a href="images/F09/reference.webp"><img loading="lazy" src="images/F09/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F09/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F09/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F09/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
-  &quot;status&quot;: &quot;pending&quot;
-}</pre></details><p>暂无完整成图</p></article><article><h3>智能体有图 · 生图无图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="images/T065/r01.webp"><img loading="lazy" src="images/T065/r01.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T065/r01.webp"><img loading="lazy" src="images/T065/r01.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F09" data-type="numeric_range"><h2>F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</h2><p>E120 · 数值范围 · 四组同一冲突数据</p><div class="reference"><a href="images/F09/reference.webp"><img loading="lazy" src="images/F09/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F09/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F09/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F09/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+  &quot;status&quot;: &quot;verified&quot;,
+  &quot;agent_reference_assigned&quot;: true,
+  &quot;image_reference_assigned&quot;: true,
+  &quot;agent_reference_view_count&quot;: 1,
+  &quot;planner_direct_image_calls&quot;: 0,
+  &quot;attempted_image_requests&quot;: 2,
+  &quot;successful_image_calls&quot;: 2,
+  &quot;image_calls_with_original_reference&quot;: 2,
+  &quot;violations&quot;: [],
+  &quot;external_image_views&quot;: [],
+  &quot;scope&quot;: &quot;Direct original-image access and exact relay arguments; common reference-derived text remains in all arms.&quot;
+}</pre></details><a href="images/T039/r02.webp"><img loading="lazy" src="images/T039/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T039/r01.webp"><img loading="lazy" src="images/T039/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T039/r02.webp"><img loading="lazy" src="images/T039/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体有图 · 生图无图</h3><p>生成：执行中</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;pending&quot;
 }</pre></details><p>暂无完整成图</p></article><article><h3>智能体无图 · 生图有图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;pending&quot;
-}</pre></details><p>暂无完整成图</p></article><article><h3>智能体无图 · 生图无图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
-  &quot;status&quot;: &quot;pending&quot;
-}</pre></details><p>暂无完整成图</p></article></div></section><section class="case" id="F10" data-type="category_count"><h2>F10 · 捕梦网中的合成梦境：曲边面积分区图</h2><p>E70 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F10/reference.webp"><img loading="lazy" src="images/F10/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F10/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F10/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F10/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><p>暂无完整成图</p></article><article><h3>智能体无图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+  &quot;status&quot;: &quot;verified&quot;,
+  &quot;agent_reference_assigned&quot;: false,
+  &quot;image_reference_assigned&quot;: false,
+  &quot;agent_reference_view_count&quot;: 0,
+  &quot;planner_direct_image_calls&quot;: 0,
+  &quot;attempted_image_requests&quot;: 2,
+  &quot;successful_image_calls&quot;: 2,
+  &quot;image_calls_with_original_reference&quot;: 0,
+  &quot;violations&quot;: [],
+  &quot;external_image_views&quot;: [],
+  &quot;scope&quot;: &quot;Direct original-image access and exact relay arguments; common reference-derived text remains in all arms.&quot;
+}</pre></details><a href="images/T070/r02.webp"><img loading="lazy" src="images/T070/r02.webp" alt="最终成图"></a><details><summary>全部逐轮成图</summary><details><summary>第1轮 · ok</summary><a href="images/T070/r01.webp"><img loading="lazy" src="images/T070/r01.webp" alt="逐轮成图"></a></details><details><summary>第2轮 · ok</summary><a href="images/T070/r02.webp"><img loading="lazy" src="images/T070/r02.webp" alt="逐轮成图"></a></details></details><details><summary>首轮独立评估</summary><p>已保存review.json并通过schema.json验证。数值、绑定、断轴和叠合结构符合要求；右上重复单位与树叶局部重叠，属于轻微可读性问题。</p><div class="table-wrap"><table><tr><th>维度</th><th>状态</th><th>证据</th></tr><tr><td>completeness</td><td>pass</td><td>11个类别顺序完整；六项细节图、双段轴刻度、断轴说明及6/2/3项影响分组均出现。</td></tr><tr><td>numeric_text</td><td>pass</td><td>11个数值及细节图六个重复数值均与输入一致，正小值未舍入为零；单位和合成声明完整。</td></tr><tr><td>binding</td><td>pass</td><td>类别、数值及插画与各自橙柱对应；细节图各行绑定正确，末柱另有56.8引线注释。</td></tr><tr><td>geometry</td><td>pass</td><td>主图上下段代表测量及全部细节横条均在3%显示段满量程容差内；不据此保证最小主柱的相对精度。</td></tr><tr><td>source</td><td>pass</td><td>已查看两张原始素材，人物、物件、云和景观与成图对应；素材处理及渲染源码证实实际嵌入和数据几何控制。</td></tr><tr><td>integration</td><td>pass</td><td>景观在柱后，人物及物件接触或覆盖柱顶；云与斜线位于最高柱断口，未见破坏身份或数据解释的明显接缝。</td></tr><tr><td>readability</td><td>pass</td><td>必需标题、系列、数值、类别、断轴及阈值可读；右上重复单位存在局部重叠，页首完整单位清楚。</td></tr><tr><td>关键结构</td><td>pass</td><td>橙柱承担量值，景观和生活选择插画与柱叠合；最高柱及右轴同步断开，云层关系保留。</td></tr><tr><td>当前主题意义</td><td>pass</td><td>标题、Synthetic annual savings、年度单位及not observed estimates明确当前合成气候情境和统计口径。</td></tr><tr><td>参考原意</td><td>partial</td><td>生活选择与气候节省的比较关系保留；原真实统计及生育论述由输入明确改为合成情境和Household size，属于允许适配。</td></tr><tr><td>小值可辨</td><td>partial</td><td>最小主柱约一行混合像素，接触边界不清；细节图最短横条约12.4px，可见非零长度。</td></tr></table></div><details><summary>测量、关系、意义与保留程度评分</summary><pre>{
+  &quot;detailed_evidence&quot;: {
+    &quot;measurements&quot;: [
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Efficient lighting（主图）&quot;,
+        &quot;expected_value&quot;: 0.006,
+        &quot;observed_value&quot;: null,
+        &quot;measurement_method&quot;: &quot;unmeasurable&quot;,
+        &quot;mark_extent_px&quot;: 1,
+        &quot;full_scale_error_percent&quot;: null,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.0445,
+          0.811532,
+          0.0945,
+          0.814114
+        ],
+        &quot;evidence_zh&quot;: &quot;y≈944仅约一行橙褐色混合像素。文字为0.006；源码高度0.795px仅为代码佐证。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;1px是可见着色范围，不是精确柱高，不能据此可靠反算相对误差。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Green energy（主图下段）&quot;,
+        &quot;expected_value&quot;: 0.63793862,
+        &quot;observed_value&quot;: 0.63773585,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 84.5,
+        &quot;full_scale_error_percent&quot;: 0.00507,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.5975,
+          0.740103,
+          0.6475,
+          0.813253
+        ],
+        &quot;evidence_zh&quot;: &quot;0、4刻度中心在y≈945、415，柱顶约860.5；按84.5/530×4反算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;插画接触及抗锯齿使柱顶估计约有±1px不确定性。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Car-free living（主图下段）&quot;,
+        &quot;expected_value&quot;: 2.42,
+        &quot;observed_value&quot;: 2.41886792,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 320.5,
+        &quot;full_scale_error_percent&quot;: 0.0283,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.7555,
+          0.537005,
+          0.8055,
+          0.813253
+        ],
+        &quot;evidence_zh&quot;: &quot;橙柱顶约y624.5，至零刻度945高约320.5px；按下段0–4反算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边缘估计约±0.5–1px；自行车高度不计入数据。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Household size（主图上段）&quot;,
+        &quot;expected_value&quot;: 56.8,
+        &quot;observed_value&quot;: 56.75,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 147,
+        &quot;full_scale_error_percent&quot;: 0.125,
+        &quot;small_value_relative_error_percent&quot;: null,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.8345,
+          0.200516,
+          0.8845,
+          0.327022
+        ],
+        &quot;evidence_zh&quot;: &quot;20、60刻度在y≈380、220，柱顶约233；反算20+147/160×40。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;端点约±1px，对应±0.25单位；未将上下段高度直接相加。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Efficient lighting（细节图）&quot;,
+        &quot;expected_value&quot;: 0.006,
+        &quot;observed_value&quot;: 0.00599034,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 12.4,
+        &quot;full_scale_error_percent&quot;: 0.00483,
+        &quot;small_value_relative_error_percent&quot;: 0.161,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.184,
+          0.242685,
+          0.1902,
+          0.258176
+        ],
+        &quot;evidence_zh&quot;: &quot;细节轴0至0.2跨度约414px，横条长约12.4px，按长度/414×0.2反算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;边界约±0.5px，最短横条相对不确定性约4%；所列误差是估计中心值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Air-dry clothes（细节图）&quot;,
+        &quot;expected_value&quot;: 0.0116861,
+        &quot;observed_value&quot;: 0.01169082,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 24.2,
+        &quot;full_scale_error_percent&quot;: 0.00236,
+        &quot;small_value_relative_error_percent&quot;: 0.0404,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.184,
+          0.271084,
+          0.1961,
+          0.286575
+        ],
+        &quot;evidence_zh&quot;: &quot;横条长约24.2px，按长度/414×0.2反算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;抗锯齿边界约±0.5px，误差是估计中心值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Recycle（细节图）&quot;,
+        &quot;expected_value&quot;: 0.02276081,
+        &quot;observed_value&quot;: 0.02275362,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 47.1,
+        &quot;full_scale_error_percent&quot;: 0.00359,
+        &quot;small_value_relative_error_percent&quot;: 0.0316,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.184,
+          0.299484,
+          0.20755,
+          0.314974
+        ],
+        &quot;evidence_zh&quot;: &quot;横条长约47.1px，按长度/414×0.2反算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;抗锯齿边界约±0.5px，误差是估计中心值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Cold-water wash（细节图）&quot;,
+        &quot;expected_value&quot;: 0.04433084,
+        &quot;observed_value&quot;: 0.04439614,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 91.9,
+        &quot;full_scale_error_percent&quot;: 0.03265,
+        &quot;small_value_relative_error_percent&quot;: 0.1473,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.184,
+          0.327883,
+          0.22995,
+          0.343373
+        ],
+        &quot;evidence_zh&quot;: &quot;横条长约91.9px，按长度/414×0.2反算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;抗锯齿边界约±0.5px，误差是估计中心值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Hybrid car（细节图）&quot;,
+        &quot;expected_value&quot;: 0.08634241,
+        &quot;observed_value&quot;: 0.08642512,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 178.9,
+        &quot;full_scale_error_percent&quot;: 0.04136,
+        &quot;small_value_relative_error_percent&quot;: 0.0958,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.184,
+          0.356282,
+          0.27345,
+          0.371773
+        ],
+        &quot;evidence_zh&quot;: &quot;横条长约178.9px，按长度/414×0.2反算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;抗锯齿边界约±0.5px，误差是估计中心值。&quot;
+      },
+      {
+        &quot;series_id&quot;: &quot;illustrative_scenario&quot;,
+        &quot;category&quot;: &quot;Plant-rich diet（细节图）&quot;,
+        &quot;expected_value&quot;: 0.16816764,
+        &quot;observed_value&quot;: 0.16816425,
+        &quot;measurement_method&quot;: &quot;inverse_transform&quot;,
+        &quot;mark_extent_px&quot;: 348.1,
+        &quot;full_scale_error_percent&quot;: 0.00169,
+        &quot;small_value_relative_error_percent&quot;: 0.002,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.184,
+          0.384682,
+          0.35805,
+          0.400172
+        ],
+        &quot;evidence_zh&quot;: &quot;横条长约348.1px，按长度/414×0.2反算。&quot;,
+        &quot;uncertainty_zh&quot;: &quot;抗锯齿边界约±0.5px，误差是估计中心值。&quot;
+      }
+    ],
+    &quot;part_relations&quot;: [
+      {
+        &quot;category&quot;: &quot;Household size／断轴高柱&quot;,
+        &quot;required_parts&quot;: [
+          &quot;橙柱上下两段&quot;,
+          &quot;家庭与房屋&quot;,
+          &quot;云&quot;,
+          &quot;断轴斜线&quot;,
+          &quot;右侧双段轴&quot;
+        ],
+        &quot;relationship&quot;: &quot;家庭地面接触上段柱顶，云位于两段之间，柱与轴均标明断口。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.818,
+          0.10241,
+          0.948,
+          0.814974
+        ],
+        &quot;evidence_zh&quot;: &quot;家庭底部约y233，上段至380；云位于380–415间隙，下段延至945。量值终点是橙柱顶。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;Car-free living／较大下段柱&quot;,
+        &quot;required_parts&quot;: [
+          &quot;骑行者&quot;,
+          &quot;车轮与车架&quot;,
+          &quot;橙柱&quot;,
+          &quot;后方景观&quot;
+        ],
+        &quot;relationship&quot;: &quot;人物接触车把与脚踏，车轮下缘贴近柱顶，景观在柱后。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.7435,
+          0.425129,
+          0.818,
+          0.814974
+        ],
+        &quot;evidence_zh&quot;: &quot;骑行者与双轮完整可辨，轮底约y624；橙柱从此处向下延至零位。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;Green energy／内部值&quot;,
+        &quot;required_parts&quot;: [
+          &quot;风机及叶片&quot;,
+          &quot;太阳能板&quot;,
+          &quot;地面植被&quot;,
+          &quot;橙柱&quot;
+        ],
+        &quot;relationship&quot;: &quot;叶片连接塔柱，风机和板面落在植被地面上，插画地面接触柱顶。&quot;,
+        &quot;status&quot;: &quot;pass&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.587,
+          0.616179,
+          0.66,
+          0.814974
+        ],
+        &quot;evidence_zh&quot;: &quot;插画底部约y860，橙柱持续至945；倾斜板面属于非数据物件。&quot;
+      },
+      {
+        &quot;category&quot;: &quot;Efficient lighting／最小主柱&quot;,
+        &quot;required_parts&quot;: [
+          &quot;灯泡&quot;,
+          &quot;植物&quot;,
+          &quot;极薄橙柱&quot;,
+          &quot;景观与零位&quot;
+        ],
+        &quot;relationship&quot;: &quot;灯泡与植物位于零位附近，极薄柱在其下方与景观叠合。&quot;,
+        &quot;status&quot;: &quot;partial&quot;,
+        &quot;bbox_xyxy_normalized&quot;: [
+          0.036,
+          0.715146,
+          0.0995,
+          0.814974
+        ],
+        &quot;evidence_zh&quot;: &quot;灯泡与植物可辨；约y944仅见混合色细线，不能可靠分离完整柱顶与插画接触边界。&quot;
+      }
+    ],
+    &quot;meaning_trace&quot;: {
+      &quot;current_topic&quot;: &quot;pass&quot;,
+      &quot;metric_and_unit&quot;: &quot;pass&quot;,
+      &quot;category_roles&quot;: &quot;pass&quot;,
+      &quot;reference_action_or_argument&quot;: &quot;partial&quot;,
+      &quot;allowed_input_adaptation_zh&quot;: &quot;冻结输入采用合成年度节省量和当前类别，允许随数据改变姿态与排版，不要求复现旧统计或生育论证。&quot;,
+      &quot;output_added_or_lost_meaning_zh&quot;: &quot;增加六项细节读数及人物尺寸不编码数值的说明；当前合同中的主题、指标和类别角色未丢失。&quot;,
+      &quot;visible_inscription_evidence_zh&quot;: &quot;图中可读SYNTHETIC DATA、Synthetic annual savings、tCO2e/year (synthetic)、not observed estimates和4–20 omitted; scales differ。&quot;
+    },
+    &quot;attribution&quot;: [
+      {
+        &quot;cause&quot;: &quot;input_adaptation&quot;,
+        &quot;evidence_zh&quot;: &quot;合成情境及Household size来自冻结输入，原真实统计含义的变化据此归因。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;data_driven_shape_change&quot;,
+        &quot;evidence_zh&quot;: &quot;前六主柱极低，影响分组为6/2/3项，与当前数值及阈值一致。&quot;
+      },
+      {
+        &quot;cause&quot;: &quot;resolution_limit&quot;,
+        &quot;evidence_zh&quot;: &quot;最小主柱约一行着色像素，接触边界难辨；细节图最短条约12.4px。&quot;
+      }
+    ],
+    &quot;measurement_coverage_zh&quot;: &quot;覆盖主图最小值、下段内部值与较大值、上段最大值及全部六条细节横条；全部11项标签、数值和分组另行核对。其余主柱未逐项反算。&quot;
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;景观和各生活选择物件可辨；参考月牙未保留，家庭与房屋取代末项形象。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;Household size及其他当前类别命名属于允许适配，不因旧生育形象改变扣分。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;景观在柱后，物件接触柱顶，最高柱断口保留云；参考横跨图面的云带缩为局部云。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除柱高变化及为当前数据调整人物位置、姿态和非数据厚度。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;标题、右轴、底部类别和影响带保留；全幅绿色场景改为底部景观、浅底留白和边框细节面板。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除数据导致的柱高分布、分组范围及细节读数需求；评分记录非数据视觉层级变化。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;绿色景物与橙柱配色延续；扁平剪影、透明云及绿色分区改为细致水彩物件、实色柱和米白底。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;标题、数值、字号和合成说明更新不计入材质差异。&quot;
+    }
+  }
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/503ffd14e5e17e/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details><details><summary>最终独立评估</summary><p>待评或技术异常，尚无有效判断。</p><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F10" data-type="category_count"><h2>F10 · 捕梦网中的合成梦境：曲边面积分区图</h2><p>E70 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F10/reference.webp"><img loading="lazy" src="images/F10/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F10/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F10/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F10/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;pending&quot;
 }</pre></details><p>暂无完整成图</p></article><article><h3>智能体有图 · 生图无图</h3><p>生成：待执行</p><p class="note">输入隔离：待执行</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;pending&quot;
