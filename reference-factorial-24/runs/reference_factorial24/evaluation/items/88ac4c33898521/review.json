@@ -1,0 +1,317 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为绿调扁平环保场景与橙色柱叠合，右侧分段轴、云带断轴、底部影响分组。成图保留连续绿色景观、生活物件、人物、橙柱、右轴与断轴云带；改为米白底和有纹理插画。可读标题、SYNTHETIC DATA、Synthetic annual savings、tCO2e/year (synthetic)及11个顺序类别与精确数值。低段柱从左至右递增，Household size跨两段并标56.8；首两柱接近基线像素尺度。家庭和自行车位于高柱前景，云带遮住高柱断轴部位。",
+  "summary_zh": "未发现违反冻结要求的可见缺陷。11项标签、数值、单位和影响分组完整，分段几何在容差内，景观、人物、橙柱与断轴云带关系保留。review.json已保存并通过schema.json校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接检查2000×1162原图。右轴下段0→4为y895→365，即132.5像素/单位；上段20→60为y330→170，即4像素/单位。按未被插画遮挡的橙色边界读高，满量程误差分别以段跨度4、40计算，未相加两段高度。代表性可测柱误差约0.053%至0.125%，边界不确定度约±1像素。最小两柱仅记录可见行数，未反推精确量值。",
+  "uncertainties_zh": "最小两柱的抗锯齿覆盖不足以支持小值相对精度结论；其像素尺度仍远小于下段3%容差对应的15.9像素。按限制未查看运行日志或自检，不能核验每次渲染的归档历史。参考动作含义仅依据可见文字与结构判断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11个类别依冻结顺序出现，11个值均有对应列；两段全部刻度、断轴说明、单位与合成声明齐全。低/中/高影响组分别覆盖6/2/3项。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项读得0.006、0.0116861、0.02276081、0.04433084、0.08634241、0.16816764、0.32753722、0.63793862、1.2425021、2.42、56.8，与data.json一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "每个数值和类别位于所属橙柱中心下方；生活物件依序辅助识别，未见错列。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "两段刻度分别线性，最高柱上段约56.75对应56.8，下段大柱约2.42264对应2.42，中间柱亦在3%段满量程容差内。首两柱约1/2像素，未见人为抬高；精确相对误差未知。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张原始素材及素材清单，成图丘陵房屋、云层、推车家庭和生活物件与其可见内容一致，使用面积显著。render.py读取与冻结数据一致的project/data.json，按值绘柱并排文字；未执行源码。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "景观在柱后，风机、骑车者和推车家庭在柱前；云带横跨最高柱断轴处，柱与右轴均有断裂符号。实际量值由橙柱边界承担，生活物件保持参考的叠合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、11组数值/类别、单位、合成标识、分段说明和影响阈值均可读，未见强制文字遮挡或裁切。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "连续景观、橙柱、人物生活物件、右侧双段轴与断轴云带均可见；家庭推车和自行车位于柱前基线附近，云带覆盖最高柱断轴间隔，定量端点仍可读。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确个人选择的合成气候情景，副标题明确年度节省量及tCO2e/year (synthetic)。11项具名选择作为独立比较，影响分组使用当前0.2/0.8阈值，无100%组成或跨时间累积暗示。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留个人选择与年度气候减排量比较、按影响分组的论述。真实统计和原有具体生育措辞被冻结输入的合成情景及Household size取代，属于允许的输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "首两项文字和生活物件清晰，橙柱仅约1、2行像素；可确认非零痕迹，但不能可靠比较精确相对高度或视作可辨竖向实体。"
+    }
+  },
+  "semantic_attribution_zh": "合成标识、当前类别措辞及旧真实统计语义的替换属于允许的输入适配；极小柱高度归因于当前数据与分辨率，未发现输出遗漏。物件提供生活选择身份，橙柱顶承担量值。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Efficient lighting",
+        "expected_value": 0.006,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": 1,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.0495,
+          0.769363,
+          0.1005,
+          0.770224
+        ],
+        "evidence_zh": "原图y=894处检出约102像素宽的一行橙色；文字0.006准确。",
+        "uncertainty_zh": "抗锯齿与基线邻接影响边界，不能恢复精确量值；源码推算0.795像素仅为代码佐证。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Air-dry clothes",
+        "expected_value": 0.0116861,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": 2,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.127,
+          0.768503,
+          0.179,
+          0.770224
+        ],
+        "evidence_zh": "x=266处橙色连续出现在y=893、894两行；文字0.0116861准确。",
+        "uncertainty_zh": "两行像素不足以可靠判断小值相对精度，未把栅格行数当作精确柱高。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Plant-rich diet",
+        "expected_value": 0.16816764,
+        "observed_value": 0.166038,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 22,
+        "full_scale_error_percent": 0.0532,
+        "small_value_relative_error_percent": 1.267,
+        "bbox_xyxy_normalized": [
+          0.439,
+          0.751291,
+          0.491,
+          0.770224
+        ],
+        "evidence_zh": "x=890处橙色为y=873至894；相对0刻度y=895，高约22像素，按下段132.5像素/单位换算。",
+        "uncertainty_zh": "边界约±1像素，相当于±0.00755单位；误差为像素点估计。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Green energy",
+        "expected_value": 0.63793862,
+        "observed_value": 0.633962,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 84,
+        "full_scale_error_percent": 0.0994,
+        "small_value_relative_error_percent": 0.623,
+        "bbox_xyxy_normalized": [
+          0.595,
+          0.697935,
+          0.647,
+          0.770224
+        ],
+        "evidence_zh": "避开风机的x=1202处橙色为y=811至894，高约84像素；柱顶两侧可见。",
+        "uncertainty_zh": "边界约±1像素，相当于±0.00755单位；误差为像素点估计。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Car-free living",
+        "expected_value": 2.42,
+        "observed_value": 2.422642,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 321,
+        "full_scale_error_percent": 0.066,
+        "small_value_relative_error_percent": 0.109,
+        "bbox_xyxy_normalized": [
+          0.751,
+          0.493976,
+          0.803,
+          0.770224
+        ],
+        "evidence_zh": "柱顶约y=574、基线y=895，高约321像素；前景遮住部分下部，柱侧与上部边界仍可辨。",
+        "uncertainty_zh": "边界约±1像素，相当于±0.00755单位；误差为像素点估计。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Household size",
+        "expected_value": 56.8,
+        "observed_value": 56.75,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 147,
+        "full_scale_error_percent": 0.125,
+        "small_value_relative_error_percent": 0.088,
+        "bbox_xyxy_normalized": [
+          0.829,
+          0.157487,
+          0.881,
+          0.283993
+        ],
+        "evidence_zh": "x=1748处上段橙色为y=183至329；20刻度y=330、60刻度y=170，读数约20+147/4=56.75。",
+        "uncertainty_zh": "边界约±1像素，相当于±0.25单位；误差以40单位段跨度计算。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Household size（大值）",
+        "required_parts": [
+          "两名成人",
+          "推车内儿童",
+          "推车扶手与车轮",
+          "分段橙柱",
+          "断轴云带"
+        ],
+        "relationship": "成人握推车扶手，儿童位于车座内；家庭在橙柱前、车轮近基线；云层横跨同一柱的两显示段之间。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.8075,
+          0.154905,
+          0.905,
+          0.771945
+        ],
+        "evidence_zh": "家庭与推车内部关系可辨，覆盖下段柱底部；最高柱顶在云带上方，双斜线位于断轴区域。"
+      },
+      {
+        "category": "Car-free living（下段大值）",
+        "required_parts": [
+          "骑车者",
+          "车把",
+          "车架",
+          "两轮",
+          "橙柱"
+        ],
+        "relationship": "骑车者坐在车架上并扶车把，车轮接近基线；人物和车位于对应橙柱前。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.7375,
+          0.493976,
+          0.82,
+          0.771945
+        ],
+        "evidence_zh": "车架、两轮、骑车者及柱顶均可辨，前景没有遮住数值端点。"
+      },
+      {
+        "category": "Plant-rich diet（内点）",
+        "required_parts": [
+          "碗",
+          "碗内蔬菜",
+          "橙柱",
+          "背景坡地"
+        ],
+        "relationship": "蔬菜被碗容纳，碗位于对应柱顶上方；橙柱压在坡地前。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.439,
+          0.666954,
+          0.491,
+          0.771945
+        ],
+        "evidence_zh": "碗与蔬菜轮廓完整；其下约22像素高橙柱上下边界可辨。"
+      },
+      {
+        "category": "Efficient lighting（最小值）",
+        "required_parts": [
+          "灯泡球体",
+          "螺口",
+          "首列橙色痕迹",
+          "基线"
+        ],
+        "relationship": "球体与螺口连接，灯泡位于首列橙色痕迹上方；量值区域为橙柱。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.049,
+          0.697935,
+          0.101,
+          0.771945
+        ],
+        "evidence_zh": "灯泡身份与内部连接清晰，但数据区域只有约1像素高，只能确认相邻位置和非零痕迹。"
+      },
+      {
+        "category": "Air-dry clothes（微小值）",
+        "required_parts": [
+          "两根支柱",
+          "晾衣绳",
+          "悬挂衣物",
+          "橙色痕迹"
+        ],
+        "relationship": "绳连接两端支柱，衣物悬挂其上；整体对应第二列薄橙柱。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.122,
+          0.688468,
+          0.1845,
+          0.771945
+        ],
+        "evidence_zh": "支柱、绳与衣物关系清楚；下方橙柱约2像素，物件身份不等于小值几何已获精确验证。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确使用合成年度节省量及当前11个类别，允许调整姿态、非数据厚度和排版，不要求保留旧值或真实统计宣称。",
+      "output_added_or_lost_meaning_zh": "图面增加同单位双显示范围、不得相加高度的解释，符合合同。未发现当前统计角色遗漏；原有真实统计与具体生育行动语义的弱化来自输入设定。",
+      "visible_inscription_evidence_zh": "可见Personal choices: a synthetic climate scenario、Synthetic annual savings、tCO2e/year (synthetic)、SYNTHETIC DATA、4–20 omitted; scales differ及合成值非观测估计的说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成情景及Household size等类别由冻结输入指定，参考真实统计语义仅部分沿用。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前数值使前六项均属于低影响，柱高和6/2/3分组宽度随数据变化。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小两柱仅约1、2行像素，文字准确，但精确相对几何无法可靠恢复。"
+      }
+    ],
+    "measurement_coverage_zh": "记录6项代表测量，包含最小两项、下段内点和大值、唯一上段柱。其余5项亦检查橙色边界，约3、6、11、43、165像素，未宣称子像素精度。11项文字、顺序、分组及全部轴刻度另行逐一核对。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "灯泡、晾衣绳、回收、洗衣机、汽车、植物餐、风机、飞机、自行车及推车家庭均可识别；原图简化坡地被房屋、树林和层叠山丘扩充。",
+      "data_adaptation_excluded_zh": "不计当前类别措辞、合成身份及数据柱高变化。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "两图均为生活物件与橙柱上下接触或前后叠合；人物、自行车和推车位于基线附近，云带处于最高柱的断轴位置。",
+      "data_adaptation_excluded_zh": "按core允许人物姿态、非数据厚度及布局适配；不要求复刻人物朝向和局部位置。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "上方标题、主体场景与柱、右侧值轴、底部类别和影响分组的层级保留；增加浅色页边和左上解释块，主图留白增加。",
+      "data_adaptation_excluded_zh": "不计由新数据导致的分组宽度、柱高和断轴段长度变化。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "绿色景观和橙柱配色核心保留；参考为平整半透明矢量剪影，成图为纸感、笔触和明暗塑形的乡村插画，米白底替代整体绿底。",
+      "data_adaptation_excluded_zh": "未以新数值、精确标签和允许的尺寸调整扣分。"
+    }
+  }
+}

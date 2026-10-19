@@ -1,0 +1,350 @@
+{
+  "verdict": "minor",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为红灰地球、窄暗背板、浅透视底座，球体融入积液并越缘滴落，黑红曲线叠在其前。最终图保留这些部件及连接关系，改为青绿与米白的立体材质、宽幅背板和左侧球体。图上可见1960–1982逐年标签、两行46个数值、百分比单位、1967年−0.4%及1982预测虚线；主题与SYNTHETIC DATA明确。上述观察及四项参考保留评分在读取源码前已记录。",
+  "summary_zh": "已保存review.json并通过schema校验，未运行submit.py。数据、语义和融化地球的叠合结构符合要求；仅9.6%标注框局部遮住1961年黑色点，属于轻微遮挡。",
+  "issues": [
+    {
+      "category": "occlusion_layering",
+      "severity": "minor",
+      "requirement_id": "M1",
+      "expected_zh": "年度点与路径应可辨，关键值标注应避免遮住邻年数据点。",
+      "observed_zh": "1960年的9.6%标注框遮住1961年黑色点的左半部及相邻部分线段；右半部和表中10.8仍可读。",
+      "evidence_zh": "原图x约278–291、y439–453的1961点左侧被浅色框覆盖；像素(280,446)为框底色，(287,446)仍为深色点。未造成数值或年份绑定错误。",
+      "bbox_xyxy_normalized": [
+        0.115,
+        0.375,
+        0.149,
+        0.417
+      ]
+    }
+  ],
+  "measurement_notes_zh": "仅读取2000×1140原图像素，不运行渲染。可见15%与−1%网格位于y302和y852，故550像素对应16个百分点；零位推得y817.625，与可见y817–818零线一致。按v=15−(y−302)×16/550反读点位。mark_extent_px为点心至零线的垂直距离，并非固定圆点直径或液滴尺寸；满量程误差以16个百分点为分母。源码仅用于佐证映射与层序。",
+  "uncertainties_zh": "独立像素测量覆盖7/46个点，未声称逐点精密测量；点心与抗锯齿定位约±1像素。最小正值约17像素高，满量程通过不能证明高相对精度。按限制未检查编排、日志或自检，capture_render.py的保存链路未独立核验，不将此视为图面失败。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "23个连续年份、2个系列、46个表内数值齐全。源码路径使用每系列23点；1961黑点局部遮挡单列轻微问题。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "底部46个数值与冻结数据逐项一致；六处关键值9.6、13.4、2.4、−0.4、5.9、5.1及百分号正确，未将正小值舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "黑色对应Price inflation，红色对应Output growth；表格列与上方年份对齐，1982预测身份及末段虚线正确。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "两系列共用−1至15的线性轴。七点像素反读最大偏差约0.011个百分点，即满量程0.068%；负点在零线下，球体及底座透视未扭曲数据坐标。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及globe_processed.png；大陆轮廓、融液、长短滴流和底座与成图主体一致。render.py实际叠入素材，并由数据计算折线点位和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "图线跨越球体、积液及背景，处在插画前方，保留参考的叠合关系；液体外轮廓不承担数值编码。生成素材构成主体。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成声明、年度/百分比口径、双系列图例、全部年份及数值表均可读。标注局部遮点未使必要文字不可读。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "球体下缘连续流入积液，积液铺在浅透视底座上，多股液流越过前沿向下垂落，暗背板位于后方；大小滴流连接关系均可见。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题及Annual price inflation and real output change副标题明确当前主题；YEAR、CHANGE (%)和图例给出年份、指标与单位，SYNTHETIC DATA明确合成身份。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "通胀与实际产出年度变化、预测角色以及融化滴落动作均保留。旧OECD真实统计和“繁荣流失”的旧涨跌论断不属于必须复制的内容。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "0.5%红点约高于零线17.1像素，1.9%黑点约高65.6像素，−0.4%红点约低13.9像素，符号与方向可辨。没有人为放大小值高度。"
+    }
+  },
+  "semantic_attribution_zh": "当前经济主题及双系列角色未换类；旧真实数值与统计范围改为明确标注的合成数据，是输入允许的改编。峰谷改变来自当前数据；非数据球体姿态与底座延展不作错误。局部遮点属于输出排布问题，小值精度限制来自像素分辨率；未发现必需主题或物体关系的实质丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "price_inflation",
+        "category": "1968",
+        "expected_value": 13.4,
+        "observed_value": 13.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 460.625,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.3995,
+          0.30614,
+          0.4075,
+          0.32018
+        ],
+        "evidence_zh": "近似点心(807,357)，由圆环及两侧折线交点定位；黑点叠在球体前方。",
+        "uncertainty_zh": "定位约±1像素，即约±0.03个百分点；零误差计算结果不表示亚像素精度。"
+      },
+      {
+        "series_id": "price_inflation",
+        "category": "1973",
+        "expected_value": 5.2,
+        "observed_value": 5.2109,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 179.125,
+        "full_scale_error_percent": 0.0682,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5855,
+          0.55307,
+          0.5935,
+          0.56711
+        ],
+        "evidence_zh": "黑色点中心色带为y635–642，取点心(1179,638.5)。",
+        "uncertainty_zh": "定位约±1像素，对应约±0.03个百分点。"
+      },
+      {
+        "series_id": "price_inflation",
+        "category": "1980",
+        "expected_value": 1.9,
+        "observed_value": 1.9091,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 65.625,
+        "full_scale_error_percent": 0.0568,
+        "small_value_relative_error_percent": 0.4785,
+        "bbox_xyxy_normalized": [
+          0.8465,
+          0.65263,
+          0.8545,
+          0.66667
+        ],
+        "evidence_zh": "本系列最小正值；黑色点中心色带为y748–756，近似点心(1701,752)。",
+        "uncertainty_zh": "定位约±1像素，对应约±0.03个百分点；相对误差计算不表示亚像素精度。"
+      },
+      {
+        "series_id": "output_growth",
+        "category": "1960",
+        "expected_value": 0.5,
+        "observed_value": 0.4982,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 17.125,
+        "full_scale_error_percent": 0.0114,
+        "small_value_relative_error_percent": 0.3636,
+        "bbox_xyxy_normalized": [
+          0.101,
+          0.69518,
+          0.109,
+          0.70921
+        ],
+        "evidence_zh": "全图最小正值；红色点中心色带为y797–804，近似点心(210,800.5)，明显高于零线。",
+        "uncertainty_zh": "定位约±1像素；对0.5的小值，相对误差仍有约6%的像素定位不确定性。"
+      },
+      {
+        "series_id": "output_growth",
+        "category": "1973",
+        "expected_value": 3.4,
+        "observed_value": 3.4073,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 117.125,
+        "full_scale_error_percent": 0.0455,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5855,
+          0.60746,
+          0.5935,
+          0.62149
+        ],
+        "evidence_zh": "红色点中心色带为y697–704，近似点心(1179,700.5)，与同年黑点分离。",
+        "uncertainty_zh": "定位约±1像素，对应约±0.03个百分点。"
+      },
+      {
+        "series_id": "output_growth",
+        "category": "1980",
+        "expected_value": 5.9,
+        "observed_value": 5.9091,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 203.125,
+        "full_scale_error_percent": 0.0568,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.8465,
+          0.53202,
+          0.8545,
+          0.54605
+        ],
+        "evidence_zh": "本系列最大值；红色点中心色带为y611–618，近似点心(1701,614.5)。",
+        "uncertainty_zh": "定位约±1像素，对应约±0.03个百分点。"
+      },
+      {
+        "series_id": "output_growth",
+        "category": "1967",
+        "expected_value": -0.4,
+        "observed_value": -0.4036,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 13.875,
+        "full_scale_error_percent": 0.0227,
+        "small_value_relative_error_percent": 0.9091,
+        "bbox_xyxy_normalized": [
+          0.362,
+          0.72237,
+          0.37,
+          0.7364
+        ],
+        "evidence_zh": "红色圆环近似中心(732,831.5)，位于零线下方，负号标注可读。",
+        "uncertainty_zh": "定位约±1像素；对绝对值0.4，相对误差仍有约7%的像素定位不确定性。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "主体及底座",
+        "required_parts": [
+          "球体",
+          "积液",
+          "滴流",
+          "浅透视底座",
+          "暗背板"
+        ],
+        "relationship": "球体下缘连接积液；积液覆盖底座顶面，并越过前沿向下滴落；背板在后。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.095,
+          0.21,
+          0.94,
+          0.82
+        ],
+        "evidence_zh": "中央长滴流约在x850–925、y790–923，左侧短滴流约在x320–350、y795–860，均连续接入上方液池。"
+      },
+      {
+        "category": "大值叠合实例：1968价格13.4",
+        "required_parts": [
+          "黑色点与折线",
+          "地球表面",
+          "共用纵轴"
+        ],
+        "relationship": "折线与点位于球体前方；数据承载者为平面点位和线段，不是球面轮廓。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.36,
+          0.295,
+          0.45,
+          0.5
+        ],
+        "evidence_zh": "13.4点约在(807,357)，相邻线段跨过大陆与海洋；球面纹理没有改变其线性高度。"
+      },
+      {
+        "category": "最小正值：1960产出0.5",
+        "required_parts": [
+          "红色点",
+          "相连红线",
+          "底座左端",
+          "零线"
+        ],
+        "relationship": "红点连接同一年度序列，位于底座左端前景并高于零线。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.097,
+          0.689,
+          0.15,
+          0.723
+        ],
+        "evidence_zh": "点心约(210,800.5)，与零线约相差17.1像素；点、线和底座层次仍可辨。"
+      },
+      {
+        "category": "小值：1980价格1.9",
+        "required_parts": [
+          "黑色点与折线",
+          "右侧积液",
+          "零线"
+        ],
+        "relationship": "黑点与路径叠在右侧场景前方，按纵坐标置于积液上方，不要求与液面接触。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.82,
+          0.63,
+          0.878,
+          0.73
+        ],
+        "evidence_zh": "黑点约(1701,752)，距零线65.6像素，线段和积液外缘没有被混作同一编码边界。"
+      },
+      {
+        "category": "负值：1967产出−0.4",
+        "required_parts": [
+          "红色点及V形线段",
+          "零线",
+          "底座前面"
+        ],
+        "relationship": "红点跨入零线下方，覆盖在底座前面；引线连接负值标注。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.35,
+          0.713,
+          0.395,
+          0.79
+        ],
+        "evidence_zh": "红点约(732,831.5)，比零线低13.9像素；−0.4%可读，负向距离没有被底座透视反转。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "合成数据取代旧真实统计，使用当前1960–1982数值与峰谷；允许地球姿态、非数据厚度和标签位置调整，不要求旧恶化结论。",
+      "output_added_or_lost_meaning_zh": "新增完整数值表及明确合成声明，保留通胀、实际产出、年度变化与预测角色；融化为积液并滴落的动作未丢失。",
+      "visible_inscription_evidence_zh": "Price inflation & output growth；Annual price inflation and real output change / 1960–1982 / %；SYNTHETIC DATA；YEAR；Price inflation / Output growth；1982 FORECAST。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成序列替换参考的24个OECD国家真实统计及旧趋势结论，符合冻结要求。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前价格峰值为1968年13.4%，产出最低值为1967年−0.4%，按当前数据绘制。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "1961黑点左半部被9.6%标注覆盖，仅是局部显示遮挡；对应10.8数值与年份未遗漏。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "0.5%仅约17像素的零位距离，约1像素定位误差会产生约6%的相对不确定性。"
+      }
+    ],
+    "measurement_coverage_zh": "独立像素测量7/46个位置：两系列各覆盖最小正值、最大值和一个中间点，另测唯一负值。其余39点未逐点精测；全部23个年份、46个数值文本、图例和预测标签另行完成可见核对。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "地球、大陆与海洋、融液、滴流、暗背板和浅透视底座均完整可辨。",
+      "data_adaptation_excluded_zh": "排除当前数据、标签更新及允许的地球姿态变化；配色另在材质项评估。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "球体下接积液，积液铺在底座上并越过前缘下滴，背板在后，核心空间关系接近参考。",
+      "data_adaptation_excluded_zh": "不扣分于允许的球体方位、非数据厚度、积液与底座延展。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "参考为紧凑竖幅背板中的集中主体；成图改为宽幅暗面，大标题和底部表格形成独立区块，整体层级明显重组，仍保留图线叠在主体前方。",
+      "data_adaptation_excluded_zh": "排除新峰谷、当前年份与数值、允许的标签位置和物体姿态调整；评分针对整体版面层级。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "参考是扁平红灰印刷插画；成图为青绿、米白的立体大陆纹理与高光液体，材质和色调明显改变但融化地球构想可辨。",
+      "data_adaptation_excluded_zh": "不按美观打分；不把数据曲线变化或允许的非数据厚度调整计入材质差异。"
+    }
+  }
+}
