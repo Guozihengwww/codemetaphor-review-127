@@ -1,0 +1,347 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以八支竖直香烟组成柱列，橙色滤嘴等高，白纸烟身上接烟草或灰烬，紫色数值由绿色箭头指向烟头，右上独立三列股价框。成图保留上述关系；A—H齐全、F/G等高、H仅有薄白纸与烟头条带。主题、合成提示、产量单位、对数公式和三项股价均可读。",
+  "summary_zh": "数值、标签、对数烟身高度及独立股价面板符合要求，未见重大可见缺陷。最小烟身仍有连接的白纸与烟头条带，但灰烬身份细节受分辨率限制，单列部分保留。",
+  "issues": [],
+  "measurement_notes_zh": "独立读取1600×2000成图像素，在目视烟头区域检测暖色/中性材质上缘，排除紫字、绿箭头及浅网格；橙色滤嘴起点均为y=1470。八段烟身约1000、694、423、218、96、38、38、14px，滤嘴均130px。可见22 LMT满高为1000px；依据冻结的log1p映射反算，最大编码高度误差0.0731%满高。未采用生成器自报测量。阈值敏感性检查中代表上缘变化0–1px。",
+  "uncertainties_zh": "像素边界约±1px，最小值的相对误差不能由满量程合格推定。H的灰烬材质只能辨为灰褐薄条。允许证据中可核验素材与渲染源码，未核验capture_render.py实际归档调用。通用value_axis字段写linear，但M2、附加合同及图面均明确同一对数映射，按明确合同评价。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "八个地区Region A—H及单一产量系列齐全；三家公司P/Q/R、股价、单位、合成提示和读图规则均在图面。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "产量依次为22.0、7.80898065、2.77182631、0.98386991、0.34922823、0.12395984、0.12395984、0.044；股价450、1,740、3,460 CU，均与冻结数据一致。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "各产量数值和向下箭头与同列烟头、地区徽章及名称对齐；三项股价各位于对应公司名下，未与产量混绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "成图独立测得共同接缝、等高滤嘴及八段烟身；按明确的对数映射，各编码高度误差低于0.074%满高，远小于3%容差；F/G保持等高。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始部件表及处理后的灰烬图；纸纹、橙色斑点和灰烬纹理在主体中实质可见。render.py用数据计算烟身外边界、数量和文字，prepare_assets.py与素材清单说明裁切来源。归档调用未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "产量由滤嘴接缝至实体烟头的完整物体高度承载，纹理位于该区域内；滤嘴在接缝下方。纸张、烟头、滤嘴连续接触，无破坏结构的悬浮或遮挡；股价按要求独立成卡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、所有类别及精确数值、LMT=十万吨、CU/share及虚构货币说明均可读；相邻F/G长数值未相互遮盖。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "大中小实例均保留底部滤嘴、上方纸身、顶端烟草/灰烬的上下接触关系；H仍有约14px的完整数据段，材质细节弱但未断开。三列股价徽章仍独立。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "图面明确合成烟草产量与股价、未加工烟草产量、8个合成地区、LMT定义及对数高度；明确股价为每股独立示意值，烟头材质不代表额外数据。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留烟草产量的香烟物体比较及独立股价标注；参考的真实国家、2021年和印度公司语境已由输入明确适配为合成地区与虚构公司，不能视为输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "F/G约38px，纸身与灰烬带仍可区分。H约14px，原像素局部可见薄白纸带连接灰褐烟头与橙色滤嘴，但难从薄条单独确认灰烬细节；数值文字正确不消除此限制。"
+    }
+  },
+  "semantic_attribution_zh": "真实国家、年份及公司替换属于允许的输入适配；烟身缩短由当前数据及对数编码决定。H灰烬辨识下降归于细小数据段和栅格分辨率，并非证据充分的输出遗漏。参考中的统计比较和独立股价关系仍在，不附会额外健康或涨跌论点。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "S1",
+        "category": "Region A",
+        "expected_value": 22,
+        "observed_value": 22,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1000,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.1075,
+          0.235,
+          0.155,
+          0.735
+        ],
+        "evidence_zh": "成图材质上缘约 y=470，橙色滤嘴起点 y=1470；烟身 1000px，目标 1000.000px。以可见满高1000px及声明公式反算产量；满量程误差按编码高度计算。",
+        "uncertainty_zh": "上缘纹理及抗锯齿带来约±1px边界不确定性；反算值不是读取数字标签。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region D",
+        "expected_value": 0.98386991,
+        "observed_value": 0.98087316,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 218,
+        "full_scale_error_percent": 0.048212,
+        "small_value_relative_error_percent": 0.3046,
+        "bbox_xyxy_normalized": [
+          0.44125,
+          0.626,
+          0.48875,
+          0.735
+        ],
+        "evidence_zh": "成图材质上缘约 y=1252，橙色滤嘴起点 y=1470；烟身 218px，目标 218.482px。以可见满高1000px及声明公式反算产量；满量程误差按编码高度计算。",
+        "uncertainty_zh": "上缘纹理及抗锯齿带来约±1px边界不确定性；反算值不是读取数字标签。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region F",
+        "expected_value": 0.12395984,
+        "observed_value": 0.12653751,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 38,
+        "full_scale_error_percent": 0.073059,
+        "small_value_relative_error_percent": 2.0794,
+        "bbox_xyxy_normalized": [
+          0.66375,
+          0.716,
+          0.71125,
+          0.735
+        ],
+        "evidence_zh": "成图材质上缘约 y=1432，橙色滤嘴起点 y=1470；烟身 38px，目标 37.269px。以可见满高1000px及声明公式反算产量；满量程误差按编码高度计算。",
+        "uncertainty_zh": "灰烬上缘及抗锯齿使边界约±1px；反算范围约0.12301–0.13008 LMT。"
+      },
+      {
+        "series_id": "S1",
+        "category": "Region H",
+        "expected_value": 0.044,
+        "observed_value": 0.04487464,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 14,
+        "full_scale_error_percent": 0.026708,
+        "small_value_relative_error_percent": 1.9878,
+        "bbox_xyxy_normalized": [
+          0.88625,
+          0.728,
+          0.93375,
+          0.735
+        ],
+        "evidence_zh": "成图材质上缘约 y=1456，橙色滤嘴起点 y=1470；烟身 14px，目标 13.733px。以可见满高1000px及声明公式反算产量；满量程误差按编码高度计算。",
+        "uncertainty_zh": "边界约±1px；反算范围约0.04160–0.04816 LMT。所列相对误差仅为像素边界点估计，不证明小值高精度。"
+      },
+      {
+        "series_id": "share_prices",
+        "category": "Company P",
+        "expected_value": 450,
+        "observed_value": 450,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.53,
+          0.296,
+          0.639,
+          0.354
+        ],
+        "evidence_zh": "对应公司下方可读450 CU，另标CU/share；卡片仅以文字编码股价。",
+        "uncertainty_zh": "无股价几何通道；不以卡片或徽章尺寸估算数值。"
+      },
+      {
+        "series_id": "share_prices",
+        "category": "Company Q",
+        "expected_value": 1740,
+        "observed_value": 1740,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.67,
+          0.296,
+          0.779,
+          0.354
+        ],
+        "evidence_zh": "对应公司下方可读1,740 CU，另标CU/share；卡片仅以文字编码股价。",
+        "uncertainty_zh": "无股价几何通道；不以卡片或徽章尺寸估算数值。"
+      },
+      {
+        "series_id": "share_prices",
+        "category": "Company R",
+        "expected_value": 3460,
+        "observed_value": 3460,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.81,
+          0.296,
+          0.919,
+          0.354
+        ],
+        "evidence_zh": "对应公司下方可读3,460 CU，另标CU/share；卡片仅以文字编码股价。",
+        "uncertainty_zh": "无股价几何通道；不以卡片或徽章尺寸估算数值。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Region A（大值）",
+        "required_parts": [
+          "烟草端面",
+          "白纸烟身",
+          "橙色滤嘴"
+        ],
+        "relationship": "烟草端面位于白纸上口内，纸身向下接触等宽滤嘴；仅接缝上方计量。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1075,
+          0.235,
+          0.155,
+          0.8
+        ],
+        "evidence_zh": "椭圆烟草端面在y≈470，纸身连续到y=1470，橙色滤嘴延至约1600；端面与纸口无悬空。"
+      },
+      {
+        "category": "Region B（灰烬大实例）",
+        "required_parts": [
+          "灰烬烟头",
+          "橙红燃烧边缘",
+          "白纸烟身",
+          "滤嘴"
+        ],
+        "relationship": "灰烬及其下沿嵌接纸身上端，纸身连接下方滤嘴。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.21875,
+          0.388,
+          0.26625,
+          0.8
+        ],
+        "evidence_zh": "灰烬从y≈776起，下沿橙红纹理与白纸相接；烟身一直延伸至共同接缝，素材位于数据边界内。"
+      },
+      {
+        "category": "Region D（中间值）",
+        "required_parts": [
+          "烟草端面",
+          "白纸烟身",
+          "滤嘴"
+        ],
+        "relationship": "顶端烟草被纸口围住，白纸段下接固定滤嘴。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.44125,
+          0.626,
+          0.48875,
+          0.8
+        ],
+        "evidence_zh": "约218px烟身仍清楚呈现端面、连续纸身及y=1470处接缝。"
+      },
+      {
+        "category": "Region F/G（小值）",
+        "required_parts": [
+          "灰烬带",
+          "白纸短段",
+          "滤嘴"
+        ],
+        "relationship": "灰烬带覆盖纸身顶部，短纸身与滤嘴相接。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.66375,
+          0.716,
+          0.8225,
+          0.8
+        ],
+        "evidence_zh": "两段烟身同为约38px；灰色顶端、白色纸段和橙色滤嘴仍有可见分界，并保持上下连接。"
+      },
+      {
+        "category": "Region H（最小正值）",
+        "required_parts": [
+          "灰烬烟头",
+          "白纸短段",
+          "滤嘴"
+        ],
+        "relationship": "极薄烟头带在纸身上，纸身接触滤嘴；整体数据段不应人为增高。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.88625,
+          0.728,
+          0.93375,
+          0.8
+        ],
+        "evidence_zh": "原像素局部可见y≈1456–1470的灰褐顶带和薄白纸段，下接橙色滤嘴；接触关系保留，但灰烬实体细节已难单独辨认。"
+      },
+      {
+        "category": "独立股价面板",
+        "required_parts": [
+          "三个徽章",
+          "公司名",
+          "股价文字",
+          "单位说明"
+        ],
+        "relationship": "各徽章、公司名和价格垂直对应，三列包含于独立框内，不参与烟身高度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.5,
+          0.2095,
+          0.9475,
+          0.387
+        ],
+        "evidence_zh": "P/Q/R三列分别标Company P/Q/R及450/1,740/3,460 CU；下方均有CU/share并说明虚构货币。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入明确使用合成地区、合成公司和新数值，不要求原国家、2021年、真实股价或原峰值。",
+      "output_added_or_lost_meaning_zh": "输出保留产量比较与独立股价关系，并明确对数及合成统计口径；参考的真实世界排名语境按输入撤去。未见新增未授权统计含义。",
+      "visible_inscription_evidence_zh": "可读“SYNTHETIC DATA”“未加工烟草产量”“LMT = 十万吨”“8个合成地区的未加工烟草产量”“Illustrative Share Prices”“CU/share”及“股价为独立示意值，不参与柱高编码”。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实国家和公司被输入指定的Region A—H、Company P/Q/R替代；图面明确合成与示意。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "A—H数据跨度使烟身缩短；H的约14px符合声明映射，不以参考烟身长度要求其增高。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小值仍有纸身和烟头薄带，但灰烬身份细节弱；约1px边界不确定性对应明显的小值相对误差。"
+      }
+    ],
+    "measurement_coverage_zh": "独立像素扫描覆盖全部8支烟身及滤嘴，逐项记录代表大值A、中间值D、小值F和最小正值H；B/C/E/G高度分别为694/423/96/38px。股价三项均按纯文字编码核对；全部必需标签另行逐项检查。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "橙色滤嘴、白纸烟身及烟草/灰烬端部的香烟身份明确，三列股价徽章仍独立。",
+      "data_adaptation_excluded_zh": "未扣除国家/公司标识替换为合成地区/公司及数据烟身缩短。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "八支香烟仍竖直并排、滤嘴在下、烟头在上；数值箭头向下对准各烟头，股价框位于右上。",
+      "data_adaptation_excluded_zh": "不要求复现参考的逐支燃烧姿态；允许依数据改变烟身长度及非数据厚度。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留上方标题、主柱列、右上辅助卡及下方类别的层级；增加较大的底部读图规则区，标题区域也更宽。",
+      "data_adaptation_excluded_zh": "排除新标签、单位说明及当前数据引起的柱列轮廓变化。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留浅底、紫黑文字、绿色箭头及写实纸张/软木滤嘴；标题改为无衬线，灰烬纹理较统一，参考的多样烧蚀质感有所减少。",
+      "data_adaptation_excluded_zh": "不因小值烟身压缩、合成徽章或允许的烟头姿态调整扣分。"
+    }
+  }
+}
