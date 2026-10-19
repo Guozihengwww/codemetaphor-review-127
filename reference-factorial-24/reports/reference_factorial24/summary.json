@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:06:57.497023+00:00",
+  "updated_at": "2026-10-19T21:13:49.644516+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,9 +11,9 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "pending": 89,
-      "running": 3,
-      "ok": 4
+      "pending": 85,
+      "ok": 8,
+      "running": 3
     },
     "routing_audits": {
       "verified": 96
@@ -15224,7 +15224,305 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为酒红色美国轮廓面具，具有狭长眼孔、边缘系绳及红色滴落折线。待评图为浅色地形人脸美国轮廓，双眼、鼻嘴与地形同体；橙线叠在额头上，10个节点及Y01–Y10齐全。数值依次为532、490、466、456、478、452、418、401、389、362。0–600轴、合成声明、系列与单位清晰，整体下降而Y04至Y05回升。未见明显数据线遮断或必要文字不可读。",
+        "summary_zh": "通过。数值、绑定、线性位置与核心地图人脸叠合关系正确。参考主题已按输入适配为合成事件率，部分非强制面具细节和材质发生变化。review.json已以UTF-8保存并通过schema.json校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在1920×2004原图中提取10个橙色点芯、9段连接线及7个纵轴刻度。600与0刻度中心约为y=624.5和1569.5，满量程945像素；按(1569.5−y)/945×600换算。全部节点最大误差约0.023%满量程，连接线中心偏离相邻节点直线最多约1.09像素。源码仅作佐证。",
+        "uncertainties_zh": "抗锯齿和颜色阈值约带来±1像素定位不确定性，约±0.64事件/十万人；小数结果不代表亚像素精度保证。参考保真评分包含视觉判断。依检查范围限制，未核验capture_render.py的实际执行与归档过程。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "单系列、10节点、9段连线、Y01–Y10、全部数值、0–600轴、标题与合成声明齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "十个值逐项符合输入；−170、−32.0%和+22符合数据及舍入。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "各数值框位于对应节点上方，类别按同一横向顺序对应；系列与单位清楚标注。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "全部10个节点的独立像素测量均满足3%满量程容差，九段线逐点直连，共用零基线性轴。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png和terrain_mask.png，其地形及五官纹理明显用于成图主体。render.py加载素材并从数据计算节点、连线与文字；未执行源码。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "五官与美国轮廓构成连续浮雕，折线覆盖上部地形且未被遮断。此处为二维图表叠合，地图高度不编码事件率。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "必要标题、系列、单位、数值、类别、刻度和合成声明均可辨，无明显截断或重叠。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "美国轮廓包含双眼、鼻嘴，面部与地形连续；实际数据承载位置为橙线和节点中心，最大及最小节点均保持与地图的叠合关系。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Illustrative incident rate、incidents per 100,000 people、CONSECUTIVE SYNTHETIC PERIODS及No real-world estimates明确指标、单位、连续时期和合成性质。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留美国地图人脸与警示主题联系；真实犯罪与持续上升论述由输入明确适配，不要求复现。原眼孔、系绳和红色滴落细节未完整延续。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小值362约占量程60.3%，并非亚像素小值；其点芯约9×9像素、外圈约22像素，连线、标签和类别清楚。点径固定，不编码数值大小。"
+          }
+        },
+        "semantic_attribution_zh": "犯罪主题及持续恶化论述的变化归于声明的合成主题适配；下降走势和局部回升由当前数据决定。眼孔、系绳和滴落缺失属于非强制参考细节变化，核心地图—五官—折线关系保留。未发现当前指标、单位或统计角色遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "illustrative_rate",
+              "category": "Y01",
+              "expected_value": 532,
+              "observed_value": 531.894,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 837.733,
+              "full_scale_error_percent": 0.0177,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.188021,
+                0.363273,
+                0.192708,
+                0.367764
+              ],
+              "evidence_zh": "橙色点芯中心约(364.77,731.77)，点芯约9×9像素；mark_extent为中心至零刻度的垂距。数值由可见刻度换算。",
+              "uncertainty_zh": "定位约±1像素，约±0.64事件/十万人。"
+            },
+            {
+              "series_id": "illustrative_rate",
+              "category": "Y05",
+              "expected_value": 478,
+              "observed_value": 477.926,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 752.733,
+              "full_scale_error_percent": 0.0124,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.470313,
+                0.405689,
+                0.475,
+                0.41018
+              ],
+              "evidence_zh": "橙色点芯中心约(906.77,816.77)，点芯约9×9像素；节点高于相邻Y04、Y06，与局部回升一致。",
+              "uncertainty_zh": "定位约±1像素，约±0.64事件/十万人。"
+            },
+            {
+              "series_id": "illustrative_rate",
+              "category": "Y10",
+              "expected_value": 362,
+              "observed_value": 362.074,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 570.267,
+              "full_scale_error_percent": 0.0124,
+              "small_value_relative_error_percent": 0.0205,
+              "bbox_xyxy_normalized": [
+                0.823438,
+                0.496507,
+                0.828125,
+                0.500998
+              ],
+              "evidence_zh": "最小正值点芯中心约(1584.77,999.23)，点芯约9×9像素；至零刻度垂距约570.27像素。",
+              "uncertainty_zh": "定位约±1像素；报告的相对误差估计不构成亚像素精度保证。"
+            },
+            {
+              "series_id": "illustrative_rate_derived",
+              "category": "NET CHANGE / Y01 → Y10",
+              "expected_value": -170,
+              "observed_value": -170,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.052083,
+                0.887226,
+                0.145833,
+                0.928144
+              ],
+              "evidence_zh": "图中文字−170，带每十万人事件单位；362−532=−170。",
+              "uncertainty_zh": "仅直接数字文字编码，无独立几何通道。"
+            },
+            {
+              "series_id": "illustrative_rate_derived",
+              "category": "RELATIVE CHANGE",
+              "expected_value": -31.954887218045116,
+              "observed_value": -32,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.364583,
+                0.887226,
+                0.5,
+                0.928144
+              ],
+              "evidence_zh": "图中文字−32.0%，注明relative to Y01；计算结果约−31.9549%，一位小数舍入正确。",
+              "uncertainty_zh": "仅文字编码；舍入差不属于几何误差。"
+            },
+            {
+              "series_id": "illustrative_rate_derived",
+              "category": "THE LOCAL REBOUND / Y04 → Y05",
+              "expected_value": 22,
+              "observed_value": 22,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.677083,
+                0.887226,
+                0.755208,
+                0.928144
+              ],
+              "evidence_zh": "图中文字+22，绑定Y04 → Y05；478−456=22。",
+              "uncertainty_zh": "仅直接数字文字编码，无独立几何通道。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体美国地形面具",
+              "required_parts": [
+                "美国本土轮廓",
+                "双眼",
+                "鼻",
+                "嘴",
+                "连续地形材质"
+              ],
+              "relationship": "轮廓包含五官，面部与地形同体连接。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.122396,
+                0.311876,
+                0.919271,
+                0.770958
+              ],
+              "evidence_zh": "双眼位于左右眉骨下，鼻居中、嘴在其下；面部纹理与山地连续，东南端保留佛罗里达突出轮廓。"
+            },
+            {
+              "category": "Y01最大值",
+              "required_parts": [
+                "532标签",
+                "橙色节点",
+                "通向Y02的直线",
+                "西部山地面具"
+              ],
+              "relationship": "节点与线段相连，图表覆盖西部上方地形。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.164063,
+                0.329341,
+                0.286458,
+                0.411677
+              ],
+              "evidence_zh": "节点连接右下方Y02；山地在数据线后方连续可见，标签位于节点上方。"
+            },
+            {
+              "category": "Y05内部回升点",
+              "required_parts": [
+                "进入线段",
+                "478标签和节点",
+                "离开线段",
+                "额头地形"
+              ],
+              "relationship": "进入线段向右上，离开线段向右下，连续叠合额头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.390625,
+                0.369261,
+                0.554688,
+                0.441617
+              ],
+              "evidence_zh": "Y05高于Y04和Y06，节点清楚且线段未被纹理遮断。"
+            },
+            {
+              "category": "Y10最小正值",
+              "required_parts": [
+                "362标签",
+                "末端节点",
+                "来自Y09的线段",
+                "东部面具边缘",
+                "Y10类别"
+              ],
+              "relationship": "末端节点接收左上方线段，位于轮廓内侧并与Y10横向对齐。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.744792,
+                0.459082,
+                0.859375,
+                0.813373
+              ],
+              "evidence_zh": "节点外圈与地形有清晰分界；最小值仍保持线—节点—地图叠合关系。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core.json明确允许合成主题适配，当前对象为十个连续合成时期的示意事件率；允许依据数据调整走势、姿态、厚度与排版。",
+            "output_added_or_lost_meaning_zh": "正确增加净下降与唯一局部回升摘要，未沿用旧犯罪上升结论。原滴落、空眼孔和系绳未延续，警示语气主要由ALARM标题与橙色保留。",
+            "visible_inscription_evidence_zh": "A DECADE OF ALARM；SYNTHETIC DATA；Illustrative incident rate；incidents per 100,000 people；CONSECUTIVE SYNTHETIC PERIODS；Map relief does not encode rate。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实犯罪统计转为合成事件率由冻结输入明确允许，参考含义部分保留不构成生成失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "532降至362且456回升至478，决定下降走势与局部上凸；不要求原右端高峰。"
+            },
+            {
+              "cause": "output_omission",
+              "evidence_zh": "系绳、空眼孔和滴落未出现，属于非强制参考细节未延续；核心地图、五官与折线关系保留。"
+            }
+          ],
+          "measurement_coverage_zh": "实测全部10个节点、9段连接线与7个纵轴刻度；记录最大Y01、内部Y05、最小Y10三个代表点，其余节点满量程误差亦低于0.03%。全部类别与数值另行逐项核对。底部三项摘要按numeric_text_only记录，无遗漏的独立定量面板。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "美国轮廓与面具人脸结合身份明确；狭长空眼孔改为完整眼睛，增加鼻嘴，未保留系绳。",
+            "data_adaptation_excluded_zh": "不以合成主题、当前线形、标签或允许的非数据厚度变化扣分。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "仍为正面美国轮廓与双眼同体，图表覆盖其上；原边缘系绳关系未保留。",
+            "data_adaptation_excluded_zh": "排除允许的姿态与折线位置调整，不要求旧峰值或上涨方向。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方大标题、中下方折线与地图脸主体层级；标题区扩大并增加底部摘要，紧凑框线版式改变。",
+            "data_adaptation_excluded_zh": "不扣除新轴、十期标注及当前走势所需的排版调整。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "参考为深红平面印刷面具与粗红滴落线；成图为浅色细密浮雕、深底与细橙线，保留暖红警示色但材质表现明显不同。",
+            "data_adaptation_excluded_zh": "排除主题、数值方向和允许的厚度适配；仅评价可见材质与配色保留程度。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/1427ec15b81c31",
       "numeric_supported": true,
@@ -15571,7 +15869,305 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为酒红色美国轮廓面具，具有狭长眼孔、边缘系绳及红色滴落折线。待评图为浅色地形人脸美国轮廓，双眼、鼻嘴与地形同体；橙线叠在额头上，10个节点及Y01–Y10齐全。数值依次为532、490、466、456、478、452、418、401、389、362。0–600轴、合成声明、系列与单位清晰，整体下降而Y04至Y05回升。未见明显数据线遮断或必要文字不可读。",
+        "summary_zh": "通过。数值、绑定、线性位置与核心地图人脸叠合关系正确。参考主题已按输入适配为合成事件率，部分非强制面具细节和材质发生变化。review.json已以UTF-8保存并通过schema.json校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在1920×2004原图中提取10个橙色点芯、9段连接线及7个纵轴刻度。600与0刻度中心约为y=624.5和1569.5，满量程945像素；按(1569.5−y)/945×600换算。全部节点最大误差约0.023%满量程，连接线中心偏离相邻节点直线最多约1.09像素。源码仅作佐证。",
+        "uncertainties_zh": "抗锯齿和颜色阈值约带来±1像素定位不确定性，约±0.64事件/十万人；小数结果不代表亚像素精度保证。参考保真评分包含视觉判断。依检查范围限制，未核验capture_render.py的实际执行与归档过程。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "单系列、10节点、9段连线、Y01–Y10、全部数值、0–600轴、标题与合成声明齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "十个值逐项符合输入；−170、−32.0%和+22符合数据及舍入。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "各数值框位于对应节点上方，类别按同一横向顺序对应；系列与单位清楚标注。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "全部10个节点的独立像素测量均满足3%满量程容差，九段线逐点直连，共用零基线性轴。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png和terrain_mask.png，其地形及五官纹理明显用于成图主体。render.py加载素材并从数据计算节点、连线与文字；未执行源码。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "五官与美国轮廓构成连续浮雕，折线覆盖上部地形且未被遮断。此处为二维图表叠合，地图高度不编码事件率。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "必要标题、系列、单位、数值、类别、刻度和合成声明均可辨，无明显截断或重叠。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "美国轮廓包含双眼、鼻嘴，面部与地形连续；实际数据承载位置为橙线和节点中心，最大及最小节点均保持与地图的叠合关系。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Illustrative incident rate、incidents per 100,000 people、CONSECUTIVE SYNTHETIC PERIODS及No real-world estimates明确指标、单位、连续时期和合成性质。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留美国地图人脸与警示主题联系；真实犯罪与持续上升论述由输入明确适配，不要求复现。原眼孔、系绳和红色滴落细节未完整延续。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小值362约占量程60.3%，并非亚像素小值；其点芯约9×9像素、外圈约22像素，连线、标签和类别清楚。点径固定，不编码数值大小。"
+          }
+        },
+        "semantic_attribution_zh": "犯罪主题及持续恶化论述的变化归于声明的合成主题适配；下降走势和局部回升由当前数据决定。眼孔、系绳和滴落缺失属于非强制参考细节变化，核心地图—五官—折线关系保留。未发现当前指标、单位或统计角色遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "illustrative_rate",
+              "category": "Y01",
+              "expected_value": 532,
+              "observed_value": 531.894,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 837.733,
+              "full_scale_error_percent": 0.0177,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.188021,
+                0.363273,
+                0.192708,
+                0.367764
+              ],
+              "evidence_zh": "橙色点芯中心约(364.77,731.77)，点芯约9×9像素；mark_extent为中心至零刻度的垂距。数值由可见刻度换算。",
+              "uncertainty_zh": "定位约±1像素，约±0.64事件/十万人。"
+            },
+            {
+              "series_id": "illustrative_rate",
+              "category": "Y05",
+              "expected_value": 478,
+              "observed_value": 477.926,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 752.733,
+              "full_scale_error_percent": 0.0124,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.470313,
+                0.405689,
+                0.475,
+                0.41018
+              ],
+              "evidence_zh": "橙色点芯中心约(906.77,816.77)，点芯约9×9像素；节点高于相邻Y04、Y06，与局部回升一致。",
+              "uncertainty_zh": "定位约±1像素，约±0.64事件/十万人。"
+            },
+            {
+              "series_id": "illustrative_rate",
+              "category": "Y10",
+              "expected_value": 362,
+              "observed_value": 362.074,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 570.267,
+              "full_scale_error_percent": 0.0124,
+              "small_value_relative_error_percent": 0.0205,
+              "bbox_xyxy_normalized": [
+                0.823438,
+                0.496507,
+                0.828125,
+                0.500998
+              ],
+              "evidence_zh": "最小正值点芯中心约(1584.77,999.23)，点芯约9×9像素；至零刻度垂距约570.27像素。",
+              "uncertainty_zh": "定位约±1像素；报告的相对误差估计不构成亚像素精度保证。"
+            },
+            {
+              "series_id": "illustrative_rate_derived",
+              "category": "NET CHANGE / Y01 → Y10",
+              "expected_value": -170,
+              "observed_value": -170,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.052083,
+                0.887226,
+                0.145833,
+                0.928144
+              ],
+              "evidence_zh": "图中文字−170，带每十万人事件单位；362−532=−170。",
+              "uncertainty_zh": "仅直接数字文字编码，无独立几何通道。"
+            },
+            {
+              "series_id": "illustrative_rate_derived",
+              "category": "RELATIVE CHANGE",
+              "expected_value": -31.954887218045116,
+              "observed_value": -32,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.364583,
+                0.887226,
+                0.5,
+                0.928144
+              ],
+              "evidence_zh": "图中文字−32.0%，注明relative to Y01；计算结果约−31.9549%，一位小数舍入正确。",
+              "uncertainty_zh": "仅文字编码；舍入差不属于几何误差。"
+            },
+            {
+              "series_id": "illustrative_rate_derived",
+              "category": "THE LOCAL REBOUND / Y04 → Y05",
+              "expected_value": 22,
+              "observed_value": 22,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.677083,
+                0.887226,
+                0.755208,
+                0.928144
+              ],
+              "evidence_zh": "图中文字+22，绑定Y04 → Y05；478−456=22。",
+              "uncertainty_zh": "仅直接数字文字编码，无独立几何通道。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体美国地形面具",
+              "required_parts": [
+                "美国本土轮廓",
+                "双眼",
+                "鼻",
+                "嘴",
+                "连续地形材质"
+              ],
+              "relationship": "轮廓包含五官，面部与地形同体连接。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.122396,
+                0.311876,
+                0.919271,
+                0.770958
+              ],
+              "evidence_zh": "双眼位于左右眉骨下，鼻居中、嘴在其下；面部纹理与山地连续，东南端保留佛罗里达突出轮廓。"
+            },
+            {
+              "category": "Y01最大值",
+              "required_parts": [
+                "532标签",
+                "橙色节点",
+                "通向Y02的直线",
+                "西部山地面具"
+              ],
+              "relationship": "节点与线段相连，图表覆盖西部上方地形。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.164063,
+                0.329341,
+                0.286458,
+                0.411677
+              ],
+              "evidence_zh": "节点连接右下方Y02；山地在数据线后方连续可见，标签位于节点上方。"
+            },
+            {
+              "category": "Y05内部回升点",
+              "required_parts": [
+                "进入线段",
+                "478标签和节点",
+                "离开线段",
+                "额头地形"
+              ],
+              "relationship": "进入线段向右上，离开线段向右下，连续叠合额头。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.390625,
+                0.369261,
+                0.554688,
+                0.441617
+              ],
+              "evidence_zh": "Y05高于Y04和Y06，节点清楚且线段未被纹理遮断。"
+            },
+            {
+              "category": "Y10最小正值",
+              "required_parts": [
+                "362标签",
+                "末端节点",
+                "来自Y09的线段",
+                "东部面具边缘",
+                "Y10类别"
+              ],
+              "relationship": "末端节点接收左上方线段，位于轮廓内侧并与Y10横向对齐。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.744792,
+                0.459082,
+                0.859375,
+                0.813373
+              ],
+              "evidence_zh": "节点外圈与地形有清晰分界；最小值仍保持线—节点—地图叠合关系。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core.json明确允许合成主题适配，当前对象为十个连续合成时期的示意事件率；允许依据数据调整走势、姿态、厚度与排版。",
+            "output_added_or_lost_meaning_zh": "正确增加净下降与唯一局部回升摘要，未沿用旧犯罪上升结论。原滴落、空眼孔和系绳未延续，警示语气主要由ALARM标题与橙色保留。",
+            "visible_inscription_evidence_zh": "A DECADE OF ALARM；SYNTHETIC DATA；Illustrative incident rate；incidents per 100,000 people；CONSECUTIVE SYNTHETIC PERIODS；Map relief does not encode rate。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实犯罪统计转为合成事件率由冻结输入明确允许，参考含义部分保留不构成生成失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "532降至362且456回升至478，决定下降走势与局部上凸；不要求原右端高峰。"
+            },
+            {
+              "cause": "output_omission",
+              "evidence_zh": "系绳、空眼孔和滴落未出现，属于非强制参考细节未延续；核心地图、五官与折线关系保留。"
+            }
+          ],
+          "measurement_coverage_zh": "实测全部10个节点、9段连接线与7个纵轴刻度；记录最大Y01、内部Y05、最小Y10三个代表点，其余节点满量程误差亦低于0.03%。全部类别与数值另行逐项核对。底部三项摘要按numeric_text_only记录，无遗漏的独立定量面板。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "美国轮廓与面具人脸结合身份明确；狭长空眼孔改为完整眼睛，增加鼻嘴，未保留系绳。",
+            "data_adaptation_excluded_zh": "不以合成主题、当前线形、标签或允许的非数据厚度变化扣分。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "仍为正面美国轮廓与双眼同体，图表覆盖其上；原边缘系绳关系未保留。",
+            "data_adaptation_excluded_zh": "排除允许的姿态与折线位置调整，不要求旧峰值或上涨方向。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方大标题、中下方折线与地图脸主体层级；标题区扩大并增加底部摘要，紧凑框线版式改变。",
+            "data_adaptation_excluded_zh": "不扣除新轴、十期标注及当前走势所需的排版调整。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "参考为深红平面印刷面具与粗红滴落线；成图为浅色细密浮雕、深底与细橙线，保留暖红警示色但材质表现明显不同。",
+            "data_adaptation_excluded_zh": "排除主题、数值方向和允许的厚度适配；仅评价可见材质与配色保留程度。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/1427ec15b81c31",
       "numeric_supported": true,
@@ -16941,7 +17537,300 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为五个同高黑色侧视龙头、青色垂直水流与末端飞溅；国家名位于龙头上方，数值沿水流竖排，右下有水资源压力文字及灰色脚印。待评图为五个等大黑色光泽龙头，出水口共用零线，青色水流逐项缩短；A、B、C可见连接的水柱和飞溅，D、E贴近出水口呈薄青线。五组类别与精确数值、年度可再生水资源标题、合成声明及单位释义均可见。",
+        "summary_zh": "通过。数值、绑定与水流尺度符合冻结要求，生成素材实质可见。最小飞溅仅部分可辨。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "直接检查1800×2190原图像素。0、1500、9000刻度约位于y=765、965、1965，满量程1200像素，每像素7.5 Gm³/year。用青色通道差阈值区分强色与半透明末行；包围高度不等同精确有效长度。五项端点区间均在3%满量程容差内，源码公式仅作旁证。",
+        "uncertainties_zh": "D、E末端混合像素不支持精确小值相对误差；E不能清楚分辨独立水柱和飞溅。参考图仅364×443，细部比较有限。未读取禁止的日志或自检，无法独立确认capture_render.py调用链。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "五个龙头、Region A–E、单一系列及全部必需主题和单位标签齐全，顺序正确。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "8,100.0、1,712.941447、362.243012、76.60507、16.2全部准确；500×正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "类别和数值位于各自龙头上方，水流连接对应出口，无串列。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "A实测1080像素；B–E的端点像素区间均包含目标映射，未见超过3%满量程偏差。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始素材及飞溅素材，最终龙头和水花与其吻合；render.py引用素材并以数据控制流长。捕获调用链未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "量值由连接出口的水流至飞溅底边承载，没有用旁置普通图表替代；未见破坏结构的遮挡或接缝。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、五组类别和数值、刻度、单位及十亿立方米/年释义在原始分辨率可读。"
+          },
+          "critical_structure": {
+            "status": "partial",
+            "evidence_zh": "五个同尺度龙头与共高出口保留；A–C的出口、水柱、末端飞溅完整可辨，D较扁，E独立飞溅形态不充分可辨。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "主题、按区域比较、年度体积口径和合成数据身份明确，无单位或类别角色丢失。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留龙头落水比较可再生水资源的关系；原国家排名及缺水预警改为合成区域和500×比较，属于冻结输入允许的改编。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "D约10–11像素仍可辨；E约2–3像素青色细带接触出口，但水柱与飞溅不能视觉分离。"
+          }
+        },
+        "semantic_attribution_zh": "国家到合成区域、旧分布到当前分布属于输入适配。旧缺水预警和脚印不是当前强制论断。D/E压缩来自数据跨度，E形态难辨主要是分辨率限制，未发现当前主题或单位的输出遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "annual_renewable_water",
+              "category": "Region A",
+              "expected_value": 8100,
+              "observed_value": 8100,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1080,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.168333,
+                0.349315,
+                0.251667,
+                0.842466
+              ],
+              "evidence_zh": "青色像素自y=765至1844，长度1080像素；按可见刻度换算为8100。",
+              "uncertainty_zh": "边缘判读约有1像素不确定度；零误差为像素级结果。"
+            },
+            {
+              "series_id": "annual_renewable_water",
+              "category": "Region B",
+              "expected_value": 1712.941447,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 229,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.340556,
+                0.349315,
+                0.423889,
+                0.453881
+              ],
+              "evidence_zh": "较强青色占228行，含半透明末行占229行；对应1710–1717.5，包含目标。",
+              "uncertainty_zh": "229为像素包围高度，不能据此唯一恢复有效流长。"
+            },
+            {
+              "series_id": "annual_renewable_water",
+              "category": "Region C",
+              "expected_value": 362.243012,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 49,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.533333,
+                0.349315,
+                0.575556,
+                0.371689
+              ],
+              "evidence_zh": "较强青色占48行，含半透明末行占49行；对应360–367.5，包含目标，区间满量程偏差小于0.059%。",
+              "uncertainty_zh": "混合色不支持精确亚像素端点及相对误差。"
+            },
+            {
+              "series_id": "annual_renewable_water",
+              "category": "Region D",
+              "expected_value": 76.60507,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 11,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.706667,
+                0.349315,
+                0.746667,
+                0.354338
+              ],
+              "evidence_zh": "10行较强青色加第11行浅青色，下一行恢复背景；约对应75–82.5，包含目标。",
+              "uncertainty_zh": "末行覆盖率未知；水柱可见，飞溅近似薄弧。"
+            },
+            {
+              "series_id": "annual_renewable_water",
+              "category": "Region E",
+              "expected_value": 16.2,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 3,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.885556,
+                0.349315,
+                0.915,
+                0.350685
+              ],
+              "evidence_zh": "2行明显青色加第3行浅色，y=768恢复背景；约对应15–22.5，包含目标16.2。",
+              "uncertainty_zh": "亚像素端点无法精确恢复；区间上界与目标相差约38.9%，满量程通过不能证明小值相对精度。"
+            },
+            {
+              "series_id": "derived_ratio_A_to_E",
+              "category": "Region A / Region E",
+              "expected_value": 500,
+              "observed_value": 500,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.488889,
+                0.611872,
+                0.683333,
+                0.73516
+              ],
+              "evidence_zh": "500×与8100/16.2一致，属于文字编码。",
+              "uncertainty_zh": "不用于证明水流精确长度比。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Region A",
+              "required_parts": [
+                "黑色侧视龙头",
+                "向下出口",
+                "青色水柱",
+                "末端飞溅"
+              ],
+              "relationship": "阀体连接弯管，出口接触水柱，水柱连接底部飞溅。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.086111,
+                0.258904,
+                0.251667,
+                0.842466
+              ],
+              "evidence_zh": "出口约(378,765)，水柱连续至y≈1845；飞溅侧枝均位于底边上方。"
+            },
+            {
+              "category": "Region C",
+              "required_parts": [
+                "龙头出口",
+                "短水柱",
+                "收缩飞溅"
+              ],
+              "relationship": "短水柱接触出口，下端与飞溅连为一体。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.430556,
+                0.258904,
+                0.575556,
+                0.371689
+              ],
+              "evidence_zh": "约49像素高度内仍可分辨柱体、侧向水花和底边。"
+            },
+            {
+              "category": "Region D",
+              "required_parts": [
+                "龙头出口",
+                "微短水柱",
+                "扁平飞溅"
+              ],
+              "relationship": "青色短柱贴接出口，末端横向展开。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.705556,
+                0.340183,
+                0.747222,
+                0.354795
+              ],
+              "evidence_zh": "约10–11行水色，水柱可识别，飞溅细节较难辨。"
+            },
+            {
+              "category": "Region E",
+              "required_parts": [
+                "龙头出口",
+                "微小水柱",
+                "末端飞溅"
+              ],
+              "relationship": "青色与出口连续接触，水柱和飞溅压缩为细带。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.882222,
+                0.340183,
+                0.916667,
+                0.351598
+              ],
+              "evidence_zh": "可确认非零青色接触，不能从2–3行像素确认独立水花轮廓。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "允许用合成区域和当前数据替换国家及旧统计，并适配非数据厚度、标签位置和短飞溅。",
+            "output_added_or_lost_meaning_zh": "保留水资源落水长度比较，增加正确的500倍解释；旧缺水预警未保留，但不是当前强制论断。E水花形态仅部分可辨。",
+            "visible_inscription_evidence_zh": "Annual renewable water resources、Annual volume by region、Region A–E、SYNTHETIC DATA、Gm³/year释义及Fall length encodes volume均可见。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "冻结输入明确使用合成区域，不要求旧国家、旧数值和旧缺水预警。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "数据跨度500倍，同一线性尺度使后两条水流及飞溅极短。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "E仅2行强色加1行混合色，限制水花辨识及相对精度判断。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一几何通道的全部五项，另核对500×文字；全部类别、精确数值和必需标签逐项检查。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "五个黑色侧视龙头、横向手柄及下弯出口保留；参考右下灰色脚印未保留。",
+            "data_adaptation_excluded_zh": "未扣类别替换、数据流长和小飞溅收缩。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "五个龙头同尺度横排、同高出口朝下，水流垂直接出，较大实例飞溅位于末端。",
+            "data_adaptation_excluded_zh": "允许非数据厚度、标签位置及短飞溅压缩；小值关系另评。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上部龙头行、左侧最长水流和右下说明区；标题放大，新增网格和页脚，数值改为水平置顶。",
+            "data_adaptation_excluded_zh": "未扣新分布引起的空白、流长变化和旧排名替换。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "黑青配色保留；平面剪影改为光泽金属，浅青水流改为较饱和且有反光水纹的材质。",
+            "data_adaptation_excluded_zh": "未计真实比例造成的水纹和飞溅可见面积变化。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/13fea62134e3ef",
       "numeric_supported": true,
@@ -22983,7 +23872,434 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为浅色底、黑色标题横幅、红蓝绿V形绶带悬挂三枚等大圆牌，盘面按材料分区，下方独立列美元金额。最终图保留三列绶带和等大圆牌，挂环、金属外缘、月桂叶及星形浮雕可见；分区直接覆盖牌面。金牌顶部可见细黄色区和铜色区，银牌有铜色区，铜牌顶部有锡、锌细区。主题、SYNTHETIC DATA、质量百分比、独立100%口径、银子类说明、完整数值表及三个金额均可读。",
+        "summary_zh": "通过。份额、标签和金额完整，代表性像素测量均在容差内，素材实质构成奖牌主体。review.json 已保存并通过 schema.json 校验；未运行 submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "直接读取2100×1498最终图。三牌水平边缘分别约为145–624、810–1289、1475–1954，直径均480像素。在距圆心210–216像素的环带采样，用最终图表头色标辨认材料，取抗锯齿过渡带中点估计边界；角宽除以3.6得到质量百分比。mark_extent_px为半径213像素处的弧长。源码仅用于佐证，没有使用生成方自检结果替代像素测量。",
+        "uncertainties_zh": "边界抗锯齿、暗刻线及高光带来约±0.1个百分点的测量不确定性；小值相对误差的点估计不代表精度保证，近圆心尖端无法精确判定。未读取禁用日志或自检，逐次capture_render归档历史未单独核实。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "三枚奖牌、八个成分类别、24个表格数值（含10个零值）、14个正值盘面标注及三个金额齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "金牌1.5、5.9及四个23.15；银牌6.5及四个23.375；铜牌96.5、0.6、2.9，以及全部零值准确。金额为720、360、6 USD。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "材料引线终点位于对应扇区；S1–S4与表头银合成子类及色标对应。三个金额与奖牌按列绑定。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "三牌等直径。九项像素角宽样本最大绝对偏差约0.028个百分点，低于3个百分点容差；最小锡区估计约0.603%。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始素材及处理后的奖牌纹理。最终图中的织物、月桂叶、星形浮雕和边缘与素材一致；render.py加载素材并用角度蒙版控制分区。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "分区直接位于奖牌表面，径向边界共用圆心并终止于内圆边界；浮雕跨色界连续，外缘环绕数据盘，绶带通过挂环连接牌顶。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成声明、百分比口径、银子类全名、USD及读图说明清楚，无关键文字裁切或遮盖。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "三枚等大金银铜奖牌均有绶带、挂环、金属边缘和压印；大、小材料区都包含于同一盘面，以径向分界承载数据。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "明确表达奖牌金属质量组成和合成示例价值。各枚独立100%，银子类保留父类；美元仅文字编码，等半径不表示总质量。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留材料组成与对应美元价值比较。原参考Olympic的真实奖牌语境按冻结输入改为合成示例，属于输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "锡区在半径213像素处弧宽约8.1像素，金区约20.0像素，锌区约39.0像素；细区颜色、盘面包含关系和引线可辨。近圆心尖端受分辨率限制。"
+          }
+        },
+        "semantic_attribution_zh": "未发现当前主题、单位或统计角色的输出遗漏。合成主题、新数值及银的四个子类来自冻结输入；扇区随数据变化。小扇区尖端的精度限制属于分辨率限制，不据此判为几何错误。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "medal_Gold",
+              "category": "Gold",
+              "expected_value": 1.5,
+              "observed_value": 1.497,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 20.0,
+              "full_scale_error_percent": 0.003,
+              "small_value_relative_error_percent": 0.2,
+              "bbox_xyxy_normalized": [
+                0.183,
+                0.369,
+                0.194,
+                0.523
+              ],
+              "evidence_zh": "像素颜色过渡估计边界约0.07°至5.46°。",
+              "uncertainty_zh": "约±0.1个百分点；相对误差仅为近似点估计。"
+            },
+            {
+              "series_id": "medal_Gold",
+              "category": "Silver / synthetic subcategory 1",
+              "expected_value": 23.15,
+              "observed_value": 23.139,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 309.7,
+              "full_scale_error_percent": 0.011,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.183,
+                0.386,
+                0.292,
+                0.574
+              ],
+              "evidence_zh": "像素边界约26.68°至109.98°。",
+              "uncertainty_zh": "边界描线和抗锯齿造成约±0.1个百分点不确定性。"
+            },
+            {
+              "series_id": "medal_Gold",
+              "category": "Silver / synthetic subcategory 3",
+              "expected_value": 23.15,
+              "observed_value": 23.178,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 310.2,
+              "full_scale_error_percent": 0.028,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.074,
+                0.503,
+                0.184,
+                0.671
+              ],
+              "evidence_zh": "像素边界约193.26°至276.70°。",
+              "uncertainty_zh": "约±0.1个百分点。"
+            },
+            {
+              "series_id": "medal_Silver",
+              "category": "Copper",
+              "expected_value": 6.5,
+              "observed_value": 6.503,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 87.0,
+              "full_scale_error_percent": 0.003,
+              "small_value_relative_error_percent": 0.05,
+              "bbox_xyxy_normalized": [
+                0.499,
+                0.369,
+                0.544,
+                0.523
+              ],
+              "evidence_zh": "像素边界约0.04°至23.45°。",
+              "uncertainty_zh": "约±0.1个百分点；相对误差仅为点估计。"
+            },
+            {
+              "series_id": "medal_Silver",
+              "category": "Silver / synthetic subcategory 1",
+              "expected_value": 23.375,
+              "observed_value": 23.369,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 312.8,
+              "full_scale_error_percent": 0.006,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.499,
+                0.381,
+                0.609,
+                0.569
+              ],
+              "evidence_zh": "像素边界约23.45°至107.58°。",
+              "uncertainty_zh": "约±0.1个百分点。"
+            },
+            {
+              "series_id": "medal_Silver",
+              "category": "Silver / synthetic subcategory 3",
+              "expected_value": 23.375,
+              "observed_value": 23.4,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 313.2,
+              "full_scale_error_percent": 0.025,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.391,
+                0.505,
+                0.501,
+                0.673
+              ],
+              "evidence_zh": "像素边界约191.64°至275.88°。",
+              "uncertainty_zh": "约±0.1个百分点。"
+            },
+            {
+              "series_id": "medal_Bronze",
+              "category": "Tin",
+              "expected_value": 0.6,
+              "observed_value": 0.603,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 8.1,
+              "full_scale_error_percent": 0.003,
+              "small_value_relative_error_percent": 0.5,
+              "bbox_xyxy_normalized": [
+                0.792,
+                0.372,
+                0.817,
+                0.523
+              ],
+              "evidence_zh": "像素边界约347.38°至349.55°，可见浅色细扇区。",
+              "uncertainty_zh": "约±0.1个百分点，相对于0.6%的小值不可忽略；0.5%相对误差仅为点估计。"
+            },
+            {
+              "series_id": "medal_Bronze",
+              "category": "Copper",
+              "expected_value": 96.5,
+              "observed_value": 96.481,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1291.2,
+              "full_scale_error_percent": 0.019,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.708,
+                0.369,
+                0.926,
+                0.675
+              ],
+              "evidence_zh": "铜色区域像素边界约0.05°至347.38°。",
+              "uncertainty_zh": "约±0.1个百分点。"
+            },
+            {
+              "series_id": "medal_Bronze",
+              "category": "Zinc",
+              "expected_value": 2.9,
+              "observed_value": 2.917,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 39.0,
+              "full_scale_error_percent": 0.017,
+              "small_value_relative_error_percent": 0.59,
+              "bbox_xyxy_normalized": [
+                0.796,
+                0.369,
+                0.817,
+                0.523
+              ],
+              "evidence_zh": "像素边界约349.55°至360.05°。",
+              "uncertainty_zh": "约±0.1个百分点；相对误差仅为点估计。"
+            },
+            {
+              "series_id": "illustrative_value",
+              "category": "Gold",
+              "expected_value": 720,
+              "observed_value": 720,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.142,
+                0.72,
+                0.225,
+                0.755
+              ],
+              "evidence_zh": "金牌下方可读$720，共同标题注明USD。",
+              "uncertainty_zh": "依合同仅文字编码，不报告几何误差。"
+            },
+            {
+              "series_id": "illustrative_value",
+              "category": "Silver",
+              "expected_value": 360,
+              "observed_value": 360,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.459,
+                0.72,
+                0.543,
+                0.755
+              ],
+              "evidence_zh": "银牌下方可读$360，共同标题注明USD。",
+              "uncertainty_zh": "依合同仅文字编码，不报告几何误差。"
+            },
+            {
+              "series_id": "illustrative_value",
+              "category": "Bronze",
+              "expected_value": 6,
+              "observed_value": 6,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.796,
+                0.72,
+                0.838,
+                0.755
+              ],
+              "evidence_zh": "铜牌下方可读$6，共同标题注明USD。",
+              "uncertainty_zh": "依合同仅文字编码，不报告几何误差。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Gold medal / 大银色分区",
+              "required_parts": [
+                "红色V形绶带",
+                "挂环",
+                "金色外缘",
+                "银色子类扇区",
+                "星形及月桂浮雕"
+              ],
+              "relationship": "绶带经挂环连接牌顶，外缘包围数据盘，浮雕连续跨越扇区。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.069,
+                0.194,
+                0.298,
+                0.683
+              ],
+              "evidence_zh": "大银色区域保留完整金属压印，分界延伸至内缘。"
+            },
+            {
+              "category": "Gold medal / Gold 1.5%",
+              "required_parts": [
+                "黄色细扇区",
+                "径向分界",
+                "内圆边界",
+                "Gold引线"
+              ],
+              "relationship": "细区位于盘面内，由顶部内缘向圆心收尖，引线落在区内。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.183,
+                0.369,
+                0.194,
+                0.523
+              ],
+              "evidence_zh": "可见拉丝表面；与金色非数据外缘由内圆线区分。"
+            },
+            {
+              "category": "Silver medal",
+              "required_parts": [
+                "蓝色绶带",
+                "挂环",
+                "银色外缘",
+                "铜扇区",
+                "四个银子类",
+                "压印"
+              ],
+              "relationship": "挂环连接绶带与牌顶，五个正值扇区共同填满同一圆盘。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.386,
+                0.194,
+                0.614,
+                0.683
+              ],
+              "evidence_zh": "各区共用圆心和内圆边界，浮雕与挂环连接连续。"
+            },
+            {
+              "category": "Bronze medal / Copper 96.5%",
+              "required_parts": [
+                "绿色绶带",
+                "挂环",
+                "铜色外缘",
+                "大铜扇区",
+                "浮雕"
+              ],
+              "relationship": "大铜区属于挂环连接的同一奖牌盘面，外缘完整包围。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.702,
+                0.194,
+                0.931,
+                0.683
+              ],
+              "evidence_zh": "铜色面绕经盘面左右和底部，仅留下顶部锡、锌窄区。"
+            },
+            {
+              "category": "Bronze medal / Tin与Zinc",
+              "required_parts": [
+                "浅色锡细条",
+                "蓝绿色锌区",
+                "圆心尖端",
+                "内圆边界",
+                "分别对应的引线"
+              ],
+              "relationship": "锡夹于铜与锌之间，锌邻接12点分界；两区均由内缘向同一圆心收尖。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.792,
+                0.369,
+                0.817,
+                0.523
+              ],
+              "evidence_zh": "两个细区可区分，引线终点分别位于相应材料区；中心附近逐渐变细。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "当前合成份额、美元值及银的四个合成子类替代旧数据；允许适配厚度、姿态与排版。",
+            "output_added_or_lost_meaning_zh": "材料组成与价值对照关系保留；真实奥运语境按输入改为合成示例，未见核心统计意义遗漏。",
+            "visible_inscription_evidence_zh": "可见主题、percent of medal mass (%)、每枚独立100%、Silver合成子类说明、USD及角宽和金额编码说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "合成主题、新金额与银子类均由冻结输入指定。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "银区细分和顶部小扇区随当前类别及份额变化。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "锡区外周可见，圆心附近收尖至亚像素，限制局部精度判断。"
+            }
+          ],
+          "measurement_coverage_zh": "记录每枚奖牌三项份额，共九项，覆盖各枚最小正值、较大值及另一类别；另记录三个文字金额。其余五个正值未逐项保存几何测量，已核对可见分界与标签。全部24格数值和14个正值盘面标注另行检查。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "三枚圆形奖牌及对应红蓝绿V形绶带保留，增加可见挂环与浮雕。",
+            "data_adaptation_excluded_zh": "排除新数值、银子类拆分、合成主题及兼容身份的部件细节。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "保持绶带在上、圆牌在下的正面悬挂关系；三牌并列，挂环接合清楚。",
+            "data_adaptation_excluded_zh": "允许挂环、非数据边缘厚度和绶带长度调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方主题、三列奖牌、下方逐列金额；居中黑色标题横幅改为左对齐标题和右侧提示，盘面更突出。",
+            "data_adaptation_excluded_zh": "不惩罚新增成分表、标签及所需画布扩展。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "参考平涂色块、纸感底纹和黑色飘带装饰改为写实织物、拉丝金属、浮雕及投影；浅底和红蓝绿配色保留。",
+            "data_adaptation_excluded_zh": "排除材料比例和银子类配色随数据变化，仅比较纹理、阴影与装饰风格。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/retries/0b02b7f0bda601",
       "numeric_supported": true,
@@ -71545,7 +72861,485 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "minor",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为海洋剖面，右上游艇邻接水面，水下绿、蓝、深蓝、紫色四层直接承载数据。待评图保留这些部件和层序，水体左深右浅；主题、SYNTHETIC DATA、单位及P01–P16清晰，底部四来源及总量表完整。右侧细节窗明确标注纵向×6；主图末端蓝层很细，需要像素核对。",
+        "summary_zh": "已保存UTF-8 review.json，并通过schema.json校验。数据和语义检查通过；唯一明确轻微缺陷是船底与波面间约2–5像素白缝。按后续冻结指令未运行submit.py。",
+        "issues": [
+          {
+            "category": "texture_boundary",
+            "severity": "minor",
+            "requirement_id": "M6",
+            "expected_zh": "游艇船底与海面保持可见接触。",
+            "observed_zh": "船底与波面之间出现近白细缝，局部接触不连续，物体身份仍清晰。",
+            "evidence_zh": "原图船底约y350；x1600、1800、1900等列在y351–354附近有近白间隙，水纹约从y354–356开始。缝宽约2–5像素，未影响数据层尺度。",
+            "bbox_xyxy_normalized": [
+              0.695455,
+              0.224871,
+              0.952273,
+              0.23067
+            ]
+          }
+        ],
+        "measurement_notes_zh": "测量仅来自供应的2200×1552图像。主图0–7200约跨800像素，细节窗0–300约跨200像素，像素比例为6倍。色界估读约±1像素，分别对应±9和±1.5单位。误差分母分别使用7200和300。源码仅佐证累计裁剪机制。",
+        "uncertainties_zh": "主图最薄色层受抗锯齿、端部混色及圆环遮挡影响，不能可靠给出小值相对误差。细节窗测量也不代表亚像素精确恢复。未读取运行日志，不能独立确认capture_render.py的实际调用历史。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "16个时期顺序完整，四来源、64个分项值及16个同期总值齐全，无第五来源层。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "64个来源数值逐项一致，16个总值均为同期四项之和；P02总值7020、P16总值190正确，最小值15未舍入为零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "青绿A、蓝B、深蓝C、紫D在图例、层内标签和表格一致；时期列对齐，引线指向对应外边界。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "主图抽测最大满量程偏差约0.056%，细节窗约0.167%，低于3%。层厚对应分项值，总深度对应同期和；无可见负厚度或过冲。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01.png海水纹理和raw_02.png游艇在主体中实质可见；源码使用这些素材并按输入累计值裁剪四层几何。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "海水材质直接填入数据区域，水体底边就是同期累计边界；船底细缝未破坏海水的数据承载关系。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成数据声明、单位、时期、来源和完整表格可读；细节窗倍率与独立刻度清楚。"
+          },
+          "critical_structure": {
+            "status": "partial",
+            "evidence_zh": "共同水面、四层接合、海水材质及游艇保留；船底细白缝使局部接触不完全。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "明确表达每个有序时期的分来源海洋塑料排放，保留100 tonnes/period，并明确总量是同期求和。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "塑料排放与海洋深度的联系保留；参考图的韩国ERP、具体来源及旧趋势由冻结输入明确改编，不属于输出遗漏。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "主图最细蓝带约1–2像素，材质与精确厚度难辨；标明×6的细节窗中四层独立、相接且有水纹。"
+          }
+        },
+        "semantic_attribution_zh": "时期、来源名称及趋势变化来自允许的输入改编和数据驱动形变。主图薄层可辨性限制来自分辨率；船底细缝属于轻微输出接缝。当前主题、单位和同期求和含义未见遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "A",
+              "category": "P01（主图）",
+              "expected_value": 1841,
+              "observed_value": 1840.5,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 204.5,
+              "full_scale_error_percent": 0.0069,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.085455,
+                0.23518,
+                0.087727,
+                0.367268
+              ],
+              "evidence_zh": "x≈190，水面y≈365，青绿/蓝色界约569.5。",
+              "uncertainty_zh": "色界估读约±1像素，对应约±9单位。"
+            },
+            {
+              "series_id": "B",
+              "category": "P02（主图）",
+              "expected_value": 611,
+              "observed_value": 607.5,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 67.5,
+              "full_scale_error_percent": 0.0486,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.143182,
+                0.365335,
+                0.145909,
+                0.409794
+              ],
+              "evidence_zh": "x≈318，蓝层上下界约567.5、635。",
+              "uncertainty_zh": "色界估读约±1像素。"
+            },
+            {
+              "series_id": "C",
+              "category": "P02（主图）",
+              "expected_value": 3938,
+              "observed_value": 3942,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 438,
+              "full_scale_error_percent": 0.0556,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.143182,
+                0.409149,
+                0.145909,
+                0.69201
+              ],
+              "evidence_zh": "深蓝层约从y635至1073；未将白字视为色界。",
+              "uncertainty_zh": "色界估读约±1像素。"
+            },
+            {
+              "series_id": "D",
+              "category": "P04（主图）",
+              "expected_value": 655,
+              "observed_value": 657,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 73,
+              "full_scale_error_percent": 0.0278,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.259545,
+                0.628222,
+                0.262273,
+                0.676546
+              ],
+              "evidence_zh": "x≈574，紫层约从975.5至1048.5。",
+              "uncertainty_zh": "色界估读约±1像素。"
+            },
+            {
+              "series_id": "C",
+              "category": "P08（主图）",
+              "expected_value": 2486,
+              "observed_value": 2484,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 276,
+              "full_scale_error_percent": 0.0278,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.492273,
+                0.372423,
+                0.495,
+                0.551546
+              ],
+              "evidence_zh": "x≈1086，深蓝层约从578.5至854.5。",
+              "uncertainty_zh": "色界估读约±1像素。"
+            },
+            {
+              "series_id": "Total",
+              "category": "P08（主图）",
+              "expected_value": 4760,
+              "observed_value": 4761,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 529,
+              "full_scale_error_percent": 0.0139,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.492273,
+                0.23518,
+                0.495,
+                0.576675
+              ],
+              "evidence_zh": "从零线y365至紫色外边缘约894。",
+              "uncertainty_zh": "外边缘估读约±1像素。"
+            },
+            {
+              "series_id": "B",
+              "category": "P15（主图）",
+              "expected_value": 15,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 2,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.899545,
+                0.239046,
+                0.902273,
+                0.242268
+              ],
+              "evidence_zh": "亮蓝带约2像素，可确认正值。",
+              "uncertainty_zh": "抗锯齿混色使准确厚度及相对误差不可可靠恢复。"
+            },
+            {
+              "series_id": "A",
+              "category": "P16（主图）",
+              "expected_value": 52,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 6,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.954545,
+                0.23518,
+                0.959545,
+                0.240335
+              ],
+              "evidence_zh": "末端邻域青绿带约6像素。",
+              "uncertainty_zh": "端部混色和抗锯齿限制相对精度判断。"
+            },
+            {
+              "series_id": "C",
+              "category": "P16（主图）",
+              "expected_value": 88,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 10,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.954545,
+                0.239046,
+                0.959545,
+                0.246778
+              ],
+              "evidence_zh": "末端深蓝带约10像素。",
+              "uncertainty_zh": "最右列与白底混色，未用源码数值替代测量。"
+            },
+            {
+              "series_id": "D",
+              "category": "P16（主图）",
+              "expected_value": 34,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 4,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.954545,
+                0.24549,
+                0.961364,
+                0.251933
+              ],
+              "evidence_zh": "末端紫带约4像素。",
+              "uncertainty_zh": "端点圆环覆盖部分外边界，无法可靠估计相对误差。"
+            },
+            {
+              "series_id": "A",
+              "category": "P16（×6细节窗）",
+              "expected_value": 52,
+              "observed_value": 51.75,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 34.5,
+              "full_scale_error_percent": 0.0833,
+              "small_value_relative_error_percent": 0.4808,
+              "bbox_xyxy_normalized": [
+                0.938636,
+                0.494845,
+                0.941818,
+                0.518041
+              ],
+              "evidence_zh": "零线y768至青绿/蓝色界约802.5。",
+              "uncertainty_zh": "约±1像素，对应约±1.5单位。"
+            },
+            {
+              "series_id": "B",
+              "category": "P15（×6细节窗）",
+              "expected_value": 15,
+              "observed_value": 15,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 10,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.79,
+                0.52384,
+                0.792727,
+                0.531572
+              ],
+              "evidence_zh": "蓝层约从813.5至823.5，保持独立带。",
+              "uncertainty_zh": "约±1像素；零误差是点估计，不代表小值精确恢复。"
+            },
+            {
+              "series_id": "C",
+              "category": "P15（×6细节窗）",
+              "expected_value": 112,
+              "observed_value": 112.5,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 75,
+              "full_scale_error_percent": 0.1667,
+              "small_value_relative_error_percent": 0.4464,
+              "bbox_xyxy_normalized": [
+                0.79,
+                0.530284,
+                0.792727,
+                0.579897
+              ],
+              "evidence_zh": "深蓝层约从823.5至898.5。",
+              "uncertainty_zh": "约±1像素，对应约±1.5单位。"
+            },
+            {
+              "series_id": "D",
+              "category": "P16（×6细节窗）",
+              "expected_value": 34,
+              "observed_value": 33.75,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 22.5,
+              "full_scale_error_percent": 0.0833,
+              "small_value_relative_error_percent": 0.7353,
+              "bbox_xyxy_normalized": [
+                0.938636,
+                0.561856,
+                0.943182,
+                0.579897
+              ],
+              "evidence_zh": "紫层上界约872.5，外边界圆环中心约895。",
+              "uncertainty_zh": "约±1像素；外边界采用圆环中心而非外缘。"
+            },
+            {
+              "series_id": "C",
+              "category": "P15–P16中点（×6细节窗）",
+              "expected_value": 100,
+              "observed_value": 100.5,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 67,
+              "full_scale_error_percent": 0.1667,
+              "small_value_relative_error_percent": 0.5,
+              "bbox_xyxy_normalized": [
+                0.864545,
+                0.527062,
+                0.867273,
+                0.571521
+              ],
+              "evidence_zh": "x≈1905，深蓝层约从818.5至885.5；线性插值目标为100。",
+              "uncertainty_zh": "约±1像素，对应约±1.5单位。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "大值P02",
+              "required_parts": [
+                "共同水面",
+                "A层",
+                "B层",
+                "C层",
+                "D层",
+                "总量底边"
+              ],
+              "relationship": "四层上下相接，A接水面，D下缘承载同期总深度。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.138636,
+                0.228737,
+                0.150909,
+                0.742912
+              ],
+              "evidence_zh": "四层顺序完整，深蓝层最厚，紫色外边缘对应7020标注。"
+            },
+            {
+              "category": "小值主图",
+              "required_parts": [
+                "水面",
+                "四个薄层",
+                "紫色外边界"
+              ],
+              "relationship": "薄层仍连接在水面下，但材质及边界精度受像素限制。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.898636,
+                0.228093,
+                0.961818,
+                0.257088
+              ],
+              "evidence_zh": "可见四种色带；最细蓝带约2像素，末端圆环遮挡部分外缘。"
+            },
+            {
+              "category": "小值细节窗",
+              "required_parts": [
+                "零线",
+                "四个水纹层",
+                "时期",
+                "倍率和刻度"
+              ],
+              "relationship": "放大后保持层序、接合和同期求和边界。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.743182,
+                0.423325,
+                0.968182,
+                0.670747
+              ],
+              "evidence_zh": "四层独立且有水纹；最薄蓝层约10像素，×6标注明确。"
+            },
+            {
+              "category": "游艇与水面",
+              "required_parts": [
+                "船舱",
+                "桅杆",
+                "船体",
+                "波面"
+              ],
+              "relationship": "舱体和桅杆连接船体，船底与波面之间有细缝。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.677273,
+                0.109536,
+                0.961364,
+                0.236469
+              ],
+              "evidence_zh": "船体部件完整；船底约y350，水纹约从y354–356开始。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "旧真实年份、韩国ERP及具体来源被改为合成时期和Plastic source A–D，不要求旧增长趋势。",
+            "output_added_or_lost_meaning_zh": "新增每期从水面起算及同期四来源求和说明，未丢失当前统计含义。",
+            "visible_inscription_evidence_zh": "Plastic discharge into the ocean；SYNTHETIC DATA；100 tonnes/period；Each period starts at the waterline；Total = sum of four plastic sources within the same period。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实统计标签替换为合成时期与来源，符合冻结语义。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "P02最大、后期趋浅来自新数据，不要求复制原图加深趋势。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "主图薄层的纹理和精度受限，细节窗提供明确倍率后的结构。"
+            },
+            {
+              "cause": "output_omission",
+              "evidence_zh": "船底与波面局部连续接触缺失，表现为轻微白缝。"
+            }
+          ],
+          "measurement_coverage_zh": "抽测主图四来源大值、内部层和总深度，记录各来源最小值邻域；细节窗覆盖四来源及区间中点。未逐点测量全部64个层厚；64个数值标签、16时期和16同期总量已全部核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "白色多层游艇、舷窗、桅杆、水面及海水纹理完整可识别。",
+            "data_adaptation_excluded_zh": "排除旧年份、数值、品牌及数据驱动的外轮廓变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "保留朝左侧向游艇位于右上、海水在下及四层接合的关系；局部细白缝另列轻微问题。",
+            "data_adaptation_excluded_zh": "允许船体尺寸、位置和姿态适配当前数据。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "水体仍为主体、游艇仍在右上；新增放大窗和阅读说明形成次级视觉焦点。",
+            "data_adaptation_excluded_zh": "排除深浅方向变化、标题位置和获准外置的图例及表格。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留白底、写实游艇和青绿至蓝紫水纹；色调更均匀，原图波面和暗部体积感减弱。",
+            "data_adaptation_excluded_zh": "不计数据形变、字体更新或小值自然变薄。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/0d063e13a2fb3c",
       "numeric_supported": true,
