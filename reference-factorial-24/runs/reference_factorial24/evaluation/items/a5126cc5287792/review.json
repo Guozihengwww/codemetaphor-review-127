@@ -1,0 +1,318 @@
+{
+  "verdict": "pass",
+  "confidence": 0.98,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以圆环为主体，果蔬位于环内，人物、两辆车和问号沿外缘布置。最终图保留这些关系，中央增加果蔬箱及样本数；六类标签、人数、占比和合成数据声明均可读，顶部紫色小扇区可见。源码检查前的参考保留评分为：非数据身份3、姿态关系4、构图层级3、材质风格3。",
+  "summary_zh": "通过。六类数据、绑定及核心场景关系正确，独立像素测量支持角宽和0.62内外半径比。完整评审已保存为review.json并通过schema.json校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "在2000×1666原图上测量，未重渲染。径向颜色梯度拟合得到内外半径316.20、510.01像素，圆心距离约0.02像素，半径比0.61998。分别在半径350、410、475像素处测量颜色边界角，再按人数=角宽÷360×200反算。下列记录采用410像素扫描，mark_extent_px表示该半径上的弧长；满量程为200人。",
+  "uncertainties_zh": "反锯齿和边界定位约有每边±1原图像素的不确定性，两边累计约±0.16人，即±0.08个百分点。小值相对误差的点估计不能保证亚百分比精度。参考图仅335×279，细微材质比较有限。逐次渲染归档历史及生成服务调用未独立核验，素材来源判断依据提供的原始素材表、清单及可见对应。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "六类、单系列、样本总数200、people单位、完整主题及SYNTHETIC DATA均可见；三个SHORT DRIVE子类完整。无辅助面板要求被遗漏。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "人数为67、34、34、41、21、3，占比分别为33.5%、17%、17%、20.5%、10.5%、1.5%；合计200人和100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "从12点顺时针依次为三个短途驾车子类、步行、长途驾车、不确定。引线、色标与对应扇区一致，子类均保留SHORT DRIVE父类。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "像素扫描支持六个目标角宽120.6°、61.2°、61.2°、73.8°、37.8°、5.4°。代表扫描最大份额偏差约0.005个百分点，远低于3个百分点；内外半径比约0.61998。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的果蔬箱、小车、面包车及人物实际出现在最终图。素材清单与prepare_assets.py支持裁取关系，render.py读取数据控制扇区和文字。逐次归档历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "果蔬箱位于环孔内，人物和车辆沿外缘转向，车轮与外缘相接或紧邻；问号杆连接小扇区。数据由环带角宽承载，图标未替代数量编码。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下全部必需标签、数字、单位、样本量及底部口径可辨，无明显裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "中央果蔬被环孔包含，人物及交通工具附于外缘；大小扇区共用内外圆界。外置问号没有扩大紫色数据区域。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确鲜果蔬获取距离构成，系列名及人（people）单位可见。底部解释分类口径、三个合成子类、角宽映射及图标示意性质。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "参考中的短途驾车、步行、长途驾车和不确定角色保留，交通方式与鲜果蔬获取的场景关系清楚。合成数据及子类更新符合冻结输入，无须保留旧比例。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小紫色环带贯通内外边界，径向厚约194像素；半径410像素处弧长约38.6像素，y=600处主体约32像素宽。问号及杆可辨，未人为扩大角宽。"
+    }
+  },
+  "semantic_attribution_zh": "旧比例更新为200人合成样本及三个SHORT DRIVE子类属于允许的输入适配，角宽变化属于数据驱动变化。未发现当前主题、单位、分类口径或交通获取果蔬关系的输出省略。不从参考推断额外因果、趋势或作者意图。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "access_count",
+        "category": "SHORT DRIVE / synthetic subcategory 1",
+        "expected_value": 67,
+        "observed_value": 67.00452,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 863.05,
+        "full_scale_error_percent": 0.00226,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4997,
+          0.2608,
+          0.7548,
+          0.7228
+        ],
+        "evidence_zh": "原图颜色边界角宽约120.60813°，反算约67.005人；标签为67人、33.5%。",
+        "uncertainty_zh": "插值点估计，两端像素定位累计约±0.16人。"
+      },
+      {
+        "series_id": "access_count",
+        "category": "SHORT DRIVE / synthetic subcategory 2",
+        "expected_value": 34,
+        "observed_value": 34.00531,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 438.01,
+        "full_scale_error_percent": 0.00265,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4917,
+          0.6636,
+          0.7192,
+          0.8731
+        ],
+        "evidence_zh": "下右金黄色扇区角宽约61.20956°，反算约34.005人；标签34人、17%。",
+        "uncertainty_zh": "两端像素定位累计约±0.16人。"
+      },
+      {
+        "series_id": "access_count",
+        "category": "SHORT DRIVE / synthetic subcategory 3",
+        "expected_value": 34,
+        "observed_value": 33.99113,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 437.82,
+        "full_scale_error_percent": 0.00444,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2725,
+          0.6531,
+          0.4947,
+          0.8729
+        ],
+        "evidence_zh": "下左赭黄色扇区角宽约61.18403°，反算约33.991人；标签34人、17%。",
+        "uncertainty_zh": "两端像素定位累计约±0.16人，微小点估计差异不表示真实数据偏差。"
+      },
+      {
+        "series_id": "access_count",
+        "category": "WALKING DISTANCE",
+        "expected_value": 41,
+        "observed_value": 41.00116,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 528.12,
+        "full_scale_error_percent": 0.00058,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2447,
+          0.3438,
+          0.3915,
+          0.7059
+        ],
+        "evidence_zh": "左侧红色扇区角宽约73.80209°，反算约41.001人；标签41人、20.5%。",
+        "uncertainty_zh": "测量弧未与人物或引线重叠；定位累计约±0.16人。"
+      },
+      {
+        "series_id": "access_count",
+        "category": "LONG DRIVE",
+        "expected_value": 21,
+        "observed_value": 21.00458,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 270.55,
+        "full_scale_error_percent": 0.00229,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.3252,
+          0.2621,
+          0.4849,
+          0.4286
+        ],
+        "evidence_zh": "左上浅青色扇区角宽约37.80824°，反算约21.005人；标签21人、10.5%。",
+        "uncertainty_zh": "外侧车辆不进入测量弧；定位累计约±0.16人。"
+      },
+      {
+        "series_id": "access_count",
+        "category": "NOT SURE",
+        "expected_value": 3,
+        "observed_value": 2.99331,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 38.56,
+        "full_scale_error_percent": 0.00335,
+        "small_value_relative_error_percent": 0.22308,
+        "bbox_xyxy_normalized": [
+          0.4758,
+          0.2608,
+          0.4998,
+          0.378
+        ],
+        "evidence_zh": "最小紫色扇区角宽约5.38795°，反算约2.993人、1.49665%；三条扫描反算约2.993至3.005人。标签3人、1.5%正确。",
+        "uncertainty_zh": "相对误差为插值点估计。每边±1像素对应累计约±0.16人，即小值约5.2%的保守相对不确定性，不能保证亚百分比精度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "主体圆环与中央果蔬",
+        "required_parts": [
+          "共中心内外圆边界",
+          "六个连续色区",
+          "中央果蔬箱",
+          "中央样本量"
+        ],
+        "relationship": "环带围绕中央场景，果蔬及样本量被环孔包含；色区角宽承载数量。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2447,
+          0.2608,
+          0.7548,
+          0.8731
+        ],
+        "evidence_zh": "果蔬箱约位于x798–1203、y865–1217，未盖住环带；箱体、叶菜和水果层次清楚，中央200及人/PEOPLE可见。"
+      },
+      {
+        "category": "大值 SHORT DRIVE / synthetic subcategory 1",
+        "required_parts": [
+          "奶黄色大扇区",
+          "汽车车身与车窗",
+          "两只车轮",
+          "车内人物与果蔬袋"
+        ],
+        "relationship": "车轮连接车身，车身沿右上环缘倾斜，轮胎内侧邻接环缘；人物和果蔬袋位于车内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.638,
+          0.252,
+          0.75,
+          0.403
+        ],
+        "evidence_zh": "小车完整，轮胎与环缘相接或紧邻；数量由奶黄色环带界定，不由车长或轮数界定。"
+      },
+      {
+        "category": "WALKING DISTANCE",
+        "required_parts": [
+          "人物躯干与四肢",
+          "怀抱菜袋",
+          "红色扇区外缘"
+        ],
+        "relationship": "手臂抱住菜袋，叶菜露出袋口；双腿迈步，一脚靠近或接触红色环缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.17,
+          0.329,
+          0.312,
+          0.455
+        ],
+        "evidence_zh": "头、手臂、腿和鞋连续可辨，抱菜行走关系保留；人物身体不作为数量刻度。"
+      },
+      {
+        "category": "LONG DRIVE",
+        "required_parts": [
+          "面包车车身",
+          "两只车轮",
+          "车顶果蔬箱与行李架",
+          "浅青色扇区"
+        ],
+        "relationship": "车轮连接车身，行李架承托果蔬箱；车辆倾斜方向贴合左上环缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.32,
+          0.202,
+          0.448,
+          0.321
+        ],
+        "evidence_zh": "车窗、轮胎及车顶货物可辨，车辆未遮断浅青扇区的径向边界。"
+      },
+      {
+        "category": "最小值 NOT SURE",
+        "required_parts": [
+          "紫色窄环带",
+          "内外圆弧",
+          "两条径向分界",
+          "问号圆牌与连接杆"
+        ],
+        "relationship": "窄扇区贯通内外边界，连接杆从外端连接问号圆牌；牌和杆是非数据注释。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.467,
+          0.19,
+          0.506,
+          0.379
+        ],
+        "evidence_zh": "窄环带约从y435延伸至y630，底部仍约30像素宽；问号、杆及环带可分辨，未放大数据区域。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "使用合成样本N=200及当前六类数据，SHORT DRIVE拆为三个明确编号的合成子类；允许适配插画姿态与排版，不要求保留旧比例。",
+      "output_added_or_lost_meaning_zh": "新增果蔬箱、采购物品及中央样本数，未发现主题、统计角色或单位丢失。圆环表达同一人群的类别构成。",
+      "visible_inscription_evidence_zh": "可见鲜果蔬获取距离构成、交通插画圆环图（合成数据）、SYNTHETIC DATA、Fresh produce access category、单位人（people）、N=200，以及分类口径、三个合成子类和角宽计算说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成声明、200人样本与三个SHORT DRIVE子类来自冻结输入。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "短途驾车拆分为三个扇区，所有角宽随当前计数变化，像素测量支持该映射。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "反锯齿限制小值相对精度判断，但其约30–48像素宽度足以辨识环带关系；参考分辨率限制细微材质比较。"
+      },
+      {
+        "cause": "none",
+        "evidence_zh": "未发现当前主题、类别、单位或核心物体关系的输出省略。"
+      }
+    ],
+    "measurement_coverage_zh": "覆盖唯一数量通道的全部六个扇区，包含最大值、内部中等值及最小正值；各做三条圆周像素扫描，并检查共中心性及内外半径比。全部必需文字另行目视核对；插画、阴影和问号牌不计入数量。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留两车、一人、问号和中央果蔬；三个分立果蔬图形变为更丰富的果蔬箱，车辆和人物增加采购细节。",
+      "data_adaptation_excluded_zh": "不扣除合成子类、更新数值及扇区变化；新增果蔬数量不作为统计样本。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "两车及人物沿外缘转向，果蔬位于孔内，问号位于顶部小扇区外并相连，接触和包含关系保留。",
+      "data_adaptation_excluded_zh": "排除允许的角度、位置、非数据厚度及步行姿态适配。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "大圆环、中央果蔬及外围标签的层级保留；新增较大页眉页脚，样本数占据孔内上部，果蔬重心下移。",
+      "data_adaptation_excluded_zh": "新增标签、合成声明及单位口径所需空间不作为数据错误；评分仅描述参考构图保留程度。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留青绿底、暖色环带、纸感纹理及编辑插画风格；最终车辆和果蔬更细致、更有体积，参考更简化平面。",
+      "data_adaptation_excluded_zh": "不扣除类别区分所需新增色彩，也不把纹理细节差异或更高分辨率视为缺陷。"
+    }
+  }
+}
