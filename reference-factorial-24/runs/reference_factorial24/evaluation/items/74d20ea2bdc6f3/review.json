@@ -1,0 +1,406 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为红、蓝、绿绶带连接三枚圆形奖牌，圆盘扇区承载金属比例，下方对应金额。待评图保留三联等大圆盘、绶带与金属环，星形和月桂压印跨越扇区，金银铜外缘清楚；成分表含全部八类和三系列，标题、质量百分比、独立100%、SYNTHETIC DATA及$720/$360/$6可读。最细Tin 0.6%为铜牌顶部左侧窄浅色扇区，仍可见但需测角。参考扁平纸质绘图变为写实织物与金属。",
+  "summary_zh": "三枚奖牌保持等半径、绶带连接、金属压印与扇区融合。全部成分及金额文字正确，独立像素测量支持角宽映射；未发现违反明确要求的可见缺陷。参考实物统计改为合成示例属输入许可，写实材质差异单列保真评分。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2100×1498原图，不执行渲染器。由可见图例取颜色，在r=198–210像素多条圆周上检测归一化RGB色界并取边界角中位数，按角宽/360×100换算份额。mark_extent_px为这些实测角宽在r=204处对应的弧长，不是扇区面积或外接框宽度。满量程100%，所列满量程误差数值也等于百分点差。三枚盘体水平边界分别约144.5–624.5、809.5–1289.5、1474.5–1954.5像素，外径均480像素。源码仅佐证数据驱动、顺序和素材使用，不代替像素证据。",
+  "uncertainties_zh": "测量小数是近似色界的计算结果；抗锯齿、描边与浮雕高光限制真实精度，Tin尤其不能由满量程合格推断相对精度。按访问限制未检查渲染归档日志，不能确认每次渲染均经capture_render.py；未将其视为输出缺陷。原图实际奥运语境只作可见主题解释，不推断作者额外意图。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "3个奖牌系列、8个成分类别及24个成分数值完整：14个正值、10个零值；3项USD金额、合成提示和口径说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "金牌1.5、5.9、四项23.15；银牌6.5、四项23.375；铜牌96.5、0.6、2.9均准确，其余为0。金额为720、360、6。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "三列名称和金额对应正确；S1–S4位于各自扇区，并在完整成分表中绑定Silver合成子类。Gold、Copper、Tin、Zinc引线落于相应颜色区域。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "可见圆盘等径；三面板色界测量支持各自100%的顺时针角宽编码。已测正扇区的点估计偏差均小于0.04个百分点，含不确定性仍远低于3个百分点阈值。零值无额外扇区。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png与medal_texture.png；其织物、吊环、星形、月桂和边缘纹理明显用于成图主体。render.py按输入数值计算扇区蒙版并裁着色，源码与可见材料和几何相符。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区就在奖牌金属圆盘内，星形和月桂压印跨扇区连续；各扇区受同一盘缘包含，绶带与吊环在圆盘上方连接，没有独立悬浮饼图或破坏结构的遮挡。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原分辨率下标题、单位、独立100%、所有成分标签和完整表格可读。小扇区使用外置引线，金额文字清晰且不遮挡几何。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "三枚等大圆盘均具有绶带—吊环—盘缘连接、金属分区、连续星形/月桂压印及外缘；数据承载边界为盘内径向色界。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题明确奖牌金属组成与合成示例价值；percent of medal mass、各枚质量占比、每枚独立100%及USD明确指标和单位，银的四个合成子类保留父类。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留金银铜奖牌的材料组成与对应金额比较；原图奥运实物统计语境改为醒目标出的合成示例，是冻结输入允许的主题适配，不是输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Gold 1.5%、Tin 0.6%、Zinc 2.9%均有实际可见的径向金属色区及正确引线。Tin在r=204处约8像素宽，仍与盘面相连；其相对数值精度保留分辨率不确定性。"
+    }
+  },
+  "semantic_attribution_zh": "合成声明、当前数值和Silver子类属于输入适配及数据驱动形变。未见输出丢失当前主题、单位、系列或物体连接。参考含义的部分保留来自真实奥运语境到合成示例的许可变化；最小扇区的精度限制来自像素、描边和高光，而非凭标签替代几何。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "medal_Gold",
+        "category": "Gold",
+        "expected_value": 1.5,
+        "observed_value": 1.5131,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 19.39,
+        "full_scale_error_percent": 0.0131,
+        "small_value_relative_error_percent": 0.87,
+        "bbox_xyxy_normalized": [
+          0.1833,
+          0.3698,
+          0.1938,
+          0.522
+        ],
+        "evidence_zh": "顶部金色窄区实测角宽约5.447°；在r=204像素采样圆上弧长约19.39像素。",
+        "uncertainty_zh": "由原图像素色界估计；描边、纹理及抗锯齿带来约±0.1个百分点不确定性，不以插值步长代表真实像素精度。此误差范围相当于目标小值的约7%。"
+      },
+      {
+        "series_id": "medal_Gold",
+        "category": "Copper",
+        "expected_value": 5.9,
+        "observed_value": 5.8819,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 75.39,
+        "full_scale_error_percent": 0.0181,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1833,
+          0.3705,
+          0.2324,
+          0.522
+        ],
+        "evidence_zh": "右上铜色区两界约5.447°与26.622°，角宽21.175°。",
+        "uncertainty_zh": "由原图像素色界估计；描边、纹理及抗锯齿带来约±0.1个百分点不确定性，不以插值步长代表真实像素精度。"
+      },
+      {
+        "series_id": "medal_Gold",
+        "category": "Silver / synthetic subcategory 1",
+        "expected_value": 23.15,
+        "observed_value": 23.1625,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 296.89,
+        "full_scale_error_percent": 0.0125,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1833,
+          0.3858,
+          0.2919,
+          0.5741
+        ],
+        "evidence_zh": "右侧S1浅银色区两界约26.622°与110.007°，角宽83.385°。",
+        "uncertainty_zh": "由原图像素色界估计；描边、纹理及抗锯齿带来约±0.1个百分点不确定性，不以插值步长代表真实像素精度。"
+      },
+      {
+        "series_id": "medal_Silver",
+        "category": "Copper",
+        "expected_value": 6.5,
+        "observed_value": 6.4978,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 83.29,
+        "full_scale_error_percent": 0.0022,
+        "small_value_relative_error_percent": 0.03,
+        "bbox_xyxy_normalized": [
+          0.5,
+          0.3698,
+          0.5433,
+          0.522
+        ],
+        "evidence_zh": "该面板最小正值位于顶部右侧，铜色区实测角宽约23.392°。",
+        "uncertainty_zh": "由原图像素色界估计；描边、纹理及抗锯齿带来约±0.1个百分点不确定性，不以插值步长代表真实像素精度。"
+      },
+      {
+        "series_id": "medal_Silver",
+        "category": "Silver / synthetic subcategory 1",
+        "expected_value": 23.375,
+        "observed_value": 23.3972,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 299.9,
+        "full_scale_error_percent": 0.0222,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5,
+          0.3825,
+          0.6086,
+          0.5681
+        ],
+        "evidence_zh": "右侧S1区两界约23.392°与107.622°，角宽84.230°。",
+        "uncertainty_zh": "采用多个采样半径的边界中位数；局部月桂高光干扰色界检测，保守不确定性约±0.3个百分点。"
+      },
+      {
+        "series_id": "medal_Silver",
+        "category": "Silver / synthetic subcategory 2",
+        "expected_value": 23.375,
+        "observed_value": 23.3375,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 299.13,
+        "full_scale_error_percent": 0.0375,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4781,
+          0.522,
+          0.6038,
+          0.6742
+        ],
+        "evidence_zh": "下方内部序位S2区两界约107.622°与191.637°，角宽84.015°。",
+        "uncertainty_zh": "采用多个采样半径的边界中位数；与S1共界附近的高光造成约±0.3个百分点保守不确定性。"
+      },
+      {
+        "series_id": "medal_Bronze",
+        "category": "Copper",
+        "expected_value": 96.5,
+        "observed_value": 96.4992,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1236.9,
+        "full_scale_error_percent": 0.0008,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.7081,
+          0.3698,
+          0.9252,
+          0.6742
+        ],
+        "evidence_zh": "大铜色区从12点顺时针至约347.397°；盘面只在左上留下Tin与Zinc窄区。",
+        "uncertainty_zh": "由原图像素色界估计；描边、纹理及抗锯齿带来约±0.1个百分点不确定性，不以插值步长代表真实像素精度。"
+      },
+      {
+        "series_id": "medal_Bronze",
+        "category": "Tin",
+        "expected_value": 0.6,
+        "observed_value": 0.6264,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 8.03,
+        "full_scale_error_percent": 0.0264,
+        "small_value_relative_error_percent": 4.4,
+        "bbox_xyxy_normalized": [
+          0.7929,
+          0.3725,
+          0.8167,
+          0.522
+        ],
+        "evidence_zh": "铜色与青色之间的浅色细区，两界约347.397°与349.652°，角宽2.255°；r=204处弧长约8.03像素。",
+        "uncertainty_zh": "约±0.1个百分点的边界不确定性相当于目标值约17%；4.4%是点估计的相对差，不能据此认定实际误差或保证小值高精度。"
+      },
+      {
+        "series_id": "medal_Bronze",
+        "category": "Zinc",
+        "expected_value": 2.9,
+        "observed_value": 2.8744,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 36.84,
+        "full_scale_error_percent": 0.0256,
+        "small_value_relative_error_percent": 0.88,
+        "bbox_xyxy_normalized": [
+          0.7971,
+          0.3698,
+          0.8167,
+          0.522
+        ],
+        "evidence_zh": "顶部左侧青色区从约349.652°至360°，角宽10.348°，与Zinc引线相接。",
+        "uncertainty_zh": "由原图像素色界估计；描边、纹理及抗锯齿带来约±0.1个百分点不确定性，不以插值步长代表真实像素精度。"
+      },
+      {
+        "series_id": "illustrative_value",
+        "category": "Gold",
+        "expected_value": 720,
+        "observed_value": 720,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1424,
+          0.721,
+          0.2257,
+          0.761
+        ],
+        "evidence_zh": "金牌正下方可读$720；共用标题明确USD。",
+        "uncertainty_zh": "仅文字编码，金额不由字形大小、圆盘或面积表示。"
+      },
+      {
+        "series_id": "illustrative_value",
+        "category": "Silver",
+        "expected_value": 360,
+        "observed_value": 360,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4586,
+          0.721,
+          0.5419,
+          0.761
+        ],
+        "evidence_zh": "银牌正下方可读$360；共用标题明确USD。",
+        "uncertainty_zh": "仅文字编码，不作几何比例检验。"
+      },
+      {
+        "series_id": "illustrative_value",
+        "category": "Bronze",
+        "expected_value": 6,
+        "observed_value": 6,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.7929,
+          0.721,
+          0.84,
+          0.761
+        ],
+        "evidence_zh": "铜牌正下方可读$6；共用标题明确USD。",
+        "uncertainty_zh": "仅文字编码，不作几何比例检验。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "三枚完整奖牌",
+        "required_parts": [
+          "红/蓝/绿V形绶带",
+          "金属吊环",
+          "圆形奖牌",
+          "外缘"
+        ],
+        "relationship": "绶带下端接吊环，吊环接圆盘上缘；圆盘在绶带下端前方，外缘包围数据盘面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.069,
+          0.1943,
+          0.931,
+          0.6822
+        ],
+        "evidence_zh": "三处连接分别位于约(385,530)、(1050,530)、(1715,530)；环下部与盘缘接触，三盘可见外径均约480像素。"
+      },
+      {
+        "category": "Gold medal / Silver S1大扇区",
+        "required_parts": [
+          "S1浅银色扇区",
+          "星形压印",
+          "月桂叶压印",
+          "盘缘"
+        ],
+        "relationship": "扇区包含在同一金属圆盘中，径向色界穿过连续浮雕，浮雕没有变成独立覆盖数据的贴图。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1833,
+          0.3858,
+          0.2919,
+          0.5741
+        ],
+        "evidence_zh": "右侧S1占约83.385°；月桂叶及星形的凸凹纹理跨相邻材料色界连续，盘缘位于数据面之外。"
+      },
+      {
+        "category": "Bronze medal / Copper大区域",
+        "required_parts": [
+          "铜色金属面",
+          "星形与月桂",
+          "顶部小扇区",
+          "外缘"
+        ],
+        "relationship": "铜色区域包围圆盘大部分表面，与Tin及Zinc共用盘心和盘面边界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.7081,
+          0.3698,
+          0.9252,
+          0.6742
+        ],
+        "evidence_zh": "96.5%铜区占几乎整盘，浮雕及金属纹理清楚；左上两个小区仍包含在同一盘内。"
+      },
+      {
+        "category": "Bronze medal / Tin最小区域",
+        "required_parts": [
+          "浅色Tin窄区",
+          "相邻Copper与Zinc区",
+          "盘面中心",
+          "上方盘缘",
+          "Tin引线"
+        ],
+        "relationship": "窄区夹在铜色和青色区之间，由盘心方向向盘缘展开；引线指向该窄区外侧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.7886,
+          0.3678,
+          0.8205,
+          0.5267
+        ],
+        "evidence_zh": "约(1673,568)处指向浅色区；在r=204处测得约8.03像素弧长。细区沿金属面向中心收拢，没有被替换成单独图例或人为放大。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入将材料比例和价值改为合成示例，并把Silver分成四个明确命名的合成子类；允许当前数据驱动角宽、非数据厚度、姿态和排版调整。",
+      "output_added_or_lost_meaning_zh": "输出保留材料组成及逐牌价值比较，增加完整成分表和统计口径说明。未将同半径解释成总质量，未把美元金额作几何量；未保留实际奥运统计主张，属于许可适配。",
+      "visible_inscription_evidence_zh": "可读“奖牌的金属组成与合成示例价值”“SYNTHETIC DATA”“percent of medal mass (%)”“每枚独立合计100%”“S1–S4均属于Silver（银）的合成子类”“合成示例价值·USD”。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实奥运语境被明确的合成示例主题替换；当前题名、非真实声明与USD示例行符合冻结要求。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "Silver四个合成子类形成四个独立扇区，金铜锡锌角宽遵循当前数据；不要求复现参考旧比例。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "Tin的窄弧仍可见，但约8像素尺度及描边使小值相对精度的不确定性显著高于满量程误差。"
+      }
+    ],
+    "measurement_coverage_zh": "像素分析覆盖三个独立100%面板的14个正扇区边界；详列9个代表值，含每面板最小正值、大值与中间类别。其余Gold/Silver的S3、S4及Gold的S2未逐项展开，均已核对边界顺序和文字。完整性检查逐项覆盖24个成分数值及3个金额；USD全部按numeric_text_only记录。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "红、蓝、绿绶带及三枚金银铜圆形奖牌身份均保留，新增金属环、月桂与星形压印不改变主体身份。",
+      "data_adaptation_excluded_zh": "不计当前金属比例、银的四个合成子类及替换后的数值。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "三枚绶带均在圆盘上方，以V形下垂并接触吊环；环连接盘缘，扇区位于盘面，金额在各牌下方，原连接和包含关系保留。",
+      "data_adaptation_excluded_zh": "允许的绶带姿态、非数据厚度、盘面放大与布局调整不扣分。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留上方主题、横排三奖牌及逐列金额的层级；新增底部完整成分表，原黑色标题横幅和纸框未保留。",
+      "data_adaptation_excluded_zh": "新增类别和完整数值所需表格、当前题名及画布排版适配不作为缺陷。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "红蓝绿与金银铜色系可识别，但参考的平面纸纹插画变为强烈织物纹理、金属高光、雕刻压印和投影，装饰风格明显改变。",
+      "data_adaptation_excluded_zh": "不因数据驱动的扇区颜色或角宽变化扣分；只比较非数据绶带、材质和装饰表现。"
+    }
+  }
+}
