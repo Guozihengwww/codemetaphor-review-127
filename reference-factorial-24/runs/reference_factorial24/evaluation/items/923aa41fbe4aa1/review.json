@@ -1,0 +1,314 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图以绿色景观、人物和生活物件叠合橙色竖柱，右侧断轴，云层横跨高柱。待评图有11个顺序类别及完整数值，合成数据标识醒目；右轴显示0–4、20–60及省略说明。左上放大图展示前六项。主图前三根柱极薄，较大柱叠合景观；云层横跨高柱断口。画风改为浅底绘画景观。",
+  "summary_zh": "通过。数值、标签、分组和代表性几何测量符合要求，关键叠合及断轴结构保留。最小主柱可辨性有限。完整结果已写入review.json并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量2000×1162原始图像。可见刻度支持下段530像素对应4单位、上段160像素对应40单位；放大图429像素对应0.2单位。误差分母分别为4、40、0.2。上段反算加20，不合并两段高度。整数边界估计约有±1像素不确定性；源码仅作佐证。",
+  "uncertainties_zh": "最小主柱受基线和抗锯齿影响，无法确认亚像素相对精度。按限制未查看日志、自检及编排记录，capture_render.py归档过程未独立核实。参考含义仅依据可见文字和结构判断。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11类、单系列、全部数值和单位齐全，两段刻度、断轴说明及影响分组完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "11个显示值逐项匹配输入，包括0.006、0.0116861及56.8；没有正值被写成0。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "类别、柱和值同序对应；放大图六行绑定明确；影响带分别覆盖6个low、2个moderate、3个high类别。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "三种显示尺度的代表性测量均在容差内，已估计值的满量程误差小于0.13%；最小主柱不作亚像素精度保证。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "查看的原始素材、landscape.png和cloud.png与最终景观及云层一致且占据实质面积；render.py依据数据控制柱形和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "橙柱叠合连续景观和人物，云在高柱断口前方。数据边界为柱顶和条端，符合参考的平面叠合方式。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成标识、指标单位、类别和值、分组及省略说明均可读，无必需文字被遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "环保景观、人物、橙柱、共同基线、高柱上下段、断轴斜线和前置云层均保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "个人气候选择、合成年度节省及单位明确；底注明示各项不可相加，未误作组成或累计值。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留个人选择减排比较及影响分档；真实估计和原生育相关论据按输入改为合成情景与Household size，属于允许适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "最小主柱约1行着色，难辨独立柱体与地面关系；放大图最小横条约13像素，数值完整。"
+    }
+  },
+  "semantic_attribution_zh": "当前主题和统计角色保留。合成情景与Household size归因于输入适配；低柱缩短归因于数据变化；最小主柱关系不清归因于分辨率。未发现当前语义的输出性丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Efficient lighting / 主图下段",
+        "expected_value": 0.006,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.054,
+          0.802,
+          0.1015,
+          0.8064
+        ],
+        "evidence_zh": "约y=934一行明显着色；由可见刻度推得目标高度约0.795像素。",
+        "uncertainty_zh": "着色行数不等于精确覆盖高度，基线和抗锯齿阻碍亚像素反算。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "EV to car-free / 主图下段",
+        "expected_value": 0.32753722,
+        "observed_value": 0.324528302,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 43,
+        "full_scale_error_percent": 0.07522,
+        "small_value_relative_error_percent": 0.919,
+        "bbox_xyxy_normalized": [
+          0.519,
+          0.7676,
+          0.5665,
+          0.8046
+        ],
+        "evidence_zh": "橙面约y=892–934，共43像素；按530像素对应4单位反算。",
+        "uncertainty_zh": "顶部混色使边界约有±1像素不确定性。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Car-free living / 主图下段",
+        "expected_value": 2.42,
+        "observed_value": 2.422641509,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 321,
+        "full_scale_error_percent": 0.06604,
+        "small_value_relative_error_percent": 0.109,
+        "bbox_xyxy_normalized": [
+          0.7515,
+          0.5284,
+          0.799,
+          0.8046
+        ],
+        "evidence_zh": "顶沿约y=614，公共基线约y=935，高321像素。",
+        "uncertainty_zh": "边界和刻度线宽约有±1像素不确定性。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Household size / 主图上段",
+        "expected_value": 56.8,
+        "observed_value": 56.75,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 147,
+        "full_scale_error_percent": 0.125,
+        "small_value_relative_error_percent": 0.088,
+        "bbox_xyxy_normalized": [
+          0.829,
+          0.1919,
+          0.8765,
+          0.3184
+        ],
+        "evidence_zh": "上段约y=223–369，高147像素；按20+147/4反算为56.75。",
+        "uncertainty_zh": "约±1像素相当于±0.25单位；未累加下段高度。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Efficient lighting / 放大图",
+        "expected_value": 0.006,
+        "observed_value": 0.006060606,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 13,
+        "full_scale_error_percent": 0.0303,
+        "small_value_relative_error_percent": 1.01,
+        "bbox_xyxy_normalized": [
+          0.1625,
+          0.2806,
+          0.169,
+          0.2909
+        ],
+        "evidence_zh": "实测橙色与背景半对比阈值下，横条占x=325–337；横轴0–0.2跨度429像素。",
+        "uncertainty_zh": "端点约±1像素，相当于±0.000466单位。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Cold-water wash / 放大图",
+        "expected_value": 0.04433084,
+        "observed_value": 0.044289044,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 95,
+        "full_scale_error_percent": 0.0209,
+        "small_value_relative_error_percent": 0.094,
+        "bbox_xyxy_normalized": [
+          0.1625,
+          0.3606,
+          0.21,
+          0.3709
+        ],
+        "evidence_zh": "同一阈值下端点x=325–419，长95像素，按放大轴反算。",
+        "uncertainty_zh": "端点抗锯齿约±1像素。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Plant-rich diet / 放大图",
+        "expected_value": 0.16816764,
+        "observed_value": 0.168298368,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 361,
+        "full_scale_error_percent": 0.06536,
+        "small_value_relative_error_percent": 0.078,
+        "bbox_xyxy_normalized": [
+          0.1625,
+          0.4139,
+          0.343,
+          0.4243
+        ],
+        "evidence_zh": "半对比阈值下端点x=325–685，长361像素，按放大轴反算。",
+        "uncertainty_zh": "端点抗锯齿约±1像素，不代表亚像素真值。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Household size / 大值与断轴",
+        "required_parts": [
+          "上下段橙柱",
+          "家庭和景观",
+          "前置云层",
+          "断轴斜线"
+        ],
+        "relationship": "柱面叠合景观，云覆盖断口，顶沿编码高值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.8,
+          0.181,
+          0.9425,
+          0.805
+        ],
+        "evidence_zh": "上下柱段同列；云覆盖下段顶缘附近，斜线处于省略空档；家庭和树屋位于橙面后。"
+      },
+      {
+        "category": "EV to car-free / 中间值",
+        "required_parts": [
+          "骑行人物",
+          "车架与车轮",
+          "地面路径",
+          "橙柱"
+        ],
+        "relationship": "人物与自行车相接，车轮邻接地面，橙柱叠在景观前方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.519,
+          0.65,
+          0.6025,
+          0.805
+        ],
+        "evidence_zh": "人物手臂朝向车把，身体在车架上方；低柱覆盖左轮底部附近景观，柱顶可辨。"
+      },
+      {
+        "category": "Efficient lighting / 最小值",
+        "required_parts": [
+          "檐下灯具",
+          "绿地",
+          "极薄橙柱"
+        ],
+        "relationship": "灯具连接房屋，柱位于下方景观基线。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.054,
+          0.602,
+          0.1015,
+          0.8064
+        ],
+        "evidence_zh": "悬挂灯具可辨；最小柱约1行着色，柱体厚度及地面接触关系难以辨认。"
+      },
+      {
+        "category": "低影响放大图",
+        "required_parts": [
+          "类别",
+          "横条",
+          "独立刻度",
+          "数值"
+        ],
+        "relationship": "每行名称、横条和值对应，条端按放大线性轴编码。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.039,
+          0.194,
+          0.5,
+          0.4725
+        ],
+        "evidence_zh": "最小横条约13像素，最大约361像素；明确注明同系列前六项和放大线性尺度，不宣称物件融合。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入明确改用合成气候情景、年度节省、新类别和新数值，不要求沿用旧真实统计及后代累计口径。",
+      "output_added_or_lost_meaning_zh": "增加低值放大图及不可相加说明；当前含义完整。旧具体论据未延续属于规定适配。",
+      "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Synthetic annual savings、tCO₂e/year (synthetic)、One illustrative scenario及choices are not added together。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成情景、年度节省及Household size来自冻结输入。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "前六值均小于0.2，主柱缩短符合当前数据。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小主柱目标不足1像素；放大图改善可读性，但不能证明主图亚像素精度。"
+      }
+    ],
+    "measurement_coverage_zh": "共7项：主图下段最小、内部及大值，上段唯一值，放大图最小、内部及最大值。未穷举其余几何误差；全部11类文字、顺序和6/2/3分组另行检查。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留山丘、树木、晾衣、回收桶、洗衣机、汽车、菜园、风机、飞机、自行车和人物；月亮未保留，增加住宅等细节。",
+      "data_adaptation_excluded_zh": "家庭人物和Household size的允许适配不计身份损失，不比较旧柱高。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "生活物件沿地面分布，人物连接晾衣、种植或骑行活动；橙柱叠合景观，云接触高柱断口。",
+      "data_adaptation_excluded_zh": "排除允许的人物姿态、间距及非数据厚度调整，不要求物件逐项立于新低柱顶部。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "保留顶部标题、中央景观柱图、右轴和底部影响带；新增显著放大面板，浅色留白替换满幅绿色天空。",
+      "data_adaptation_excluded_zh": "不因新数值形成的柱高及断轴跨度扣分。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "绿色环保景观与橙柱保留；平面剪影和绿色渐变改为细密绘画及米白背景。",
+      "data_adaptation_excluded_zh": "不计更新文字、数据高度和允许部件适配。"
+    }
+  }
+}
