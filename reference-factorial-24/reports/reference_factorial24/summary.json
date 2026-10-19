@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T01:24:33.886227+00:00",
+  "updated_at": "2026-10-19T01:32:21.662786+00:00",
   "progress": {
     "phase": "routing_gate",
     "case_count": 24,
@@ -10,7 +10,7 @@
     },
     "evaluations": {
       "pending": 5,
-      "running": 1
+      "ok": 1
     },
     "final_second_evaluations": {
       "pending": 4
@@ -210,63 +210,63 @@
       },
       "a0g0": {
         "numeric_supported": {
-          "image_quality_pass": 0,
-          "verified_system_pass": 0,
+          "image_quality_pass": 1,
+          "verified_system_pass": 1,
           "planned": 24,
-          "assessed": 0
+          "assessed": 1
         },
         "critical_structure": {
-          "image_quality_pass": 0,
-          "verified_system_pass": 0,
+          "image_quality_pass": 1,
+          "verified_system_pass": 1,
           "planned": 24,
-          "assessed": 0
+          "assessed": 1
         },
         "semantic_meaning": {
-          "image_quality_pass": 0,
-          "verified_system_pass": 0,
+          "image_quality_pass": 1,
+          "verified_system_pass": 1,
           "planned": 24,
-          "assessed": 0
+          "assessed": 1
         },
         "reference_meaning": {
-          "image_quality_pass": 0,
-          "verified_system_pass": 0,
+          "image_quality_pass": 1,
+          "verified_system_pass": 1,
           "planned": 24,
-          "assessed": 0
+          "assessed": 1
         },
         "small_mark_visibility": {
-          "image_quality_pass": 0,
-          "verified_system_pass": 0,
+          "image_quality_pass": 1,
+          "verified_system_pass": 1,
           "planned": 24,
-          "assessed": 0
+          "assessed": 1
         },
         "joint_supported": {
-          "image_quality_pass": 0,
-          "verified_system_pass": 0,
+          "image_quality_pass": 1,
+          "verified_system_pass": 1,
           "planned": 24,
-          "assessed": 0
+          "assessed": 1
         },
         "joint_visible_supported": {
-          "image_quality_pass": 0,
-          "verified_system_pass": 0,
+          "image_quality_pass": 1,
+          "verified_system_pass": 1,
           "planned": 24,
-          "assessed": 0
+          "assessed": 1
         },
         "reference_fidelity": {
           "nondata_identity": {
-            "mean": null,
-            "assessed_applicable": 0
+            "mean": 3.0,
+            "assessed_applicable": 1
           },
           "nondata_pose_relations": {
-            "mean": null,
-            "assessed_applicable": 0
+            "mean": 3.0,
+            "assessed_applicable": 1
           },
           "composition_hierarchy": {
-            "mean": null,
-            "assessed_applicable": 0
+            "mean": 3.0,
+            "assessed_applicable": 1
           },
           "material_style": {
-            "mean": null,
-            "assessed_applicable": 0
+            "mean": 2.0,
+            "assessed_applicable": 1
           }
         }
       }
@@ -540,20 +540,321 @@
         "pixel_identical": true,
         "returncode": 0
       },
-      "quality": "unreviewed",
+      "quality": "pass",
       "execution": "ok",
-      "review": null,
-      "primary_system_success": false,
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为青绿色底、四段圆环，水果在孔内，人物、两辆小车和问号位于外缘附近。成图为米白底六段圆环；六类人数、百分比及引线完整，最小灰绿扇区在十二点左侧。孔内包含汽车、提蔬果袋的行人、摊主与果蔬摊，未遮住定量圆环。标题、SYNTHETIC DATA和统计口径可读。",
+        "summary_zh": "通过。六类数据、绑定、圆环比例和必要场景关系符合要求。review.json已保存并通过schema校验；按后续指令未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "直接测量2000×1666的image.png，以200人为360°分母。从像素颜色过渡拟合圆边界，在四个无文字遮挡的半径处测量全部角边界。外半径约490.1像素，内半径303.8像素，比例0.61997。六类份额点估计误差均小于0.01个百分点。弧长由测得角宽和环中线半径换算；源码仅作控制关系佐证。",
+        "uncertainties_zh": "抗锯齿带来约±1像素半径、±0.15°角宽的不确定性，小误差点估计不代表同等精度。参考图仅335×279像素，细微材质与动作意图不能确定。未检查被禁止的日志、自检或历史归档，未独立核实生图调用历史及逐次capture_render.py归档。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "六类、人数系列、200人分母、单位及合成提示完整；三个短途子类保留父类和编号。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "67、34、34、41、21、3人与33.5%、17%、17%、20.5%、10.5%、1.5%全部正确；短途合计135人（67.5%）正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "从十二点顺时针按给定顺序排列，同色引线连接对应类别；最小段明确绑定3人、1.5%。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素角宽约120.58°、61.20°、61.23°、73.80°、37.78°、5.42°，符合人数/200×360°；圆环共心且半径比约0.620。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始和处理素材，其车辆、人物及摊位与成图中心对应。render.py加载素材，并按数据生成扇区、半径、引线和文字。调用历史与逐次归档未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "场景包含于圆孔，车轮和人物与铺地接触、果蔬与容器关系可读；插画不覆盖数据边界。未见破坏身份或读数的接缝、透视或层序错误。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "全部必需类别、人数、份额、单位、标题及统计口径可读，无必要文字截断或遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "圆环包围交通、人物与果蔬获取场景；数据由扇区角宽承担。参考本身不以车辆面积计量，无需额外要求车辆与扇区几何融合。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题明确鲜果蔬获取距离构成，指标及people单位明确；底部说明每人计入一个类别、分母200人和三个短途合成子类。"
+          },
+          "reference_meaning": {
+            "status": "pass",
+            "evidence_zh": "鲜果蔬获取主题与四个距离父类角色保留。旧百分比更新为明示合成数据属于允许适配，不推断参考未明示的调查或因果结论。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小段约5.42°，中线弧长约38像素；内外弧、两侧界线及外部引线可辨，没有遮挡或人为增宽。"
+          }
+        },
+        "semantic_attribution_zh": "人数、六分类和相应弧长变化来自冻结合成输入；中心市场场景及姿态属于允许的非数据适配。当前主题和父类别语义保留，未发现必要语义遗漏。参考动作意图及细小材质受其低分辨率限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "access_count",
+              "category": "SHORT DRIVE / synthetic subcategory 1",
+              "expected_value": 67,
+              "observed_value": 66.99,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 835.4,
+              "full_scale_error_percent": 0.007,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.4999,
+                0.2741,
+                0.7449,
+                0.7179
+              ],
+              "evidence_zh": "像素角宽约120.58°，按角宽÷360°×200反算约66.99人；长度为环中线弧长。",
+              "uncertainty_zh": "角宽约±0.15°，对应±0.08人；误差为点估计。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "SHORT DRIVE / synthetic subcategory 2",
+              "expected_value": 34,
+              "observed_value": 34,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 424,
+              "full_scale_error_percent": 0.001,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.4922,
+                0.661,
+                0.7108,
+                0.8624
+              ],
+              "evidence_zh": "像素角宽约61.20°，反算约34.00人；长度为环中线弧长。",
+              "uncertainty_zh": "角宽约±0.15°，对应±0.08人。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "SHORT DRIVE / synthetic subcategory 3",
+              "expected_value": 34,
+              "observed_value": 34.01,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 424.2,
+              "full_scale_error_percent": 0.007,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2815,
+                0.651,
+                0.4951,
+                0.8623
+              ],
+              "evidence_zh": "像素角宽约61.23°，反算约34.01人；长度为环中线弧长。",
+              "uncertainty_zh": "角宽约±0.15°，对应±0.08人。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "WALKING DISTANCE",
+              "expected_value": 41,
+              "observed_value": 41,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 511.3,
+              "full_scale_error_percent": 0.001,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2548,
+                0.3538,
+                0.3959,
+                0.7017
+              ],
+              "evidence_zh": "像素角宽约73.80°，反算约41.00人；长度为环中线弧长。",
+              "uncertainty_zh": "角宽约±0.15°，对应±0.08人。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "LONG DRIVE",
+              "expected_value": 21,
+              "observed_value": 20.99,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 261.8,
+              "full_scale_error_percent": 0.005,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3321,
+                0.2754,
+                0.4855,
+                0.4353
+              ],
+              "evidence_zh": "像素角宽约37.78°，反算约20.99人；长度为环中线弧长。",
+              "uncertainty_zh": "角宽约±0.15°，对应±0.08人。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "NOT SURE",
+              "expected_value": 3,
+              "observed_value": 3.01,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 37.5,
+              "full_scale_error_percent": 0.006,
+              "small_value_relative_error_percent": 0.37,
+              "bbox_xyxy_normalized": [
+                0.4767,
+                0.2741,
+                0.4999,
+                0.3867
+              ],
+              "evidence_zh": "像素角宽约5.42°，反算约3.01人；长度为环中线弧长。",
+              "uncertainty_zh": "角宽约±0.15°，对应±0.08人及约±2.8%的小值相对不确定性，不宣称亚像素精确。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "最大类：短途子类1",
+              "required_parts": [
+                "红橙扇区",
+                "共用内外弧",
+                "67人标签及引线",
+                "中心孔"
+              ],
+              "relationship": "引线接外缘，场景包含在内弧以内。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.348,
+                0.274,
+                0.951,
+                0.752
+              ],
+              "evidence_zh": "右侧33.5%段内弧连续，67人标签连接其外缘；车辆和人物没有遮挡数据段。"
+            },
+            {
+              "category": "内部类别：短途子类2",
+              "required_parts": [
+                "浅橙扇区",
+                "相邻扇区",
+                "共用圆孔"
+              ],
+              "relationship": "与相邻段沿径向边界相接，共用内外半径。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.4922,
+                0.661,
+                0.7108,
+                0.8624
+              ],
+              "evidence_zh": "右下17%段与左下17%段分界清楚，内缘未随场景地面变形。"
+            },
+            {
+              "category": "最小类：NOT SURE",
+              "required_parts": [
+                "灰绿窄扇区",
+                "内外弧",
+                "径向界线",
+                "外部引线"
+              ],
+              "relationship": "窄段夹在长途与短途子类1之间，连接共同内外圆弧。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.4767,
+                0.214,
+                0.646,
+                0.387
+              ],
+              "evidence_zh": "径向厚度约186像素、中线弧长约38像素，环形楔身份可辨。合同不要求每段重复一套车辆或人物。"
+            },
+            {
+              "category": "中央共同场景",
+              "required_parts": [
+                "汽车与车轮",
+                "行人与购物袋",
+                "果蔬",
+                "遮棚与支柱",
+                "摊主与果蔬箱",
+                "铺地"
+              ],
+              "relationship": "车轮连接车身并接触铺地；袋子挂在人身侧并容纳果蔬；支柱支撑遮棚，摊主位于果蔬箱后。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.36,
+                0.418,
+                0.637,
+                0.687
+              ],
+              "evidence_zh": "蓝车在前景左侧、提袋行人在右侧、摊位在后方；接触和包含关系可见，整体位于圆孔内。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "采用合成200人样本、三个明确命名的短途子类及当前份额；允许调整非数据部件、姿态和排版。",
+            "output_added_or_lost_meaning_zh": "新增市场及提袋场景，交通与步行对象由外围图标集中到孔内；当前距离角色保留，插画未被误作人数。",
+            "visible_inscription_evidence_zh": "可见“鲜果蔬获取距离构成”“SYNTHETIC DATA”“200人”“Fresh produce access category”“每人计入一个类别”“插画与阴影不表示人数”及全部类别标签。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "旧百分比替换为当前六类合成人数，主题与父类保留。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "六段弧长随当前人数变化，最小类保持约1.5%的窄幅。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "抗锯齿限制微小误差精度，低分辨率参考限制细节比较。"
+            },
+            {
+              "cause": "none",
+              "evidence_zh": "未发现必需类别、单位、口径或主体连接关系遗漏。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一量化通道的全部六段及共同半径比；全部类别、人数、份额和汇总文本逐项核对。非数据插画与阴影不计作人数。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "车辆、人物和鲜果蔬身份保留；独立水果与两辆小车改为一辆车及果蔬摊场景，问号图标未保留。",
+            "data_adaptation_excluded_zh": "排除六类别、合成人数、更新标签及允许的非数据部件适配。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "圆环包围果蔬场景，交通与步行对象配合获取主题；外围分散图标改为孔内共同地面场景，部件连接关系保留。",
+            "data_adaptation_excluded_zh": "不将允许的朝向、位置、尺寸与布局适配视为结构错误，不要求车辆面积量化。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "主圆环、中心鲜果蔬和外部类别标注层级保留；新增大标题、总样本区及统计口径栏。",
+            "data_adaptation_excluded_zh": "排除新增类别所需标签扩展、数据驱动弧长以及当前题名与样本说明。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "仍为彩色插画配纯色扇区；青绿背景、亮色圆环和平面图标改为米白背景、低饱和圆环及带纹理和光影的市场插画。",
+            "data_adaptation_excluded_zh": "仅评价材质和绘制风格，不扣数据比例、标签或允许的姿态改变。"
+          }
+        }
+      },
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/65aa32aef4071d",
-      "numeric_supported": null,
-      "joint_supported": null,
-      "critical_structure": "unreviewed",
-      "semantic_meaning": "unreviewed",
-      "reference_meaning": "unreviewed",
-      "small_mark_visibility": "unreviewed",
-      "joint_system_success": false,
+      "numeric_supported": true,
+      "joint_supported": true,
+      "critical_structure": "pass",
+      "semantic_meaning": "pass",
+      "reference_meaning": "pass",
+      "small_mark_visibility": "pass",
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false,
       "factor_audit": {
         "status": "verified",
