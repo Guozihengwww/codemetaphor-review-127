@@ -1,0 +1,371 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为绿色景观中的橙色断轴柱状图，生活物件与人物叠在柱前或柱顶，右侧高柱在云带处中断。待评图显示11类、完整数值、合成声明、年度指标与单位、右侧两段轴和省略说明；前六类另设0–0.2放大面板。生活物件、人物和家庭均可辨。主图最小柱呈像素级细线，未见明显标签错配或必需文字遮挡。",
+  "summary_zh": "未发现违反冻结要求的重大可见缺陷，代表性测量均在容差内。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1162原图像素，未重绘。下段0–4对应530px，上段20–60对应160px，放大面板0–0.2对应159px；误差分别以量程4、40、0.2计算，未相加两段高度。边界定位约有±1px不确定性。源码仅作几何控制和素材使用佐证。",
+  "uncertainties_zh": "最小主图柱只有约1行抗锯齿着色，不能可靠反推其相对精度，也难确认灯泡底座与柱顶的逐像素接触。放大副本仍仅约5px。未读取禁止的日志、自检或编排文件，因此未独立确认capture_render.py执行记录。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "11类按给定顺序齐全，数值、单位、合成声明、两段各5个刻度及省略说明完整；放大面板重复前6类，影响组计数为6、2、3。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部11值逐一核对准确，包括0.006及全部长小数；放大面板六值一致，正值未被舍入为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值、类别和橙柱同列，物件对应生活选择；低、中、高影响组分别覆盖6、2、3类，与0.2和0.8阈值一致。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "下段、上段和放大面板代表性像素换算误差均小于各自量程的0.2%，低于3%容差。最小主图柱不作精密反推，其放大副本可测。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看两张原始素材，景观和具体物件在成图中实质可见。render.py读取数据控制柱高、数量、文字及分组，prepare_assets.py处理对应素材；归档执行记录未独立核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "连续景观在后，小物件位于柱顶附近，人物叠在柱前，云带横跨高柱断口。橙柱边界承担量值，物件自身尺寸不冒充量值。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、指标、合成声明、类别、精确值、轴范围、断轴说明和影响阈值清晰，必需文字没有被插画遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "景观、物件或人物与橙柱的叠合保留；高柱双段同列，云带处存在断轴斜线。微小柱的精细接触另记为部分可辨。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "当前合成气候主题、Synthetic annual savings、tCO2e/year (synthetic)和11项具名选择均明确；双段同指标及独立放大尺度清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留个人选择与气候减排比较；参考现实统计及具体育儿行动被输入改为合成情景和Household size，属于允许适配。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "主图前两柱仅约1至2px，物件身份可辨，但精细高度和接触不易确认；独立面板将最小值显示为约5px，并保留准确标签。"
+    }
+  },
+  "semantic_attribution_zh": "当前语义完整。参考现实统计与育儿行动的变化归于冻结输入适配；小柱变薄归于当前数据，微小高度和接触的不确定性归于分辨率，没有证据表明输出遗漏必要主题或核心结构。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Efficient lighting（主图下段）",
+        "expected_value": 0.006,
+        "observed_value": null,
+        "measurement_method": "unmeasurable",
+        "mark_extent_px": 1,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.0435,
+          0.7728,
+          0.0955,
+          0.7754
+        ],
+        "evidence_zh": "x=92、y=899出现淡橙着色，RGB约[182,147,80]，上下行接近背景；可确认正值细线。",
+        "uncertainty_zh": "约1px是可见着色范围，不能稳定反推抗锯齿有效覆盖高度或相对误差。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "EV to car-free（主图下段）",
+        "expected_value": 0.32753722,
+        "observed_value": 0.3245283,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 43,
+        "full_scale_error_percent": 0.07522,
+        "small_value_relative_error_percent": 0.91865,
+        "bbox_xyxy_normalized": [
+          0.5175,
+          0.7367,
+          0.5695,
+          0.7745
+        ],
+        "evidence_zh": "x=1128处充分橙色始于y=857，共同零点y=900；43×4/530≈0.324528。",
+        "uncertainty_zh": "y=856有部分着色，边界约±1px。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Green energy（主图下段）",
+        "expected_value": 0.63793862,
+        "observed_value": 0.63396226,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 84,
+        "full_scale_error_percent": 0.09941,
+        "small_value_relative_error_percent": 0.62331,
+        "bbox_xyxy_normalized": [
+          0.5965,
+          0.7014,
+          0.6485,
+          0.7745
+        ],
+        "evidence_zh": "x=1220处橙色主体始于y=816，共同零点y=900；84×4/530≈0.633962。",
+        "uncertainty_zh": "y=815为部分着色，边界约±1px；风机不计入柱高。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Car-free living（主图下段）",
+        "expected_value": 2.42,
+        "observed_value": 2.41509434,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 320,
+        "full_scale_error_percent": 0.12264,
+        "small_value_relative_error_percent": 0.20271,
+        "bbox_xyxy_normalized": [
+          0.7545,
+          0.4983,
+          0.8065,
+          0.7745
+        ],
+        "evidence_zh": "x=1605处充分橙色柱顶约y=580，至零点y=900为320px；320×4/530≈2.415094。",
+        "uncertainty_zh": "y=579部分着色；自行车遮挡柱下部，采用柱顶至共同零点距离，约±1px。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Household size（主图上段）",
+        "expected_value": 56.8,
+        "observed_value": 56.75,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 147,
+        "full_scale_error_percent": 0.125,
+        "small_value_relative_error_percent": 0.08803,
+        "bbox_xyxy_normalized": [
+          0.8335,
+          0.1609,
+          0.8855,
+          0.2883
+        ],
+        "evidence_zh": "x=1700处上段橙色主体y=188至334；20+147×40/160=56.75。",
+        "uncertainty_zh": "顶部y=187部分着色，约±1px；没有加入下段高度或断口。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Efficient lighting（放大面板）",
+        "expected_value": 0.006,
+        "observed_value": 0.00628931,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 5,
+        "full_scale_error_percent": 0.14465,
+        "small_value_relative_error_percent": 4.8218,
+        "bbox_xyxy_normalized": [
+          0.053,
+          0.6231,
+          0.081,
+          0.6274
+        ],
+        "evidence_zh": "x=134处橙色行y=724至728，约5px；5×0.2/159≈0.006289。",
+        "uncertainty_zh": "边界约±1px；4.82%是整数像素估计差，不证明连续几何具有同样偏差。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Cold-water wash（放大面板）",
+        "expected_value": 0.04433084,
+        "observed_value": 0.04402516,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 35,
+        "full_scale_error_percent": 0.15284,
+        "small_value_relative_error_percent": 0.68955,
+        "bbox_xyxy_normalized": [
+          0.2705,
+          0.5964,
+          0.2985,
+          0.6274
+        ],
+        "evidence_zh": "x=569处橙色主体y=694至728，约35px；35×0.2/159≈0.044025。",
+        "uncertainty_zh": "y=693部分着色，边界约±1px。"
+      },
+      {
+        "series_id": "illustrative_scenario",
+        "category": "Plant-rich diet（放大面板）",
+        "expected_value": 0.16816764,
+        "observed_value": 0.16855346,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 134,
+        "full_scale_error_percent": 0.19291,
+        "small_value_relative_error_percent": 0.22943,
+        "bbox_xyxy_normalized": [
+          0.4155,
+          0.512,
+          0.4435,
+          0.6274
+        ],
+        "evidence_zh": "x=859处可见橙色区域y=595至728，约134px；134×0.2/159≈0.168553。",
+        "uncertainty_zh": "顶部为抗锯齿混合色，边界约±1px。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Household size（大值）",
+        "required_parts": [
+          "家庭人物",
+          "上下橙柱",
+          "云带",
+          "断轴斜线",
+          "右轴"
+        ],
+        "relationship": "家庭叠在下段柱前，双段同列，云带隔断柱体，上段顶边承担量值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.829,
+          0.1506,
+          0.93,
+          0.7771
+        ],
+        "evidence_zh": "人物脚部位于基线附近；云带横跨约y=335–370，柱和轴均有断轴符号，上段顶边约y=188。"
+      },
+      {
+        "category": "Green energy（中间值）",
+        "required_parts": [
+          "叶片",
+          "轮毂和塔架",
+          "橙柱",
+          "景观"
+        ],
+        "relationship": "叶片连接轮毂与塔架，塔架底部接近柱顶，景观在后。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.5825,
+          0.5404,
+          0.663,
+          0.7762
+        ],
+        "evidence_zh": "三座风机部件可辨，基座落在约y=815的柱顶；橙柱顶边而非风机总高编码值。"
+      },
+      {
+        "category": "Efficient lighting（最小值）",
+        "required_parts": [
+          "灯泡罩",
+          "螺口底座",
+          "极薄橙柱",
+          "基线"
+        ],
+        "relationship": "灯泡位于短柱上方，橙色细线承担量值。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.0435,
+          0.6988,
+          0.0955,
+          0.778
+        ],
+        "evidence_zh": "灯泡与底座可辨，约y=899有正值着色细线；精细接触因像素级厚度难以确认。"
+      },
+      {
+        "category": "Cold-water wash（小值）",
+        "required_parts": [
+          "机身",
+          "圆形舱门",
+          "底部",
+          "橙柱"
+        ],
+        "relationship": "舱门包含于机身，机身位于短柱上方，类别同列。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2805,
+          0.6997,
+          0.3325,
+          0.7771
+        ],
+        "evidence_zh": "机身与舱门完整，下面约5至6px橙柱可见，没有被白色基线吞没。"
+      },
+      {
+        "category": "Car-free living（较大值）",
+        "required_parts": [
+          "骑车人物",
+          "车把",
+          "车架和车轮",
+          "橙柱",
+          "基线"
+        ],
+        "relationship": "手臂朝向车把，身体位于车架上，车轮接近基线，整组叠在柱前。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.742,
+          0.4974,
+          0.8185,
+          0.7771
+        ],
+        "evidence_zh": "人物与自行车连接可辨；前景遮挡柱下部，柱顶保持清楚。"
+      },
+      {
+        "category": "前六类放大面板",
+        "required_parts": [
+          "六根橙柱",
+          "同列标签",
+          "0–0.2网格",
+          "独立尺度说明"
+        ],
+        "relationship": "同一六值以独立尺度重复展示，不声称物件形状编码量值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.03,
+          0.4002,
+          0.504,
+          0.6807
+        ],
+        "evidence_zh": "六柱约高5、9、18、35、69、134px；明确写有First six choices、same metric和separate linear scale。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入改为合成个人选择气候情景，允许更新类别、值、影响组及相容姿态，不沿用旧真实统计和育儿解释。",
+      "output_added_or_lost_meaning_zh": "新增独立放大面板与双尺度说明，没有把重复值当成新系列或构成份额。原现实统计论点的变化属于输入适配。",
+      "visible_inscription_evidence_zh": "可见当前完整标题、Synthetic annual savings、tCO2e/year (synthetic)、SYNTHETIC DATA、双范围说明、4–20 omitted; scales differ及全部具名类别。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成主题、年度节省指标与Household size来自冻结输入；参考现实统计论点的变化不是输出失败。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "前六值均低于0.2，因此主图柱很薄，当前影响组为6、2、3，不要求恢复参考柱高。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小主图柱为单行抗锯齿着色，放大副本约5px；准确文字不等于可验证亚像素相对精度。"
+      }
+    ],
+    "measurement_coverage_zh": "8项记录覆盖主图下段最小值、两个中间值及较大值，上段唯一值，以及放大面板最小、中间和最大值。全部11类文字、顺序及分组另行核对；未对其余小柱虚构连续高度测量。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "生活物件、车辆、风机、旅客、骑车者、家庭及丘陵、云、月牙均可辨，环保景观身份保留。",
+      "data_adaptation_excluded_zh": "排除Household size替换旧类别、合成主题及允许的物件姿态更新。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "小物件位于柱顶或基线附近，人物与车辆叠在柱前，风机接近能源柱顶，高柱在云带处断开。",
+      "data_adaptation_excluded_zh": "不要求原人物姿势、车辆朝向或固定柱高；家庭替代婴儿车与当前类别相容。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留上方标题、连续景观、底部类别和影响组、右侧高柱及右轴；浅色放大面板占据较大中央区域，改变局部层级。",
+      "data_adaptation_excluded_zh": "排除柱高、分组边界变化及放大尺度本身，仅记录图形布局层级的变化。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "绿色渐变景观与暖橙柱配色保留；插画比参考更细致、明暗更强，仍保持统一环保插画风。",
+      "data_adaptation_excluded_zh": "排除文字更新、柱高及允许的非数据尺寸适配。"
+    }
+  }
+}
