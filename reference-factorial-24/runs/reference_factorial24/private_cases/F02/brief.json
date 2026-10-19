@@ -1,0 +1,54 @@
+{
+  "eligible": true,
+  "exclusion_reason_zh": "",
+  "title_zh": "游戏销售形式转变：四期双面板堆叠柱图",
+  "source_identity_zh": "设计规格来自归档参考；规划阶段是否可直接看图由分组控制，所有组文字规格一致。",
+  "strategy": "reference_object_and_data_relationship",
+  "chart_type": "two_panel_stacked_column_chart",
+  "reference_observations_zh": "游戏设备与消费支出、实体销量两面板堆叠柱叠置，设备部件和图表关联保留。",
+  "brief_zh": "游戏设备与消费支出、实体销量两面板堆叠柱叠置，设备部件和图表关联保留。 当前主题：游戏销售形式转变：四期双面板堆叠柱图。醒目标注SYNTHETIC DATA，保留统计角色、单位与口径；所有量值/数量/走势由data.json计算，不能沿用参考固定数值或旧极值。",
+  "data_json": "{\"synthetic\": true, \"visible_notice\": \"SYNTHETIC DATA\", \"title\": \"游戏销售形式转变：四期双面板堆叠柱图\", \"topic_zh\": \"游戏销售形式转变：四期双面板堆叠柱图\", \"categories\": [\"Year 1\", \"Year 2\", \"Year 3\", \"Year 4\"], \"series\": [{\"id\": \"consumer_spend_console_physical\", \"label\": \"console_physical\", \"unit\": \"billion USD\", \"values\": [6.8, 8.9, 9.6, 10.4], \"panel_id\": \"consumer_spend\"}, {\"id\": \"consumer_spend_pc_physical\", \"label\": \"pc_physical\", \"unit\": \"billion USD\", \"values\": [0.4, 0.5, 0.7, 0.8], \"panel_id\": \"consumer_spend\"}, {\"id\": \"consumer_spend_other_formats\", \"label\": \"other_formats\", \"unit\": \"billion USD\", \"values\": [7.6, 7.3, 6.9, 5.2], \"panel_id\": \"consumer_spend\"}, {\"id\": \"physical_unit_sales_console_physical\", \"label\": \"console_physical\", \"unit\": \"million copies\", \"values\": [175, 227, 244, 260], \"panel_id\": \"physical_unit_sales\"}, {\"id\": \"physical_unit_sales_pc_physical\", \"label\": \"pc_physical\", \"unit\": \"million copies\", \"values\": [13, 18, 24, 28], \"panel_id\": \"physical_unit_sales\"}], \"value_axis\": {\"minimum\": 0, \"maximum\": 300, \"scale\": \"linear\"}, \"category_order\": \"as listed, never sort to reproduce reference\", \"number_format\": \"Show all supplied values accurately; do not round positive values to zero. Current values override old reference annotations.\", \"semantic_category_policy\": \"Preserve named statistical roles; added labels explicitly identify synthetic parents or synthetic comparable groups.\", \"additional_contract\": {\"panels\": [{\"id\": \"consumer_spend\", \"title\": \"Consumer spend\", \"unit\": \"billion USD\", \"axis_domain\": [0, 18], \"stack_order_bottom_to_top\": [\"console_physical\", \"pc_physical\", \"other_formats\"]}, {\"id\": \"physical_unit_sales\", \"title\": \"Physical unit sales\", \"unit\": \"million copies\", \"axis_domain\": [0, 300], \"stack_order_bottom_to_top\": [\"console_physical\", \"pc_physical\"]}]}, \"transformation_subtype\": \"annual_two_panel_stack\", \"series_totals\": {\"consumer_spend_console_physical\": 35.7, \"consumer_spend_pc_physical\": 2.4, \"consumer_spend_other_formats\": 27.0, \"physical_unit_sales_console_physical\": 906, \"physical_unit_sales_pc_physical\": 83}}",
+  "data_provenance_zh": "原主体库合成值作为相近条件；预先固定变换作为冲突条件，非真实统计。",
+  "encoding_definition_zh": "每期各系列堆叠厚度按该面板固定量尺编码：支出0–18十亿美元、销量0–300百万份；时期等距，同期总额及首末变化注释从当前值求取。",
+  "mandatory_features": [
+    {
+      "id": "M1",
+      "requirement_zh": "当前全部类别、系列与样本完整，数值、标签和单位准确绑定。",
+      "reference_evidence_zh": "参考原有数据身份。"
+    },
+    {
+      "id": "M2",
+      "requirement_zh": "每期各系列堆叠厚度按该面板固定量尺编码：支出0–18十亿美元、销量0–300百万份；时期等距，同期总额及首末变化注释从当前值求取。",
+      "reference_evidence_zh": "参考原有定量通道。"
+    },
+    {
+      "id": "M3",
+      "requirement_zh": "游戏设备与消费支出、实体销量两面板堆叠柱叠置，设备部件和图表关联保留。",
+      "reference_evidence_zh": "参考物体部件和关系。"
+    },
+    {
+      "id": "M4",
+      "requirement_zh": "实际使用内置生图素材构成主体，代码控制数量几何与文字，每次完整渲染用capture_render.py归档。",
+      "reference_evidence_zh": "沿用生图素材加代码路线。"
+    },
+    {
+      "id": "M5",
+      "requirement_zh": "图面明确表达当前主题、指标、统计口径与单位；新增类别或子类保留语义父类，不写无法解释的Group。",
+      "reference_evidence_zh": "参考主题身份。"
+    },
+    {
+      "id": "M6",
+      "requirement_zh": "按当前数据适配姿态、非数据厚度和排版；保留物体部件连接/包含/接触与原有融合或叠合方式，不要求原峰值和固定涨跌。",
+      "reference_evidence_zh": "按实际融合/叠合方式评价。"
+    }
+  ],
+  "acceptance_criteria_zh": [
+    "连续几何沿用满量程3%/份额3个百分点；文字、计数和绑定准确。",
+    "关键结构、当前主题、原参考含义、微小值可辨性分别评估。",
+    "附加合同中的辅助面板也须保留。当前生成不接收独立评审反馈。"
+  ],
+  "ambiguities_resolved_zh": "原旧坐标与预计算形状已移除；变换与例外见changes.json，两条件核心合同完全相同。",
+  "feasibility_zh": "生图生成物体材质及部件，代码依据当前数据映射；非数据模块可适配，保留合理画布和原定量通道。",
+  "width": 2000,
+  "height": 1425
+}

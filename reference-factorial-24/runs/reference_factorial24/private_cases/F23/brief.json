@@ -1,0 +1,54 @@
+{
+  "eligible": true,
+  "exclusion_reason_zh": "",
+  "title_zh": "SYNTHETIC Plastic discharge into the ocean",
+  "source_identity_zh": "设计规格来自归档参考；规划阶段是否可直接看图由分组控制，所有组文字规格一致。",
+  "strategy": "reference_object_and_data_relationship",
+  "chart_type": "数据承载关系见编码定义；类别数与系列数仅由当前输入决定。",
+  "reference_observations_zh": "横向海洋剖面，保留水面、海水材质、游艇与四个不同颜色的水下来源层。横向有序时期，数据向下累计；图例、当前分项与总值表可外置以保证可读性。",
+  "brief_zh": "横向海洋剖面，保留水面、海水材质、游艇与四个不同颜色的水下来源层。横向有序时期，数据向下累计；图例、当前分项与总值表可外置以保证可读性。 当前主题：分来源的各期海洋塑料排放量。醒目标注SYNTHETIC DATA；保留统计指标、类别的语义角色及单位。所有数据、点位和数量由data.json决定，不能沿用参考数值或固定峰谷。",
+  "data_json": "{\"synthetic\": true, \"visible_notice\": \"SYNTHETIC DATA\", \"title\": \"SYNTHETIC Plastic discharge into the ocean\", \"topic_zh\": \"分来源的各期海洋塑料排放量\", \"categories\": [\"P01\", \"P02\", \"P03\", \"P04\", \"P05\", \"P06\", \"P07\", \"P08\", \"P09\", \"P10\", \"P11\", \"P12\", \"P13\", \"P14\", \"P15\", \"P16\"], \"category_order\": \"as listed, do not sort to match reference\", \"series\": [{\"id\": \"A\", \"label\": \"Plastic source A\", \"unit\": \"100 tonnes/period\", \"values\": [1841, 1824, 1746, 1682, 1704, 1561, 1538, 1572, 1614, 1668, 1435, 890, 520, 245, 69, 52]}, {\"id\": \"B\", \"label\": \"Plastic source B\", \"unit\": \"100 tonnes/period\", \"values\": [526, 611, 518, 456, 417, 312, 291, 348, 288, 296, 264, 204, 67, 43, 15, 16]}, {\"id\": \"C\", \"label\": \"Plastic source C\", \"unit\": \"100 tonnes/period\", \"values\": [3487, 3938, 3648, 3357, 3501, 2921, 2705, 2486, 2190, 2268, 2437, 1256, 894, 426, 112, 88]}, {\"id\": \"D\", \"label\": \"Plastic source D\", \"unit\": \"100 tonnes/period\", \"values\": [626, 647, 598, 655, 488, 426, 326, 354, 478, 368, 364, 270, 249, 146, 64, 34]}], \"value_axis\": {\"minimum\": 0, \"maximum\": 7200, \"scale\": \"linear\"}, \"semantic_category_policy\": \"Category roles and topic must remain intelligible; labels are synthetic, not real statistical claims.\", \"number_format\": \"Preserve all supplied values; never round a positive value to zero.\", \"time_points\": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0], \"series_totals\": {\"A\": 19961, \"B\": 4672, \"C\": 35714, \"D\": 6093}}",
+  "data_provenance_zh": "旧合成数值作为相近条件；预先冻结变换作为冲突条件。语义角色补足自参考/旧设计，不是真实统计。",
+  "encoding_definition_zh": "零线是共同水面，0–7200的线性尺度正向朝下。每期第k层的厚度正比于该分项值，边界为前k项累计和；总深度是四项之和，不增加第五层。相邻期插值不能出现负厚度或过冲，船体与波纹不改变数据尺度。 向下累计为同一期的各来源相加，不是将各期逐年累加；各期总深度代表当期排放量。",
+  "mandatory_features": [
+    {
+      "id": "M1",
+      "requirement_zh": "当前全部类别、样本、系列完整，标签和单位准确绑定。密集年份可用刻度与关键点标签，但路径须使用全部点。",
+      "reference_evidence_zh": "参考设计存在完整数据标记与主题文字。"
+    },
+    {
+      "id": "M2",
+      "requirement_zh": "零线是共同水面，0–7200的线性尺度正向朝下。每期第k层的厚度正比于该分项值，边界为前k项累计和；总深度是四项之和，不增加第五层。相邻期插值不能出现负厚度或过冲，船体与波纹不改变数据尺度。 向下累计为同一期的各来源相加，不是将各期逐年累加；各期总深度代表当期排放量。",
+      "reference_evidence_zh": "参考图与旧可执行任务的数量承载关系。"
+    },
+    {
+      "id": "M3",
+      "requirement_zh": "横向海洋剖面，保留水面、海水材质、游艇与四个不同颜色的水下来源层。横向有序时期，数据向下累计；图例、当前分项与总值表可外置以保证可读性。",
+      "reference_evidence_zh": "参考图的物体及关键关系。"
+    },
+    {
+      "id": "M4",
+      "requirement_zh": "实际使用内置生图素材构成主体，代码控制定量几何及文字，所有完整渲染由capture_render.py保存。",
+      "reference_evidence_zh": "沿用完整生图素材加代码路线。"
+    },
+    {
+      "id": "M5",
+      "requirement_zh": "图面明确表达分来源的各期海洋塑料排放量，显示SYNTHETIC Plastic discharge into the ocean或意义等同的主题标题；不是只写物体名。保留data中的类别/系列角色、指标、单位和统计口径，子类别标签须显示语义父类。",
+      "reference_evidence_zh": "参考图的主题/指标角色，当前合成数据保留或明确改编。"
+    },
+    {
+      "id": "M6",
+      "requirement_zh": "姿态、非数据厚度及标签位置可适配当前数据；物体部件的连接/包含/接触关系、统计指标含义与数据承载关系保留。不能要求复制旧涨跌结论。 物体身份与数据融合可通过图面判断，不以普通图表加旁置物体替换原融合关系；原设计为叠合时则保留叠合。",
+      "reference_evidence_zh": "按每个参考的原有融合/替代/叠合方式评估。"
+    }
+  ],
+  "acceptance_criteria_zh": [
+    "连续几何容差满量程3%，份额3个百分点；数据文字、必要计数和绑定准确。",
+    "关键结构、主题意义、数据准确性分别评价；小数据的相对误差与可辨性不得被满量程容差掩盖。",
+    "不要求原涨跌方向、旧最高项、品牌或原真实数据；不得删除物体与当前主题的联系。"
+  ],
+  "ambiguities_resolved_zh": "制作要求不含旧坐标、预计算长度和固定峰位。语义字段两条件一致，当前类别标签按语义父类拆分或保留旧项并新增同角色项。",
+  "feasibility_zh": "生图提供可见材质与部件，代码按当前数据适配定量形状；身份模块不承担额外定量。固定非数据部分不得要求与当前量值矛盾的尺寸。",
+  "width": 2200,
+  "height": 1552
+}

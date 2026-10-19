@@ -1,0 +1,38 @@
+{
+  "question": "Separate direct-reference access of the planning/coding agent from original-image conditioning of image_gen.",
+  "sample": "24 distinct references: 8 per conflict family, 4 prior60 and 4 added60 per family; fixed seed20261019; previous pilot E04/E35/E95 excluded. Selection uses identities/strata, not prior pass labels. Same conflict dataset across all four fresh conditions.",
+  "factors": {
+    "a1g1": {
+      "agent": true,
+      "image": true,
+      "label": "智能体有图 · 生图有图"
+    },
+    "a1g0": {
+      "agent": true,
+      "image": false,
+      "label": "智能体有图 · 生图无图"
+    },
+    "a0g1": {
+      "agent": false,
+      "image": true,
+      "label": "智能体无图 · 生图有图"
+    },
+    "a0g0": {
+      "agent": false,
+      "image": false,
+      "label": "智能体无图 · 生图无图"
+    }
+  },
+  "agent_factor": "A1 receives and must directly view reference.png. A0 receives no original-image file/path and must use identical reference-derived textual specifications. A0 is not a no-reference-knowledge claim.",
+  "image_factor": "Controller forces original reference input on every successful image_gen call for G1, and never for G0. Planner is not told G assignment. Optional unmodified earlier own raw outputs are allowed in both. num_last_images_to_include is prohibited.",
+  "mechanical_relay": "All four conditions use the same file-based request_image.py. A narrow fresh GPT-6-Astra/max relay session forwards the exact literal prompt and assigned image inputs to the actual built-in image_gen tool; it does not plan or rewrite prompts. Relay must view supplied local images before calling. Planner never receives relay original images, reference paths, or relay observations. Exact prompt/reference arguments and runtime outputs are audited. Relay overhead is recorded and counts toward the global session limit and planner wall-clock budget.",
+  "generation_budget": "GPT-6-Astra/max; 35 minutes including gateway waiting; at most3 attempted image requests and6 complete renders. Max2 concurrent planners, at most1 image relay, and a shared global limit3 for ALL planners/relays/reviews.",
+  "evaluation": "Same 120-reference detailed checks and 3% full-scale /3 percentage-point tolerance. First full-render attempt, including failure, and last usable render; identical image reused within trial. All available final images receive a second independent review. No scores fed back. Each review15min, max1 technical retry, no generation resampling.",
+  "secondary_fidelity": "0..4 preservation scores for nondata identity, nondata pose/relations, composition hierarchy, material/style; inapplicable=null. Explicitly exclude allowed data/semantic changes. Does not alter existing pass thresholds.",
+  "review_blinding": "Reviewers receive original reference and same current text/data/core, exact image and necessary rendering assets/code. Do not receive arm labels, image-request folders, relay traces, planning instructions or intervention input.json. Visible output/source may still suggest condition; no claim of perceptual masking.",
+  "randomization": "Interleaved conflict-family case blocks, random within-stratum selection; four-condition Latin rotations each used6times; opaque trial IDs, frozen before calls. No model-level deterministic sampling seed is claimed.",
+  "launch_gate": "First case four conditions run before the remaining92 tasks. Advance based on actual reference routing compliance and transport completion, NEVER on pass rate. Infrastructure/protocol failure holds the queue with preserved attempts.",
+  "denominators": "Each arm24 planned trials for first/final end-to-end rates, all96 pooled also shown. Technical missing/partial/fail/uncertain are not passes. Image-quality and reference-routing compliance are shown separately. Four-arm complete protocol-verified cases form paired effect analysis; exclusions listed.",
+  "analysis": "Primary endpoints joint_supported and joint_visible_supported at final. Four conditional factor contrasts per endpoint; exact McNemar and conservative CP difference intervals. Holm correction across8prespecified tests. Main effects and interaction are computed per reference, no pseudoreplication. Interaction conservative95% interval uses simultaneous bounds for4discordant probabilities. Formal tests only after study closure. Fidelity and costs descriptive; one run per cell, model reviewers, no human-reader validation.",
+  "unchanged_history": "Previous120-reference and3-case pilot inputs/results/labels remain untouched; no historical outputs pooled into the new four-condition rates."
+}
