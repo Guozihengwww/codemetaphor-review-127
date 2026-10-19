@@ -1,0 +1,456 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为星条旗美国地图病人躺在透视病床上，床前悬挂三系列图板。待评图中黄色州界地图病人倚卧枕头，身前覆蓝被，嘴部接触体温计，手臂连接手套；前景夹板承载红阶梯、黑实线和黑短划线。标题、SYNTHETIC DATA及单位清晰；记录表可见A 11条、B 8条、C 11条。上述观察及保真评分已在读取源码前保存。",
+  "summary_zh": "通过。30条记录及21个日期完整，真实日距、截断轴、线型及末记录处理正确，代表性像素测量均在容差内。核心病床隐喻与图板关系保留。review.json已保存并通过schema.json校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "直接读取2000×1643原图像素，未重渲染。可见坐标为x=500–1710对应0–67天、y=850–1128对应21–9%。反算v=9+(1128-y)×12/278，d=(x-500)×67/1210。纵向mark_extent_px表示距9%截断基线的位置差；时间测量表示距day 0的位置差。满量程分别为12个百分点、67天。源码和SVG仅作补证。",
+  "uncertainties_zh": "中心定位约±1像素，对应±0.043个百分点或±0.055天，误差数值为点估计。B=9.6距截断基线仅14像素，±1像素相当于可见高度约7.2%；全量程通过不保证亚像素精度。图板遮住部分床脚和左侧接合。按范围限制未查看生成日志、自检或capture归档，无法确认每次渲染的归档过程。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "A 11条、B 8条、C 11条，共30条；日期并集21项。标题、合成提示、2040年份、单位和三系列完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐条核对30个日期—数值配对，均与data.json一致；A末两条16.9、B末14.9、C末13.2及端点文字正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "图例、曲线、端点标签和记录表一致绑定：A红阶梯、B黑实线、C黑短划线和空心圆。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "三系列最小、最大及内点的像素反算均远小于3%满量程误差。day 1、12、65测得约0.997、11.988、65.007。A右连续并以16.9闭合末平台；B止于May 08，B/C无外推。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "主体与raw_01.png、patient_bed.png中的地图病人及床体吻合；SVG内嵌位图与patient_bed.png字节哈希一致。render.py按日期差、数值生成路径和文字，未执行该脚本。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "曲线处于床前图板内部；图板遮挡床前部，右上夹具后露出床柱圆帽。保留参考的叠合方式，无须把地图轮廓量化为数值。未见破坏结构的层序或纹理接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下标题、合成提示、图例、轴标签、30个记录值及口径说明可读，无重要文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "地图病人位于枕头前、被子后，手臂接手套，体温计入口；床架包围床垫，图板处于床前并关联床柱。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "ANNUAL RATE CHANGES、Three synthetic annualized rates、% per year及Synthetic comparison series A–C明确当前主题、指标、单位和角色；另声明地图不是地理估计。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "诊疗监测隐喻保留；原金融品种及FALLING FEVER下降论点未沿用，属于冻结输入允许的主题和数据适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "B=9.6标记距9%基线约14像素，可与连接线辨认；A首平台约18像素宽。C的0.1个百分点变化仅约2.3像素，细微差值精度有限。"
+    }
+  },
+  "semantic_attribution_zh": "旧金融类别及下降论点的改变归因于允许的输入适配；新走势归因于当前数据。未发现输出遗漏造成当前主题或核心关系损失。微小变化精度受分辨率限制，不推断原作者意图。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "A",
+        "category": "2040-03-03",
+        "expected_value": 17.6,
+        "observed_value": 17.6115,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 199.5,
+        "full_scale_error_percent": 0.0959,
+        "small_value_relative_error_percent": 0.0654,
+        "bbox_xyxy_normalized": [
+          0.2505,
+          0.563,
+          0.257,
+          0.5679
+        ],
+        "evidence_zh": "原图红平台中心约y=928.5，按可见截断轴反算。",
+        "uncertainty_zh": "中心约±1像素，误差为点估计。"
+      },
+      {
+        "series_id": "A",
+        "category": "2040-03-15",
+        "expected_value": 20.3,
+        "observed_value": 20.2878,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 261.5,
+        "full_scale_error_percent": 0.1019,
+        "small_value_relative_error_percent": 0.0602,
+        "bbox_xyxy_normalized": [
+          0.3625,
+          0.524,
+          0.381,
+          0.5301
+        ],
+        "evidence_zh": "最高红平台中心约y=866.5。",
+        "uncertainty_zh": "中心约±1像素。"
+      },
+      {
+        "series_id": "A",
+        "category": "2040-04-02",
+        "expected_value": 18.6,
+        "observed_value": 18.6043,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 222.5,
+        "full_scale_error_percent": 0.036,
+        "small_value_relative_error_percent": 0.0232,
+        "bbox_xyxy_normalized": [
+          0.55,
+          0.5478,
+          0.6,
+          0.5551
+        ],
+        "evidence_zh": "该日期起的平台中心约y=905.5。",
+        "uncertainty_zh": "中心约±1像素。"
+      },
+      {
+        "series_id": "A",
+        "category": "2040-05-07",
+        "expected_value": 16.9,
+        "observed_value": 16.8993,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 183,
+        "full_scale_error_percent": 0.006,
+        "small_value_relative_error_percent": 0.0043,
+        "bbox_xyxy_normalized": [
+          0.841,
+          0.5721,
+          0.85,
+          0.5782
+        ],
+        "evidence_zh": "末平台中心约y=945，延至May 09。",
+        "uncertainty_zh": "中心约±1像素。"
+      },
+      {
+        "series_id": "B",
+        "category": "2040-03-06",
+        "expected_value": 9.6,
+        "observed_value": 9.6043,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 14,
+        "full_scale_error_percent": 0.036,
+        "small_value_relative_error_percent": 0.045,
+        "bbox_xyxy_normalized": [
+          0.274,
+          0.6744,
+          0.28,
+          0.6817
+        ],
+        "evidence_zh": "最小值实心标记中心约y=1114，比9%基线高14像素。",
+        "uncertainty_zh": "±1像素约为基线上方可见高度的7.2%，不能保证亚像素相对精度。"
+      },
+      {
+        "series_id": "B",
+        "category": "2040-04-03",
+        "expected_value": 15.8,
+        "observed_value": 15.7986,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 157.5,
+        "full_scale_error_percent": 0.012,
+        "small_value_relative_error_percent": 0.0091,
+        "bbox_xyxy_normalized": [
+          0.527,
+          0.5867,
+          0.533,
+          0.5946
+        ],
+        "evidence_zh": "B最高标记中心约y=970.5。",
+        "uncertainty_zh": "中心约±1像素。"
+      },
+      {
+        "series_id": "B",
+        "category": "2040-03-20",
+        "expected_value": 13.6,
+        "observed_value": 13.5971,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 106.5,
+        "full_scale_error_percent": 0.024,
+        "small_value_relative_error_percent": 0.0212,
+        "bbox_xyxy_normalized": [
+          0.4005,
+          0.6178,
+          0.4065,
+          0.6257
+        ],
+        "evidence_zh": "内点中心约y=1021.5。",
+        "uncertainty_zh": "中心约±1像素。"
+      },
+      {
+        "series_id": "C",
+        "category": "2040-03-13",
+        "expected_value": 10.9,
+        "observed_value": 10.8993,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 44,
+        "full_scale_error_percent": 0.006,
+        "small_value_relative_error_percent": 0.0066,
+        "bbox_xyxy_normalized": [
+          0.3375,
+          0.6561,
+          0.3435,
+          0.6634
+        ],
+        "evidence_zh": "C最低空心标记中心约y=1084。",
+        "uncertainty_zh": "中心约±1像素。"
+      },
+      {
+        "series_id": "C",
+        "category": "2040-04-24",
+        "expected_value": 13.2,
+        "observed_value": 13.2086,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 97.5,
+        "full_scale_error_percent": 0.0719,
+        "small_value_relative_error_percent": 0.0654,
+        "bbox_xyxy_normalized": [
+          0.7165,
+          0.6239,
+          0.7225,
+          0.6312
+        ],
+        "evidence_zh": "C最大值代表标记中心约y=1030.5。",
+        "uncertainty_zh": "中心约±1像素。"
+      },
+      {
+        "series_id": "C",
+        "category": "2040-04-10",
+        "expected_value": 12.7,
+        "observed_value": 12.6906,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 85.5,
+        "full_scale_error_percent": 0.0779,
+        "small_value_relative_error_percent": 0.0736,
+        "bbox_xyxy_normalized": [
+          0.59,
+          0.6306,
+          0.5965,
+          0.6379
+        ],
+        "evidence_zh": "内点空心标记中心约y=1042.5。",
+        "uncertainty_zh": "中心约±1像素。"
+      },
+      {
+        "series_id": "shared_time/A",
+        "category": "2040-03-04：距2040-03-03天数",
+        "expected_value": 1,
+        "observed_value": 0.9967,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 18,
+        "full_scale_error_percent": 0.0049,
+        "small_value_relative_error_percent": 0.3306,
+        "bbox_xyxy_normalized": [
+          0.255,
+          0.5539,
+          0.263,
+          0.56
+        ],
+        "evidence_zh": "在y=915横扫红竖段，中心x约518；距day 0约18像素。",
+        "uncertainty_zh": "横向中心约±1像素，即±0.055天。"
+      },
+      {
+        "series_id": "shared_time/A",
+        "category": "2040-03-15：距2040-03-03天数",
+        "expected_value": 12,
+        "observed_value": 11.988,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 216.5,
+        "full_scale_error_percent": 0.0179,
+        "small_value_relative_error_percent": 0.0999,
+        "bbox_xyxy_normalized": [
+          0.354,
+          0.5283,
+          0.3625,
+          0.5332
+        ],
+        "evidence_zh": "在y=872横扫红竖段，中心x约716.5。",
+        "uncertainty_zh": "横向中心约±1像素。"
+      },
+      {
+        "series_id": "shared_time/A",
+        "category": "2040-05-07：距2040-03-03天数",
+        "expected_value": 65,
+        "observed_value": 65.0066,
+        "measurement_method": "inverse_transform",
+        "mark_extent_px": 1174,
+        "full_scale_error_percent": 0.0099,
+        "small_value_relative_error_percent": 0.0102,
+        "bbox_xyxy_normalized": [
+          0.832,
+          0.5691,
+          0.842,
+          0.574
+        ],
+        "evidence_zh": "在y=939横扫红竖段，中心x约1674。",
+        "uncertainty_zh": "横向中心约±1像素。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "地图病人与病床",
+        "required_parts": [
+          "美国地图身体",
+          "枕头",
+          "被子",
+          "手臂与手套",
+          "床架和床垫"
+        ],
+        "relationship": "倚卧、接触、包含与前后遮挡",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.102,
+          0.15,
+          0.752,
+          0.568
+        ],
+        "evidence_zh": "枕头在身体后方，被子覆盖下缘；双臂连接手套并接触床垫，床架围住床垫。"
+      },
+      {
+        "category": "体温计",
+        "required_parts": [
+          "嘴部",
+          "玻璃管",
+          "红色液柱和端头"
+        ],
+        "relationship": "管体入口并向右伸出",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.601,
+          0.29,
+          0.746,
+          0.347
+        ],
+        "evidence_zh": "嘴唇接触细管左端，红色部分及右端圆头完整，未见脱离嘴部。"
+      },
+      {
+        "category": "床尾图板",
+        "required_parts": [
+          "床前柱",
+          "夹具",
+          "带边框图板"
+        ],
+        "relationship": "图板位于床前，遮挡床体并关联前柱",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.209,
+          0.402,
+          0.932,
+          0.779
+        ],
+        "evidence_zh": "右上夹具后露出床柱圆帽；板框及右下厚度形成独立表面。左侧接合大部分被遮住。"
+      },
+      {
+        "category": "大值A峰平台",
+        "required_parts": [
+          "图板表面",
+          "红阶梯",
+          "百分比网格"
+        ],
+        "relationship": "以板面内折线纵向位置承载数值",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.352,
+          0.517,
+          0.392,
+          0.546
+        ],
+        "evidence_zh": "峰平台位于21%线下，中心约y=866.5，延续至下一日期后下降；数据边界是折线中心。"
+      },
+      {
+        "category": "最小正值B",
+        "required_parts": [
+          "黑实心标记",
+          "连接线",
+          "9%基线",
+          "图板表面"
+        ],
+        "relationship": "标记高于基线并向下一记录直连",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.271,
+          0.67,
+          0.286,
+          0.691
+        ],
+        "evidence_zh": "标记约8像素直径、中心距基线14像素，与右上连接线均在图板内，未和基线混同。"
+      },
+      {
+        "category": "最短A时间平台",
+        "required_parts": [
+          "首平台",
+          "上升竖段",
+          "第二平台"
+        ],
+        "relationship": "保持前值至下一日期再跳变",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.247,
+          0.548,
+          0.264,
+          0.572
+        ],
+        "evidence_zh": "首平台宽约18像素，通过竖段接第二平台；一天真实宽度仍可辨。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入改为2040年合成年化率和Series A/B/C，允许姿态、厚度、排版适配，不要求旧金融品种或下降走势。",
+      "output_added_or_lost_meaning_zh": "保留美国病人的诊疗监测关系，增加合成比较和非地理估计说明；旧金融品种及FALLING FEVER论点的改变属于授权适配。",
+      "visible_inscription_evidence_zh": "ANNUAL RATE CHANGES；SYNTHETIC DATA；Three synthetic annualized rates；% per year；Series A · step after、Series B/C · linear；Shared axis: 9–21% (truncated)。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实金融统计替换为合成比较系列，图中明确标示。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "B/C总体上升、A先升后降，符合当前数据而非参考固定下降走势。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "0.1个百分点变化约2.3像素，最小B值距截断基线14像素，细微相对精度有限。"
+      }
+    ],
+    "measurement_coverage_zh": "测量10个纵向值及3个时间位置，覆盖三系列最小、最大、内点和最短时间平台。其余20条未逐点像素反算；全部30条文字与SVG节点另行核对，SVG仅补证。只有一个共用坐标面板。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "美国轮廓、病床、体温计保留；星条旗表皮改为黄色州界，增加面部、手套和冰袋。",
+      "data_adaptation_excluded_zh": "不扣除合成主题、日期、数值和允许的部件适配。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "病人倚卧床垫和枕头，体温计接触病人，床架围住床垫，图板位于床前；核心接触和层次保留。",
+      "data_adaptation_excluded_zh": "排除core允许的姿态、厚度和排版变化，不要求旧峰值或固定涨跌。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留后方大地图病人与前方趋势图板的叠合；标题改为通栏，新增底部记录表，图板变宽。",
+      "data_adaptation_excluded_zh": "当前记录和标签所需空间不作为数据错误，仅评价参考层级保留程度。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "黑轮廓和纸面质感保留；红灰网点平涂改为黄蓝颗粒、水彩阴影及现代排字。",
+      "data_adaptation_excluded_zh": "不将新曲线形状、数值标签或合成主题计为材质差异。"
+    }
+  }
+}

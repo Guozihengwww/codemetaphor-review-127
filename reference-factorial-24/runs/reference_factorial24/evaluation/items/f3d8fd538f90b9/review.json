@@ -1,0 +1,495 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为白底海洋剖面，右上游艇接触水面，绿、亮蓝、深蓝、紫四色水下层承载数据。待评图保留水平水面、右侧游艇及青、金、蓝、珊瑚四色水纹层；P01–P16依序横排，底部四来源和总值表完整可读。右端薄层接近细线，另有明确注明3倍纵向尺度的P14–P16细节图。以上观察先于源码检查记录。",
+  "summary_zh": "未发现违反核心要求的可见缺陷。64个分项值、16个期总值及标签正确；代表性像素测量在容差内，海洋与数据融合保留。已保存并验证review.json；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量原始2200×1552像素。主图零线y≈520、7200刻度y≈1100，比例580/7200 px/单位；细节图零线y≈792、1000刻度y≈1034，比例242/1000。以图例像素色相定位层间过渡，总边界圆点取中心。源码仅提供佐证。",
+  "uncertainties_zh": "主图B/P15仅约1–2px，不能可靠反推精确量值或相对误差；细节图最薄层仍受抗锯齿影响。未逐像素核验所有插值位置。按限制未读取日志、自检或编排文件，capture_render.py执行历史未独立核实。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "P01–P16顺序正确；四来源、64个分项、16个期总值、单位和SYNTHETIC DATA提示齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "图面转录的64个分项与输入逐项相等，16个总值等于同期四项之和。P02=7,020、P16=190正确，最小正值15未写成零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "图例、表格行色与海洋从上到下A青、B金、C蓝、D珊瑚一一对应；Period明确P编号的时期角色。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "主图P02、P08四层及P02总深度的像素估值误差均小于满量程0.2%；细节图抽样均小于本图满量程0.8%。最薄主图层的精确相对量值不确定。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其游艇及水纹在最终主体中可对应。素材处理源码和渲染源码显示水纹实际覆盖四层，代码控制累计裁剪边界；未执行这些脚本。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "水纹色层本身承载来源厚度及同期总深度，游艇船底接触共同零水面；细节框没有遮盖主图数据。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "主题、合成提示、单位、图例、时期和完整精确值表可读；细节框明确标注3倍纵向尺度。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "水面之下四个来源层依次接触并共享水纹，船底位于水面；最外下边界代表总深度，没有第五来源层。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、Per-period discharge by plastic source及100 tonnes/period明确主题与口径；正文明确同一期求和而非running sum。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留海洋塑料排放及深度承载数量的关系。参考的韩国ERP、具名来源和旧deepening叙述改为当前合成来源及时期值，属于输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "主图B/P15仍有非零金色痕迹；带独立标尺的细节框中约3–4px金色层夹在A与C之间，四层接续可辨，但不能据此保证最小值的精确相对几何。"
+    }
+  },
+  "semantic_attribution_zh": "真实地区、具名来源和旧趋势的变化属于允许的合成输入适配；左深右浅来自当前数据。最薄层相对测量的不确定性来自像素分辨率。未发现当前主题、单位、时期角色或同期相加关系的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "A",
+        "category": "P02",
+        "expected_value": 1824,
+        "observed_value": 1814.54,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 146.17,
+        "full_scale_error_percent": 0.131,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.14409,
+          0.33505,
+          0.14591,
+          0.42923
+        ],
+        "evidence_zh": "x≈319，上下界y≈520、666.2；按可见主图标尺换算。",
+        "uncertainty_zh": "色相边界定位约±1px。"
+      },
+      {
+        "series_id": "B",
+        "category": "P02",
+        "expected_value": 611,
+        "observed_value": 612.63,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 49.35,
+        "full_scale_error_percent": 0.023,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.14409,
+          0.42923,
+          0.14591,
+          0.46103
+        ],
+        "evidence_zh": "x≈319，上下色相边界y≈666.2、715.5。",
+        "uncertainty_zh": "抗锯齿带来约±1px定位不确定性。"
+      },
+      {
+        "series_id": "C",
+        "category": "P02",
+        "expected_value": 3938,
+        "observed_value": 3935.64,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 317.04,
+        "full_scale_error_percent": 0.033,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.14409,
+          0.46103,
+          0.14591,
+          0.66531
+        ],
+        "evidence_zh": "x≈319，蓝层上下界y≈715.5、1032.6。",
+        "uncertainty_zh": "边界定位约±1px。"
+      },
+      {
+        "series_id": "D",
+        "category": "P02",
+        "expected_value": 647,
+        "observed_value": 650.98,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 52.44,
+        "full_scale_error_percent": 0.055,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.14409,
+          0.66531,
+          0.14591,
+          0.6991
+        ],
+        "evidence_zh": "上界y≈1032.6，总边界圆点中心y≈1085。",
+        "uncertainty_zh": "下界用总边界圆点中心定位，约±1px。"
+      },
+      {
+        "series_id": "A",
+        "category": "P08",
+        "expected_value": 1572,
+        "observed_value": 1566.87,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 126.22,
+        "full_scale_error_percent": 0.071,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.495,
+          0.33505,
+          0.49682,
+          0.41638
+        ],
+        "evidence_zh": "x≈1091，上下界y≈520、646.2。",
+        "uncertainty_zh": "边界定位约±1px。"
+      },
+      {
+        "series_id": "B",
+        "category": "P08",
+        "expected_value": 348,
+        "observed_value": 348.64,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 28.08,
+        "full_scale_error_percent": 0.009,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.495,
+          0.41638,
+          0.49682,
+          0.43447
+        ],
+        "evidence_zh": "x≈1091，上下界y≈646.2、674.3。",
+        "uncertainty_zh": "边界定位约±1px。"
+      },
+      {
+        "series_id": "C",
+        "category": "P08",
+        "expected_value": 2486,
+        "observed_value": 2480.34,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 199.81,
+        "full_scale_error_percent": 0.079,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.495,
+          0.43447,
+          0.49682,
+          0.56322
+        ],
+        "evidence_zh": "x≈1091，上下界y≈674.3、874.1。",
+        "uncertainty_zh": "边界定位约±1px。"
+      },
+      {
+        "series_id": "D",
+        "category": "P08",
+        "expected_value": 354,
+        "observed_value": 358.63,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 28.89,
+        "full_scale_error_percent": 0.064,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.495,
+          0.56322,
+          0.49682,
+          0.58183
+        ],
+        "evidence_zh": "上界y≈874.1，总边界圆点中心y≈903。",
+        "uncertainty_zh": "下界用圆点中心定位，约±1px。"
+      },
+      {
+        "series_id": "B",
+        "category": "P15",
+        "expected_value": 15,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1.59,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.90409,
+          0.33816,
+          0.90591,
+          0.33919
+        ],
+        "evidence_zh": "x≈1991、y≈525–526可见非零金色痕迹，混色边界间距约1.6px。",
+        "uncertainty_zh": "两侧均混色，不能可靠反推精确量值或相对误差；数值表15不作为几何证明。"
+      },
+      {
+        "series_id": "TOTAL",
+        "category": "P02",
+        "expected_value": 7020,
+        "observed_value": 7013.79,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 565,
+        "full_scale_error_percent": 0.086,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.14409,
+          0.33505,
+          0.14591,
+          0.6991
+        ],
+        "evidence_zh": "零水面y≈520，总边界圆点中心y≈1085，总深度约565px。",
+        "uncertainty_zh": "圆点中心及零线定位约±1px。"
+      },
+      {
+        "series_id": "TOTAL",
+        "category": "P14（细节图）",
+        "expected_value": 860,
+        "observed_value": 852.68,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 206.35,
+        "full_scale_error_percent": 0.732,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.79045,
+          0.51031,
+          0.79227,
+          0.64327
+        ],
+        "evidence_zh": "细节图0–1000刻度相隔约242px；P14附近总深度约206.35px。",
+        "uncertainty_zh": "取样距左端点约1px；斜边和抗锯齿带来约±2px定位不确定性。"
+      },
+      {
+        "series_id": "A",
+        "category": "P15（细节图）",
+        "expected_value": 69,
+        "observed_value": 66.96,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 16.21,
+        "full_scale_error_percent": 0.204,
+        "small_value_relative_error_percent": 2.95,
+        "bbox_xyxy_normalized": [
+          0.86727,
+          0.51031,
+          0.86909,
+          0.52075
+        ],
+        "evidence_zh": "x≈1910，上下界y≈792、808.2；按细节图标尺换算。",
+        "uncertainty_zh": "边界定位约±0.7–1px。"
+      },
+      {
+        "series_id": "B",
+        "category": "P15（细节图）",
+        "expected_value": 15,
+        "observed_value": 13.7,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 3.32,
+        "full_scale_error_percent": 0.13,
+        "small_value_relative_error_percent": 8.65,
+        "bbox_xyxy_normalized": [
+          0.86727,
+          0.52075,
+          0.86909,
+          0.52289
+        ],
+        "evidence_zh": "x≈1910，金层上下界y≈808.2、811.5，约3.3px。",
+        "uncertainty_zh": "约±0.7–1px误差区间包含目标15；点估计相对差不能当作确定失真。"
+      },
+      {
+        "series_id": "C",
+        "category": "P15（细节图）",
+        "expected_value": 112,
+        "observed_value": 112.4,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 27.2,
+        "full_scale_error_percent": 0.04,
+        "small_value_relative_error_percent": 0.36,
+        "bbox_xyxy_normalized": [
+          0.86727,
+          0.52289,
+          0.86909,
+          0.54041
+        ],
+        "evidence_zh": "x≈1910，蓝层上下界y≈811.5、838.7。",
+        "uncertainty_zh": "边界定位约±0.7–1px。"
+      },
+      {
+        "series_id": "D",
+        "category": "P15（细节图）",
+        "expected_value": 64,
+        "observed_value": 64.25,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 15.55,
+        "full_scale_error_percent": 0.025,
+        "small_value_relative_error_percent": 0.39,
+        "bbox_xyxy_normalized": [
+          0.86727,
+          0.54041,
+          0.86909,
+          0.55043
+        ],
+        "evidence_zh": "x≈1910，珊瑚层上下界y≈838.7、854.3。",
+        "uncertainty_zh": "边界定位约±0.7–1px。"
+      },
+      {
+        "series_id": "TOTAL",
+        "category": "P16（细节图）",
+        "expected_value": 190,
+        "observed_value": 187.87,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 45.47,
+        "full_scale_error_percent": 0.213,
+        "small_value_relative_error_percent": 1.12,
+        "bbox_xyxy_normalized": [
+          0.94364,
+          0.51031,
+          0.94545,
+          0.5396
+        ],
+        "evidence_zh": "细节图右端邻近P16的总深度约45.47px，下边界y≈837.5。",
+        "uncertainty_zh": "为避开裁剪边缘，取样距端点约2px；约±1px定位不确定性。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "P02大值海洋剖面",
+        "required_parts": [
+          "共同零水面",
+          "A青层",
+          "B金层",
+          "C蓝层",
+          "D珊瑚层",
+          "总深度下边界"
+        ],
+        "relationship": "A上缘接触水面，四层依次相接，最下缘代表同期总量。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.12,
+          0.333,
+          0.17,
+          0.702
+        ],
+        "evidence_zh": "x≈319处四个连续水纹色区清楚，C层最大；水面约y520，下边界约y1085。"
+      },
+      {
+        "category": "P08中间时期",
+        "required_parts": [
+          "共同零水面",
+          "四个来源层"
+        ],
+        "relationship": "四层在同一时期竖向相加，横向连接相邻时期。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.475,
+          0.333,
+          0.515,
+          0.585
+        ],
+        "evidence_zh": "层间接触顺序与图例一致，相邻时期以折线连接。"
+      },
+      {
+        "category": "P15–P16主图小值",
+        "required_parts": [
+          "水面",
+          "青层",
+          "极薄金层",
+          "蓝层",
+          "珊瑚层"
+        ],
+        "relationship": "四层压缩为水面下的狭窄连续带，金层位于A和C之间。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.902,
+          0.333,
+          0.965,
+          0.351
+        ],
+        "evidence_zh": "P15金色痕迹约1–2px，整体连接仍在，但该层内部水纹不能单独分辨。"
+      },
+      {
+        "category": "P15细节图小值",
+        "required_parts": [
+          "零水面",
+          "四个来源色层",
+          "3倍尺度说明"
+        ],
+        "relationship": "细节图保持四层接触、共同零面及声明的独立尺度。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.86,
+          0.509,
+          0.88,
+          0.553
+        ],
+        "evidence_zh": "B金带约3.3px，夹在A和C之间；框上注明3× vertical scale。"
+      },
+      {
+        "category": "游艇与数据水面",
+        "required_parts": [
+          "船体",
+          "舱楼与窗带",
+          "共同水面",
+          "下方海洋层"
+        ],
+        "relationship": "舱楼连接船体，船底接触水面，数据层位于水面下。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.664,
+          0.248,
+          0.88,
+          0.348
+        ],
+        "evidence_zh": "游艇部件完整，船底落在y≈520的零线上，没有遮盖右端小值层。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "旧真实年份、韩国ERP及具名来源改为16个有序合成时期和Plastic source A–D，不要求复制旧趋势。",
+      "output_added_or_lost_meaning_zh": "当前按期、按来源排放的统计口径完整；旧地区及来源名称未沿用属于输入适配。",
+      "visible_inscription_evidence_zh": "可见Plastic discharge into the ocean、Per-period discharge by plastic source、100 tonnes/period及Depth is a period total, not a running sum。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实年份与来源改为P01–P16及合成Plastic source A–D，并明确标示SYNTHETIC DATA。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前P02最高、末端很小，形成左深右浅轮廓；无需复制参考旧趋势。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "B/P15主图不足2px，限制相对精度验证；带独立标尺的细节图提高可辨性。"
+      }
+    ],
+    "measurement_coverage_zh": "共16项：主图P02及P08全部四层、P02总深度、最小正值B/P15；细节图P14总深度、P15四层及P16总深度。其余点位未逐项反推；全部64个分项和16个总值文字已转录核对。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "海水剖面、波纹与白色多层游艇均保留，船体、舱楼、窗带可辨。",
+      "data_adaptation_excluded_zh": "不比较旧来源名称、量值和涨跌方向；允许兼容游艇适配。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "两图均为右侧游艇船底接触横向水面，下方接续四色水下层。",
+      "data_adaptation_excluded_zh": "船朝向和大小属于允许的姿态及非数据尺寸适配。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "均以横向海洋剖面为主体；待评图页顶标题视觉权重增加，参考图的海洋更占主导。",
+      "data_adaptation_excluded_zh": "不因允许的标签外置或当前数据使右侧变浅扣分。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "保留水纹和写实游艇；参考高饱和绿蓝紫转为低饱和青、金、蓝、珊瑚，整体更规整。",
+      "data_adaptation_excluded_zh": "不将当前数据轮廓、线性折线及更新文字视为材质错误。"
+    }
+  }
+}
