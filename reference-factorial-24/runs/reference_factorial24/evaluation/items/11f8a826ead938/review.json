@@ -1,0 +1,295 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为五个黑色侧视水龙头、青色竖直水流及末端飞溅，右下有水资源说明及灰色足迹。成图保留五个同尺度黑色龙头及同高出水口，改用写实材质；A长、B中长、C短，D很短，E仅细青线。五个区域与精确数值对应清楚，年度水资源标题、SYNTHETIC DATA及单位定义可读。E的飞溅形态不能辨清。",
+  "summary_zh": "通过。五类数值、绑定和线性端点符合要求，生成素材实质用于主体。最小水流的飞溅辨识受像素限制，另记为部分保留。已保存并通过 schema 校验的 review.json；未运行 submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "测量指定image.png（1800×2190）。零线约y=720，9000刻度约y=2000，满量程1280px。以青色色差筛选水体并排除灰色引导线，读取最后有色行外缘。A–D报告像素近似折算；约1px边界不确定性相当于7.03125 Gm³/year。E只报告像素支撑，不把抗锯齿颜色视为精确覆盖率。源码仅作旁证。",
+  "uncertainties_zh": "E仅约2–3行像素，不能支持精确的小值相对误差或独立飞溅形态判断。D也有相对量化不确定性。要求允许飞溅收缩且不设最小流长，因此不构成已证实的量值错误或任务不可行。本次未核验capture_render.py执行历史，未检查日志或重渲染。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "五个龙头、Region A–E、单一年度水资源系列、五个端点数值、单位、0–9000标尺及SYNTHETIC DATA完整。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "8,100、1,712.941447、362.243012、76.60507、16.2均正确；500×及除法说明正确。Gm³/year明确释为十亿立方米/年。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "区域标签对应各自龙头，数值邻近端点；D、E通过浅灰虚线绑定，没有交叉或错绑。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "实测满量程1280px，A–D跨度约1152、244、52、11px，近似满量程误差均小于0.04%。E约2–3px，与目标2.304px相容，远小于3%容差；其精确相对误差不可测。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始素材中的龙头轮廓、金属纹理、水纹和飞溅对应成图主体；素材清单及render.py佐证实际合成使用和数据控制。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "水体直接接触向下的出水嘴，落水底边承载量值；未见悬空、跨列或遮断。E的细青线仍与出水嘴接触。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、合成提示、区域、精确数值和单位清晰；读图说明明确共同线性尺度及水宽、飞溅面积不编码，无明显裁切或遮挡。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "五个龙头把手、阀杆、管体和弯嘴连接完整。A–C水柱及飞溅清楚，D保留微小展开；E不能独立辨认水柱与飞溅两部分。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "标题、年度体积说明、合成区域说明和单位定义完整表达主题、指标、单位与区域角色。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留龙头出水比较年度水资源的核心意义；原真实国家比较及缺水预测改为合成区域和500×比较，属于允许的输入改编。"
+    },
+    "small_mark_visibility": {
+      "status": "partial",
+      "evidence_zh": "D约11px，仍有短水体及侧向展开；E为两个明显青色行及一个浅色混合行，正值可见，但飞溅形态和连续端点精度不能独立确认。"
+    }
+  },
+  "semantic_attribution_zh": "主题、区域角色、指标和单位完整。原国家统计叙事的变化归于输入合成改编，流长变化归于当前数据。E的飞溅辨识限制归于分辨率，不是已证实的数值错误或主题遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "annual_renewable_water",
+        "category": "Region A",
+        "expected_value": 8100,
+        "observed_value": 8100,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1152,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": 0,
+        "bbox_xyxy_normalized": [
+          0.162222,
+          0.328767,
+          0.251111,
+          0.854795
+        ],
+        "evidence_zh": "水色从y=720至1871，下一行无水色；外缘跨度约1152px，按实测标尺折算。",
+        "uncertainty_zh": "像素外缘近似，约1px量化不确定性；不证明亚像素精度。"
+      },
+      {
+        "series_id": "annual_renewable_water",
+        "category": "Region B",
+        "expected_value": 1712.941447,
+        "observed_value": 1715.625,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 244,
+        "full_scale_error_percent": 0.029817,
+        "small_value_relative_error_percent": 0.156663,
+        "bbox_xyxy_normalized": [
+          0.337222,
+          0.328767,
+          0.426111,
+          0.440183
+        ],
+        "evidence_zh": "水体末行y=963，下一行无水色；跨度约244px，末端飞溅与水柱相接。",
+        "uncertainty_zh": "折算使用栅格外缘，有约1px边界不确定性。"
+      },
+      {
+        "series_id": "annual_renewable_water",
+        "category": "Region C",
+        "expected_value": 362.243012,
+        "observed_value": 365.625,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 52,
+        "full_scale_error_percent": 0.037578,
+        "small_value_relative_error_percent": 0.933624,
+        "bbox_xyxy_normalized": [
+          0.517222,
+          0.328767,
+          0.596111,
+          0.352511
+        ],
+        "evidence_zh": "末行y=771，下一行无水色；跨度约52px，可辨两侧展开的飞溅。",
+        "uncertainty_zh": "像素外缘近似，约1px量化不确定性。"
+      },
+      {
+        "series_id": "annual_renewable_water",
+        "category": "Region D",
+        "expected_value": 76.60507,
+        "observed_value": 77.34375,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 11,
+        "full_scale_error_percent": 0.008208,
+        "small_value_relative_error_percent": 0.96427,
+        "bbox_xyxy_normalized": [
+          0.716667,
+          0.328767,
+          0.745,
+          0.33379
+        ],
+        "evidence_zh": "末行y=730，下一行无水色；跨度约11px，底部有微小侧向展开。",
+        "uncertainty_zh": "约1px边界不确定性对该小值的相对精度影响明显，所列误差仅为栅格近似。"
+      },
+      {
+        "series_id": "annual_renewable_water",
+        "category": "Region E",
+        "expected_value": 16.2,
+        "observed_value": null,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 3,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.897778,
+          0.328767,
+          0.913333,
+          0.330137
+        ],
+        "evidence_zh": "y=720、721为明显青色，722为浅色混合行，723无水色；连续长度约2–3px，目标按实测标尺为2.304px。",
+        "uncertainty_zh": "末行颜色混合与水纹共同影响像素值，无法独立还原连续端点；不将3行支撑直接折算为真实量值或相对误差。"
+      },
+      {
+        "series_id": "derived_max_min_ratio",
+        "category": "Region A / Region E",
+        "expected_value": 500,
+        "observed_value": 500,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.361111,
+          0.550228,
+          0.7,
+          0.714612
+        ],
+        "evidence_zh": "可见500×、Region A compared with Region E及8,100 ÷ 16.2 = 500，与输入相符。",
+        "uncertainty_zh": "属于直接文字编码，没有独立几何尺度。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Region A（大值）",
+        "required_parts": [
+          "横把手",
+          "阀杆和管体",
+          "向下出水嘴",
+          "水柱",
+          "末端飞溅"
+        ],
+        "relationship": "把手、阀杆、管体和弯嘴连续连接；水柱接触出水嘴并延至飞溅，飞溅位于底边上方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.087778,
+          0.259361,
+          0.252222,
+          0.855708
+        ],
+        "evidence_zh": "水体由约y=720连续至1872外缘，底部两侧展开并有上扬水滴，无可见断接。"
+      },
+      {
+        "category": "Region C（内部值）",
+        "required_parts": [
+          "黑色龙头",
+          "短水柱",
+          "终端飞溅"
+        ],
+        "relationship": "短水柱接出水嘴，并接入左右展开的飞溅；底边承担量值。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.437778,
+          0.259361,
+          0.597222,
+          0.353425
+        ],
+        "evidence_zh": "约52px总落差内可区分水柱、飞溅和底边，水花未越过端点。"
+      },
+      {
+        "category": "Region D（小值）",
+        "required_parts": [
+          "黑色龙头",
+          "短水体",
+          "收缩飞溅"
+        ],
+        "relationship": "水体接触出水嘴，飞溅压缩在终点以上，标签引线在水体下方分离。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.612778,
+          0.259361,
+          0.746667,
+          0.335616
+        ],
+        "evidence_zh": "y=720–730有约11px青色区域，底部略向两侧展开；下方灰色虚线不是水流。"
+      },
+      {
+        "category": "Region E（最小正值）",
+        "required_parts": [
+          "黑色龙头",
+          "细小水体",
+          "终端飞溅"
+        ],
+        "relationship": "出水嘴与细青线接触可见；水柱与飞溅的独立连接形态不可辨。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.787778,
+          0.259361,
+          0.92,
+          0.331507
+        ],
+        "evidence_zh": "完整龙头下仅约x=1616–1643、y=720–722的青色像素，不能辨出独立水滴或侧向飞溅。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "五个合成区域及当前数值替换参考国家统计；允许流长变化、飞溅收缩和标签调整，不要求复述原排名或缺水预测。",
+      "output_added_or_lost_meaning_zh": "保留以水流长度比较资源的关系，新增正确的500倍比较。原缺水预测未复用属于允许改编；E的独立飞溅形态受分辨率限制。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；Annual renewable water resources；Annual volume across five synthetic regions；Gm³/year = billion cubic metres per year；Region A–E；0–9,000 Gm³/year；Width and splash area do not encode volume。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "输入和成图均明确为合成区域数据，没有将参考真实统计冒充当前数据。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前数值由8100降至16.2，流长随之缩短，端点符合当前标尺。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小目标长度2.304px，实际仅约2–3行像素，限制飞溅辨识和连续端点测量。"
+      }
+    ],
+    "measurement_coverage_zh": "单一线性水流通道覆盖全部五类，另检查500×直接文字编码；全部必需类别、数值和单位逐一核对。水宽、飞溅面积及文字尺寸不作为量值通道。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "五个T形把手、侧向进水管和向下弯嘴保留；参考右下灰色足迹未保留。",
+      "data_adaptation_excluded_zh": "不计区域名与数据改变，不要求复用原国家。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "五个同尺度龙头横排、同向侧视、同高向下出水，部件连接关系保留。",
+      "data_adaptation_excluded_zh": "不计水流缩短、获准的飞溅收缩和标签位置调整。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留上部横排龙头、竖直水流及右下文字区域；标题与500×比较明显放大，原说明层级改变。",
+      "data_adaptation_excluded_zh": "不计新值造成的留白、旧排名和国家标签替换。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "黑色、青色及浅底配色保留；平面剪影改为高光写实金属及有纹理的水流。",
+      "data_adaptation_excluded_zh": "不计数据长度、允许调整的非数据宽度和飞溅大小。"
+    }
+  }
+}
