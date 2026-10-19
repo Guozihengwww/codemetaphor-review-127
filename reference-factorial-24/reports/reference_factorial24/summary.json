@@ -1,24 +1,22 @@
 {
-  "updated_at": "2026-10-19T17:22:50.273304+00:00",
+  "updated_at": "2026-10-19T17:41:51.263085+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
     "planned_trials": 96,
     "generation": {
-      "ok": 94,
-      "running": 1,
-      "pending": 1
+      "ok": 96
     },
     "evaluations": {
-      "ok": 87,
-      "pending": 74,
-      "technical_failure": 1
+      "ok": 88,
+      "pending": 77,
+      "running": 1
     },
     "final_second_evaluations": {
-      "pending": 94
+      "pending": 96
     },
     "routing_audits": {
-      "verified": 94
+      "verified": 96
     },
     "routing_gate_passed": true
   },
@@ -88,63 +86,63 @@
       },
       "a1g0": {
         "numeric_supported": {
-          "image_quality_pass": 14,
-          "verified_system_pass": 14,
+          "image_quality_pass": 15,
+          "verified_system_pass": 15,
           "planned": 24,
-          "assessed": 15
+          "assessed": 16
         },
         "critical_structure": {
           "image_quality_pass": 12,
           "verified_system_pass": 12,
           "planned": 24,
-          "assessed": 15
+          "assessed": 16
         },
         "semantic_meaning": {
-          "image_quality_pass": 14,
-          "verified_system_pass": 14,
+          "image_quality_pass": 15,
+          "verified_system_pass": 15,
           "planned": 24,
-          "assessed": 15
+          "assessed": 16
         },
         "reference_meaning": {
           "image_quality_pass": 3,
           "verified_system_pass": 3,
           "planned": 24,
-          "assessed": 15
+          "assessed": 16
         },
         "small_mark_visibility": {
           "image_quality_pass": 10,
           "verified_system_pass": 10,
           "planned": 24,
-          "assessed": 15
+          "assessed": 16
         },
         "joint_supported": {
           "image_quality_pass": 11,
           "verified_system_pass": 11,
           "planned": 24,
-          "assessed": 15
+          "assessed": 16
         },
         "joint_visible_supported": {
           "image_quality_pass": 8,
           "verified_system_pass": 8,
           "planned": 24,
-          "assessed": 15
+          "assessed": 16
         },
         "reference_fidelity": {
           "nondata_identity": {
-            "mean": 3.4,
-            "assessed_applicable": 15
+            "mean": 3.4375,
+            "assessed_applicable": 16
           },
           "nondata_pose_relations": {
-            "mean": 3.6,
-            "assessed_applicable": 15
+            "mean": 3.625,
+            "assessed_applicable": 16
           },
           "composition_hierarchy": {
-            "mean": 2.8,
-            "assessed_applicable": 15
+            "mean": 2.8125,
+            "assessed_applicable": 16
           },
           "material_style": {
-            "mean": 2.466666666666667,
-            "assessed_applicable": 15
+            "mean": 2.5,
+            "assessed_applicable": 16
           }
         }
       },
@@ -42031,19 +42029,243 @@
         "pixel_identical": true,
         "returncode": 0
       },
-      "quality": "unreviewed",
+      "quality": "pass",
       "execution": "ok",
-      "review": null,
-      "primary_system_success": false,
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.94,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为暖米色海报：切片面包在左、印有肖像与£10的纸钞在右，二者竖直边界相邻，中间白缝，下有接触阴影和倒影；顶部Food for thought…及丢弃三分之一的文字，底部年度£400及劝导文字。待评图为暖米色竖版：主标题面包与纸钞、副标题合成年度食品预算损耗，SYNTHETIC DATA醒目；Used与Wasted分别标£1,497.00598802、£2.99401198及约99.8004%、0.1996%，单位GBP per household per year可读。面包横跨主体，右端纸钞仅为细竖条，红色引线指向该处；右下接缝细节标横向放大80×，可见面包纹理、白缝、印有人像的纸钞。底部图例明确面包对应Used、纸钞对应Wasted，总额£1,500。",
+        "summary_zh": "数值、类别绑定、单位与主体净宽比例符合要求，生成素材实质构成面包和纸钞。主图微小纸钞的身份仅部分可辨，明确标注的80×接缝细节补充了纸张及接触关系；未发现需判失败的可见缺陷。",
+        "issues": [],
+        "measurement_notes_zh": "在1440×2040原图上独立检查边界与像素：面包水平跨度约1218 px；主图纸钞在x=1328至1330留下约3列有色像素，包含反走样，不能等同于3 px有效净宽。细节框纸钞约194±1 px，按可见80×标注逆变换为2.425±0.013 px；与面包跨度合并估算份额。以下误差为近似端点的中心估计。源码另推导主体宽约1217.565/2.435 px，仅作佐证，未用生成者自检结果替代像素检查。",
+        "uncertainties_zh": "主图纸钞仅约2至3 px，无法独立恢复其亚像素有效宽及纹样。细节框采用同一映射的预栅格放大，能检查该视口的几何，不能保证主图小值的相对精度；逆变换份额估计约有0.6%的小值相对测量不确定性。按限制未读取运行日志或生成者自检结果，因此每次capture_render.py归档的流程事实未核验。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "Used、Wasted两类及Current measure系列齐全；两项金额、份额、£1,500总额、每户每年单位和SYNTHETIC DATA均可见，无额外必需面板。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "可读金额为£1,497.00598802及£2.99401198；约99.8004%和0.1996%与数据计算一致，正小值未显示为零，总额£1,500正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "图例明确面包→Used、纸钞→Wasted；各金额位于对应类别下，Wasted引线指向主图右端细纸钞，未发生类别交换。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "大面包约1218 px，微小纸钞约2至3 px，净宽比在3个百分点容差内。细节框纸钞194 px/80≈2.425 px，结合面包实测估计Wasted约0.1987%，目标0.1996%；白缝、阴影及标签不计入。主图小值精度另保留不确定性。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png与raw_02.png：面包切片、烘烤纹理及男性雕版肖像与成图对应。prepare_assets.py处理这些素材，render.py读取数据并控制两主体宽度、文字及细节视口；素材构成主视觉。归档执行记录未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "面包和纸钞承担左右净宽编码，保留相邻竖向边界、白缝、共底及柔和底部阴影；细节框纸钞左缘暗边可见。未见破坏结构的遮挡、错层或表面错位。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "当前主题、指标、类别、八位小数金额、百分比、总额、单位及合成说明均清晰完整；80×与纵向不放大说明明确，没有文字相互覆盖。"
+          },
+          "critical_structure": {
+            "status": "partial",
+            "evidence_zh": "主图保留完整面包、右侧细纸钞、窄白缝和共同底边；纸钞自身的纸面与人像在主图无法辨认。细节框可见面包纹理—白缝—纸钞及暗接触边，恢复了部件关系，主图结构可辨性仍有限。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "副标题说明合成年度食品预算损耗；Current measure、每户每年食品预算及GBP per household per year交代指标口径。Used/Wasted和物象图例清楚，份额分母为本系列年度预算合计。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留面包与金钱相接表达食品损耗的关联。参考的丢弃三分之一、年度£400及公共劝导文字被当前合成预算指标替换，这是冻结输入明确要求的主题与统计适配，非输出遗漏错误。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "主图x≈1328至1330的细带可定位且未消失，金额与引线清晰；不能仅靠该细带辨认纸钞纹样。80×细节框补足纸钞身份和接缝，未将主图小值人为抬高。"
+          }
+        },
+        "semantic_attribution_zh": "旧真实统计与劝导语义的变化归于允许的输入适配。纸钞大幅缩窄归于当前0.1996%份额；主图纸面纹样不可辨归于分辨率限制，细节框保留相关关系。未发现当前主题、单位或类别角色的输出遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "annual_food_budget",
+              "category": "Used",
+              "expected_value": 1497.00598802,
+              "observed_value": 1497.0195,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 1218,
+              "full_scale_error_percent": 0.0009,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.076389,
+                0.395098,
+                0.922222,
+                0.626471
+              ],
+              "evidence_zh": "主图面包水平边界约x=110至1328，跨度约1218 px。结合独立测得的细节框纸钞194/80=2.425 px，净宽分母约1220.425 px，反算Used约£1497.0195。",
+              "uncertainty_zh": "面包端点约±1 px；分母含细节视口逆变换。数值与误差仅为近似边界的中心估计，并非达到所列小数位的测量精度。"
+            },
+            {
+              "series_id": "annual_food_budget",
+              "category": "Wasted（80×细节视口）",
+              "expected_value": 2.99401198,
+              "observed_value": 2.9805,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 194,
+              "full_scale_error_percent": 0.0009,
+              "small_value_relative_error_percent": 0.45,
+              "bbox_xyxy_normalized": [
+                0.797917,
+                0.736275,
+                0.933333,
+                0.902941
+              ],
+              "evidence_zh": "细节框纸钞主体约x=1150至1344，水平宽194±1 px；按图上80×逆变换为2.425 px。与面包实测宽合并，份额约0.1987%、金额约£2.9805，目标0.1996%、£2.99401198。",
+              "uncertainty_zh": "边框及反走样造成约1 px边界误差，小值相对测量不确定性约0.6%；0.45%为中心估计。此放大视口不能证明主图亚像素净宽具有相同精度。"
+            },
+            {
+              "series_id": "annual_food_budget",
+              "category": "Wasted（主图最小正标记）",
+              "expected_value": 2.99401198,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 3,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.922222,
+                0.439216,
+                0.924306,
+                0.626471
+              ],
+              "evidence_zh": "主图y=1050、1100、1150、1200、1250各行均可见x=1328至1330的红褐像素，x=1331基本恢复背景；标记约占3列，未被吞没。",
+              "uncertainty_zh": "这3列包含混色及反走样，不能直接作为3 px实心净宽反算金额，因此主图独立观测值和误差置null。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Used大主体",
+              "required_parts": [
+                "完整面包外轮廓",
+                "连续切片与面包皮",
+                "底面",
+                "地面阴影与倒影"
+              ],
+              "relationship": "切片组成同一面包，面包底部接地；右端朝向纸钞接缝。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.076389,
+                0.395098,
+                0.924306,
+                0.664216
+              ],
+              "evidence_zh": "主图左端圆弧、上方烘烤面包皮及连续切片可见，底边下有浅阴影和倒影，未见主体断裂。"
+            },
+            {
+              "category": "Wasted微小主体及主接缝",
+              "required_parts": [
+                "纸钞细带",
+                "面包右缘",
+                "窄白缝",
+                "共同底边"
+              ],
+              "relationship": "纸钞位于面包右侧，白缝隔开两主体，二者下缘处于同一基底。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.919444,
+                0.439216,
+                0.926389,
+                0.631373
+              ],
+              "evidence_zh": "可见面包右缘旁的浅色缝和红褐细带，下端与面包对齐；约2至3 px宽不足以在主图中辨认纸张纹样或人像。"
+            },
+            {
+              "category": "放大接缝关系",
+              "required_parts": [
+                "面包边缘纹理",
+                "白缝",
+                "纸钞纸面与肖像",
+                "纸钞左侧暗边"
+              ],
+              "relationship": "从左至右依次为面包纹理、白缝、纸钞；纸钞左缘保留接触明暗。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.604861,
+                0.736275,
+                0.933333,
+                0.902941
+              ],
+              "evidence_zh": "细节框内纸面、£符号及雕版肖像可辨，左边暗缘毗邻白缝；近白核心约63列，连同边缘过渡约64 px，符合主图约0.8 px缝的80×横向放大。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结brief/core明确将参考替换为合成年度食品预算损耗，并以当前金额控制Used/Wasted宽比；允许随数据调整姿态、非数据厚度与排版。",
+            "output_added_or_lost_meaning_zh": "保留食品与金钱损耗的联系，显示年度预算两类份额；不再展示参考的旧真实统计或公共行动劝导，属于输入适配。新增细节框说明微小纸钞，没有引入新类别或第二份预算。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA；合成年度食品预算损耗；Current measure；每户每年食品预算 / GBP per household per year；Used 已使用；Wasted 损耗；主体净宽合计=100%；接缝细节·横向放大80×。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "当前合成预算主题与数值由brief/data/core指定，替代参考三分之一与£400的旧统计。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "Used约99.8004%、Wasted约0.1996%，因此主图表现为宽面包与极细纸钞，方向与冻结净宽编码一致。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "主图纸钞仅约2至3 px，纸面细节不能直接辨认；明确标注的放大框恢复纸张、人像及白缝关系。"
+            }
+          ],
+          "measurement_coverage_zh": "本图只有一个年度预算系列、两个量化主体；覆盖最大Used、最小正值Wasted及对应放大视口。不存在第三个内部类别；细节框不是独立统计面板。另逐项核对全部类别、金额、份额、总额、单位与必需说明。未测主图纸钞无法从合成像素分离的亚像素有效宽。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均有写实切片面包及带肖像的纸钞，纸钞在待评图细节框中清晰可辨。",
+            "data_adaptation_excluded_zh": "不扣除小金额导致主图纸钞极窄、面包变宽，以及纸钞具体肖像和面额的适配。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "面包在左、纸钞在右，保留竖向白缝、相邻底边及底部倒影；待评图主图纸钞过细，接触细节需放大框辅助。",
+            "data_adaptation_excluded_zh": "排除数据驱动宽度变化、允许的非数据厚度与姿态调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方标题、中部占主导的面包纸钞物象、下方年度金额说明；待评图增加两列数值、细节框及图例，版面层次较参考复杂。",
+            "data_adaptation_excluded_zh": "不扣除更新语义标签、合成数据提示及为微小值增加的细节说明。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "均为暖米色底、黑色粗体标题、写实烘烤面包与雕版人像纸钞、柔和倒影；待评图更明亮清晰，采用棕红强调文字及细线分区。",
+            "data_adaptation_excluded_zh": "不扣除几何缩放带来的细节框水平拉伸，以及允许的纸钞非数据纹样变化。"
+          }
+        }
+      },
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/039e1c9067d4e0",
-      "numeric_supported": null,
-      "joint_supported": null,
-      "critical_structure": "unreviewed",
-      "semantic_meaning": "unreviewed",
-      "reference_meaning": "unreviewed",
-      "small_mark_visibility": "unreviewed",
+      "numeric_supported": true,
+      "joint_supported": false,
+      "critical_structure": "partial",
+      "semantic_meaning": "pass",
+      "reference_meaning": "partial",
+      "small_mark_visibility": "partial",
       "joint_system_success": false,
       "confirmed_semantic_or_data_failure": false,
       "factor_audit": {
@@ -42100,6 +42322,190 @@
         "planner_direct_image_calls": 0,
         "attempted_image_requests": 2,
         "successful_image_calls": 2,
+        "image_calls_with_original_reference": 0,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F24",
+      "source_case": "M043",
+      "name": "面包与纸钞：合成年度食品预算损耗",
+      "conflict_type": "numeric_range",
+      "trial": "T055",
+      "condition": "a0g1",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "27791212597241",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/27791212597241",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": false,
+        "image_reference_assigned": true,
+        "agent_reference_view_count": 0,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 1,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F24",
+      "source_case": "M043",
+      "name": "面包与纸钞：合成年度食品预算损耗",
+      "conflict_type": "numeric_range",
+      "trial": "T055",
+      "condition": "a0g1",
+      "stage": "final",
+      "round": 2,
+      "image_available": true,
+      "review_id": "be3b66d3385553",
+      "reproduction": {
+        "round": 2,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/be3b66d3385553",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": false,
+        "image_reference_assigned": true,
+        "agent_reference_view_count": 0,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 1,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F24",
+      "source_case": "M043",
+      "name": "面包与纸钞：合成年度食品预算损耗",
+      "conflict_type": "numeric_range",
+      "trial": "T051",
+      "condition": "a0g0",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "32cec16ec4c415",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/32cec16ec4c415",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": false,
+        "image_reference_assigned": false,
+        "agent_reference_view_count": 0,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 0,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F24",
+      "source_case": "M043",
+      "name": "面包与纸钞：合成年度食品预算损耗",
+      "conflict_type": "numeric_range",
+      "trial": "T051",
+      "condition": "a0g0",
+      "stage": "final",
+      "round": 2,
+      "image_available": true,
+      "review_id": "e3041a3207dbc6",
+      "reproduction": {
+        "round": 2,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/e3041a3207dbc6",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": false,
+        "image_reference_assigned": false,
+        "agent_reference_view_count": 0,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
         "image_calls_with_original_reference": 0,
         "violations": [],
         "external_image_views": [],
@@ -43051,13 +43457,24 @@
       "parent_terminated_after_receipt": true
     },
     "T055": {
-      "status": "running",
+      "status": "ok",
       "role": "planner",
-      "started_at": "2026-10-19T17:18:53.518429+00:00",
-      "timeout_seconds": 2100
+      "error": "",
+      "completed_at": "2026-10-19T17:32:55.946827+00:00",
+      "elapsed_seconds": 842.43,
+      "cli_returncode": 0,
+      "model_verified": true,
+      "parent_terminated_after_receipt": true
     },
     "T051": {
-      "status": "pending"
+      "status": "ok",
+      "role": "planner",
+      "error": "",
+      "completed_at": "2026-10-19T17:41:43.924619+00:00",
+      "elapsed_seconds": 736.3,
+      "cli_returncode": 0,
+      "model_verified": true,
+      "parent_terminated_after_receipt": true
     }
   },
   "factor_audits": {
@@ -44278,6 +44695,32 @@
       "planner_direct_image_calls": 0,
       "attempted_image_requests": 2,
       "successful_image_calls": 2,
+      "image_calls_with_original_reference": 0,
+      "violations": [],
+      "external_image_views": [],
+      "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+    },
+    "T055": {
+      "status": "verified",
+      "agent_reference_assigned": false,
+      "image_reference_assigned": true,
+      "agent_reference_view_count": 0,
+      "planner_direct_image_calls": 0,
+      "attempted_image_requests": 1,
+      "successful_image_calls": 1,
+      "image_calls_with_original_reference": 1,
+      "violations": [],
+      "external_image_views": [],
+      "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+    },
+    "T051": {
+      "status": "verified",
+      "agent_reference_assigned": false,
+      "image_reference_assigned": false,
+      "agent_reference_view_count": 0,
+      "planner_direct_image_calls": 0,
+      "attempted_image_requests": 1,
+      "successful_image_calls": 1,
       "image_calls_with_original_reference": 0,
       "violations": [],
       "external_image_views": [],
