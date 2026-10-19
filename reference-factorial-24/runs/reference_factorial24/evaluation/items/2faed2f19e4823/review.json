@@ -1,0 +1,461 @@
+{
+  "verdict": "minor",
+  "confidence": 0.94,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为左右堆叠柱，中央是灰色光盘、右向弯箭头和手机。最终图为米白双屏掌机，两幅柱图包含于深色屏幕内，机壳、按键、摇杆和肩键清楚。标题、合成数据标识、图例、单位、20个系列值和8个合计可读；小PC段保留青色色带。原光盘至手机的方向关系未保留。",
+  "summary_zh": "数据、标签、量尺及素材使用符合要求；参考中央方向图示及其与双图的关系仅部分保留。review.json 已保存并通过 schema 校验；未运行 submit.py。",
+  "issues": [
+    {
+      "category": "metaphor_integration",
+      "severity": "minor",
+      "requirement_id": "M6",
+      "expected_zh": "允许按当前数据适配姿态和排版，同时保留参考物体与双图的原有并置或叠合关系。",
+      "observed_zh": "参考中央光盘经箭头指向手机的图示被双屏掌机替代，两个图表由图示两侧并列变为屏内包含。",
+      "evidence_zh": "参考图约x375–586、y152–251可见光盘、箭头和手机；最终图约x50–1947、y473–1093为连体掌机。冻结文本未逐一指名这些对象，故记录部分保留，不判重大失败。",
+      "bbox_xyxy_normalized": [
+        0.025,
+        0.332,
+        0.974,
+        0.767
+      ]
+    }
+  ],
+  "measurement_notes_zh": "在2000×1425原图上测量柱内颜色50%过渡边界，以可见网格校准：支出0–18约349.22px，销量0–300约347.78px。全部20段最大满量程误差约0.15%，低于3%；时期中心间距约131px。源码仅作佐证。",
+  "uncertainties_zh": "边界和网格定位约±1px，对最小0.4段相当于约13%的相对定位不确定度，不能保证亚像素精度。参考结构要求使用概括文字，因此对象替换按次要偏离处理。依限制未核验每次渲染的capture_render.py归档执行历史。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "两面板各有四期；支出12段、销量8段，全部系列值、同期合计、图例、单位和合成标识可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "20个值逐项正确。支出合计14.8/16.7/17.2/16.4，销量188/245/268/288；增加1.6、100及+10.8%、+53.2%均正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "橙色主机实体版位于底部，青色PC实体版在其上，支出另有灰蓝其他形式顶段；外置小值标签绑定清楚。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "固定独立量尺、零基线、堆叠顺序和等距时期正确；20段像素测量均在满量程3%容差内。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看原始及处理后素材，机壳、控件和阴影与最终主体一致；render.py显式贴图并按数据计算柱段边界及文字。归档历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "柱图完整包含于左右屏框内，表面方向一致，未覆盖机壳接缝和控件；参考关系变化单列为次要问题。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "必要标题、图例、单位、时期、数值和统计口径均可读，没有明显裁切或相互遮挡。"
+    },
+    "critical_structure": {
+      "status": "partial",
+      "evidence_zh": "游戏设备与双面板关联明确，控件连接机壳、屏框包含柱图；原光盘—箭头—手机及其居中并置结构未保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "游戏销售形式、合成四期、消费支出与实体销量、独立单位及系列统计角色均明确；脚注区分两面板口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留按销售形式比较支出与销量的语义。旧年份、真实统计和原趋势属于允许适配；原光盘向手机的方向图示缺失。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "最小支出PC段约7.54px，连续夹于上下段之间；最小销量PC段约15.27px，接触橙段顶部。均可见且有准确标签。"
+    }
+  },
+  "semantic_attribution_zh": "合成时期、新标题及当前走势属于允许的输入适配。原方向图示和并置关系的缺失属于输出替换，当前统计角色未丢失。小色带存在分辨率导致的定位不确定度，但仍可辨，未发现人为抬高。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "consumer_spend_other_formats",
+        "category": "Year 1",
+        "expected_value": 7.6,
+        "observed_value": 7.6,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 147.46,
+        "full_scale_error_percent": 0.002,
+        "small_value_relative_error_percent": 0.01,
+        "bbox_xyxy_normalized": [
+          0.221,
+          0.469,
+          0.256,
+          0.572
+        ],
+        "evidence_zh": "颜色过渡边界约y667.77–815.23；使用支出面板可见量尺换算。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      },
+      {
+        "series_id": "consumer_spend_pc_physical",
+        "category": "Year 1",
+        "expected_value": 0.4,
+        "observed_value": 0.389,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 7.54,
+        "full_scale_error_percent": 0.062,
+        "small_value_relative_error_percent": 2.78,
+        "bbox_xyxy_normalized": [
+          0.221,
+          0.572,
+          0.256,
+          0.577
+        ],
+        "evidence_zh": "青色带边界约y815.23–822.77；独立像素估计接近0.4。",
+        "uncertainty_zh": "约±1px；对此小段相对定位不确定度约13%，不保证亚像素精度。"
+      },
+      {
+        "series_id": "consumer_spend_pc_physical",
+        "category": "Year 3",
+        "expected_value": 0.7,
+        "observed_value": 0.684,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 13.27,
+        "full_scale_error_percent": 0.088,
+        "small_value_relative_error_percent": 2.26,
+        "bbox_xyxy_normalized": [
+          0.352,
+          0.53,
+          0.3865,
+          0.539
+        ],
+        "evidence_zh": "青色带边界约y755.23–768.50。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      },
+      {
+        "series_id": "consumer_spend_console_physical",
+        "category": "Year 3",
+        "expected_value": 9.6,
+        "observed_value": 9.624,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 186.72,
+        "full_scale_error_percent": 0.134,
+        "small_value_relative_error_percent": 0.25,
+        "bbox_xyxy_normalized": [
+          0.352,
+          0.539,
+          0.3865,
+          0.67
+        ],
+        "evidence_zh": "橙段从约y768.50延伸至零基线y955.22。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      },
+      {
+        "series_id": "consumer_spend_other_formats",
+        "category": "Year 4",
+        "expected_value": 5.2,
+        "observed_value": 5.192,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 100.73,
+        "full_scale_error_percent": 0.045,
+        "small_value_relative_error_percent": 0.15,
+        "bbox_xyxy_normalized": [
+          0.4175,
+          0.447,
+          0.452,
+          0.518
+        ],
+        "evidence_zh": "灰蓝段边界约y636.77–737.50。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      },
+      {
+        "series_id": "consumer_spend_console_physical",
+        "category": "Year 4",
+        "expected_value": 10.4,
+        "observed_value": 10.411,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 201.99,
+        "full_scale_error_percent": 0.062,
+        "small_value_relative_error_percent": 0.11,
+        "bbox_xyxy_normalized": [
+          0.4175,
+          0.529,
+          0.452,
+          0.67
+        ],
+        "evidence_zh": "橙段从约y753.23延伸至零基线y955.22。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      },
+      {
+        "series_id": "physical_unit_sales_pc_physical",
+        "category": "Year 1",
+        "expected_value": 13,
+        "observed_value": 13.173,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 15.27,
+        "full_scale_error_percent": 0.058,
+        "small_value_relative_error_percent": 1.33,
+        "bbox_xyxy_normalized": [
+          0.565,
+          0.516,
+          0.6,
+          0.527
+        ],
+        "evidence_zh": "青色带约y735.50–750.77；使用销量面板347.78px满量程换算。",
+        "uncertainty_zh": "边界与网格定位约±1px，约合±0.86百万份。"
+      },
+      {
+        "series_id": "physical_unit_sales_console_physical",
+        "category": "Year 1",
+        "expected_value": 175,
+        "observed_value": 175.119,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 203.01,
+        "full_scale_error_percent": 0.04,
+        "small_value_relative_error_percent": 0.07,
+        "bbox_xyxy_normalized": [
+          0.565,
+          0.527,
+          0.6,
+          0.669
+        ],
+        "evidence_zh": "橙段约y750.77–953.78。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      },
+      {
+        "series_id": "physical_unit_sales_pc_physical",
+        "category": "Year 3",
+        "expected_value": 24,
+        "observed_value": 24.152,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 28,
+        "full_scale_error_percent": 0.051,
+        "small_value_relative_error_percent": 0.63,
+        "bbox_xyxy_normalized": [
+          0.696,
+          0.451,
+          0.7305,
+          0.471
+        ],
+        "evidence_zh": "青色带约y642.77–670.77。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      },
+      {
+        "series_id": "physical_unit_sales_console_physical",
+        "category": "Year 3",
+        "expected_value": 244,
+        "observed_value": 244.128,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 283.01,
+        "full_scale_error_percent": 0.043,
+        "small_value_relative_error_percent": 0.05,
+        "bbox_xyxy_normalized": [
+          0.696,
+          0.471,
+          0.7305,
+          0.669
+        ],
+        "evidence_zh": "橙段约y670.77–953.78。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      },
+      {
+        "series_id": "physical_unit_sales_pc_physical",
+        "category": "Year 4",
+        "expected_value": 28,
+        "observed_value": 27.997,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 32.46,
+        "full_scale_error_percent": 0.001,
+        "small_value_relative_error_percent": 0.01,
+        "bbox_xyxy_normalized": [
+          0.761,
+          0.435,
+          0.796,
+          0.458
+        ],
+        "evidence_zh": "青色带约y619.77–652.23。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      },
+      {
+        "series_id": "physical_unit_sales_console_physical",
+        "category": "Year 4",
+        "expected_value": 260,
+        "observed_value": 260.123,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 301.55,
+        "full_scale_error_percent": 0.041,
+        "small_value_relative_error_percent": 0.05,
+        "bbox_xyxy_normalized": [
+          0.761,
+          0.458,
+          0.796,
+          0.669
+        ],
+        "evidence_zh": "橙段约y652.23–953.78。",
+        "uncertainty_zh": "边界与网格定位约±1px。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "掌机与两面板",
+        "required_parts": [
+          "机壳",
+          "左右屏框",
+          "中央接缝",
+          "按键",
+          "摇杆",
+          "肩键"
+        ],
+        "relationship": "控件连接机壳，两屏被屏框包含，柱图位于屏内。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.02,
+          0.326,
+          0.977,
+          0.79
+        ],
+        "evidence_zh": "机身和控件连接连续，图表没有越过屏框；实际载数边界为屏内色块，不是机壳轮廓。"
+      },
+      {
+        "category": "支出Year 4大柱",
+        "required_parts": [
+          "橙色10.4段",
+          "青色0.8段",
+          "灰蓝5.2段",
+          "左屏"
+        ],
+        "relationship": "三段由下至上接触，共用水平边界，整体包含于左屏。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4175,
+          0.447,
+          0.452,
+          0.671
+        ],
+        "evidence_zh": "橙段约201.99px，上接青段及灰蓝段；合计16.4。"
+      },
+      {
+        "category": "支出Year 1最小正段",
+        "required_parts": [
+          "青色0.4薄带",
+          "下方橙段",
+          "上方灰蓝段",
+          "外置标签"
+        ],
+        "relationship": "薄带连续夹在上下矩形之间，标签邻接右侧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.221,
+          0.572,
+          0.28,
+          0.579
+        ],
+        "evidence_zh": "约7.54px的青带上下接触，未被标签遮住。"
+      },
+      {
+        "category": "销量Year 4大柱",
+        "required_parts": [
+          "橙色260段",
+          "青色28段",
+          "右屏",
+          "零基线"
+        ],
+        "relationship": "橙段从零基线起，青段直接叠在其上。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.761,
+          0.435,
+          0.796,
+          0.67
+        ],
+        "evidence_zh": "橙段约301.55px、青段约32.46px，连续接触且包含于右屏。"
+      },
+      {
+        "category": "销量Year 1最小正段",
+        "required_parts": [
+          "橙色175段",
+          "青色13段",
+          "外置标签"
+        ],
+        "relationship": "青色顶段与下方橙段共享边界。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.565,
+          0.515,
+          0.62,
+          0.535
+        ],
+        "evidence_zh": "顶段约15.27px，未悬空或被屏框覆盖。"
+      },
+      {
+        "category": "参考非数据方向关系",
+        "required_parts": [
+          "光盘",
+          "右向箭头",
+          "手机",
+          "左右图表"
+        ],
+        "relationship": "参考三部件位于双图中央，最终改为掌机双屏包含图表。",
+        "status": "partial",
+        "bbox_xyxy_normalized": [
+          0.025,
+          0.332,
+          0.974,
+          0.767
+        ],
+        "evidence_zh": "保留游戏设备与双图关联，原光盘、箭头和手机不可见。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "允许合成四期、新数值和新走势，以及姿态、非数据厚度和排版适配；无需保留旧真实统计及原极值。",
+      "output_added_or_lost_meaning_zh": "新增双屏掌机承载结构，丢失原光盘向手机的方向图示；当前统计角色和口径完整。",
+      "visible_inscription_evidence_zh": "可见游戏销售形式转变标题、SYNTHETIC DATA、Consumer spend · billion USD、Physical unit sales · million copies、三系列标识及统计口径脚注。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成时期和更新趋势来自冻结输入，旧真实统计及数字化增长论断不要求复现。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "支出合计先增后降、销量合计逐期增长，与当前数据一致。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "原光盘、方向箭头和手机被掌机替代，参考非数据关系部分保留。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小支出段约7.54px，一像素定位误差约相当于该值的13%。"
+      }
+    ],
+    "measurement_coverage_zh": "扫描全部20柱段，列出12个代表，覆盖两个面板的最小正值、大值、Year 3内点及全部5个面板系列。另8段也在容差内；全部数值、合计及必要标签单独核对。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 1,
+      "evidence_zh": "参考为灰色光盘与手机，最终为米白双屏掌机；电子游戏设备语境保留，原对象不可见。",
+      "data_adaptation_excluded_zh": "不扣除合成数据、更新标签、柱高变化及允许的姿态调整。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 1,
+      "evidence_zh": "参考光盘经箭头指向手机并置于双图之间；最终为相连掌机双屏包含图表。",
+      "data_adaptation_excluded_zh": "排除数据驱动柱高、允许的姿态和非数据尺寸变化，仅记录原对象关系保留程度。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "上方主题、左右双面板、底部说明保留；图例移至顶部，掌机横贯主体，原中央图示及深蓝页眉页脚层级消失。",
+      "data_adaptation_excluded_zh": "不扣除合成标识、准确数值和新变化注释所需空间。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 1,
+      "evidence_zh": "参考为平面灰色图标和蓝绿柱；最终为有阴影与材质的米白掌机、橙青灰柱和深色屏幕。",
+      "data_adaptation_excluded_zh": "不将柱高、合成语义和允许的姿态调整计入材质风格评分。"
+    }
+  }
+}
