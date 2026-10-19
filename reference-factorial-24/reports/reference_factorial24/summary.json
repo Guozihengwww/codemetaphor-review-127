@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:45:02.621823+00:00",
+  "updated_at": "2026-10-19T21:52:04.864368+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,9 +11,9 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "running": 3,
-      "ok": 20,
-      "pending": 73
+      "ok": 24,
+      "pending": 69,
+      "running": 3
     },
     "routing_audits": {
       "verified": 96
@@ -28746,7 +28746,376 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为蓝底复古电脑海报：黑白机壳围住五组黄绿柱，键盘在下，橙色双手覆在键盘上，并有上方、下方及右边缘机器人。待评图保留蓝底、复古机壳、屏幕内五组两柱、键盘、橙色双手和左上机器人；下方及右侧机器人未见。待评图按Confidence、Optimism、Curiosity、Indifference、Concern排列，黄/绿柱依次标28/19、54/36、64/62、15/23、31/42%，共同纵轴0–70。标题说明AI工作情绪、两轮合成比例，图例Wave A/B；醒目SYNTHETIC DATA及底注独立多选、无需合计100%、非真实调查均可读。柱形和文字均在屏幕边界内，无明显遮挡或错位。",
+        "summary_zh": "评审已保存至review.json并通过schema校验。五类情绪的两轮比例、标签与独立多选口径完整正确；十柱像素测量均在容差内。屏幕、机壳与键盘关系清楚，生成素材构成主要物体。未发现必要要求的可见缺陷。",
+        "issues": [],
+        "measurement_notes_zh": "在1800×2049原图中分割黄绿柱体并检测外黑边；用无柱间隙x=578–603的可见刻度线校准，70刻度y=748、零基线y=1206，满量程458px。十柱均宽约90px，高依序183/124、353/236、419/406、98/150、203/275px。满量程误差为|观测值−目标值|/70×100，最大约0.106%；不是仅用源码公式推断。",
+        "uncertainties_zh": "像素边界约±1px，相当于约0.153个百分点；最小15%柱的相对精度不能视为无限精确。素材复用由可见对应及加载代码支持，但特定生成服务来源和capture_render.py归档历史未在允许的证据范围内核验。参考原叙事的真实年份及统计来源已被合成两轮主题替换，不推断作者意图。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "五类情绪按指定顺序出现，每类Wave A/B各一柱，共10柱；10个数值、两项图例、0–70刻度、百分号、当前标题及SYNTHETIC DATA均可见。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "依次为28/19、54/36、64/62、15/23、31/42%，与data.json十个观测值完全一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "每组左黄柱对应Wave A、右绿柱对应Wave B；组名位于对应柱对下方，数值位于各自柱内，无跨组或颜色颠倒。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "共同线性0–70轴，10柱等宽约90px且同基线；独立像素换算最大偏差约0.074个百分点，即满量程0.106%，低于3%容差。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png和computer_stage.png，其机壳、通风条、盘槽、机器人、键盘及双手与成图对应，素材构成主体。render.py加载computer_stage.png，依据数据绘制柱形和文字；执行归档历史未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "代码柱图完整落在机壳围住的屏幕内，图面为正向二维，键盘有自身透视；双手遮盖键面但不遮盖图表，边框与层次未破坏物体身份。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原分辨率下标题、十个百分比、五类英文及中文标签、Wave A/B图例、坐标和底注均清楚，无裁切或重叠遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "黑白复古机壳包含浅色屏幕，屏幕内含两轮五组柱；显示器下方可见支承区域和完整键盘，橙色双手在键面前层。大小柱均从共同基线向上延伸。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题写明AI工作情绪和两轮合成比例；选择比例(%)、Wave A/B及五类情绪角色明确，底注说明独立多选、无需合计100%、非真实调查。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留电脑屏幕呈现工作场景AI情绪比较的关系；参考2018/2023及真实调查叙述被冻结要求改为合成Wave A/B，属于输入允许的语义适配，不是输出遗漏。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小正值Indifference/Wave A为约90×98px的完整黄柱，黑色边界、内部色面、15%文字和基线接触均可辨；没有仅剩数字或人为抬高的小柱。"
+          }
+        },
+        "semantic_attribution_zh": "真实年份与原统计来源转为合成两轮，归因于输入适配；柱高与涨跌变化归因于新数据。两个装饰机器人减少只记录于参考保真度，不涉及M3必需部件。未见当前主题、单位或多选统计含义的输出丢失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "Confidence",
+              "category": "Wave A",
+              "expected_value": 28,
+              "observed_value": 27.969,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 183,
+              "full_scale_error_percent": 0.044,
+              "small_value_relative_error_percent": 0.109,
+              "bbox_xyxy_normalized": [
+                0.212222,
+                0.499268,
+                0.262222,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=1023，零基线y=1206，高约183px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为28%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            },
+            {
+              "series_id": "Confidence",
+              "category": "Wave B",
+              "expected_value": 19,
+              "observed_value": 18.952,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 124,
+              "full_scale_error_percent": 0.069,
+              "small_value_relative_error_percent": 0.253,
+              "bbox_xyxy_normalized": [
+                0.267778,
+                0.528062,
+                0.317778,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=1082，零基线y=1206，高约124px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为19%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            },
+            {
+              "series_id": "Optimism",
+              "category": "Wave A",
+              "expected_value": 54,
+              "observed_value": 53.952,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 353,
+              "full_scale_error_percent": 0.069,
+              "small_value_relative_error_percent": 0.089,
+              "bbox_xyxy_normalized": [
+                0.338333,
+                0.416301,
+                0.388333,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=853，零基线y=1206，高约353px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为54%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            },
+            {
+              "series_id": "Optimism",
+              "category": "Wave B",
+              "expected_value": 36,
+              "observed_value": 36.07,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 236,
+              "full_scale_error_percent": 0.1,
+              "small_value_relative_error_percent": 0.194,
+              "bbox_xyxy_normalized": [
+                0.393889,
+                0.473402,
+                0.443889,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=970，零基线y=1206，高约236px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为36%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            },
+            {
+              "series_id": "Curiosity",
+              "category": "Wave A",
+              "expected_value": 64,
+              "observed_value": 64.039,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 419,
+              "full_scale_error_percent": 0.056,
+              "small_value_relative_error_percent": 0.061,
+              "bbox_xyxy_normalized": [
+                0.464444,
+                0.38409,
+                0.514444,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=787，零基线y=1206，高约419px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为64%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            },
+            {
+              "series_id": "Curiosity",
+              "category": "Wave B",
+              "expected_value": 62,
+              "observed_value": 62.052,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 406,
+              "full_scale_error_percent": 0.075,
+              "small_value_relative_error_percent": 0.085,
+              "bbox_xyxy_normalized": [
+                0.52,
+                0.390434,
+                0.57,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=800，零基线y=1206，高约406px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为62%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            },
+            {
+              "series_id": "Indifference",
+              "category": "Wave A",
+              "expected_value": 15,
+              "observed_value": 14.978,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 98,
+              "full_scale_error_percent": 0.031,
+              "small_value_relative_error_percent": 0.146,
+              "bbox_xyxy_normalized": [
+                0.59,
+                0.540752,
+                0.64,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=1108，零基线y=1206，高约98px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为15%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            },
+            {
+              "series_id": "Indifference",
+              "category": "Wave B",
+              "expected_value": 23,
+              "observed_value": 22.926,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 150,
+              "full_scale_error_percent": 0.106,
+              "small_value_relative_error_percent": 0.323,
+              "bbox_xyxy_normalized": [
+                0.645556,
+                0.515373,
+                0.695556,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=1056，零基线y=1206，高约150px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为23%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            },
+            {
+              "series_id": "Concern",
+              "category": "Wave A",
+              "expected_value": 31,
+              "observed_value": 31.026,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 203,
+              "full_scale_error_percent": 0.037,
+              "small_value_relative_error_percent": 0.085,
+              "bbox_xyxy_normalized": [
+                0.716111,
+                0.489507,
+                0.766111,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=1003，零基线y=1206，高约203px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为31%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            },
+            {
+              "series_id": "Concern",
+              "category": "Wave B",
+              "expected_value": 42,
+              "observed_value": 42.031,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 275,
+              "full_scale_error_percent": 0.044,
+              "small_value_relative_error_percent": 0.073,
+              "bbox_xyxy_normalized": [
+                0.771667,
+                0.454368,
+                0.821667,
+                0.58858
+              ],
+              "evidence_zh": "原图黑色柱顶y=931，零基线y=1206，高约275px、宽90px；可见70刻度线y=748，按458px对应70%换算。柱内文字为42%。",
+              "uncertainty_zh": "黑边及抗锯齿带来约±1px边界不确定性；换算小数不代表亚像素精度。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整体复古电脑",
+              "required_parts": [
+                "机壳",
+                "浅色屏幕",
+                "下方通风条与盘槽",
+                "键盘",
+                "橙色双手"
+              ],
+              "relationship": "机壳包围屏幕；键盘位于显示器下方；双手位于键面前层。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.039,
+                0.243,
+                0.962,
+                0.935
+              ],
+              "evidence_zh": "屏幕四周的黑白边框连续；其下通风条和盘槽保持硬件身份，键盘上键帽可辨，双手遮盖局部键帽而不侵入数据区域。"
+            },
+            {
+              "category": "大值Curiosity柱对",
+              "required_parts": [
+                "屏幕",
+                "黄柱64%",
+                "绿柱62%",
+                "共同零基线",
+                "Curiosity标签"
+              ],
+              "relationship": "两柱并列且包含于屏幕，底端与同一零基线接触，高度向上编码比例。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.464,
+                0.384,
+                0.571,
+                0.629
+              ],
+              "evidence_zh": "黄柱约419px、绿柱约406px，完整轮廓从各自顶部延伸到y=1206；数字在对应色面内，类别标签在柱对下方。"
+            },
+            {
+              "category": "最小值Indifference柱对",
+              "required_parts": [
+                "屏幕",
+                "黄柱15%",
+                "绿柱23%",
+                "共同零基线",
+                "Indifference标签"
+              ],
+              "relationship": "小柱仍是屏幕内有色矩形，和相邻时期柱共基线，不依赖数字替代几何。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.59,
+                0.515,
+                0.696,
+                0.629
+              ],
+              "evidence_zh": "15%黄柱高约98px，23%绿柱高约150px，黑边及底端接触清楚；两柱都与机壳边框分离，没有缩小后丢失屏幕包含关系。"
+            },
+            {
+              "category": "左上机器人与机框",
+              "required_parts": [
+                "机器人头身肢体",
+                "显示器上框"
+              ],
+              "relationship": "机器人跨坐上框，双腿在边框前方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.17,
+                0.14,
+                0.279,
+                0.292
+              ],
+              "evidence_zh": "机器人面罩、躯干及肢体可辨，腿部覆盖局部上框；未侵入图表。参考下方及右侧装饰机器人未出现。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结数据要求合成Wave A/B替代参考真实年份和旧比例，允许姿态、非数据厚度及排版适配；不要求旧极值或原有涨跌。",
+            "output_added_or_lost_meaning_zh": "当前输出增加清晰的合成声明和独立多选口径；工作场景AI情绪比较保留。参考真实年份及来源没有延用，符合允许的输入适配。",
+            "visible_inscription_evidence_zh": "图面可读“复古电脑中的 AI 工作情绪”“两轮合成比例”“选择比例 (%)”“Wave A”“Wave B”、五类情绪、“SYNTHETIC DATA”及“各情绪独立多选，比例无需合计100%”。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "2018/2023与原真实调查语境改为Wave A/B及非真实合成数据，变化由冻结brief/data明确规定。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "当前柱高体现28/19等新数值；例如Optimism由54降至36，未沿用参考35升至52的走势。"
+            },
+            {
+              "cause": "none",
+              "evidence_zh": "未发现当前统计角色、必要物体结构或小柱可辨性的实质缺失；装饰机器人数量差异仅计入次级保真度。"
+            }
+          ],
+          "measurement_coverage_zh": "唯一面板、唯一柱高通道的10/10数据柱均测量，覆盖最小15%、最大64%及所有中间值；10个数值、5类情绪、2个时期和必要声明均逐项目视核对。无其他要求的辅助面板。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "黑白复古电脑、通风条、驱动器槽、键盘、橙色双手及左上机器人保留；参考下方与右侧机器人未出现。",
+            "data_adaptation_excluded_zh": "未将新数值、时期标签、中文标题或合成数据声明计作身份偏离。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "屏幕被机壳包围、键盘位于显示器下方、双手覆盖键面、左上机器人跨坐上框的关系保留；参考下方及右侧机器人的局部叠合关系未保留。",
+            "data_adaptation_excluded_zh": "机壳大小、双手位置及非数据部件姿态调整均按core允许排除。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "标题在上、屏幕柱图居中、键盘与双手在下的主层级保留；待评图的标题区及底部说明更突出，装饰机器人数量减少。",
+            "data_adaptation_excluded_zh": "新增合成声明、轴线、横向数值标签及当前数据带来的柱高变化不扣分。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "蓝色颗粒背景、奶油白与黑色复古机壳、粗黑轮廓、黄绿柱、橙色手和印刷颗粒风格与参考接近。",
+            "data_adaptation_excluded_zh": "当前标题字体及柱形文字朝向属于文字排版适配，不据此扣分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/38ddc4f6cdb5f2",
       "numeric_supported": true,
@@ -41386,7 +41755,406 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "已先查看参考图及1600×2000待评图原尺寸。参考为白底、紫黑标题、八支金色滤嘴香烟及独立三列股价标注；不同烟头有烟草、灰烬或红色燃烧纹理。待评图为米色底、深绿主图，八支金色滤嘴共享接缝零线，灰烬顶与白纸烟身直接相连，A至H逐渐降低且F、G等高。八个产量数值和Region A–H完整，三张股价卡标Company P/Q/R与450/1,740/3,460 CU。标题、SYNTHETIC DATA、未加工烟草产量、LMT=十万吨、log1p公式及CU/share均可读。H数据烟身呈很薄的白色/灰色顶层，灰烬细节不能从整图确认。",
+        "summary_zh": "主要要求通过：八个烟身的独立像素测量均在容差内，标签、单位和三列股价完整。香烟部件连接与独立股价面板保留；最小烟头的材质细节仅部分可辨。参考真实统计已按输入适配为合成数据。",
+        "issues": [],
+        "measurement_notes_zh": "仅测量提供的image.png，未运行渲染器或读取自检结果。原图1600×2000；可见0与22刻度分别位于y=1316、526，故H=790px。扫描各烟身相对邻近背景的RGB差，阈值24/40且至少约10%横截面有支持，结合白纸转金色的连续边界确定顶部和接缝。逆变换为V=exp(h/H×ln23)−1。full_scale_error_percent按|反算V−目标V|/22报告，高度通道误差另列证据。M2和additional_contract明确指定log1p，优先于通用value_axis的linear字段。",
+        "uncertainties_zh": "实体灰烬轮廓及抗锯齿带来约±1px边界不确定性；H约11px，满量程合格不保证小值相对精度或灰烬微观纹理可辨。原始素材清单声明其为生图产物，已核对可见纹理及加载代码；按限制未检查生成日志或capture_render归档调用。未推测参考灰烬姿态背后的作者意图。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "八支香烟对应Region A–H，单系列产量完整；三张股价卡对应Company P/Q/R，合成声明及单位均在。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项可读22.0、7.80898065、2.77182631、0.98386991、0.34922823、0.12395984、0.12395984、0.044；股价450、1,740、3,460 CU均准确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "八个值分别位于对应烟头正上方，地区名在同一中心线下方；P/Q/R公司名与价格分别位于同一卡片。F、G等值且可见等高。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "独立测得烟身约789、547、334、172、75、30、30、11px；按图示变换反算，最大原值满量程误差约0.414%，高度通道误差不超过约0.152%，均低于3%。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png及纸、灰烬烟草顶、滤嘴裁片；相同裂纹、纸缝和金色斑点在成图中清晰可见。render.py读取这些PNG，并用数据计算八个烟身高度、绘制标签和三张股价卡。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "纸、灰烬和烟草顶本身构成从接缝到顶部的数据高度，金色滤嘴位于零线以下；部件接触，无悬浮数据柱或越出数据顶部的装饰帽。公式框未遮住烟身。股价保持独立文字面板。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原尺寸下标题、系列、八组值和类别、股价、单位及编码说明可读；F/G长小数靠近但彼此分开，无必需文字截断或遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "大值A和中值D均呈灰烬/烟草顶—白纸圆柱—金色滤嘴连续连接；最小H仍有约4px灰褐顶层、7px白层接触滤嘴。股价徽章在独立卡片中，未误作香烟组成部分。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题明确合成烟草产量与股价；系列写未加工烟草产量/Unmanufactured tobacco production，注明LMT=十万吨；“合成可比地区”和页脚说明地区与公司无对应关系。股价注明CU/share、虚构货币及每股口径。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留烟草产量用香烟高度表达、股价独立标注的关系。原图真实国家、2021及印度股票语境替换为合成地区/公司与虚构货币，这是冻结输入允许的适配，不判输出缺陷。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "H约11px烟身非零，白层及与金色滤嘴的接触仍可见；其约4px灰褐顶层缺乏大值烟头的可辨灰烬颗粒。F/G约30px且等高，顶层压扁但与白纸、滤嘴仍分层。"
+          }
+        },
+        "semantic_attribution_zh": "真实国家/年份/印度股票身份的变化归于输入允许的合成适配；烟身缩短归于数据及log1p映射。H灰烬细节减少归于有限像素和数据驱动压缩，未发现当前主题、指标、单位或类别角色的输出遗漏；不将灰烬外观推定为未明示的衰退论点。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "Region A",
+              "expected_value": 22,
+              "observed_value": 21.908894,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 789,
+              "full_scale_error_percent": 0.414116,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.170625,
+                0.2635,
+                0.216875,
+                0.658
+              ],
+              "evidence_zh": "独立扫描成图：实体顶部y≈527，白纸/滤嘴接缝y=1316，高约789px；由可见22刻度y=526得到H=790px，再按图示log1p逆变换。高度通道满量程误差约0.126582%。",
+              "uncertainty_zh": "灰烬轮廓和抗锯齿使边界约有±1px不确定性；反算值为近似像素测量，不是读取数值标签。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Region B",
+              "expected_value": 7.80898065,
+              "observed_value": 7.767328,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 547,
+              "full_scale_error_percent": 0.189331,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.269375,
+                0.3845,
+                0.315625,
+                0.658
+              ],
+              "evidence_zh": "独立扫描成图：实体顶部y≈769，白纸/滤嘴接缝y=1316，高约547px；由可见22刻度y=526得到H=790px，再按图示log1p逆变换。高度通道满量程误差约0.151161%。",
+              "uncertainty_zh": "灰烬轮廓和抗锯齿使边界约有±1px不确定性；反算值为近似像素测量，不是读取数值标签。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Region C",
+              "expected_value": 2.77182631,
+              "observed_value": 2.764591,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 334,
+              "full_scale_error_percent": 0.032886,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.368125,
+                0.491,
+                0.414375,
+                0.658
+              ],
+              "evidence_zh": "独立扫描成图：实体顶部y≈982，白纸/滤嘴接缝y=1316，高约334px；由可见22刻度y=526得到H=790px，再按图示log1p逆变换。高度通道满量程误差约0.061234%。",
+              "uncertainty_zh": "灰烬轮廓和抗锯齿使边界约有±1px不确定性；反算值为近似像素测量，不是读取数值标签。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Region D",
+              "expected_value": 0.98386991,
+              "observed_value": 0.979144,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 172,
+              "full_scale_error_percent": 0.02148,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.466875,
+                0.572,
+                0.513125,
+                0.658
+              ],
+              "evidence_zh": "独立扫描成图：实体顶部y≈1144，白纸/滤嘴接缝y=1316，高约172px；由可见22刻度y=526得到H=790px，再按图示log1p逆变换。高度通道满量程误差约0.076061%。",
+              "uncertainty_zh": "灰烬轮廓和抗锯齿使边界约有±1px不确定性；反算值为近似像素测量，不是读取数值标签。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Region E",
+              "expected_value": 0.34922823,
+              "observed_value": 0.346722,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 75,
+              "full_scale_error_percent": 0.011392,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.565625,
+                0.6205,
+                0.611875,
+                0.658
+              ],
+              "evidence_zh": "独立扫描成图：实体顶部y≈1241，白纸/滤嘴接缝y=1316，高约75px；由可见22刻度y=526得到H=790px，再按图示log1p逆变换。高度通道满量程误差约0.059297%。",
+              "uncertainty_zh": "灰烬轮廓和抗锯齿使边界约有±1px不确定性；反算值为近似像素测量，不是读取数值标签。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Region F",
+              "expected_value": 0.12395984,
+              "observed_value": 0.126448,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 30,
+              "full_scale_error_percent": 0.01131,
+              "small_value_relative_error_percent": 2.007305,
+              "bbox_xyxy_normalized": [
+                0.664375,
+                0.643,
+                0.710625,
+                0.658
+              ],
+              "evidence_zh": "独立扫描成图：实体顶部y≈1286，白纸/滤嘴接缝y=1316，高约30px；由可见22刻度y=526得到H=790px，再按图示log1p逆变换。高度通道满量程误差约0.070527%。",
+              "uncertainty_zh": "边界约±1px；29–31px反算约0.12199–0.13093 LMT，小值相对误差对边界敏感。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Region G",
+              "expected_value": 0.12395984,
+              "observed_value": 0.126448,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 30,
+              "full_scale_error_percent": 0.01131,
+              "small_value_relative_error_percent": 2.007305,
+              "bbox_xyxy_normalized": [
+                0.763125,
+                0.643,
+                0.809375,
+                0.658
+              ],
+              "evidence_zh": "独立扫描成图：实体顶部y≈1286，白纸/滤嘴接缝y=1316，高约30px；由可见22刻度y=526得到H=790px，再按图示log1p逆变换。高度通道满量程误差约0.070527%。",
+              "uncertainty_zh": "边界约±1px；29–31px反算约0.12199–0.13093 LMT，小值相对误差对边界敏感。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Region H",
+              "expected_value": 0.044,
+              "observed_value": 0.044626,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 11,
+              "full_scale_error_percent": 0.002845,
+              "small_value_relative_error_percent": 1.42238,
+              "bbox_xyxy_normalized": [
+                0.861875,
+                0.6525,
+                0.908125,
+                0.658
+              ],
+              "evidence_zh": "独立扫描成图：实体顶部y≈1305，白纸/滤嘴接缝y=1316，高约11px；由可见22刻度y=526得到H=790px，再按图示log1p逆变换。高度通道满量程误差约0.019113%。",
+              "uncertainty_zh": "边界约±1px。10–12px反算约0.04049–0.04878 LMT；报告的1.42%相对误差只是中心估计，不能保证小值精度。"
+            },
+            {
+              "series_id": "share_prices",
+              "category": "Company P",
+              "expected_value": 450,
+              "observed_value": 450,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.05,
+                0.835,
+                0.3375,
+                0.935
+              ],
+              "evidence_zh": "卡片可读“Company P”及“450 CU”；面板注明CU/share，页脚解释虚构货币及每股口径。",
+              "uncertainty_zh": "合同规定仅文字编码；卡片尺寸不编码股价，未把文字准确性当作几何融合。"
+            },
+            {
+              "series_id": "share_prices",
+              "category": "Company Q",
+              "expected_value": 1740,
+              "observed_value": 1740,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.35625,
+                0.835,
+                0.64375,
+                0.935
+              ],
+              "evidence_zh": "卡片可读“Company Q”及“1,740 CU”；面板注明CU/share，页脚解释虚构货币及每股口径。",
+              "uncertainty_zh": "合同规定仅文字编码；卡片尺寸不编码股价，未把文字准确性当作几何融合。"
+            },
+            {
+              "series_id": "share_prices",
+              "category": "Company R",
+              "expected_value": 3460,
+              "observed_value": 3460,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.6625,
+                0.835,
+                0.95,
+                0.935
+              ],
+              "evidence_zh": "卡片可读“Company R”及“3,460 CU”；面板注明CU/share，页脚解释虚构货币及每股口径。",
+              "uncertainty_zh": "合同规定仅文字编码；卡片尺寸不编码股价，未把文字准确性当作几何融合。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Region A（大值）",
+              "required_parts": [
+                "灰烬与烟草顶",
+                "白纸烟身",
+                "金色滤嘴"
+              ],
+              "relationship": "灰烬在顶部，烟草焦边接白纸；白纸在y=1316直接接触滤嘴；接缝以上整体承载产量。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.170625,
+                0.2635,
+                0.216875,
+                0.706
+              ],
+              "evidence_zh": "可见灰烬裂纹和焦褐边、连续白纸纵缝及圆柱明暗；金色滤嘴位于共同零线下方，三部件共轴，无断裂或穿插。"
+            },
+            {
+              "category": "Region D（内部值）",
+              "required_parts": [
+                "灰烬/烟草顶",
+                "白纸烟身",
+                "金色滤嘴"
+              ],
+              "relationship": "顶部灰烬接白纸，白纸接下方固定滤嘴；实体顶部至接缝为约172px。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.466875,
+                0.572,
+                0.513125,
+                0.706
+              ],
+              "evidence_zh": "中等烟身仍有清楚的灰黑顶、焦褐接触边、白纸段和金色底部；四者顺序与大值一致。"
+            },
+            {
+              "category": "Region F/G（相等小值）",
+              "required_parts": [
+                "灰褐顶层",
+                "白纸层",
+                "金色滤嘴"
+              ],
+              "relationship": "两支顶部等高，压缩的灰褐顶层位于白纸上方，白纸共同接触零线下的滤嘴。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.664375,
+                0.643,
+                0.809375,
+                0.706
+              ],
+              "evidence_zh": "两支数据高度均约30px，灰褐顶和白层仍分离；金色滤嘴高度保持一致，没有用滤嘴补偿数值。"
+            },
+            {
+              "category": "Region H（最小正值）",
+              "required_parts": [
+                "灰褐烟头层",
+                "白纸层",
+                "金色滤嘴"
+              ],
+              "relationship": "约4px顶层之下为约7px白纸层，再接y=1316开始的金色滤嘴。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.861875,
+                0.6525,
+                0.908125,
+                0.706
+              ],
+              "evidence_zh": "原图像素在y=1305–1308为灰褐色，1309–1315为浅白色，1316起为金色；连接与上下次序仍在，灰烬颗粒身份只能部分辨认。"
+            },
+            {
+              "category": "独立股价面板",
+              "required_parts": [
+                "三个公司徽章",
+                "对应公司名",
+                "精确股价"
+              ],
+              "relationship": "每张卡片内徽章、名称与价格绑定；三张卡片与香烟图分离且尺寸相等。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.05,
+                0.835,
+                0.95,
+                0.935
+              ],
+              "evidence_zh": "P/Q/R圆徽章分别与Company P/Q/R及450/1,740/3,460 CU同卡；明确注明卡片尺寸不编码股价。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入将真实国家与股票统计改为八个合成可比地区、三家示意公司和虚构货币，允许数据驱动高度、非数据厚度及排版调整。",
+            "output_added_or_lost_meaning_zh": "图面补充log1p公式、滤嘴不计量及地区与公司无对应关系；未发现当前统计含义遗漏。原参考真实排名和时间身份不再保留，属于允许适配。",
+            "visible_inscription_evidence_zh": "“SYNTHETIC DATA”“合成烟草产量与股价”“未加工烟草产量”“合成可比地区”“LMT=十万吨”“Illustrative Share Prices”“CU/share”及虚构货币/每股说明可读。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "真实国家、年份与印度股票语境改为合成地区/公司，是brief和data规定的当前主题。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "A至H的数据烟身依声明log1p缩短，F/G等值等高；固定滤嘴不参与产量编码。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "H仅约11px，其中灰褐顶约4px；层次连接保留，但不能从如此少的像素确认大值烟头那样的灰烬颗粒细节。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖主图全部8支烟身，含最大值、多个内部值及最小正值；辅助面板全部3项按文字编码核对。所有必需标签/单位另行逐项检查。未将股价卡片面积当作数量通道，未用源码自检代替测量。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "金色滤嘴、白纸圆柱和灰烬顶仍构成香烟；独立公司徽章仍在。参考烟头的未燃/红色燃烧/长灰等变化改为统一灰烬顶。",
+            "data_adaptation_excluded_zh": "不扣除新地区/公司名称、数字替换、数据烟身长短和允许调整的滤嘴厚度。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留滤嘴在下、烟身在上、横向并列以及股价与烟身分离的关系；参考绿色下指箭头不再出现。",
+            "data_adaptation_excluded_zh": "不扣除数据导致的顶部位置变化及core允许的非数据姿态调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "仍为顶部标题、主体八支香烟、次级三列股价；股价移到主图下方，图内新增较大的公式说明框。",
+            "data_adaptation_excluded_zh": "排版适配、新合成声明及编码说明不作为输出错误；评分仅记录与参考层级安排的可见差异。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留摄影质感的纸、灰烬和金黄滤嘴；参考白底紫黑标题改为米色页面、深绿图板及现代无衬线文字，香烟灰烬纹理重复。",
+            "data_adaptation_excluded_zh": "不评价美观，不扣除量值变化、当前语义替换及小值压缩本身。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/37014ff7ab25ee",
       "numeric_supported": true,
@@ -58727,7 +59495,378 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.98,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为全幅街头照片，多名成人持刷涂绘地面，黄绿折线叠于上方街景，底部白色手写标题。待评图采用浅色页边和上方无衬线标题；三名写实成人持刷接触涂色路面，旁有漆桶，前后层次可见。折线、点和网格叠于照片。+28.4、+8.1、−4.9、−4.0及日期可读，零线上方为黄、下方为绿。主题、合成声明、净支持定义、百分点单位及观察日期均明确。",
+        "summary_zh": "已保存并通过schema校验的review.json。未发现违反冻结要求的可见缺陷：60个日期点、数值尺度和换色正确，共同涂绘及折线叠合关系保留。未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "测量指定2000×2000原图，识别60个浅色点中心并按横坐标与输入对应。图像刻度+30、0、−6位于y约675、1410、1557，比例为24.5像素/百分点；首末日期刻度x约200、1775。全部点最大纵向误差约0.0327百分点，即满量程的0.0907%；最大日期位置误差约全时段的0.0548%。源码仅作佐证，未执行渲染。",
+        "uncertainties_zh": "中心提取和抗锯齿约有±1像素不确定性，不能将小值相对误差估计视为精确偏差。按要求未检查日志、自检和编排文件，无法独立核实capture_render.py的实际启动过程。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "输入单系列60个日期值，原图识别出60个点中心且连续连接。必要主题、单位、图例、日期刻度和关键点标签齐全；密集日期采用允许的选择性标注。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "+28.4、+8.1、−4.9、−4.0及对应日期正确，期间变化−32.4 pp正确。约13 Aug 2019与跨零插值日期一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "关键值及日期通过引线对应正确点；MINIMUM指向2020-02-07低点。正黄负绿图例、净支持百分点纵轴和观察日期横轴绑定明确。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "60点像素位置与输入吻合，最大纵向误差约0.091%满量程。16天与22天间隔分别约22.33与31.00像素。换色位于约(1366,1410)的零线附近。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png与scene_01.png，人物、刷子、漆桶和路面与最终主体一致。源码读取与冻结数据相同的输入，控制日期位置、纵坐标、折线、点和文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "图线与坐标直接叠于街景，成人刷子保持接地。参考要求本身为二维叠合，不要求折线贴地透视或以涂料面积承载数值。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成声明、统计定义、单位、观察日期、60次观察和关键标签均可读。文字描边及折线衬边使其与照片分离。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "前左、后中、前右成人均持刷共同涂绘；手—柄—刷毛连接、刷毛—路面接触及人物和桶的前后关系可见。定量由叠合折线中心位置承载。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "当前主题明确为社区街头艺术净支持；in favor (%) − opposed (%)说明统计口径，percentage points说明单位，OBSERVATION DATE明确时间类别角色。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "共同涂绘动作与净支持差值逻辑保留。原Black Lives Matter议题及增长表述按core允许的主题改编和当前数据替换，属于输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "两处0.9中心距零线约22.5像素；−0.4中心位于零线下约9.2像素，符号和颜色可辨。点大小不承载量值；小值精度受约±1像素限制。"
+          }
+        },
+        "semantic_attribution_zh": "主题替换归因于明确的adapted_topic；下降曲线归因于当前数据。不强加旧增长论断。未发现当前主题、指标、单位或共绘接触关系的输出丢失；小值相对精度限制归因于栅格分辨率。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "net_support",
+              "category": "2017-05-01",
+              "expected_value": 28.4,
+              "observed_value": 28.4286,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 696.5,
+              "full_scale_error_percent": 0.0794,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.09575,
+                0.35275,
+                0.10375,
+                0.36075
+              ],
+              "evidence_zh": "点中心约(199.5,713.5)。extent为中心距零线的垂直距离，非点直径；按图像刻度24.5像素/百分点反推。",
+              "uncertainty_zh": "中心约±1像素，即±0.041百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2018-06-06",
+              "expected_value": 8.1,
+              "observed_value": 8.1224,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 199,
+              "full_scale_error_percent": 0.0624,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.376,
+                0.6015,
+                0.384,
+                0.6095
+              ],
+              "evidence_zh": "内部点中心约(760,1211)，距零线199像素。",
+              "uncertainty_zh": "中心约±1像素，即±0.041百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2019-06-23",
+              "expected_value": 0.9,
+              "observed_value": 0.9184,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 22.5,
+              "full_scale_error_percent": 0.051,
+              "small_value_relative_error_percent": 2.041,
+              "bbox_xyxy_normalized": [
+                0.64275,
+                0.68975,
+                0.65075,
+                0.69775
+              ],
+              "evidence_zh": "最小正值点中心约(1293.5,1387.5)，在零线上方22.5像素。",
+              "uncertainty_zh": "约±1像素；相对误差仅为像素估计，不证明同等精度的真实偏差。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2019-07-31",
+              "expected_value": 0.9,
+              "observed_value": 0.9184,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 22.5,
+              "full_scale_error_percent": 0.051,
+              "small_value_relative_error_percent": 2.041,
+              "bbox_xyxy_normalized": [
+                0.66925,
+                0.68975,
+                0.67725,
+                0.69775
+              ],
+              "evidence_zh": "另一最小正值点中心约(1346.5,1387.5)，在零线上方22.5像素。",
+              "uncertainty_zh": "约±1像素；相对误差仅为像素估计。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2019-08-19",
+              "expected_value": -0.4,
+              "observed_value": -0.3741,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 9.167,
+              "full_scale_error_percent": 0.0718,
+              "small_value_relative_error_percent": 6.463,
+              "bbox_xyxy_normalized": [
+                0.68258,
+                0.70558,
+                0.69058,
+                0.71358
+              ],
+              "evidence_zh": "最小绝对值负点中心约(1373.17,1419.17)，在零线下约9.17像素。",
+              "uncertainty_zh": "±1像素约等于该值的10%；不能把相对误差估计视为精确偏差。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2020-02-07",
+              "expected_value": -4.9,
+              "observed_value": -4.8776,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 119.5,
+              "full_scale_error_percent": 0.0624,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.80275,
+                0.76075,
+                0.81075,
+                0.76875
+              ],
+              "evidence_zh": "全局最低点中心约(1613.5,1529.5)，在零线下119.5像素。",
+              "uncertainty_zh": "中心约±1像素，即±0.041百分点。"
+            },
+            {
+              "series_id": "net_support",
+              "category": "2020-06-01",
+              "expected_value": -4,
+              "observed_value": -3.9796,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 97.5,
+              "full_scale_error_percent": 0.0567,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.88325,
+                0.74975,
+                0.89125,
+                0.75775
+              ],
+              "evidence_zh": "终点中心约(1774.5,1507.5)，在零线下97.5像素。",
+              "uncertainty_zh": "中心约±1像素，即±0.041百分点。"
+            },
+            {
+              "series_id": "net_support_date_spacing",
+              "category": "2017-12-16 → 2018-01-01",
+              "expected_value": 16,
+              "observed_value": 15.9807,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 22.333,
+              "full_scale_error_percent": 0.00171,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.25575,
+                0.59925,
+                0.27492,
+                0.61558
+              ],
+              "evidence_zh": "横向点中心距离约22.33像素；首末刻度1575像素对应1127天，观测值单位为天。",
+              "uncertainty_zh": "两端中心各约±1像素；短间隔反推值为栅格近似。"
+            },
+            {
+              "series_id": "net_support_date_spacing",
+              "category": "2018-01-01 → 2018-01-23",
+              "expected_value": 22,
+              "observed_value": 22.1822,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 31,
+              "full_scale_error_percent": 0.01617,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.26692,
+                0.60758,
+                0.29042,
+                0.62908
+              ],
+              "evidence_zh": "横向点中心距离约31像素；首末刻度1575像素对应1127天，观测值单位为天。",
+              "uncertainty_zh": "两端中心各约±1像素；短间隔反推值为栅格近似。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "前左较大成人及刷子",
+              "required_parts": [
+                "成人手部",
+                "木柄",
+                "金属箍与刷毛",
+                "涂色沥青",
+                "漆桶"
+              ],
+              "relationship": "手握柄，柄连接刷毛，刷毛接触涂色路面；漆桶立于身旁。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.107,
+                0.282,
+                0.41,
+                0.581
+              ],
+              "evidence_zh": "左前成人手向下延伸至刷柄，约(700,1150)的刷毛末端接触橙红色地面，膝和鞋落地。"
+            },
+            {
+              "category": "后中较小成人及刷子",
+              "required_parts": [
+                "后方成人",
+                "手部与刷柄",
+                "刷毛",
+                "浅色涂带",
+                "漆桶"
+              ],
+              "relationship": "后方成人蹲下持刷，刷毛接触浅色涂带。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.381,
+                0.269,
+                0.64,
+                0.486
+              ],
+              "evidence_zh": "中央成人位于左前成人后方，刷柄斜向下，刷毛约(1037,945)接地；右侧浅色桶落地。"
+            },
+            {
+              "category": "前右成人及刷子",
+              "required_parts": [
+                "成人手部",
+                "刷柄和刷毛",
+                "路面涂带",
+                "支撑手"
+              ],
+              "relationship": "一手握刷涂地，另一手撑在路面。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.701,
+                0.292,
+                0.96,
+                0.577
+              ],
+              "evidence_zh": "刷柄连续连接刷头，约(1450,1125)处刷毛压在浅色涂带上；另一只手触地。"
+            },
+            {
+              "category": "大值与场景叠合",
+              "required_parts": [
+                "+28.4圆点",
+                "黄色折线",
+                "零线及数值轴",
+                "街景照片"
+              ],
+              "relationship": "折线中心相对零线的位置承载定量，图线叠于照片前方。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.093,
+                0.35,
+                0.135,
+                0.541
+              ],
+              "evidence_zh": "起点约(199.5,713.5)，向右下连接后续观测，照片在其下可见；并非刷痕长度编码。"
+            },
+            {
+              "category": "小值与零线叠合",
+              "required_parts": [
+                "0.9黄色点",
+                "−0.4绿色点",
+                "过零线段",
+                "零基线",
+                "沥青背景"
+              ],
+              "relationship": "小正值在零线上方、小负值在下方，线段在插值零点换色。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.641,
+                0.686,
+                0.693,
+                0.716
+              ],
+              "evidence_zh": "正点y约1387.5，负点y约1419.17，零线y约1410；约x1366处转绿，背景路面连续。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core明确改为社区街头共绘净支持，允许身份兼容姿态和非数据部件适配，不要求复制旧增长或旧峰位。",
+            "output_added_or_lost_meaning_zh": "期间变化、最低值和过零日期均受当前数据支持。共同涂绘动作保留；原议题和旧增长结论按输入替换，未发现额外语义损失。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA；Net support for community street art；in favor (%) − opposed (%)；percentage points；OBSERVATION DATE；Above zero: support leads；Below zero: opposition leads。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "core明确adapted_topic，新标题清楚表达社区街头艺术合成议题。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "输入首末值28.4和−4.0决定下降路径，未复制参考右端向上尖峰。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "−0.4距零线约9.2像素，±1像素会显著影响相对误差估计。"
+            }
+          ],
+          "measurement_coverage_zh": "单面板单系列的60点均核对纵值及日期位置；记录7个代表值和2个日期间隔。必要文字、关键日期、图例和点数另行检查；物理关系覆盖前左、后中和前右三人。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留写实成人、街道、地面涂绘、刷子和漆桶；参考多人街头活动改为三人的较近景住宅街道。",
+            "data_adaptation_excluded_zh": "不以人数、衣着或身份复刻为必需；排除允许的非数据部件适配与主题替换。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "三人蹲跪作画，手握刷柄且刷毛接地，人物与桶有前后层次，共同涂绘和折线叠合关系保留。",
+            "data_adaptation_excluded_zh": "站立、弯腰与蹲跪之间的允许姿态替换不扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "照片和折线仍是主体，但全幅街景与底部手写标题改为上部独立大标题、框内街景和底部说明。",
+            "data_adaptation_excluded_zh": "排除当前数据导致的折线下降、零线位置变化及标题内容更新。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保持暖色写实街景、粗糙沥青、涂料质感及黄绿折线；手写字与全照片底改为无衬线字和浅米色纸面。",
+            "data_adaptation_excluded_zh": "不因新数值、单位或主题内容扣分，仅记录可见材质与字形差异。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/31618514dd0058",
       "numeric_supported": true,
@@ -62616,7 +63755,290 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为黄底、白色右上标题和一排彩色书脊，书名在下部、作者在底端；共同零线以上书脊高低承载数据。待评图为黄底、深色左上大标题及15本等宽直立书脊；书脊具有布纹、金色包边、书名和作者框，底部共同接触书架。图面显示SYNTHETIC DATA、SYNTHETIC Book sales、Synthetic copies sold / million copies。15个数值与书名逐列对齐；零线及其下方DECORATIVE BINDING清楚。Book A最高，Book J最短；Book J上方仍有细窄延伸，需像素核查。",
+        "summary_zh": "15项数据、标签与单位完整，书脊零线上方延伸符合线性销量编码；完整书脊及连接关系保留，生成素材构成主体。未发现重大可见缺陷。参考的真实阅读排行语义已按输入改为合成销量，构图与材质风格有明显改编。已保存并通过schema验证的review.json；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "直接分析2000×1869原图像素。左侧刻度从y=390起每125像素对应500百万册，零线位于y=1390，满量程1000像素。以黄色背景色差定位书脊边界，核查15本均宽104像素；整数边界换算偏差最大约0.0834%满量程，均在约±1像素测量不确定性内。源码公式仅用于佐证，不替代像素测量。",
+        "uncertainties_zh": "最小书脊延伸仅约7像素，抗锯齿使相对精度不能由满量程通过推定。原参考以销量近似阅读量的论证未在当前输入中要求保留。按审查限制未查看流程日志或自检，不能独立确认capture_render.py的历史调用；素材可见使用和源码几何控制已核实。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "15本书、15个类别及15个数值齐全，顺序为Book A至Book J、Book added 1至5；图面另标15 BOOKS和One synthetic series。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项可读为3,840、850、420、108、69、59、45、35、31、26、661.6667、1,297.3333、1,933.0、2,568.6667、3,204.3333，与输入一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "每个数值位于对应书脊正上方，类别名位于同一书脊下部；单系列Synthetic copies sold及million copies明确，无错列或单位混用。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素扫描确认15本共用零线、等宽；0–4000映射至1000像素。Book A约960像素、Book added 3约484像素、Book J约7像素，均满足3%满量程容差。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看assets/raw_01.png中的五款书脊；其布纹、磨损金边和底部框饰在最终15本书中实质可见。prepare_assets.py裁切素材，render.py以数据控制书脊轮廓与文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "承载数值的是书脊自身上缘与共同零线之间的实体延伸；生成材质覆盖该区域并连续进入下部装订区，没有旁置物体替代数据主体。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、SYNTHETIC DATA、指标、单位、全部类别及数值在原尺寸均可读；零线、DECORATIVE BINDING和编码说明明确，未见必要标签被遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "15本等宽完整书脊并列，顶部边饰、纵向书名、底部作者框与左右包边相连，下端共同接触书架；零线横穿各书脊，短值书的完整身份仍由下部结构保持。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "SYNTHETIC Book sales和Synthetic copies sold / million copies清楚表达当前书籍销量；类别均含Book语义父类。脚注明确作者是示例占位且未指定销售期间，没有加入累计或组成解释。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留以书脊延伸比较书籍销量的核心关系；参考的TOP 10 MOST READ、全球与过去50年口径改为15本合成销量、未指定期间，属于冻结输入的语义适配。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "Book J的深红上缘在y≈1383–1389仍形成约7像素高、104像素宽的非零区域，且与下方带书名、作者框的书脊相接。26标签不能独自证明几何精度，像素证据仅支持该量级。"
+          }
+        },
+        "semantic_attribution_zh": "真实书名、旧排行和过去50年口径的变化来自允许的合成输入适配；高低轮廓变化来自当前数据。小值精度限制来自像素与抗锯齿，未观察到必需结构或当前语义的输出遗漏。参考以销量推断阅读量的含义仅部分延续，不归为生成失败。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "synthetic_sales",
+              "category": "Book A",
+              "expected_value": 3840,
+              "observed_value": 3840,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 960,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.088,
+                0.23007,
+                0.14,
+                0.743713
+              ],
+              "evidence_zh": "原图书脊范围x=176–280，上缘y≈430，零线y=1390；延伸约960像素，按图面刻度换算约3840百万册。",
+              "uncertainty_zh": "整数边界及抗锯齿带来约±1像素，即±4百万册的不确定性；不是亚像素精度结论。"
+            },
+            {
+              "series_id": "synthetic_sales",
+              "category": "Book B",
+              "expected_value": 850,
+              "observed_value": 852,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 213,
+              "full_scale_error_percent": 0.05,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.146,
+                0.629749,
+                0.198,
+                0.743713
+              ],
+              "evidence_zh": "原图书脊范围x=292–396，上缘y≈1177；至零线延伸约213像素，换算约852百万册。",
+              "uncertainty_zh": "边界约±1像素，目标850在测量区间内；误差为整数边界点估计。"
+            },
+            {
+              "series_id": "synthetic_sales",
+              "category": "Book G",
+              "expected_value": 45,
+              "observed_value": 44,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 11,
+              "full_scale_error_percent": 0.025,
+              "small_value_relative_error_percent": 2.2222,
+              "bbox_xyxy_normalized": [
+                0.436,
+                0.737828,
+                0.488,
+                0.743713
+              ],
+              "evidence_zh": "原图书脊范围x=872–976，上缘y≈1379；延伸约11像素，换算约44百万册。",
+              "uncertainty_zh": "边界约±1像素，即±4百万册；相对误差仅为点估计，目标45在测量区间内。"
+            },
+            {
+              "series_id": "synthetic_sales",
+              "category": "Book J",
+              "expected_value": 26,
+              "observed_value": 28,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 7,
+              "full_scale_error_percent": 0.05,
+              "small_value_relative_error_percent": 7.6923,
+              "bbox_xyxy_normalized": [
+                0.61,
+                0.739968,
+                0.662,
+                0.743713
+              ],
+              "evidence_zh": "原图书脊范围x=1220–1324，明显着色行从y=1383开始，零线y=1390；可见延伸约7像素，换算约28百万册。",
+              "uncertainty_zh": "边界约±1像素，即±4百万册，覆盖目标26。7.6923%是整数边界点估计，不能据此断言实际相对误差。"
+            },
+            {
+              "series_id": "synthetic_sales",
+              "category": "Book added 3",
+              "expected_value": 1933,
+              "observed_value": 1936,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 484,
+              "full_scale_error_percent": 0.075,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.784,
+                0.484751,
+                0.836,
+                0.743713
+              ],
+              "evidence_zh": "原图书脊范围x=1568–1672，上缘色差边界y≈906；延伸约484像素，换算约1936百万册。",
+              "uncertainty_zh": "较严格深色阈值得到上缘y≈907；边界约±1像素，目标1933在测量区间内。"
+            },
+            {
+              "series_id": "synthetic_sales",
+              "category": "Book added 5",
+              "expected_value": 3204.3333,
+              "observed_value": 3204,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 801,
+              "full_scale_error_percent": 0.008332,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.9,
+                0.315142,
+                0.952,
+                0.743713
+              ],
+              "evidence_zh": "原图书脊范围x=1800–1904，上缘y≈589；延伸约801像素，换算约3204百万册。",
+              "uncertainty_zh": "整数边界及抗锯齿带来约±1像素，即±4百万册的不确定性。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Book A（大值）",
+              "required_parts": [
+                "书脊上缘与金色顶饰",
+                "布纹主体及左右包边",
+                "Book A书名",
+                "AUTHOR A框",
+                "共同零线",
+                "底部书架"
+              ],
+              "relationship": "书名与作者框包含于包边内；上缘至零线构成数据高度，主体越过零线连续连接下部，书底接触书架。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.088,
+                0.23007,
+                0.14,
+                0.931
+              ],
+              "evidence_zh": "x=176–280，书顶y≈430，零线y=1390，书底y≈1740；金边、布纹、书名和作者框均完整可见。"
+            },
+            {
+              "category": "Book J（最小正值）",
+              "required_parts": [
+                "深红书脊上缘",
+                "左右包边",
+                "Book J书名",
+                "AUTHOR J框",
+                "共同零线",
+                "底部书架"
+              ],
+              "relationship": "窄小数据延伸与下部完整书脊同宽且相接；零线是覆盖其表面的细规则线，下部书名和作者框仍包含在边饰内，底部落在书架上。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.61,
+                0.73997,
+                0.662,
+                0.931
+              ],
+              "evidence_zh": "x=1220–1324，上缘y≈1383，零线y=1390；约7像素延伸未消失，零线下完整书脊延续至y≈1740。细部表面质感主要由下部可见结构支持。"
+            },
+            {
+              "category": "Book added 3（中间值）",
+              "required_parts": [
+                "绿色书脊顶饰",
+                "布纹与金色包边",
+                "Book added 3书名",
+                "AUTHOR 13框",
+                "零线及书架"
+              ],
+              "relationship": "顶部、侧边和底部装订框组成连续书脊，纵向类别名与作者框位于其内部，只有零线上方高度编码销量。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.784,
+                0.48475,
+                0.836,
+                0.931
+              ],
+              "evidence_zh": "书顶约y=906–907，底部与其他书齐平；1,933.0标签位于本书正上方，没有跨列遮盖。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "合成书籍类别扩至15项，使用当前销量和固定输入顺序；不继承真实书名、旧峰谷、阅读排行或未提供的50年统计期间。",
+            "output_added_or_lost_meaning_zh": "输出保留书籍销量比较及书脊高度融合；作者占位和无指定销售期间均有可见说明。参考的全球阅读排行论证未延续，属于输入适配。",
+            "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、SYNTHETIC Book sales、Synthetic copies sold / million copies、Spine extension encodes copies sold、The matching lower bindings are decorative、No sales period is specified。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "当前冻结数据规定合成销量、15个Book类别且未给期间；输出相应替换参考的真实阅读排行与50年口径。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "首本最高、中央短值及右侧逐渐变高的轮廓与当前数据一致，不以参考峰谷作要求。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "Book J约7像素延伸的整数边界估计为28百万册，目标为26；约±1像素已覆盖该差异，不能据此断言真实相对误差。"
+            }
+          ],
+          "measurement_coverage_zh": "单面板、单系列、单一线性高度通道。全部15本进行了宽度和上缘像素扫描，详细记录覆盖最大值、最小正值、另一小值及多个中间/大值的6项；另外逐项核对全部15个数值和类别。未对纹理内部细节作额外定量编码假设。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均为完整书脊横排，含纵向书名、底部作者及装订边饰；待评图的金色框饰更繁复。",
+            "data_adaptation_excluded_zh": "不扣除类别增至15、合成书名作者及数值驱动高度变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "书脊均直立同向并列，下端落于共同水平支承，上端形成数据轮廓；文字和作者框位于各自书脊内部。",
+            "data_adaptation_excluded_zh": "非数据厚度、标签位置和细部姿态允许适配；不要求旧峰谷。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留黄底、书脊数据主体和左侧刻度，但右上白色标题改为顶部通栏深色大标题，中央新增较大的编码说明区。",
+            "data_adaptation_excluded_zh": "不扣除15类、当前数据轮廓、合成提示及更新的必要语义文字。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留暖黄色背景与多色书脊；参考的平面简化色块、白色展示字体改成写实布纹、磨损金边和深色衬线标题。",
+            "data_adaptation_excluded_zh": "高度、宽度适配及替换文字不计入风格差异。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/3605e7af7c1079",
       "numeric_supported": true,
