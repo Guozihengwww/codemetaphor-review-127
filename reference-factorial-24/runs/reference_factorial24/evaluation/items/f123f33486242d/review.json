@@ -1,0 +1,334 @@
+{
+  "verdict": "pass",
+  "confidence": 0.97,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为深绿背景上的俯视圆形宴会桌，三位人物围桌，礼盒、饮食及器皿置于不同材质的扇区桌面，外围引线标注比例。待评图为浅色背景，左侧俯视圆桌、四位人物，手臂压在桌缘内，桌面中心有礼盒与食物；彩色木纹扇区本身构成桌面。右侧九行类别表显示计数76、38、39、43、44、45、29、3、183及对应百分比15.2%、7.6%、7.8%、8.6%、8.8%、9.0%、5.8%、0.6%、36.6%。顶部可读SYNTHETIC DATA、Gift budget preferences、HOLIDAY GIFTING及500 simulated responses。Budget E的黄色窄条在左下桌缘可见，并有外置引线。圆心附近部分边界被礼盒与餐盘遮挡。",
+  "summary_zh": "九类数据、百分比、绑定及当前统计语义完整。像素测量支持角宽编码；最小0.6%扇区仍可辨认。圆桌、人物、礼盒与食物保留接触和承载关系，未发现违反核心要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量2000×1412的image.png，未使用项目诊断掩膜或自检。先从图例像素提取颜色，再追踪r约190–230及315–350处的浅色接缝，拟合共同中心约(684.85,794.74)，反算角宽和响应数。最小扇区另以8条半径重复取样。满量程误差为|观测计数−目标计数|/500×100，亦等于份额百分点差；表中数值为近似点估计。",
+  "uncertainties_zh": "中心被礼盒和餐盘局部遮挡，中心位置由外露接缝拟合。最小扇区宽约13像素，若宽度判读相差1像素，约相当于其宽度的8%，不能由满量程通过推断亚百分比相对精度。按限制未查看执行日志、自检或编排文件，因此未独立核验历史完整渲染均经过capture_render.py。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "全部9类及A、B的语义父类完整，计数顺序76、38、39、43、44、45、29、3、183；总数500。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "九项份额依次15.2%、7.6%、7.8%、8.6%、8.8%、9.0%、5.8%、0.6%、36.6%，与计数/500一致，总计100.0%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "桌面A1–A3、B1–B2、C、D与右表别名和颜色对应；Budget E引线端点位于黄色窄扇区；最大扇区直接标注Price not a factor。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "九个可见扇区的接缝像素测量均支持比例编码，份额点估计误差最大约0.034个百分点；最小扇区重复测量角宽约2.11°–2.19°，目标2.16°。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的四位人物、礼盒和餐盘，以及raw_02.png的木纹均在成图中实质出现；render.py按当前计数生成极角分区、文字和素材叠合。执行历史核验范围见不确定性。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "同一圆盘的彩色木纹分区直接构成桌面；人物手臂越过桌缘，礼盒与食物位于桌面上方。未发现破坏关系的透视错位或接缝。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、SYNTHETIC DATA、单位、九行标签、计数和百分比均可读；最小扇区采用外置标签，底部说明角宽公式、子类和非真实调查口径。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "俯视圆桌外缘闭合，桌面扇区共享中心；人物围桌且手接触桌面，礼盒、餐盘覆盖桌面，数据区没有成为旁置图表。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "HOLIDAY GIFTING与Gift budget preferences明确主题；500 simulated responses、互斥单选说明及预算父子类保留指标、单位和分类口径。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "保留节日礼物预算与聚餐场景联系；原图的赢得芳心、30–40岁单身女性和日元档位已由冻结输入改编为合成预算选项，不归为输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Budget E在左侧D与Price not a factor之间形成连续黄色窄桌面，r=340处约13像素宽，引线指向其内部；靠近中心部分被餐盘遮挡，外露部分足以辨认承载关系。"
+    }
+  },
+  "semantic_attribution_zh": "原图的人群、求爱措辞、日元阈值及520样本口径被输入改编为500个合成单选预算响应，属于允许的语义适配。当前主题、计数单位、预算父子类和份额含义未见输出丢失。九个扇区及其大小变化来自当前数据；微小扇区的精度限制来自像素与抗锯齿。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "preference",
+        "category": "Budget A / subcategory 1",
+        "expected_value": 76,
+        "observed_value": 76.0525,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 324.94,
+        "full_scale_error_percent": 0.0105,
+        "small_value_relative_error_percent": 0.0691,
+        "bbox_xyxy_normalized": [
+          0.342,
+          0.321,
+          0.54,
+          0.564
+        ],
+        "evidence_zh": "由原图可见接缝像素拟合角宽约54.758°，按500×角宽/360反算；所列像素长度为r=340处的对应弧长。",
+        "uncertainty_zh": "结果为接缝像素拟合近似值，末位不是测量精度；约1像素边界判读差异不影响3个百分点判定。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget A / subcategory 2",
+        "expected_value": 38,
+        "observed_value": 38.0381,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 162.52,
+        "full_scale_error_percent": 0.0076,
+        "small_value_relative_error_percent": 0.1002,
+        "bbox_xyxy_normalized": [
+          0.342,
+          0.537,
+          0.54,
+          0.669
+        ],
+        "evidence_zh": "由原图可见接缝像素拟合角宽约27.387°，按500×角宽/360反算；所列像素长度为r=340处的对应弧长。",
+        "uncertainty_zh": "结果为接缝像素拟合近似值，末位不是测量精度；约1像素边界判读差异不影响3个百分点判定。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget A / subcategory 3",
+        "expected_value": 39,
+        "observed_value": 38.9815,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 166.55,
+        "full_scale_error_percent": 0.0037,
+        "small_value_relative_error_percent": 0.0473,
+        "bbox_xyxy_normalized": [
+          0.342,
+          0.562,
+          0.526,
+          0.778
+        ],
+        "evidence_zh": "由原图可见接缝像素拟合角宽约28.067°，按500×角宽/360反算；所列像素长度为r=340处的对应弧长。",
+        "uncertainty_zh": "结果为接缝像素拟合近似值，末位不是测量精度；约1像素边界判读差异不影响3个百分点判定。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget B / subcategory 1",
+        "expected_value": 43,
+        "observed_value": 42.8307,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 183,
+        "full_scale_error_percent": 0.0339,
+        "small_value_relative_error_percent": 0.3938,
+        "bbox_xyxy_normalized": [
+          0.342,
+          0.562,
+          0.47,
+          0.84
+        ],
+        "evidence_zh": "由原图可见接缝像素拟合角宽约30.838°，按500×角宽/360反算；所列像素长度为r=340处的对应弧长。",
+        "uncertainty_zh": "结果为接缝像素拟合近似值，末位不是测量精度；约1像素边界判读差异不影响3个百分点判定。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget B / subcategory 2",
+        "expected_value": 44,
+        "observed_value": 44.1255,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 188.53,
+        "full_scale_error_percent": 0.0251,
+        "small_value_relative_error_percent": 0.2853,
+        "bbox_xyxy_normalized": [
+          0.266,
+          0.562,
+          0.374,
+          0.843
+        ],
+        "evidence_zh": "由原图可见接缝像素拟合角宽约31.770°，按500×角宽/360反算；所列像素长度为r=340处的对应弧长。",
+        "uncertainty_zh": "结果为接缝像素拟合近似值，末位不是测量精度；约1像素边界判读差异不影响3个百分点判定。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget C",
+        "expected_value": 45,
+        "observed_value": 44.9961,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 192.25,
+        "full_scale_error_percent": 0.0008,
+        "small_value_relative_error_percent": 0.0087,
+        "bbox_xyxy_normalized": [
+          0.18,
+          0.562,
+          0.343,
+          0.821
+        ],
+        "evidence_zh": "由原图可见接缝像素拟合角宽约32.397°，按500×角宽/360反算；所列像素长度为r=340处的对应弧长。",
+        "uncertainty_zh": "结果为接缝像素拟合近似值，末位不是测量精度；约1像素边界判读差异不影响3个百分点判定。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget D",
+        "expected_value": 29,
+        "observed_value": 29.0259,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 124.02,
+        "full_scale_error_percent": 0.0052,
+        "small_value_relative_error_percent": 0.0894,
+        "bbox_xyxy_normalized": [
+          0.151,
+          0.562,
+          0.343,
+          0.723
+        ],
+        "evidence_zh": "由原图可见接缝像素拟合角宽约20.899°，按500×角宽/360反算；所列像素长度为r=340处的对应弧长。",
+        "uncertainty_zh": "结果为接缝像素拟合近似值，末位不是测量精度；约1像素边界判读差异不影响3个百分点判定。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget E",
+        "expected_value": 3,
+        "observed_value": 3.0069,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 12.97,
+        "full_scale_error_percent": 0.0014,
+        "small_value_relative_error_percent": 0.2315,
+        "bbox_xyxy_normalized": [
+          0.149,
+          0.562,
+          0.343,
+          0.631
+        ],
+        "evidence_zh": "原图八条半径上的接缝间角宽中位数约2.165°，按500×角宽/360反算；r=340像素处实际窄条弧宽约12.97像素。",
+        "uncertainty_zh": "各半径反算约2.92–3.03个响应；抗锯齿和接缝宽度限制小值精度，点估计误差不能代表精度保证。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Price not a factor",
+        "expected_value": 183,
+        "observed_value": 183.0379,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 782.04,
+        "full_scale_error_percent": 0.0076,
+        "small_value_relative_error_percent": 0.0207,
+        "bbox_xyxy_normalized": [
+          0.145,
+          0.283,
+          0.442,
+          0.621
+        ],
+        "evidence_zh": "由原图可见接缝像素拟合角宽约131.787°，按500×角宽/360反算；所列像素长度为r=340处的对应弧长。",
+        "uncertainty_zh": "结果为接缝像素拟合近似值，末位不是测量精度；约1像素边界判读差异不影响3个百分点判定。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "共同圆桌与非数据部件",
+        "required_parts": [
+          "圆形桌缘",
+          "扇区桌面",
+          "围桌人物及手臂",
+          "礼盒",
+          "餐盘与食物"
+        ],
+        "relationship": "连接、接触与上下遮挡",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.115,
+          0.244,
+          0.57,
+          0.882
+        ],
+        "evidence_zh": "四位人物位于桌缘外，手伸入桌面；礼盒和餐盘在中心附近遮住部分径向接缝，桌缘围合各扇区，整体俯视关系一致。"
+      },
+      {
+        "category": "Price not a factor（大值）",
+        "required_parts": [
+          "青绿色木纹扇区",
+          "圆桌外缘",
+          "上左人物的手",
+          "中央礼盒"
+        ],
+        "relationship": "数据面构成桌面并与人物、摆件接触",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.145,
+          0.283,
+          0.442,
+          0.621
+        ],
+        "evidence_zh": "左上青绿色大扇区占据连续桌面，外弧接桌缘，上左人物双手覆盖其边缘内侧，靠中心处由礼盒和餐盘局部遮挡。"
+      },
+      {
+        "category": "Budget E（最小正值）",
+        "required_parts": [
+          "黄色窄扇区",
+          "相邻青绿与蓝色桌面",
+          "圆桌外缘",
+          "标注引线"
+        ],
+        "relationship": "窄数据面嵌在同一桌面内并接到圆形外缘",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.149,
+          0.562,
+          0.343,
+          0.631
+        ],
+        "evidence_zh": "黄色条带位于青绿大扇区下方、蓝色D上方，向圆心方向收窄，在左侧连接桌缘；引线圆点落在条带内，近中心部分被餐盘遮挡。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "合成500个互斥单选响应替代参考调查；Budget A–E及其子类替代具体日元档位，保留节日礼物预算主题，无须沿用旧人群或比例。",
+      "output_added_or_lost_meaning_zh": "当前统计含义完整；未加入真实调查主张。人物与餐具明确声明不编码数量。原参考的特定人群和求爱问题未延续，来源是输入适配。",
+      "visible_inscription_evidence_zh": "SYNTHETIC DATA；HOLIDAY GIFTING；Gift budget preferences；500 simulated responses；One mutually exclusive choice per simulated participant.；Tabletop angle = count ÷ 500 × 360°.；Synthetic choices, not a real survey."
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "输入明确使用合成预算父子类和500个模拟响应，解释原参考人群、金额阈值和调查措辞的变化。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "九个扇区及0.6%窄片由当前类别与数值决定，未要求复制参考六个扇区和旧份额。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小片可见且角宽符合目标，但约13像素宽的接缝判读无法保证极高相对精度。"
+      }
+    ],
+    "measurement_coverage_zh": "唯一计数/角宽通道的9个扇区均测量，包含最大值、内部类别及最小正值；九项类别、计数、百分比及总数另逐项目视核对。未把装饰性人物或餐具数量当作数据，也未测量被摆件遮住的中心区域。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "圆桌、围桌人物、椅子、礼盒和食物保留；参考中的酒具、托盘组合及正式宴会服装改为共享餐盘与针织衣人物。",
+      "data_adaptation_excluded_zh": "不扣当前类别数、扇区比例、合成语义及允许的人物数量和姿态适配。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "保留俯视围桌关系，手臂覆盖桌缘并伸入桌面，礼盒与食物位于扇区表面；没有把物体旁置于独立图表。",
+      "data_adaptation_excluded_zh": "排除明确允许的人物位置与姿态、桌缘厚度和标签位置变化。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "仍以上方标题和大圆桌为主；参考环桌引线布局与右下装饰字被左侧桌景、右侧对齐数据表的双栏布局取代。",
+      "data_adaptation_excluded_zh": "不扣新增子类别所需的文字空间、标签位置及数值变化。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "人物、食物和礼盒仍有摄影质感及阴影；参考深绿地面和多种织物纹样改为浅米背景与统一方向的着色木纹。",
+      "data_adaptation_excluded_zh": "不扣数据造成的扇区大小变化、合成标题及允许的非数据厚度适配。"
+    }
+  }
+}
