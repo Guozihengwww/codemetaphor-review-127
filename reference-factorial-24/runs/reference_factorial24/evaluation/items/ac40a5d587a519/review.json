@@ -1,0 +1,246 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为绿色背景上的顶视宴会圆桌，三人围坐，礼盒、杯盘和食物置于不同材质扇区上，细引线连接外侧文字。待评图保留同类桌面融合：九个扇区共有中心与圆周，三名人物的手臂触及桌缘，礼盒、酒杯和食物覆盖桌面；最小橙色扇区可见。全部九类、计数和百分比可读，标题说明礼物预算，另有SYNTHETIC DATA、500 simulated responses及单选说明。未见明显标签错接或破坏圆桌的接缝。",
+  "summary_zh": "九类计数、百分比及绑定正确；像素测得的角宽偏差均远低于3个百分点。人物、礼盒和食物与数据材质桌面保持接触和遮挡关系，最小扇区可辨。当前合成统计意义完整，未发现必需要求的可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "以2000×1412原图RGB像素测量，中心取可见径向交点约(1049.5,794.5)。在半径370及390px处采样，用各扇区内部像素色度识别长颜色段，短接缝过渡带取中点。390px处边界约为0.09、54.67、82.19、110.15、141.23、172.70、205.25、226.005、228.19、360.09度。折算500个响应后，九类最大满量程误差约0.058个百分点。未使用源码遮罩或自检数值作为像素测量；源码公式仅作辅证。",
+  "uncertainties_zh": "角宽读数受约1px中心定位、接缝和抗锯齿影响；最小值的低满量程误差不代表百分之一量级的相对精度。礼盒覆盖的局部边界由可见延续及源码辅证，不能从被遮挡像素直接测量。按限制未检查执行日志、自检或捕获记录，不能确认capture_render.py的实际调用；此项不作为可见输出缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个互斥类别全部出现：Budget A三项、Budget B两项、Budget C/D/E及Price not a factor；子类别保留父类名。500总量、模拟单位、合成标识和单选说明齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项可读为76/15.2%、38/7.6%、39/7.8%、43/8.6%、44/8.8%、45/9.0%、29/5.8%、3/0.6%、183/36.6%；合计500和100%。最小正值未舍为零。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "九条引线及色点对应各自材质扇区；从12点顺时针依次为输入顺序。Budget E引线白点落在蓝色与金色之间的橙色细带，Budget B第二项与Budget C也分别落在各自扇区。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "最终像素颜色边界支持九类目标角宽，最大估计误差约0.058个百分点。最小Budget E角宽约2.185°，目标2.16°；未发现最小角度扩张或以物体遮挡面积替代逻辑角宽。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png及raw_02.png：三个人物、礼盒、食品拼盘、酒杯蜡烛及织物图案均实质出现在成图中。prepare_assets.py裁取这些素材；render.py读取数据并以共同圆盘极角遮罩控制扇区，以计数生成百分比文字。未核验受限的捕获执行记录。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据扇区本身构成同一圆桌面；礼盒、杯具和食物位于织物表面之上，人物身体主要在桌外、手臂跨接桌沿。桌沿与扇区圆周同心，未见破坏桌面身份的错位或层序。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "标题、九类名称、九组计数/百分比、500 simulated responses、SYNTHETIC DATA及页脚统计说明在原尺寸均可读；无必需文字被物体遮盖或裁断。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "圆桌、周边人物、桌面礼盒及食品关系完整。大金色材质区承托杯具与礼物，橙色最小扇区仍嵌入同一桌面并抵达共同圆周；数据承载的是实际桌面角宽。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Gift budget preferences与Holiday gifting明确当前主题；One choice per simulated participant及500 simulated responses明确单选模拟计数。父类/子类名称、百分比和100% total使类别角色及分母可辨。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "礼物预算与“价格不重要”的类别角色、宴会桌上的统计融合得到保留。参考图关于求爱所需圣诞礼物最低金额及特定女性样本的口径，按冻结输入改为合成礼物预算偏好；这属于输入改编，不判输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Budget E橙色织物带在原图可辨，半径390px处弧宽约14.9px，夹在蓝色与金色桌面之间并接到桌缘；标签3 responses/0.6%清楚。中段被礼盒局部覆盖，近中心的亚像素部分不作精确可辨承诺。"
+    }
+  },
+  "semantic_attribution_zh": "参考图可见问句涉及赢得30–40岁单身女性芳心所需的圣诞礼物最低花费；冻结输入明确改为500个合成参与者的互斥礼物预算偏好。人口、真实调查及求爱门槛语境的变化归于输入改编。输出保留当前预算父类、单选、计数、百分比和模拟单位；小扇区近中心的可辨限制归于分辨率，未发现输出自身的必要语义丢失。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "preference",
+        "category": "Budget E",
+        "expected_value": 3,
+        "observed_value": 3.035,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 14.9,
+        "full_scale_error_percent": 0.0069,
+        "small_value_relative_error_percent": 1.16,
+        "bbox_xyxy_normalized": [
+          0.364,
+          0.562,
+          0.526,
+          0.776
+        ],
+        "evidence_zh": "最终RGB像素在半径390px处的颜色边界给出角宽约2.185°；按500×角宽/360折算约3.035个模拟响应。mark_extent_px为该采样圆周上的弧长，非径向长度或面积。",
+        "uncertainty_zh": "约15px宽的细带受到接缝及抗锯齿影响；1–2px边界判定差异可明显改变相对误差。1.16%仅为该像素读法的中心估计，不是小值精度保证。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Budget C",
+        "expected_value": 45,
+        "observed_value": 45.208,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 221.6,
+        "full_scale_error_percent": 0.0417,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.433,
+          0.562,
+          0.553,
+          0.869
+        ],
+        "evidence_zh": "最终RGB像素在半径390px处的颜色边界给出角宽约32.550°；按500×角宽/360折算约45.208个模拟响应。mark_extent_px为该采样圆周上的弧长，非径向长度或面积。",
+        "uncertainty_zh": "中心定位约1px、接缝及织物纹理影响边界；读数为近似值。"
+      },
+      {
+        "series_id": "preference",
+        "category": "Price not a factor",
+        "expected_value": 183,
+        "observed_value": 183.194,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 897.8,
+        "full_scale_error_percent": 0.0389,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.309,
+          0.257,
+          0.526,
+          0.768
+        ],
+        "evidence_zh": "最终RGB像素在半径390px处的颜色边界给出角宽约131.900°；按500×角宽/360折算约183.194个模拟响应。mark_extent_px为该采样圆周上的弧长，非径向长度或面积。",
+        "uncertainty_zh": "采样圆周上的边界可见；桌面内部有杯具和礼盒遮挡，未将遮挡面积作为份额。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Price not a factor／最大扇区",
+        "required_parts": [
+          "金色织物扇区",
+          "共同圆桌边",
+          "人物手臂",
+          "酒杯与蜡烛",
+          "礼盒"
+        ],
+        "relationship": "材质扇区组成桌面，杯具和礼盒受其承托，人物在桌外朝向桌面并接触桌缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.205,
+          0.209,
+          0.527,
+          0.77
+        ],
+        "evidence_zh": "左上及左侧人物的手臂跨接金色桌沿；酒杯蜡烛位于金色区域上部，礼盒位于其下部并覆盖邻接扇区边界，阴影与上覆层序一致。"
+      },
+      {
+        "category": "Budget A／食品处中等扇区",
+        "required_parts": [
+          "浅色织物扇区",
+          "相邻扇区边界",
+          "盛食物的盘子",
+          "共同圆桌"
+        ],
+        "relationship": "餐盘和食物在扇区表面之上，可跨越材质边界；扇区仍共享中心和桌缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.523,
+          0.257,
+          0.743,
+          0.669
+        ],
+        "evidence_zh": "右上食品拼盘跨在浅色桌面区域上，盘下有局部阴影；下方扇区径向边界与共同圆心相接，未表现为独立旁置饼图。"
+      },
+      {
+        "category": "Budget E／最小扇区",
+        "required_parts": [
+          "橙色细织物带",
+          "蓝色邻区",
+          "金色邻区",
+          "共同桌沿",
+          "上覆礼盒",
+          "引线点"
+        ],
+        "relationship": "细扇区夹在邻区之间并属于同一圆桌面；礼盒局部遮挡，数据引线落入其外侧可见部分。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.363,
+          0.561,
+          0.527,
+          0.777
+        ],
+        "evidence_zh": "橙色带向左下桌缘展开，外段约15px弧宽仍能辨认织物颜色；礼盒覆盖中段，遮挡前后可见部分方向一致，白色引线点在橙色带内。"
+      },
+      {
+        "category": "右下人物与桌缘",
+        "required_parts": [
+          "人物与椅子",
+          "双手及前臂",
+          "红色织物桌面",
+          "圆桌边"
+        ],
+        "relationship": "椅子和身体在桌外，双手接近并跨在桌缘之上，人物朝向宴会桌。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.67,
+          0.725,
+          0.797,
+          0.891
+        ],
+        "evidence_zh": "右下深蓝衣人物坐于木椅，手部压在红色扇区外缘附近；身体未被错误置于桌面底纹之下，桌面方向与顶视人物一致。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入允许以合成预算父类/子类及500个模拟单选响应替换旧金额档、520份真实调查和原人口口径；人物姿态、桌厚及标签位置可调整。",
+      "output_added_or_lost_meaning_zh": "当前主题与统计意义没有可见遗漏。旧参考的求爱最低花费问句未保留，属于输入设定的主题口径改编；宴会桌承载礼物预算份额的物理联系保留。",
+      "visible_inscription_evidence_zh": "可见Gift budget preferences、Holiday gifting、SYNTHETIC DATA、One choice per simulated participant、500 simulated responses，以及子类别互斥说明和Clockwise from 12 o’clock / 100% total。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "合成预算偏好与500个模拟响应来自冻结输入；不要求复刻旧调查样本、货币区间或求爱问句。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "当前九类使桌面扇区数量和角宽变化；橙色细扇区按3/500保留，不能为身份可辨而放大。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小扇区外段清楚，近中心随半径收缩至亚像素；抗锯齿和细接缝限制小值相对精度判断。"
+      }
+    ],
+    "measurement_coverage_zh": "只有一个角宽定量通道。已从最终像素检查全部九个边界，并逐项核对全部标签、计数和百分比；本表列出最小Budget E、内部Budget C及最大Price not a factor三项代表测量。未以人物或礼盒遮挡后的可见面积推算份额。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留圆桌、三名人物、椅子、礼盒、酒杯及食物；参考的酒桶、长形餐板和桌外礼盒未沿用，改为杯具、蜡烛及单个食品拼盘。",
+      "data_adaptation_excluded_zh": "不扣当前九类所需的扇区数量、大小、合成标签或类别配色变化。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "两图人物均围绕桌边朝向桌面，手臂接触或跨越桌缘；杯盘、食物及礼盒位于材质桌面之上。",
+      "data_adaptation_excluded_zh": "按core允许人物姿态、周向位置、非数据厚度及标签位置调整，不要求原人物位置。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留绿色全幅底色、中央偏下圆桌和两侧引线注释；待评图增加醒目的大标题和右上总量，桌面占幅比参考略小。",
+      "data_adaptation_excluded_zh": "排除新增类别、更新标签及替换旧调查主题和品牌文字的影响。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留写实人物与餐具、织物扇区、深绿背景及奶白文字；待评图绿底更平滑，桌沿金色边框更明确，织物图案不同。",
+      "data_adaptation_excluded_zh": "不因数据驱动的扇区边界、细扇区或允许的桌厚变化扣分。"
+    }
+  }
+}

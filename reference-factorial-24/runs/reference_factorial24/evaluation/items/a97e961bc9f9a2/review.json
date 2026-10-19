@@ -1,0 +1,429 @@
+{
+  "verdict": "pass",
+  "confidence": 0.95,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "先查看了reference.png与image.png原始分辨率。参考为三联悬带奖牌，盘内金属扇区与下方金额对应。待评图为三枚等大浮雕圆盘，无悬带；人物和枝叶浮雕横跨材料分区，盘缘与底部厚度可见。金、银牌各有S1–S4标注；铜牌顶部窄锡、锌区可见。标题、合成数据提示、独立100%、USD、八行组成表及720/360/6金额清楚可读。",
+  "summary_zh": "通过。代表性像素测量均在3个百分点容差内，全部组成数值、类别角色及金额正确，材料扇区与奖牌盘面实质融合。参考悬带和材质风格的变化已单独评分。review.json已保存并通过schema校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "仅量测指定image.png（2100×1498）。读取实际颜色边界，依据圆心和端点以atan2换算角宽；其他代表扇区采样r=202–219px环带的RGB颜色过渡。份额为角宽除以360再乘100。窄区记录指定水平行的宽度，其他部分记录r=210px处弧长或盘面直径。未用代码目标角度或诊断掩膜代替像素测量。",
+  "uncertainties_zh": "抗锯齿、细白缝和浮雕使角宽估计约有±0.1至0.15个百分点不确定性。最小锡区的相对精度不能由满量程通过保证，圆心附近亚像素尖端无法精确量测。按限制未检查生成调用和capture_render.py执行归档，不据此推断缺失。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "三枚奖牌、八类材料、全部24个组成值及全部零值齐全；三项金额和合成数据提示齐全。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "金牌1.5、5.9及四项23.15；银牌6.5及四项23.375；铜牌96.5、0.6、2.9准确，其他值均0%。金额720、360、6 USD准确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "奖牌标题、盘面和金额一一对应；S1–S4通过表格映射至银合成子类；小区引线落在相应材料外缘。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "三盘等大，正值顺时针排列，零值不占扇区。代表测量最大点估计差约0.067个百分点；锡区约0.596%，大铜区约96.487%。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "原始和处理后素材中的举火炬人物、翅膀、枝叶及盘缘清楚用于三盘主体。render.py按累计百分比构建扇区，并用该素材着色和裁切；执行历史未核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "金属扇区构成奖牌盘面本身，浮雕跨分区连续；盘缘包围数据区域，厚度位于盘面后方。标签未破坏主要分区关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下必需标题、合成提示、表格值、子类映射、百分比及USD可读，无截断或重大遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "三枚约444px直径的圆盘具备金属分区、连续压印和盘缘；小锡区仍属于盘面并向圆心收拢。参考悬带未保留，但冻结核心指定的盘面融合关系保留。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "主题、独立质量构成、每枚100%、质量占比、USD、银合成子类及非真实统计声明均明示，分母和统计角色清楚。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "材料组成与金额对照关系保留；奥运真实统计语境依冻结输入改为合成示例，属于允许的输入适配。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "1.5%金区和0.6%锡区均有实际色面。锡区在y=410处两边界约相距8px，内部绿色像素可辨；尖端精度受分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "合成主题、更新数值及银子类来自冻结输入；扇区形状随数据改变。未见当前指标、单位或类别角色遗漏。悬带缺失及写实风格变化记为非数据保真差异；最小区尖端的不确定性归于分辨率。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "medal_Gold",
+        "category": "Gold",
+        "expected_value": 1.5,
+        "observed_value": 1.4962,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 16.5,
+        "full_scale_error_percent": 0.0038,
+        "small_value_relative_error_percent": 0.255,
+        "bbox_xyxy_normalized": [
+          0.19524,
+          0.26235,
+          0.20571,
+          0.41055
+        ],
+        "evidence_zh": "y=440处边界约x=410及426.5，相对圆心(410,615)角宽约5.386°。",
+        "uncertainty_zh": "约±0.1个百分点定位不确定性；点估计误差不代表同等测量精度。"
+      },
+      {
+        "series_id": "medal_Gold",
+        "category": "Silver / synthetic subcategory 4",
+        "expected_value": 23.15,
+        "observed_value": 23.1528,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 305.49,
+        "full_scale_error_percent": 0.0028,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.08952,
+          0.26235,
+          0.19571,
+          0.41121
+        ],
+        "evidence_zh": "像素颜色过渡约276.8°至360.15°；r=210px处弧长约305.49px。",
+        "uncertainty_zh": "浮雕、白缝及抗锯齿使份额估计约有±0.15个百分点不确定性。"
+      },
+      {
+        "series_id": "medal_Gold",
+        "category": "Silver / synthetic subcategory 2",
+        "expected_value": 23.15,
+        "observed_value": 23.0833,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 304.58,
+        "full_scale_error_percent": 0.0667,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.17048,
+          0.40988,
+          0.29524,
+          0.55874
+        ],
+        "evidence_zh": "内部类别S2的颜色边界约110.3°和193.4°，角宽83.1°。",
+        "uncertainty_zh": "估计约±0.15个百分点，未使用代码目标角度。"
+      },
+      {
+        "series_id": "medal_Silver",
+        "category": "Copper",
+        "expected_value": 6.5,
+        "observed_value": 6.4824,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 75.5,
+        "full_scale_error_percent": 0.0176,
+        "small_value_relative_error_percent": 0.27,
+        "bbox_xyxy_normalized": [
+          0.5,
+          0.26235,
+          0.54286,
+          0.41055
+        ],
+        "evidence_zh": "y=440处边界约x=1050及1125.5，相对圆心(1050,615)角宽约23.337°。",
+        "uncertainty_zh": "边界约半像素至一像素不确定，份额估计约±0.1个百分点。"
+      },
+      {
+        "series_id": "medal_Silver",
+        "category": "Silver / synthetic subcategory 4",
+        "expected_value": 23.375,
+        "observed_value": 23.375,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 308.43,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.39429,
+          0.26235,
+          0.50048,
+          0.41121
+        ],
+        "evidence_zh": "颜色边界约276.0°至360.15°，r=210px处弧长约308.43px。",
+        "uncertainty_zh": "近似角度差恰好接近目标，不是零误差证明；估计约±0.15个百分点。"
+      },
+      {
+        "series_id": "medal_Silver",
+        "category": "Silver / synthetic subcategory 2",
+        "expected_value": 23.375,
+        "observed_value": 23.3333,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 307.88,
+        "full_scale_error_percent": 0.0417,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.4781,
+          0.40988,
+          0.60143,
+          0.55874
+        ],
+        "evidence_zh": "内部类别S2的颜色边界约107.8°和191.8°，角宽84.0°。",
+        "uncertainty_zh": "白缝和材质明暗影响定位，估计约±0.15个百分点。"
+      },
+      {
+        "series_id": "medal_Bronze",
+        "category": "Copper",
+        "expected_value": 96.5,
+        "observed_value": 96.4869,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 444,
+        "full_scale_error_percent": 0.0131,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.69905,
+          0.26235,
+          0.91048,
+          0.55874
+        ],
+        "evidence_zh": "从顶部竖直边界至锡区边界约(1644,410)，相对圆心(1690,615)角宽约347.353°。盘面直径约444px。",
+        "uncertainty_zh": "边界和圆心约±1px定位不确定，份额估计约±0.1个百分点。"
+      },
+      {
+        "series_id": "medal_Bronze",
+        "category": "Tin",
+        "expected_value": 0.6,
+        "observed_value": 0.596,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 8,
+        "full_scale_error_percent": 0.004,
+        "small_value_relative_error_percent": 0.665,
+        "bbox_xyxy_normalized": [
+          0.78143,
+          0.26435,
+          0.80524,
+          0.41121
+        ],
+        "evidence_zh": "y=410处两侧边界约x=1644及1652，中间可见绿色材料；射线约347.353°和349.499°。",
+        "uncertainty_zh": "约±0.1个百分点不确定性相对0.6%并不小；圆心附近亚像素段不能精确量测。"
+      },
+      {
+        "series_id": "medal_Bronze",
+        "category": "Zinc",
+        "expected_value": 2.9,
+        "observed_value": 2.9171,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 38,
+        "full_scale_error_percent": 0.0171,
+        "small_value_relative_error_percent": 0.589,
+        "bbox_xyxy_normalized": [
+          0.78524,
+          0.26235,
+          0.80524,
+          0.41121
+        ],
+        "evidence_zh": "y=410处从锡锌边界x≈1652至竖直边界x≈1690，对应角宽约10.501°。",
+        "uncertainty_zh": "约±0.1个百分点；引线接触点覆盖少量外缘像素。"
+      },
+      {
+        "series_id": "illustrative_value",
+        "category": "Gold",
+        "expected_value": 720,
+        "observed_value": 720,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.15476,
+          0.60414,
+          0.23571,
+          0.66355
+        ],
+        "evidence_zh": "金牌下方可见$720及USD，正确绑定。",
+        "uncertainty_zh": "仅文字编码，几何长度及误差不适用。"
+      },
+      {
+        "series_id": "illustrative_value",
+        "category": "Silver",
+        "expected_value": 360,
+        "observed_value": 360,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.45952,
+          0.60414,
+          0.54048,
+          0.66355
+        ],
+        "evidence_zh": "银牌下方可见$360及USD，正确绑定。",
+        "uncertainty_zh": "仅文字编码，几何长度及误差不适用。"
+      },
+      {
+        "series_id": "illustrative_value",
+        "category": "Bronze",
+        "expected_value": 6,
+        "observed_value": 6,
+        "measurement_method": "numeric_text_only",
+        "mark_extent_px": null,
+        "full_scale_error_percent": null,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.76429,
+          0.60414,
+          0.84524,
+          0.66355
+        ],
+        "evidence_zh": "铜牌下方可见$6及USD，正确绑定。",
+        "uncertainty_zh": "仅文字编码，几何长度及误差不适用。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "金牌大银区与整体圆盘",
+        "required_parts": [
+          "圆盘",
+          "银子类扇区",
+          "人物和枝叶压印",
+          "盘缘"
+        ],
+        "relationship": "扇区包含于盘面，压印跨分区连续，盘缘包围盘面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.08714,
+          0.26235,
+          0.30381,
+          0.56676
+        ],
+        "evidence_zh": "S1–S4从共同圆心伸向盘缘，翼、衣褶及枝叶在边界两侧接续，金色厚边位于后方。"
+      },
+      {
+        "category": "金牌1.5%金区",
+        "required_parts": [
+          "窄金属色面",
+          "顶部盘缘",
+          "共同圆心",
+          "引线"
+        ],
+        "relationship": "金区接触顶部盘缘并向圆心收拢，引线接触外弧。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.19286,
+          0.25968,
+          0.22667,
+          0.41255
+        ],
+        "evidence_zh": "黄色窄片与铜区、银S4共享边界；y=440处约16.5px宽，存在实际材料面。"
+      },
+      {
+        "category": "银牌大银区与小铜区",
+        "required_parts": [
+          "圆盘",
+          "四个银子类",
+          "铜区",
+          "压印",
+          "盘缘"
+        ],
+        "relationship": "五个正值材料区拼合为同一压印圆盘表面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.3919,
+          0.26235,
+          0.60857,
+          0.56676
+        ],
+        "evidence_zh": "顶部右侧铜区延续圆形外缘；S1–S4与人物浮雕均在盘内，标注板未割断圆盘结构。"
+      },
+      {
+        "category": "铜牌96.5%铜区",
+        "required_parts": [
+          "大铜面",
+          "人物和枝叶压印",
+          "盘缘",
+          "锡锌小区"
+        ],
+        "relationship": "大铜面与小区共同闭合圆盘，压印位于盘面，厚度在后方。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.69667,
+          0.26235,
+          0.91333,
+          0.56676
+        ],
+        "evidence_zh": "绝大部分盘面为连续铜色，人物、翅膀和叶枝清楚；顶部小区没有漂浮或错位。"
+      },
+      {
+        "category": "铜牌0.6%锡区",
+        "required_parts": [
+          "锡色窄片",
+          "材料界线",
+          "顶部盘缘",
+          "共同圆心",
+          "引线"
+        ],
+        "relationship": "锡片夹在铜与锌之间，接触盘缘并朝圆心变窄。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.78,
+          0.26235,
+          0.80667,
+          0.41389
+        ],
+        "evidence_zh": "y=410处约8px宽，内部绿色像素延续到更低行，外弧与盘缘衔接；最末亚像素段无法精密判断。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "冻结输入指定合成组成与示例金额，并增加四个银合成子类；保留奖牌材料组成和金额对照，不沿用旧实际统计。",
+      "output_added_or_lost_meaning_zh": "当前统计含义未见缺失。真实奥运语境改为合成示例属于允许适配；悬带陈列关系未保留，盘面与数据扇区的融合仍保留。",
+      "visible_inscription_evidence_zh": "可见完整当前标题、SYNTHETIC DATA、独立质量构成、质量占比(%)、银合成子类说明、等半径不编码总质量、金额仅作文字标注及USD。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "真实奖牌统计改为明确标注的合成组成与示例金额，来自冻结输入。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "银材料分成S1–S4，角宽依据各盘独立100%的当前数据改变。"
+      },
+      {
+        "cause": "output_omission",
+        "evidence_zh": "参考悬带及其与圆盘的接触未出现；附加保真评分记录该差异，核心盘面结构仍在。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "锡区外侧约8px宽，向圆心收拢后出现亚像素段，小值相对精度仍有限。"
+      }
+    ],
+    "measurement_coverage_zh": "三盘均覆盖最小正值、大值及内部类别；铜牌三个正值全部量测。共9项几何代表记录及3项文字金额，未声称量测全部14个正扇区。全部24个组成值、8类材料及3个系列另作完整文字核对。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "金银铜奖牌圆盘身份与盘缘保留；参考红蓝绿悬带缺失，加入人物和枝叶浮雕。",
+      "data_adaptation_excluded_zh": "未因更新比例、银子类或合成数值扣分。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "三盘仍正面并排，材料区包含于盘面；悬带连接圆盘的关系缺失，改为独立陈列。",
+      "data_adaptation_excluded_zh": "排除允许的姿态、厚度和布局适配，仅记录悬带连接关系缺失。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留顶部主题、三联奖牌、下方对应金额的层次；标题缎带和悬带层次未沿用。",
+      "data_adaptation_excluded_zh": "新增子类所需表格、标签及标题更新本身不扣分。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "米白底与金银铜材质色可辨；参考平面几何纸感改为细密金属浮雕、光照和投影。",
+      "data_adaptation_excluded_zh": "未因数据导致的材质覆盖面积变化或允许的盘缘厚度变化扣分。"
+    }
+  }
+}
