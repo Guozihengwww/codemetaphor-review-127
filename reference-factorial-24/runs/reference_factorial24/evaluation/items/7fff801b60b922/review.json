@@ -1,0 +1,211 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为黄色背景上的彩色书脊排。最终图可见15本等宽完整书脊、纵向类别与作者栏、包边、共同零线；标题、销量指标和单位清晰。材质改为仿旧织纹，背景改为米色。源码前参考保留评分：身份4、非数据关系4、构图3、材质2。",
+  "summary_zh": "通过。数据、标签及书脊高度映射完整，像素量测均在容差内。已保存review.json并通过schema.json校验；未运行submit.py。",
+  "issues": [],
+  "measurement_notes_zh": "原图2000×1869。可见刻度每250px对应1000百万册，零线约y=1350。15条书脊宽度均约100px；逐项量测最大满量程读数差小于0.06%。",
+  "uncertainties_zh": "边界抗锯齿带来约±1px读数不确定性；最小值约7px，不能保证高相对精度。未检查流程日志，capture_render.py的历史执行情况未独立验证。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "15个类别、1个系列、全部数值、单位和SYNTHETIC DATA完整；每本保留作者栏并明确标注AUTHOR NOT SUPPLIED。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "全部15个数值与输入一致，包含四位小数；总量15,148正确。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "数值位于对应书脊上方，类别位于同一书脊内部，排列顺序符合输入。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "15项独立像素量测均通过3%满量程容差；最大读数差约0.0584%。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "raw_01.png中的五种织纹和金色包边实质用于全部书脊主体；源码直接按输入控制边界和文字。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据顶边即书脊顶边，材质连续连接到固定下部；不存在普通柱形与旁置书籍分离的问题。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原始分辨率下标题、单位、数值、类别和作者占位文字可读，无必要文字遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整书脊并排直立，顶帽、侧边及底部包边连接，书名和作者栏位于内部，共用零线与底边。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "SYNTHETIC Book sales及Synthetic copies sold / million copies明确当前主题、指标和单位；文字明确仅零线上方编码。"
+    },
+    "reference_meaning": {
+      "status": "partial",
+      "evidence_zh": "书籍高度比较销量的关系保留；原阅读排行与过去50年框架按输入改编为合成销量，不归因于输出遗漏。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "Book H、I、J分别约9、8、7px正延伸，仍与完整书脊相连；相邻小值的精细比较受像素分辨率限制。"
+    }
+  },
+  "semantic_attribution_zh": "旧阅读排行语义的替换属于允许的输入改编；新增类别和高低变化来自当前数据；小值精度限制来自分辨率。未发现当前主题或数据承载关系的输出遗漏。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book A",
+        "expected_value": 3840,
+        "observed_value": 3840,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 960,
+        "full_scale_error_percent": 0,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.1025,
+          0.208668,
+          0.1525,
+          0.722311
+        ],
+        "evidence_zh": "书脊顶边约y=390，零线约1350；960px按可见刻度换算为3840百万册。",
+        "uncertainty_zh": "边界约±1px；未用源码高度代替像素量测。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book added 3",
+        "expected_value": 1933,
+        "observed_value": 1932,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 483,
+        "full_scale_error_percent": 0.025,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.7925,
+          0.463884,
+          0.8425,
+          0.722311
+        ],
+        "evidence_zh": "书脊顶边约y=867，至零线约483px，换算约1932百万册。",
+        "uncertainty_zh": "整数像素边界约±1px。"
+      },
+      {
+        "series_id": "synthetic_sales",
+        "category": "Book J",
+        "expected_value": 26,
+        "observed_value": 28,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 7,
+        "full_scale_error_percent": 0.05,
+        "small_value_relative_error_percent": 7.6923,
+        "bbox_xyxy_normalized": [
+          0.62,
+          0.718566,
+          0.67,
+          0.722311
+        ],
+        "evidence_zh": "首个连续实色行约y=1343，至零线约7px；粗像素读数约28百万册。",
+        "uncertainty_zh": "约±1px等于±4百万册；7.69%是粗像素读数差，不能认定为亚像素真实偏差。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "Book A（大值）",
+        "required_parts": [
+          "顶帽",
+          "书脊表面",
+          "侧包边",
+          "书名及作者栏",
+          "底部包边",
+          "共同零线"
+        ],
+        "relationship": "顶帽和侧边包围连续书脊，底部接共同底边；零线上方的书脊高度承载销量。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.1025,
+          0.208668,
+          0.1525,
+          0.898876
+        ],
+        "evidence_zh": "蓝色书脊从顶端连续延伸至底部，金边连接，书名和作者栏位于零线以下。"
+      },
+      {
+        "category": "Book J（最小正值）",
+        "required_parts": [
+          "顶帽",
+          "书脊表面",
+          "侧包边",
+          "书名及作者栏",
+          "底部包边",
+          "共同零线"
+        ],
+        "relationship": "微小上部延伸与完整下部书脊连续，顶帽接两侧边，固定下部容纳身份文字。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.62,
+          0.718566,
+          0.67,
+          0.898876
+        ],
+        "evidence_zh": "零线上方约7px仍可见，Book J、作者栏及底部金边完整，未将小值放大为独立图标。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "partial",
+      "allowed_input_adaptation_zh": "输入指定合成书籍销量及15个合成类别，不要求旧真实书名、排行或50年统计框架。",
+      "output_added_or_lost_meaning_zh": "增加集合总量与零线读法，与数据一致。当前销量语义完整；作者姓名未提供，图面明确说明。",
+      "visible_inscription_evidence_zh": "SYNTHETIC Book sales；SYNTHETIC DATA；Synthetic copies sold / million copies；Only the spine above the zero line encodes sales。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "原阅读排行改为输入指定的合成书籍销量。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "类别增至15个，高低顺序依据新数据。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "最小延伸约7px，像素边界影响其相对读数，完整书脊关系仍保留。"
+      }
+    ],
+    "measurement_coverage_zh": "review.json记录唯一高度通道的全部15项像素量测；此处列最大、最小及中间值代表。所有必需标签另行逐项核对。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "完整书脊、纵向书名、作者栏及上下包边保留。",
+      "data_adaptation_excluded_zh": "不扣除合成标签、作者占位说明、类别增加或数据高度变化。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "书脊正面直立、平行并排、底部对齐，包边连接主体，共同零线横穿全排。",
+      "data_adaptation_excluded_zh": "排除允许的非数据厚度、标签位置和高度适配。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "底部书脊排与上方说明区保留；标题移至顶部，中央增加总量说明，网格更明显。",
+      "data_adaptation_excluded_zh": "不扣除新增类别、标题内容更新或数据高低变化。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 2,
+      "evidence_zh": "明黄底、平面彩色书脊及白色粗标题改为米色底、仿旧织纹金边及深色衬线标题。",
+      "data_adaptation_excluded_zh": "不扣除数据形变、合成标签或允许的部件尺寸变化。"
+    }
+  }
+}
