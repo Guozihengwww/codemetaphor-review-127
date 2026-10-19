@@ -1,0 +1,228 @@
+{
+  "verdict": "pass",
+  "confidence": 0.96,
+  "brief_is_feasible": true,
+  "reference_viewed": true,
+  "final_viewed": true,
+  "generated_assets_visibly_used": true,
+  "code_controls_data_geometry": true,
+  "visual_observations_before_code_zh": "参考图为浅色背景上的单枚直立鸡蛋，暖色分区汇聚于蛋体内部，标签经引线连接；成图保留上窄下圆的完整蛋形、左亮右暗的蛋壳纹理和内部汇聚结构。九个分区、九组标签均可见，水76.7%占大部，顶部1.0%窄区仍有两侧边界和外部引线。标题、SYNTHETIC DATA、百分比单位、总量100%与四个互斥Protein子类别说明均清楚可读。尚未用像素测量确认面积比例。",
+  "summary_zh": "通过。九类数值、标签与单位完整，面积比例在容差内；蛋体、共同汇聚点、连续壳面和外部引线保留。未发现必要要求的重大可见缺陷。",
+  "issues": [],
+  "measurement_notes_zh": "仅测量指定image.png的2000×1800原始像素。按颜色与浅背景分离蛋体并排除接地阴影，从可见色阶分界取样、拟合直线及共同交点，再在蛋形内计数区域像素；未使用生成方遮罩、面积报告或目标分位公式作为测量。估计蛋体706620 px²，交点约(1150,1011)。九区粗估最大偏差约0.13个百分点。mark_extent_px统一记录区域包围盒最长边，不代表面积份额。",
+  "uncertainties_zh": "轮廓阈值、细分隔线及边界定位限制精度；约1 px边界扰动可造成约0.1—0.2个百分点变化，因此小值的点估计不能证明百分之一量级的相对准确度。参考图仅300×270，细材质比较有限。在允许的证据范围内未核验capture_render.py调用流程，未据此推断成图缺陷。",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "evidence_zh": "九个成分区域与九组外部标签齐全；四个Protein子类别均保留父类名；主题、单位、Total 100%及SYNTHETIC DATA均可见。"
+    },
+    "numeric_text": {
+      "status": "pass",
+      "evidence_zh": "逐项核对为1.0%、1.5%、3.1%、4.7%、四个3.25%和76.7%；与输入一致，总计100%。"
+    },
+    "binding": {
+      "status": "pass",
+      "evidence_zh": "两条顶部引线分别落在最小两区；右侧六组引线依次连接两类脂肪及四个Protein分区；左侧Water引线落在最大暖色区。未见错接或交叉导致的歧义。"
+    },
+    "geometry": {
+      "status": "pass",
+      "evidence_zh": "从成图像素独立估计九区约1.01、1.38、3.20、4.62、3.31、3.25、3.27、3.24、76.72%，均在3个百分点容差内；顺时针顺序符合输入，轮廓内无可见空洞或重叠。"
+    },
+    "source": {
+      "status": "pass",
+      "evidence_zh": "已查看raw_01.png，其壳面孔隙及左亮右暗在最终主体清楚可见。prepare_assets.py与render.py确认素材裁切、保留纹理及分区着色；geometry.py控制面积分界。调用封装流程未单独核验。"
+    },
+    "integration": {
+      "status": "pass",
+      "evidence_zh": "数据区域直接组成完整蛋体，各区共享壳面纹理与汇聚点；没有用独立图表加旁置鸡蛋替代融合关系。"
+    },
+    "readability": {
+      "status": "pass",
+      "evidence_zh": "原尺寸下全部必需标签、数值、单位、合成声明及互斥子类别说明可读，无裁切、重叠或遮挡。"
+    },
+    "critical_structure": {
+      "status": "pass",
+      "evidence_zh": "完整上窄下圆蛋形、细壳纹理、受光与暗面均保留；九区以同一内部点和蛋外轮廓围成闭合区域，最大区与最小区都参与这一结构。"
+    },
+    "semantic_meaning": {
+      "status": "pass",
+      "evidence_zh": "Egg nutrient composition与Percent of egg composition明确主题和单位；Total 100%、面积说明及互斥Protein子类说明共同表达一枚蛋的合成成分构成。"
+    },
+    "reference_meaning": {
+      "status": "pass",
+      "evidence_zh": "保留参考以完整鸡蛋表达营养成分份额的含义。当前主题未改变；新数值和Protein拆分为允许输入适配，无须复制旧百分比。"
+    },
+    "small_mark_visibility": {
+      "status": "pass",
+      "evidence_zh": "1.0%窄区顶部宽约25 px，两侧边界沿壳面延伸至共同汇聚点，纹理及引线端点可见；1.5%区亦可区分。汇聚端抗锯齿不支持无限精度判断。"
+    }
+  },
+  "semantic_attribution_zh": "主题与统计含义均保留。数值更新、Protein拆为四个互斥子类及新增标签属于允许的输入适配；扇区尺寸变化属于数据驱动。未观察到输出语义遗漏；小区精度的不确定性来自像素边界定位，不能解释为结构丢失，也未推断参考作者的额外意图。",
+  "detailed_evidence": {
+    "measurements": [
+      {
+        "series_id": "composition",
+        "category": "Vitamins minerals and salt",
+        "expected_value": 1,
+        "observed_value": 1.01,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 578,
+        "full_scale_error_percent": 0.01,
+        "small_value_relative_error_percent": 1,
+        "bbox_xyxy_normalized": [
+          0.4925,
+          0.2394,
+          0.575,
+          0.5606
+        ],
+        "evidence_zh": "可见分界线与独立蛋体轮廓围出约7133 px²，占估计总面积约1.01%；包围盒165×578 px，顶部窄边约25 px。外部标签为1.0%。",
+        "uncertainty_zh": "边界位移约1 px对这一小区的相对影响可达约10%；1%相对误差仅为取样点估计，不是精度保证。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Protein / subcategory 2",
+        "expected_value": 3.25,
+        "observed_value": 3.248,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 236,
+        "full_scale_error_percent": 0.002,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.5755,
+          0.4322,
+          0.6935,
+          0.5611
+        ],
+        "evidence_zh": "右侧中间绿色分区约22949 px²，占蛋形约3.248%；包围盒236×232 px，引线连接Protein / subcategory 2、3.25%。",
+        "uncertainty_zh": "实际精度低于所列计算位数；轮廓和分隔线取样约有0.1个百分点量级不确定性。"
+      },
+      {
+        "series_id": "composition",
+        "category": "Water",
+        "expected_value": 76.7,
+        "observed_value": 76.72,
+        "measurement_method": "direct_pixel",
+        "mark_extent_px": 1137,
+        "full_scale_error_percent": 0.02,
+        "small_value_relative_error_percent": null,
+        "bbox_xyxy_normalized": [
+          0.2955,
+          0.24,
+          0.684,
+          0.8717
+        ],
+        "evidence_zh": "最大暖色壳面区约542099 px²，占蛋形约76.72%；包围盒777×1137 px，左侧引线明确绑定Water 76.7%。",
+        "uncertainty_zh": "颜色阈值变化所得份额约76.69%—76.73%；这仅为阈值敏感性范围，另有边界定位误差，不是统计置信区间。"
+      }
+    ],
+    "part_relations": [
+      {
+        "category": "完整蛋体与Water大区",
+        "required_parts": [
+          "完整蛋形外轮廓",
+          "连续蛋壳表面",
+          "共同内部汇聚点",
+          "两条数据边界",
+          "外部Water引线"
+        ],
+        "relationship": "最大区域由两条汇聚于内部点的边界和蛋外轮廓围合，与其他区域接触并共同组成一枚蛋。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.2955,
+          0.2394,
+          0.702,
+          0.8717
+        ],
+        "evidence_zh": "暖色大区沿左侧及底部壳面连续延伸；顶部和右下径向边界均接到约(1150,1011)，没有独立悬浮片或另置图表。"
+      },
+      {
+        "category": "Vitamins minerals and salt小区",
+        "required_parts": [
+          "顶部短外缘",
+          "两条窄区侧边",
+          "内部汇聚点",
+          "壳面纹理",
+          "外部引线端点"
+        ],
+        "relationship": "顶部短外缘与两条侧边构成闭合窄区，尖端接共同汇聚点；引线接其顶部壳面。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.4925,
+          0.2394,
+          0.575,
+          0.5617
+        ],
+        "evidence_zh": "最小棕色区顶部约25 px宽，壳面纹理仍可见；两侧线向下收敛，未把小值膨胀成独立大块。"
+      },
+      {
+        "category": "Protein / subcategory 2内部区",
+        "required_parts": [
+          "右侧蛋形弧缘",
+          "两条径向分界",
+          "共同汇聚点",
+          "相邻Protein分区",
+          "标签引线"
+        ],
+        "relationship": "弧缘和两条径向线围成蛋体的一部分，与相邻子类共边，引线接右侧弧缘。",
+        "status": "pass",
+        "bbox_xyxy_normalized": [
+          0.575,
+          0.4317,
+          0.755,
+          0.5833
+        ],
+        "evidence_zh": "中间绿色区可见连续壳面明暗，两侧线接同一内部点；对应第二组Protein标签，无错层或脱离蛋体。"
+      }
+    ],
+    "meaning_trace": {
+      "current_topic": "pass",
+      "metric_and_unit": "pass",
+      "category_roles": "pass",
+      "reference_action_or_argument": "pass",
+      "allowed_input_adaptation_zh": "当前仍为鸡蛋营养成分构成；允许更新为合成数值、将Protein拆为四个互斥子类，并按当前数据适配分区和外部标签。",
+      "output_added_or_lost_meaning_zh": "新增合成声明、总量及面积阅读说明，使统计口径更明确；未发现丢失主题、单位或成分角色。",
+      "visible_inscription_evidence_zh": "可读文字包括Egg nutrient composition、SYNTHETIC DATA、Percent of egg composition / Total 100%、九类名称、Each region's area represents its share of the complete egg，以及四个Protein子类别互斥的说明。"
+    },
+    "attribution": [
+      {
+        "cause": "input_adaptation",
+        "evidence_zh": "Protein四子类、合成声明和当前百分比来自冻结输入，未作为参考意义损失处理。"
+      },
+      {
+        "cause": "data_driven_shape_change",
+        "evidence_zh": "九个扇区及其大小服务于当前面积份额，未要求复制参考六类的分区尺寸。"
+      },
+      {
+        "cause": "resolution_limit",
+        "evidence_zh": "小区在原尺寸可辨；其尖端抗锯齿及约1 px定位误差限制相对精度判断，不构成可见结构遗漏。"
+      }
+    ],
+    "measurement_coverage_zh": "单系列、单面积通道。粗估全部九区，详细记录最小正值1.0%、内部值Protein子类2的3.25%及最大值Water的76.7%；全部九组文字和绑定另行逐项检查。未把生成方报告或源码公式当作像素测量。"
+  },
+  "reference_fidelity": {
+    "nondata_identity": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "单枚完整鸡蛋的上窄下圆轮廓、壳面和体积明暗均保留。",
+      "data_adaptation_excluded_zh": "不把当前类别数、分区面积或允许的轮廓姿态微调计为偏离。"
+    },
+    "nondata_pose_relations": {
+      "applicable": true,
+      "score": 4,
+      "evidence_zh": "保留近正面直立、底部接地阴影、分区在同一蛋体内部汇聚和外部引线连接。",
+      "data_adaptation_excluded_zh": "排除允许的汇聚点位置、标签布局及非数据姿态适配。"
+    },
+    "composition_hierarchy": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "仍以中央蛋体和外围标注为主体；新增大标题、合成声明和页脚说明，版面层级比参考更丰富。",
+      "data_adaptation_excluded_zh": "九类标签和新标题的内容不扣分，仅记录整体版面层级变化。"
+    },
+    "material_style": {
+      "applicable": true,
+      "score": 3,
+      "evidence_zh": "保留暖色蛋壳、浅色背景和左亮右暗；成图颗粒更清晰，蛋白质用绿色，标题改为大型衬线字。",
+      "data_adaptation_excluded_zh": "不扣除数据引起的分区面积变化及新增类别本身。"
+    }
+  }
+}
