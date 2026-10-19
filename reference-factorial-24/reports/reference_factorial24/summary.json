@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-10-19T08:10:50.029740+00:00",
+  "updated_at": "2026-10-19T08:22:58.786760+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
     "planned_trials": 96,
     "generation": {
-      "ok": 44,
-      "running": 1,
-      "pending": 51
+      "ok": 46,
+      "pending": 50
     },
     "evaluations": {
-      "ok": 38,
-      "pending": 34,
+      "ok": 39,
+      "pending": 35,
+      "running": 1,
       "technical_failure": 1
     },
     "final_second_evaluations": {
-      "pending": 44
+      "pending": 46
     },
     "routing_audits": {
-      "verified": 44
+      "verified": 46
     },
     "routing_gate_passed": true
   },
@@ -462,63 +462,63 @@
       },
       "a0g0": {
         "numeric_supported": {
-          "image_quality_pass": 5,
-          "verified_system_pass": 5,
+          "image_quality_pass": 6,
+          "verified_system_pass": 6,
           "planned": 24,
-          "assessed": 5
+          "assessed": 6
         },
         "critical_structure": {
-          "image_quality_pass": 3,
-          "verified_system_pass": 3,
+          "image_quality_pass": 4,
+          "verified_system_pass": 4,
           "planned": 24,
-          "assessed": 5
+          "assessed": 6
         },
         "semantic_meaning": {
-          "image_quality_pass": 5,
-          "verified_system_pass": 5,
+          "image_quality_pass": 6,
+          "verified_system_pass": 6,
           "planned": 24,
-          "assessed": 5
+          "assessed": 6
         },
         "reference_meaning": {
           "image_quality_pass": 1,
           "verified_system_pass": 1,
           "planned": 24,
-          "assessed": 5
+          "assessed": 6
         },
         "small_mark_visibility": {
           "image_quality_pass": 4,
           "verified_system_pass": 4,
           "planned": 24,
-          "assessed": 5
+          "assessed": 6
         },
         "joint_supported": {
-          "image_quality_pass": 3,
-          "verified_system_pass": 3,
+          "image_quality_pass": 4,
+          "verified_system_pass": 4,
           "planned": 24,
-          "assessed": 5
+          "assessed": 6
         },
         "joint_visible_supported": {
           "image_quality_pass": 2,
           "verified_system_pass": 2,
           "planned": 24,
-          "assessed": 5
+          "assessed": 6
         },
         "reference_fidelity": {
           "nondata_identity": {
             "mean": 3.0,
-            "assessed_applicable": 5
+            "assessed_applicable": 6
           },
           "nondata_pose_relations": {
             "mean": 3.0,
-            "assessed_applicable": 5
+            "assessed_applicable": 6
           },
           "composition_hierarchy": {
-            "mean": 2.8,
-            "assessed_applicable": 5
+            "mean": 2.6666666666666665,
+            "assessed_applicable": 6
           },
           "material_style": {
             "mean": 2.0,
-            "assessed_applicable": 5
+            "assessed_applicable": 6
           }
         }
       }
@@ -16146,20 +16146,356 @@
         "pixel_identical": true,
         "returncode": 0
       },
-      "quality": "unreviewed",
+      "quality": "pass",
       "execution": "ok",
-      "review": null,
-      "primary_system_success": false,
+      "review": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图以绿色连续景观叠合橙色断轴柱、生活物件和人物，最高柱穿过云层。待评图有11组类别与数值，合成主题、年度减排及单位完整；右轴分为0–4和20–60，云层覆盖最高柱断口。最小主柱接近像素尺度，另有明确标注0–0.2的细节面板。未见必需文字相撞或遮挡。",
+        "summary_zh": "数据、标签、断轴及场景叠合关系通过核查，代表性像素测量未见超容差映射。最小主柱的可辨性存在分辨率限制。review.json已保存并通过schema.json校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "测量指定image.png，尺寸2000×1162。右轴下段0–4约对应y=945至415，上段20–60约对应y=380至220；细节面板0–0.2对应约x=368至782。通过橙色像素连续区间测量后按可见轴反算。误差分母分别为区段跨度4、40及0.2，不将断轴两段像素相加。",
+        "uncertainties_zh": "像素边界约有±1像素不确定性。最小主柱不足一像素，不能独立确定其真实高度或相对精度；源码计算不能替代该测量。细节最小条约12像素，其单像素误差已约占目标8.05%。按限制未读取日志、自检及结果文件，未核验逐次渲染归档。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "11类及11个数值完整、顺序正确；细节面板重复前6类。两段轴各5个刻度、断轴说明及3个影响组齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "可见数值依次为0.006、0.0116861、0.02276081、0.04433084、0.08634241、0.16816764、0.32753722、0.63793862、1.2425021、2.42、56.8，全部与输入一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "类别与值位于对应柱下；最高值另有端点引线。细节框逐行绑定正确；低、中、高组分别覆盖前6、中2、末3类。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "上下两段及细节面板的代表性像素测量均在3%区段满量程容差内。最高柱上段约147像素，对应56.75，目标56.8。最小主柱不作亚像素精度保证。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01.png中的生活选择与云、raw_02.png中的连续景观均实质出现在成图。render.py读取数据控制柱、细节条、分组及文字；素材裁切路径可由prepare_assets.py核对。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "景观位于柱后，人物和物件贴合柱顶；最高柱省略段前有云，轴与柱的断口对齐。实际关系是场景叠合，人物尺寸未被当作定量通道。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成声明、指标、单位、类别、数值和断轴说明可读；细节框明确声明独立0–0.2范围。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "橙柱承担高度编码，连续景观与生活选择叠合；最高柱的上下段由云和双斜线分隔，右轴同步断开。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题、Synthetic annual savings、tCO2e/year (synthetic)、SYNTHETIC DATA及not observed estimates明确表达当前主题和统计口径。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留个人生活选择与气候减排比较；真实统计及少生一个孩子的原表述改为合成情景和Household size，属于输入适配。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "最小主柱仅约一行橙色混合像素，物件可辨但柱体厚度及接触关系弱；细节面板约12像素横条可与零区分。"
+          }
+        },
+        "semantic_attribution_zh": "合成情景及类别更新属于允许的输入适配；小柱轮廓来自当前数据，最小主柱关系弱来自栅格分辨率。未发现输出遗漏造成的核心意义损失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Efficient lighting（主图最小值）",
+              "expected_value": 0.006,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 1,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.0445,
+                0.8115,
+                0.0945,
+                0.8141
+              ],
+              "evidence_zh": "y=944的一行呈橙色混合像素，多个横向位置可检出；文字为0.006。",
+              "uncertainty_zh": "一行着色不能确定亚像素柱高。源码对应0.795像素仅为旁证，不填写实测值或误差。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Household size（主图上段）",
+              "expected_value": 56.8,
+              "observed_value": 56.75,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 147,
+              "full_scale_error_percent": 0.125,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.8345,
+                0.2005,
+                0.8845,
+                0.327
+              ],
+              "evidence_zh": "x=1700处橙色占y=233–379，共147像素；按20+147/160×40反算。",
+              "uncertainty_zh": "约±1像素，相当于±0.25 tCO2e/year。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Car-free living（主图下段大值）",
+              "expected_value": 2.42,
+              "observed_value": 2.41509434,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 320,
+              "full_scale_error_percent": 0.122642,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.7555,
+                0.5379,
+                0.8055,
+                0.8133
+              ],
+              "evidence_zh": "x=1550处橙色占y=625–944，共320像素；下段跨度530像素对应4单位。",
+              "uncertainty_zh": "约±1像素，相当于±0.00754717 tCO2e/year。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Green energy（主图内部值）",
+              "expected_value": 0.63793862,
+              "observed_value": 0.633962264,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 84,
+              "full_scale_error_percent": 0.099409,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.5975,
+                0.741,
+                0.6475,
+                0.8133
+              ],
+              "evidence_zh": "x=1230处橙色占y=861–944，共84像素。",
+              "uncertainty_zh": "约±1像素，相当于±0.00754717 tCO2e/year。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Plant-rich diet（主图小值）",
+              "expected_value": 0.16816764,
+              "observed_value": 0.166037736,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 22,
+              "full_scale_error_percent": 0.053248,
+              "small_value_relative_error_percent": 1.266536,
+              "bbox_xyxy_normalized": [
+                0.4395,
+                0.7943,
+                0.4895,
+                0.8133
+              ],
+              "evidence_zh": "x=920处橙色占y=923–944，共22像素。",
+              "uncertainty_zh": "约±1像素；相对误差仅为栅格点估计。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Efficient lighting（细节面板最小值）",
+              "expected_value": 0.006,
+              "observed_value": 0.005797101,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 12,
+              "full_scale_error_percent": 0.101449,
+              "small_value_relative_error_percent": 3.381643,
+              "bbox_xyxy_normalized": [
+                0.184,
+                0.2427,
+                0.19,
+                0.2582
+              ],
+              "evidence_zh": "y=291处橙色占x=368–379，共12像素；414像素对应0.2。",
+              "uncertainty_zh": "约±1像素，即±0.00048309；相对误差不具备亚像素精度。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Cold-water wash（细节面板内部值）",
+              "expected_value": 0.04433084,
+              "observed_value": 0.043961353,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 91,
+              "full_scale_error_percent": 0.184744,
+              "small_value_relative_error_percent": 0.833477,
+              "bbox_xyxy_normalized": [
+                0.184,
+                0.3279,
+                0.2295,
+                0.3434
+              ],
+              "evidence_zh": "y=390处橙色占x=368–458，共91像素。",
+              "uncertainty_zh": "约±1像素，即±0.00048309 tCO2e/year。"
+            },
+            {
+              "series_id": "illustrative_scenario",
+              "category": "Plant-rich diet（细节面板最大值）",
+              "expected_value": 0.16816764,
+              "observed_value": 0.168115942,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 348,
+              "full_scale_error_percent": 0.025849,
+              "small_value_relative_error_percent": 0.030742,
+              "bbox_xyxy_normalized": [
+                0.184,
+                0.3847,
+                0.358,
+                0.4002
+              ],
+              "evidence_zh": "y=456处橙色占x=368–715，共348像素。",
+              "uncertainty_zh": "约±1像素，即±0.00048309 tCO2e/year。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Household size",
+              "required_parts": [
+                "家庭人物",
+                "房屋",
+                "上下两段橙柱",
+                "云层",
+                "双斜线",
+                "右轴"
+              ],
+              "relationship": "家庭与房屋位于高柱顶部；云在省略区前景，柱与右轴的断口对齐。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.8175,
+                0.1248,
+                0.95,
+                0.815
+              ],
+              "evidence_zh": "家庭足部和房屋底部落在约y=233柱顶；上段止于380，下段始于415；云及斜线居中，56.8端点可见。"
+            },
+            {
+              "category": "Car-free living",
+              "required_parts": [
+                "骑行者",
+                "车把与车架",
+                "双轮",
+                "橙柱",
+                "景观"
+              ],
+              "relationship": "骑行者连接车架和车把，轮组下缘接柱顶，柱底接共同基线，景观在后。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.7425,
+                0.4234,
+                0.819,
+                0.815
+              ],
+              "evidence_zh": "骑行场景位于约y=625柱顶，下方约320像素橙柱连续延伸至基线。"
+            },
+            {
+              "category": "Green energy",
+              "required_parts": [
+                "风机叶片与塔架",
+                "太阳能板",
+                "树木",
+                "橙柱"
+              ],
+              "relationship": "叶片接塔架，太阳能板与树木形成柱顶场景，橙柱高度承载数值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.5875,
+                0.6145,
+                0.6625,
+                0.815
+              ],
+              "evidence_zh": "插画底部位于约y=861，下方约84像素橙柱接基线；风机与太阳能板分别可辨。"
+            },
+            {
+              "category": "Efficient lighting",
+              "required_parts": [
+                "灯泡及螺口",
+                "盆栽",
+                "极薄橙柱",
+                "基线",
+                "细节横条"
+              ],
+              "relationship": "生活物件位于极薄柱上方，细节横条另行呈现同一值。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.0375,
+                0.7134,
+                0.097,
+                0.8158
+              ],
+              "evidence_zh": "灯泡与盆栽清楚，柱底仅约一行混合橙色像素，厚度和接触关系难辨；细节框横条可读，但不构成物件融合。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "输入明确改为合成气候情景并更新类别、量值，不要求参考真实统计或原生育选择论证。",
+            "output_added_or_lost_meaning_zh": "新增小值细节视图及人物尺寸不编码减排的说明，未添加累积、占比或实测含义。参考真实统计论证不再适用，属于输入适配。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA、Synthetic annual savings、tCO2e/year (synthetic)、not observed estimates，以及LOW <0.2、MODERATE 0.2–<0.8、HIGH ≥0.8。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "合成主题、Household size及当前影响分组由冻结输入指定。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "小值柱集中于基线附近，最大值跨两段，符合当前数据与断轴定义。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "最小主柱约一行混合像素；细节面板改善读取，但无法恢复主图柱体的可辨厚度。"
+            }
+          ],
+          "measurement_coverage_zh": "记录主图最小值、下段大值及内部值、上段最大值，以及细节面板最小、内部和最大值，共8项。全部11类数值、绑定、轴刻度及3组划分另行目视核查；未声称穷尽所有抗锯齿边界。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "灯泡、晾衣、回收、洗衣机、汽车、植物饮食、风机、飞机、骑行和家庭身份可辨；月牙未保留。",
+            "data_adaptation_excluded_zh": "不扣除Household size的语义适配及数据导致的柱高变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "景观与柱叠合、人物连接生活物件及断口前有云的关系保留；参考横贯场景的多层云改为局部断口云。",
+            "data_adaptation_excluded_zh": "允许人物姿态、位置和非数据尺寸随当前值调整，不据此扣分。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留上标题、下类别与分组、右轴及右端高柱；新增左上大细节框，深绿铺底改为米白留空，景观集中下部。",
+            "data_adaptation_excluded_zh": "不扣除小柱高度、分组跨度、更新标签和细节条长度；仅记录大框、留白及景观视觉主次变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留橙柱与绿色环保配色；参考扁平剪影和渐变景观改为有笔触、阴影与细节的自然插画。",
+            "data_adaptation_excluded_zh": "不评价审美高低，不扣除数值和文字更新。"
+          }
+        }
+      },
+      "primary_system_success": true,
       "confirmation": null,
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/7c99254a4b43e4",
-      "numeric_supported": null,
-      "joint_supported": null,
-      "critical_structure": "unreviewed",
-      "semantic_meaning": "unreviewed",
-      "reference_meaning": "unreviewed",
-      "small_mark_visibility": "unreviewed",
-      "joint_system_success": false,
+      "numeric_supported": true,
+      "joint_supported": true,
+      "critical_structure": "pass",
+      "semantic_meaning": "pass",
+      "reference_meaning": "partial",
+      "small_mark_visibility": "partial",
+      "joint_system_success": true,
       "confirmed_semantic_or_data_failure": false,
       "factor_audit": {
         "status": "verified",
@@ -19982,6 +20318,191 @@
         "external_image_views": [],
         "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
       }
+    },
+    {
+      "case": "F12",
+      "source_case": "M038",
+      "name": "合成烟草产量与股价：香烟物体柱图",
+      "conflict_type": "numeric_range",
+      "trial": "T037",
+      "condition": "a1g1",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "ce912d5ebf9466",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/ce912d5ebf9466",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": true,
+        "image_reference_assigned": true,
+        "agent_reference_view_count": 1,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 1,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F12",
+      "source_case": "M038",
+      "name": "合成烟草产量与股价：香烟物体柱图",
+      "conflict_type": "numeric_range",
+      "trial": "T037",
+      "condition": "a1g1",
+      "stage": "final",
+      "round": 1,
+      "image_available": true,
+      "review_id": "ce912d5ebf9466",
+      "reused_identical_image": true,
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": true,
+        "pixel_identical": true,
+        "returncode": 0
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/ce912d5ebf9466",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": true,
+        "image_reference_assigned": true,
+        "agent_reference_view_count": 1,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 1,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F12",
+      "source_case": "M038",
+      "name": "合成烟草产量与股价：香烟物体柱图",
+      "conflict_type": "numeric_range",
+      "trial": "T062",
+      "condition": "a1g0",
+      "stage": "first",
+      "round": 1,
+      "image_available": true,
+      "review_id": "8783d82488ccdb",
+      "reproduction": {
+        "round": 1,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "returncode": 1
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/8783d82488ccdb",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": true,
+        "image_reference_assigned": false,
+        "agent_reference_view_count": 1,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 0,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
+    },
+    {
+      "case": "F12",
+      "source_case": "M038",
+      "name": "合成烟草产量与股价：香烟物体柱图",
+      "conflict_type": "numeric_range",
+      "trial": "T062",
+      "condition": "a1g0",
+      "stage": "final",
+      "round": 2,
+      "image_available": true,
+      "review_id": "e2841c82d469cd",
+      "reproduction": {
+        "round": 2,
+        "render_succeeded": false,
+        "pixel_identical": false,
+        "returncode": 1
+      },
+      "quality": "unreviewed",
+      "execution": "ok",
+      "review": null,
+      "primary_system_success": false,
+      "confirmation": null,
+      "confirmed_failure": false,
+      "review_path": "runs/reference_factorial24/evaluation/items/e2841c82d469cd",
+      "numeric_supported": null,
+      "joint_supported": null,
+      "critical_structure": "unreviewed",
+      "semantic_meaning": "unreviewed",
+      "reference_meaning": "unreviewed",
+      "small_mark_visibility": "unreviewed",
+      "joint_system_success": false,
+      "confirmed_semantic_or_data_failure": false,
+      "factor_audit": {
+        "status": "verified",
+        "agent_reference_assigned": true,
+        "image_reference_assigned": false,
+        "agent_reference_view_count": 1,
+        "planner_direct_image_calls": 0,
+        "attempted_image_requests": 1,
+        "successful_image_calls": 1,
+        "image_calls_with_original_reference": 0,
+        "violations": [],
+        "external_image_views": [],
+        "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+      }
     }
   ],
   "generation_status": {
@@ -20428,13 +20949,24 @@
       "parent_terminated_after_receipt": true
     },
     "T037": {
-      "status": "running",
+      "status": "ok",
       "role": "planner",
-      "started_at": "2026-10-19T08:04:28.361526+00:00",
-      "timeout_seconds": 2100
+      "error": "",
+      "completed_at": "2026-10-19T08:13:38.630653+00:00",
+      "elapsed_seconds": 550.27,
+      "cli_returncode": 0,
+      "model_verified": true,
+      "parent_terminated_after_receipt": true
     },
     "T062": {
-      "status": "pending"
+      "status": "ok",
+      "role": "planner",
+      "error": "",
+      "completed_at": "2026-10-19T08:22:55.958264+00:00",
+      "elapsed_seconds": 550.29,
+      "cli_returncode": 0,
+      "model_verified": true,
+      "parent_terminated_after_receipt": true
     },
     "T063": {
       "status": "pending"
@@ -21152,6 +21684,32 @@
       "agent_reference_assigned": false,
       "image_reference_assigned": false,
       "agent_reference_view_count": 0,
+      "planner_direct_image_calls": 0,
+      "attempted_image_requests": 1,
+      "successful_image_calls": 1,
+      "image_calls_with_original_reference": 0,
+      "violations": [],
+      "external_image_views": [],
+      "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+    },
+    "T037": {
+      "status": "verified",
+      "agent_reference_assigned": true,
+      "image_reference_assigned": true,
+      "agent_reference_view_count": 1,
+      "planner_direct_image_calls": 0,
+      "attempted_image_requests": 1,
+      "successful_image_calls": 1,
+      "image_calls_with_original_reference": 1,
+      "violations": [],
+      "external_image_views": [],
+      "scope": "Direct original-image access and exact relay arguments; common reference-derived text remains in all arms."
+    },
+    "T062": {
+      "status": "verified",
+      "agent_reference_assigned": true,
+      "image_reference_assigned": false,
+      "agent_reference_view_count": 1,
       "planner_direct_image_calls": 0,
       "attempted_image_requests": 1,
       "successful_image_calls": 1,
