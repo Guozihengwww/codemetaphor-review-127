@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T23:15:13.204357+00:00",
+  "updated_at": "2026-10-19T23:25:29.499232+00:00",
   "progress": {
     "phase": "running",
     "case_count": 24,
@@ -11,8 +11,8 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "ok": 59,
-      "pending": 32,
+      "ok": 63,
+      "pending": 28,
       "running": 3,
       "technical_failure": 2
     },
@@ -26407,7 +26407,429 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为三列奖牌，红、蓝、绿折叠绶带连接圆盘，材料分区直接构成圆盘，金额位于下方。待评图保留上述关系，圆盘等大，压印、边缘及织物纹理清晰。金、银、铜牌分别可见6、5、3个正值扇区；0.6% Tin及1.5% Gold细扇区可见。完整数据表、合成子类说明、主题、SYNTHETIC DATA、独立100%口径及USD均可读。观察与参考保真评分已在读取源码前记录。",
+        "summary_zh": "通过。数值、标签、奖牌结构及材料角宽映射符合要求，代表性几何测量均在容差内。review.json已保存并通过schema验证；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "仅测量image.png原始2100×1498像素。下半圆边界拟合半径约210.61、210.61、210.69像素，水平可见直径均约422像素。沿半径135–201像素采样色彩变化与暗缝，估计边界方向，再以角宽÷360×100反算份额。mark_extent_px为外缘弧长估计。抽样最大估计绝对差0.164个百分点，低于3个百分点容差。未使用生成器诊断掩膜或自检替代像素证据。",
+        "uncertainties_zh": "细边线、抗锯齿和中心定位使单条边界约有±0.3°不确定性，份额约±0.17个百分点。Tin测得约0.663%，不能把其约10.4%的相对差解释为确定渲染偏差；中心尖端存在亚像素限制。未读取日志、自检、旧结果或配对图，未独立核验capture_render.py归档过程。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "三系列、八类别、24个组成数值及三项金额完整；正值扇区数为6、5、3，10个零值保留于表格。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "金牌1.5、5.9、四个23.15；银牌6.5、四个23.375；铜牌96.5、0.6、2.9及全部零值均准确。金额为$720、$360、$6。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "系列标题、表格行及金额按列对应；内部Silver标签位于各自扇区，外引线落在相应材料区，颜色键与父类说明一致。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "三枚直径均约422像素；九个代表性角宽的估计绝对差均小于0.17个百分点。金额没有编码为奖牌大小。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01.png及提取素材中的月桂叶、火焰压印、同心边缘和织纹实质出现在主体中。render.py读取与冻结输入一致的数据并控制累计角宽与文字；归档过程未核验。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "材料色区覆盖金属压印面并延续至外缘；浮雕和圆环跨分区连续，绶带位于圆盘后方，无破坏解释的错层或表面错位。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、系列、百分比、引线、完整数据表、单位和口径均可读，无必需文字裁切或遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "三枚等半径奖牌均连接绶带，具备压印与边缘；材料份额由圆心至外缘的扇区角宽承载。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "明确表达奖牌金属组成、质量百分比、逐枚独立100%、合成示例USD价值及Silver合成子类身份。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留奖牌材料组成与对应金额关系；奥运背景及原数字改为显式合成主题，属于冻结输入要求的改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "1.5% Gold和0.6% Tin均可见径向细色区，外缘弧长估计约21和9像素；Tin可与Zinc区分，但不保证小值高相对精度。"
+          }
+        },
+        "semantic_attribution_zh": "原奥运统计改为合成示例属于允许的输入改编；Silver拆分和角宽变化属于数据驱动变化。小值尖端及边界精度受分辨率限制。未发现当前主题、单位、类别角色或物体连接关系的输出丢失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "medal_Gold",
+              "category": "Gold",
+              "expected_value": 1.5,
+              "observed_value": 1.607,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 21.3,
+              "full_scale_error_percent": 0.107,
+              "small_value_relative_error_percent": 7.13,
+              "bbox_xyxy_normalized": [
+                0.195,
+                0.4199,
+                0.2898,
+                0.4796
+              ],
+              "evidence_zh": "原图边线约−25.08°至−19.30°；角宽反算份额，像素长度为外缘弧长。",
+              "uncertainty_zh": "份额约±0.17个百分点；相对差仅为测量估计。"
+            },
+            {
+              "series_id": "medal_Gold",
+              "category": "Copper",
+              "expected_value": 5.9,
+              "observed_value": 5.736,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 76,
+              "full_scale_error_percent": 0.164,
+              "small_value_relative_error_percent": 2.78,
+              "bbox_xyxy_normalized": [
+                0.195,
+                0.4331,
+                0.2955,
+                0.483
+              ],
+              "evidence_zh": "原图边线约−19.30°至1.36°，棕色扇区位于Gold与Silver 1之间。",
+              "uncertainty_zh": "份额约±0.17个百分点，受细边线及抗锯齿影响。"
+            },
+            {
+              "series_id": "medal_Gold",
+              "category": "Silver / synthetic subcategory 2",
+              "expected_value": 23.15,
+              "observed_value": 23.181,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 307.3,
+              "full_scale_error_percent": 0.031,
+              "small_value_relative_error_percent": 0.13,
+              "bbox_xyxy_normalized": [
+                0.0966,
+                0.4796,
+                0.2038,
+                0.6205
+              ],
+              "evidence_zh": "原图边线约84.98°至168.43°；左下区域内部标注Silver 2。",
+              "uncertainty_zh": "份额约±0.17个百分点。"
+            },
+            {
+              "series_id": "medal_Silver",
+              "category": "Copper",
+              "expected_value": 6.5,
+              "observed_value": 6.39,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 84.7,
+              "full_scale_error_percent": 0.11,
+              "small_value_relative_error_percent": 1.69,
+              "bbox_xyxy_normalized": [
+                0.4998,
+                0.4204,
+                0.6002,
+                0.4796
+              ],
+              "evidence_zh": "原图边线约−24.86°至−1.86°，右侧棕色区域连接Copper引线。",
+              "uncertainty_zh": "份额约±0.17个百分点。"
+            },
+            {
+              "series_id": "medal_Silver",
+              "category": "Silver / synthetic subcategory 1",
+              "expected_value": 23.375,
+              "observed_value": 23.429,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 310.6,
+              "full_scale_error_percent": 0.054,
+              "small_value_relative_error_percent": 0.23,
+              "bbox_xyxy_normalized": [
+                0.4998,
+                0.4751,
+                0.6002,
+                0.6193
+              ],
+              "evidence_zh": "原图边线约−1.86°至82.49°，右下区域标注Silver 1。",
+              "uncertainty_zh": "份额约±0.17个百分点。"
+            },
+            {
+              "series_id": "medal_Silver",
+              "category": "Silver / synthetic subcategory 2",
+              "expected_value": 23.375,
+              "observed_value": 23.443,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 310.8,
+              "full_scale_error_percent": 0.068,
+              "small_value_relative_error_percent": 0.29,
+              "bbox_xyxy_normalized": [
+                0.4019,
+                0.4796,
+                0.5129,
+                0.6205
+              ],
+              "evidence_zh": "原图边线约82.49°至166.89°，左下区域标注Silver 2。",
+              "uncertainty_zh": "份额约±0.17个百分点。"
+            },
+            {
+              "series_id": "medal_Bronze",
+              "category": "Copper",
+              "expected_value": 96.5,
+              "observed_value": 96.442,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 1278.6,
+              "full_scale_error_percent": 0.058,
+              "small_value_relative_error_percent": 0.06,
+              "bbox_xyxy_normalized": [
+                0.704,
+                0.3388,
+                0.905,
+                0.6205
+              ],
+              "evidence_zh": "原图边界从约−24.86°顺时针至322.33°，铜色覆盖两个细扇区之外的圆盘。",
+              "uncertainty_zh": "份额约±0.17个百分点；像素长度是大扇区外缘弧长。"
+            },
+            {
+              "series_id": "medal_Bronze",
+              "category": "Tin",
+              "expected_value": 0.6,
+              "observed_value": 0.663,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 8.8,
+              "full_scale_error_percent": 0.063,
+              "small_value_relative_error_percent": 10.42,
+              "bbox_xyxy_normalized": [
+                0.8045,
+                0.3936,
+                0.8865,
+                0.4796
+              ],
+              "evidence_zh": "原图边线约−37.67°至−35.29°，淡绿细扇区可见并连接Tin引线。",
+              "uncertainty_zh": "份额约±0.17个百分点，相对差不能视为确定偏差；中心尖端存在亚像素限制。"
+            },
+            {
+              "series_id": "medal_Bronze",
+              "category": "Zinc",
+              "expected_value": 2.9,
+              "observed_value": 2.896,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 38.4,
+              "full_scale_error_percent": 0.004,
+              "small_value_relative_error_percent": 0.14,
+              "bbox_xyxy_normalized": [
+                0.8045,
+                0.3983,
+                0.8957,
+                0.4796
+              ],
+              "evidence_zh": "原图边线约−35.29°至−24.86°，蓝灰扇区位于Tin与Copper之间。",
+              "uncertainty_zh": "份额约±0.17个百分点。"
+            },
+            {
+              "series_id": "illustrative_value",
+              "category": "Gold",
+              "expected_value": 720,
+              "observed_value": 720,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.16,
+                0.687,
+                0.231,
+                0.729
+              ],
+              "evidence_zh": "金牌下方清楚写有$720，共同栏题注明合成示例价值及USD。",
+              "uncertainty_zh": "合同指定文字通道，不存在金额几何测量。"
+            },
+            {
+              "series_id": "illustrative_value",
+              "category": "Silver",
+              "expected_value": 360,
+              "observed_value": 360,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.464,
+                0.687,
+                0.536,
+                0.729
+              ],
+              "evidence_zh": "银牌下方清楚写有$360，共同栏题注明USD。",
+              "uncertainty_zh": "合同指定文字通道，不存在金额几何测量。"
+            },
+            {
+              "series_id": "illustrative_value",
+              "category": "Bronze",
+              "expected_value": 6,
+              "observed_value": 6,
+              "measurement_method": "numeric_text_only",
+              "mark_extent_px": null,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.787,
+                0.687,
+                0.825,
+                0.729
+              ],
+              "evidence_zh": "铜牌下方清楚写有$6，共同栏题注明USD。",
+              "uncertainty_zh": "合同指定文字通道，不存在金额几何测量。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "三枚奖牌与绶带",
+              "required_parts": [
+                "折叠绶带及两侧臂",
+                "圆盘",
+                "同心边缘",
+                "压印"
+              ],
+              "relationship": "绶带两臂向下接入对应圆盘后方，圆盘遮挡下端，边缘包围压印面。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.095,
+                0.255,
+                0.906,
+                0.621
+              ],
+              "evidence_zh": "三列均保留折叠、接触及遮挡关系，没有脱离绶带的圆盘或额外悬浮饼图。"
+            },
+            {
+              "category": "Gold medal大扇区",
+              "required_parts": [
+                "Silver 2色区",
+                "圆心",
+                "圆盘外缘",
+                "压印叶片"
+              ],
+              "relationship": "大扇区包含左下压印面，两条径向边界连接圆心与外缘。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.0966,
+                0.4796,
+                0.2038,
+                0.6205
+              ],
+              "evidence_zh": "Silver 2及23.15%位于内部；月桂叶和底部圆环跨分区连续。"
+            },
+            {
+              "category": "Gold medal小扇区",
+              "required_parts": [
+                "Gold细色区",
+                "圆心",
+                "外缘",
+                "引线"
+              ],
+              "relationship": "金色窄楔嵌在Silver 4与Copper之间并接触外缘。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.195,
+                0.4199,
+                0.2898,
+                0.4796
+              ],
+              "evidence_zh": "金色条带从圆心伸至右上圆环，1.5%引线点落在条带内。"
+            },
+            {
+              "category": "Bronze medal大扇区",
+              "required_parts": [
+                "Copper色区",
+                "压印",
+                "同心边缘"
+              ],
+              "relationship": "铜色占据圆盘绝大部分，压印在金属面内，边缘连续包围。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.704,
+                0.3388,
+                0.905,
+                0.6205
+              ],
+              "evidence_zh": "96.5% Copper位于铜色大区，数据区域直接构成奖牌表面。"
+            },
+            {
+              "category": "Bronze medal细扇区",
+              "required_parts": [
+                "Tin色区",
+                "Zinc色区",
+                "共同圆心",
+                "外缘",
+                "独立引线"
+              ],
+              "relationship": "Tin与Zinc相邻、汇聚同一圆心并分别接触外缘，引线各接自身色区。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.8045,
+                0.3936,
+                0.8957,
+                0.4796
+              ],
+              "evidence_zh": "淡绿和蓝灰区域可分别追踪至右上圆环；中心尖端虽难独立解析，包含和接触关系仍可见。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结要求将原奥运数据改为合成示例，加入Silver四个合成子类，允许角宽、姿态、厚度及排版适配。",
+            "output_added_or_lost_meaning_zh": "保留逐枚质量组成及金额文字角色，明确独立100%和等半径不代表总质量。原奥运背景的改变来自输入。",
+            "visible_inscription_evidence_zh": "可见当前中文主题、SYNTHETIC DATA、材料质量占比%、每枚独立100%、合成示例价值/USD及Silver合成子类说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "合成主题、替换数字及Silver子类由冻结输入指定。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "银材料内部增加边界，角宽随当前份额变化。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "Tin外缘仍可见，中心尖端亚像素化；细边线和抗锯齿限制小值精度。"
+            }
+          ],
+          "measurement_coverage_zh": "独立几何测量覆盖14个正值扇区中的9个，每个面板含最小正值、大值及另一内部或相邻区；其余5个Silver扇区未逐一量测。三个金额按文字通道核查。全部24个组成文字、八类别、三系列和扇区数量已另行完整核对。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "源码检查前观察：三枚圆形奖牌与红、蓝、绿绶带身份完整，圆盘边缘和压印清晰。",
+            "data_adaptation_excluded_zh": "不计材料份额、子类数量、新数值及合成主题改变。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "源码检查前观察：均正面呈现；绶带上部折叠，两臂向下，圆盘遮挡下端，与参考层序一致。",
+            "data_adaptation_excluded_zh": "排除允许的厚度、比例和姿态适配，以及数据分区方向与角宽变化。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "源码检查前观察：保留横向三列及对应金额、分隔带；顶部黑色标题带改为普通大标题与右上提示。",
+            "data_adaptation_excluded_zh": "新增完整数据表、中文标题及合成提示的排版需求不作扣分依据。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "源码检查前观察：参考较平面的色块和轻纸纹改为明显写实的金属浮雕及织物纹理；米白底和绶带色系保留。",
+            "data_adaptation_excluded_zh": "排除数据颜色、角宽及允许的厚度变化；此分数描述风格保留程度，不代表必需结构失败。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/a08ef27f5820c6",
       "numeric_supported": true,
@@ -60336,7 +60758,326 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为浅色背景上的七本直立旧式精装书，书脊紧邻，下方交错引线标类别与份额。待评图延续宽度编码和七类顺序，显示12%、2%、24%、16%、42%、0.12%、3.88%，主题、人口百分比单位与SYNTHETIC DATA清楚。书面具有金线、皮革纹理、磨损和接触暗边。Jewish位于黑书与最右棕书之间，呈极窄竖带，外部蓝色折线指向该处；独立书皮细节难辨。整体书排等高、连续，文字无明显遮挡。",
+        "summary_zh": "全部七类、数值、顺序和统计语义正确；书脊宽度承担数据，实测可分辨边界均在容差内。最细蓝书保留可见细带和准确标签，其细部与亚像素精度受分辨率限制。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "测量指定image.png，尺寸2000×1392。原图数据带左右边缘约x=120、1880，总宽1760px，书排约y=360–1009。六类采用像素宽度/1760×100换算；误差以100%满量程计算。Jewish仅记录可见像素支撑，不把混色列数当作有效宽度。源码公式仅用于交叉核对。",
+        "uncertainties_zh": "最细蓝带只有一个清晰核心列和两个混色边界列，不能精确确认0.12%的小值相对误差，也无法分别辨清包边、金线与接触阴影。未读取日志、自检或结果文件；capture_render.py是否实际执行不能由当前允许证据独立确认。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "七类均有外部标签和引线，顺序符合输入；一个share系列，无遗漏。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "12%、2%、24%、16%、42%、0.12%、3.88%全部正确，总和100%，正值未舍为零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "六条直引线对准对应书脊；Jewish折线对准黑书与最右棕书之间的细蓝带。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "六个可分辨书脊宽约211、35、423、281、739、68px，换算偏差最大约0.034个百分点。细蓝带约三列可见支撑，未见超过容差的放大，但不能认证其小值精度。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看两张原始素材，其皮革、金线、磨损和黑书横筋在主体中可对应。素材清单及render.py表明素材铺入整面书脊，代码分配数据宽度并排版文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "书脊正面的左右边界直接承担份额；金线和纹理位于所属书面，阴影未遮没邻带。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "合成提示、主题、人口百分比单位、全部类别和数值清楚；交错标签无重叠，底部说明宽度编码和合成统计性质。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "保留等高、直立、紧邻的书排、书皮内金边和外部引线；微小类仍在邻书之间连续占位。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "标题及Percent of population · religion and no affiliation明确宗教和无归属人口构成、指标及单位；Total 100%符合输入。"
+          },
+          "reference_meaning": {
+            "status": "pass",
+            "evidence_zh": "参考的宗教及无归属人口份额比较、以书宽承载份额的关系保留。旧数值和经书题字更新为合成值及类别名，不据参考题字推断额外作者立场。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "2%的黄色书脊仍可辨皮面、箍线和接触边；0.12%的蓝带未消失且引线清楚，但金边和独立书体细节不可分别辨认。"
+          }
+        },
+        "semantic_attribution_zh": "合成提示、当前份额和类别题字属于允许更新，未见当前主题或统计口径丢失。宽窄变化由数据驱动；蓝书细部不足归于分辨率限制。参考特定经书题字的额外修辞未被明确要求，不能据此推断输出违反原意。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "share",
+              "category": "Hindu",
+              "expected_value": 12,
+              "observed_value": 11.989,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 211,
+              "full_scale_error_percent": 0.011,
+              "small_value_relative_error_percent": 0.095,
+              "bbox_xyxy_normalized": [
+                0.06,
+                0.2586,
+                0.1655,
+                0.7256
+              ],
+              "evidence_zh": "书皮颜色交界约x=120至331，宽211px，除以总宽1760px换算。",
+              "uncertainty_zh": "每端点约±1px定位不确定性；换算结果为近似值。"
+            },
+            {
+              "series_id": "share",
+              "category": "Folk religions",
+              "expected_value": 2,
+              "observed_value": 1.989,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 35,
+              "full_scale_error_percent": 0.011,
+              "small_value_relative_error_percent": 0.568,
+              "bbox_xyxy_normalized": [
+                0.1655,
+                0.2586,
+                0.183,
+                0.7256
+              ],
+              "evidence_zh": "黄色书面交界约x=331至366，宽35px。",
+              "uncertainty_zh": "每端点约±1px定位不确定性；小值相对误差不应视为精确估计。"
+            },
+            {
+              "series_id": "share",
+              "category": "Muslim",
+              "expected_value": 24,
+              "observed_value": 24.034,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 423,
+              "full_scale_error_percent": 0.034,
+              "small_value_relative_error_percent": 0.142,
+              "bbox_xyxy_normalized": [
+                0.183,
+                0.2586,
+                0.3945,
+                0.7256
+              ],
+              "evidence_zh": "绿色书面交界约x=366至789，宽423px。",
+              "uncertainty_zh": "纹理和边界混色使每端点约有±1px定位不确定性。"
+            },
+            {
+              "series_id": "share",
+              "category": "Unaffiliated",
+              "expected_value": 16,
+              "observed_value": 15.966,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 281,
+              "full_scale_error_percent": 0.034,
+              "small_value_relative_error_percent": 0.213,
+              "bbox_xyxy_normalized": [
+                0.3945,
+                0.2586,
+                0.535,
+                0.7256
+              ],
+              "evidence_zh": "褐色书面交界约x=789至1070，宽281px。",
+              "uncertainty_zh": "每端点约±1px定位不确定性；不代表亚像素精度。"
+            },
+            {
+              "series_id": "share",
+              "category": "Christian",
+              "expected_value": 42,
+              "observed_value": 41.989,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 739,
+              "full_scale_error_percent": 0.011,
+              "small_value_relative_error_percent": 0.027,
+              "bbox_xyxy_normalized": [
+                0.535,
+                0.2586,
+                0.9045,
+                0.7256
+              ],
+              "evidence_zh": "黑色书面交界约x=1070至1809，宽739px。",
+              "uncertainty_zh": "右边界与蓝书发生像素混色，每端点约±1px不确定性。"
+            },
+            {
+              "series_id": "share",
+              "category": "Jewish",
+              "expected_value": 0.12,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 3,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.9045,
+                0.2586,
+                0.906,
+                0.7256
+              ],
+              "evidence_zh": "x=1809–1811三列可检测蓝色成分，x=1810为清晰核心，两侧混色。三列是可见支撑范围，不等于有效连续宽度。",
+              "uncertainty_zh": "输入及实测总宽对应目标2.112px；混色无法独立确定覆盖率，故不报告精确份额或误差。"
+            },
+            {
+              "series_id": "share",
+              "category": "Buddhist",
+              "expected_value": 3.88,
+              "observed_value": 3.864,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 68,
+              "full_scale_error_percent": 0.016,
+              "small_value_relative_error_percent": 0.422,
+              "bbox_xyxy_normalized": [
+                0.906,
+                0.2586,
+                0.94,
+                0.7256
+              ],
+              "evidence_zh": "最右棕色书面约x=1812至1880，宽68px。",
+              "uncertainty_zh": "左边界含混色，每端点约±1px定位不确定性。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "整排书",
+              "required_parts": [
+                "七个书脊正面",
+                "共同顶底",
+                "相邻接触边",
+                "外部引线"
+              ],
+              "relationship": "直立并列、左右连续接触；书面宽度组成总宽，引线指向对应书。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.06,
+                0.2586,
+                0.94,
+                0.932
+              ],
+              "evidence_zh": "七类按输入顺序相接，无可见空隙或错层，各有外部标签。"
+            },
+            {
+              "category": "Christian（大值）",
+              "required_parts": [
+                "黑色书皮",
+                "金色压线",
+                "凸起书筋",
+                "磨损包边",
+                "接触暗边"
+              ],
+              "relationship": "书筋和金线包含于黑色书面；左右接触褐书和细蓝书，外缘承担42%宽度。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.535,
+                0.2586,
+                0.9045,
+                0.7256
+              ],
+              "evidence_zh": "可辨皮革、四道凸起横筋、上下金线与边缘磨损；部件未遮住邻类。"
+            },
+            {
+              "category": "Folk religions（小值）",
+              "required_parts": [
+                "黄色书皮",
+                "上下箍线",
+                "左右边缘",
+                "外部标签"
+              ],
+              "relationship": "黄书接触红书和绿书，装饰位于自身宽度内，中心引线对应2%。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.1655,
+                0.2586,
+                0.183,
+                0.7256
+              ],
+              "evidence_zh": "约35px宽的黄色皮面与深色箍线仍可辨，未被邻书吞没。"
+            },
+            {
+              "category": "Jewish（最小正值）",
+              "required_parts": [
+                "蓝色书脊",
+                "包边及金线",
+                "邻书接触",
+                "外部折线标签"
+              ],
+              "relationship": "蓝带夹在黑书与棕书之间，折线从下方引出。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.9045,
+                0.2586,
+                0.906,
+                0.7256
+              ],
+              "evidence_zh": "蓝色核心和边界混色可检测，引线指向正确；独立金线、包边及接触阴影不可分别辨认。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "当前合成份额替代参考实数，标签使用当前类别，书宽与引线位置适配数据；无需复制旧排名或书名题字。",
+            "output_added_or_lost_meaning_zh": "增加合成及非真实人口估计说明；宗教/无归属人口构成、百分比单位和书宽比较关系保留。参考经书题字未重现，其额外修辞不属明确冻结的统计要求。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA；Religious affiliation shares；Percent of population · religion and no affiliation；Spine width = population share / Total 100%；Illustrative values; not a real population estimate.；七类完整标签。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "旧数值与书名更新为当前合成份额和类别名，主题保持。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "42%对应宽黑书，0.12%对应极细蓝书，未见最小宽度放大。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "蓝书仅一个清晰核心列和两侧混色列，细部及小值精度不能独立确认。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "参考Fiction等题字可见，但不足以认定未明示的作者态度或必须保留的论点。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一宽度通道的全部七类：六类记录近似像素宽度及换算值，最小类记录可见像素支撑并保留有效宽度不确定性；另核对全部类别、数值、引线和单位。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "均以旧式精装书脊为主体，保留红黄绿褐黑蓝棕配色、包边和金色压线。",
+            "data_adaptation_excluded_zh": "排除份额导致的宽窄变化、微小蓝书及题字更新。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "均为直立正视、共同顶底、左右贴靠的书排，金线位于书皮内部，下方引线绑定各书。",
+            "data_adaptation_excluded_zh": "允许姿态、非数据厚度和引线位置适配，不要求旧宽度。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方标题、中央书排和下方交错标签；待评图书排横向占比更大。",
+            "data_adaptation_excluded_zh": "合成提示、现主题、数值替换和细书引线移动不作为扣分因素。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "旧皮革、金线和磨损明显；待评图纹理、磨损及黑书凸筋更强，参考质感更柔和。",
+            "data_adaptation_excluded_zh": "不因数据驱动的书宽变化及纹理压缩本身扣分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/a231413119b703",
       "numeric_supported": true,
@@ -77811,7 +78552,485 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为国旗纹样美国地图病人、透视病床和前景床尾图板，包含红阶梯、黑实线与密短划线。待评图为橙色州界地图病人，枕头承托身体，肢体可见，体温计接触嘴部；床尾夹扣连接三系列图板。标题、合成声明、年化百分比单位、2040日期范围及观察表清晰可见。初看未见主要标签遮挡、曲线越出板面或部件断裂。",
+        "summary_zh": "通过。日期、数值、三系列绑定及床尾图板结构符合冻结要求，抽测几何误差远低于容差。review.json已以UTF-8保存并通过schema.json校验；按后续明确限制未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "仅测量2000×1643的image.png。可见横网格y≈825、882、939、996、1053、1110及基线1167，对应21至9%，比例为28.5像素/百分点；x≈540至1725对应0至67天。由局部笔画边界中点反算数值。满量程分母分别为12个百分点和67天；相对误差分母为目标值。mark_extent_px为距截断基线或时间起点的位移，不是点径。源码仅作佐证。",
+        "uncertainties_zh": "抗锯齿与笔画中心定位约有±1像素误差，未逐点测量全部30个纵向位置。参考灰色小突起的身份及体温计原接触位置不够明确。未查看运行日志、自检或归档记录，不能核证每次渲染是否调用capture_render.py，也不推断实际生图调用历史。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "观察表含全部21个日期列，A/B/C分别11、8、11个数值，共30条观察；三系列、标题、合成声明、日期范围及单位齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项目视核对30个数值及日期，均与输入一致。图中20.3、15.8、16.9、14.9、13.2标注正确，右轴明确9–21%。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "图例与曲线一致：A红阶梯、B黑实线、C黑短划线。表格行名和日期列明确，直接注释对应正确曲线。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "10个纵向抽测最大误差约0.12%满量程，4个时间位置误差低于0.05%满量程。A按实际日期右连续跳变，16.9末平台保持至05-09；B、C均在各自观察日期范围内连接，无外推。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看原始及处理素材和相关渲染源码；地图面部、体温计、床架与夹扣纹理在成图中实质可见。源码读入数据绘制几何与文字。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "坐标区包含于床尾实体框板内，夹扣、边框、床架与脚轮连续；病人由枕头床面承托，体温计接触嘴部，保留参考的图板叠合关系。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原始分辨率下标题、单位、图例、21个日期表头、30个数值及插值和截断说明均可读，无主要遮挡或裁切。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "美国地图病人、病床、体温计及床尾图板齐备且连接合理；数据由板内位置承载，图板未与床体分离。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "ANNUAL RATE CHANGES、SYNTHETIC DATA、% PER YEAR和2040日期明确当前主题；Series A/B/C即输入规定的合成角色。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "卧床美国地图与床尾监测图保留；参考真实金融角色及FALLING FEVER下降叙事已由输入明确适配，不作为输出缺失。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "B=9.6的点距9%基线约17.5像素并连接实线；A首个一日平台约宽17.5像素；C最低空心点与虚线可辨，均仍位于图板内。"
+          }
+        },
+        "semantic_attribution_zh": "真实金融角色和退烧下降叙事改为2040年合成年化率Series A/B/C，属于允许的输入适配。B/C上行及A新平台来自当前数据。未见必要含义遗漏；原参考小部件解释存在不确定性，小标记精度受分辨率限制。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "A",
+              "category": "2040-03-03",
+              "expected_value": 17.6,
+              "observed_value": 17.614,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 245.5,
+              "full_scale_error_percent": 0.117,
+              "small_value_relative_error_percent": 0.0797,
+              "bbox_xyxy_normalized": [
+                0.268,
+                0.55813,
+                0.2725,
+                0.56482
+              ],
+              "evidence_zh": "点中心约(540,921.5)，按可见9%基线及28.5像素/百分点反算。",
+              "uncertainty_zh": "约±1像素，即±0.035百分点。"
+            },
+            {
+              "series_id": "A",
+              "category": "2040-03-15",
+              "expected_value": 20.3,
+              "observed_value": 20.2982,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 322,
+              "full_scale_error_percent": 0.0146,
+              "small_value_relative_error_percent": 0.0086,
+              "bbox_xyxy_normalized": [
+                0.381,
+                0.51126,
+                0.395,
+                0.51795
+              ],
+              "evidence_zh": "最高平台笔画中心y≈845。",
+              "uncertainty_zh": "约±1像素；不宣称亚像素精度。"
+            },
+            {
+              "series_id": "A",
+              "category": "2040-03-29",
+              "expected_value": 19.2,
+              "observed_value": 19.2105,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 291,
+              "full_scale_error_percent": 0.0877,
+              "small_value_relative_error_percent": 0.0548,
+              "bbox_xyxy_normalized": [
+                0.51,
+                0.52952,
+                0.525,
+                0.53682
+              ],
+              "evidence_zh": "中间平台笔画中心y≈876。",
+              "uncertainty_zh": "约±1像素。"
+            },
+            {
+              "series_id": "A",
+              "category": "2040-05-07",
+              "expected_value": 16.9,
+              "observed_value": 16.9123,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 225.5,
+              "full_scale_error_percent": 0.1023,
+              "small_value_relative_error_percent": 0.0727,
+              "bbox_xyxy_normalized": [
+                0.849,
+                0.56969,
+                0.859,
+                0.57699
+              ],
+              "evidence_zh": "末平台笔画中心y≈941.5，保持至最后记录。",
+              "uncertainty_zh": "约±1像素。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-03-06",
+              "expected_value": 9.6,
+              "observed_value": 9.614,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 17.5,
+              "full_scale_error_percent": 0.117,
+              "small_value_relative_error_percent": 0.1462,
+              "bbox_xyxy_normalized": [
+                0.2945,
+                0.6969,
+                0.299,
+                0.70359
+              ],
+              "evidence_zh": "最小值点中心约(593,1149.5)，高于9%基线17.5像素。",
+              "uncertainty_zh": "约±1像素；相对高于基线的0.6百分点余量，测量不确定度约5.8%，不宣称小值高精度。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-04-03",
+              "expected_value": 15.8,
+              "observed_value": 15.807,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 194,
+              "full_scale_error_percent": 0.0585,
+              "small_value_relative_error_percent": 0.0444,
+              "bbox_xyxy_normalized": [
+                0.542,
+                0.58917,
+                0.5465,
+                0.59586
+              ],
+              "evidence_zh": "最高点中心约(1088,973)。",
+              "uncertainty_zh": "约±1像素。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-03-27",
+              "expected_value": 14.9,
+              "observed_value": 14.9123,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 168.5,
+              "full_scale_error_percent": 0.1023,
+              "small_value_relative_error_percent": 0.0824,
+              "bbox_xyxy_normalized": [
+                0.48,
+                0.60499,
+                0.4845,
+                0.61108
+              ],
+              "evidence_zh": "中间点中心约(964,998.5)。",
+              "uncertainty_zh": "约±1像素。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-03-13",
+              "expected_value": 10.9,
+              "observed_value": 10.9123,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 54.5,
+              "full_scale_error_percent": 0.1023,
+              "small_value_relative_error_percent": 0.1127,
+              "bbox_xyxy_normalized": [
+                0.3565,
+                0.67438,
+                0.361,
+                0.68107
+              ],
+              "evidence_zh": "最低空心点中心约(716.5,1112.5)。",
+              "uncertainty_zh": "空心圆边界及抗锯齿约±1像素。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-04-24",
+              "expected_value": 13.2,
+              "observed_value": 13.2105,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 120,
+              "full_scale_error_percent": 0.0877,
+              "small_value_relative_error_percent": 0.0797,
+              "bbox_xyxy_normalized": [
+                0.728,
+                0.63421,
+                0.7325,
+                0.6409
+              ],
+              "evidence_zh": "较大值空心点中心约(1459.5,1047)。",
+              "uncertainty_zh": "约±1像素。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-04-10",
+              "expected_value": 12.7,
+              "observed_value": 12.7018,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 105.5,
+              "full_scale_error_percent": 0.0146,
+              "small_value_relative_error_percent": 0.0138,
+              "bbox_xyxy_normalized": [
+                0.604,
+                0.64212,
+                0.6085,
+                0.65003
+              ],
+              "evidence_zh": "中间点中心约(1212,1061.5)。",
+              "uncertainty_zh": "约±1像素。"
+            },
+            {
+              "series_id": "A_time",
+              "category": "2040-03-04（距03-03天数）",
+              "expected_value": 1,
+              "observed_value": 0.9895,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 17.5,
+              "full_scale_error_percent": 0.0157,
+              "small_value_relative_error_percent": 1.0549,
+              "bbox_xyxy_normalized": [
+                0.277,
+                0.54778,
+                0.2805,
+                0.55508
+              ],
+              "evidence_zh": "首个竖跳中心x≈557.5；由可见0–67天轴反算。",
+              "uncertainty_zh": "约±1像素或±0.057天；一日间隔相对测量不确定度约5.7%。"
+            },
+            {
+              "series_id": "B_time",
+              "category": "2040-03-06（距03-03天数）",
+              "expected_value": 3,
+              "observed_value": 2.9966,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 53,
+              "full_scale_error_percent": 0.005,
+              "small_value_relative_error_percent": 0.1125,
+              "bbox_xyxy_normalized": [
+                0.2945,
+                0.6969,
+                0.299,
+                0.70359
+              ],
+              "evidence_zh": "首个B点中心x≈593。",
+              "uncertainty_zh": "约±1像素或±0.057天。"
+            },
+            {
+              "series_id": "B_time",
+              "category": "2040-04-03（距03-03天数）",
+              "expected_value": 31,
+              "observed_value": 30.984,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 548,
+              "full_scale_error_percent": 0.0239,
+              "small_value_relative_error_percent": 0.0517,
+              "bbox_xyxy_normalized": [
+                0.542,
+                0.58917,
+                0.5465,
+                0.59586
+              ],
+              "evidence_zh": "B最高点中心x≈1088。",
+              "uncertainty_zh": "约±1像素或±0.057天。"
+            },
+            {
+              "series_id": "C_time",
+              "category": "2040-04-24（距03-03天数）",
+              "expected_value": 52,
+              "observed_value": 51.9886,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 919.5,
+              "full_scale_error_percent": 0.017,
+              "small_value_relative_error_percent": 0.0219,
+              "bbox_xyxy_normalized": [
+                0.728,
+                0.63421,
+                0.7325,
+                0.6409
+              ],
+              "evidence_zh": "C空心点中心x≈1459.5。",
+              "uncertainty_zh": "约±1像素或±0.057天。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "大实例：病人与病床",
+              "required_parts": [
+                "美国地图轮廓",
+                "枕头",
+                "床面",
+                "肢体",
+                "床架"
+              ],
+              "relationship": "病人躺靠枕头并接触床面，肢体从主体或被褥处伸出，床架承托床面。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.08,
+                0.16,
+                0.74,
+                0.44
+              ],
+              "evidence_zh": "美国轮廓及州界清楚，左臂接触床铺，腿部由被褥下伸向床尾；未见悬空或断开。"
+            },
+            {
+              "category": "小部件：体温计",
+              "required_parts": [
+                "嘴部",
+                "体温计管身",
+                "刻度及红色液柱"
+              ],
+              "relationship": "管身一端接触嘴部，另一端向右伸出。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.38,
+                0.25,
+                0.5,
+                0.3
+              ],
+              "evidence_zh": "嘴角与灰白管身相接，红色细条及刻度可辨；体温计不承担数值比例。"
+            },
+            {
+              "category": "数据承载部件：床尾图板",
+              "required_parts": [
+                "图板边框",
+                "两处夹扣",
+                "床架与脚轮",
+                "三系列坐标区"
+              ],
+              "relationship": "图板固定在床尾前方，坐标区包含于板面内，框板遮住后方床体相应部分。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.21,
+                0.4,
+                0.95,
+                0.81
+              ],
+              "evidence_zh": "夹扣覆盖上沿，边框连接床脚；定量区域约为[540,825,1725,1167]像素，未越出物理板框。"
+            },
+            {
+              "category": "最小数值：B的9.6",
+              "required_parts": [
+                "实心点",
+                "B实线",
+                "9%基线",
+                "图板内域"
+              ],
+              "relationship": "点位于基线上方并接续后续实线，包含于同一板面。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.292,
+                0.652,
+                0.363,
+                0.715
+              ],
+              "evidence_zh": "点中心约(593,1149.5)，高于基线17.5像素，向右上连接下一观察。"
+            },
+            {
+              "category": "最短时间平台：A首日",
+              "required_parts": [
+                "初始红点",
+                "水平平台",
+                "右侧竖跳"
+              ],
+              "relationship": "03-03值保持到03-04，在右端跳至下一平台。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.267,
+                0.538,
+                0.283,
+                0.565
+              ],
+              "evidence_zh": "平台由x≈540延伸至557.5，水平段及竖跳可辨，未人为改为等距类别。"
+            },
+            {
+              "category": "小线标：C的10.9",
+              "required_parts": [
+                "空心圆点",
+                "黑色短划线",
+                "图板内域"
+              ],
+              "relationship": "最低空心点与两侧短划线对应同一序列，保留板内位置关系。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.349,
+                0.67,
+                0.367,
+                0.683
+              ],
+              "evidence_zh": "中心约(716.5,1112.5)，约7像素的小圆轮廓可见，可与B实心点区分。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "输入明确采用2040合成日期、年化率及Series A/B/C，允许姿态、非数据厚度和排版调整，不继承旧峰值或下降论点。",
+            "output_added_or_lost_meaning_zh": "保留病人与趋势监测关系，新增面部、肢体及合成检查措辞；未将合成值声称为真实美国统计。原金融角色及下降论点的改变来自输入。",
+            "visible_inscription_evidence_zh": "可见ANNUAL RATE CHANGES、SYNTHETIC DATA、UNIT % PER YEAR、Series A/B/C、2040日期、True elapsed days: 0–67、Truncated axis: 9–21%及非真实美国统计声明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "合成主题及A/B/C命名由冻结输入规定。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "A峰值20.3、末平台16.9及B/C总体上升符合当前数据。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "约7像素点径及17.5像素短平台可见，但±1像素不能保证小余量或一日间隔的高相对精度。"
+            },
+            {
+              "cause": "uncertain_reference",
+              "evidence_zh": "参考灰色小突起不足以可靠确定体温计原接触方式，不据此推断作者意图。"
+            }
+          ],
+          "measurement_coverage_zh": "纵向抽测A四处、B三处、C三处，覆盖各系列较小、较大及中间值；另测四个时间位置，含最短一日阶梯。其余20个纵向位置未逐点测量；全部30个数值、21个日期及三系列文字另经目视核对。整张床尾板承载数据，无须每点成为微型病人。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "美国地图病人、病床、脚轮及床尾图板保留；待评图有清晰口含体温计。国旗填色改橙色州界，并加入面部和肢体。",
+            "data_adaptation_excluded_zh": "不扣除允许的姿态、非数据厚度、当前标签及走势适配。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "病人由床面承托，体温计接触病人，图板通过夹扣位于床尾前方，床架连接脚轮；关键关系完整。",
+            "data_adaptation_excluded_zh": "排除允许的躺卧角度、肢体姿态、床架细节与非数据尺寸调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "均为后上方病人、前下方图板；待评图将标题扩展为顶栏，数据表置底，参考大地图的主导程度有所变化。",
+            "data_adaptation_excluded_zh": "不因增加当前日期、数值表或调整图板尺寸扣分，仅评价非数据主体层级。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "仍有复古纸面插画感；参考平面红白蓝填色与网点改为米色纸面、橙色皮肤、织物和金属排线阴影。",
+            "data_adaptation_excluded_zh": "仅评价非数据材质语言，不评价更新文字或数据走势。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/996b7bfb5ce1c1",
       "numeric_supported": true,
@@ -87152,7 +88371,233 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图：深绿背景，俯视圆桌以不同材质扇区构成桌面，三位人物围桌，礼盒、餐具和食物在桌上，周围引线标注。最终图：浅米色背景，左侧圆桌、右侧九行类别列表；两位人物的手臂伸到桌面，盘中食物、杯具及三个礼盒位于扇区上。九类计数及百分比可读，最小Budget E为左下细紫色扇区并用引线标为3／0.6%；最大Price not a factor为左上浅色区域，标为183／36.6%。顶部有SYNTHETIC DATA、Gift budget preferences、500 simulated responses，副标题说明每人单选。",
+        "summary_zh": "通过。九类计数、百分比、标签绑定及桌面扇区关系一致，代表性像素测量均在3个百分点容差内。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在2000×1412原图上，以可见接缝交点约(740,795)及桌面半径约425px建立极坐标；从右侧图例提取九种色度，在多个半径上寻找相邻色度的等距边界。由像素边界角宽乘500/360折算响应数，未使用渲染器分区掩膜。弧长由像素测得角宽和可见半径换算，误差按500响应满量程计算。接缝与抗锯齿会影响色度边界。",
+        "uncertainties_zh": "约1px接缝及抗锯齿使细扇区可见色域宽度与逻辑角宽略有差别；最小项约3.4%的相对差不能视为高精度误差定论。最内端趋于亚像素，但外段可辨。未读取执行日志或自检，无法独立核实所有历史渲染是否均经capture_render.py；源码说明不作为执行证明。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "九类按输入顺序列出：Budget A三项、Budget B两项、Budget C/D/E及Price not a factor；计数总和500，图中显示9 choices / 100.0%。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "计数76、38、39、43、44、45、29、3、183，占比分别15.2%、7.6%、7.8%、8.6%、8.8%、9.0%、5.8%、0.6%、36.6%；均与输入及500分母一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "图例编号、色块与顺时针扇区对应；01—07和09位于对应桌面区域，08通过Budget E同色引线指向细紫色扇区。父类与子类同时显示。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素测得最小项约2.09°、最大项约131.78°、内部第三项约28.07°，分别接近目标2.16°、131.76°、28.08°；偏差远低于3个百分点。源码按计数/500控制角宽，仅作佐证。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看assets/raw_01.png，其中人物、礼盒、餐盘及亚麻样片均可与成图对应。prepare_assets.py提取素材，render.py将纹理染色裁成数据扇区并叠合物件；生成素材实质构成主体。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数据扇区组成圆桌表面，木质桌沿围合共同外缘；餐盘和礼盒放在扇区上，人物手臂越过桌沿接触桌面，层级及俯视方向一致。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、SYNTHETIC DATA、500 simulated responses、全部九类及数值清晰，无关键文字遮挡。Budget E外置引线避免在细扇区内挤入标签。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "圆桌、围桌人物、桌上礼盒与食物的接触和包含关系完整；大扇区和细紫色扇区均属于同一连续桌面。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "主题、节日提示、模拟响应单位和每人单选说明完整；底部明确份额分母500、互斥单选及非真实统计调查。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留节日赠礼预算与宴会桌份额关系；参考的圣诞求爱最低消费、30—40岁单身女性和520样本未沿用，属于冻结输入允许的合成主题改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "Budget E细紫色桌面延伸至木沿，外缘弧宽约15.5px，纹理与邻接关系可见，未扩大扇区；中心尖端的细节和相对精度受分辨率限制。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题、单位、父子类别和互斥单选口径均保留。原参考特定人群及求爱最低消费语义由冻结输入主动改编，不归因于输出遗漏；九扇区形状来自当前数据。细扇区尖端的亚像素限制与语义缺失分开评价。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "preference",
+              "category": "Budget E",
+              "expected_value": 3,
+              "observed_value": 2.9,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 15.5,
+              "full_scale_error_percent": 0.0202,
+              "small_value_relative_error_percent": 3.4,
+              "bbox_xyxy_normalized": [
+                0.211,
+                0.563,
+                0.371,
+                0.773
+              ],
+              "evidence_zh": "半径340—410px采样环上，两侧色度边界中位角约226.146°和228.233°；差2.087°折算约2.90响应，外缘对应弧长约15.5px。文字为3／0.6%。",
+              "uncertainty_zh": "约1px接缝及抗锯齿影响边界；3.4%为近似可见色域相对差，不能证明亚像素精度。源码逻辑角宽2.16°仅作佐证。"
+            },
+            {
+              "series_id": "preference",
+              "category": "Price not a factor",
+              "expected_value": 183,
+              "observed_value": 183.03,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 977.5,
+              "full_scale_error_percent": 0.0051,
+              "small_value_relative_error_percent": 0.014,
+              "bbox_xyxy_normalized": [
+                0.157,
+                0.262,
+                0.371,
+                0.764
+              ],
+              "evidence_zh": "像素边界约228.233°至360.012°，角宽131.778°折算约183.03响应；按可见半径约425px，外弧约977.5px。文字183／36.6%正确。",
+              "uncertainty_zh": "使用未被人物遮挡的边界测角，不以遮挡后的裸露面积代替份额；外弧长度为换算近似值。"
+            },
+            {
+              "series_id": "preference",
+              "category": "Budget A / subcategory 3",
+              "expected_value": 39,
+              "observed_value": 38.99,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 208.2,
+              "full_scale_error_percent": 0.0018,
+              "small_value_relative_error_percent": 0.023,
+              "bbox_xyxy_normalized": [
+                0.37,
+                0.521,
+                0.583,
+                0.668
+              ],
+              "evidence_zh": "第三扇区边界约82.158°和110.232°，角宽28.073°折算约38.99响应；外弧约208.2px。内部03与图例39／7.8%匹配。",
+              "uncertainty_zh": "边界和半径为像素近似估计，纹理与接缝不支持将微小差值解释为真实生成偏差。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "大扇区与宴会物件",
+              "required_parts": [
+                "浅色大扇区桌面",
+                "左上人物及手臂",
+                "食物餐盘",
+                "礼盒",
+                "圆桌沿"
+              ],
+              "relationship": "人物位于桌外并将手臂伸入桌面；餐盘与礼盒位于桌面外缘内并接触表面；浅色扇区直接承担最大份额。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.137,
+                0.22,
+                0.373,
+                0.683
+              ],
+              "evidence_zh": "人物双手约在(470,530)压在浅色桌面上，餐盘约(600,675)、礼盒约(535,868)位于同一扇区；接触阴影位于物件下方。"
+            },
+            {
+              "category": "最小Budget E扇区",
+              "required_parts": [
+                "细紫色织物区域",
+                "共同圆心",
+                "木质桌沿",
+                "相邻青色与浅色区域"
+              ],
+              "relationship": "细紫色区域从共同中心向左下展开，外端接圆桌沿，两侧与邻接桌面相接，角宽承担0.6%份额。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.21,
+                0.562,
+                0.372,
+                0.775
+              ],
+              "evidence_zh": "紫色窄条可追踪至约(425,1085)桌缘，外段仍呈织物；引线接外端。中心尖端的纤维细节不可独立辨认，不要求每个细扇区另放物件。"
+            },
+            {
+              "category": "右下人物与杯具层级",
+              "required_parts": [
+                "右下人物",
+                "手臂",
+                "杯具",
+                "桌缘",
+                "橙色桌面"
+              ],
+              "relationship": "身体在圆桌外侧，手臂越过桌沿，手与杯位于桌面上层，遮挡不改变扇区逻辑边界。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.46,
+                0.712,
+                0.619,
+                0.888
+              ],
+              "evidence_zh": "右下人物的手伸入橙色桌面，另一手持杯靠桌沿；人物与杯具遮挡桌沿及局部表面，未出现反向层级。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "当前要求使用500个模拟参与者的互斥礼物预算选择及合成父子类别，不沿用参考真实金额档、520样本或特定人群。",
+            "output_added_or_lost_meaning_zh": "当前统计口径未遗漏；参考的求爱最低礼物金额和特定人群限制只部分延续为一般节日预算偏好，此变化由输入允许。",
+            "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Gift budget preferences、HOLIDAY GIFTING、500 simulated responses、每位模拟参与者一个预算选择，以及底部角度份额与互斥单选说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "参考的圣诞求爱最低消费与特定样本限定改为合成节日预算选择，属于冻结主题和类别改编。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "原图六块桌面改为九块，最小Budget E为0.6%，最大Price not a factor为36.6%；不要求复制旧份额。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "细紫色扇区外段清楚，靠近圆心处收窄至亚像素，局部纹理及微小相对误差不可高精度确认。"
+            }
+          ],
+          "measurement_coverage_zh": "唯一量化通道是圆桌角宽；详细记录最小、最大和内部第三项三组像素测量。其余六项进行环形色度边界一致性核查，未逐项列入测量表。九类标签、计数、百分比及总量均逐项检查；人物遮挡区不按可见面积反推计数。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "俯视宴会圆桌、围桌人物、食物餐具及蝴蝶结礼盒均保留；人物由三位变为两位，服装由正式晚装变为针织日常装。",
+            "data_adaptation_excluded_zh": "不扣分于九类替换六类、扇区角度变化及合成标签；允许身份兼容的人物姿态调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "人物位于桌缘外侧，手臂伸到桌面；礼物与餐盘置于桌面；俯视视角及接触层级保留。",
+            "data_adaptation_excluded_zh": "不要求复制三人的具体方位、姿势或非数据物件位置。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "圆桌仍是主体，上方保留主题文字；环绕标注及右下手写标题改为左图右侧列表和顶部大标题，整体层级有较大调整。",
+            "data_adaptation_excluded_zh": "不因新增类别、更新文字或单个标签移动扣分；评估整体布局变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留写实人物、食物与织物质感；深绿摄影背景和正式宴会氛围改为浅米色页面、木圈桌沿和统一织物纹理。",
+            "data_adaptation_excluded_zh": "不以数据驱动的扇区面积、类别配色和文字更新作为风格扣分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/9b5ed8572d748d",
       "numeric_supported": true,
@@ -87426,7 +88871,233 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图：深绿背景，俯视圆桌以不同材质扇区构成桌面，三位人物围桌，礼盒、餐具和食物在桌上，周围引线标注。最终图：浅米色背景，左侧圆桌、右侧九行类别列表；两位人物的手臂伸到桌面，盘中食物、杯具及三个礼盒位于扇区上。九类计数及百分比可读，最小Budget E为左下细紫色扇区并用引线标为3／0.6%；最大Price not a factor为左上浅色区域，标为183／36.6%。顶部有SYNTHETIC DATA、Gift budget preferences、500 simulated responses，副标题说明每人单选。",
+        "summary_zh": "通过。九类计数、百分比、标签绑定及桌面扇区关系一致，代表性像素测量均在3个百分点容差内。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在2000×1412原图上，以可见接缝交点约(740,795)及桌面半径约425px建立极坐标；从右侧图例提取九种色度，在多个半径上寻找相邻色度的等距边界。由像素边界角宽乘500/360折算响应数，未使用渲染器分区掩膜。弧长由像素测得角宽和可见半径换算，误差按500响应满量程计算。接缝与抗锯齿会影响色度边界。",
+        "uncertainties_zh": "约1px接缝及抗锯齿使细扇区可见色域宽度与逻辑角宽略有差别；最小项约3.4%的相对差不能视为高精度误差定论。最内端趋于亚像素，但外段可辨。未读取执行日志或自检，无法独立核实所有历史渲染是否均经capture_render.py；源码说明不作为执行证明。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "九类按输入顺序列出：Budget A三项、Budget B两项、Budget C/D/E及Price not a factor；计数总和500，图中显示9 choices / 100.0%。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "计数76、38、39、43、44、45、29、3、183，占比分别15.2%、7.6%、7.8%、8.6%、8.8%、9.0%、5.8%、0.6%、36.6%；均与输入及500分母一致。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "图例编号、色块与顺时针扇区对应；01—07和09位于对应桌面区域，08通过Budget E同色引线指向细紫色扇区。父类与子类同时显示。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "像素测得最小项约2.09°、最大项约131.78°、内部第三项约28.07°，分别接近目标2.16°、131.76°、28.08°；偏差远低于3个百分点。源码按计数/500控制角宽，仅作佐证。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看assets/raw_01.png，其中人物、礼盒、餐盘及亚麻样片均可与成图对应。prepare_assets.py提取素材，render.py将纹理染色裁成数据扇区并叠合物件；生成素材实质构成主体。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数据扇区组成圆桌表面，木质桌沿围合共同外缘；餐盘和礼盒放在扇区上，人物手臂越过桌沿接触桌面，层级及俯视方向一致。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、SYNTHETIC DATA、500 simulated responses、全部九类及数值清晰，无关键文字遮挡。Budget E外置引线避免在细扇区内挤入标签。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "圆桌、围桌人物、桌上礼盒与食物的接触和包含关系完整；大扇区和细紫色扇区均属于同一连续桌面。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "主题、节日提示、模拟响应单位和每人单选说明完整；底部明确份额分母500、互斥单选及非真实统计调查。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留节日赠礼预算与宴会桌份额关系；参考的圣诞求爱最低消费、30—40岁单身女性和520样本未沿用，属于冻结输入允许的合成主题改编。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "Budget E细紫色桌面延伸至木沿，外缘弧宽约15.5px，纹理与邻接关系可见，未扩大扇区；中心尖端的细节和相对精度受分辨率限制。"
+          }
+        },
+        "semantic_attribution_zh": "当前主题、单位、父子类别和互斥单选口径均保留。原参考特定人群及求爱最低消费语义由冻结输入主动改编，不归因于输出遗漏；九扇区形状来自当前数据。细扇区尖端的亚像素限制与语义缺失分开评价。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "preference",
+              "category": "Budget E",
+              "expected_value": 3,
+              "observed_value": 2.9,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 15.5,
+              "full_scale_error_percent": 0.0202,
+              "small_value_relative_error_percent": 3.4,
+              "bbox_xyxy_normalized": [
+                0.211,
+                0.563,
+                0.371,
+                0.773
+              ],
+              "evidence_zh": "半径340—410px采样环上，两侧色度边界中位角约226.146°和228.233°；差2.087°折算约2.90响应，外缘对应弧长约15.5px。文字为3／0.6%。",
+              "uncertainty_zh": "约1px接缝及抗锯齿影响边界；3.4%为近似可见色域相对差，不能证明亚像素精度。源码逻辑角宽2.16°仅作佐证。"
+            },
+            {
+              "series_id": "preference",
+              "category": "Price not a factor",
+              "expected_value": 183,
+              "observed_value": 183.03,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 977.5,
+              "full_scale_error_percent": 0.0051,
+              "small_value_relative_error_percent": 0.014,
+              "bbox_xyxy_normalized": [
+                0.157,
+                0.262,
+                0.371,
+                0.764
+              ],
+              "evidence_zh": "像素边界约228.233°至360.012°，角宽131.778°折算约183.03响应；按可见半径约425px，外弧约977.5px。文字183／36.6%正确。",
+              "uncertainty_zh": "使用未被人物遮挡的边界测角，不以遮挡后的裸露面积代替份额；外弧长度为换算近似值。"
+            },
+            {
+              "series_id": "preference",
+              "category": "Budget A / subcategory 3",
+              "expected_value": 39,
+              "observed_value": 38.99,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 208.2,
+              "full_scale_error_percent": 0.0018,
+              "small_value_relative_error_percent": 0.023,
+              "bbox_xyxy_normalized": [
+                0.37,
+                0.521,
+                0.583,
+                0.668
+              ],
+              "evidence_zh": "第三扇区边界约82.158°和110.232°，角宽28.073°折算约38.99响应；外弧约208.2px。内部03与图例39／7.8%匹配。",
+              "uncertainty_zh": "边界和半径为像素近似估计，纹理与接缝不支持将微小差值解释为真实生成偏差。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "大扇区与宴会物件",
+              "required_parts": [
+                "浅色大扇区桌面",
+                "左上人物及手臂",
+                "食物餐盘",
+                "礼盒",
+                "圆桌沿"
+              ],
+              "relationship": "人物位于桌外并将手臂伸入桌面；餐盘与礼盒位于桌面外缘内并接触表面；浅色扇区直接承担最大份额。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.137,
+                0.22,
+                0.373,
+                0.683
+              ],
+              "evidence_zh": "人物双手约在(470,530)压在浅色桌面上，餐盘约(600,675)、礼盒约(535,868)位于同一扇区；接触阴影位于物件下方。"
+            },
+            {
+              "category": "最小Budget E扇区",
+              "required_parts": [
+                "细紫色织物区域",
+                "共同圆心",
+                "木质桌沿",
+                "相邻青色与浅色区域"
+              ],
+              "relationship": "细紫色区域从共同中心向左下展开，外端接圆桌沿，两侧与邻接桌面相接，角宽承担0.6%份额。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.21,
+                0.562,
+                0.372,
+                0.775
+              ],
+              "evidence_zh": "紫色窄条可追踪至约(425,1085)桌缘，外段仍呈织物；引线接外端。中心尖端的纤维细节不可独立辨认，不要求每个细扇区另放物件。"
+            },
+            {
+              "category": "右下人物与杯具层级",
+              "required_parts": [
+                "右下人物",
+                "手臂",
+                "杯具",
+                "桌缘",
+                "橙色桌面"
+              ],
+              "relationship": "身体在圆桌外侧，手臂越过桌沿，手与杯位于桌面上层，遮挡不改变扇区逻辑边界。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.46,
+                0.712,
+                0.619,
+                0.888
+              ],
+              "evidence_zh": "右下人物的手伸入橙色桌面，另一手持杯靠桌沿；人物与杯具遮挡桌沿及局部表面，未出现反向层级。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "当前要求使用500个模拟参与者的互斥礼物预算选择及合成父子类别，不沿用参考真实金额档、520样本或特定人群。",
+            "output_added_or_lost_meaning_zh": "当前统计口径未遗漏；参考的求爱最低礼物金额和特定人群限制只部分延续为一般节日预算偏好，此变化由输入允许。",
+            "visible_inscription_evidence_zh": "可见SYNTHETIC DATA、Gift budget preferences、HOLIDAY GIFTING、500 simulated responses、每位模拟参与者一个预算选择，以及底部角度份额与互斥单选说明。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "参考的圣诞求爱最低消费与特定样本限定改为合成节日预算选择，属于冻结主题和类别改编。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "原图六块桌面改为九块，最小Budget E为0.6%，最大Price not a factor为36.6%；不要求复制旧份额。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "细紫色扇区外段清楚，靠近圆心处收窄至亚像素，局部纹理及微小相对误差不可高精度确认。"
+            }
+          ],
+          "measurement_coverage_zh": "唯一量化通道是圆桌角宽；详细记录最小、最大和内部第三项三组像素测量。其余六项进行环形色度边界一致性核查，未逐项列入测量表。九类标签、计数、百分比及总量均逐项检查；人物遮挡区不按可见面积反推计数。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "俯视宴会圆桌、围桌人物、食物餐具及蝴蝶结礼盒均保留；人物由三位变为两位，服装由正式晚装变为针织日常装。",
+            "data_adaptation_excluded_zh": "不扣分于九类替换六类、扇区角度变化及合成标签；允许身份兼容的人物姿态调整。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "人物位于桌缘外侧，手臂伸到桌面；礼物与餐盘置于桌面；俯视视角及接触层级保留。",
+            "data_adaptation_excluded_zh": "不要求复制三人的具体方位、姿势或非数据物件位置。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "圆桌仍是主体，上方保留主题文字；环绕标注及右下手写标题改为左图右侧列表和顶部大标题，整体层级有较大调整。",
+            "data_adaptation_excluded_zh": "不因新增类别、更新文字或单个标签移动扣分；评估整体布局变化。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留写实人物、食物与织物质感；深绿摄影背景和正式宴会氛围改为浅米色页面、木圈桌沿和统一织物纹理。",
+            "data_adaptation_excluded_zh": "不以数据驱动的扇区面积、类别配色和文字更新作为风格扣分。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/9b5ed8572d748d",
       "numeric_supported": true,
