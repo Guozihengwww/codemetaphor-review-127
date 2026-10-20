@@ -1,13 +1,139 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="120"><title>参考图双因素消融 · 24设计96任务</title><style>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>参考图双因素消融 · 24设计96任务</title><style>
 *{box-sizing:border-box}body{margin:0;background:#f3f3ed;color:#263b32;font:16px/1.7 system-ui,sans-serif}main{max-width:1720px;margin:auto;padding:24px 16px}section,.intro{background:#fff;padding:22px;border-radius:9px;margin:20px 0}h1{line-height:1.35}h2{margin-top:0}a{color:#215c91}.columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}article{min-width:0}img{display:block;width:100%;height:auto}.reference{max-width:500px}.table-wrap{max-width:100%;overflow:auto}table{border-collapse:collapse;width:100%}td,th{padding:9px;border:1px solid #cad4ca;text-align:left;vertical-align:top}th{background:#eef4ed}pre,p{overflow-wrap:anywhere}pre{white-space:pre-wrap;font-size:13px}summary{cursor:pointer;padding:7px}.note{font-size:14px;color:#465c4f}.status{font-weight:650;color:#315c45}select{font:inherit;padding:8px;max-width:100%;margin:4px}[hidden]{display:none!important}.pill{display:inline-block;background:#eef4e9;padding:4px 9px;border-radius:5px}@media(max-width:1200px){.columns{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){main{padding:14px 10px}section,.intro{padding:15px}.columns{grid-template-columns:1fr}td,th{font-size:13px}}
-</style></head><body><main><h1>参考图双因素消融 · 24个设计 × 4种设置</h1><div class="intro"><p class="status">实验执行中</p>
+</style></head><body><main><h1>参考图双因素消融 · 24个设计 × 4种设置</h1><div class="intro"><p class="status">已完成</p>
 <p><strong>共96次全新生成，三类数据冲突各8个设计。</strong>同一设计的四组共用相同冲突数据、文字简报和结构语义合同。规划智能体是否能直接看原图，与生图模型是否接收原图，由执行器独立控制。</p>
 <div class="table-wrap"><table><thead><tr><th>设置</th><th>规划／编码智能体</th><th>生图模型</th><th>计划任务</th></tr></thead><tbody><tr><th>A1G1</th><td>提供原图，必须查看</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A1G0</th><td>提供原图，必须查看</td><td>每次调用禁止传原图</td><td>24</td></tr><tr><th>A0G1</th><td>不提供原图，仅共同文字规格</td><td>每次调用强制传原图</td><td>24</td></tr><tr><th>A0G0</th><td>不提供原图，仅共同文字规格</td><td>每次调用禁止传原图</td><td>24</td></tr></tbody></table></div><p><strong>全部96任务的共同主判据：首轮70/96、最终79/96已判通过。</strong>执行中尚有待评项，四组对照以下方各24任务的表格为准。</p><p>模型GPT-6-Astra / max；每次生成35分钟、最多3次生图与6次渲染。规划、精确提示转发、生图调用、评审共用最多3个模型会话。全部可用最终图再做第二次独立评审。</p>
 <p class="note">四组都保留由参考图形成的相同文字规格；“智能体无图”检验直接视觉观察在文字之外的增益，不代表没有任何参考知识。精确提示转发器仅执行原样提示和固定传图参数，原图及中继观察不回传给规划智能体。先核验首个区组的实际输入隔离，再展开其余样本，质量通过率不参与启动决策。</p>
-<p>生成：已完成96；首末评审：已完成166；最终第二评审：已完成91、执行中3、技术异常2；输入协议：已核验96</p>
-<p class="note">更新时间（北京时间）：2026-10-20 08:27:21</p>
+<p>生成：已完成96；首末评审：已完成166；最终第二评审：已完成96；输入协议：已核验96</p>
+<p class="note">更新时间（北京时间）：2026-10-20 08:40:58</p>
 <p><a href="docs/reference_factorial24/protocol.json">冻结方案</a> · <a href="reports/reference_factorial24/summary.json">完整统计与证据</a> · <a href="reports/reference_factorial24/metrics.csv">下载指标CSV</a> · <a href="../reference-input-ablation/">3案例先导实验</a> · <a href="../data-conflict-120/">原120组实验</a></p></div>
-<section id="rates"><h2>首轮与最终通过率：24个设计整体比较</h2><p class="note">各组固定分母24。执行中仅显示已判通过数，待评不是已判失败。下表主数值要求质量通过且输入协议已核验；括号另列图像质量通过数，协议异常与图像缺陷分开。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr></thead><tbody><tr><th scope="row">首轮 · 共同主判据</th><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>16/24 已判通过</strong><br><span class="note">质量通过16；已评23/24</span></td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td><strong>14/24 已判通过</strong><br><span class="note">质量通过14；已评23/24</span></td><td><strong>13/24 已判通过</strong><br><span class="note">质量通过13；已评24/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>11/24 已判通过</strong><br><span class="note">质量通过11；已评23/24</span></td></tr><tr><th scope="row">首轮 · 数值支持</th><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>22/24 已判通过</strong><br><span class="note">质量通过22；已评23/24</span></td></tr><tr><th scope="row">首轮 · 关键结构</th><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评23/24</span></td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>23/24 已判通过</strong><br><span class="note">质量通过23；已评23/24</span></td></tr><tr><th scope="row">首轮 · 小值可辨</th><td><strong>14/24 已判通过</strong><br><span class="note">质量通过14；已评23/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>16/24 已判通过</strong><br><span class="note">质量通过16；已评24/24</span></td><td><strong>14/24 已判通过</strong><br><span class="note">质量通过14；已评23/24</span></td></tr><tr><th scope="row">首轮 · 参考原意</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评23/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>3/24 已判通过</strong><br><span class="note">质量通过3；已评23/24</span></td></tr><tr><th scope="row">最终 · 共同主判据</th><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评24/24</span></td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>13/24 已判通过</strong><br><span class="note">质量通过13；已评24/24</span></td></tr><tr><th scope="row">最终 · 数值支持</th><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td></tr><tr><th scope="row">最终 · 关键结构</th><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>21/24 已判通过</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>19/24 已判通过</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>18/24 已判通过</strong><br><span class="note">质量通过18；已评24/24</span></td></tr><tr><th scope="row">最终 · 当前主题意义</th><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24 已判通过</strong><br><span class="note">质量通过24；已评24/24</span></td></tr><tr><th scope="row">最终 · 小值可辨</th><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>17/24 已判通过</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>16/24 已判通过</strong><br><span class="note">质量通过16；已评24/24</span></td><td><strong>15/24 已判通过</strong><br><span class="note">质量通过15；已评24/24</span></td></tr><tr><th scope="row">最终 · 参考原意</th><td><strong>4/24 已判通过</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评24/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评24/24</span></td><td><strong>5/24 已判通过</strong><br><span class="note">质量通过5；已评24/24</span></td></tr></tbody></table></div><p class="note">共同主判据沿用必要数值／绑定／素材融合检查、关键结构和当前主题意义；小值可辨作为额外联合要求。首轮是首次完整渲染尝试，最终是最后有效图。技术异常、缺图、partial/fail/uncertain均不计通过，历史输出不混入新96任务。</p></section><section><h2>补充：参考设计保留程度（0–4分）</h2><p class="note">下表为最终图独立首评的适用项均分。排除当前数据及许可语义改编引起的变化；分数不替代原通过判据，第二评审及分歧逐图保留。</p><div class="table-wrap"><table><tr><th>维度</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr><tr><th>非数据物体身份</th><td>3.75/4（n=24）</td><td>3.67/4（n=24）</td><td>3.33/4（n=24）</td><td>3.25/4（n=24）</td></tr><tr><th>非数据姿态与关系</th><td>3.83/4（n=24）</td><td>3.88/4（n=24）</td><td>3.50/4（n=24）</td><td>3.50/4（n=24）</td></tr><tr><th>构图层级</th><td>3.17/4（n=24）</td><td>3.08/4（n=24）</td><td>2.67/4（n=24）</td><td>2.79/4（n=24）</td></tr><tr><th>材质与风格</th><td>2.79/4（n=24）</td><td>2.58/4（n=24）</td><td>2.25/4（n=24）</td><td>2.29/4（n=24）</td></tr></table></div></section><section><h2>配对因素效应与交互</h2><p>实验闭合后计算同一参考内的因素差值、保守区间及多重比较校正；当前不对未完成数据做正式检验。</p></section><label>冲突类型 <select id="type"><option value="all">全部24设计</option><option value="category_count">类别数</option><option value="trend_shape">趋势形状</option><option value="numeric_range">数值范围</option></select></label><label>案例 <select id="case-filter"><option value="all">全部</option><option value="F01">F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</option><option value="F02">F02 · 游戏销售形式转变：四期双面板堆叠柱图</option><option value="F03">F03 · 航空公司市值</option><option value="F04">F04 · 鸡蛋的营养成分构成</option><option value="F05">F05 · 合成事件率：美国地形面具上的十期警示折线</option><option value="F06">F06 · 年度可再生水资源</option><option value="F07">F07 · 奖牌的金属组成与合成示例价值</option><option value="F08">F08 · 复古电脑中的 AI 工作情绪：两轮合成比例</option><option value="F09">F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</option><option value="F10">F10 · 捕梦网中的合成梦境：曲边面积分区图</option><option value="F11">F11 · 年度价格通胀与实际产出变化</option><option value="F12">F12 · 合成烟草产量与股价：香烟物体柱图</option><option value="F13">F13 · 校园供餐风险：青苹果抽离扇块合成数据海报</option><option value="F14">F14 · 女子篮球比赛平均观众数</option><option value="F15">F15 · 宗教信仰及无归属人口构成</option><option value="F16">F16 · 两类餐饮服务的支出变化百分比</option><option value="F17">F17 · 社区街头共绘计划的净支持度（合成议题替代）</option><option value="F18">F18 · 园艺试验地块产量（原参考无可读指标）</option><option value="F19">F19 · 书籍销量</option><option value="F20">F20 · 利率退烧：美国地图病人与床尾三系列趋势图</option><option value="F21">F21 · 广告时段：夹心饼干份额与观众计数的双面板合成信息图</option><option value="F22">F22 · 节日礼物预算偏好</option><option value="F23">F23 · 分来源的各期海洋塑料排放量</option><option value="F24">F24 · 面包与纸钞：合成年度食品预算损耗</option></select></label><section class="case" id="F01" data-type="category_count"><h2>F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</h2><p>E76 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F01/reference.webp"><img loading="lazy" src="images/F01/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F01/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F01/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F01/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+<section id="rates"><h2>首轮与最终通过率：24个设计整体比较</h2><p class="note">各组固定分母24。执行中仅显示已判通过数，待评不是已判失败。下表主数值要求质量通过且输入协议已核验；括号另列图像质量通过数，协议异常与图像缺陷分开。</p><div class="table-wrap"><table><thead><tr><th>轮次／指标</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr></thead><tbody><tr><th scope="row">首轮 · 共同主判据</th><td><strong>18/24＝75.00%</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>17/24＝70.83%</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>19/24＝79.17%</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>16/24＝66.67%</strong><br><span class="note">质量通过16；已评23/24</span></td></tr><tr><th scope="row">首轮 · 主判据＋小值可辨</th><td><strong>14/24＝58.33%</strong><br><span class="note">质量通过14；已评23/24</span></td><td><strong>13/24＝54.17%</strong><br><span class="note">质量通过13；已评24/24</span></td><td><strong>15/24＝62.50%</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>11/24＝45.83%</strong><br><span class="note">质量通过11；已评23/24</span></td></tr><tr><th scope="row">首轮 · 数值支持</th><td><strong>23/24＝95.83%</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>23/24＝95.83%</strong><br><span class="note">质量通过23；已评24/24</span></td><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>22/24＝91.67%</strong><br><span class="note">质量通过22；已评23/24</span></td></tr><tr><th scope="row">首轮 · 关键结构</th><td><strong>18/24＝75.00%</strong><br><span class="note">质量通过18；已评23/24</span></td><td><strong>18/24＝75.00%</strong><br><span class="note">质量通过18；已评24/24</span></td><td><strong>19/24＝79.17%</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>17/24＝70.83%</strong><br><span class="note">质量通过17；已评23/24</span></td></tr><tr><th scope="row">首轮 · 当前主题意义</th><td><strong>23/24＝95.83%</strong><br><span class="note">质量通过23；已评23/24</span></td><td><strong>23/24＝95.83%</strong><br><span class="note">质量通过23；已评24/24</span></td><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>23/24＝95.83%</strong><br><span class="note">质量通过23；已评23/24</span></td></tr><tr><th scope="row">首轮 · 小值可辨</th><td><strong>14/24＝58.33%</strong><br><span class="note">质量通过14；已评23/24</span></td><td><strong>15/24＝62.50%</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>16/24＝66.67%</strong><br><span class="note">质量通过16；已评24/24</span></td><td><strong>14/24＝58.33%</strong><br><span class="note">质量通过14；已评23/24</span></td></tr><tr><th scope="row">首轮 · 参考原意</th><td><strong>4/24＝16.67%</strong><br><span class="note">质量通过4；已评23/24</span></td><td><strong>4/24＝16.67%</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>4/24＝16.67%</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>3/24＝12.50%</strong><br><span class="note">质量通过3；已评23/24</span></td></tr><tr><th scope="row">最终 · 共同主判据</th><td><strong>21/24＝87.50%</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>21/24＝87.50%</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>19/24＝79.17%</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>18/24＝75.00%</strong><br><span class="note">质量通过18；已评24/24</span></td></tr><tr><th scope="row">最终 · 主判据＋小值可辨</th><td><strong>17/24＝70.83%</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>17/24＝70.83%</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>15/24＝62.50%</strong><br><span class="note">质量通过15；已评24/24</span></td><td><strong>13/24＝54.17%</strong><br><span class="note">质量通过13；已评24/24</span></td></tr><tr><th scope="row">最终 · 数值支持</th><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td></tr><tr><th scope="row">最终 · 关键结构</th><td><strong>21/24＝87.50%</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>21/24＝87.50%</strong><br><span class="note">质量通过21；已评24/24</span></td><td><strong>19/24＝79.17%</strong><br><span class="note">质量通过19；已评24/24</span></td><td><strong>18/24＝75.00%</strong><br><span class="note">质量通过18；已评24/24</span></td></tr><tr><th scope="row">最终 · 当前主题意义</th><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td><td><strong>24/24＝100.00%</strong><br><span class="note">质量通过24；已评24/24</span></td></tr><tr><th scope="row">最终 · 小值可辨</th><td><strong>17/24＝70.83%</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>17/24＝70.83%</strong><br><span class="note">质量通过17；已评24/24</span></td><td><strong>16/24＝66.67%</strong><br><span class="note">质量通过16；已评24/24</span></td><td><strong>15/24＝62.50%</strong><br><span class="note">质量通过15；已评24/24</span></td></tr><tr><th scope="row">最终 · 参考原意</th><td><strong>4/24＝16.67%</strong><br><span class="note">质量通过4；已评24/24</span></td><td><strong>5/24＝20.83%</strong><br><span class="note">质量通过5；已评24/24</span></td><td><strong>5/24＝20.83%</strong><br><span class="note">质量通过5；已评24/24</span></td><td><strong>5/24＝20.83%</strong><br><span class="note">质量通过5；已评24/24</span></td></tr></tbody></table></div><p class="note">共同主判据沿用必要数值／绑定／素材融合检查、关键结构和当前主题意义；小值可辨作为额外联合要求。首轮是首次完整渲染尝试，最终是最后有效图。技术异常、缺图、partial/fail/uncertain均不计通过，历史输出不混入新96任务。</p></section><section><h2>补充：参考设计保留程度（0–4分）</h2><p class="note">下表为最终图独立首评的适用项均分。排除当前数据及许可语义改编引起的变化；分数不替代原通过判据，第二评审及分歧逐图保留。</p><div class="table-wrap"><table><tr><th>维度</th><th>智能体有图 · 生图有图</th><th>智能体有图 · 生图无图</th><th>智能体无图 · 生图有图</th><th>智能体无图 · 生图无图</th></tr><tr><th>非数据物体身份</th><td>3.75/4（n=24）</td><td>3.67/4（n=24）</td><td>3.33/4（n=24）</td><td>3.25/4（n=24）</td></tr><tr><th>非数据姿态与关系</th><td>3.83/4（n=24）</td><td>3.88/4（n=24）</td><td>3.50/4（n=24）</td><td>3.50/4（n=24）</td></tr><tr><th>构图层级</th><td>3.17/4（n=24）</td><td>3.08/4（n=24）</td><td>2.67/4（n=24）</td><td>2.79/4（n=24）</td></tr><tr><th>材质与风格</th><td>2.79/4（n=24）</td><td>2.58/4（n=24）</td><td>2.25/4（n=24）</td><td>2.29/4（n=24）</td></tr></table></div></section><section><h2>配对因素效应与交互</h2><p>四组均具备有效评审、执行成功及协议核验的参考区组：24/24；排除：[]</p><details><summary>完整因素效应统计</summary><pre>{
+  &quot;status&quot;: &quot;complete&quot;,
+  &quot;complete_verified_blocks&quot;: 24,
+  &quot;excluded_blocks&quot;: [],
+  &quot;unit&quot;: &quot;Reference design, not individual condition/image.&quot;,
+  &quot;metrics&quot;: {
+    &quot;joint_supported&quot;: {
+      &quot;agent_effect_when_image_on&quot;: {
+        &quot;n&quot;: 24,
+        &quot;difference&quot;: 0.08333333333333333,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.1597983620827496,
+          0.2979969849293691
+        ],
+        &quot;improved&quot;: 2,
+        &quot;worsened&quot;: 0,
+        &quot;exact_mcnemar_p&quot;: 0.5,
+        &quot;holm_adjusted_p&quot;: 1.0
+      },
+      &quot;agent_effect_when_image_off&quot;: {
+        &quot;n&quot;: 24,
+        &quot;difference&quot;: 0.125,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.14646946345076722,
+          0.3523712243142352
+        ],
+        &quot;improved&quot;: 3,
+        &quot;worsened&quot;: 0,
+        &quot;exact_mcnemar_p&quot;: 0.25,
+        &quot;holm_adjusted_p&quot;: 1.0
+      },
+      &quot;image_effect_when_agent_on&quot;: {
+        &quot;n&quot;: 24,
+        &quot;difference&quot;: 0.0,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.23740918355546028,
+          0.23740918355546028
+        ],
+        &quot;improved&quot;: 1,
+        &quot;worsened&quot;: 1,
+        &quot;exact_mcnemar_p&quot;: 1.0,
+        &quot;holm_adjusted_p&quot;: 1.0
+      },
+      &quot;image_effect_when_agent_off&quot;: {
+        &quot;n&quot;: 24,
+        &quot;difference&quot;: 0.041666666666666664,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.16636173120437087,
+          0.23793316215598698
+        ],
+        &quot;improved&quot;: 1,
+        &quot;worsened&quot;: 0,
+        &quot;exact_mcnemar_p&quot;: 1.0,
+        &quot;holm_adjusted_p&quot;: 1.0
+      },
+      &quot;interaction&quot;: {
+        &quot;definition&quot;: &quot;(G1-G0 at A1) minus (G1-G0 at A0)&quot;,
+        &quot;difference&quot;: -0.041666666666666664,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.526397730026865,
+          0.4534099218219231
+        ],
+        &quot;method&quot;: &quot;Simultaneous CP bounds for four discordant probabilities; no interaction p-value claimed.&quot;
+      }
+    },
+    &quot;joint_visible_supported&quot;: {
+      &quot;agent_effect_when_image_on&quot;: {
+        &quot;n&quot;: 24,
+        &quot;difference&quot;: 0.08333333333333333,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.1597983620827496,
+          0.2979969849293691
+        ],
+        &quot;improved&quot;: 2,
+        &quot;worsened&quot;: 0,
+        &quot;exact_mcnemar_p&quot;: 0.5,
+        &quot;holm_adjusted_p&quot;: 1.0
+      },
+      &quot;agent_effect_when_image_off&quot;: {
+        &quot;n&quot;: 24,
+        &quot;difference&quot;: 0.16666666666666666,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.12846907163473759,
+          0.4029558480081535
+        ],
+        &quot;improved&quot;: 4,
+        &quot;worsened&quot;: 0,
+        &quot;exact_mcnemar_p&quot;: 0.125,
+        &quot;holm_adjusted_p&quot;: 1.0
+      },
+      &quot;image_effect_when_agent_on&quot;: {
+        &quot;n&quot;: 24,
+        &quot;difference&quot;: 0.0,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.16688570980489756,
+          0.16688570980489756
+        ],
+        &quot;improved&quot;: 0,
+        &quot;worsened&quot;: 0,
+        &quot;exact_mcnemar_p&quot;: 1.0,
+        &quot;holm_adjusted_p&quot;: 1.0
+      },
+      &quot;image_effect_when_agent_off&quot;: {
+        &quot;n&quot;: 24,
+        &quot;difference&quot;: 0.08333333333333333,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.1597983620827496,
+          0.2979969849293691
+        ],
+        &quot;improved&quot;: 2,
+        &quot;worsened&quot;: 0,
+        &quot;exact_mcnemar_p&quot;: 0.5,
+        &quot;holm_adjusted_p&quot;: 1.0
+      },
+      &quot;interaction&quot;: {
+        &quot;definition&quot;: &quot;(G1-G0 at A1) minus (G1-G0 at A0)&quot;,
+        &quot;difference&quot;: -0.08333333333333333,
+        &quot;conservative_95pct_interval&quot;: [
+          -0.5148664730963595,
+          0.3762722129041146
+        ],
+        &quot;method&quot;: &quot;Simultaneous CP bounds for four discordant probabilities; no interaction p-value claimed.&quot;
+      }
+    }
+  },
+  &quot;multiplicity&quot;: &quot;Holm across the 8 prespecified conditional contrasts for 2 primary endpoints.&quot;
+}</pre></details></section><label>冲突类型 <select id="type"><option value="all">全部24设计</option><option value="category_count">类别数</option><option value="trend_shape">趋势形状</option><option value="numeric_range">数值范围</option></select></label><label>案例 <select id="case-filter"><option value="all">全部</option><option value="F01">F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</option><option value="F02">F02 · 游戏销售形式转变：四期双面板堆叠柱图</option><option value="F03">F03 · 航空公司市值</option><option value="F04">F04 · 鸡蛋的营养成分构成</option><option value="F05">F05 · 合成事件率：美国地形面具上的十期警示折线</option><option value="F06">F06 · 年度可再生水资源</option><option value="F07">F07 · 奖牌的金属组成与合成示例价值</option><option value="F08">F08 · 复古电脑中的 AI 工作情绪：两轮合成比例</option><option value="F09">F09 · 个人生活选择的合成气候影响：景观叠加断轴柱状图</option><option value="F10">F10 · 捕梦网中的合成梦境：曲边面积分区图</option><option value="F11">F11 · 年度价格通胀与实际产出变化</option><option value="F12">F12 · 合成烟草产量与股价：香烟物体柱图</option><option value="F13">F13 · 校园供餐风险：青苹果抽离扇块合成数据海报</option><option value="F14">F14 · 女子篮球比赛平均观众数</option><option value="F15">F15 · 宗教信仰及无归属人口构成</option><option value="F16">F16 · 两类餐饮服务的支出变化百分比</option><option value="F17">F17 · 社区街头共绘计划的净支持度（合成议题替代）</option><option value="F18">F18 · 园艺试验地块产量（原参考无可读指标）</option><option value="F19">F19 · 书籍销量</option><option value="F20">F20 · 利率退烧：美国地图病人与床尾三系列趋势图</option><option value="F21">F21 · 广告时段：夹心饼干份额与观众计数的双面板合成信息图</option><option value="F22">F22 · 节日礼物预算偏好</option><option value="F23">F23 · 分来源的各期海洋塑料排放量</option><option value="F24">F24 · 面包与纸钞：合成年度食品预算损耗</option></select></label><section class="case" id="F01" data-type="category_count"><h2>F01 · 鲜果蔬获取距离构成：交通插画圆环图（合成数据）</h2><p>E76 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F01/reference.webp"><img loading="lazy" src="images/F01/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F01/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F01/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F01/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: true,
@@ -2265,7 +2391,80 @@
       &quot;data_adaptation_excluded_zh&quot;: &quot;不比较由数据决定的角宽、环厚及更新文字。&quot;
     }
   }
-}</pre></details><a href="runs/reference_factorial24/evaluation/items/fdd2b03a2c2a97/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F02" data-type="trend_shape"><h2>F02 · 游戏销售形式转变：四期双面板堆叠柱图</h2><p>E88 · 趋势形状 · 四组同一冲突数据</p><div class="reference"><a href="images/F02/reference.webp"><img loading="lazy" src="images/F02/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F02/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F02/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F02/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/fdd2b03a2c2a97/review.json">完整独立评审JSON</a><details><summary>第二次独立评审（不覆盖首评）</summary><pre>{
+  &quot;checks&quot;: {
+    &quot;completeness&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;六个类别全部出现：三个SHORT DRIVE合成子类、WALKING DISTANCE、LONG DRIVE、NOT SURE；一个人数系列，200人样本，SYNTHETIC DATA及统计口径均可见。&quot;
+    },
+    &quot;numeric_text&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;人数依序67、34、34、41、21、3；份额33.5%、17%、17%、20.5%、10.5%、1.5%，合计200人及100%。底部短途驾车合计135人、67.5%正确。&quot;
+    },
+    &quot;binding&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;从12点顺时针保持供给顺序；六色与类别色条、引线相符。3人/1.5%的外置标签引线邻接顶部灰色窄段；两个34人的子类分别绑定橙色和浅黄色扇区。&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;原图六段角宽反算人数约66.963、34.007、34.026、40.998、20.986、3.019，误差远低于3个百分点。共享圆心和内外边界，内外半径比约0.623，测量不确定度包含0.62。&quot;
+    },
+    &quot;source&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;已查看raw_01.png及processed/market_scene.png；车身、条纹棚顶、摊主、购物行人与果蔬箱在成图中逐项对应。render.py读取处理素材并用data.json计算扇区和文字，素材构成圆孔内主要场景。过程归档未在本次受限证据范围内核实。&quot;
+    },
+    &quot;integration&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;原图为圆环与果蔬/交通插画组合，成图也以圆环围住果蔬获取场景。车轮和人物脚落在铺装地面，货箱盛装果蔬，棚顶连接支柱；插画位于孔内，不覆盖定量扇区。没有要求把车身或人物本体变为计量几何。&quot;
+    },
+    &quot;readability&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;标题、六类别中英文名、人数、百分比、200人分母、people单位、合成提示及底部口径均能读出，未见主要重叠或截断。小扇区百分比外置，未挤入窄段。&quot;
+    },
+    &quot;critical_structure&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;圆环中心确有汽车、携果蔬购物袋的步行人物及果蔬摊。车窗/车轮连接车体，棚顶由立柱支撑，果蔬置于箱内；环内场景与完整环形计量边界并存。&quot;
+    },
+    &quot;semantic_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;鲜果蔬获取距离构成、获取距离类别×人数占比、Fresh produce access category、人/people及每人计入一个类别共同说明主题、指标、单位和互斥构成口径；三个合成子类明确属于SHORT DRIVE。&quot;
+    },
+    &quot;reference_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;参考的果蔬与驾驶/步行获取类别关系仍由中心场景及明确类别名表达。环外小图标改为环内购物场景，原类别图标邻接弱化，但鲜果蔬获取主题和交通距离分类保留；未沿用参考旧比例。&quot;
+    },
+    &quot;small_mark_visibility&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;顶部NOT SURE灰色段同时保留内弧、外弧和两条侧边，未被插画遮住；角宽约5.434°，中径弧长约37.65像素，外置3人/1.5%可读。小值未人为放大；相对精度另保留约±6%的测量不确定度。&quot;
+    }
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保留汽车、步行人物及鲜果蔬；中心新增摊位和摊主，原巴士、问号及独立果实组合未保留。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣除合成数据、短途驾驶拆分及新标签。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;参考的果实在环内，交通图标分置环外并邻近类别；成图把汽车和购物人物与果蔬摊一起放入环内，类别与对应交通图标的邻接关系减弱，但环围绕获取果蔬场景的关系仍在。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣除人物姿态、车辆朝向和排版位置本身；这里只记录环内外关系及类别图标联系的改变。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;仍以大圆环和环内果蔬为中心、标签向外分布；新增顶部标题及总样本和底部口径区，中心场景比参考复杂。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;新增必需统计说明、六类别及数据驱动的扇区大小不作扣分。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;参考为青绿背景、鲜艳扁平小图标及带颗粒阴影圆环；成图为米白背景、低饱和实色圆环及细节丰富的绘本式场景，插画性质仍可辨。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣除百分数、语言与必要文字更新。&quot;
+    }
+  }
+}</pre></details><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F02" data-type="trend_shape"><h2>F02 · 游戏销售形式转变：四期双面板堆叠柱图</h2><p>E88 · 趋势形状 · 四组同一冲突数据</p><div class="reference"><a href="images/F02/reference.webp"><img loading="lazy" src="images/F02/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F02/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F02/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F02/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: true,
@@ -7460,7 +7659,80 @@
       &quot;data_adaptation_excluded_zh&quot;: &quot;排除类别文字更新与数据缩放导致的小图细节减少。&quot;
     }
   }
-}</pre></details><a href="runs/reference_factorial24/evaluation/items/73b74627e05d33/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F04" data-type="category_count"><h2>F04 · 鸡蛋的营养成分构成</h2><p>E08 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F04/reference.webp"><img loading="lazy" src="images/F04/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F04/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F04/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F04/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/73b74627e05d33/review.json">完整独立评审JSON</a><details><summary>第二次独立评审（不覆盖首评）</summary><pre>{
+  &quot;checks&quot;: {
+    &quot;completeness&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;Airline A至G按输入顺序出现，共七行、七个识别块、七架飞机和七个金额；标题、合成声明、单位及0–35刻度均在图内。&quot;
+    },
+    &quot;numeric_text&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;逐项可读为31.2、9.002447、2.597566、0.749502、0.216261、0.0624、0.0624；合计43.890576与输入之和一致，无正值被写成零。&quot;
+    },
+    &quot;binding&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;类别、飞机机身中心、右端金额按七行对应；细连接线辅助绑定，F/G相同数值对应相同机体大小和机鼻位置。&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;独立像素测量的七个机鼻均在±1px范围内符合线性轴，A–E实体面积比例符合满量程容差。F/G约20×18px的整个机体框仅能提供面积上界；即将框全部计作实体，其回算上界约0.27十亿美元，仍远小于允许的1.05十亿美元绝对误差。此上界不是实际面积估计，小值相对精度仍不确定。&quot;
+    },
+    &quot;source&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;已查看raw_01.png、raw_02.png和aircraft_template.png：飞机的机窗、翼形与发动机细节、地图海岸线和纹理均实质出现在最终图。render.py读取这些素材，以统一模板平方根缩放并线性定位机鼻；未用公式代替像素检查。&quot;
+    },
+    &quot;integration&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;数据载体是飞机自身的机鼻端点与实体轮廓面积，非旁置装饰飞机。尾迹从飞机后方向左延伸，位于机体之下；地图为背景，不要求平面坐标轴服从地图的视觉透视。&quot;
+    },
+    &quot;readability&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;主题、SYNTHETIC DATA、Synthetic market capitalization、AIRLINE、USD BILLION、七类名称及精确金额均清晰，无遮挡或裁切；底部说明明确机鼻线性编码、面积编码及尾迹排除。&quot;
+    },
+    &quot;critical_structure&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;七行客机、地图、后向尾迹及两侧标签结构保留；A–E机身、双翼与尾翼连接清楚。F/G仍可辨水平机身和双翼，但尾翼细部与双尾迹分离不够清楚，属于真实缩小后的分辨率限制。&quot;
+    },
+    &quot;semantic_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;Airline market capitalization与Synthetic market capitalization直接表达航空公司市值；Airline A–G说明类别角色，USD BILLION给出单位，合计标为USD bn combined，未误作百分比或时间累积。&quot;
+    },
+    &quot;reference_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;保留参考的航空公司市值比较及朝右飞行、机后尾迹关系。真实品牌、历史金额与日期替换为声明过的合成类别及数值，未要求沿用旧排序或真实统计结论。&quot;
+    },
+    &quot;small_mark_visibility&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;1:1原图裁切中F/G各约20×18px，右向机身与两翼尚可辨，尾翼只占少量像素，两条尾迹并成一道光晕。最小值文字完整，但不足以证明微小面积与近零距离的高相对精度。&quot;
+    }
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;朝右俯视客机、深蓝世界地图、白尾迹、左侧类别识别块均保留。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣除合成航空公司替换真实品牌与国旗、数值驱动的机体尺寸变化。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;七架均机鼻朝右，双翼在机身两侧、尾翼在机后，白尾迹向左延伸；各类别与金额同列对行。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除允许的标签位置调整、由数值导致的水平位置与面积变化。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;保留上方标题、下方七行主体及页脚层级；标题改为左对齐两行，右上增加合计，刻度与页脚解释占比提高。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣除尺寸分布改变与金额统一右对齐，后者属于允许的标签位置调整。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;延续深蓝、白色和浅金色；参考的简化白色飞机剪影与柔和块面地图，改为带机窗发动机细节的写实飞机及明显纹理、轮廓和经纬线地图。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣除数据尺寸、更新文字和合成类别变化。&quot;
+    }
+  }
+}</pre></details><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F04" data-type="category_count"><h2>F04 · 鸡蛋的营养成分构成</h2><p>E08 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F04/reference.webp"><img loading="lazy" src="images/F04/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F04/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F04/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F04/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: true,
@@ -34041,7 +34313,80 @@
       &quot;data_adaptation_excluded_zh&quot;: &quot;排除更新主题文字、数值以及数据导致的折线形状变化。&quot;
     }
   }
-}</pre></details><a href="runs/reference_factorial24/evaluation/items/fe0d98e8c41d12/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F15" data-type="numeric_range"><h2>F15 · 宗教信仰及无归属人口构成</h2><p>E52 · 数值范围 · 四组同一冲突数据</p><div class="reference"><a href="images/F15/reference.webp"><img loading="lazy" src="images/F15/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F15/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F15/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F15/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/fe0d98e8c41d12/review.json">完整独立评审JSON</a><details><summary>第二次独立评审（不覆盖首评）</summary><pre>{
+  &quot;checks&quot;: {
+    &quot;completeness&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;可见2010–2024共15个年份、15个圆环点及逐点数值，单一Annual average系列；SYNTHETIC DATA、主题、每场平均指标和千人单位齐全。&quot;
+    },
+    &quot;numeric_text&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;逐点读数为1360、432、366、303、202、241、228、163、217、197、234、221、170、260、246，与输入全部一致。15 ANNUAL OBSERVATIONS、2011–2024范围163–432及最新年度2024=246也正确。&quot;
+    },
+    &quot;binding&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;年份按顺序置于各点下方，交替上下的数值标签对应邻近点；2010峰值和2024摘要分别绑定正确年份，未见跨点误绑。&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;原图独立检出15个标记；全部反算值的满量程偏差均小于0.086%。最小值163对应约80.5像素零线位移，反算约163.18；不存在为辨认物体而抬高小值的可见迹象。&quot;
+    },
+    &quot;source&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;供给的raw_01.png、player_cutout.png与成图中央人物的球、发髻、衣褶、双腿及鞋一致，素材构成大幅主体。render.py载入该素材，按data.json计算全部点位并绘制文字；捕获执行链未获独立确认。&quot;
+    },
+    &quot;integration&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;同一条年度折线从人物左侧延伸，经2016–2018点横跨深色短裤，再延伸至右侧；白色衬线使其位于人物前方且连续，保留参考要求的叠合关系。&quot;
+    },
+    &quot;readability&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;主题、合成提示、指标、单位、15个年份及数值在原分辨率下可读；人物上的163、217、228和年份有浅色描边，无必需文字被遮断。&quot;
+    },
+    &quot;critical_structure&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;篮球位于头顶，双手接触球两侧；前臂、上臂及肩部连续，球衣覆盖躯干并连接短裤区域，双腿和鞋完整。折线明确叠于短裤前方，不是旁置人物。&quot;
+    },
+    &quot;semantic_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;WOMEN’S BASKETBALL VIEWERS、Average viewers per game、THOUSAND VIEWERS PER GAME及YEAR共同明确主题、统计口径、单位和年度角色；合成声明避免将其当作真实观众统计。&quot;
+    },
+    &quot;reference_meaning&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;保留女篮年度平均观众量及举球人物叠图关系。原图特指WNBA/ESPN常规赛并强调2024增长，当前输入概括为女子篮球合成数据；图中ONE EARLY PEAK符合新值。范围及论点变化归于冻结输入适配，不是输出遗漏。&quot;
+    },
+    &quot;small_mark_visibility&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;最小值2017=163的圆环和两侧线段在短裤前方清楚可见，点中心离零线约80.5像素；2022=170也有独立可辨点位。主体尺寸不编码观众数，无需缩小人物部件。&quot;
+    }
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;两图均为背面女篮运动员双手举球，篮球、双臂与球衣可辨；待评图额外完整呈现双腿和鞋。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不要求旧球衣号码、姓名、特定发型或品牌；完整全身呈现符合当前要求。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;篮球均在头顶，双手贴球两侧，前臂向上、上臂连接肩部，人物背向观众；折线均叠于人物前方。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;已排除允许的肘部角度、站姿及非数据比例调整。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;保留竖版、醒目标题、运动员与年度折线叠合；参考为铺满画面的近景人物及人物前方标题，待评为独立顶部标题区、居中全身人物及下方摘要。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不将峰值从右移到左、曲线变低及当前标签数量计为构图失真。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;均保留照片式人物材质和粗体排版；参考为高饱和橙黄套色、蓝紫文字和白线，待评为奶油底、自然肤色、海军蓝球衣和橙色细线，整体风格有较大变化。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;评分不涉及合成数据主题改写、数值更新或定量形状变化；风格差异本身不是必要条件失败。&quot;
+    }
+  }
+}</pre></details><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F15" data-type="numeric_range"><h2>F15 · 宗教信仰及无归属人口构成</h2><p>E52 · 数值范围 · 四组同一冲突数据</p><div class="reference"><a href="images/F15/reference.webp"><img loading="lazy" src="images/F15/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F15/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F15/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F15/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: true,
@@ -48575,7 +48920,80 @@
       &quot;data_adaptation_excluded_zh&quot;: &quot;不将新曲线形状、数值标签或合成主题计为材质差异。&quot;
     }
   }
-}</pre></details><a href="runs/reference_factorial24/evaluation/items/f6cf4c2d87c1f3/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体无图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/f6cf4c2d87c1f3/review.json">完整独立评审JSON</a><details><summary>第二次独立评审（不覆盖首评）</summary><pre>{
+  &quot;checks&quot;: {
+    &quot;completeness&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;A 11、B 8、C 11条，共30条记录完整；21个日期齐全，像素检测得到21组日期短刻线。标题、合成声明、系列名及单位均可见。&quot;
+    },
+    &quot;numeric_text&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;逐行核对全部30个日期与数值，均符合data.json；端点16.9%、14.9%、13.2%，记录总数30及67 elapsed days准确。&quot;
+    },
+    &quot;binding&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;红阶梯对应A，黑实线对应B，黑短划线及空心点对应C；图例、端标和记录表绑定一致。&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;各系列最小、最大及内部点的像素抽查均在3%满量程容差内。A在day约1、5、12、15、26、30、46、60、65处转折；B止于day66，C止于day67，无外推。&quot;
+    },
+    &quot;source&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;已查看raw_01.png与patient_bed.png，其地图、脸、冰袋、体温计和病床对应成图主体。render.py嵌入该素材，并从数据构造路径、标记及文字；未执行渲染。&quot;
+    },
+    &quot;integration&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;三条曲线承载于床前白色图板；病人靠枕、被褥及床栏连接，嘴含体温计。图板顶部夹具和侧边厚度可见，延续参考叠合方式。&quot;
+    },
+    &quot;readability&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;原始分辨率下标题、坐标轴、日期、图例、全部记录及说明可读；端点文字没有相互遮挡。&quot;
+    },
+    &quot;critical_structure&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;美国地图病人、枕被承托、床框与左轮、嘴部体温计及床尾图板均保留。图板位于被褥前方，数据实际承载边界为板内曲线。&quot;
+    },
+    &quot;semantic_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;ANNUAL RATE CHANGES、Three synthetic annualized rates、SYNTHETIC DATA、% per year、2040日期及Synthetic comparison series A–C明确当前主题和统计角色。&quot;
+    },
+    &quot;reference_meaning&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;保留病人与趋势板的医疗叠合隐喻。原具体金融类别及FALLING FEVER下降论述已按输入改为合成年化率与Series A—C，不归因于输出失败。&quot;
+    },
+    &quot;small_mark_visibility&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;A最短一天平台约18像素；B最小点约8像素高，距9%基线约13.9像素；C最小空心圆约8像素高。几何均可见，没有仅靠标签代替。&quot;
+    }
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;美国轮廓病人、金属病床与床尾图板保留；星条旗身体改为黄色州界地图，增添脸、手与冰袋。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除合成主题、系列名称和新数据走势；允许人物细部适配。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;病人由床与枕被承托，图板位于床前遮挡下部；体温计接嘴，床栏连床框。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除core允许的姿态、非数据厚度、床视角及排版调整。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;病床插画与前置三系列图仍为主视觉；标题扩大至顶部，新增下部记录表，形成上下分层。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不将新值所需记录表、标题更新及允许的排版适配判为合同缺陷。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;保留勾线、颗粒纸感和红黑三线；参考的淡色网点、灰银床栏及星条旗改为饱和黄蓝人物、青绿床栏和白板。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除数据线位置及允许的部件厚度调整，仅评价非数据材质与配色保留程度。&quot;
+    }
+  }
+}</pre></details><p class="note">代码离线复现像素一致：True</p></details></article><article><h3>智能体无图 · 生图无图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: false,
   &quot;image_reference_assigned&quot;: false,
@@ -51684,7 +52102,80 @@
       &quot;data_adaptation_excluded_zh&quot;: &quot;排除数据比例、合成语义及允许的厚度变化；风格差异不作为失败依据。&quot;
     }
   }
-}</pre></details><a href="runs/reference_factorial24/evaluation/items/6620fc9867603b/review.json">完整独立评审JSON</a><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F22" data-type="category_count"><h2>F22 · 节日礼物预算偏好</h2><p>E20 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F22/reference.webp"><img loading="lazy" src="images/F22/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F22/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F22/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F22/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
+}</pre></details><a href="runs/reference_factorial24/evaluation/items/6620fc9867603b/review.json">完整独立评审JSON</a><details><summary>第二次独立评审（不覆盖首评）</summary><pre>{
+  &quot;checks&quot;: {
+    &quot;completeness&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;Category A–D、Ad share及percent完整；辅助面板两类、Synthetic people及people、24人总数、每人形2人、SYNTHETIC DATA均出现。&quot;
+    },
+    &quot;numeric_text&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;四项原值0.17484564%、11.01458495%、87.42281867%、1.38775074%逐项准确；2人、22人、24人及每人形2人均正确，最小正值未舍入为零。&quot;
+    },
+    &quot;binding&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;扇块A/B/C/D引线分别对应红/棕黄/绿/紫类别及数值条；类别条保持A→B→C→D顺序。红色1个人形与未关注比赛绑定，绿色11个人形与关注比赛绑定。&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;独立像素边界逆投影得到A约0.1667%、B约11.0535%、C约87.3701%、D约1.3965%，最大点估计偏差约0.053个百分点。人物独立数得1+11个，按每个2人得到2+22人。&quot;
+    },
+    &quot;source&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;raw_01.png、cookie_surface.png的花形浮雕与成图大块顶面直接对应，素材使用面积显著。render.py读取数据生成角度、投影扇块及人物数量，素材仅填充数据几何；未据此推定未查看的运行归档。&quot;
+    },
+    &quot;integration&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;广告份额由夹心饼干实际顶面扇角承载；棕色上下层与浅色夹心沿相应扇块连接。人物面板独立置下，图注明确其不是广告份额分母。未见破坏解释的遮挡或纹理越界。&quot;
+    },
+    &quot;readability&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;标题、全部类别与精确数值、单位及统计口径在原分辨率可读；引线与文字未发生明显覆盖或裁切。&quot;
+    },
+    &quot;critical_structure&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;C与B可辨顶面、上饼干侧层、奶油层和下饼干层；D和A仍有连续三层切面。分离扇块与独立人物计数保留，A顶面细节限制另记小值可辨性。&quot;
+    },
+    &quot;semantic_meaning&quot;: {
+      &quot;status&quot;: &quot;pass&quot;,
+      &quot;evidence_zh&quot;: &quot;广告时段/广告份额、Ad share·percent、合成类别A–D和总计100%说明主面板含义；观众计数注明Synthetic people·people、两类比赛关注角色及独立24人口径。&quot;
+    },
+    &quot;reference_meaning&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;广告类别份额加独立比赛关注人数的参考统计关系保留。参考eCOMMERCE等真实类别由冻结输入改为合成Category A–D，具体商品语义不再保留；属于输入适配，不判输出失败。&quot;
+    },
+    &quot;small_mark_visibility&quot;: {
+      &quot;status&quot;: &quot;partial&quot;,
+      &quot;evidence_zh&quot;: &quot;A的字母、精确数值和上下饼干夹奶油关系可辨，但外缘顶面仅约4像素宽，难以独立辨认完整扇形与浮雕；D外缘约33像素，三层和窄顶面较清楚。没有把小值人为抬高。&quot;
+    }
+  },
+  &quot;reference_fidelity&quot;: {
+    &quot;nondata_identity&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;双层深色饼干和浅色奶油身份保留；参考的品牌压纹及立体沟槽侧缘改为花纹顶面和平直切面。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣分于当前份额导致的巨大C和细小A/D；下方面板依当前合同采用人物图标。&quot;
+    },
+    &quot;nondata_pose_relations&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 4,
+      &quot;evidence_zh&quot;: &quot;均为斜俯视分离扇块，奶油夹于上下饼干之间，独立计数面板置于下方；核心接触、夹层和并置关系保留。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;扇块分离距离、非数据厚度和位置适配由core明确允许，不以参考原角度或原份额要求重现。&quot;
+    },
+    &quot;composition_hierarchy&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 3,
+      &quot;evidence_zh&quot;: &quot;上方主题、中部大饼干、下方独立计数的层级保留；参考环绕主体的大百分数转为主体下方四列数值，标题面积增加。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;不扣分于份额引起的主体轮廓变化及为了小块可见而调整的分离位置。&quot;
+    },
+    &quot;material_style&quot;: {
+      &quot;applicable&quot;: true,
+      &quot;score&quot;: 2,
+      &quot;evidence_zh&quot;: &quot;仍使用有光泽棕色饼干纹理与浅色奶油；参考白/青配色和摄影式饼干侧缘改为米白/棕红/绿色系与较平直的纹理切面。&quot;,
+      &quot;data_adaptation_excluded_zh&quot;: &quot;排除数字、语言、类别及合成标识更新，仅比较非数据材质与色彩风格。&quot;
+    }
+  }
+}</pre></details><p class="note">代码离线复现像素一致：True</p></details></article></div></section><section class="case" id="F22" data-type="category_count"><h2>F22 · 节日礼物预算偏好</h2><p>E20 · 类别数 · 四组同一冲突数据</p><div class="reference"><a href="images/F22/reference.webp"><img loading="lazy" src="images/F22/reference.webp" alt="共同原参考图"></a></div><p><a href="runs/reference_factorial24/private_cases/F22/data.json">共同数据</a> · <a href="runs/reference_factorial24/private_cases/F22/brief.json">共同文字简报</a> · <a href="runs/reference_factorial24/private_cases/F22/core.json">共同结构语义合同</a></p><div class="columns"><article><h3>智能体有图 · 生图有图</h3><p>生成：已完成</p><p class="note">输入隔离：已核验</p><details><summary>实际输入协议核验</summary><pre>{
   &quot;status&quot;: &quot;verified&quot;,
   &quot;agent_reference_assigned&quot;: true,
   &quot;image_reference_assigned&quot;: true,

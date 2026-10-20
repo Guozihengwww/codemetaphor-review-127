@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-20T00:27:21.347701+00:00",
+  "updated_at": "2026-10-20T00:40:58.144320+00:00",
   "progress": {
-    "phase": "running",
+    "phase": "complete",
     "case_count": 24,
     "planned_trials": 96,
     "generation": {
@@ -11,9 +11,7 @@
       "ok": 166
     },
     "final_second_evaluations": {
-      "ok": 91,
-      "running": 3,
-      "technical_failure": 2
+      "ok": 96
     },
     "routing_audits": {
       "verified": 96
@@ -1171,7 +1169,289 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为青绿色底的四段圆环，中心有番茄、橙子和葡萄，环外分别摆有汽车、巴士、步行人物和问号。待评图为米白底的六段圆环，中心是果蔬摊、汽车、购物行人和摊主；圆环从12点顺时针依次显示短途驾驶子类1、2、3、步行可达、长途驾驶、不确定。六类人数为67、34、34、41、21、3；百分数为33.5%、17%、17%、20.5%、10.5%、1.5%。顶部显示SYNTHETIC DATA和200人，底部解释每人一个类别及角宽口径。最小灰色窄段位于12点左侧，外置引线连接3人、1.5%标签。没有目视可见的主要文字遮挡。",
+        "summary_zh": "六类人数、份额、标签与统计口径完整准确；独立像素测量支持角宽和半径合同。中心生成插画实质可见，汽车、人物、果蔬摊连接关系成立，未遮挡数据圆环。参考的图标布局和材质风格有变化，另以保真评分记录，未见必需项的实质缺陷。",
+        "issues": [],
+        "measurement_notes_zh": "仅测量2000×1666的image.png。以原图主色掩模拟合圆边缘，对半径320–475像素带的RGB作径向中位数以减弱文字干扰，再由相邻色边界量角；人数=角宽÷360°×200，满量程误差以200人为分母。六类实测角宽约120.534°、61.213°、61.246°、73.797°、37.775°、5.434°，最大中心估计误差约0.019个百分点。主色边缘拟合外半径489.0像素、内半径304.8像素，比值0.623；抗锯齿导致约1–2像素边缘偏移，与合同0.62相容。内外圆心相差约0.53像素。源码只作路线和映射机制佐证，未将其公式当作像素证据。",
+        "uncertainties_zh": "细边缘与抗锯齿限制精度，尤其最小值的相对误差；约38像素弧长足以辨认扇区，但不能据满量程合格保证亚像素精确。参考图仅335×279，微小部件细节有限，不推断作者意图。按限定范围未查日志、自检或归档记录，因此未独立核实生图调用过程及每次capture_render归档；这不构成可见成图缺陷。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "六个类别全部出现：三个SHORT DRIVE合成子类、WALKING DISTANCE、LONG DRIVE、NOT SURE；一个人数系列，200人样本，SYNTHETIC DATA及统计口径均可见。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "人数依序67、34、34、41、21、3；份额33.5%、17%、17%、20.5%、10.5%、1.5%，合计200人及100%。底部短途驾车合计135人、67.5%正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "从12点顺时针保持供给顺序；六色与类别色条、引线相符。3人/1.5%的外置标签引线邻接顶部灰色窄段；两个34人的子类分别绑定橙色和浅黄色扇区。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "原图六段角宽反算人数约66.963、34.007、34.026、40.998、20.986、3.019，误差远低于3个百分点。共享圆心和内外边界，内外半径比约0.623，测量不确定度包含0.62。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png及processed/market_scene.png；车身、条纹棚顶、摊主、购物行人与果蔬箱在成图中逐项对应。render.py读取处理素材并用data.json计算扇区和文字，素材构成圆孔内主要场景。过程归档未在本次受限证据范围内核实。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "原图为圆环与果蔬/交通插画组合，成图也以圆环围住果蔬获取场景。车轮和人物脚落在铺装地面，货箱盛装果蔬，棚顶连接支柱；插画位于孔内，不覆盖定量扇区。没有要求把车身或人物本体变为计量几何。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、六类别中英文名、人数、百分比、200人分母、people单位、合成提示及底部口径均能读出，未见主要重叠或截断。小扇区百分比外置，未挤入窄段。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "圆环中心确有汽车、携果蔬购物袋的步行人物及果蔬摊。车窗/车轮连接车体，棚顶由立柱支撑，果蔬置于箱内；环内场景与完整环形计量边界并存。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "鲜果蔬获取距离构成、获取距离类别×人数占比、Fresh produce access category、人/people及每人计入一个类别共同说明主题、指标、单位和互斥构成口径；三个合成子类明确属于SHORT DRIVE。"
+          },
+          "reference_meaning": {
+            "status": "pass",
+            "evidence_zh": "参考的果蔬与驾驶/步行获取类别关系仍由中心场景及明确类别名表达。环外小图标改为环内购物场景，原类别图标邻接弱化，但鲜果蔬获取主题和交通距离分类保留；未沿用参考旧比例。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "顶部NOT SURE灰色段同时保留内弧、外弧和两条侧边，未被插画遮住；角宽约5.434°，中径弧长约37.65像素，外置3人/1.5%可读。小值未人为放大；相对精度另保留约±6%的测量不确定度。"
+          }
+        },
+        "semantic_attribution_zh": "合成样本、短途驾驶拆为三个命名子类及新份额来自冻结输入，属于允许适配。中心购物场景保留当前鲜果蔬获取语义；原环外类别图标的单独邻接减弱，记录为参考设计关系变化，不视为主题或计量通道缺失。小段边界的精度限制来自栅格与抗锯齿，未观察到由分辨率造成的类别消失。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "access_count",
+              "category": "SHORT DRIVE / synthetic subcategory 1",
+              "expected_value": 67,
+              "observed_value": 66.963,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 835.04,
+              "full_scale_error_percent": 0.0183,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.4999,
+                0.2748,
+                0.7443,
+                0.7176
+              ],
+              "evidence_zh": "原图色边界测得角宽约120.534°；按角宽÷360°×200反算为66.963人。像素长度为实测中径上的弧长。",
+              "uncertainty_zh": "抗锯齿及圆心估计使角宽保守误差约±0.3°，对应约±0.083个百分点；不主张亚像素精度。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "SHORT DRIVE / synthetic subcategory 2",
+              "expected_value": 34,
+              "observed_value": 34.007,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 424.07,
+              "full_scale_error_percent": 0.0035,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.4922,
+                0.6614,
+                0.7104,
+                0.8619
+              ],
+              "evidence_zh": "原图色边界测得角宽约61.213°；按角宽÷360°×200反算为34.007人。像素长度为实测中径上的弧长。",
+              "uncertainty_zh": "抗锯齿及圆心估计使角宽保守误差约±0.3°，对应约±0.083个百分点；不主张亚像素精度。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "SHORT DRIVE / synthetic subcategory 3",
+              "expected_value": 34,
+              "observed_value": 34.026,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 424.3,
+              "full_scale_error_percent": 0.0129,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2819,
+                0.6514,
+                0.4951,
+                0.8618
+              ],
+              "evidence_zh": "原图色边界测得角宽约61.246°；按角宽÷360°×200反算为34.026人。像素长度为实测中径上的弧长。",
+              "uncertainty_zh": "抗锯齿及圆心估计使角宽保守误差约±0.3°，对应约±0.083个百分点；不主张亚像素精度。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "WALKING DISTANCE",
+              "expected_value": 41,
+              "observed_value": 40.998,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 511.25,
+              "full_scale_error_percent": 0.0008,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2553,
+                0.3543,
+                0.3955,
+                0.7015
+              ],
+              "evidence_zh": "原图色边界测得角宽约73.797°；按角宽÷360°×200反算为40.998人。像素长度为实测中径上的弧长。",
+              "uncertainty_zh": "抗锯齿及圆心估计使角宽保守误差约±0.3°，对应约±0.083个百分点；不主张亚像素精度。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "LONG DRIVE",
+              "expected_value": 21,
+              "observed_value": 20.986,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 261.7,
+              "full_scale_error_percent": 0.0069,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3325,
+                0.2761,
+                0.4854,
+                0.435
+              ],
+              "evidence_zh": "原图色边界测得角宽约37.775°；按角宽÷360°×200反算为20.986人。像素长度为实测中径上的弧长。",
+              "uncertainty_zh": "抗锯齿及圆心估计使角宽保守误差约±0.3°，对应约±0.083个百分点；不主张亚像素精度。"
+            },
+            {
+              "series_id": "access_count",
+              "category": "NOT SURE",
+              "expected_value": 3,
+              "observed_value": 3.019,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 37.65,
+              "full_scale_error_percent": 0.0096,
+              "small_value_relative_error_percent": 0.638,
+              "bbox_xyxy_normalized": [
+                0.4767,
+                0.2748,
+                0.4999,
+                0.3862
+              ],
+              "evidence_zh": "原图色边界测得角宽约5.434°；按角宽÷360°×200反算为3.019人。像素长度为实测中径上的弧长。",
+              "uncertainty_zh": "抗锯齿及圆心估计使角宽保守误差约±0.3°；0.638%的相对误差仅为中心估计，小值相对精度保守约±6%。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "中心果蔬获取场景",
+              "required_parts": [
+                "汽车车体与车轮",
+                "步行购物人物与装果蔬的包",
+                "棚顶与支柱",
+                "果蔬箱与摊主",
+                "铺装地面",
+                "圆环内孔"
+              ],
+              "relationship": "车辆及人物位于摊位前方并接触地面；果蔬装在箱和包内；棚顶连接支柱；全部场景包含于内孔。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.36,
+                0.418,
+                0.641,
+                0.684
+              ],
+              "evidence_zh": "前景蓝车的可见轮子接地，右侧人物携包行走；后方摊主在成排果蔬箱后，棚布由立柱支撑。遮挡前后关系连贯，场景不伸入定量环带。"
+            },
+            {
+              "category": "SHORT DRIVE / synthetic subcategory 1（最大段）",
+              "required_parts": [
+                "红棕色扇区",
+                "共同内弧与外弧",
+                "两条径向边",
+                "33.5%标注",
+                "67人类别引线"
+              ],
+              "relationship": "最大段从12点顺时针延伸至右下，与相邻扇区共享径向边；内侧围住场景，外侧连接类别引线。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.4999,
+                0.2748,
+                0.7443,
+                0.7176
+              ],
+              "evidence_zh": "红棕段约120.534°且全厚度连续，33.5%在段内；右侧引线及同色类别标记将其绑定到短途驾车子类1和67人。角宽承载数值，汽车大小不承载人数。"
+            },
+            {
+              "category": "NOT SURE（最小段）",
+              "required_parts": [
+                "灰色窄扇区",
+                "共同内弧与外弧",
+                "两条径向边",
+                "外置引线",
+                "3人与1.5%文字"
+              ],
+              "relationship": "窄段位于蓝色长途驾车与红棕短途驾车子类1之间；上下沿共享环半径，引线端点紧邻其外弧。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.4767,
+                0.217,
+                0.65,
+                0.387
+              ],
+              "evidence_zh": "灰色段完整跨越约184像素的主色环带，角宽约5.434°；孔内场景没有遮盖其内缘，顶部折线对应NOT SURE。此段并非独立车辆图标，不要求小值具备车辆部件。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "使用200人合成样本和三个SHORT DRIVE合成子类；人数、比例、扇区及标签按新数据更新，人物姿态和排版允许适配。",
+            "output_added_or_lost_meaning_zh": "增加市场购物场景，保留驾驶、步行与鲜果蔬获取联系。原巴士和问号图标未复现，但LONG DRIVE与NOT SURE类别明确可读；原图标的逐类邻接不再直接呈现。没有把插画数量当人数或把合成值冒充真实调查。",
+            "visible_inscription_evidence_zh": "图面可见“鲜果蔬获取距离构成”“SYNTHETIC DATA”“200 人”“Fresh produce access category”“单位：人（people）”“每人计入一个类别”及“插画与阴影不表示人数”。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "200人、三个合成短途驾驶子类以及合成提示均来自当前输入，旧图69%等数值不应保留。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "原四段改为六段并改变份额，符合当前六个计数的角宽映射。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "最小段清楚可辨，但抗锯齿使约38像素中径弧长的相对精度只能作有限估计；没有据标签代替几何验证。"
+            }
+          ],
+          "measurement_coverage_zh": "覆盖唯一人数系列的全部六个扇区，包括最小正值3、最大值67及中间值34/41/21；另检查共享圆心与内外半径比。全数核对六类标签、人数、份额、总量和短途驾驶合计。没有其他定量面板；插画、阴影、车辆及货物数量不属于人数编码。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留汽车、步行人物及鲜果蔬；中心新增摊位和摊主，原巴士、问号及独立果实组合未保留。",
+            "data_adaptation_excluded_zh": "不扣除合成数据、短途驾驶拆分及新标签。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "参考的果实在环内，交通图标分置环外并邻近类别；成图把汽车和购物人物与果蔬摊一起放入环内，类别与对应交通图标的邻接关系减弱，但环围绕获取果蔬场景的关系仍在。",
+            "data_adaptation_excluded_zh": "不扣除人物姿态、车辆朝向和排版位置本身；这里只记录环内外关系及类别图标联系的改变。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "仍以大圆环和环内果蔬为中心、标签向外分布；新增顶部标题及总样本和底部口径区，中心场景比参考复杂。",
+            "data_adaptation_excluded_zh": "新增必需统计说明、六类别及数据驱动的扇区大小不作扣分。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "参考为青绿背景、鲜艳扁平小图标及带颗粒阴影圆环；成图为米白背景、低饱和实色圆环及细节丰富的绘本式场景，插画性质仍可辨。",
+            "data_adaptation_excluded_zh": "不扣除百分数、语言与必要文字更新。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/fdd2b03a2c2a97",
       "numeric_supported": true,
@@ -12851,7 +13131,288 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.95,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为深蓝世界地图、七行朝右白色俯视客机、机后渐隐白色横带、左侧类别识别区与右端市值。最终图保留深色地图、七行朝右客机和白尾迹；A至G类别、全部七个金额、USD BILLION、SYNTHETIC DATA及航空公司市值标题可读。A飞机显著最大，后续依次缩小，F与G同样小且位置相近；尾迹在机后，飞机自身承担位置和面积编码。小飞机可辨机身与翼形，细部及近零点距离须进一步核对。最终图增加刻度、合计与编码说明，飞机和地图更写实。",
+        "summary_zh": "通过。七类、数值、单位和主题完整，飞机机鼻位置及实体面积承担当前数据；未见超出满量程3%容差的可见缺陷。最小两架的细部关系与相对精度受分辨率限制。review.json已保存并通过schema校验，未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "直接分析2000×2000的image.png像素，未重渲染。刻度短线的亮度峰独立定位0点x=475、35点x=1575，跨度1100px。七个机鼻可见边界约为1456、758、557、498、482、477、477px；按v=(x−475)×35/1100回算，最大满量程误差约0.051%，边缘读数约有±1px不确定性。面积在局部框中以R>100、−5<B−R<22、|G−R|<16分离灰白机体，并填充内部暗孔；改变R阈值70–130检验敏感性。A–E中央估计为42023、12009、3464、1006、300px²；按A标定比例后最大满量程误差约0.247%。这是最终RGB像素的近似分割，不是源码自检或精确透明度积分。",
+        "uncertainties_zh": "F/G机鼻仅离零点约2px，±1px就相当于约±51%的该小值，不能把满量程通过解释为小值精确。其机体与淡尾迹在抗锯齿边缘混合，实体面积无法唯一恢复，故未给出面积值或误差。源码和素材证明实现路线，但capture_render.py的执行历史未在本次允许读取的证据中核验；未读取自检、日志或历史结果。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "Airline A至G按输入顺序出现，共七行、七个识别块、七架飞机和七个金额；标题、合成声明、单位及0–35刻度均在图内。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐项可读为31.2、9.002447、2.597566、0.749502、0.216261、0.0624、0.0624；合计43.890576与输入之和一致，无正值被写成零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "类别、飞机机身中心、右端金额按七行对应；细连接线辅助绑定，F/G相同数值对应相同机体大小和机鼻位置。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "独立像素测量的七个机鼻均在±1px范围内符合线性轴，A–E实体面积比例符合满量程容差。F/G约20×18px的整个机体框仅能提供面积上界；即将框全部计作实体，其回算上界约0.27十亿美元，仍远小于允许的1.05十亿美元绝对误差。此上界不是实际面积估计，小值相对精度仍不确定。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png、raw_02.png和aircraft_template.png：飞机的机窗、翼形与发动机细节、地图海岸线和纹理均实质出现在最终图。render.py读取这些素材，以统一模板平方根缩放并线性定位机鼻；未用公式代替像素检查。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "数据载体是飞机自身的机鼻端点与实体轮廓面积，非旁置装饰飞机。尾迹从飞机后方向左延伸，位于机体之下；地图为背景，不要求平面坐标轴服从地图的视觉透视。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、SYNTHETIC DATA、Synthetic market capitalization、AIRLINE、USD BILLION、七类名称及精确金额均清晰，无遮挡或裁切；底部说明明确机鼻线性编码、面积编码及尾迹排除。"
+          },
+          "critical_structure": {
+            "status": "partial",
+            "evidence_zh": "七行客机、地图、后向尾迹及两侧标签结构保留；A–E机身、双翼与尾翼连接清楚。F/G仍可辨水平机身和双翼，但尾翼细部与双尾迹分离不够清楚，属于真实缩小后的分辨率限制。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "Airline market capitalization与Synthetic market capitalization直接表达航空公司市值；Airline A–G说明类别角色，USD BILLION给出单位，合计标为USD bn combined，未误作百分比或时间累积。"
+          },
+          "reference_meaning": {
+            "status": "pass",
+            "evidence_zh": "保留参考的航空公司市值比较及朝右飞行、机后尾迹关系。真实品牌、历史金额与日期替换为声明过的合成类别及数值，未要求沿用旧排序或真实统计结论。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "1:1原图裁切中F/G各约20×18px，右向机身与两翼尚可辨，尾翼只占少量像素，两条尾迹并成一道光晕。最小值文字完整，但不足以证明微小面积与近零距离的高相对精度。"
+          }
+        },
+        "semantic_attribution_zh": "真实品牌与金额改为合成航空公司和新数值，属于允许的输入适配，航空公司市值主题与指标并未改变。A至G尺寸悬殊及小机体跨零线由数据驱动；零线约束的是机鼻，不是机尾。F/G细部损失归因于真实比例缩小后的分辨率限制，未见主题、类别或数据载体被输出遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "market_cap",
+              "category": "Airline A",
+              "expected_value": 31.2,
+              "observed_value": 31.21363636,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 981,
+              "full_scale_error_percent": 0.038961,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.508,
+                0.2335,
+                0.728,
+                0.4455
+              ],
+              "evidence_zh": "位置通道：最终像素机鼻可见边界约x1456，距可见零线x475为981px；按图面1100px对应35回算。",
+              "uncertainty_zh": "抗锯齿边界约±1px；数值为像素量化估计，不是精确端点。"
+            },
+            {
+              "series_id": "market_cap",
+              "category": "Airline D",
+              "expected_value": 0.749502,
+              "observed_value": 0.73181818,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 23,
+              "full_scale_error_percent": 0.050525,
+              "small_value_relative_error_percent": 2.3594,
+              "bbox_xyxy_normalized": [
+                0.2155,
+                0.5635,
+                0.2495,
+                0.5965
+              ],
+              "evidence_zh": "位置通道：灰白机鼻阈值边界约x498，距零线23px；x498仍有混合边缘像素，回算值约0.7318。",
+              "uncertainty_zh": "约±1px即±0.0318十亿美元；所列相对误差只是该边界读数的点估计。"
+            },
+            {
+              "series_id": "market_cap",
+              "category": "Airline F",
+              "expected_value": 0.0624,
+              "observed_value": 0.06363636,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 2,
+              "full_scale_error_percent": 0.003532,
+              "small_value_relative_error_percent": 1.9814,
+              "bbox_xyxy_normalized": [
+                0.2285,
+                0.7355,
+                0.2385,
+                0.7445
+              ],
+              "evidence_zh": "位置通道：最小正值机鼻边界约x477，距零线约2px；G行有相同读数。",
+              "uncertainty_zh": "±1px约为期望距离的51%；1.98%的点估计不能视为小值精度保证。"
+            },
+            {
+              "series_id": "market_cap",
+              "category": "Airline A",
+              "expected_value": 31.2,
+              "observed_value": null,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 440,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.508,
+                0.2335,
+                0.728,
+                0.4455
+              ],
+              "evidence_zh": "面积通道：机体外观宽约440px，像素分割实体面积约42023px²；阈值70–130得到40376–42745px²。作为各机体面积比例的标定对象。",
+              "uncertainty_zh": "brief未规定绝对面积系数，不能将标定对象反推为独立验证过的31.2；此处不填观测值和误差。面积不含尾迹和外接矩形。"
+            },
+            {
+              "series_id": "market_cap",
+              "category": "Airline D",
+              "expected_value": 0.749502,
+              "observed_value": 0.74690527,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 67,
+              "full_scale_error_percent": 0.007419,
+              "small_value_relative_error_percent": 0.3465,
+              "bbox_xyxy_normalized": [
+                0.2155,
+                0.5635,
+                0.2495,
+                0.5965
+              ],
+              "evidence_zh": "面积通道：最终RGB分割约1006px²，使用31.2×1006/42023得到0.746905；机体宽约67px。此处使用实体像素面积比，不使用外接矩形面积比。",
+              "uncertainty_zh": "同法改变亮度阈值70–130时回算约0.7194–0.7584，提示阴影及抗锯齿敏感性；所列误差只是统一阈值100的估计。"
+            },
+            {
+              "series_id": "market_cap",
+              "category": "Airline F",
+              "expected_value": 0.0624,
+              "observed_value": null,
+              "measurement_method": "unmeasurable",
+              "mark_extent_px": 20,
+              "full_scale_error_percent": null,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.2285,
+                0.7355,
+                0.2385,
+                0.7445
+              ],
+              "evidence_zh": "面积通道：约20×18px的小飞机仍可见。局部阈值分割得到81–118px²，淡尾迹与机身边缘混合，无法据此唯一分离实体覆盖面积；G情况相同。",
+              "uncertainty_zh": "不以正确数值文字、模板缩放公式或外接矩形代替实际面积；保留小值相对面积不确定性。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Airline A",
+              "required_parts": [
+                "机身",
+                "双翼",
+                "尾翼",
+                "朝右机鼻",
+                "机后白尾迹"
+              ],
+              "relationship": "双翼连接机身两侧，尾翼连接左端机尾；机鼻朝右，双尾迹由机后向左淡出，机体在尾迹上层。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.17,
+                0.233,
+                0.729,
+                0.446
+              ],
+              "evidence_zh": "大飞机的翼根、尾部连接和发动机清楚，尾迹沿发动机后方向左延伸；机鼻与金色定位短线在同一横坐标附近。"
+            },
+            {
+              "category": "Airline D",
+              "required_parts": [
+                "机身",
+                "双翼",
+                "尾翼",
+                "机鼻端点",
+                "后向尾迹"
+              ],
+              "relationship": "各翼与机身连成一体，机鼻位于零线右侧；左伸的机尾和尾迹不表示负市值。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.17,
+                0.561,
+                0.251,
+                0.599
+              ],
+              "evidence_zh": "约67px宽的飞机仍可辨中央机身、两侧长翼、左端小尾翼；飞机跨零线但主端点位于其右侧，符合声明的机鼻编码。"
+            },
+            {
+              "category": "Airline F / Airline G",
+              "required_parts": [
+                "细小机身",
+                "双翼",
+                "尾翼",
+                "右向机鼻",
+                "左向尾迹"
+              ],
+              "relationship": "小机身朝右，两翼在机身两侧，白尾迹位于机后；尾翼细连接与双尾迹的独立性难以确认。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.17,
+                0.735,
+                0.24,
+                0.825
+              ],
+              "evidence_zh": "原分辨率裁切显示两架同样小的飞机，右向机身和翼形保留；尾翼只剩少量像素，两条光迹视觉合并。不能据此认定部件被删除。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "pass",
+            "allowed_input_adaptation_zh": "保留航空公司市值主题，允许真实品牌、日期和历史金额替换为当前合成类别与数据；标签位置及非数据姿态可适配。",
+            "output_added_or_lost_meaning_zh": "新增总市值、坐标刻度和双编码说明均与输入一致；没有新增涨跌、累计或份额含义。微小机体丢失部分可分辨细节，但未丢失航空公司与市值的联系。",
+            "visible_inscription_evidence_zh": "SYNTHETIC DATA；Airline market capitalization；Synthetic market capitalization；AIRLINE；USD BILLION；Airline A–G；43.890576 USD bn combined；Zero to nose: a linear 0–35 scale；Aircraft silhouette area: proportional to market value。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "参考真实航空品牌和金额换为Airline A–G及SYNTHETIC DATA，仍然表达相同统计主题。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "A与F/G的数值比为500，统一飞机模板形成显著不同大小；小飞机机尾跨零线属于机鼻锚定的结果。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "F/G各约20×18px且机鼻只距零点约2px，尾翼细部和实体边缘不能高精度分离。"
+            }
+          ],
+          "measurement_coverage_zh": "逐项核查全部七个类别、金额、绑定及数量；像素测量覆盖七个机鼻位置和A–E面积比例，明细列出大值A、中间D、最小正值F。G与F同值同尺寸，未重复明细；F/G面积均保留不确定性。未作精确透明度反演，也未将原作者自检结果作为测量。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "朝右俯视客机、深蓝世界地图、白尾迹、左侧类别识别块均保留。",
+            "data_adaptation_excluded_zh": "不扣除合成航空公司替换真实品牌与国旗、数值驱动的机体尺寸变化。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "七架均机鼻朝右，双翼在机身两侧、尾翼在机后，白尾迹向左延伸；各类别与金额同列对行。",
+            "data_adaptation_excluded_zh": "排除允许的标签位置调整、由数值导致的水平位置与面积变化。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "保留上方标题、下方七行主体及页脚层级；标题改为左对齐两行，右上增加合计，刻度与页脚解释占比提高。",
+            "data_adaptation_excluded_zh": "不扣除尺寸分布改变与金额统一右对齐，后者属于允许的标签位置调整。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "延续深蓝、白色和浅金色；参考的简化白色飞机剪影与柔和块面地图，改为带机窗发动机细节的写实飞机及明显纹理、轮廓和经纬线地图。",
+            "data_adaptation_excluded_zh": "不扣除数据尺寸、更新文字和合成类别变化。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/73b74627e05d33",
       "numeric_supported": true,
@@ -63309,7 +63870,291 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图以橙黄色调的背面举球运动员为背景，白色年度折线横跨躯干，标题叠在人物前方。待评图为奶油底、自然色写实的全身背面女篮运动员；双手接触头顶篮球，双臂连接肩部，球衣、短裤、双腿及鞋均可见。橙色折线与人物短裤叠合，15个年份和数值逐点可读；2010最高、2017最低。顶部显示SYNTHETIC DATA、WOMEN’S BASKETBALL VIEWERS和Average viewers per game；纵轴写明THOUSAND VIEWERS PER GAME并标0–1,500。未见明显断肢、曲线被人物遮断或必需文字缺失。",
+        "summary_zh": "15个年度点、数值、单位和绑定完整，独立像素测量均满足容差。完整背面举球运动员与折线叠合，最小值处也保留可见层次；未发现必要条件的可见缺陷。构图与材质风格的变化仅记录于参考保真评分。",
+        "issues": [],
+        "measurement_notes_zh": "在1600×2000原图中，以橙色连通区域识别15个圆环标记；可辨橙色区域均约14×14像素。独立读取纵轴网格行610、758、906、1054、1202及零线1350，按可见0–1500线性轴反算v=(1350−y)/740×1500。mark_extent_px表示点中心至零线的垂直位移，不是圆点直径。15点最大满量程误差约0.086%；横向间隔92–93像素。源码公式仅作旁证，未作为像素读数。",
+        "uncertainties_zh": "抗锯齿、阈值和线条中心约有±1像素读数不确定性，相当于约±2.03千人/场；因此小值误差为近似测量，不能视为亚像素精度证明。允许查看的源码显示直接保存图像，未能独立确认capture_render.py执行链；未读取日志或自检，也未重渲染。参考原图的具体赛事范围与增长论点和当前冻结输入不同，已按输入适配归因。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "可见2010–2024共15个年份、15个圆环点及逐点数值，单一Annual average系列；SYNTHETIC DATA、主题、每场平均指标和千人单位齐全。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐点读数为1360、432、366、303、202、241、228、163、217、197、234、221、170、260、246，与输入全部一致。15 ANNUAL OBSERVATIONS、2011–2024范围163–432及最新年度2024=246也正确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "年份按顺序置于各点下方，交替上下的数值标签对应邻近点；2010峰值和2024摘要分别绑定正确年份，未见跨点误绑。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "原图独立检出15个标记；全部反算值的满量程偏差均小于0.086%。最小值163对应约80.5像素零线位移，反算约163.18；不存在为辨认物体而抬高小值的可见迹象。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "供给的raw_01.png、player_cutout.png与成图中央人物的球、发髻、衣褶、双腿及鞋一致，素材构成大幅主体。render.py载入该素材，按data.json计算全部点位并绘制文字；捕获执行链未获独立确认。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "同一条年度折线从人物左侧延伸，经2016–2018点横跨深色短裤，再延伸至右侧；白色衬线使其位于人物前方且连续，保留参考要求的叠合关系。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "主题、合成提示、指标、单位、15个年份及数值在原分辨率下可读；人物上的163、217、228和年份有浅色描边，无必需文字被遮断。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "篮球位于头顶，双手接触球两侧；前臂、上臂及肩部连续，球衣覆盖躯干并连接短裤区域，双腿和鞋完整。折线明确叠于短裤前方，不是旁置人物。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "WOMEN’S BASKETBALL VIEWERS、Average viewers per game、THOUSAND VIEWERS PER GAME及YEAR共同明确主题、统计口径、单位和年度角色；合成声明避免将其当作真实观众统计。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留女篮年度平均观众量及举球人物叠图关系。原图特指WNBA/ESPN常规赛并强调2024增长，当前输入概括为女子篮球合成数据；图中ONE EARLY PEAK符合新值。范围及论点变化归于冻结输入适配，不是输出遗漏。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "最小值2017=163的圆环和两侧线段在短裤前方清楚可见，点中心离零线约80.5像素；2022=170也有独立可辨点位。主体尺寸不编码观众数，无需缩小人物部件。"
+          }
+        },
+        "semantic_attribution_zh": "当前女篮主题、每场平均口径、千人单位和年度角色均保留。原图WNBA/ESPN特定范围被当前输入概括，旧2024增长论点随合成数据改为2010早期峰值，分别属于输入适配和数据驱动变化；未发现输出造成的核心语义丢失。像素精度及捕获链路限制已单独注明。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "average_viewers",
+              "category": "2010",
+              "expected_value": 1360,
+              "observed_value": 1361.15,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 671.5,
+              "full_scale_error_percent": 0.0766,
+              "small_value_relative_error_percent": 0.0845,
+              "bbox_xyxy_normalized": [
+                0.09875,
+                0.336,
+                0.1075,
+                0.343
+              ],
+              "evidence_zh": "最大点橙色圆环中心约(164.5,678.5)，零线y=1350；按可见轴反算约1361.15千人/场，数值标签为1,360。",
+              "uncertainty_zh": "标记与轴线中心约±1像素；差值小于栅格读数不确定性。"
+            },
+            {
+              "series_id": "average_viewers",
+              "category": "2011",
+              "expected_value": 432,
+              "observed_value": 432.77,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 213.5,
+              "full_scale_error_percent": 0.0514,
+              "small_value_relative_error_percent": 0.1783,
+              "bbox_xyxy_normalized": [
+                0.156875,
+                0.565,
+                0.165625,
+                0.572
+              ],
+              "evidence_zh": "圆环中心约(257.5,1136.5)，零线位移213.5像素，反算约432.77千人/场；旁侧432标签清晰。",
+              "uncertainty_zh": "约±1像素读数误差；文本与几何分别核验。"
+            },
+            {
+              "series_id": "average_viewers",
+              "category": "2017",
+              "expected_value": 163,
+              "observed_value": 163.18,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 80.5,
+              "full_scale_error_percent": 0.0117,
+              "small_value_relative_error_percent": 0.1078,
+              "bbox_xyxy_normalized": [
+                0.505,
+                0.6315,
+                0.51375,
+                0.6385
+              ],
+              "evidence_zh": "最小正值圆环中心约(814.5,1269.5)，位于短裤前方，零线位移80.5像素，反算约163.18千人/场；标签为163。",
+              "uncertainty_zh": "约±1像素对应该值约±1.24%的相对不确定性，0.108%仅是当前读数的估计误差。"
+            },
+            {
+              "series_id": "average_viewers",
+              "category": "2018",
+              "expected_value": 217,
+              "observed_value": 217.91,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 107.5,
+              "full_scale_error_percent": 0.0604,
+              "small_value_relative_error_percent": 0.4172,
+              "bbox_xyxy_normalized": [
+                0.563125,
+                0.618,
+                0.571875,
+                0.625
+              ],
+              "evidence_zh": "内部点圆环中心约(907.5,1242.5)，位于人物右侧短裤上，反算约217.91千人/场；对应217标签位于下方。",
+              "uncertainty_zh": "抗锯齿与线宽导致约±1像素中心误差。"
+            },
+            {
+              "series_id": "average_viewers",
+              "category": "2022",
+              "expected_value": 170,
+              "observed_value": 171.28,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 84.5,
+              "full_scale_error_percent": 0.0856,
+              "small_value_relative_error_percent": 0.7552,
+              "bbox_xyxy_normalized": [
+                0.795625,
+                0.6295,
+                0.804375,
+                0.6365
+              ],
+              "evidence_zh": "第二小值圆环中心约(1279.5,1265.5)，反算约171.28千人/场；这是15点中最大的估计满量程偏差，仍远小于3%，标签为170。",
+              "uncertainty_zh": "约±1像素对应该值约±1.19%的相对不确定性，不声称小于1%的精确保证。"
+            },
+            {
+              "series_id": "average_viewers",
+              "category": "2024",
+              "expected_value": 246,
+              "observed_value": 246.28,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 121.5,
+              "full_scale_error_percent": 0.0189,
+              "small_value_relative_error_percent": 0.1154,
+              "bbox_xyxy_normalized": [
+                0.91125,
+                0.611,
+                0.92,
+                0.618
+              ],
+              "evidence_zh": "末端圆环中心约(1464.5,1228.5)，反算约246.28千人/场；点旁及LATEST YEAR摘要均显示246。",
+              "uncertainty_zh": "约±1像素读数误差；摘要文字本身不另构成几何编码。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "主体运动员",
+              "required_parts": [
+                "篮球",
+                "双手",
+                "双臂",
+                "肩部",
+                "球衣",
+                "短裤",
+                "双腿",
+                "鞋"
+              ],
+              "relationship": "双手接触头顶篮球，双臂连接肩部；球衣覆盖背部，短裤下方连接双腿并落于鞋。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.396,
+                0.278,
+                0.666,
+                0.917
+              ],
+              "evidence_zh": "可见背面全身人物，两手贴于篮球两侧，肢体与衣物连接连续；未见破坏身份的断裂或拼接缝。"
+            },
+            {
+              "category": "大值2010",
+              "required_parts": [
+                "2010点",
+                "2011点",
+                "连接线段",
+                "共享纵轴"
+              ],
+              "relationship": "大值由同一坐标系中的高点承载，连接线向右下到2011；整条路径随后与人物叠合。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.095,
+                0.331,
+                0.176,
+                0.576
+              ],
+              "evidence_zh": "2010高点位于人物左侧，下降线段连续连接2011。参考要求为整条折线叠合，无需每个年度点都贴附身体。"
+            },
+            {
+              "category": "最小值2017及邻点",
+              "required_parts": [
+                "短裤表面",
+                "2016点",
+                "2017点",
+                "2018点",
+                "前景折线",
+                "浅色衬线"
+              ],
+              "relationship": "最小点和相邻连接线位于短裤前方，衬线区分数据线与衣物纹理。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.438,
+                0.606,
+                0.607,
+                0.648
+              ],
+              "evidence_zh": "2017圆环位于深蓝短裤中下部，左右线段接向2016与2018；线和点均未被衣物遮断，163与217标签仍可辨。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结输入使用女子篮球的合成年度观众数，允许更新旧峰谷、论点及非数据姿态；不要求WNBA品牌、球员身份、ESPN来源或旧真实数值。",
+            "output_added_or_lost_meaning_zh": "成图新增ONE EARLY PEAK和最新年度摘要，均由当前值支持。原图2024增长论点没有复制；当前要求的统计含义和人物举球叠合关系未丢失。",
+            "visible_inscription_evidence_zh": "可读SYNTHETIC DATA、WOMEN’S BASKETBALL VIEWERS、Average viewers per game、THOUSAND VIEWERS PER GAME、YEAR、2010 · PEAK及Synthetic values · Illustrative data, not measured audience statistics。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "冻结主题将参考的WNBA/ESPN特定统计概括为女子篮球合成年度平均观众数；参考意义的部分保留据此归因。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "峰值在2010而非2024，折线由左侧高点下降并在后段低位波动，与当前15个输入值一致；不将其计为参考走势缺失。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "标记中心及网格的抗锯齿带来约±1像素测量限制；最小点仍具有足够可见位移，未发生辨认关系丢失。"
+            }
+          ],
+          "measurement_coverage_zh": "唯一量化通道为年度折线点的纵向位置。已独立检测并反算全部15个点，列出最大值、最小值、内部点、次小值及末端共6个代表记录；全部15组年份/数值另行逐项核对。横向年份间距也已核验。摘要只重复数值，不作为额外几何通道。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "两图均为背面女篮运动员双手举球，篮球、双臂与球衣可辨；待评图额外完整呈现双腿和鞋。",
+            "data_adaptation_excluded_zh": "不要求旧球衣号码、姓名、特定发型或品牌；完整全身呈现符合当前要求。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "篮球均在头顶，双手贴球两侧，前臂向上、上臂连接肩部，人物背向观众；折线均叠于人物前方。",
+            "data_adaptation_excluded_zh": "已排除允许的肘部角度、站姿及非数据比例调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留竖版、醒目标题、运动员与年度折线叠合；参考为铺满画面的近景人物及人物前方标题，待评为独立顶部标题区、居中全身人物及下方摘要。",
+            "data_adaptation_excluded_zh": "不将峰值从右移到左、曲线变低及当前标签数量计为构图失真。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "均保留照片式人物材质和粗体排版；参考为高饱和橙黄套色、蓝紫文字和白线，待评为奶油底、自然肤色、海军蓝球衣和橙色细线，整体风格有较大变化。",
+            "data_adaptation_excluded_zh": "评分不涉及合成数据主题改写、数值更新或定量形状变化；风格差异本身不是必要条件失败。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/fe0d98e8c41d12",
       "numeric_supported": true,
@@ -91993,7 +92838,427 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.97,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为星条旗美国地图病人置于透视病床，床尾图板在前。待评图为黄色州界地图病人靠枕躺床，冰袋接触头部，体温计连接嘴部，白色图板遮挡床前下部。红阶梯、黑实线、黑短划线及右侧9–21%轴可见；端点为A 16.9%、B 14.9%、C 13.2%。标题、SYNTHETIC DATA、% per year及底部30条日期数值均可辨。",
+        "summary_zh": "通过。30条记录、21个日期及三系列绑定完整；独立像素抽查符合真实日距、截断轴及插值要求。地图病人、病床和前置图板关系保留。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "原图2000×1643。像素检测得到9%基线y≈1127.5、21%线y≈849.5，跨度278像素；day 0与67位于x≈499.5、1709.5。纵值按9+(1127.5-y)×12/278反算，横值按(x-499.5)×67/1210反算。中心来自实际栅格剖面，未把源码坐标当作测量。满量程分别为12个百分点和67天。A的extent为平台水平跨度，B/C为点高度，TIME为距起点水平距离。",
+        "uncertainties_zh": "像素中心约±1像素，约±0.043个百分点；小于该分辨率的计算误差不构成精度保证。未逐点反演全部30条记录。图板背后的安装接头被遮挡。素材使用可核实，但未查看执行日志或自检，不能独立确认capture_render.py调用记录。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "A 11、B 8、C 11条，共30条记录完整；21个日期齐全，像素检测得到21组日期短刻线。标题、合成声明、系列名及单位均可见。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "逐行核对全部30个日期与数值，均符合data.json；端点16.9%、14.9%、13.2%，记录总数30及67 elapsed days准确。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "红阶梯对应A，黑实线对应B，黑短划线及空心点对应C；图例、端标和记录表绑定一致。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "各系列最小、最大及内部点的像素抽查均在3%满量程容差内。A在day约1、5、12、15、26、30、46、60、65处转折；B止于day66，C止于day67，无外推。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "已查看raw_01.png与patient_bed.png，其地图、脸、冰袋、体温计和病床对应成图主体。render.py嵌入该素材，并从数据构造路径、标记及文字；未执行渲染。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "三条曲线承载于床前白色图板；病人靠枕、被褥及床栏连接，嘴含体温计。图板顶部夹具和侧边厚度可见，延续参考叠合方式。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "原始分辨率下标题、坐标轴、日期、图例、全部记录及说明可读；端点文字没有相互遮挡。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "美国地图病人、枕被承托、床框与左轮、嘴部体温计及床尾图板均保留。图板位于被褥前方，数据实际承载边界为板内曲线。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "ANNUAL RATE CHANGES、Three synthetic annualized rates、SYNTHETIC DATA、% per year、2040日期及Synthetic comparison series A–C明确当前主题和统计角色。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "保留病人与趋势板的医疗叠合隐喻。原具体金融类别及FALLING FEVER下降论述已按输入改为合成年化率与Series A—C，不归因于输出失败。"
+          },
+          "small_mark_visibility": {
+            "status": "pass",
+            "evidence_zh": "A最短一天平台约18像素；B最小点约8像素高，距9%基线约13.9像素；C最小空心圆约8像素高。几何均可见，没有仅靠标签代替。"
+          }
+        },
+        "semantic_attribution_zh": "原金融类别、年代与固定退烧走势的变化属于允许的输入适配；曲线升降由当前数据驱动。黄色州界替代星条旗改变了非数据外观，但美国地图身份仍清楚。未发现当前语义遗漏。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "A",
+              "category": "2040-05-07—2040-05-09",
+              "expected_value": 16.9,
+              "observed_value": 16.9005,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 36.5,
+              "full_scale_error_percent": 0.0041,
+              "small_value_relative_error_percent": 0.0029,
+              "bbox_xyxy_normalized": [
+                0.835,
+                0.5715,
+                0.857,
+                0.5788
+              ],
+              "evidence_zh": "最低平台水平跨度约36.5像素；像素中心y≈944.472，由可见刻度反算。",
+              "uncertainty_zh": "中心约±1像素；计算小误差不代表亚像素精度。"
+            },
+            {
+              "series_id": "A",
+              "category": "2040-03-15",
+              "expected_value": 20.3,
+              "observed_value": 20.3008,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 54,
+              "full_scale_error_percent": 0.0067,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.3565,
+                0.5234,
+                0.387,
+                0.5368
+              ],
+              "evidence_zh": "最高平台宽约54像素；x735—754红线剖面中心y≈865.698。",
+              "uncertainty_zh": "中心约±1像素，约±0.043个百分点。"
+            },
+            {
+              "series_id": "A",
+              "category": "2040-04-18",
+              "expected_value": 17.9,
+              "observed_value": 17.8992,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 253,
+              "full_scale_error_percent": 0.0066,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.663,
+                0.5575,
+                0.7935,
+                0.5648
+              ],
+              "evidence_zh": "内部平台宽约253像素；x1350—1379红线剖面中心y≈921.335。",
+              "uncertainty_zh": "中心约±1像素，约±0.043个百分点。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-03-06",
+              "expected_value": 9.6,
+              "observed_value": 9.5999,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 8,
+              "full_scale_error_percent": 0.0007,
+              "small_value_relative_error_percent": 0.0009,
+              "bbox_xyxy_normalized": [
+                0.275,
+                0.6744,
+                0.28,
+                0.6811
+              ],
+              "evidence_zh": "最小正值实心点约8像素高；中心y≈1113.602，距9%基线约13.9像素。",
+              "uncertainty_zh": "中心约±1像素；计算小误差不代表亚像素精度。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-04-03",
+              "expected_value": 15.8,
+              "observed_value": 15.7999,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 7,
+              "full_scale_error_percent": 0.0005,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.527,
+                0.5867,
+                0.533,
+                0.5946
+              ],
+              "evidence_zh": "峰顶实心点约7像素高，像素中心y≈969.968。",
+              "uncertainty_zh": "中心约±1像素，约±0.043个百分点。"
+            },
+            {
+              "series_id": "B",
+              "category": "2040-04-24",
+              "expected_value": 15.1,
+              "observed_value": 15.1004,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 7,
+              "full_scale_error_percent": 0.0034,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.7165,
+                0.5971,
+                0.7225,
+                0.6044
+              ],
+              "evidence_zh": "内部实心点约7像素高，中心y≈986.174，位于15%网格线上方。",
+              "uncertainty_zh": "中心约±1像素，约±0.043个百分点。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-03-13",
+              "expected_value": 10.9,
+              "observed_value": 10.9,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 8,
+              "full_scale_error_percent": 0.0001,
+              "small_value_relative_error_percent": 0.0001,
+              "bbox_xyxy_normalized": [
+                0.337,
+                0.6561,
+                0.3435,
+                0.6634
+              ],
+              "evidence_zh": "最小空心圆约8像素高，中心y≈1083.483，略低于11%网格线。",
+              "uncertainty_zh": "中心约±1像素；计算小误差不代表亚像素精度。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-04-24",
+              "expected_value": 13.2,
+              "observed_value": 13.1948,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 9,
+              "full_scale_error_percent": 0.0432,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.7165,
+                0.6233,
+                0.7225,
+                0.6312
+              ],
+              "evidence_zh": "并列最大值空心圆约9像素高，中心y≈1030.320。",
+              "uncertainty_zh": "中心约±1像素，约±0.043个百分点。"
+            },
+            {
+              "series_id": "C",
+              "category": "2040-04-10",
+              "expected_value": 12.7,
+              "observed_value": 12.7117,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 9,
+              "full_scale_error_percent": 0.0976,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.59,
+                0.6306,
+                0.5965,
+                0.6379
+              ],
+              "evidence_zh": "内部空心圆约9像素高，中心y≈1041.512。",
+              "uncertainty_zh": "剖面受邻近网格线轻微影响，中心约±1像素。"
+            },
+            {
+              "series_id": "TIME",
+              "category": "2040-03-04（距起点天数）",
+              "expected_value": 1,
+              "observed_value": 0.9967,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 18,
+              "full_scale_error_percent": 0.0049,
+              "small_value_relative_error_percent": 0.3306,
+              "bbox_xyxy_normalized": [
+                0.248,
+                0.7328,
+                0.2605,
+                0.7389
+              ],
+              "evidence_zh": "日期短刻线中心距起点约18像素；0—67天轴距为1210像素。",
+              "uncertainty_zh": "中心约±1像素，即±0.055天。"
+            },
+            {
+              "series_id": "TIME",
+              "category": "2040-04-03（距起点天数）",
+              "expected_value": 31,
+              "observed_value": 30.9806,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 559.5,
+              "full_scale_error_percent": 0.029,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.528,
+                0.7328,
+                0.5315,
+                0.7389
+              ],
+              "evidence_zh": "日期短刻线中心距起点约559.5像素；0—67天轴距为1210像素。",
+              "uncertainty_zh": "中心约±1像素，即±0.055天。"
+            },
+            {
+              "series_id": "TIME",
+              "category": "2040-05-09（距起点天数）",
+              "expected_value": 67,
+              "observed_value": 67,
+              "measurement_method": "direct_pixel",
+              "mark_extent_px": 1210,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.853,
+                0.7328,
+                0.857,
+                0.7389
+              ],
+              "evidence_zh": "末日期刻线与67天轴端对应，距起点约1210像素。",
+              "uncertainty_zh": "中心约±1像素，即±0.055天。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "地图病人与病床",
+              "required_parts": [
+                "美国地图病人",
+                "枕头",
+                "被褥",
+                "床栏及轮脚"
+              ],
+              "relationship": "病人由枕被及床面承托，身体下部被被子遮盖，床栏连接床框与轮脚。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.101,
+                0.15,
+                0.75,
+                0.566
+              ],
+              "evidence_zh": "地图位于枕头前方，被子覆盖下部；双手与床被接触，左床栏连续通向轮脚。"
+            },
+            {
+              "category": "体温计连接",
+              "required_parts": [
+                "嘴部",
+                "体温计管",
+                "红色端部"
+              ],
+              "relationship": "细管左端插入嘴部，向右上伸出并连接红色圆端。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.605,
+                0.292,
+                0.745,
+                0.346
+              ],
+              "evidence_zh": "嘴唇包住体温计左端，管身连续，未被图板遮断。"
+            },
+            {
+              "category": "床尾图板",
+              "required_parts": [
+                "病床",
+                "白色图板",
+                "顶部夹具",
+                "三系列曲线"
+              ],
+              "relationship": "图板置于床前，夹具跨越上缘，曲线包含在板内。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.21,
+                0.403,
+                0.932,
+                0.778
+              ],
+              "evidence_zh": "顶部两夹具、右下厚边与板面连续；病床下部被图板遮挡，保留参考的前后叠合关系。"
+            },
+            {
+              "category": "大值实例：A最高平台",
+              "required_parts": [
+                "红阶梯平台",
+                "转折段",
+                "图板网格"
+              ],
+              "relationship": "平台保持水平，再向下接下一平台，位于同一图板坐标面。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.3555,
+                0.5234,
+                0.3875,
+                0.5368
+              ],
+              "evidence_zh": "20.3%平台约54像素宽，右侧接19.7%平台，没有遮挡断裂。"
+            },
+            {
+              "category": "小值实例：B最低点与A最短平台",
+              "required_parts": [
+                "B实心点",
+                "B实线",
+                "9%基线",
+                "A一天平台"
+              ],
+              "relationship": "B点连接上升线且位于基线上方；A首段短平台连接下一阶梯。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.2475,
+                0.547,
+                0.285,
+                0.689
+              ],
+              "evidence_zh": "B首点约8像素高，距9%基线13.9像素；A首平台约18像素宽。均保留图板内曲线关系。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "core指定合成年化率变化和Series A/B/C，允许姿态、厚度及排版适配，不要求旧极值或固定涨跌。",
+            "output_added_or_lost_meaning_zh": "新增冰袋、表情及记录表强化医疗隐喻；旧金融产品与退烧下降论述不再保留，属于声明的适配。未声称累积、构成比或州级统计。",
+            "visible_inscription_evidence_zh": "ANNUAL RATE CHANGES；SYNTHETIC DATA；% per year；Series A · step after；Series B/C · linear；Shared axis: 9–21% (truncated)；Synthetic comparison series A–C。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "参考利率类别与下降论述改为规定的合成三系列，reference_meaning的partial不归因于生成遗漏。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "A先升后降、B上升后接近平稳、C缓升均符合当前数据。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "抗锯齿与7—9像素点径限制亚像素测量确定性，不影响本例小标记可辨。"
+            }
+          ],
+          "measurement_coverage_zh": "独立测量三系列各最小、最大和内部值共9项，以及时间轴3项；视觉核对全部30条数值日期，像素计数21个日期刻线。未对全部线段逐像素反演；记录表属于直接文字编码。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "美国轮廓病人、金属病床与床尾图板保留；星条旗身体改为黄色州界地图，增添脸、手与冰袋。",
+            "data_adaptation_excluded_zh": "排除合成主题、系列名称和新数据走势；允许人物细部适配。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "病人由床与枕被承托，图板位于床前遮挡下部；体温计接嘴，床栏连床框。",
+            "data_adaptation_excluded_zh": "排除core允许的姿态、非数据厚度、床视角及排版调整。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "病床插画与前置三系列图仍为主视觉；标题扩大至顶部，新增下部记录表，形成上下分层。",
+            "data_adaptation_excluded_zh": "不将新值所需记录表、标题更新及允许的排版适配判为合同缺陷。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "保留勾线、颗粒纸感和红黑三线；参考的淡色网点、灰银床栏及星条旗改为饱和黄蓝人物、青绿床栏和白板。",
+            "data_adaptation_excluded_zh": "排除数据线位置及允许的部件厚度调整，仅评价非数据材质与配色保留程度。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/f6cf4c2d87c1f3",
       "numeric_supported": true,
@@ -92711,7 +93976,321 @@
         }
       },
       "primary_system_success": true,
-      "confirmation": null,
+      "confirmation": {
+        "verdict": "pass",
+        "confidence": 0.96,
+        "brief_is_feasible": true,
+        "reference_viewed": true,
+        "final_viewed": true,
+        "generated_assets_visibly_used": true,
+        "code_controls_data_geometry": true,
+        "visual_observations_before_code_zh": "参考图为白底、青色大百分数环绕棕色夹心饼干，下面另列12个手势图标。待评图为暖白底，左侧C近完整饼干、右侧B扇块及细长A/D扇块；各块可见深色上下饼干与浅色夹心。A顶面极窄，D顶面稍宽。A–D引线与下方四色类别/精确百分数对应。独立观众面板可数1个红色和11个绿色人形，标有每人形2人及2人/22人。当前主题、SYNTHETIC DATA、percent和独立24人口径均可读。",
+        "summary_zh": "当前数值、类别绑定和独立人物计数正确，像素反推份额均在3个百分点容差内。饼干—奶油—饼干连接与双面板关系保留；未发现重大可见缺陷。A的顶面辨识及参考具体商品类别语义仅部分保留，分别归因于微值分辨率和输入合成适配。review.json已保存并通过schema校验；未运行submit.py。",
+        "issues": [],
+        "measurement_notes_zh": "在2000×2000原图独立提取深色物体边界，未使用项目掩膜或自检数值。由C上方椭圆轮廓拟合水平半径559.72、垂直半径312.53像素，投影比约0.55837；将可见径向边界斜率按atan(斜率/投影比)还原角度。平行层边的固定竖直厚度不改变斜率。主阈值为RGB分别小于155/120/105，另用两组阈值检验敏感性。份额满量程为100%，所列满量程误差数值等于百分点绝对误差。A/B/D的像素范围指约略投影外缘角口宽，C指顶面横向跨度，人形指高度，不能彼此直接作份额比。",
+        "uncertainties_zh": "A顶面外缘仅约数像素，反锯齿与材质亮度影响边界定位；阈值变化使其估计约0.1667%–0.1735%，不是精度置信区间，也不保证小值相对精度。其余阈值敏感范围约为B 11.0089%–11.0586%、C 87.3701%–87.4411%、D 1.3965%–1.4143%。来源判断限于可见原素材、素材清单与渲染源码；遵守本轮限制，未查运行日志、自检、编排或capture_render.py执行归档。",
+        "checks": {
+          "completeness": {
+            "status": "pass",
+            "evidence_zh": "Category A–D、Ad share及percent完整；辅助面板两类、Synthetic people及people、24人总数、每人形2人、SYNTHETIC DATA均出现。"
+          },
+          "numeric_text": {
+            "status": "pass",
+            "evidence_zh": "四项原值0.17484564%、11.01458495%、87.42281867%、1.38775074%逐项准确；2人、22人、24人及每人形2人均正确，最小正值未舍入为零。"
+          },
+          "binding": {
+            "status": "pass",
+            "evidence_zh": "扇块A/B/C/D引线分别对应红/棕黄/绿/紫类别及数值条；类别条保持A→B→C→D顺序。红色1个人形与未关注比赛绑定，绿色11个人形与关注比赛绑定。"
+          },
+          "geometry": {
+            "status": "pass",
+            "evidence_zh": "独立像素边界逆投影得到A约0.1667%、B约11.0535%、C约87.3701%、D约1.3965%，最大点估计偏差约0.053个百分点。人物独立数得1+11个，按每个2人得到2+22人。"
+          },
+          "source": {
+            "status": "pass",
+            "evidence_zh": "raw_01.png、cookie_surface.png的花形浮雕与成图大块顶面直接对应，素材使用面积显著。render.py读取数据生成角度、投影扇块及人物数量，素材仅填充数据几何；未据此推定未查看的运行归档。"
+          },
+          "integration": {
+            "status": "pass",
+            "evidence_zh": "广告份额由夹心饼干实际顶面扇角承载；棕色上下层与浅色夹心沿相应扇块连接。人物面板独立置下，图注明确其不是广告份额分母。未见破坏解释的遮挡或纹理越界。"
+          },
+          "readability": {
+            "status": "pass",
+            "evidence_zh": "标题、全部类别与精确数值、单位及统计口径在原分辨率可读；引线与文字未发生明显覆盖或裁切。"
+          },
+          "critical_structure": {
+            "status": "pass",
+            "evidence_zh": "C与B可辨顶面、上饼干侧层、奶油层和下饼干层；D和A仍有连续三层切面。分离扇块与独立人物计数保留，A顶面细节限制另记小值可辨性。"
+          },
+          "semantic_meaning": {
+            "status": "pass",
+            "evidence_zh": "广告时段/广告份额、Ad share·percent、合成类别A–D和总计100%说明主面板含义；观众计数注明Synthetic people·people、两类比赛关注角色及独立24人口径。"
+          },
+          "reference_meaning": {
+            "status": "partial",
+            "evidence_zh": "广告类别份额加独立比赛关注人数的参考统计关系保留。参考eCOMMERCE等真实类别由冻结输入改为合成Category A–D，具体商品语义不再保留；属于输入适配，不判输出失败。"
+          },
+          "small_mark_visibility": {
+            "status": "partial",
+            "evidence_zh": "A的字母、精确数值和上下饼干夹奶油关系可辨，但外缘顶面仅约4像素宽，难以独立辨认完整扇形与浮雕；D外缘约33像素，三层和窄顶面较清楚。没有把小值人为抬高。"
+          }
+        },
+        "semantic_attribution_zh": "A–D替换旧商品类别和合成统计声明来自冻结输入；C变大、A/D变窄来自当前份额。A顶面细节损失主要属于投影后的微值分辨率限制，而非部件遗漏或数值被置零。原图保留广告份额与独立观众面板的并置关系，不要求新增两面板融合。",
+        "detailed_evidence": {
+          "measurements": [
+            {
+              "series_id": "S1",
+              "category": "Category A",
+              "expected_value": 0.17484564,
+              "observed_value": 0.1667,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 4,
+              "full_scale_error_percent": 0.0081,
+              "small_value_relative_error_percent": 4.66,
+              "bbox_xyxy_normalized": [
+                0.675,
+                0.489,
+                0.93,
+                0.599
+              ],
+              "evidence_zh": "取x=1370–1735的可见上轮廓与平行底层径向轮廓，像素拟合斜率约−0.26096、−0.25387，经独立投影比还原份额约0.1667%。外缘顶面角口宽仅约4像素，非87像素左右的三层侧面厚度。",
+              "uncertainty_zh": "主阈值点估计的相对差约4.66%，阈值敏感范围0.1667%–0.1735%；不能据此声称微值达到该精度，外缘顶面/侧面交界有反锯齿。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Category B",
+              "expected_value": 11.01458495,
+              "observed_value": 11.0535,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 214,
+              "full_scale_error_percent": 0.0389,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.575,
+                0.33,
+                0.856,
+                0.48
+              ],
+              "evidence_zh": "取x=1360–1580的两条可见径向轮廓，拟合斜率约−0.25401、0.15308；逆投影得到约39.793°，即11.0535%。外缘顶面两端间距约214像素。",
+              "uncertainty_zh": "材质阈值敏感范围约11.0089%–11.0586%；约略端点间距只描述可见大小，份额来自角度逆投影。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Category C",
+              "expected_value": 87.42281867,
+              "observed_value": 87.3701,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 1100,
+              "full_scale_error_percent": 0.0527,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.1025,
+                0.2605,
+                0.653,
+                0.619
+              ],
+              "evidence_zh": "在x=1030–1130直接测量缺口上下径向轮廓，斜率约−0.32415、0.15308；逆投影缺口约45.468°，保留扇区约87.3701%。顶面横向跨度约1100像素。",
+              "uncertainty_zh": "厚度只平移边界；不将可见侧面面积计入份额。阈值敏感范围约87.3701%–87.4411%，完整椭圆拟合轮廓残差约0.63像素。"
+            },
+            {
+              "series_id": "S1",
+              "category": "Category D",
+              "expected_value": 1.38775074,
+              "observed_value": 1.3965,
+              "measurement_method": "inverse_transform",
+              "mark_extent_px": 33,
+              "full_scale_error_percent": 0.0087,
+              "small_value_relative_error_percent": 0.63,
+              "bbox_xyxy_normalized": [
+                0.6475,
+                0.2165,
+                0.9015,
+                0.339
+              ],
+              "evidence_zh": "取x=1320–1690的上下径向轮廓，斜率约−0.32346、−0.26104；逆投影得到约5.027°，即1.3965%。可见外缘角口宽约33像素。",
+              "uncertainty_zh": "阈值敏感范围约1.3965%–1.4143%；所列相对差为主阈值点估计，并非小值精度保证。"
+            },
+            {
+              "series_id": "independent_cohort",
+              "category": "Not following the game",
+              "expected_value": 2,
+              "observed_value": 2,
+              "measurement_method": "symbol_count",
+              "mark_extent_px": 119,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": 0,
+              "bbox_xyxy_normalized": [
+                0.123,
+                0.82,
+                0.1535,
+                0.8795
+              ],
+              "evidence_zh": "原图可数1个完整红色人形；头部色块与身体均可辨，图例每人形2人，得到2人。像素色块边界为x=246–306、y=1640–1758。",
+              "uncertainty_zh": "计数无可见歧义；误差分母采用该独立面板的24人，不采用广告份额100%。"
+            },
+            {
+              "series_id": "independent_cohort",
+              "category": "Following the game",
+              "expected_value": 22,
+              "observed_value": 22,
+              "measurement_method": "symbol_count",
+              "mark_extent_px": 119,
+              "full_scale_error_percent": 0,
+              "small_value_relative_error_percent": null,
+              "bbox_xyxy_normalized": [
+                0.274,
+                0.82,
+                0.9195,
+                0.8795
+              ],
+              "evidence_zh": "原图逐一数得11个完整绿色人形；独立头部色块检测也得到11组。按每人形2人得到22人，各人形高约119像素。",
+              "uncertainty_zh": "计数无可见歧义；24人仅为本面板分母，背景分组框宽度不作为人数通道。"
+            }
+          ],
+          "part_relations": [
+            {
+              "category": "Category C（大值）",
+              "required_parts": [
+                "有浮雕的上饼干顶面",
+                "上饼干侧层",
+                "浅色奶油",
+                "下饼干"
+              ],
+              "relationship": "奶油接触上下饼干；相应径向切面与外圆层轮廓对齐，实际顶面扇角承载广告份额。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.1025,
+                0.2605,
+                0.653,
+                0.619
+              ],
+              "evidence_zh": "左侧近完整圆块可见大面积花纹顶面，前缘及缺口处有连续棕—浅色—棕夹层；无分离悬空奶油或跨块错接。"
+            },
+            {
+              "category": "Category B（中间值）",
+              "required_parts": [
+                "扇形顶面",
+                "上饼干",
+                "奶油",
+                "下饼干"
+              ],
+              "relationship": "三层共用扇块方向，奶油包含在上下层之间，B引线落在对应块体。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.575,
+                0.33,
+                0.856,
+                0.48
+              ],
+              "evidence_zh": "右中部可见两条径向边与弧形外缘，浅色夹层沿前切面延伸，与上下棕层连续接触。"
+            },
+            {
+              "category": "Category A（最小正值）",
+              "required_parts": [
+                "极窄顶面",
+                "上饼干",
+                "奶油",
+                "下饼干"
+              ],
+              "relationship": "小扇块仍须保持饼干夹奶油关系，顶面角宽不得用侧面厚度替代。",
+              "status": "partial",
+              "bbox_xyxy_normalized": [
+                0.675,
+                0.489,
+                0.93,
+                0.599
+              ],
+              "evidence_zh": "右下长条有连续棕—浅色—棕三层，接触关系保留；上缘仅数像素的顶面难以单独读成有浮雕的扇形。侧面厚度在图注中明确不编码数值。"
+            },
+            {
+              "category": "Category D（小值）",
+              "required_parts": [
+                "窄扇形顶面",
+                "上饼干",
+                "奶油",
+                "下饼干"
+              ],
+              "relationship": "顶面与三层切面同向，夹心被上下饼干夹持。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.6475,
+                0.2165,
+                0.9015,
+                0.339
+              ],
+              "evidence_zh": "右上块体可见逐渐加宽的窄花纹顶面和连续浅色奶油带；上下棕层与夹心接触，没有断层。"
+            },
+            {
+              "category": "独立观众面板",
+              "required_parts": [
+                "1个未关注人形",
+                "11个关注人形",
+                "每人形2人说明",
+                "独立24人说明"
+              ],
+              "relationship": "两组人物在独立面板内按单位计数，与广告份额面板并置，分母分离。",
+              "status": "pass",
+              "bbox_xyxy_normalized": [
+                0.05,
+                0.756,
+                0.95,
+                0.993
+              ],
+              "evidence_zh": "人物分成红色1个和绿色11个，下方类别及2人/22人直接绑定；面板标题和页脚两次说明独立24人口径。"
+            }
+          ],
+          "meaning_trace": {
+            "current_topic": "pass",
+            "metric_and_unit": "pass",
+            "category_roles": "pass",
+            "reference_action_or_argument": "partial",
+            "allowed_input_adaptation_zh": "冻结数据指定合成Category A–D、当前广告份额与独立24人示例；允许姿态、厚度及排版适配，不要求旧商品名称、旧份额或旧极值。",
+            "output_added_or_lost_meaning_zh": "当前广告份额与比赛关注计数的统计关系保留，且明确两个分母独立。参考具体商品类别的含义因输入替换而减少；未观察到输出添加趋势、因果或把人数当广告份额分母的说法。",
+            "visible_inscription_evidence_zh": "“广告时段”“广告份额”“Ad share · percent”“母圆角宽 = 份额 / 总计100%”“SYNTHETIC DATA”“Synthetic people · people”“Not following the game”“Following the game”，以及“观众计数是独立的24人示例，不是广告份额的分母”。"
+          },
+          "attribution": [
+            {
+              "cause": "input_adaptation",
+              "evidence_zh": "旧eCOMMERCE/FOOD & DRINK等类别由输入指定的合成Category A–D替代；参考含义部分保留不归为输出失败。"
+            },
+            {
+              "cause": "data_driven_shape_change",
+              "evidence_zh": "87.42281867%的C接近整饼，0.17484564%的A及1.38775074%的D成为窄片，与当前值一致。"
+            },
+            {
+              "cause": "resolution_limit",
+              "evidence_zh": "A顶面外缘仅数像素，完整浮雕及扇形身份难以单独辨认，但三层切面与正值标签仍在。"
+            }
+          ],
+          "measurement_coverage_zh": "两个定量通道均覆盖：主面板四类全测，包含最小正值A、大值C与中间B/D；人物面板两类全数。全部必需类别、数值、单位与说明另行逐项核对。未测每个顶面纹理像素或每层全部轮廓，不使用项目审计掩膜代替成图证据。"
+        },
+        "reference_fidelity": {
+          "nondata_identity": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "双层深色饼干和浅色奶油身份保留；参考的品牌压纹及立体沟槽侧缘改为花纹顶面和平直切面。",
+            "data_adaptation_excluded_zh": "不扣分于当前份额导致的巨大C和细小A/D；下方面板依当前合同采用人物图标。"
+          },
+          "nondata_pose_relations": {
+            "applicable": true,
+            "score": 4,
+            "evidence_zh": "均为斜俯视分离扇块，奶油夹于上下饼干之间，独立计数面板置于下方；核心接触、夹层和并置关系保留。",
+            "data_adaptation_excluded_zh": "扇块分离距离、非数据厚度和位置适配由core明确允许，不以参考原角度或原份额要求重现。"
+          },
+          "composition_hierarchy": {
+            "applicable": true,
+            "score": 3,
+            "evidence_zh": "上方主题、中部大饼干、下方独立计数的层级保留；参考环绕主体的大百分数转为主体下方四列数值，标题面积增加。",
+            "data_adaptation_excluded_zh": "不扣分于份额引起的主体轮廓变化及为了小块可见而调整的分离位置。"
+          },
+          "material_style": {
+            "applicable": true,
+            "score": 2,
+            "evidence_zh": "仍使用有光泽棕色饼干纹理与浅色奶油；参考白/青配色和摄影式饼干侧缘改为米白/棕红/绿色系与较平直的纹理切面。",
+            "data_adaptation_excluded_zh": "排除数字、语言、类别及合成标识更新，仅比较非数据材质与色彩风格。"
+          }
+        }
+      },
       "confirmed_failure": false,
       "review_path": "runs/reference_factorial24/evaluation/items/6620fc9867603b",
       "numeric_supported": true,
@@ -111965,8 +113544,131 @@
     }
   },
   "paired_analysis": {
-    "status": "pending",
-    "reason": "Formal comparisons begin after closure."
+    "status": "complete",
+    "complete_verified_blocks": 24,
+    "excluded_blocks": [],
+    "unit": "Reference design, not individual condition/image.",
+    "metrics": {
+      "joint_supported": {
+        "agent_effect_when_image_on": {
+          "n": 24,
+          "difference": 0.08333333333333333,
+          "conservative_95pct_interval": [
+            -0.1597983620827496,
+            0.2979969849293691
+          ],
+          "improved": 2,
+          "worsened": 0,
+          "exact_mcnemar_p": 0.5,
+          "holm_adjusted_p": 1.0
+        },
+        "agent_effect_when_image_off": {
+          "n": 24,
+          "difference": 0.125,
+          "conservative_95pct_interval": [
+            -0.14646946345076722,
+            0.3523712243142352
+          ],
+          "improved": 3,
+          "worsened": 0,
+          "exact_mcnemar_p": 0.25,
+          "holm_adjusted_p": 1.0
+        },
+        "image_effect_when_agent_on": {
+          "n": 24,
+          "difference": 0.0,
+          "conservative_95pct_interval": [
+            -0.23740918355546028,
+            0.23740918355546028
+          ],
+          "improved": 1,
+          "worsened": 1,
+          "exact_mcnemar_p": 1.0,
+          "holm_adjusted_p": 1.0
+        },
+        "image_effect_when_agent_off": {
+          "n": 24,
+          "difference": 0.041666666666666664,
+          "conservative_95pct_interval": [
+            -0.16636173120437087,
+            0.23793316215598698
+          ],
+          "improved": 1,
+          "worsened": 0,
+          "exact_mcnemar_p": 1.0,
+          "holm_adjusted_p": 1.0
+        },
+        "interaction": {
+          "definition": "(G1-G0 at A1) minus (G1-G0 at A0)",
+          "difference": -0.041666666666666664,
+          "conservative_95pct_interval": [
+            -0.526397730026865,
+            0.4534099218219231
+          ],
+          "method": "Simultaneous CP bounds for four discordant probabilities; no interaction p-value claimed."
+        }
+      },
+      "joint_visible_supported": {
+        "agent_effect_when_image_on": {
+          "n": 24,
+          "difference": 0.08333333333333333,
+          "conservative_95pct_interval": [
+            -0.1597983620827496,
+            0.2979969849293691
+          ],
+          "improved": 2,
+          "worsened": 0,
+          "exact_mcnemar_p": 0.5,
+          "holm_adjusted_p": 1.0
+        },
+        "agent_effect_when_image_off": {
+          "n": 24,
+          "difference": 0.16666666666666666,
+          "conservative_95pct_interval": [
+            -0.12846907163473759,
+            0.4029558480081535
+          ],
+          "improved": 4,
+          "worsened": 0,
+          "exact_mcnemar_p": 0.125,
+          "holm_adjusted_p": 1.0
+        },
+        "image_effect_when_agent_on": {
+          "n": 24,
+          "difference": 0.0,
+          "conservative_95pct_interval": [
+            -0.16688570980489756,
+            0.16688570980489756
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "exact_mcnemar_p": 1.0,
+          "holm_adjusted_p": 1.0
+        },
+        "image_effect_when_agent_off": {
+          "n": 24,
+          "difference": 0.08333333333333333,
+          "conservative_95pct_interval": [
+            -0.1597983620827496,
+            0.2979969849293691
+          ],
+          "improved": 2,
+          "worsened": 0,
+          "exact_mcnemar_p": 0.5,
+          "holm_adjusted_p": 1.0
+        },
+        "interaction": {
+          "definition": "(G1-G0 at A1) minus (G1-G0 at A0)",
+          "difference": -0.08333333333333333,
+          "conservative_95pct_interval": [
+            -0.5148664730963595,
+            0.3762722129041146
+          ],
+          "method": "Simultaneous CP bounds for four discordant probabilities; no interaction p-value claimed."
+        }
+      }
+    },
+    "multiplicity": "Holm across the 8 prespecified conditional contrasts for 2 primary endpoints."
   },
   "scope": "24 references, all four fresh conditions on the same conflict data. Textual design specifications are reference-derived in all arms."
 }
